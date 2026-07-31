@@ -5,9 +5,6 @@ export const metadata: Metadata = {
   title: "Mimicry group — low-fidelity прототип",
   description:
     "Кликабельный low-fidelity-прототип сайта агентства корпоративных коммуникаций Mimicry group.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
