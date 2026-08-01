@@ -1,0 +1,134 @@
+.tokens {
+  /* Color */
+  --ds-color-background: #f4f1e8;
+  --ds-color-surface: #ffffff;
+  --ds-color-text: #151515;
+  --ds-color-text-muted: #5c5a55;
+  --ds-color-border: #c9c4b8;
+  --ds-color-action: #2f41ff;
+  --ds-color-action-hover: #2635d6;
+  --ds-color-action-active: var(--ds-color-action-hover);
+  --ds-color-signal: #d7ff3f;
+  --ds-color-success: #1c6b42;
+  --ds-color-error: #b93831;
+  --ds-color-evidence: #272725;
+  --ds-color-evidence-muted: #d9d4c8;
+  --ds-color-on-action: var(--ds-color-surface);
+  --ds-color-on-text: var(--ds-color-background);
+  --ds-color-focus: var(--ds-color-signal);
+  --ds-color-disabled-surface: var(--ds-color-background);
+  --ds-color-disabled-text: var(--ds-color-text-muted);
+
+  /* Space */
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 24px;
+  --ds-space-6: 32px;
+  --ds-space-7: 48px;
+  --ds-space-8: 64px;
+  --ds-space-9: 96px;
+  --ds-space-10: 128px;
+
+  /* Container and grid */
+  --ds-container-max: 1280px;
+  --ds-page-gutter: 20px;
+  --ds-grid-columns: 4;
+  --ds-grid-gutter: 16px;
+  --ds-section-space: 80px;
+
+  /* Geometry */
+  --ds-border-width-default: 1px;
+  --ds-border-width-strong: 2px;
+  --ds-border-width-route: 3px;
+  --ds-radius-none: 0;
+  --ds-radius-sm: 4px;
+  --ds-radius-media: 8px;
+
+  /* Typography */
+  --ds-font-family-sans: var(--font-onest), Arial, sans-serif;
+  --ds-font-family-mono: var(--font-plex-mono), "Courier New", monospace;
+  --ds-font-weight-regular: 400;
+  --ds-font-weight-label: 600;
+  --ds-font-weight-heading: 600;
+  --ds-type-display-xl-size: clamp(40px, calc(30px + 3.5cqi), 84px);
+  --ds-type-display-xl-line: 0.96;
+  --ds-type-display-lg-size: clamp(36px, calc(24px + 3cqi), 64px);
+  --ds-type-display-lg-line: 1;
+  --ds-type-heading-1-size: clamp(34px, calc(24px + 2.3cqi), 56px);
+  --ds-type-heading-1-line: 1.04;
+  --ds-type-heading-2-size: clamp(28px, calc(20px + 2cqi), 48px);
+  --ds-type-heading-2-line: 1.08;
+  --ds-type-heading-3-size: clamp(22px, calc(18px + 0.9cqi), 30px);
+  --ds-type-heading-3-line: 1.15;
+  --ds-type-lead-size: clamp(18px, calc(16px + 0.3cqi), 20px);
+  --ds-type-lead-line: 1.5;
+  --ds-type-body-lg-size: clamp(17px, calc(16px + 0.15cqi), 18px);
+  --ds-type-body-lg-line: 1.55;
+  --ds-type-body-size: 16px;
+  --ds-type-body-line: 1.55;
+  --ds-type-small-size: 14px;
+  --ds-type-small-line: 1.5;
+  --ds-type-label-size: 12px;
+  --ds-type-label-line: 1.3;
+  --ds-type-button-size: 16px;
+  --ds-type-button-line: 1.2;
+  --ds-tracking-display: -0.04em;
+  --ds-tracking-heading: -0.03em;
+  --ds-tracking-label: 0.035em;
+  --ds-measure-body: 72ch;
+  --ds-measure-lead: 62ch;
+
+  /* Controls */
+  --ds-control-height: 48px;
+
+  /* Motion */
+  --ds-duration-instant: 80ms;
+  --ds-duration-fast: 140ms;
+  --ds-duration-base: 200ms;
+  --ds-duration-reveal: 360ms;
+  --ds-duration-route: 480ms;
+  --ds-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .tokens {
+    --ds-page-gutter: 32px;
+    --ds-grid-columns: 8;
+    --ds-grid-gutter: 20px;
+    --ds-control-height: 44px;
+  }
+}
+
+@media (min-width: 960px) {
+  .tokens {
+    --ds-page-gutter: 40px;
+    --ds-grid-columns: 12;
+    --ds-grid-gutter: 24px;
+    --ds-section-space: 128px;
+    --ds-type-button-size: 15px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tokens {
+    --ds-page-gutter: 56px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .tokens {
+    --ds-page-gutter: 64px;
+    --ds-section-space: 144px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tokens {
+    --ds-duration-fast: 80ms;
+    --ds-duration-base: 80ms;
+    --ds-duration-reveal: 80ms;
+    --ds-duration-route: 80ms;
+  }
+}

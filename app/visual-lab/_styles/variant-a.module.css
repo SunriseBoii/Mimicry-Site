@@ -1,26 +1,31 @@
 .variantA {
-  --canvas: #f4f1e8;
-  --surface: #ffffff;
-  --ink: #151515;
-  --muted: #5c5a55;
-  --rule: #c9c4b8;
-  --primary: #2f41ff;
-  --primary-hover: #2635d6;
-  --label: #2f41ff;
-  --placeholder-label: #2f41ff;
-  --signal: #d7ff3f;
-  --focus-ring: #d7ff3f;
-  --on-primary: #ffffff;
-  --media-dark: #272725;
-  --media-mid: #8b8982;
-  --media-light: #d9d4c8;
-  --card-radius: 4px;
-  --media-radius: 8px;
-  --container-max: 1280px;
-  --page-pad: 64px;
-  --section-gap: 128px;
-  --hero-display: clamp(64px, 5.8cqw, 84px);
-  --hero-display-laptop: clamp(60px, 6.1cqw, 64px);
+  --canvas: var(--ds-color-background);
+  --surface: var(--ds-color-surface);
+  --ink: var(--ds-color-text);
+  --muted: var(--ds-color-text-muted);
+  --rule: var(--ds-color-border);
+  --primary: var(--ds-color-action);
+  --primary-hover: var(--ds-color-action-hover);
+  --label: var(--ds-color-action);
+  --placeholder-label: var(--ds-color-action);
+  --signal: var(--ds-color-signal);
+  --focus-ring: var(--ds-color-focus);
+  --on-primary: var(--ds-color-on-action);
+  --media-dark: var(--ds-color-evidence);
+  --media-mid: color-mix(
+    in srgb,
+    var(--ds-color-evidence) 45%,
+    var(--ds-color-evidence-muted)
+  );
+  --media-light: var(--ds-color-evidence-muted);
+  --card-radius: var(--ds-radius-sm);
+  --media-radius: var(--ds-radius-media);
+  --container-max: var(--ds-container-max);
+  --page-pad: var(--ds-page-gutter);
+  --section-gap: var(--ds-space-10);
+  --hero-display: var(--ds-type-display-xl-size);
+  --hero-display-laptop: var(--ds-type-display-xl-size);
+  --hero-display-mobile: var(--ds-type-display-xl-size);
   --hero-copy-track: minmax(0, 9fr);
   --hero-route-track: minmax(280px, 3fr);
   --hero-gap: 40px;
@@ -28,12 +33,15 @@
   --hero-route-track-laptop: minmax(260px, 4fr);
   --hero-gap-laptop: 28px;
   --hero-title-max: 880px;
-  --section-display: clamp(40px, 3.4cqw, 48px);
-  --font-display: var(--font-onest);
-  --font-body: var(--font-onest);
-  --font-accent: var(--font-onest);
-  --font-mono: var(--font-plex-mono);
-  --route-width: 3px;
+  --section-display: var(--ds-type-heading-2-size);
+  --section-display-mobile: var(--ds-type-heading-2-size);
+  --lead-size: var(--ds-type-lead-size);
+  --lead-size-mobile: var(--ds-type-lead-size);
+  --font-display: var(--ds-font-family-sans);
+  --font-body: var(--ds-font-family-sans);
+  --font-accent: var(--ds-font-family-sans);
+  --font-mono: var(--ds-font-family-mono);
+  --route-width: var(--ds-border-width-route);
 }
 
 .variantA :global([data-visual-part="hero"]) {

@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Onest, Unbounded } from "next/font/google";
-
-const onest = Onest({
-  subsets: ["cyrillic", "latin"],
-  variable: "--font-onest",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["cyrillic", "latin"],
-  weight: ["500", "600"],
-  variable: "--font-plex-mono",
-  display: "swap",
-});
+import { Unbounded } from "next/font/google";
+import { designSystemFontVariables } from "../_design-system/fonts";
 
 const unbounded = Unbounded({
   subsets: ["cyrillic", "latin"],
@@ -36,7 +24,7 @@ export default function VisualLabLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${onest.variable} ${plexMono.variable} ${unbounded.variable}`}>
+    <div className={`${designSystemFontVariables} ${unbounded.variable}`}>
       {children}
     </div>
   );

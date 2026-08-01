@@ -1,0 +1,98 @@
+.container {
+  width: calc(100% - (2 * var(--ds-page-gutter)));
+  max-width: var(--ds-container-max);
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--ds-grid-columns), minmax(0, 1fr));
+  gap: var(--ds-grid-gutter);
+  min-width: 0;
+}
+
+.section {
+  --ds-local-background: var(--ds-color-background);
+  --ds-local-text: var(--ds-color-text);
+  --ds-local-muted: var(--ds-color-text-muted);
+  --ds-local-border: var(--ds-color-border);
+
+  min-width: 0;
+  padding-block: var(--ds-section-space);
+  border-top: var(--ds-border-width-default) solid var(--ds-local-border);
+  background: var(--ds-local-background);
+  color: var(--ds-local-text);
+}
+
+.background {
+  --ds-local-background: var(--ds-color-background);
+}
+
+.surface {
+  --ds-local-background: var(--ds-color-surface);
+}
+
+.indigo {
+  --ds-local-background: var(--ds-color-action);
+  --ds-local-text: var(--ds-color-surface);
+  --ds-local-muted: color-mix(
+    in srgb,
+    var(--ds-color-surface) 78%,
+    var(--ds-color-action)
+  );
+  --ds-local-border: color-mix(
+    in srgb,
+    var(--ds-color-surface) 48%,
+    var(--ds-color-action)
+  );
+  --ds-focus-inner: var(--ds-color-surface);
+  --ds-link-color: var(--ds-color-surface);
+  --ds-link-hover: var(--ds-color-surface);
+  --ds-control-primary-background: var(--ds-color-surface);
+  --ds-control-primary-color: var(--ds-color-text);
+  --ds-control-primary-border: var(--ds-color-surface);
+  --ds-control-primary-hover: var(--ds-color-background);
+  --ds-control-primary-active: var(--ds-color-background);
+  --ds-control-secondary-color: var(--ds-color-surface);
+  --ds-control-secondary-border: var(--ds-color-surface);
+  --ds-control-secondary-hover-background: var(--ds-color-surface);
+  --ds-control-secondary-hover-color: var(--ds-color-action);
+  --ds-control-disabled-background: color-mix(
+    in srgb,
+    var(--ds-color-action) 70%,
+    var(--ds-color-surface)
+  );
+  --ds-control-disabled-color: var(--ds-color-surface);
+  --ds-control-disabled-border: var(--ds-local-border);
+}
+
+.evidence {
+  --ds-local-background: var(--ds-color-evidence);
+  --ds-local-text: var(--ds-color-surface);
+  --ds-local-muted: var(--ds-color-evidence-muted);
+  --ds-local-border: color-mix(
+    in srgb,
+    var(--ds-color-evidence-muted) 48%,
+    var(--ds-color-evidence)
+  );
+  --ds-focus-inner: var(--ds-color-surface);
+  --ds-link-color: var(--ds-color-surface);
+  --ds-link-hover: var(--ds-color-surface);
+  --ds-control-primary-background: var(--ds-color-surface);
+  --ds-control-primary-color: var(--ds-color-text);
+  --ds-control-primary-border: var(--ds-color-surface);
+  --ds-control-primary-hover: var(--ds-color-background);
+  --ds-control-primary-active: var(--ds-color-background);
+  --ds-control-secondary-color: var(--ds-color-surface);
+  --ds-control-secondary-border: var(--ds-color-surface);
+  --ds-control-secondary-hover-background: var(--ds-color-surface);
+  --ds-control-secondary-hover-color: var(--ds-color-text);
+  --ds-control-disabled-background: color-mix(
+    in srgb,
+    var(--ds-color-evidence) 76%,
+    var(--ds-color-surface)
+  );
+  --ds-control-disabled-color: var(--ds-color-evidence-muted);
+  --ds-control-disabled-border: var(--ds-local-border);
+}

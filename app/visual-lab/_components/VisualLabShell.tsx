@@ -12,6 +12,7 @@ import variantA from "../_styles/variant-a.module.css";
 import variantB from "../_styles/variant-b.module.css";
 import variantC from "../_styles/variant-c.module.css";
 import styles from "../_styles/visual-lab.module.css";
+import tokenStyles from "../../_design-system/theme/tokens.module.css";
 import { VariantSwitcher } from "./VariantSwitcher";
 import { ViewportSwitcher } from "./ViewportSwitcher";
 
@@ -37,7 +38,7 @@ export function VisualLabShell({ children }: { children: ReactNode }) {
   } as CSSProperties;
 
   return (
-    <main className={styles.labRoot}>
+    <main className={`${styles.labRoot} ${tokenStyles.tokens}`}>
       <header className={styles.labHeader}>
         <div className={styles.labIdentity}>
           <p className={styles.labKicker}>Mimicry group · Visual system checkpoint</p>

@@ -1,0 +1,48 @@
+.theme {
+  --ds-local-background: var(--ds-color-background);
+  --ds-local-text: var(--ds-color-text);
+  --ds-local-muted: var(--ds-color-text-muted);
+  --ds-local-border: var(--ds-color-border);
+  --ds-focus-inner: var(--ds-color-text);
+  --ds-link-color: var(--ds-color-action);
+  --ds-link-hover: var(--ds-color-action-hover);
+  --ds-control-primary-background: var(--ds-color-text);
+  --ds-control-primary-color: var(--ds-color-on-text);
+  --ds-control-primary-border: var(--ds-color-text);
+  --ds-control-primary-hover: var(--ds-color-action);
+  --ds-control-primary-active: var(--ds-color-action-active);
+  --ds-control-secondary-color: var(--ds-color-text);
+  --ds-control-secondary-border: var(--ds-color-text);
+  --ds-control-secondary-hover-background: transparent;
+  --ds-control-secondary-hover-color: var(--ds-color-action);
+  --ds-control-disabled-background: var(--ds-color-disabled-surface);
+  --ds-control-disabled-color: var(--ds-color-disabled-text);
+  --ds-control-disabled-border: var(--ds-color-border);
+
+  min-width: 0;
+  min-height: 100svh;
+  container-name: ds-theme;
+  container-type: inline-size;
+  background: var(--ds-local-background);
+  color: var(--ds-local-text);
+  font-family: var(--ds-font-family-sans);
+  font-size: var(--ds-type-body-size);
+  font-synthesis: none;
+  line-height: var(--ds-type-body-line);
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+.theme *,
+.theme *::before,
+.theme *::after {
+  box-sizing: border-box;
+}
+
+.theme :where(h1, h2, h3, p) {
+  margin-block: 0;
+}
+
+.theme :where(button, input, textarea, select) {
+  font: inherit;
+}

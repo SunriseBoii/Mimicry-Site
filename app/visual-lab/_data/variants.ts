@@ -23,12 +23,28 @@ export const variants: readonly Variant[] = [
     name: "Редакционный вектор",
     role: "Базовый кандидат · контролируемый гибрид",
     tokens: [
-      { label: "Canvas", value: "#F4F1E8", color: "#F4F1E8" },
-      { label: "Ink", value: "#151515", color: "#151515" },
-      { label: "Direction", value: "#2F41FF", color: "#2F41FF" },
-      { label: "Signal", value: "#D7FF3F", color: "#D7FF3F" },
+      {
+        label: "Background",
+        value: "var(--ds-color-background)",
+        color: "var(--ds-color-background)",
+      },
+      {
+        label: "Text",
+        value: "var(--ds-color-text)",
+        color: "var(--ds-color-text)",
+      },
+      {
+        label: "Direction",
+        value: "var(--ds-color-action)",
+        color: "var(--ds-color-action)",
+      },
+      {
+        label: "Signal",
+        value: "var(--ds-color-signal)",
+        color: "var(--ds-color-signal)",
+      },
       { label: "Type", value: "Onest + IBM Plex Mono" },
-      { label: "Grid", value: "12 / 8 / 4 · max 1280" },
+      { label: "Grid", value: "var(--ds-container-max) · 12 / 8 / 4" },
     ],
   },
   {

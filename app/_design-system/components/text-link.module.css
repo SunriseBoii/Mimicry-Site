@@ -1,0 +1,67 @@
+.link {
+  position: relative;
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  gap: var(--ds-space-2);
+  color: var(--ds-link-color);
+  font-weight: var(--ds-font-weight-label);
+  line-height: var(--ds-type-body-line);
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--ds-border-width-default);
+  text-underline-offset: var(--ds-space-1);
+  transition: color var(--ds-duration-fast) var(--ds-ease-standard);
+}
+
+.link::after {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: var(--ds-space-2);
+  height: var(--ds-border-width-strong);
+  background: currentColor;
+  content: "";
+  transition: width var(--ds-duration-fast) var(--ds-ease-standard);
+}
+
+.link:hover,
+.link:active {
+  color: var(--ds-link-hover);
+  text-decoration-thickness: var(--ds-border-width-strong);
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  width: var(--ds-space-4);
+}
+
+.link:focus-visible {
+  outline: var(--ds-border-width-strong) solid var(--ds-focus-inner);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--ds-color-focus);
+}
+
+.arrow {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform var(--ds-duration-fast) var(--ds-ease-standard);
+}
+
+.link:hover .arrow,
+.link:focus-visible .arrow {
+  transform: translateX(var(--ds-space-1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .link::after,
+  .arrow {
+    transition-duration: var(--ds-duration-instant);
+  }
+
+  .link:hover .arrow,
+  .link:focus-visible .arrow {
+    transform: none;
+  }
+}

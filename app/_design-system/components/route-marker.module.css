@@ -1,0 +1,121 @@
+.route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-block: var(--ds-border-width-default) solid var(--ds-local-border);
+  list-style: none;
+}
+
+.route::before {
+  position: absolute;
+  top: 35px;
+  right: calc(100% / 6);
+  left: calc(100% / 6);
+  height: var(--ds-border-width-route);
+  background: var(--ds-color-action);
+  content: "";
+  pointer-events: none;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: var(--ds-space-3);
+  min-width: 0;
+  min-height: 224px;
+  padding: var(--ds-space-5);
+  border-right: var(--ds-border-width-default) solid var(--ds-local-border);
+}
+
+.step:last-child {
+  border-right: 0;
+}
+
+.node {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border: var(--ds-border-width-strong) solid var(--ds-local-text);
+  border-radius: 50%;
+  background: var(--ds-local-background);
+}
+
+.step[data-state="complete"] .node {
+  border-color: var(--ds-color-action);
+  background: var(--ds-color-action);
+}
+
+.step[data-state="current"] .node {
+  background: var(--ds-color-signal);
+}
+
+.content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.content strong {
+  margin-top: var(--ds-space-7);
+  font-size: var(--ds-type-heading-3-size);
+  line-height: var(--ds-type-heading-3-line);
+  letter-spacing: var(--ds-tracking-heading);
+}
+
+.content p {
+  margin-top: var(--ds-space-3);
+  color: var(--ds-local-muted);
+}
+
+.stateText {
+  margin-top: auto;
+  padding-top: var(--ds-space-5);
+  color: var(--ds-local-muted);
+  font-family: var(--ds-font-family-mono);
+  font-size: var(--ds-type-label-size);
+  font-weight: var(--ds-font-weight-label);
+  line-height: var(--ds-type-label-line);
+}
+
+@media (max-width: 639px) {
+  .route {
+    grid-template-columns: minmax(0, 1fr);
+    border: var(--ds-border-width-default) solid var(--ds-local-border);
+  }
+
+  .route::before {
+    top: 34px;
+    bottom: 34px;
+    left: 32px;
+    width: var(--ds-border-width-route);
+    height: auto;
+  }
+
+  .step {
+    min-height: 176px;
+    border-right: 0;
+    border-bottom: var(--ds-border-width-default) solid var(--ds-local-border);
+  }
+
+  .step:last-child {
+    border-bottom: 0;
+  }
+
+  .content strong {
+    margin-top: var(--ds-space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route,
+  .route::before,
+  .step,
+  .node {
+    animation: none;
+    transition: none;
+  }
+}

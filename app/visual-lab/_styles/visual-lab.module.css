@@ -421,7 +421,7 @@
   max-width: 62ch;
   margin: 0;
   color: var(--muted);
-  font-size: 20px;
+  font-size: var(--lead-size, 20px);
   line-height: 1.5;
 }
 
@@ -1008,12 +1008,12 @@
 
 .mobileViewport .heroCopy h2 {
   margin: 16px 0 22px;
-  font-size: clamp(38px, 10.5cqw, 42px);
+  font-size: var(--hero-display-mobile, clamp(38px, 10.5cqw, 42px));
   line-height: 0.98;
 }
 
 .mobileViewport .heroLead {
-  font-size: 18px;
+  font-size: var(--lead-size-mobile, 18px);
 }
 
 .mobileViewport .ctaRow {
@@ -1127,12 +1127,12 @@
 
   .heroCopy h2 {
     margin: 16px 0 22px;
-    font-size: clamp(38px, 10.5cqw, 42px);
+    font-size: var(--hero-display-mobile, clamp(38px, 10.5cqw, 42px));
     line-height: 0.98;
   }
 
   .heroLead {
-    font-size: 18px;
+    font-size: var(--lead-size-mobile, 18px);
   }
 
   .ctaRow {
@@ -1184,7 +1184,7 @@
   .sectionHeader h2,
   .solutionHeader h2 {
     margin: 0;
-    font-size: clamp(28px, 8cqw, 32px);
+    font-size: var(--section-display-mobile, clamp(28px, 8cqw, 32px));
   }
 
   .situationGrid {
