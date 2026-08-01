@@ -1,0 +1,87 @@
+.variantB {
+  --canvas: #f1f5f1;
+  --surface: #ffffff;
+  --ink: #10231d;
+  --muted: #52615b;
+  --rule: #aab8b2;
+  --primary: #ff5a3c;
+  --primary-hover: #e4482e;
+  --label: #175cd3;
+  --placeholder-label: #175cd3;
+  --signal: #175cd3;
+  --focus-ring: #ff5a3c;
+  --on-primary: #10231d;
+  --media-dark: #10231d;
+  --media-mid: #52615b;
+  --media-light: #dce6e0;
+  --card-radius: 0px;
+  --media-radius: 0px;
+  --container-max: 1320px;
+  --page-pad: 48px;
+  --section-gap: 104px;
+  --hero-display: clamp(60px, 5.3cqw, 76px);
+  --section-display: clamp(36px, 3.1cqw, 44px);
+  --font-display: var(--font-onest);
+  --font-body: var(--font-onest);
+  --font-accent: var(--font-onest);
+  --font-mono: var(--font-plex-mono);
+  --route-width: 2px;
+}
+
+.variantB :global([data-visual-part="hero"]) {
+  outline: 1px solid var(--ink);
+  outline-offset: -1px;
+}
+
+.variantB :global([data-visual-part="hero"])::before,
+.variantB :global([data-visual-part="hero"])::after {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--primary);
+  content: "";
+  pointer-events: none;
+}
+
+.variantB :global([data-visual-part="hero"])::before {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.variantB :global([data-visual-part="hero"])::after {
+  right: 8px;
+  bottom: 8px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.variantB :global([data-visual-part="case-card"]) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.variantB :global([data-visual-part="situation"] article) {
+  border-top-width: 4px;
+}
+
+.variantB :global([data-visual-part="process-step"]:nth-child(2)) {
+  margin-left: 8%;
+  margin-right: -8%;
+}
+
+.variantB[data-reduced-motion="true"] :global([data-visual-part="process-step"]:nth-child(2)) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@container preview (max-width: 639px) {
+  .variantB :global([data-visual-part="case-card"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .variantB :global([data-visual-part="process-step"]:nth-child(2)) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

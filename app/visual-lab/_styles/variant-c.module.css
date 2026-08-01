@@ -1,0 +1,113 @@
+.variantC {
+  --canvas: #f7efe4;
+  --surface: #fff8ef;
+  --ink: #15100d;
+  --muted: #6b5c54;
+  --rule: #cdbfb3;
+  --primary: #ff4b1f;
+  --primary-hover: #dd3510;
+  --label: #5a3bff;
+  --placeholder-label: #5a3bff;
+  --signal: #5a3bff;
+  --focus-ring: #fff8ef;
+  --on-primary: #15100d;
+  --media-dark: #15100d;
+  --media-mid: #6b5c54;
+  --media-light: #e0c8b7;
+  --card-radius: 12px;
+  --media-radius: 12px;
+  --container-max: 1280px;
+  --page-pad: 64px;
+  --section-gap: 120px;
+  --hero-display: clamp(56px, 4.7cqw, 68px);
+  --section-display: clamp(38px, 3.2cqw, 44px);
+  --font-display: var(--font-onest);
+  --font-body: var(--font-onest);
+  --font-accent: var(--font-unbounded);
+  --font-mono: var(--font-plex-mono);
+  --route-width: 8px;
+}
+
+.variantC :global([data-visual-part="hero"]),
+.variantC :global([data-visual-part="mobile-hero"]) {
+  --label: #fff8ef;
+  --muted: #d8c9bd;
+  --rule: #8f7e73;
+  background: var(--ink);
+  color: #fff8ef;
+}
+
+.variantC :global([data-visual-part="hero"] nav[aria-label="Клиентские ситуации"]),
+.variantC :global([data-visual-part="mobile-hero"] nav[aria-label="Клиентские ситуации"]) {
+  --label: #5a3bff;
+  --muted: #6b5c54;
+  --rule: #cdbfb3;
+  padding: 20px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.variantC :global([data-visual-part="hero"])::after,
+.variantC :global([data-visual-part="mobile-hero"])::after {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 34%;
+  height: 18px;
+  background: var(--primary);
+  content: "";
+  transform: skewY(-3deg);
+  transform-origin: right;
+  pointer-events: none;
+}
+
+.variantC :global([data-visual-part="situations"] h2),
+.variantC :global([data-visual-part="case-card"] h3) {
+  font-family: var(--font-accent), sans-serif;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+
+.variantC :global([data-visual-part="case-card"]) {
+  grid-template-columns: minmax(0, 8fr) minmax(300px, 4fr);
+  overflow: visible;
+}
+
+.variantC :global([data-visual-part="case-media"]) {
+  margin: -24px 0 24px 24px;
+  border-radius: var(--media-radius);
+}
+
+.variantC :global([data-visual-part="situation"]:nth-child(2)),
+.variantC :global([data-visual-part="situation"]:nth-child(4)) {
+  transform: translateY(16px);
+}
+
+.variantC[data-reduced-motion="true"] :global([data-visual-part="hero"])::after,
+.variantC[data-reduced-motion="true"] :global([data-visual-part="mobile-hero"])::after,
+.variantC[data-reduced-motion="true"] :global([data-visual-part="situation"]) {
+  transform: none;
+}
+
+@container preview (max-width: 639px) {
+  .variantC :global([data-visual-part="case-card"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .variantC :global([data-visual-part="case-media"]) {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .variantC :global([data-visual-part="situation"]) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .variantC :global([data-visual-part="hero"])::after,
+  .variantC :global([data-visual-part="mobile-hero"])::after,
+  .variantC :global([data-visual-part="situation"]) {
+    transform: none;
+  }
+}
