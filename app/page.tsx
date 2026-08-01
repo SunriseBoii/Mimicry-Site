@@ -1,10 +1,10 @@
 import Link from "./link";
+import { SiteShell } from "./_site/SiteShell";
 import {
   ModuleChips,
   PageCta,
   ProcessSteps,
   SectionHeading,
-  Shell,
   solutions,
 } from "./components";
 
@@ -33,7 +33,7 @@ export default async function Home({ searchParams }: HomeProps) {
         };
 
   return (
-    <Shell>
+    <SiteShell>
       <section className="hero" id="hero">
         <div className="container hero-grid">
           <div>
@@ -221,6 +221,6 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       <PageCta />
-    </Shell>
+    </SiteShell>
   );
 }

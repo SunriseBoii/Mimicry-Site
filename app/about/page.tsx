@@ -1,9 +1,10 @@
 import Link from "../link";
-import { Breadcrumbs, ModuleChips, PageCta, ProcessSteps, SectionHeading, Shell } from "../components";
+import { SiteShell } from "../_site/SiteShell";
+import { Breadcrumbs, ModuleChips, PageCta, ProcessSteps, SectionHeading } from "../components";
 
 export default function AboutPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "О компании" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -41,6 +42,6 @@ export default function AboutPage() {
         <div className="container warning-box"><h3>Что не обещаем</h3><ul><li>глубокий HR- и change-консалтинг без профильного эксперта;</li><li>enterprise-разработку и ИБ без интегратора;</li><li>любой масштаб event без capability check;</li><li>рост удержания, производительности или культуры одной активностью.</li></ul><p><Link className="text-link" href="/procurement">Процесс и закупочная информация →</Link></p></div>
       </section>
       <PageCta />
-    </Shell>
+    </SiteShell>
   );
 }

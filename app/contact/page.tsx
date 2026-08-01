@@ -1,9 +1,10 @@
 import Link from "../link";
-import { Breadcrumbs, SectionHeading, Shell } from "../components";
+import { SiteShell } from "../_site/SiteShell";
+import { Breadcrumbs, SectionHeading } from "../components";
 
 export default function ContactPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Контакты" }]} />
       <section className="page-hero">
         <div className="container"><span className="eyebrow">Короткий старт</span><h1>Расскажите тему, аудиторию и срок. Формат определим после задачи.</h1><p>Рабочая версия формы должна отправлять данные в выбранный канал и CRM. В low-fi-прототипе отправка намеренно отключена.</p></div>
@@ -29,6 +30,6 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
-    </Shell>
+    </SiteShell>
   );
 }

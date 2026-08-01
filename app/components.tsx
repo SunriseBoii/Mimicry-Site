@@ -1,12 +1,8 @@
 import Link from "./link";
 import type { ReactNode } from "react";
+import { solutionLinks } from "./_site/site-data";
 
-export const solutions = [
-  { href: "/solutions/change", label: "Изменения", code: "01" },
-  { href: "/solutions/event", label: "События", code: "02" },
-  { href: "/solutions/learning", label: "Обучение", code: "03" },
-  { href: "/solutions/hr-brand", label: "HR-brand", code: "04" },
-];
+export const solutions = solutionLinks;
 
 export const modules = [
   "Контент",
@@ -17,82 +13,6 @@ export const modules = [
   "Digital",
   "Мерч",
 ];
-
-export function SiteHeader() {
-  return (
-    <header className="site-header">
-      <div className="container header-inner">
-        <Link className="brand" href="/" aria-label="Mimicry group — главная">
-          <span>Mimicry group</span>
-          <small>low-fi · структура v0.1</small>
-        </Link>
-
-        <nav className="desktop-nav" aria-label="Основная навигация">
-          <Link href="/solutions/change">Решения</Link>
-          <Link href="/cases">Кейсы</Link>
-          <Link href="/capabilities/merch">Компетенции</Link>
-          <Link href="/about">О нас</Link>
-          <Link href="/procurement">Закупкам</Link>
-        </nav>
-
-        <Link className="button button-small" href="/contact">
-          Обсудить задачу <span aria-hidden="true">→</span>
-        </Link>
-
-        <details className="mobile-menu">
-          <summary aria-label="Открыть меню">Меню</summary>
-          <nav aria-label="Мобильная навигация">
-            <Link href="/solutions/change">Решения</Link>
-            <Link href="/cases">Кейсы</Link>
-            <Link href="/capabilities/merch">Компетенции</Link>
-            <Link href="/about">О нас</Link>
-            <Link href="/procurement">Закупкам</Link>
-            <Link href="/contact">Обсудить задачу</Link>
-          </nav>
-        </details>
-      </div>
-    </header>
-  );
-}
-
-export function SiteFooter() {
-  return (
-    <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <strong>Mimicry group</strong>
-          <p>Агентство корпоративных коммуникаций и спецпроектов для сотрудников.</p>
-        </div>
-        <div>
-          <span className="micro-label">Маршруты</span>
-          <Link href="/solutions/change">Решения</Link>
-          <Link href="/cases">Кейсы</Link>
-          <Link href="/products/welcome-pack">Продуктовый лендинг</Link>
-        </div>
-        <div>
-          <span className="micro-label">Доверие</span>
-          <Link href="/about">О компании</Link>
-          <Link href="/procurement">Закупкам</Link>
-          <Link href="/contact">Контакты</Link>
-        </div>
-        <div className="footer-note">
-          <span className="tag tag-muted">Прототип</span>
-          <p>Тексты черновые. Серые и пунктирные блоки отмечают контент, который нельзя придумывать.</p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-export function Shell({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <SiteHeader />
-      <main>{children}</main>
-      <SiteFooter />
-    </>
-  );
-}
 
 export function Breadcrumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
   return (

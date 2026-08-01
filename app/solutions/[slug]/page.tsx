@@ -1,5 +1,6 @@
 import Link from "../../link";
 import { notFound } from "next/navigation";
+import { SiteShell } from "../../_site/SiteShell";
 import {
   Breadcrumbs,
   ModuleChips,
@@ -7,7 +8,6 @@ import {
   Placeholder,
   ProcessSteps,
   SectionHeading,
-  Shell,
   SolutionNav,
   solutionData,
 } from "../../components";
@@ -22,7 +22,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   if (!data) notFound();
 
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Решения", href: "/#solutions" }, { label: data.name }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -114,6 +114,6 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
       </section>
 
       <PageCta title={data.cta} text="Для capability check достаточно описать тему, аудиторию, срок и то, что уже определено внутри компании." />
-    </Shell>
+    </SiteShell>
   );
 }

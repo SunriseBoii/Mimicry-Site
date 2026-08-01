@@ -1,9 +1,10 @@
 import Link from "../link";
-import { Breadcrumbs, PageCta, SectionHeading, Shell } from "../components";
+import { SiteShell } from "../_site/SiteShell";
+import { Breadcrumbs, PageCta, SectionHeading } from "../components";
 
 export default function CasesPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Кейсы" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -31,6 +32,6 @@ export default function CasesPage() {
         </div>
       </section>
       <PageCta title="Соберите факты до визуального дизайна кейсов" text="Сильная сетка и фотография не заменят роль Mimicry, наблюдаемый результат и разрешение клиента." />
-    </Shell>
+    </SiteShell>
   );
 }

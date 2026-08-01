@@ -1,9 +1,10 @@
 import Link from "../../link";
-import { Breadcrumbs, PageCta, Placeholder, SectionHeading, Shell } from "../../components";
+import { SiteShell } from "../../_site/SiteShell";
+import { Breadcrumbs, PageCta, Placeholder, SectionHeading } from "../../components";
 
 export default function MerchCapabilityPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Компетенции" }, { label: "Мерч и физические носители" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -36,6 +37,6 @@ export default function MerchCapabilityPage() {
         </div>
       </section>
       <PageCta title="Начать с мерча — и не потерять общую задачу" />
-    </Shell>
+    </SiteShell>
   );
 }

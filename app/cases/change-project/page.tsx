@@ -1,9 +1,10 @@
 import Link from "../../link";
-import { Breadcrumbs, PageCta, Placeholder, SectionHeading, Shell } from "../../components";
+import { SiteShell } from "../../_site/SiteShell";
+import { Breadcrumbs, PageCta, Placeholder, SectionHeading } from "../../components";
 
 export default function CaseTemplatePage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Кейсы", href: "/cases" }, { label: "Шаблон кейса изменений" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -88,6 +89,6 @@ export default function CaseTemplatePage() {
         </div>
       </section>
       <PageCta title="Обсудить похожую задачу" />
-    </Shell>
+    </SiteShell>
   );
 }

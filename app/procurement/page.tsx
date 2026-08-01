@@ -1,5 +1,6 @@
 import Link from "../link";
-import { Breadcrumbs, PageCta, SectionHeading, Shell } from "../components";
+import { SiteShell } from "../_site/SiteShell";
+import { Breadcrumbs, PageCta, SectionHeading } from "../components";
 
 const rows = [
   ["Карточка компании и реквизиты", "Подготовить", "Публично или по запросу — решить с юристом"],
@@ -13,7 +14,7 @@ const rows = [
 
 export default function ProcurementPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Закупкам" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -38,6 +39,6 @@ export default function ProcurementPage() {
 
       <section className="section"><div className="container faq-list"><SectionHeading eyebrow="FAQ" title="Вопросы, которые должны закрываться до созвона" /><details><summary>Работаете ли вы по NDA?</summary><p>[Подтвердить юридический процесс и типовой документ.]</p></details><details><summary>Кто отвечает за подрядчиков и изменения сметы?</summary><p>В рабочей версии страницы нужен конкретный процесс, матрица ответственности и правила change request.</p></details><details><summary>Как оценивается digital и ИБ?</summary><p>После сценария и состава данных; сложные интеграции требуют отдельного технического и партнёрского контура.</p></details></div></section>
       <PageCta title="Запросить procurement pack" text="После подготовки документов этот CTA должен вести к отдельному ответственному контакту и фиксироваться в CRM." />
-    </Shell>
+    </SiteShell>
   );
 }

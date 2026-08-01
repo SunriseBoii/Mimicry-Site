@@ -1,9 +1,10 @@
 import Link from "../../link";
-import { Breadcrumbs, PageCta, Placeholder, SectionHeading, Shell } from "../../components";
+import { SiteShell } from "../../_site/SiteShell";
+import { Breadcrumbs, PageCta, Placeholder, SectionHeading } from "../../components";
 
 export default function WelcomePackPage() {
   return (
-    <Shell>
+    <SiteShell>
       <Breadcrumbs items={[{ label: "Продукты" }, { label: "Welcome-pack" }]} />
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -67,6 +68,6 @@ export default function WelcomePackPage() {
         </div>
       </section>
       <PageCta title="Обсудить welcome-pack или onboarding" text="Для старта нужны аудитория, момент вручения, тираж и срок. Остальной scope соберём после короткого разговора." />
-    </Shell>
+    </SiteShell>
   );
 }
