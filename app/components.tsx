@@ -1,6 +1,7 @@
 import Link from "./link";
 import type { ReactNode } from "react";
 import { solutionLinks } from "./_site/site-data";
+import { ProjectRail } from "./_brand/ProjectRail";
 
 export const solutions = solutionLinks;
 
@@ -60,7 +61,12 @@ export function SolutionNav({ active }: { active?: string }) {
   return (
     <div className="solution-nav" aria-label="Другие решения">
       {solutions.map((item) => (
-        <Link className={active === item.label ? "active" : ""} href={item.href} key={item.href}>
+        <Link
+          aria-current={active === item.label ? "page" : undefined}
+          className={active === item.label ? "active" : ""}
+          href={item.href}
+          key={item.href}
+        >
           <span>{item.code}</span>
           {item.label}
         </Link>
@@ -96,10 +102,20 @@ export function ProcessSteps() {
 
 export function ModuleChips() {
   return (
-    <div className="chip-grid">
-      {modules.map((item) => (
-        <span key={item}>{item}</span>
-      ))}
+    <div className="module-composition">
+      <div className="project-composition-demo">
+        <span className="micro-label">Пример сборки · не фиксированный состав решения</span>
+        <ProjectRail
+          competencies={["content", "design", "digital"]}
+          label="Контент как lead, дизайн и digital как support"
+          lead="content"
+        />
+      </div>
+      <div className="chip-grid">
+        {modules.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -112,7 +128,7 @@ export function PageCta({
   text?: string;
 }) {
   return (
-    <section className="cta-band">
+    <section className="cta-band" data-color-scope="neutral">
       <div className="container cta-grid">
         <div>
           <span className="eyebrow">Следующий шаг</span>

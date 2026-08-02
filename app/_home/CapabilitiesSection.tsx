@@ -5,6 +5,9 @@ import {
   Section,
   TextLink,
 } from "../_design-system/components";
+import { CompetenceMotif } from "../_brand/CompetenceMotif";
+import { ProjectRail } from "../_brand/ProjectRail";
+import type { CompetenceId } from "../_brand/color-system";
 import { assemblySteps, capabilities } from "./home-data";
 import { HomeSectionIntro } from "./HomeSectionIntro";
 import styles from "./home.module.css";
@@ -36,26 +39,26 @@ export function CapabilitiesSection() {
 
       <ul className={styles.capabilityGrid}>
         {capabilities.map((capability) => (
-          <li key={capability.code}>
-            {"href" in capability ? (
-              <article className={styles.capabilityItem}>
+          <li data-competence={capability.id} key={capability.code}>
+            <a className={styles.capabilityItem} href={capability.href}>
+              <span className={styles.capabilityIdentity}>
+                <CompetenceMotif
+                  competence={capability.id as CompetenceId}
+                  label={`Мотив компетенции «${capability.title}»`}
+                />
                 <Label>MODULE / {capability.code}</Label>
-                <Heading as="h3" level={3}>
-                  {capability.title}
-                </Heading>
-                <TextLink directional href={capability.href}>
-                  Смотреть компетенцию
-                </TextLink>
-              </article>
-            ) : (
-              <article className={styles.capabilityItem}>
-                <Label>MODULE / {capability.code}</Label>
-                <Heading as="h3" level={3}>
-                  {capability.title}
-                </Heading>
-                <Copy variant="small">Подключается под задачу проекта</Copy>
-              </article>
-            )}
+              </span>
+              <ProjectRail
+                competencies={[capability.id as CompetenceId]}
+                showLegend={false}
+              />
+              <Heading as="h3" level={3}>
+                {capability.title}
+              </Heading>
+              <span className={styles.capabilityLinkText}>
+                Смотреть компетенцию <span aria-hidden="true">→</span>
+              </span>
+            </a>
           </li>
         ))}
       </ul>

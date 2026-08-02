@@ -1,0 +1,94 @@
+.scope {
+  color: var(--mm-ink);
+}
+
+.hero {
+  border-top: 6px solid var(--mm-accent-border);
+}
+
+.accentTitle {
+  color: var(--mm-accent-text);
+}
+
+.fact {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 2px solid var(--mm-accent-border);
+  background: var(--mm-accent-surface);
+  color: var(--mm-ink);
+}
+
+.fact > span:first-child {
+  color: var(--mm-accent-text);
+}
+
+.fact strong {
+  color: var(--mm-accent-text);
+  font-size: clamp(42px, 6vw, 72px);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.fact p {
+  margin: 0;
+  color: var(--mm-ink-muted);
+  font-size: 14px;
+}
+
+.outputCard {
+  position: relative;
+  border-color: var(--mm-card-border);
+}
+
+.outputCard::before {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 7px;
+  height: calc(100% + 2px);
+  background: var(--mm-accent-border);
+  content: "";
+}
+
+.tintSurface,
+.neutralSurface {
+  padding: 26px;
+  border: 1px solid var(--mm-rule-strong);
+}
+
+.tintSurface {
+  border-color: var(--mm-accent-border);
+  background: var(--mm-accent-surface);
+}
+
+.neutralSurface {
+  background: var(--mm-surface);
+}
+
+.tintSurface :global(.section-heading),
+.neutralSurface :global(.section-heading) {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tintSurface :global(.section-heading) h2,
+.neutralSurface :global(.section-heading) h2 {
+  margin-top: 8px;
+}
+
+.neutralSurface > a {
+  margin-top: 18px;
+}
+
+@media (max-width: 620px) {
+  .hero {
+    border-top-width: 4px;
+  }
+
+  .fact,
+  .tintSurface,
+  .neutralSurface {
+    padding: 20px;
+  }
+}

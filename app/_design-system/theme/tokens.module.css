@@ -1,23 +1,185 @@
 .tokens {
-  /* Color */
-  --ds-color-background: #f4f1e8;
-  --ds-color-surface: #ffffff;
-  --ds-color-text: #151515;
-  --ds-color-text-muted: #5c5a55;
-  --ds-color-border: #c9c4b8;
-  --ds-color-action: #2f41ff;
-  --ds-color-action-hover: #2635d6;
-  --ds-color-action-active: var(--ds-color-action-hover);
-  --ds-color-signal: #d7ff3f;
-  --ds-color-success: #1c6b42;
-  --ds-color-error: #b93831;
-  --ds-color-evidence: #272725;
-  --ds-color-evidence-muted: #d9d4c8;
-  --ds-color-on-action: var(--ds-color-surface);
-  --ds-color-on-text: var(--ds-color-background);
-  --ds-color-focus: var(--ds-color-signal);
-  --ds-color-disabled-surface: var(--ds-color-background);
-  --ds-color-disabled-text: var(--ds-color-text-muted);
+  /* Primitive tokens: balanced mineral neutral base */
+  --mm-neutral-canvas-light: #f4f5f2;
+  --mm-neutral-surface-light: #fffefa;
+  --mm-neutral-surface-muted-light: #ecede9;
+  --mm-neutral-ink-light: #17181a;
+  --mm-neutral-ink-muted-light: #595c61;
+  --mm-neutral-rule-light: #c7cac7;
+  --mm-neutral-rule-strong-light: #72767c;
+  --mm-neutral-canvas-dark: #111214;
+  --mm-neutral-surface-dark: #191a1e;
+  --mm-neutral-surface-muted-dark: #23252a;
+  --mm-neutral-ink-dark: #f4f4ef;
+  --mm-neutral-ink-muted-dark: #b8bbc0;
+  --mm-neutral-rule-dark: #42454b;
+  --mm-neutral-rule-strong-dark: #8a8f97;
+  --mm-neutral-action-hover-light: #303236;
+  --mm-neutral-action-active-light: #45484d;
+  --mm-neutral-action-hover-dark: #ffffff;
+
+  /* Primitive tokens: competence families */
+  --mm-content-50: #f1f5ff;
+  --mm-content-100: #dde8ff;
+  --mm-content-200: #bcd1ff;
+  --mm-content-300: #96b6ff;
+  --mm-content-400: #7099ff;
+  --mm-content-500: #4c7aff;
+  --mm-content-600: #3962dd;
+  --mm-content-700: #2c4eb2;
+  --mm-content-800: #203981;
+  --mm-content-900: #162758;
+  --mm-content-950: #0c1632;
+  --mm-design-50: #f7f3ff;
+  --mm-design-100: #ebe3ff;
+  --mm-design-200: #d9c6ff;
+  --mm-design-300: #c4a3ff;
+  --mm-design-400: #b081fa;
+  --mm-design-500: #9e64ee;
+  --mm-design-600: #814ec6;
+  --mm-design-700: #673d9e;
+  --mm-design-800: #4a2d73;
+  --mm-design-900: #321f4e;
+  --mm-design-950: #1c122c;
+  --mm-event-50: #fff2ed;
+  --mm-event-100: #ffe0d5;
+  --mm-event-200: #ffc0a8;
+  --mm-event-300: #fc9a74;
+  --mm-event-400: #f27541;
+  --mm-event-500: #f86927;
+  --mm-event-600: #b84400;
+  --mm-event-700: #943500;
+  --mm-event-800: #6d2601;
+  --mm-event-900: #4b1a05;
+  --mm-event-950: #2a0f05;
+  --mm-games-50: #f1f8ea;
+  --mm-games-100: #e0eed0;
+  --mm-games-200: #c2dba4;
+  --mm-games-300: #a2c673;
+  --mm-games-400: #83af3e;
+  --mm-games-500: #76a713;
+  --mm-games-600: #567d00;
+  --mm-games-700: #446400;
+  --mm-games-800: #314900;
+  --mm-games-900: #213203;
+  --mm-games-950: #121c05;
+  --mm-video-50: #fff1f6;
+  --mm-video-100: #ffdde9;
+  --mm-video-200: #ffbad4;
+  --mm-video-300: #fb91bc;
+  --mm-video-400: #ef69a4;
+  --mm-video-500: #e34992;
+  --mm-video-600: #b83274;
+  --mm-video-700: #94275c;
+  --mm-video-800: #6b1e43;
+  --mm-video-900: #49152d;
+  --mm-video-950: #2a0d19;
+  --mm-digital-50: #e8f9fb;
+  --mm-digital-100: #cdeff3;
+  --mm-digital-200: #9ddee6;
+  --mm-digital-300: #60cad5;
+  --mm-digital-400: #00b3c2;
+  --mm-digital-500: #009fac;
+  --mm-digital-600: #007e88;
+  --mm-digital-700: #00646d;
+  --mm-digital-800: #004950;
+  --mm-digital-900: #003237;
+  --mm-digital-950: #001d20;
+  --mm-merch-50: #fbf5e7;
+  --mm-merch-100: #f3e7cb;
+  --mm-merch-200: #e9d29f;
+  --mm-merch-300: #dfbc6e;
+  --mm-merch-400: #dbad3c;
+  --mm-merch-500: #d5a200;
+  --mm-merch-600: #a47c00;
+  --mm-merch-700: #7d5e00;
+  --mm-merch-800: #5b4400;
+  --mm-merch-900: #3e2d00;
+  --mm-merch-950: #231903;
+
+  /* Primitive status families stay independent from competences. */
+  --mm-status-success: #1c6b42;
+  --mm-status-error: #b93831;
+  --mm-status-warning: #8c4a00;
+  --mm-status-info: #315b91;
+  --mm-status-success-surface: #eaf5ee;
+  --mm-status-error-surface: #faeeee;
+  --mm-status-warning-surface: #f8efe2;
+  --mm-status-info-surface: #edf3f8;
+  --mm-status-success-surface-dark: #11251a;
+  --mm-status-error-surface-dark: #2b1515;
+  --mm-status-warning-surface-dark: #2a1e0e;
+  --mm-status-info-surface-dark: #14202d;
+
+  /* Semantic tokens: light theme, neutral scope. */
+  --mm-canvas: var(--mm-neutral-canvas-light);
+  --mm-surface: var(--mm-neutral-surface-light);
+  --mm-surface-muted: var(--mm-neutral-surface-muted-light);
+  --mm-ink: var(--mm-neutral-ink-light);
+  --mm-ink-muted: var(--mm-neutral-ink-muted-light);
+  --mm-rule: var(--mm-neutral-rule-light);
+  --mm-rule-strong: var(--mm-neutral-rule-strong-light);
+  --mm-on-core: var(--mm-neutral-ink-light);
+  --mm-on-action: var(--mm-neutral-ink-dark);
+  --mm-accent-core: var(--mm-neutral-ink-light);
+  --mm-accent-text: var(--mm-neutral-ink-light);
+  --mm-accent-surface: var(--mm-neutral-surface-muted-light);
+  --mm-accent-border: var(--mm-neutral-rule-strong-light);
+  --mm-accent-action: var(--mm-neutral-ink-light);
+  --mm-accent-action-hover: var(--mm-neutral-action-hover-light);
+  --mm-accent-action-active: var(--mm-neutral-action-active-light);
+
+  /* Component tokens. */
+  --mm-focus-inner: var(--mm-surface);
+  --mm-focus-outer: var(--mm-ink);
+  --mm-link-color: var(--mm-accent-text);
+  --mm-link-hover: var(--mm-accent-action-hover);
+  --mm-button-neutral-bg: var(--mm-ink);
+  --mm-button-neutral-bg-hover: var(--mm-rule-strong);
+  --mm-button-neutral-bg-active: var(--mm-ink-muted);
+  --mm-button-neutral-text: var(--mm-canvas);
+  --mm-button-neutral-border: var(--mm-ink);
+  --mm-button-accent-bg: var(--mm-accent-action);
+  --mm-button-accent-bg-hover: var(--mm-accent-action-hover);
+  --mm-button-accent-bg-active: var(--mm-accent-action-active);
+  --mm-button-accent-text: var(--mm-on-action);
+  --mm-button-accent-border: var(--mm-accent-action);
+  --mm-control-disabled-bg: var(--mm-surface-muted);
+  --mm-control-disabled-text: var(--mm-ink-muted);
+  --mm-control-disabled-border: var(--mm-rule-strong);
+  --mm-card-bg: var(--mm-surface);
+  --mm-card-border: var(--mm-rule-strong);
+  --mm-card-selected-bg: var(--mm-accent-surface);
+  --mm-card-selected-border: var(--mm-accent-border);
+  --mm-tab-selected-text: var(--mm-accent-text);
+  --mm-tab-selected-border: var(--mm-accent-border);
+  --mm-project-content: var(--mm-content-500);
+  --mm-project-design: var(--mm-design-500);
+  --mm-project-event: var(--mm-event-500);
+  --mm-project-games: var(--mm-games-500);
+  --mm-project-video: var(--mm-video-500);
+  --mm-project-digital: var(--mm-digital-500);
+  --mm-project-merch: var(--mm-merch-500);
+
+  /* Compatibility aliases for the existing design-system components. */
+  --ds-color-background: var(--mm-canvas);
+  --ds-color-surface: var(--mm-surface);
+  --ds-color-text: var(--mm-ink);
+  --ds-color-text-muted: var(--mm-ink-muted);
+  --ds-color-border: var(--mm-rule);
+  --ds-color-action: var(--mm-ink);
+  --ds-color-action-hover: var(--mm-rule-strong);
+  --ds-color-action-active: var(--mm-ink-muted);
+  --ds-color-signal: var(--mm-rule-strong);
+  --ds-color-success: var(--mm-status-success);
+  --ds-color-error: var(--mm-status-error);
+  --ds-color-evidence: var(--mm-ink);
+  --ds-color-evidence-muted: var(--mm-rule);
+  --ds-color-on-action: var(--mm-button-neutral-text);
+  --ds-color-on-text: var(--mm-canvas);
+  --ds-color-focus: var(--mm-focus-outer);
+  --ds-color-disabled-surface: var(--mm-control-disabled-bg);
+  --ds-color-disabled-text: var(--mm-control-disabled-text);
 
   /* Space */
   --ds-space-1: 4px;
@@ -90,6 +252,245 @@
   --ds-duration-reveal: 360ms;
   --ds-duration-route: 480ms;
   --ds-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* A competence scope assigns family primitives to semantic roles. */
+.tokens[data-competence="content"],
+.tokens :global([data-competence="content"]) {
+  --mm-scope-core: var(--mm-content-500);
+  --mm-scope-text-light: var(--mm-content-700);
+  --mm-scope-text-dark: var(--mm-content-300);
+  --mm-scope-surface-light: var(--mm-content-50);
+  --mm-scope-surface-dark: var(--mm-content-950);
+  --mm-scope-border-light: var(--mm-content-600);
+  --mm-scope-border-dark: var(--mm-content-400);
+  --mm-scope-action-light: var(--mm-content-700);
+  --mm-scope-action-light-hover: var(--mm-content-800);
+  --mm-scope-action-light-active: var(--mm-content-900);
+  --mm-scope-action-dark: var(--mm-content-300);
+  --mm-scope-action-dark-hover: var(--mm-content-200);
+  --mm-scope-action-dark-active: var(--mm-content-400);
+}
+
+.tokens[data-competence="design"],
+.tokens :global([data-competence="design"]) {
+  --mm-scope-core: var(--mm-design-500);
+  --mm-scope-text-light: var(--mm-design-700);
+  --mm-scope-text-dark: var(--mm-design-300);
+  --mm-scope-surface-light: var(--mm-design-50);
+  --mm-scope-surface-dark: var(--mm-design-950);
+  --mm-scope-border-light: var(--mm-design-600);
+  --mm-scope-border-dark: var(--mm-design-400);
+  --mm-scope-action-light: var(--mm-design-700);
+  --mm-scope-action-light-hover: var(--mm-design-800);
+  --mm-scope-action-light-active: var(--mm-design-900);
+  --mm-scope-action-dark: var(--mm-design-300);
+  --mm-scope-action-dark-hover: var(--mm-design-200);
+  --mm-scope-action-dark-active: var(--mm-design-400);
+}
+
+.tokens[data-competence="event"],
+.tokens :global([data-competence="event"]) {
+  --mm-scope-core: var(--mm-event-500);
+  --mm-scope-text-light: var(--mm-event-700);
+  --mm-scope-text-dark: var(--mm-event-300);
+  --mm-scope-surface-light: var(--mm-event-50);
+  --mm-scope-surface-dark: var(--mm-event-950);
+  --mm-scope-border-light: var(--mm-event-600);
+  --mm-scope-border-dark: var(--mm-event-400);
+  --mm-scope-action-light: var(--mm-event-700);
+  --mm-scope-action-light-hover: var(--mm-event-800);
+  --mm-scope-action-light-active: var(--mm-event-900);
+  --mm-scope-action-dark: var(--mm-event-300);
+  --mm-scope-action-dark-hover: var(--mm-event-200);
+  --mm-scope-action-dark-active: var(--mm-event-400);
+}
+
+.tokens[data-competence="games"],
+.tokens :global([data-competence="games"]) {
+  --mm-scope-core: var(--mm-games-500);
+  --mm-scope-text-light: var(--mm-games-700);
+  --mm-scope-text-dark: var(--mm-games-300);
+  --mm-scope-surface-light: var(--mm-games-50);
+  --mm-scope-surface-dark: var(--mm-games-950);
+  --mm-scope-border-light: var(--mm-games-600);
+  --mm-scope-border-dark: var(--mm-games-400);
+  --mm-scope-action-light: var(--mm-games-700);
+  --mm-scope-action-light-hover: var(--mm-games-800);
+  --mm-scope-action-light-active: var(--mm-games-900);
+  --mm-scope-action-dark: var(--mm-games-300);
+  --mm-scope-action-dark-hover: var(--mm-games-200);
+  --mm-scope-action-dark-active: var(--mm-games-400);
+}
+
+.tokens[data-competence="video"],
+.tokens :global([data-competence="video"]) {
+  --mm-scope-core: var(--mm-video-500);
+  --mm-scope-text-light: var(--mm-video-700);
+  --mm-scope-text-dark: var(--mm-video-300);
+  --mm-scope-surface-light: var(--mm-video-50);
+  --mm-scope-surface-dark: var(--mm-video-950);
+  --mm-scope-border-light: var(--mm-video-600);
+  --mm-scope-border-dark: var(--mm-video-400);
+  --mm-scope-action-light: var(--mm-video-700);
+  --mm-scope-action-light-hover: var(--mm-video-800);
+  --mm-scope-action-light-active: var(--mm-video-900);
+  --mm-scope-action-dark: var(--mm-video-300);
+  --mm-scope-action-dark-hover: var(--mm-video-200);
+  --mm-scope-action-dark-active: var(--mm-video-400);
+}
+
+.tokens[data-competence="digital"],
+.tokens :global([data-competence="digital"]) {
+  --mm-scope-core: var(--mm-digital-500);
+  --mm-scope-text-light: var(--mm-digital-700);
+  --mm-scope-text-dark: var(--mm-digital-300);
+  --mm-scope-surface-light: var(--mm-digital-50);
+  --mm-scope-surface-dark: var(--mm-digital-950);
+  --mm-scope-border-light: var(--mm-digital-600);
+  --mm-scope-border-dark: var(--mm-digital-400);
+  --mm-scope-action-light: var(--mm-digital-700);
+  --mm-scope-action-light-hover: var(--mm-digital-800);
+  --mm-scope-action-light-active: var(--mm-digital-900);
+  --mm-scope-action-dark: var(--mm-digital-300);
+  --mm-scope-action-dark-hover: var(--mm-digital-200);
+  --mm-scope-action-dark-active: var(--mm-digital-400);
+}
+
+.tokens[data-competence="merch"],
+.tokens :global([data-competence="merch"]) {
+  --mm-scope-core: var(--mm-merch-500);
+  --mm-scope-text-light: var(--mm-merch-700);
+  --mm-scope-text-dark: var(--mm-merch-300);
+  --mm-scope-surface-light: var(--mm-merch-50);
+  --mm-scope-surface-dark: var(--mm-merch-950);
+  --mm-scope-border-light: var(--mm-merch-600);
+  --mm-scope-border-dark: var(--mm-merch-400);
+  --mm-scope-action-light: var(--mm-merch-700);
+  --mm-scope-action-light-hover: var(--mm-merch-800);
+  --mm-scope-action-light-active: var(--mm-merch-900);
+  --mm-scope-action-dark: var(--mm-merch-300);
+  --mm-scope-action-dark-hover: var(--mm-merch-200);
+  --mm-scope-action-dark-active: var(--mm-merch-400);
+}
+
+.tokens[data-competence],
+.tokens :global([data-competence]) {
+  --mm-accent-core: var(--mm-scope-core);
+  --mm-accent-text: var(--mm-scope-text-light);
+  --mm-accent-surface: var(--mm-scope-surface-light);
+  --mm-accent-border: var(--mm-scope-border-light);
+  --mm-accent-action: var(--mm-scope-action-light);
+  --mm-accent-action-hover: var(--mm-scope-action-light-hover);
+  --mm-accent-action-active: var(--mm-scope-action-light-active);
+  --mm-on-action: var(--mm-neutral-ink-dark);
+  --mm-link-color: var(--mm-scope-text-light);
+  --mm-link-hover: var(--mm-scope-action-light-hover);
+  --mm-button-accent-bg: var(--mm-scope-action-light);
+  --mm-button-accent-bg-hover: var(--mm-scope-action-light-hover);
+  --mm-button-accent-bg-active: var(--mm-scope-action-light-active);
+  --mm-button-accent-text: var(--mm-neutral-ink-dark);
+  --mm-button-accent-border: var(--mm-scope-action-light);
+  --mm-card-selected-bg: var(--mm-scope-surface-light);
+  --mm-card-selected-border: var(--mm-scope-border-light);
+  --mm-tab-selected-text: var(--mm-scope-text-light);
+  --mm-tab-selected-border: var(--mm-scope-border-light);
+  --ds-link-color: var(--mm-scope-text-light);
+  --ds-link-hover: var(--mm-scope-action-light-hover);
+}
+
+:global(html[data-theme="dark"]) .tokens,
+.tokens[data-theme="dark"] {
+  color-scheme: dark;
+  --mm-canvas: var(--mm-neutral-canvas-dark);
+  --mm-surface: var(--mm-neutral-surface-dark);
+  --mm-surface-muted: var(--mm-neutral-surface-muted-dark);
+  --mm-ink: var(--mm-neutral-ink-dark);
+  --mm-ink-muted: var(--mm-neutral-ink-muted-dark);
+  --mm-rule: var(--mm-neutral-rule-dark);
+  --mm-rule-strong: var(--mm-neutral-rule-strong-dark);
+  --mm-on-core: var(--mm-neutral-ink-light);
+  --mm-on-action: var(--mm-neutral-ink-light);
+  --mm-accent-core: var(--mm-neutral-ink-dark);
+  --mm-accent-text: var(--mm-neutral-ink-dark);
+  --mm-accent-surface: var(--mm-neutral-surface-muted-dark);
+  --mm-accent-border: var(--mm-neutral-rule-strong-dark);
+  --mm-accent-action: var(--mm-neutral-ink-dark);
+  --mm-accent-action-hover: var(--mm-neutral-action-hover-dark);
+  --mm-accent-action-active: var(--mm-neutral-rule-strong-dark);
+  --mm-focus-inner: var(--mm-canvas);
+  --mm-focus-outer: var(--mm-ink);
+  --mm-button-neutral-text: var(--mm-neutral-ink-light);
+  --mm-status-success-surface: var(--mm-status-success-surface-dark);
+  --mm-status-error-surface: var(--mm-status-error-surface-dark);
+  --mm-status-warning-surface: var(--mm-status-warning-surface-dark);
+  --mm-status-info-surface: var(--mm-status-info-surface-dark);
+}
+
+:global(html[data-theme="dark"]) .tokens[data-competence],
+:global(html[data-theme="dark"]) .tokens :global([data-competence]),
+.tokens[data-theme="dark"][data-competence],
+.tokens :global([data-theme="dark"][data-competence]) {
+  --mm-accent-core: var(--mm-scope-core);
+  --mm-accent-text: var(--mm-scope-text-dark);
+  --mm-accent-surface: var(--mm-scope-surface-dark);
+  --mm-accent-border: var(--mm-scope-border-dark);
+  --mm-accent-action: var(--mm-scope-action-dark);
+  --mm-accent-action-hover: var(--mm-scope-action-dark-hover);
+  --mm-accent-action-active: var(--mm-scope-action-dark-active);
+  --mm-on-action: var(--mm-neutral-ink-light);
+  --mm-link-color: var(--mm-scope-text-dark);
+  --mm-link-hover: var(--mm-scope-action-dark-hover);
+  --mm-button-accent-bg: var(--mm-scope-action-dark);
+  --mm-button-accent-bg-hover: var(--mm-scope-action-dark-hover);
+  --mm-button-accent-bg-active: var(--mm-scope-action-dark-active);
+  --mm-button-accent-text: var(--mm-neutral-ink-light);
+  --mm-button-accent-border: var(--mm-scope-action-dark);
+  --mm-card-selected-bg: var(--mm-scope-surface-dark);
+  --mm-card-selected-border: var(--mm-scope-border-dark);
+  --mm-tab-selected-text: var(--mm-scope-text-dark);
+  --mm-tab-selected-border: var(--mm-scope-border-dark);
+  --ds-link-color: var(--mm-scope-text-dark);
+  --ds-link-hover: var(--mm-scope-action-dark-hover);
+}
+
+/* Local light previews in the color lab override a globally dark document. */
+.tokens[data-theme="light"] {
+  color-scheme: light;
+  --mm-canvas: var(--mm-neutral-canvas-light);
+  --mm-surface: var(--mm-neutral-surface-light);
+  --mm-surface-muted: var(--mm-neutral-surface-muted-light);
+  --mm-ink: var(--mm-neutral-ink-light);
+  --mm-ink-muted: var(--mm-neutral-ink-muted-light);
+  --mm-rule: var(--mm-neutral-rule-light);
+  --mm-rule-strong: var(--mm-neutral-rule-strong-light);
+  --mm-focus-inner: var(--mm-surface);
+  --mm-focus-outer: var(--mm-ink);
+  --mm-button-neutral-text: var(--mm-neutral-ink-dark);
+}
+
+.tokens[data-theme="light"][data-competence],
+.tokens :global([data-theme="light"][data-competence]) {
+  --mm-accent-text: var(--mm-scope-text-light);
+  --mm-accent-surface: var(--mm-scope-surface-light);
+  --mm-accent-border: var(--mm-scope-border-light);
+  --mm-accent-action: var(--mm-scope-action-light);
+  --mm-accent-action-hover: var(--mm-scope-action-light-hover);
+  --mm-accent-action-active: var(--mm-scope-action-light-active);
+  --mm-on-action: var(--mm-neutral-ink-dark);
+  --mm-link-color: var(--mm-scope-text-light);
+  --mm-link-hover: var(--mm-scope-action-light-hover);
+  --mm-button-accent-bg: var(--mm-scope-action-light);
+  --mm-button-accent-bg-hover: var(--mm-scope-action-light-hover);
+  --mm-button-accent-bg-active: var(--mm-scope-action-light-active);
+  --mm-button-accent-text: var(--mm-neutral-ink-dark);
+  --mm-button-accent-border: var(--mm-scope-action-light);
+  --mm-card-selected-bg: var(--mm-scope-surface-light);
+  --mm-card-selected-border: var(--mm-scope-border-light);
+  --mm-tab-selected-text: var(--mm-scope-text-light);
+  --mm-tab-selected-border: var(--mm-scope-border-light);
+  --ds-link-color: var(--mm-scope-text-light);
+  --ds-link-hover: var(--mm-scope-action-light-hover);
 }
 
 @media (min-width: 640px) {

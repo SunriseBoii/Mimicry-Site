@@ -64,6 +64,22 @@
   background: var(--ds-control-primary-active);
 }
 
+.accent {
+  border-color: var(--mm-button-accent-border);
+  background: var(--mm-button-accent-bg);
+  color: var(--mm-button-accent-text);
+}
+
+.accent:hover {
+  border-color: var(--mm-button-accent-bg-hover);
+  background: var(--mm-button-accent-bg-hover);
+}
+
+.accent:active {
+  border-color: var(--mm-button-accent-bg-active);
+  background: var(--mm-button-accent-bg-active);
+}
+
 .secondary {
   border-color: var(--ds-control-secondary-border);
   background: transparent;
@@ -105,6 +121,8 @@
   background: var(--ds-control-disabled-background);
   color: var(--ds-control-disabled-color);
   cursor: not-allowed;
+  border-style: dashed;
+  text-decoration: line-through;
   transform: none;
 }
 
@@ -123,5 +141,16 @@
   .action:hover .arrow,
   .action:focus-visible .arrow {
     transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .action:focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+
+  .action:disabled {
+    color: GrayText;
   }
 }

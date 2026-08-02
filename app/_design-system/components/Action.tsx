@@ -5,7 +5,7 @@ import type {
 } from "react";
 import styles from "./action.module.css";
 
-export type ActionVariant = "primary" | "secondary" | "directional";
+export type ActionVariant = "primary" | "accent" | "secondary" | "directional";
 
 type CommonActionProps = {
   arrow?: boolean;

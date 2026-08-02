@@ -65,3 +65,10 @@
     transform: none;
   }
 }
+
+@media (forced-colors: active) {
+  .link:focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+}

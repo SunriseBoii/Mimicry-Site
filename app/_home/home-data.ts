@@ -107,14 +107,15 @@ export const evidenceItems = [
 ] as const;
 
 export const capabilities = [
-  { code: "01", title: "Контент" },
-  { code: "02", title: "Дизайн" },
-  { code: "03", title: "Event" },
-  { code: "04", title: "Игры и обучение" },
-  { code: "05", title: "Видео" },
-  { code: "06", title: "Digital" },
+  { code: "01", id: "content", title: "Контент", href: "/capabilities/content" },
+  { code: "02", id: "design", title: "Дизайн", href: "/capabilities/design" },
+  { code: "03", id: "event", title: "Event", href: "/capabilities/event" },
+  { code: "04", id: "games", title: "Игры", href: "/capabilities/games" },
+  { code: "05", id: "video", title: "Видео", href: "/capabilities/video" },
+  { code: "06", id: "digital", title: "Digital", href: "/capabilities/digital" },
   {
     code: "07",
+    id: "merch",
     title: "Мерч",
     href: "/capabilities/merch",
   },

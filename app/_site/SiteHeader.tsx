@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "../_design-system/components";
 import { SiteNavigation } from "./SiteNavigation";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./site-shell.module.css";
 
 export function SiteHeader() {
@@ -14,6 +15,7 @@ export function SiteHeader() {
         >
           Mimicry group
         </Link>
+        <ThemeToggle />
         <SiteNavigation />
       </Container>
     </header>

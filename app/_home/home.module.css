@@ -131,6 +131,59 @@
   line-height: var(--ds-type-body-line);
 }
 
+.heroProjectTrajectory {
+  margin-top: var(--ds-space-5);
+  overflow: hidden;
+}
+
+.heroProjectTrajectory > div {
+  width: 88%;
+  animation: trajectory-stop 28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.entryModes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--ds-space-7);
+  border: var(--ds-border-width-default) solid var(--mm-rule-strong);
+}
+
+.entryModes a {
+  display: grid;
+  gap: var(--ds-space-3);
+  min-width: 0;
+  padding: var(--ds-space-5);
+  background: var(--mm-surface);
+  color: var(--mm-ink);
+  text-decoration: none;
+}
+
+.entryModes a:first-child {
+  border-right: var(--ds-border-width-default) solid var(--mm-rule-strong);
+}
+
+.entryModes a:hover {
+  background: var(--mm-surface-muted);
+}
+
+.entryModes a:focus-visible {
+  position: relative;
+  z-index: 2;
+  outline: 2px solid var(--mm-focus-inner);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--mm-focus-outer);
+}
+
+.entryModes strong {
+  font-size: var(--ds-type-heading-3-size);
+  line-height: var(--ds-type-heading-3-line);
+}
+
+.entryModes a > span:last-child {
+  color: var(--mm-ink-muted);
+  font-size: var(--ds-type-small-size);
+}
+
 .situationRoutes {
   margin-top: var(--ds-space-8);
 }
@@ -469,7 +522,7 @@
 
 .capabilityGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   border-top: var(--ds-border-width-default) solid var(--ds-local-border);
@@ -485,19 +538,52 @@
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  gap: var(--ds-space-4);
-  padding: var(--ds-space-5);
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-4) var(--ds-space-5);
   border-right: var(--ds-border-width-default) solid var(--ds-local-border);
   border-bottom: var(--ds-border-width-default) solid var(--ds-local-border);
+  background: var(--mm-surface);
+  color: var(--mm-ink);
+  text-decoration: none;
 }
 
 .capabilityItem h3 {
-  margin-top: var(--ds-space-6);
+  margin-top: var(--ds-space-2);
 }
 
-.capabilityItem p,
-.capabilityItem a {
+.capabilityItem:hover {
+  background: var(--mm-accent-surface);
+}
+
+.capabilityItem:focus-visible {
+  position: relative;
+  z-index: 2;
+  outline: 2px solid var(--mm-focus-inner);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--mm-focus-outer);
+}
+
+.capabilityIdentity {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+.capabilityLinkText {
+  color: var(--mm-accent-text);
+  font-weight: var(--ds-font-weight-label);
+  text-decoration: underline;
+  text-underline-offset: var(--ds-space-1);
+}
+
+.capabilityItem .capabilityLinkText {
   margin-top: auto;
+}
+
+@keyframes trajectory-stop {
+  0% { transform: translateX(0); }
+  55% { transform: translateX(12%); }
+  100% { transform: translateX(8%); }
 }
 
 .productBridge {
@@ -666,6 +752,10 @@
     grid-column: 2;
   }
 
+  .heroProjectTrajectory {
+    grid-column: 2;
+  }
+
   .situationRoutes ol,
   .proofGrid,
   .evidenceGrid,
@@ -799,6 +889,19 @@
     grid-column: 1;
   }
 
+  .heroProjectTrajectory {
+    grid-column: 1;
+  }
+
+  .entryModes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entryModes a:first-child {
+    border-right: 0;
+    border-bottom: var(--ds-border-width-default) solid var(--mm-rule-strong);
+  }
+
   .situationRoutes {
     margin-top: var(--ds-space-7);
   }
@@ -850,8 +953,7 @@
     gap: var(--ds-space-7);
   }
 
-  .solutionGrid h3,
-  .capabilityItem h3 {
+  .solutionGrid h3 {
     margin-top: var(--ds-space-5);
   }
 
@@ -902,6 +1004,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heroProjectTrajectory > div {
+    animation: none;
+    transform: translateX(8%);
+  }
+
   .situationRoutes a,
   .solutionGrid a {
     transition-duration: var(--ds-duration-instant);
