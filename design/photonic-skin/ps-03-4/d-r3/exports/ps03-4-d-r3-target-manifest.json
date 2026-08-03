@@ -1,0 +1,938 @@
+{
+  "stage": "PS-03.4R",
+  "system": "D-R3 / Final Associative Form Lock recovery",
+  "fill_policy": {
+    "canonical_envelope_max": [
+      6.8,
+      3.6,
+      3.2
+    ],
+    "relaxed_per_axis_fill_floor": 0.22,
+    "previous_d_r2_floor": 0.88,
+    "composition_control": "projected footprint, no-crop and silhouette presence >= 0.3 of MASTER hull instead of uniform axis fill"
+  },
+  "basis": {
+    "stable_name": "MASTER",
+    "position_hash": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+    "bounding_box": {
+      "min": [
+        -3.4,
+        -1.8,
+        -1.6
+      ],
+      "max": [
+        3.4,
+        1.8,
+        1.6
+      ],
+      "size": [
+        6.8,
+        3.6,
+        3.2
+      ],
+      "fill": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "mask_area": 0.350319,
+    "coordinate_identity_to_ps03_3": true
+  },
+  "target_count": 12,
+  "target_order": [
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "selected_candidates": {
+    "SINGLE_CONTENT_SEQUENCE": "B",
+    "SINGLE_DESIGN_TORSION": "B",
+    "SINGLE_EVENT_CONVERGENCE": "R3",
+    "SINGLE_GAMES_BRANCH": "R3",
+    "SINGLE_VIDEO_TEMPORAL": "C",
+    "SINGLE_DIGITAL_SIGNAL": "R2",
+    "SINGLE_MERCH_WRAP": "C"
+  },
+  "targets": [
+    {
+      "stable_name": "BRAND_WIDE",
+      "index": 0,
+      "semantic_role": "brand-wide terminal",
+      "association": null,
+      "principle": "calm lateral release with retained asymmetry",
+      "main_risk": "pebble / cushion / generic blob",
+      "risk_level": 1,
+      "coordinate_identity_to_ps03_3": true,
+      "position_hash": "c937128c998ac8511961a6905b9d2c71e63fbdbb0032a8a99dfee626572a3075",
+      "rms_displacement_from_master": 0.144396,
+      "max_displacement_from_master": 0.207583,
+      "bounding_box": {
+        "min": [
+          -3.196,
+          -1.8,
+          -1.44
+        ],
+        "max": [
+          3.196,
+          1.8,
+          1.44
+        ],
+        "size": [
+          6.392,
+          3.6,
+          2.88
+        ],
+        "fill": [
+          0.94,
+          1.0,
+          0.9
+        ]
+      },
+      "signed_volume": 24.555562,
+      "mask_area": 0.349674,
+      "silhouette_metrics": {
+        "projected_width": 0.32203209,
+        "projected_height": 0.18455133,
+        "hull_area": 0.04066086,
+        "centroid": [
+          0.01414756,
+          -0.00204192
+        ],
+        "hull_vertices": 123
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_CONTENT_SEQUENCE",
+      "index": 1,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Editorial Folio",
+      "principle": "two broad page fields with different opening angles around one central hinge valley",
+      "desired_feature": "open editorial spread readable in canonical 3/4, top and side views",
+      "main_risk": "mouth / shell / chair / pillow",
+      "risk_level": 3,
+      "selected_candidate": "B",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 0.96156,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "821dbe7263fc3387230464dd371d8b410ec312006ef8412ce613f2902aa005a4",
+      "rms_displacement_from_master": 0.72037,
+      "max_displacement_from_master": 1.643862,
+      "bounding_box": {
+        "min": [
+          -2.6966,
+          -1.653461,
+          -0.954516
+        ],
+        "max": [
+          2.6966,
+          1.653461,
+          0.954516
+        ],
+        "size": [
+          5.3932,
+          3.306922,
+          1.909032
+        ],
+        "fill": [
+          0.793118,
+          0.91859,
+          0.596573
+        ]
+      },
+      "signed_volume": 20.412625,
+      "mask_area": 0.330589,
+      "silhouette_metrics": {
+        "projected_width": 0.32387113,
+        "projected_height": 0.1934407,
+        "hull_area": 0.04403497,
+        "centroid": [
+          0.00437391,
+          -0.01678644
+        ],
+        "hull_vertices": 209
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_DESIGN_TORSION",
+      "index": 2,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Forming Palette",
+      "principle": "low wide slab with an asymmetric closed side bite, one working zone and one lifted forming corner",
+      "desired_feature": "working palette whose main cue lives in the outer silhouette",
+      "main_risk": "bowl / spoon / leaf / shell / drapery",
+      "risk_level": 4,
+      "selected_candidate": "B",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 0.934094,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "f33e34c673f646b5f2aade0b152aef8b627e1f5aae228b651a5e620445c07ebb",
+      "rms_displacement_from_master": 0.839962,
+      "max_displacement_from_master": 1.713996,
+      "bounding_box": {
+        "min": [
+          -2.8,
+          -1.8,
+          -0.97554
+        ],
+        "max": [
+          2.8,
+          1.8,
+          0.97554
+        ],
+        "size": [
+          5.6,
+          3.6,
+          1.95108
+        ],
+        "fill": [
+          0.823529,
+          1.0,
+          0.609713
+        ]
+      },
+      "signed_volume": 14.241501,
+      "mask_area": 0.33399,
+      "silhouette_metrics": {
+        "projected_width": 0.31862408,
+        "projected_height": 0.2060656,
+        "hull_area": 0.04277716,
+        "centroid": [
+          0.00113082,
+          -0.02703142
+        ],
+        "hull_vertices": 163
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_EVENT_CONVERGENCE",
+      "index": 3,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Gathering Canopy",
+      "principle": "broad low tensile roof planes converging at one clearly offset apex over eave flares",
+      "desired_feature": "sheltering canopy roofline readable in the side risk-control view",
+      "main_risk": "volcano / mushroom / flower / wing / leaf",
+      "risk_level": 4,
+      "selected_candidate": "R3",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 0.928594,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "42ea1c4472af82e6942b9b040de4b0ec94ec18212b792803219ad9e7c7abb074",
+      "rms_displacement_from_master": 0.868635,
+      "max_displacement_from_master": 1.471629,
+      "bounding_box": {
+        "min": [
+          -3.0,
+          -1.8,
+          -1.242189
+        ],
+        "max": [
+          3.0,
+          1.8,
+          0.961345
+        ],
+        "size": [
+          6.0,
+          3.6,
+          2.203535
+        ],
+        "fill": [
+          0.882353,
+          1.0,
+          0.688605
+        ]
+      },
+      "signed_volume": 20.674614,
+      "mask_area": 0.354251,
+      "silhouette_metrics": {
+        "projected_width": 0.36735145,
+        "projected_height": 0.16753652,
+        "hull_area": 0.04252529,
+        "centroid": [
+          0.00451061,
+          -0.03223489
+        ],
+        "hull_vertices": 153
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_GAMES_BRANCH",
+      "index": 4,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Decision Field",
+      "principle": "entry stem into a broad flat board whose leading edge is carved into three route fingers by deep notches, plus two asymmetric lateral exit lobes",
+      "desired_feature": "asymmetric decision field whose three routes alter the outer contour",
+      "main_risk": "controller / horns / crown / leaf / saddle",
+      "risk_level": 5,
+      "selected_candidate": "R3",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 0.827839,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "55a44fca84049d166ebb74e1f6fad116f159efa2c8ac66d2f9bf9b0d4a57134e",
+      "rms_displacement_from_master": 0.827349,
+      "max_displacement_from_master": 1.507617,
+      "bounding_box": {
+        "min": [
+          -2.992462,
+          -1.8,
+          -0.777638
+        ],
+        "max": [
+          2.992462,
+          1.8,
+          0.708202
+        ],
+        "size": [
+          5.984923,
+          3.6,
+          1.485841
+        ],
+        "fill": [
+          0.880136,
+          1.0,
+          0.464325
+        ]
+      },
+      "signed_volume": 15.006814,
+      "mask_area": 0.346639,
+      "silhouette_metrics": {
+        "projected_width": 0.32628113,
+        "projected_height": 0.16474641,
+        "hull_area": 0.03791117,
+        "centroid": [
+          -0.00433667,
+          -0.01101812
+        ],
+        "hull_vertices": 123
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_VIDEO_TEMPORAL",
+      "index": 5,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Frame Sweep",
+      "principle": "tilted soft-rectangular screen plate with four unequal corner zones and one temporal sweep edge",
+      "desired_feature": "curved screen surface facing the canonical camera, depth much smaller than width",
+      "main_risk": "car / capsule / airfoil / eye / soap bar",
+      "risk_level": 4,
+      "selected_candidate": "C",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 1.103257,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "7e54db6f711d8a497cf0d9d48ec40c18165da138aa9b12fdef01a8ba11297acf",
+      "rms_displacement_from_master": 0.933947,
+      "max_displacement_from_master": 1.889618,
+      "bounding_box": {
+        "min": [
+          -3.2,
+          -1.303318,
+          -1.031239
+        ],
+        "max": [
+          3.2,
+          1.303318,
+          1.031239
+        ],
+        "size": [
+          6.4,
+          2.606636,
+          2.062478
+        ],
+        "fill": [
+          0.941176,
+          0.724066,
+          0.644524
+        ]
+      },
+      "signed_volume": 12.152071,
+      "mask_area": 0.322444,
+      "silhouette_metrics": {
+        "projected_width": 0.36053633,
+        "projected_height": 0.19126624,
+        "hull_area": 0.05052403,
+        "centroid": [
+          0.00034969,
+          -0.00758436
+        ],
+        "hull_vertices": 232
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_DIGITAL_SIGNAL",
+      "index": 6,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Routing Substrate",
+      "principle": "directed substrate with one blunt input, two macro Y-branches with a deep convergence notch and two contour nodes",
+      "desired_feature": "macro routing fork readable in top view without small relief",
+      "main_risk": "fish / wing / PCB / server / beak",
+      "risk_level": 4,
+      "selected_candidate": "R2",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 0.770102,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "56760df688cda227370244baff4cc6fa4af16bc5ed1f169d70e17a8656dd24e5",
+      "rms_displacement_from_master": 0.6817,
+      "max_displacement_from_master": 1.433958,
+      "bounding_box": {
+        "min": [
+          -3.16563,
+          -1.658296,
+          -0.652317
+        ],
+        "max": [
+          3.16563,
+          1.759096,
+          0.604057
+        ],
+        "size": [
+          6.331261,
+          3.417393,
+          1.256374
+        ],
+        "fill": [
+          0.931068,
+          0.949276,
+          0.392617
+        ]
+      },
+      "signed_volume": 12.259827,
+      "mask_area": 0.341287,
+      "silhouette_metrics": {
+        "projected_width": 0.35412909,
+        "projected_height": 0.15603887,
+        "hull_area": 0.03526711,
+        "centroid": [
+          -0.00069633,
+          -0.0096244
+        ],
+        "hull_vertices": 151
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_MERCH_WRAP",
+      "index": 7,
+      "semantic_role": "single terminal / object echo level 2 D-R3 recovery",
+      "association": "Wrapped Parcel",
+      "principle": "blocky parcel core with four unequal corners held by one continuous diagonal wrap overlap",
+      "desired_feature": "compact wrapped object; wrap affects at least two contour sides",
+      "main_risk": "capsule / stone / case / coffin / soap",
+      "risk_level": 4,
+      "selected_candidate": "C",
+      "authoring": "macro-first lofted surface (no shared superellipsoid body)",
+      "silhouette_presence_ratio_to_master": 1.026188,
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_thresholds": {
+        "total": 90,
+        "object_readability": 22,
+        "dna": 18,
+        "mobile": 8,
+        "safety": 4
+      },
+      "gate_passed": true,
+      "position_hash": "c89d344290a0509c6afece2b7758ff082ce88be0603414dd3b7177cf0cd927b5",
+      "rms_displacement_from_master": 1.034561,
+      "max_displacement_from_master": 1.638359,
+      "bounding_box": {
+        "min": [
+          -1.95,
+          -1.8,
+          -1.304082
+        ],
+        "max": [
+          1.95,
+          1.756931,
+          1.547799
+        ],
+        "size": [
+          3.9,
+          3.556931,
+          2.851881
+        ],
+        "fill": [
+          0.573529,
+          0.988036,
+          0.891213
+        ]
+      },
+      "signed_volume": 27.207562,
+      "mask_area": 0.325799,
+      "silhouette_metrics": {
+        "projected_width": 0.27094928,
+        "projected_height": 0.21207523,
+        "hull_area": 0.04699467,
+        "centroid": [
+          -0.00179829,
+          -0.00531811
+        ],
+        "hull_vertices": 150
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_FOCUS",
+      "index": 8,
+      "semantic_role": "complex terminal",
+      "association": null,
+      "principle": "multiple fields resolve into one clear diagonal fold",
+      "main_risk": "arrow / lens / eye / tip",
+      "risk_level": 3,
+      "coordinate_identity_to_ps03_3": true,
+      "position_hash": "5c97f9548c204cb7eb6b605d83aaee10f584fcbf0a2455576eda24585617ee6b",
+      "rms_displacement_from_master": 0.116931,
+      "max_displacement_from_master": 0.348431,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.98
+        ]
+      },
+      "signed_volume": 27.232653,
+      "mask_area": 0.331475,
+      "silhouette_metrics": {
+        "projected_width": 0.34483712,
+        "projected_height": 0.19526802,
+        "hull_area": 0.04605284,
+        "centroid": [
+          0.01638312,
+          0.00032458
+        ],
+        "hull_vertices": 124
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_GATHER",
+      "index": 9,
+      "semantic_role": "complex terminal",
+      "association": null,
+      "principle": "broad lateral participation gathers into a shared ridge",
+      "main_risk": "stage / portal / flower / bowl",
+      "risk_level": 2,
+      "coordinate_identity_to_ps03_3": true,
+      "position_hash": "2d336ae0f2c2000e3acbede998122ac1b69fca73ba7c1e65d774e1a6eeb71f62",
+      "rms_displacement_from_master": 0.180907,
+      "max_displacement_from_master": 0.299817,
+      "bounding_box": {
+        "min": [
+          -3.162,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.162,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.324,
+          3.6,
+          3.2
+        ],
+        "fill": [
+          0.93,
+          1.0,
+          1.0
+        ]
+      },
+      "signed_volume": 26.273133,
+      "mask_area": 0.35116,
+      "silhouette_metrics": {
+        "projected_width": 0.31680228,
+        "projected_height": 0.19651207,
+        "hull_area": 0.04164396,
+        "centroid": [
+          0.01427416,
+          -0.0073801
+        ],
+        "hull_vertices": 118
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_DRIVE",
+      "index": 10,
+      "semantic_role": "complex terminal",
+      "association": null,
+      "principle": "blunt forward mass supported by a rear crest",
+      "main_risk": "rocket / automotive / airfoil / helmet",
+      "risk_level": 3,
+      "coordinate_identity_to_ps03_3": true,
+      "position_hash": "5783302ed5c96a852872bbe602bb169f731f08f02d07ee777e6697f0465c427a",
+      "rms_displacement_from_master": 0.126768,
+      "max_displacement_from_master": 0.2209,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.536
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.536
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.072
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.96
+        ]
+      },
+      "signed_volume": 26.237103,
+      "mask_area": 0.347563,
+      "silhouette_metrics": {
+        "projected_width": 0.3437572,
+        "projected_height": 0.19414889,
+        "hull_area": 0.04435622,
+        "centroid": [
+          0.0194739,
+          -0.00424344
+        ],
+        "hull_vertices": 127
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "TRANSITION_TENSION",
+      "index": 11,
+      "semantic_role": "additive transition",
+      "association": null,
+      "principle": "small axis-aligned surface organization and transverse compression",
+      "main_risk": "breathing / organ pulse / sharpened tip",
+      "risk_level": 2,
+      "coordinate_identity_to_ps03_3": true,
+      "position_hash": "a7aee5d071650bebee9be6a0fd1bcfeffd0504ddc151e4b7441edbb9d5bc5fb5",
+      "rms_displacement_from_master": 0.03435,
+      "max_displacement_from_master": 0.094162,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.764,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.764,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.528,
+          3.2
+        ],
+        "fill": [
+          1.0,
+          0.98,
+          1.0
+        ]
+      },
+      "signed_volume": 29.085141,
+      "mask_area": 0.343804,
+      "silhouette_metrics": {
+        "projected_width": 0.34398379,
+        "projected_height": 0.19884828,
+        "hull_area": 0.04631549,
+        "centroid": [
+          0.01674466,
+          -0.00186144
+        ],
+        "hull_vertices": 120
+      },
+      "validation_checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "validation_status": "pass"
+    }
+  ],
+  "acceptance": {
+    "score_threshold": 90,
+    "object_echo_readability_threshold": 22,
+    "mimic_core_dna_threshold": 18,
+    "mobile_threshold": 8,
+    "association_safety_threshold": 4,
+    "all_single_scores_pass": true
+  }
+}

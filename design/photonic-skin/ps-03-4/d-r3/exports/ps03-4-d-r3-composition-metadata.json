@@ -1,0 +1,29 @@
+{
+  "stage": "PS-03.4R",
+  "system": "D-R3 only",
+  "source_policy": "all actor imagery is Blender-rendered; PIL is used only for deterministic layout, labels and crop composition",
+  "unlabelled_order_random": [
+    3,
+    6,
+    0,
+    5,
+    2,
+    4,
+    1
+  ],
+  "visual_gate": "PASS (internal)",
+  "outputs": {
+    "renders/ps03-4_d-r3_unlabelled_lock_board.png": "b7e2aa2df07dd67be957b5d9363612774402d29a96317154c5e1fe4229e35ee3",
+    "renders/ps03-4_d-r3_answer_key_board.png": "be2e01bdaf240cafb5755053a959a0d740dc73d3b3913448494c03ba71fd9b88",
+    "renders/ps03-4_d-r3_system_board.png": "2147fa90d59da9e07c93db77f03832d21a9421dcf933d3ca523049b729f53f86",
+    "renders/ps03-4_d-r3_association_views_board.png": "089dbd44077d2c68ff5661a72f1866f8ce8f3bcf2355673f844a4ae4c0069b69",
+    "renders/ps03-4_d-r3_mobile_390_board.png": "a9dfec62b02f837e93fc862a7ab73c69881c861188467e5f89ea709bdc27f590",
+    "renders/ps03-4_d-r3_photonic_mask_board.png": "94559235bcd32a1214c9aa61bb7959ad5be7fd16d5c387053b36ea042f1da3a3",
+    "renders/ps03-4_d-r3_transition_board.png": "259593158cc1095bb0081609973130441f1580da420175e21db1137b8e3d0c22"
+  },
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "passed": true
+}

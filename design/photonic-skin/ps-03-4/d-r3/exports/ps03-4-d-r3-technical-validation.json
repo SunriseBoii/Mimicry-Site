@@ -1,0 +1,903 @@
+{
+  "stage": "PS-03.4R",
+  "system": "D-R3 / Final Associative Form Lock recovery",
+  "blender_version": "4.5.3 LTS",
+  "authoring_principle": "per-target macro-first lofted surfaces; superellipsoid donor body and stabilize_shared_extrema retired; envelope is max-only with relaxed fill floor 0.22",
+  "common_topology": {
+    "vertex_count": 8322,
+    "face_count": 8480,
+    "triangle_count": 16640,
+    "edge_count": 16800,
+    "connected_components": 1,
+    "loose_vertices": 0,
+    "boundary_edges": 0,
+    "non_manifold_edges": 0,
+    "euler_characteristic": 2,
+    "connectivity_index_hash": "8883e7698bbd3a6aafef5a4a8a4ea5f04ee96d7ad7cc41cee841a94986e1e462",
+    "uv_hash": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683",
+    "mask_face_count": 2526,
+    "mask_face_index_hash": "67c2dd582fcbdb25d9905b98357340c7313292bfb20db6fdd5675e88d1f71c58"
+  },
+  "shape_key_order": [
+    "MASTER",
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "selected_candidates": {
+    "SINGLE_CONTENT_SEQUENCE": "B",
+    "SINGLE_DESIGN_TORSION": "B",
+    "SINGLE_EVENT_CONVERGENCE": "R3",
+    "SINGLE_GAMES_BRANCH": "R3",
+    "SINGLE_VIDEO_TEMPORAL": "C",
+    "SINGLE_DIGITAL_SIGNAL": "R2",
+    "SINGLE_MERCH_WRAP": "C"
+  },
+  "preserved_coordinate_identity": {
+    "MASTER": true,
+    "BRAND_WIDE": true,
+    "COMPLEX_FOCUS": true,
+    "COMPLEX_GATHER": true,
+    "COMPLEX_DRIVE": true,
+    "TRANSITION_TENSION": true
+  },
+  "single_targets_reauthored": {
+    "SINGLE_CONTENT_SEQUENCE": true,
+    "SINGLE_DESIGN_TORSION": true,
+    "SINGLE_EVENT_CONVERGENCE": true,
+    "SINGLE_GAMES_BRANCH": true,
+    "SINGLE_VIDEO_TEMPORAL": true,
+    "SINGLE_DIGITAL_SIGNAL": true,
+    "SINGLE_MERCH_WRAP": true
+  },
+  "endpoint_validation": {
+    "MASTER": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.8,
+            -1.6
+          ],
+          "max": [
+            3.4,
+            1.8,
+            1.6
+          ],
+          "size": [
+            6.8,
+            3.6,
+            3.2
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "signed_volume": 29.030129,
+        "volume_ratio_to_master": 1.0,
+        "minimum_triangle_area": 0.000521428,
+        "minimum_face_area_ratio_to_master": 1.0,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 1.0,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.350319,
+        "rms_displacement_from_master": 0.0,
+        "max_displacement_from_master": 0.0,
+        "position_hash": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+        "silhouette": {
+          "projected_width": 0.34355016,
+          "projected_height": 0.19823041,
+          "hull_area": 0.04579536,
+          "centroid": [
+            0.01622055,
+            -0.00274583
+          ],
+          "hull_vertices": 119
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "BRAND_WIDE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.196,
+            -1.8,
+            -1.44
+          ],
+          "max": [
+            3.196,
+            1.8,
+            1.44
+          ],
+          "size": [
+            6.392,
+            3.6,
+            2.88
+          ],
+          "fill": [
+            0.94,
+            1.0,
+            0.9
+          ]
+        },
+        "signed_volume": 24.555562,
+        "volume_ratio_to_master": 0.845865,
+        "minimum_triangle_area": 0.000476505,
+        "minimum_face_area_ratio_to_master": 0.832833,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.996049,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.349674,
+        "rms_displacement_from_master": 0.144396,
+        "max_displacement_from_master": 0.207583,
+        "position_hash": "c937128c998ac8511961a6905b9d2c71e63fbdbb0032a8a99dfee626572a3075",
+        "silhouette": {
+          "projected_width": 0.32203209,
+          "projected_height": 0.18455133,
+          "hull_area": 0.04066086,
+          "centroid": [
+            0.01414756,
+            -0.00204192
+          ],
+          "hull_vertices": 123
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_CONTENT_SEQUENCE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -2.6966,
+            -1.653461,
+            -0.954516
+          ],
+          "max": [
+            2.6966,
+            1.653461,
+            0.954516
+          ],
+          "size": [
+            5.3932,
+            3.306922,
+            1.909032
+          ],
+          "fill": [
+            0.793118,
+            0.91859,
+            0.596573
+          ]
+        },
+        "signed_volume": 20.412625,
+        "volume_ratio_to_master": 0.703153,
+        "minimum_triangle_area": 0.001025358,
+        "minimum_face_area_ratio_to_master": 0.246179,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.39112,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.330589,
+        "rms_displacement_from_master": 0.72037,
+        "max_displacement_from_master": 1.643862,
+        "position_hash": "821dbe7263fc3387230464dd371d8b410ec312006ef8412ce613f2902aa005a4",
+        "silhouette": {
+          "projected_width": 0.32387113,
+          "projected_height": 0.1934407,
+          "hull_area": 0.04403497,
+          "centroid": [
+            0.00437391,
+            -0.01678644
+          ],
+          "hull_vertices": 209
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -2.8,
+            -1.8,
+            -0.97554
+          ],
+          "max": [
+            2.8,
+            1.8,
+            0.97554
+          ],
+          "size": [
+            5.6,
+            3.6,
+            1.95108
+          ],
+          "fill": [
+            0.823529,
+            1.0,
+            0.609713
+          ]
+        },
+        "signed_volume": 14.241501,
+        "volume_ratio_to_master": 0.490577,
+        "minimum_triangle_area": 0.000718127,
+        "minimum_face_area_ratio_to_master": 0.216255,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.188655,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.33399,
+        "rms_displacement_from_master": 0.839962,
+        "max_displacement_from_master": 1.713996,
+        "position_hash": "f33e34c673f646b5f2aade0b152aef8b627e1f5aae228b651a5e620445c07ebb",
+        "silhouette": {
+          "projected_width": 0.31862408,
+          "projected_height": 0.2060656,
+          "hull_area": 0.04277716,
+          "centroid": [
+            0.00113082,
+            -0.02703142
+          ],
+          "hull_vertices": 163
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.0,
+            -1.8,
+            -1.242189
+          ],
+          "max": [
+            3.0,
+            1.8,
+            0.961345
+          ],
+          "size": [
+            6.0,
+            3.6,
+            2.203535
+          ],
+          "fill": [
+            0.882353,
+            1.0,
+            0.688605
+          ]
+        },
+        "signed_volume": 20.674614,
+        "volume_ratio_to_master": 0.712178,
+        "minimum_triangle_area": 0.000686054,
+        "minimum_face_area_ratio_to_master": 0.227099,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.476582,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.354251,
+        "rms_displacement_from_master": 0.868635,
+        "max_displacement_from_master": 1.471629,
+        "position_hash": "42ea1c4472af82e6942b9b040de4b0ec94ec18212b792803219ad9e7c7abb074",
+        "silhouette": {
+          "projected_width": 0.36735145,
+          "projected_height": 0.16753652,
+          "hull_area": 0.04252529,
+          "centroid": [
+            0.00451061,
+            -0.03223489
+          ],
+          "hull_vertices": 153
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -2.992462,
+            -1.8,
+            -0.777638
+          ],
+          "max": [
+            2.992462,
+            1.8,
+            0.708202
+          ],
+          "size": [
+            5.984923,
+            3.6,
+            1.485841
+          ],
+          "fill": [
+            0.880136,
+            1.0,
+            0.464325
+          ]
+        },
+        "signed_volume": 15.006814,
+        "volume_ratio_to_master": 0.516939,
+        "minimum_triangle_area": 0.000522676,
+        "minimum_face_area_ratio_to_master": 0.213984,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.062094,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.346639,
+        "rms_displacement_from_master": 0.827349,
+        "max_displacement_from_master": 1.507617,
+        "position_hash": "55a44fca84049d166ebb74e1f6fad116f159efa2c8ac66d2f9bf9b0d4a57134e",
+        "silhouette": {
+          "projected_width": 0.32628113,
+          "projected_height": 0.16474641,
+          "hull_area": 0.03791117,
+          "centroid": [
+            -0.00433667,
+            -0.01101812
+          ],
+          "hull_vertices": 123
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.2,
+            -1.303318,
+            -1.031239
+          ],
+          "max": [
+            3.2,
+            1.303318,
+            1.031239
+          ],
+          "size": [
+            6.4,
+            2.606636,
+            2.062478
+          ],
+          "fill": [
+            0.941176,
+            0.724066,
+            0.644524
+          ]
+        },
+        "signed_volume": 12.152071,
+        "volume_ratio_to_master": 0.418602,
+        "minimum_triangle_area": 0.000819478,
+        "minimum_face_area_ratio_to_master": 0.219343,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.053485,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.322444,
+        "rms_displacement_from_master": 0.933947,
+        "max_displacement_from_master": 1.889618,
+        "position_hash": "7e54db6f711d8a497cf0d9d48ec40c18165da138aa9b12fdef01a8ba11297acf",
+        "silhouette": {
+          "projected_width": 0.36053633,
+          "projected_height": 0.19126624,
+          "hull_area": 0.05052403,
+          "centroid": [
+            0.00034969,
+            -0.00758436
+          ],
+          "hull_vertices": 232
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.16563,
+            -1.658296,
+            -0.652317
+          ],
+          "max": [
+            3.16563,
+            1.759096,
+            0.604057
+          ],
+          "size": [
+            6.331261,
+            3.417393,
+            1.256374
+          ],
+          "fill": [
+            0.931068,
+            0.949276,
+            0.392617
+          ]
+        },
+        "signed_volume": 12.259827,
+        "volume_ratio_to_master": 0.422314,
+        "minimum_triangle_area": 0.000745392,
+        "minimum_face_area_ratio_to_master": 0.256133,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.329095,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.341287,
+        "rms_displacement_from_master": 0.6817,
+        "max_displacement_from_master": 1.433958,
+        "position_hash": "56760df688cda227370244baff4cc6fa4af16bc5ed1f169d70e17a8656dd24e5",
+        "silhouette": {
+          "projected_width": 0.35412909,
+          "projected_height": 0.15603887,
+          "hull_area": 0.03526711,
+          "centroid": [
+            -0.00069633,
+            -0.0096244
+          ],
+          "hull_vertices": 151
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "SINGLE_MERCH_WRAP": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -1.95,
+            -1.8,
+            -1.304082
+          ],
+          "max": [
+            1.95,
+            1.756931,
+            1.547799
+          ],
+          "size": [
+            3.9,
+            3.556931,
+            2.851881
+          ],
+          "fill": [
+            0.573529,
+            0.988036,
+            0.891213
+          ]
+        },
+        "signed_volume": 27.207562,
+        "volume_ratio_to_master": 0.937218,
+        "minimum_triangle_area": 0.000919625,
+        "minimum_face_area_ratio_to_master": 0.274885,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.297894,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.325799,
+        "rms_displacement_from_master": 1.034561,
+        "max_displacement_from_master": 1.638359,
+        "position_hash": "c89d344290a0509c6afece2b7758ff082ce88be0603414dd3b7177cf0cd927b5",
+        "silhouette": {
+          "projected_width": 0.27094928,
+          "projected_height": 0.21207523,
+          "hull_area": 0.04699467,
+          "centroid": [
+            -0.00179829,
+            -0.00531811
+          ],
+          "hull_vertices": 150
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true,
+        "silhouette_presence": true
+      },
+      "passed": true
+    },
+    "COMPLEX_FOCUS": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.602,
+            -1.568
+          ],
+          "max": [
+            3.4,
+            1.602,
+            1.568
+          ],
+          "size": [
+            6.8,
+            3.204,
+            3.136
+          ],
+          "fill": [
+            1.0,
+            0.89,
+            0.98
+          ]
+        },
+        "signed_volume": 27.232653,
+        "volume_ratio_to_master": 0.938082,
+        "minimum_triangle_area": 0.000445589,
+        "minimum_face_area_ratio_to_master": 0.603394,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.956958,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.331475,
+        "rms_displacement_from_master": 0.116931,
+        "max_displacement_from_master": 0.348431,
+        "position_hash": "5c97f9548c204cb7eb6b605d83aaee10f584fcbf0a2455576eda24585617ee6b",
+        "silhouette": {
+          "projected_width": 0.34483712,
+          "projected_height": 0.19526802,
+          "hull_area": 0.04605284,
+          "centroid": [
+            0.01638312,
+            0.00032458
+          ],
+          "hull_vertices": 124
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "COMPLEX_GATHER": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.162,
+            -1.8,
+            -1.6
+          ],
+          "max": [
+            3.162,
+            1.8,
+            1.6
+          ],
+          "size": [
+            6.324,
+            3.6,
+            3.2
+          ],
+          "fill": [
+            0.93,
+            1.0,
+            1.0
+          ]
+        },
+        "signed_volume": 26.273133,
+        "volume_ratio_to_master": 0.90503,
+        "minimum_triangle_area": 0.000460093,
+        "minimum_face_area_ratio_to_master": 0.841266,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.993602,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.35116,
+        "rms_displacement_from_master": 0.180907,
+        "max_displacement_from_master": 0.299817,
+        "position_hash": "2d336ae0f2c2000e3acbede998122ac1b69fca73ba7c1e65d774e1a6eeb71f62",
+        "silhouette": {
+          "projected_width": 0.31680228,
+          "projected_height": 0.19651207,
+          "hull_area": 0.04164396,
+          "centroid": [
+            0.01427416,
+            -0.0073801
+          ],
+          "hull_vertices": 118
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "COMPLEX_DRIVE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.602,
+            -1.536
+          ],
+          "max": [
+            3.4,
+            1.602,
+            1.536
+          ],
+          "size": [
+            6.8,
+            3.204,
+            3.072
+          ],
+          "fill": [
+            1.0,
+            0.89,
+            0.96
+          ]
+        },
+        "signed_volume": 26.237103,
+        "volume_ratio_to_master": 0.903789,
+        "minimum_triangle_area": 0.00047137,
+        "minimum_face_area_ratio_to_master": 0.843739,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.992176,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.347563,
+        "rms_displacement_from_master": 0.126768,
+        "max_displacement_from_master": 0.2209,
+        "position_hash": "5783302ed5c96a852872bbe602bb169f731f08f02d07ee777e6697f0465c427a",
+        "silhouette": {
+          "projected_width": 0.3437572,
+          "projected_height": 0.19414889,
+          "hull_area": 0.04435622,
+          "centroid": [
+            0.0194739,
+            -0.00424344
+          ],
+          "hull_vertices": 127
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "TRANSITION_TENSION": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.764,
+            -1.6
+          ],
+          "max": [
+            3.4,
+            1.764,
+            1.6
+          ],
+          "size": [
+            6.8,
+            3.528,
+            3.2
+          ],
+          "fill": [
+            1.0,
+            0.98,
+            1.0
+          ]
+        },
+        "signed_volume": 29.085141,
+        "volume_ratio_to_master": 1.001895,
+        "minimum_triangle_area": 0.00052341,
+        "minimum_face_area_ratio_to_master": 0.925751,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.998534,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.343804,
+        "rms_displacement_from_master": 0.03435,
+        "max_displacement_from_master": 0.094162,
+        "position_hash": "a7aee5d071650bebee9be6a0fd1bcfeffd0504ddc151e4b7441edbb9d5bc5fb5",
+        "silhouette": {
+          "projected_width": 0.34398379,
+          "projected_height": 0.19884828,
+          "hull_area": 0.04631549,
+          "centroid": [
+            0.01674466,
+            -0.00186144
+          ],
+          "hull_vertices": 120
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    }
+  },
+  "mask_area_stats": {
+    "master": 0.350319,
+    "terminal_min": 0.322444,
+    "terminal_max": 0.354251,
+    "terminal_mean": 0.340432,
+    "fixed_face_count": 2526,
+    "face_index_hash": "67c2dd582fcbdb25d9905b98357340c7313292bfb20db6fdd5675e88d1f71c58"
+  },
+  "common_checks": {
+    "vertex_count": true,
+    "face_count": true,
+    "triangle_count": true,
+    "edge_count": true,
+    "connectivity_hash": true,
+    "uv_hash": true,
+    "mask_face_count": true,
+    "mask_hash": true,
+    "one_component": true,
+    "manifold": true,
+    "master_position_hash": true,
+    "all_endpoints": true,
+    "preserved_coordinate_identity": true,
+    "all_singles_reauthored": true,
+    "shape_key_order": true,
+    "mask_terminal_range": true
+  },
+  "visual_gate_passed": true,
+  "production_lock_status": "LOCKED (pending final user confirmation)",
+  "passed": true,
+  "outputs": {
+    "workbench_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\d-r3\\blender\\ps-03-4-d-r3-authoring-workbench.blend",
+    "production_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\d-r3\\blender\\photonic-skin-c-r1-d-r3-final-morph-system.blend",
+    "glb": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\d-r3\\exports\\photonic-skin-c-r1-d-r3-final-morph-system.glb",
+    "workbench_sha256": "ebe9c4f29125d0e1a049bcfb4a6cd7e3dd6133cc9b88d63f0cd23da3452bfa16",
+    "production_blend_sha256": "897103236df760ee9173a41db8d9c7bb6c056ba16a33cf36cf48c06febb812e5",
+    "glb_sha256": "09f6adcca591e98114d1e3027b0cccacc8cd8837e94190a0a46a291af128b6d4",
+    "glb_size_bytes": 3112068
+  },
+  "glb_reimport_passed": true
+}

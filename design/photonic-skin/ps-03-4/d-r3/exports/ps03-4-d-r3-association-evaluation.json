@@ -1,0 +1,172 @@
+{
+  "stage": "PS-03.4R",
+  "system": "D-R3 / Final Associative Form Lock recovery",
+  "direction": "D only",
+  "candidate_state_count": 29,
+  "candidate_variants_per_single": "3 base each (21) + refinement variants: EVENT R1-R3, GAMES R1-R3, DIGITAL R1-R2",
+  "refinement_cycles": 5,
+  "authoring_change": "shared superellipsoid_point donor body and stabilize_shared_extrema retired; each SINGLE is an independent macro-first lofted surface with target-specific plan, cross-section and height field; uniform >=0.88 per-axis fill normalization replaced by relaxed floor 0.22 with silhouette-presence control",
+  "gate_thresholds": {
+    "total_100": 90,
+    "object_readability_25": 22,
+    "mimic_core_dna_20": 18,
+    "mobile_96px_10": 8,
+    "association_safety_5": 4
+  },
+  "unlabelled_gate": {
+    "board": "renders/ps03-4_d-r3_unlabelled_lock_board.png",
+    "answer_key": "renders/ps03-4_d-r3_answer_key_board.png",
+    "verdict": "PASSED (internal)",
+    "reason": "all seven SINGLE states expose distinct macro-grammar in neutral canonical render, top/side risk view and 96 px silhouette; author-run review is not fully blind, final user confirmation required",
+    "reviewer_caveat": "the author knows the target mapping; this internal gate cannot count as a blind test"
+  },
+  "targets": {
+    "SINGLE_CONTENT_SEQUENCE": {
+      "association": "Editorial Folio",
+      "selected_candidate": "B",
+      "principle": "two broad page fields with different opening angles around one central hinge valley",
+      "main_risk": "mouth / shell / chair / pillow",
+      "risk_level": 3,
+      "first_impression_neutral_render": "open editorial spread: two page fields at different opening angles around a central hinge valley",
+      "eliminated_wrong_associations": "no longer a capsule/pillow; hinge valley and unequal page angles survive 96 px",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_passed": true
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "association": "Forming Palette",
+      "selected_candidate": "B",
+      "principle": "low wide slab with an asymmetric closed side bite, one working zone and one lifted forming corner",
+      "main_risk": "bowl / spoon / leaf / shell / drapery",
+      "risk_level": 4,
+      "first_impression_neutral_render": "low working slab with an asymmetric side bite and one lifted forming corner",
+      "eliminated_wrong_associations": "not a bowl/spoon/leaf; the side bite lives in the outer silhouette",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_passed": true
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "association": "Gathering Canopy",
+      "selected_candidate": "R3",
+      "principle": "broad low tensile roof planes converging at one clearly offset apex over eave flares",
+      "main_risk": "volcano / mushroom / flower / wing / leaf",
+      "risk_level": 4,
+      "first_impression_neutral_render": "wide low sheltering roof with one clearly offset apex and eave flares",
+      "eliminated_wrong_associations": "no longer a sail/dune/leaf; planar tent faces and offset apex read as roof",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_passed": true
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "association": "Decision Field",
+      "selected_candidate": "R3",
+      "principle": "entry stem into a broad flat board whose leading edge is carved into three route fingers by deep notches, plus two asymmetric lateral exit lobes",
+      "main_risk": "controller / horns / crown / leaf / saddle",
+      "risk_level": 5,
+      "first_impression_neutral_render": "flat decision board: entry stem into a fan whose leading edge splits into three route fingers",
+      "eliminated_wrong_associations": "no longer a leaf/oblong mass; the three routes carve the outer contour",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_passed": true
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "association": "Frame Sweep",
+      "selected_candidate": "C",
+      "principle": "tilted soft-rectangular screen plate with four unequal corner zones and one temporal sweep edge",
+      "main_risk": "car / capsule / airfoil / eye / soap bar",
+      "risk_level": 4,
+      "first_impression_neutral_render": "tilted curved screen plate with one temporal sweep edge, depth far smaller than width",
+      "eliminated_wrong_associations": "not a capsule/soap bar; the screen face dominates the canonical view",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_passed": true
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "association": "Routing Substrate",
+      "selected_candidate": "R2",
+      "principle": "directed substrate with one blunt input, two macro Y-branches with a deep convergence notch and two contour nodes",
+      "main_risk": "fish / wing / PCB / server / beak",
+      "risk_level": 4,
+      "first_impression_neutral_render": "directed routing substrate with a blunt input and a deep macro Y-fork convergence",
+      "eliminated_wrong_associations": "no longer a fish/beak; blunt parallel branches with convergence notch",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 18,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 90,
+      "gate_passed": true
+    },
+    "SINGLE_MERCH_WRAP": {
+      "association": "Wrapped Parcel",
+      "selected_candidate": "C",
+      "principle": "blocky parcel core with four unequal corners held by one continuous diagonal wrap overlap",
+      "main_risk": "capsule / stone / case / coffin / soap",
+      "risk_level": 4,
+      "first_impression_neutral_render": "compact blocky parcel with four unequal corners held by one diagonal wrap overlap",
+      "eliminated_wrong_associations": "not a stone/capsule; blocky corner zones plus wrap overlap read as parcel",
+      "score_components": {
+        "object_echo_readability_25": 23,
+        "mimic_core_dna_20": 19,
+        "distinctness_15": 14,
+        "direct_morph_quality_15": 14,
+        "premium_b2b_10": 9,
+        "mobile_silhouette_10": 8,
+        "association_safety_5": 4
+      },
+      "score_total": 91,
+      "gate_passed": true
+    }
+  },
+  "content_digital_games_distinction": {
+    "geometry": "CONTENT opens as a hinged two-field folio; DIGITAL narrows into one blunt input with a macro Y-fork; GAMES fans from one entry stem into a flat board with three notch-separated route fingers",
+    "unlabelled_96px": "three different macro-grammars: hinged fields vs forked substrate vs notched fan board; closest residual pair GAMES/DIGITAL separates via fan-vs-fork plan",
+    "passed": true
+  },
+  "production_status": "LOCKED (pending final user confirmation)",
+  "passed": true
+}

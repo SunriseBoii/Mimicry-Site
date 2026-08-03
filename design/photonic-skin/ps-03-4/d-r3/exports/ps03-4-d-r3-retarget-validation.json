@@ -1,0 +1,4718 @@
+{
+  "stage": "PS-03.4R",
+  "chain_count": 4,
+  "switch_progress_values": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "chains": [
+    {
+      "states": [
+        "SINGLE_CONTENT_SEQUENCE",
+        "SINGLE_DESIGN_TORSION",
+        "SINGLE_EVENT_CONVERGENCE"
+      ],
+      "switches": [
+        {
+          "first_transition_progress": 0.25,
+          "source_snapshot_weights": {
+            "SINGLE_CONTENT_SEQUENCE": 0.75,
+            "SINGLE_DESIGN_TORSION": 0.25
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0417435,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.4449,
+                3.328373,
+                1.803953
+              ],
+              "bbox_fill": [
+                0.800721,
+                0.924548,
+                0.563735
+              ],
+              "signed_volume": 18.87132,
+              "mask_area": 0.327836,
+              "minimum_triangle_area": 0.001015943,
+              "minimum_normal_dot": 0.479431,
+              "minimum_face_area_ratio": 0.246332,
+              "self_intersections": 0,
+              "silhouette_area": 0.04316488,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.50041,
+                3.342405,
+                1.734977
+              ],
+              "bbox_fill": [
+                0.808884,
+                0.928446,
+                0.54218
+              ],
+              "signed_volume": 19.099095,
+              "mask_area": 0.326044,
+              "minimum_triangle_area": 0.001053125,
+              "minimum_normal_dot": 0.516899,
+              "minimum_face_area_ratio": 0.253539,
+              "self_intersections": 0,
+              "silhouette_area": 0.04270711,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.55592,
+                3.36508,
+                1.666074
+              ],
+              "bbox_fill": [
+                0.817047,
+                0.934744,
+                0.520648
+              ],
+              "signed_volume": 19.317079,
+              "mask_area": 0.325398,
+              "minimum_triangle_area": 0.00109113,
+              "minimum_normal_dot": 0.523799,
+              "minimum_face_area_ratio": 0.256307,
+              "self_intersections": 0,
+              "silhouette_area": 0.04226716,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                5.61143,
+                3.393134,
+                1.624074
+              ],
+              "bbox_fill": [
+                0.82521,
+                0.942537,
+                0.507523
+              ],
+              "signed_volume": 19.524987,
+              "mask_area": 0.325896,
+              "minimum_triangle_area": 0.001090125,
+              "minimum_normal_dot": 0.530411,
+              "minimum_face_area_ratio": 0.255846,
+              "self_intersections": 0,
+              "silhouette_area": 0.04186564,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                5.66694,
+                3.422687,
+                1.621438
+              ],
+              "bbox_fill": [
+                0.833374,
+                0.950746,
+                0.506699
+              ],
+              "signed_volume": 19.722537,
+              "mask_area": 0.327496,
+              "minimum_triangle_area": 0.001086464,
+              "minimum_normal_dot": 0.536751,
+              "minimum_face_area_ratio": 0.253663,
+              "self_intersections": 0,
+              "silhouette_area": 0.04149361,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                5.72245,
+                3.452239,
+                1.697575
+              ],
+              "bbox_fill": [
+                0.841537,
+                0.958955,
+                0.530492
+              ],
+              "signed_volume": 19.909448,
+              "mask_area": 0.330121,
+              "minimum_triangle_area": 0.001071068,
+              "minimum_normal_dot": 0.542835,
+              "minimum_face_area_ratio": 0.251659,
+              "self_intersections": 0,
+              "silhouette_area": 0.04116353,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                5.77796,
+                3.481791,
+                1.788957
+              ],
+              "bbox_fill": [
+                0.8497,
+                0.967164,
+                0.559049
+              ],
+              "signed_volume": 20.085447,
+              "mask_area": 0.333661,
+              "minimum_triangle_area": 0.001054765,
+              "minimum_normal_dot": 0.548679,
+              "minimum_face_area_ratio": 0.24983,
+              "self_intersections": 0,
+              "silhouette_area": 0.04088124,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                5.83347,
+                3.511343,
+                1.886712
+              ],
+              "bbox_fill": [
+                0.857863,
+                0.975373,
+                0.589598
+              ],
+              "signed_volume": 20.25024,
+              "mask_area": 0.337985,
+              "minimum_triangle_area": 0.000965001,
+              "minimum_normal_dot": 0.554297,
+              "minimum_face_area_ratio": 0.247579,
+              "self_intersections": 0,
+              "silhouette_area": 0.04067782,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                5.88898,
+                3.540895,
+                1.99232
+              ],
+              "bbox_fill": [
+                0.866026,
+                0.983582,
+                0.6226
+              ],
+              "signed_volume": 20.403551,
+              "mask_area": 0.342952,
+              "minimum_triangle_area": 0.000864944,
+              "minimum_normal_dot": 0.559703,
+              "minimum_face_area_ratio": 0.245177,
+              "self_intersections": 0,
+              "silhouette_area": 0.04086161,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                5.94449,
+                3.570448,
+                2.097927
+              ],
+              "bbox_fill": [
+                0.87419,
+                0.991791,
+                0.655602
+              ],
+              "signed_volume": 20.545108,
+              "mask_area": 0.34842,
+              "minimum_triangle_area": 0.000770543,
+              "minimum_normal_dot": 0.526267,
+              "minimum_face_area_ratio": 0.242913,
+              "self_intersections": 0,
+              "silhouette_area": 0.04152518,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.0,
+                3.6,
+                2.203535
+              ],
+              "bbox_fill": [
+                0.882353,
+                1.0,
+                0.688605
+              ],
+              "signed_volume": 20.674614,
+              "mask_area": 0.354251,
+              "minimum_triangle_area": 0.000686054,
+              "minimum_normal_dot": 0.476582,
+              "minimum_face_area_ratio": 0.227099,
+              "self_intersections": 0,
+              "silhouette_area": 0.04252529,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0417435
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.5,
+          "source_snapshot_weights": {
+            "SINGLE_CONTENT_SEQUENCE": 0.5,
+            "SINGLE_DESIGN_TORSION": 0.5
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0386376,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.4966,
+                3.402758,
+                1.839998
+              ],
+              "bbox_fill": [
+                0.808324,
+                0.94521,
+                0.574999
+              ],
+              "signed_volume": 17.33053,
+              "mask_area": 0.327388,
+              "minimum_triangle_area": 0.000974126,
+              "minimum_normal_dot": 0.466442,
+              "minimum_face_area_ratio": 0.238393,
+              "self_intersections": 0,
+              "silhouette_area": 0.04275592,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.54694,
+                3.38808,
+                1.767796
+              ],
+              "bbox_fill": [
+                0.815726,
+                0.941133,
+                0.552436
+              ],
+              "signed_volume": 17.68762,
+              "mask_area": 0.325654,
+              "minimum_triangle_area": 0.00102814,
+              "minimum_normal_dot": 0.501535,
+              "minimum_face_area_ratio": 0.251988,
+              "self_intersections": 0,
+              "silhouette_area": 0.04232399,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.59728,
+                3.40125,
+                1.69576
+              ],
+              "bbox_fill": [
+                0.823129,
+                0.944792,
+                0.529925
+              ],
+              "signed_volume": 18.0402,
+              "mask_area": 0.325098,
+              "minimum_triangle_area": 0.001082452,
+              "minimum_normal_dot": 0.521764,
+              "minimum_face_area_ratio": 0.26268,
+              "self_intersections": 0,
+              "silhouette_area": 0.04193244,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                5.64762,
+                3.423154,
+                1.623738
+              ],
+              "bbox_fill": [
+                0.830532,
+                0.950876,
+                0.507418
+              ],
+              "signed_volume": 18.388069,
+              "mask_area": 0.325697,
+              "minimum_triangle_area": 0.001085368,
+              "minimum_normal_dot": 0.528916,
+              "minimum_face_area_ratio": 0.261019,
+              "self_intersections": 0,
+              "silhouette_area": 0.04157006,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                5.69796,
+                3.448417,
+                1.551717
+              ],
+              "bbox_fill": [
+                0.837935,
+                0.957894,
+                0.484911
+              ],
+              "signed_volume": 18.731028,
+              "mask_area": 0.327396,
+              "minimum_triangle_area": 0.00107242,
+              "minimum_normal_dot": 0.535696,
+              "minimum_face_area_ratio": 0.25729,
+              "self_intersections": 0,
+              "silhouette_area": 0.04124266,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                5.7483,
+                3.473681,
+                1.640688
+              ],
+              "bbox_fill": [
+                0.845338,
+                0.964911,
+                0.512715
+              ],
+              "signed_volume": 19.068886,
+              "mask_area": 0.330105,
+              "minimum_triangle_area": 0.001062332,
+              "minimum_normal_dot": 0.54213,
+              "minimum_face_area_ratio": 0.254027,
+              "self_intersections": 0,
+              "silhouette_area": 0.04094704,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                5.79864,
+                3.498945,
+                1.747635
+              ],
+              "bbox_fill": [
+                0.852741,
+                0.971929,
+                0.546136
+              ],
+              "signed_volume": 19.401432,
+              "mask_area": 0.333707,
+              "minimum_triangle_area": 0.001050817,
+              "minimum_normal_dot": 0.548243,
+              "minimum_face_area_ratio": 0.251219,
+              "self_intersections": 0,
+              "silhouette_area": 0.04069856,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                5.84898,
+                3.524209,
+                1.861555
+              ],
+              "bbox_fill": [
+                0.860144,
+                0.978947,
+                0.581736
+              ],
+              "signed_volume": 19.72848,
+              "mask_area": 0.338066,
+              "minimum_triangle_area": 0.000954241,
+              "minimum_normal_dot": 0.554058,
+              "minimum_face_area_ratio": 0.248849,
+              "self_intersections": 0,
+              "silhouette_area": 0.04049902,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                5.89932,
+                3.549472,
+                1.975548
+              ],
+              "bbox_fill": [
+                0.867547,
+                0.985965,
+                0.617359
+              ],
+              "signed_volume": 20.049828,
+              "mask_area": 0.343038,
+              "minimum_triangle_area": 0.000856548,
+              "minimum_normal_dot": 0.559597,
+              "minimum_face_area_ratio": 0.246168,
+              "self_intersections": 0,
+              "silhouette_area": 0.04065553,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                5.94966,
+                3.574736,
+                2.089541
+              ],
+              "bbox_fill": [
+                0.87495,
+                0.992982,
+                0.652982
+              ],
+              "signed_volume": 20.365267,
+              "mask_area": 0.348478,
+              "minimum_triangle_area": 0.000765711,
+              "minimum_normal_dot": 0.522798,
+              "minimum_face_area_ratio": 0.243293,
+              "self_intersections": 0,
+              "silhouette_area": 0.04140334,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.0,
+                3.6,
+                2.203535
+              ],
+              "bbox_fill": [
+                0.882353,
+                1.0,
+                0.688605
+              ],
+              "signed_volume": 20.674614,
+              "mask_area": 0.354251,
+              "minimum_triangle_area": 0.000686054,
+              "minimum_normal_dot": 0.476582,
+              "minimum_face_area_ratio": 0.227099,
+              "self_intersections": 0,
+              "silhouette_area": 0.04252529,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0386376
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.75,
+          "source_snapshot_weights": {
+            "SINGLE_CONTENT_SEQUENCE": 0.25,
+            "SINGLE_DESIGN_TORSION": 0.75
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0376258,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.5483,
+                3.500952,
+                1.892935
+              ],
+              "bbox_fill": [
+                0.815926,
+                0.972487,
+                0.591542
+              ],
+              "signed_volume": 15.788006,
+              "mask_area": 0.329434,
+              "minimum_triangle_area": 0.000851336,
+              "minimum_normal_dot": 0.317424,
+              "minimum_face_area_ratio": 0.230897,
+              "self_intersections": 0,
+              "silhouette_area": 0.04264387,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.59347,
+                3.476371,
+                1.81531
+              ],
+              "bbox_fill": [
+                0.822569,
+                0.965659,
+                0.567284
+              ],
+              "signed_volume": 16.274693,
+              "mask_area": 0.327339,
+              "minimum_triangle_area": 0.000920554,
+              "minimum_normal_dot": 0.364075,
+              "minimum_face_area_ratio": 0.247621,
+              "self_intersections": 0,
+              "silhouette_area": 0.04220912,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.63864,
+                3.452027,
+                1.73772
+              ],
+              "bbox_fill": [
+                0.829212,
+                0.958896,
+                0.543038
+              ],
+              "signed_volume": 16.762137,
+              "mask_area": 0.32647,
+              "minimum_triangle_area": 0.000991677,
+              "minimum_normal_dot": 0.41105,
+              "minimum_face_area_ratio": 0.261653,
+              "self_intersections": 0,
+              "silhouette_area": 0.04180588,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                5.68381,
+                3.457247,
+                1.66017
+              ],
+              "bbox_fill": [
+                0.835854,
+                0.960346,
+                0.518803
+              ],
+              "signed_volume": 17.250215,
+              "mask_area": 0.326791,
+              "minimum_triangle_area": 0.00104485,
+              "minimum_normal_dot": 0.457736,
+              "minimum_face_area_ratio": 0.266574,
+              "self_intersections": 0,
+              "silhouette_area": 0.04142851,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                5.72898,
+                3.477137,
+                1.58262
+              ],
+              "bbox_fill": [
+                0.842497,
+                0.965871,
+                0.494569
+              ],
+              "signed_volume": 17.738814,
+              "mask_area": 0.328241,
+              "minimum_triangle_area": 0.001034665,
+              "minimum_normal_dot": 0.503378,
+              "minimum_face_area_ratio": 0.262783,
+              "self_intersections": 0,
+              "silhouette_area": 0.04110433,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                5.77415,
+                3.497614,
+                1.59164
+              ],
+              "bbox_fill": [
+                0.84914,
+                0.97156,
+                0.497387
+              ],
+              "signed_volume": 18.227815,
+              "mask_area": 0.330733,
+              "minimum_triangle_area": 0.001030943,
+              "minimum_normal_dot": 0.541229,
+              "minimum_face_area_ratio": 0.257638,
+              "self_intersections": 0,
+              "silhouette_area": 0.04082312,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                5.81932,
+                3.518091,
+                1.714019
+              ],
+              "bbox_fill": [
+                0.855782,
+                0.977248,
+                0.535631
+              ],
+              "signed_volume": 18.717091,
+              "mask_area": 0.334151,
+              "minimum_triangle_area": 0.001034896,
+              "minimum_normal_dot": 0.547686,
+              "minimum_face_area_ratio": 0.253364,
+              "self_intersections": 0,
+              "silhouette_area": 0.04057808,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                5.86449,
+                3.538568,
+                1.836398
+              ],
+              "bbox_fill": [
+                0.862425,
+                0.982936,
+                0.573874
+              ],
+              "signed_volume": 19.20653,
+              "mask_area": 0.33836,
+              "minimum_triangle_area": 0.000939098,
+              "minimum_normal_dot": 0.553755,
+              "minimum_face_area_ratio": 0.249928,
+              "self_intersections": 0,
+              "silhouette_area": 0.04038407,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                5.90966,
+                3.559046,
+                1.958777
+              ],
+              "bbox_fill": [
+                0.869068,
+                0.988624,
+                0.612118
+              ],
+              "signed_volume": 19.69601,
+              "mask_area": 0.343212,
+              "minimum_triangle_area": 0.000847866,
+              "minimum_normal_dot": 0.557198,
+              "minimum_face_area_ratio": 0.247287,
+              "self_intersections": 0,
+              "silhouette_area": 0.04046979,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                5.95483,
+                3.579523,
+                2.081156
+              ],
+              "bbox_fill": [
+                0.87571,
+                0.994312,
+                0.650361
+              ],
+              "signed_volume": 20.185411,
+              "mask_area": 0.348557,
+              "minimum_triangle_area": 0.000760875,
+              "minimum_normal_dot": 0.519114,
+              "minimum_face_area_ratio": 0.243719,
+              "self_intersections": 0,
+              "silhouette_area": 0.04129219,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.0,
+                3.6,
+                2.203535
+              ],
+              "bbox_fill": [
+                0.882353,
+                1.0,
+                0.688605
+              ],
+              "signed_volume": 20.674614,
+              "mask_area": 0.354251,
+              "minimum_triangle_area": 0.000686054,
+              "minimum_normal_dot": 0.476582,
+              "minimum_face_area_ratio": 0.227099,
+              "self_intersections": 0,
+              "silhouette_area": 0.04252529,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0376258
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "states": [
+        "SINGLE_GAMES_BRANCH",
+        "SINGLE_DIGITAL_SIGNAL",
+        "SINGLE_VIDEO_TEMPORAL"
+      ],
+      "switches": [
+        {
+          "first_transition_progress": 0.25,
+          "source_snapshot_weights": {
+            "SINGLE_GAMES_BRANCH": 0.75,
+            "SINGLE_DIGITAL_SIGNAL": 0.25
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0809511,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.912472,
+                3.538699,
+                1.397698
+              ],
+              "bbox_fill": [
+                0.869481,
+                0.982972,
+                0.436781
+              ],
+              "signed_volume": 14.243701,
+              "mask_area": 0.346386,
+              "minimum_triangle_area": 0.000578891,
+              "minimum_normal_dot": 0.276249,
+              "minimum_face_area_ratio": 0.233913,
+              "self_intersections": 0,
+              "silhouette_area": 0.03628995,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.949149,
+                3.439397,
+                1.328541
+              ],
+              "bbox_fill": [
+                0.874875,
+                0.955388,
+                0.415169
+              ],
+              "signed_volume": 13.599121,
+              "mask_area": 0.345733,
+              "minimum_triangle_area": 0.000593706,
+              "minimum_normal_dot": 0.320773,
+              "minimum_face_area_ratio": 0.235214,
+              "self_intersections": 0,
+              "silhouette_area": 0.03665562,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.985827,
+                3.343683,
+                1.29834
+              ],
+              "bbox_fill": [
+                0.880269,
+                0.928801,
+                0.405731
+              ],
+              "signed_volume": 13.044131,
+              "mask_area": 0.344483,
+              "minimum_triangle_area": 0.000620383,
+              "minimum_normal_dot": 0.368432,
+              "minimum_face_area_ratio": 0.238996,
+              "self_intersections": 0,
+              "silhouette_area": 0.03751528,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.033335,
+                3.249625,
+                1.323612
+              ],
+              "bbox_fill": [
+                0.887255,
+                0.902674,
+                0.413629
+              ],
+              "signed_volume": 12.581418,
+              "mask_area": 0.342669,
+              "minimum_triangle_area": 0.000657464,
+              "minimum_normal_dot": 0.403088,
+              "minimum_face_area_ratio": 0.246228,
+              "self_intersections": 0,
+              "silhouette_area": 0.03853918,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.085716,
+                3.156215,
+                1.36064
+              ],
+              "bbox_fill": [
+                0.894958,
+                0.876726,
+                0.4252
+              ],
+              "signed_volume": 12.213666,
+              "mask_area": 0.340359,
+              "minimum_triangle_area": 0.000694843,
+              "minimum_normal_dot": 0.365605,
+              "minimum_face_area_ratio": 0.255335,
+              "self_intersections": 0,
+              "silhouette_area": 0.03972572,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.138096,
+                3.063493,
+                1.412429
+              ],
+              "bbox_fill": [
+                0.902661,
+                0.85097,
+                0.441384
+              ],
+              "signed_volume": 11.943575,
+              "mask_area": 0.337654,
+              "minimum_triangle_area": 0.000734773,
+              "minimum_normal_dot": 0.296853,
+              "minimum_face_area_ratio": 0.266554,
+              "self_intersections": 0,
+              "silhouette_area": 0.04109118,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.190477,
+                2.971381,
+                1.521426
+              ],
+              "bbox_fill": [
+                0.910364,
+                0.825384,
+                0.475446
+              ],
+              "signed_volume": 11.773826,
+              "mask_area": 0.33468,
+              "minimum_triangle_area": 0.00077843,
+              "minimum_normal_dot": 0.23538,
+              "minimum_face_area_ratio": 0.277543,
+              "self_intersections": 0,
+              "silhouette_area": 0.04262491,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.242858,
+                2.879584,
+                1.646768
+              ],
+              "bbox_fill": [
+                0.918067,
+                0.799884,
+                0.514615
+              ],
+              "signed_volume": 11.707114,
+              "mask_area": 0.331566,
+              "minimum_triangle_area": 0.000819535,
+              "minimum_normal_dot": 0.180917,
+              "minimum_face_area_ratio": 0.274733,
+              "self_intersections": 0,
+              "silhouette_area": 0.04432639,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.295239,
+                2.788039,
+                1.780502
+              ],
+              "bbox_fill": [
+                0.92577,
+                0.774455,
+                0.556407
+              ],
+              "signed_volume": 11.746124,
+              "mask_area": 0.328434,
+              "minimum_triangle_area": 0.000858056,
+              "minimum_normal_dot": 0.132902,
+              "minimum_face_area_ratio": 0.267992,
+              "self_intersections": 0,
+              "silhouette_area": 0.04619606,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.347619,
+                2.696911,
+                1.919508
+              ],
+              "bbox_fill": [
+                0.933473,
+                0.749142,
+                0.599846
+              ],
+              "signed_volume": 11.893547,
+              "mask_area": 0.325378,
+              "minimum_triangle_area": 0.000834901,
+              "minimum_normal_dot": 0.090656,
+              "minimum_face_area_ratio": 0.243529,
+              "self_intersections": 0,
+              "silhouette_area": 0.04825149,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.4,
+                2.606636,
+                2.062478
+              ],
+              "bbox_fill": [
+                0.941176,
+                0.724066,
+                0.644524
+              ],
+              "signed_volume": 12.152071,
+              "mask_area": 0.322444,
+              "minimum_triangle_area": 0.000819478,
+              "minimum_normal_dot": 0.053485,
+              "minimum_face_area_ratio": 0.219343,
+              "self_intersections": 0,
+              "silhouette_area": 0.05052403,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0809511
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.5,
+          "source_snapshot_weights": {
+            "SINGLE_GAMES_BRANCH": 0.5,
+            "SINGLE_DIGITAL_SIGNAL": 0.5
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0766158,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                6.048356,
+                3.484745,
+                1.322003
+              ],
+              "bbox_fill": [
+                0.889464,
+                0.967985,
+                0.413126
+              ],
+              "signed_volume": 13.533319,
+              "mask_area": 0.345677,
+              "minimum_triangle_area": 0.000634409,
+              "minimum_normal_dot": 0.456721,
+              "minimum_face_area_ratio": 0.241472,
+              "self_intersections": 0,
+              "silhouette_area": 0.03560879,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                6.071445,
+                3.388938,
+                1.259123
+              ],
+              "bbox_fill": [
+                0.89286,
+                0.941372,
+                0.393476
+              ],
+              "signed_volume": 12.979022,
+              "mask_area": 0.344743,
+              "minimum_triangle_area": 0.000644815,
+              "minimum_normal_dot": 0.486469,
+              "minimum_face_area_ratio": 0.242032,
+              "self_intersections": 0,
+              "silhouette_area": 0.03605032,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                6.094534,
+                3.29572,
+                1.270811
+              ],
+              "bbox_fill": [
+                0.896255,
+                0.915478,
+                0.397128
+              ],
+              "signed_volume": 12.511341,
+              "mask_area": 0.343306,
+              "minimum_triangle_area": 0.000666287,
+              "minimum_normal_dot": 0.486983,
+              "minimum_face_area_ratio": 0.245733,
+              "self_intersections": 0,
+              "silhouette_area": 0.03701445,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.117623,
+                3.204457,
+                1.300886
+              ],
+              "bbox_fill": [
+                0.89965,
+                0.890127,
+                0.406527
+              ],
+              "signed_volume": 12.132477,
+              "mask_area": 0.341408,
+              "minimum_triangle_area": 0.000694143,
+              "minimum_normal_dot": 0.439981,
+              "minimum_face_area_ratio": 0.25205,
+              "self_intersections": 0,
+              "silhouette_area": 0.03815797,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.140712,
+                3.115059,
+                1.342449
+              ],
+              "bbox_fill": [
+                0.903046,
+                0.865294,
+                0.419515
+              ],
+              "signed_volume": 11.844628,
+              "mask_area": 0.339115,
+              "minimum_triangle_area": 0.000723524,
+              "minimum_normal_dot": 0.365656,
+              "minimum_face_area_ratio": 0.261139,
+              "self_intersections": 0,
+              "silhouette_area": 0.03945322,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.163801,
+                3.027644,
+                1.39642
+              ],
+              "bbox_fill": [
+                0.906441,
+                0.841012,
+                0.436381
+              ],
+              "signed_volume": 11.649995,
+              "mask_area": 0.336515,
+              "minimum_triangle_area": 0.00075781,
+              "minimum_normal_dot": 0.297725,
+              "minimum_face_area_ratio": 0.271619,
+              "self_intersections": 0,
+              "silhouette_area": 0.04089999,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.18689,
+                2.941479,
+                1.510527
+              ],
+              "bbox_fill": [
+                0.909837,
+                0.817077,
+                0.47204
+              ],
+              "signed_volume": 11.550778,
+              "mask_area": 0.333709,
+              "minimum_triangle_area": 0.000796195,
+              "minimum_normal_dot": 0.236594,
+              "minimum_face_area_ratio": 0.275868,
+              "self_intersections": 0,
+              "silhouette_area": 0.04248431,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.210239,
+                2.856943,
+                1.640091
+              ],
+              "bbox_fill": [
+                0.91327,
+                0.793595,
+                0.512529
+              ],
+              "signed_volume": 11.549177,
+              "mask_area": 0.330804,
+              "minimum_triangle_area": 0.000839392,
+              "minimum_normal_dot": 0.182117,
+              "minimum_face_area_ratio": 0.272648,
+              "self_intersections": 0,
+              "silhouette_area": 0.04421624,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.273492,
+                2.772693,
+                1.776279
+              ],
+              "bbox_fill": [
+                0.922572,
+                0.770192,
+                0.555087
+              ],
+              "signed_volume": 11.647393,
+              "mask_area": 0.327904,
+              "minimum_triangle_area": 0.000872021,
+              "minimum_normal_dot": 0.133841,
+              "minimum_face_area_ratio": 0.26304,
+              "self_intersections": 0,
+              "silhouette_area": 0.0461429,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.336746,
+                2.689108,
+                1.91743
+              ],
+              "bbox_fill": [
+                0.931874,
+                0.746975,
+                0.599197
+              ],
+              "signed_volume": 11.847625,
+              "mask_area": 0.325095,
+              "minimum_triangle_area": 0.000846045,
+              "minimum_normal_dot": 0.091173,
+              "minimum_face_area_ratio": 0.23998,
+              "self_intersections": 0,
+              "silhouette_area": 0.04823678,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.4,
+                2.606636,
+                2.062478
+              ],
+              "bbox_fill": [
+                0.941176,
+                0.724066,
+                0.644524
+              ],
+              "signed_volume": 12.152071,
+              "mask_area": 0.322444,
+              "minimum_triangle_area": 0.000819478,
+              "minimum_normal_dot": 0.053485,
+              "minimum_face_area_ratio": 0.219343,
+              "self_intersections": 0,
+              "silhouette_area": 0.05052403,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0766158
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.75,
+          "source_snapshot_weights": {
+            "SINGLE_GAMES_BRANCH": 0.25,
+            "SINGLE_DIGITAL_SIGNAL": 0.75
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0728607,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                6.18424,
+                3.43951,
+                1.270301
+              ],
+              "bbox_fill": [
+                0.909447,
+                0.955419,
+                0.396969
+              ],
+              "signed_volume": 12.872936,
+              "mask_area": 0.344003,
+              "minimum_triangle_area": 0.000690291,
+              "minimum_normal_dot": 0.546687,
+              "minimum_face_area_ratio": 0.2487,
+              "self_intersections": 0,
+              "silhouette_area": 0.03531968,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                6.19374,
+                3.347995,
+                1.228649
+              ],
+              "bbox_fill": [
+                0.910844,
+                0.929999,
+                0.383953
+              ],
+              "signed_volume": 12.399266,
+              "mask_area": 0.343019,
+              "minimum_triangle_area": 0.000695526,
+              "minimum_normal_dot": 0.557829,
+              "minimum_face_area_ratio": 0.249119,
+              "self_intersections": 0,
+              "silhouette_area": 0.03590015,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                6.203241,
+                3.258682,
+                1.249311
+              ],
+              "bbox_fill": [
+                0.912241,
+                0.905189,
+                0.39041
+              ],
+              "signed_volume": 12.010303,
+              "mask_area": 0.341592,
+              "minimum_triangle_area": 0.0007113,
+              "minimum_normal_dot": 0.516123,
+              "minimum_face_area_ratio": 0.25255,
+              "self_intersections": 0,
+              "silhouette_area": 0.03696264,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.212741,
+                3.171106,
+                1.280883
+              ],
+              "bbox_fill": [
+                0.913638,
+                0.880863,
+                0.400276
+              ],
+              "signed_volume": 11.707752,
+              "mask_area": 0.339764,
+              "minimum_triangle_area": 0.000729519,
+              "minimum_normal_dot": 0.438632,
+              "minimum_face_area_ratio": 0.257992,
+              "self_intersections": 0,
+              "silhouette_area": 0.03817482,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.222242,
+                3.085807,
+                1.324959
+              ],
+              "bbox_fill": [
+                0.915036,
+                0.857169,
+                0.41405
+              ],
+              "signed_volume": 11.493309,
+              "mask_area": 0.337598,
+              "minimum_triangle_area": 0.000752469,
+              "minimum_normal_dot": 0.365688,
+              "minimum_face_area_ratio": 0.266483,
+              "self_intersections": 0,
+              "silhouette_area": 0.03952458,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.231743,
+                3.001908,
+                1.380411
+              ],
+              "bbox_fill": [
+                0.916433,
+                0.833863,
+                0.431378
+              ],
+              "signed_volume": 11.368674,
+              "mask_area": 0.335176,
+              "minimum_triangle_area": 0.00078105,
+              "minimum_normal_dot": 0.29857,
+              "minimum_face_area_ratio": 0.276153,
+              "self_intersections": 0,
+              "silhouette_area": 0.04100984,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.241243,
+                2.919216,
+                1.50078
+              ],
+              "bbox_fill": [
+                0.91783,
+                0.810893,
+                0.468994
+              ],
+              "signed_volume": 11.335543,
+              "mask_area": 0.33259,
+              "minimum_triangle_area": 0.000814075,
+              "minimum_normal_dot": 0.237785,
+              "minimum_face_area_ratio": 0.27401,
+              "self_intersections": 0,
+              "silhouette_area": 0.04262502,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.250744,
+                2.838158,
+                1.633415
+              ],
+              "bbox_fill": [
+                0.919227,
+                0.788377,
+                0.510442
+              ],
+              "signed_volume": 11.395619,
+              "mask_area": 0.329936,
+              "minimum_triangle_area": 0.000852436,
+              "minimum_normal_dot": 0.183301,
+              "minimum_face_area_ratio": 0.269719,
+              "self_intersections": 0,
+              "silhouette_area": 0.04436837,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.260244,
+                2.759525,
+                1.772056
+              ],
+              "bbox_fill": [
+                0.920624,
+                0.766535,
+                0.553768
+              ],
+              "signed_volume": 11.5506,
+              "mask_area": 0.327309,
+              "minimum_triangle_area": 0.000885996,
+              "minimum_normal_dot": 0.134772,
+              "minimum_face_area_ratio": 0.255812,
+              "self_intersections": 0,
+              "silhouette_area": 0.04624222,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.325873,
+                2.681985,
+                1.915355
+              ],
+              "bbox_fill": [
+                0.930275,
+                0.744996,
+                0.598549
+              ],
+              "signed_volume": 11.802185,
+              "mask_area": 0.32479,
+              "minimum_triangle_area": 0.000858784,
+              "minimum_normal_dot": 0.091687,
+              "minimum_face_area_ratio": 0.236431,
+              "self_intersections": 0,
+              "silhouette_area": 0.04827625,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.4,
+                2.606636,
+                2.062478
+              ],
+              "bbox_fill": [
+                0.941176,
+                0.724066,
+                0.644524
+              ],
+              "signed_volume": 12.152071,
+              "mask_area": 0.322444,
+              "minimum_triangle_area": 0.000819478,
+              "minimum_normal_dot": 0.053485,
+              "minimum_face_area_ratio": 0.219343,
+              "self_intersections": 0,
+              "silhouette_area": 0.05052403,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0728607
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "states": [
+        "COMPLEX_FOCUS",
+        "COMPLEX_GATHER",
+        "COMPLEX_DRIVE"
+      ],
+      "switches": [
+        {
+          "first_transition_progress": 0.25,
+          "source_snapshot_weights": {
+            "COMPLEX_FOCUS": 0.75,
+            "COMPLEX_GATHER": 0.25
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0135682,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                6.681,
+                3.303,
+                3.152
+              ],
+              "bbox_fill": [
+                0.9825,
+                0.9175,
+                0.985
+              ],
+              "signed_volume": 27.016275,
+              "mask_area": 0.336176,
+              "minimum_triangle_area": 0.000456516,
+              "minimum_normal_dot": 0.980029,
+              "minimum_face_area_ratio": 0.706078,
+              "self_intersections": 0,
+              "silhouette_area": 0.044719,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                6.6929,
+                3.292886,
+                3.142891
+              ],
+              "bbox_fill": [
+                0.98425,
+                0.914691,
+                0.982154
+              ],
+              "signed_volume": 26.942484,
+              "mask_area": 0.337253,
+              "minimum_triangle_area": 0.000459301,
+              "minimum_normal_dot": 0.984382,
+              "minimum_face_area_ratio": 0.728671,
+              "self_intersections": 0,
+              "silhouette_area": 0.04467206,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                6.7048,
+                3.282772,
+                3.133783
+              ],
+              "bbox_fill": [
+                0.986,
+                0.911881,
+                0.979307
+              ],
+              "signed_volume": 26.867727,
+              "mask_area": 0.338344,
+              "minimum_triangle_area": 0.000461994,
+              "minimum_normal_dot": 0.98796,
+              "minimum_face_area_ratio": 0.75162,
+              "self_intersections": 0,
+              "silhouette_area": 0.04462605,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.7167,
+                3.272659,
+                3.124674
+              ],
+              "bbox_fill": [
+                0.98775,
+                0.909072,
+                0.976461
+              ],
+              "signed_volume": 26.792027,
+              "mask_area": 0.339449,
+              "minimum_triangle_area": 0.000464219,
+              "minimum_normal_dot": 0.990928,
+              "minimum_face_area_ratio": 0.774914,
+              "self_intersections": 0,
+              "silhouette_area": 0.04458064,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.7286,
+                3.262545,
+                3.115566
+              ],
+              "bbox_fill": [
+                0.9895,
+                0.906262,
+                0.973614
+              ],
+              "signed_volume": 26.715394,
+              "mask_area": 0.340567,
+              "minimum_triangle_area": 0.000466305,
+              "minimum_normal_dot": 0.993375,
+              "minimum_face_area_ratio": 0.796497,
+              "self_intersections": 0,
+              "silhouette_area": 0.04453695,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.7405,
+                3.252431,
+                3.10724
+              ],
+              "bbox_fill": [
+                0.99125,
+                0.903453,
+                0.971013
+              ],
+              "signed_volume": 26.637852,
+              "mask_area": 0.341699,
+              "minimum_triangle_area": 0.000468308,
+              "minimum_normal_dot": 0.994465,
+              "minimum_face_area_ratio": 0.812989,
+              "self_intersections": 0,
+              "silhouette_area": 0.04449763,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.7524,
+                3.242317,
+                3.100192
+              ],
+              "bbox_fill": [
+                0.993,
+                0.900644,
+                0.96881
+              ],
+              "signed_volume": 26.55942,
+              "mask_area": 0.342844,
+              "minimum_triangle_area": 0.000470229,
+              "minimum_normal_dot": 0.995114,
+              "minimum_face_area_ratio": 0.824769,
+              "self_intersections": 0,
+              "silhouette_area": 0.04446314,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.7643,
+                3.232526,
+                3.093144
+              ],
+              "bbox_fill": [
+                0.99475,
+                0.897924,
+                0.966608
+              ],
+              "signed_volume": 26.480107,
+              "mask_area": 0.344003,
+              "minimum_triangle_area": 0.000472062,
+              "minimum_normal_dot": 0.995,
+              "minimum_face_area_ratio": 0.833532,
+              "self_intersections": 0,
+              "silhouette_area": 0.04443078,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.7762,
+                3.223017,
+                3.086096
+              ],
+              "bbox_fill": [
+                0.9965,
+                0.895283,
+                0.964405
+              ],
+              "signed_volume": 26.399941,
+              "mask_area": 0.345176,
+              "minimum_triangle_area": 0.000473813,
+              "minimum_normal_dot": 0.994295,
+              "minimum_face_area_ratio": 0.840768,
+              "self_intersections": 0,
+              "silhouette_area": 0.04440137,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.7881,
+                3.213509,
+                3.079048
+              ],
+              "bbox_fill": [
+                0.99825,
+                0.892641,
+                0.962203
+              ],
+              "signed_volume": 26.318932,
+              "mask_area": 0.346363,
+              "minimum_triangle_area": 0.000475478,
+              "minimum_normal_dot": 0.993486,
+              "minimum_face_area_ratio": 0.845769,
+              "self_intersections": 0,
+              "silhouette_area": 0.04437764,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.204,
+                3.072
+              ],
+              "bbox_fill": [
+                1.0,
+                0.89,
+                0.96
+              ],
+              "signed_volume": 26.237103,
+              "mask_area": 0.347563,
+              "minimum_triangle_area": 0.00047137,
+              "minimum_normal_dot": 0.992176,
+              "minimum_face_area_ratio": 0.843739,
+              "self_intersections": 0,
+              "silhouette_area": 0.04435622,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0135682
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.5,
+          "source_snapshot_weights": {
+            "COMPLEX_FOCUS": 0.5,
+            "COMPLEX_GATHER": 0.5
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0156285,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                6.562,
+                3.402,
+                3.168
+              ],
+              "bbox_fill": [
+                0.965,
+                0.945,
+                0.99
+              ],
+              "signed_volume": 26.784225,
+              "mask_area": 0.341027,
+              "minimum_triangle_area": 0.000465828,
+              "minimum_normal_dot": 0.992485,
+              "minimum_face_area_ratio": 0.803293,
+              "self_intersections": 0,
+              "silhouette_area": 0.04358917,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                6.5858,
+                3.381986,
+                3.157291
+              ],
+              "bbox_fill": [
+                0.9685,
+                0.939441,
+                0.986654
+              ],
+              "signed_volume": 26.739111,
+              "mask_area": 0.341624,
+              "minimum_triangle_area": 0.000467265,
+              "minimum_normal_dot": 0.994028,
+              "minimum_face_area_ratio": 0.817387,
+              "self_intersections": 0,
+              "silhouette_area": 0.04366332,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                6.6096,
+                3.361972,
+                3.146583
+              ],
+              "bbox_fill": [
+                0.972,
+                0.933881,
+                0.983307
+              ],
+              "signed_volume": 26.691794,
+              "mask_area": 0.342234,
+              "minimum_triangle_area": 0.000468631,
+              "minimum_normal_dot": 0.995162,
+              "minimum_face_area_ratio": 0.826925,
+              "self_intersections": 0,
+              "silhouette_area": 0.04373795,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.6334,
+                3.341959,
+                3.135874
+              ],
+              "bbox_fill": [
+                0.9755,
+                0.928322,
+                0.979961
+              ],
+              "signed_volume": 26.642301,
+              "mask_area": 0.342857,
+              "minimum_triangle_area": 0.000469927,
+              "minimum_normal_dot": 0.995719,
+              "minimum_face_area_ratio": 0.835567,
+              "self_intersections": 0,
+              "silhouette_area": 0.0438119,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.6572,
+                3.321945,
+                3.125166
+              ],
+              "bbox_fill": [
+                0.979,
+                0.922762,
+                0.976614
+              ],
+              "signed_volume": 26.590661,
+              "mask_area": 0.343492,
+              "minimum_triangle_area": 0.000471155,
+              "minimum_normal_dot": 0.996176,
+              "minimum_face_area_ratio": 0.843063,
+              "self_intersections": 0,
+              "silhouette_area": 0.04388565,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.681,
+                3.301931,
+                3.115174
+              ],
+              "bbox_fill": [
+                0.9825,
+                0.917203,
+                0.973492
+              ],
+              "signed_volume": 26.536895,
+              "mask_area": 0.344139,
+              "minimum_triangle_area": 0.000472313,
+              "minimum_normal_dot": 0.996511,
+              "minimum_face_area_ratio": 0.847676,
+              "self_intersections": 0,
+              "silhouette_area": 0.04396159,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.7048,
+                3.281931,
+                3.106399
+              ],
+              "bbox_fill": [
+                0.986,
+                0.911647,
+                0.97075
+              ],
+              "signed_volume": 26.481028,
+              "mask_area": 0.344799,
+              "minimum_triangle_area": 0.000473399,
+              "minimum_normal_dot": 0.996726,
+              "minimum_face_area_ratio": 0.849791,
+              "self_intersections": 0,
+              "silhouette_area": 0.04403888,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.7286,
+                3.262448,
+                3.097799
+              ],
+              "bbox_fill": [
+                0.9895,
+                0.906236,
+                0.968062
+              ],
+              "signed_volume": 26.423091,
+              "mask_area": 0.345472,
+              "minimum_triangle_area": 0.000474417,
+              "minimum_normal_dot": 0.996034,
+              "minimum_face_area_ratio": 0.851184,
+              "self_intersections": 0,
+              "silhouette_area": 0.04411661,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.7524,
+                3.242965,
+                3.0892
+              ],
+              "bbox_fill": [
+                0.993,
+                0.900824,
+                0.965375
+              ],
+              "signed_volume": 26.363109,
+              "mask_area": 0.346157,
+              "minimum_triangle_area": 0.000475367,
+              "minimum_normal_dot": 0.994924,
+              "minimum_face_area_ratio": 0.851607,
+              "self_intersections": 0,
+              "silhouette_area": 0.04419461,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.7762,
+                3.223483,
+                3.0806
+              ],
+              "bbox_fill": [
+                0.9965,
+                0.895412,
+                0.962687
+              ],
+              "signed_volume": 26.301103,
+              "mask_area": 0.346854,
+              "minimum_triangle_area": 0.000474734,
+              "minimum_normal_dot": 0.993615,
+              "minimum_face_area_ratio": 0.850386,
+              "self_intersections": 0,
+              "silhouette_area": 0.04427499,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.204,
+                3.072
+              ],
+              "bbox_fill": [
+                1.0,
+                0.89,
+                0.96
+              ],
+              "signed_volume": 26.237103,
+              "mask_area": 0.347563,
+              "minimum_triangle_area": 0.00047137,
+              "minimum_normal_dot": 0.992176,
+              "minimum_face_area_ratio": 0.843739,
+              "self_intersections": 0,
+              "silhouette_area": 0.04435622,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0156285
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.75,
+          "source_snapshot_weights": {
+            "COMPLEX_FOCUS": 0.25,
+            "COMPLEX_GATHER": 0.75
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0192433,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                6.443,
+                3.501,
+                3.184
+              ],
+              "bbox_fill": [
+                0.9475,
+                0.9725,
+                0.995
+              ],
+              "signed_volume": 26.536512,
+              "mask_area": 0.346022,
+              "minimum_triangle_area": 0.000474198,
+              "minimum_normal_dot": 0.995907,
+              "minimum_face_area_ratio": 0.856067,
+              "self_intersections": 0,
+              "silhouette_area": 0.04258129,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                6.4787,
+                3.471086,
+                3.171691
+              ],
+              "bbox_fill": [
+                0.95275,
+                0.964191,
+                0.991154
+              ],
+              "signed_volume": 26.523052,
+              "mask_area": 0.34611,
+              "minimum_triangle_area": 0.000474724,
+              "minimum_normal_dot": 0.996645,
+              "minimum_face_area_ratio": 0.861914,
+              "self_intersections": 0,
+              "silhouette_area": 0.0427517,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                6.5144,
+                3.441172,
+                3.159383
+              ],
+              "bbox_fill": [
+                0.958,
+                0.955881,
+                0.987307
+              ],
+              "signed_volume": 26.505842,
+              "mask_area": 0.346214,
+              "minimum_triangle_area": 0.000475209,
+              "minimum_normal_dot": 0.997125,
+              "minimum_face_area_ratio": 0.867657,
+              "self_intersections": 0,
+              "silhouette_area": 0.04292351,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.5501,
+                3.411259,
+                3.147074
+              ],
+              "bbox_fill": [
+                0.96325,
+                0.947572,
+                0.983461
+              ],
+              "signed_volume": 26.484908,
+              "mask_area": 0.346332,
+              "minimum_triangle_area": 0.000475644,
+              "minimum_normal_dot": 0.997243,
+              "minimum_face_area_ratio": 0.872998,
+              "self_intersections": 0,
+              "silhouette_area": 0.04309613,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.5858,
+                3.381345,
+                3.134766
+              ],
+              "bbox_fill": [
+                0.9685,
+                0.939262,
+                0.979614
+              ],
+              "signed_volume": 26.460292,
+              "mask_area": 0.346465,
+              "minimum_triangle_area": 0.000476036,
+              "minimum_normal_dot": 0.997344,
+              "minimum_face_area_ratio": 0.877999,
+              "self_intersections": 0,
+              "silhouette_area": 0.04326867,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.6215,
+                3.351431,
+                3.123211
+              ],
+              "bbox_fill": [
+                0.97375,
+                0.930953,
+                0.976003
+              ],
+              "signed_volume": 26.432025,
+              "mask_area": 0.346613,
+              "minimum_triangle_area": 0.000476381,
+              "minimum_normal_dot": 0.997431,
+              "minimum_face_area_ratio": 0.876372,
+              "self_intersections": 0,
+              "silhouette_area": 0.04344513,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.6572,
+                3.321827,
+                3.11268
+              ],
+              "bbox_fill": [
+                0.979,
+                0.92273,
+                0.972713
+              ],
+              "signed_volume": 26.400138,
+              "mask_area": 0.346775,
+              "minimum_triangle_area": 0.000475954,
+              "minimum_normal_dot": 0.997286,
+              "minimum_face_area_ratio": 0.872282,
+              "self_intersections": 0,
+              "silhouette_area": 0.0436254,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.6929,
+                3.29237,
+                3.102454
+              ],
+              "bbox_fill": [
+                0.98425,
+                0.914547,
+                0.969517
+              ],
+              "signed_volume": 26.364669,
+              "mask_area": 0.346952,
+              "minimum_triangle_area": 0.000474976,
+              "minimum_normal_dot": 0.996312,
+              "minimum_face_area_ratio": 0.867499,
+              "self_intersections": 0,
+              "silhouette_area": 0.04380791,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.7286,
+                3.262914,
+                3.092303
+              ],
+              "bbox_fill": [
+                0.9895,
+                0.906365,
+                0.966345
+              ],
+              "signed_volume": 26.32565,
+              "mask_area": 0.347142,
+              "minimum_triangle_area": 0.000473958,
+              "minimum_normal_dot": 0.995151,
+              "minimum_face_area_ratio": 0.861599,
+              "self_intersections": 0,
+              "silhouette_area": 0.04399036,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.7643,
+                3.233457,
+                3.082151
+              ],
+              "bbox_fill": [
+                0.99475,
+                0.898182,
+                0.963172
+              ],
+              "signed_volume": 26.283117,
+              "mask_area": 0.347346,
+              "minimum_triangle_area": 0.000472648,
+              "minimum_normal_dot": 0.993742,
+              "minimum_face_area_ratio": 0.854135,
+              "self_intersections": 0,
+              "silhouette_area": 0.04417275,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.204,
+                3.072
+              ],
+              "bbox_fill": [
+                1.0,
+                0.89,
+                0.96
+              ],
+              "signed_volume": 26.237103,
+              "mask_area": 0.347563,
+              "minimum_triangle_area": 0.00047137,
+              "minimum_normal_dot": 0.992176,
+              "minimum_face_area_ratio": 0.843739,
+              "self_intersections": 0,
+              "silhouette_area": 0.04435622,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0192433
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "states": [
+        "BRAND_WIDE",
+        "SINGLE_MERCH_WRAP",
+        "MASTER"
+      ],
+      "switches": [
+        {
+          "first_transition_progress": 0.25,
+          "source_snapshot_weights": {
+            "BRAND_WIDE": 0.75,
+            "SINGLE_MERCH_WRAP": 0.25
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0333115,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.769,
+                3.55181,
+                2.82336
+              ],
+              "bbox_fill": [
+                0.848382,
+                0.986614,
+                0.8823
+              ],
+              "signed_volume": 25.84641,
+              "mask_area": 0.349006,
+              "minimum_triangle_area": 0.000683181,
+              "minimum_normal_dot": 0.943432,
+              "minimum_face_area_ratio": 0.634229,
+              "self_intersections": 0,
+              "silhouette_area": 0.04189718,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.8721,
+                3.556629,
+                2.853478
+              ],
+              "bbox_fill": [
+                0.863544,
+                0.987953,
+                0.891712
+              ],
+              "signed_volume": 26.175447,
+              "mask_area": 0.349345,
+              "minimum_triangle_area": 0.000666288,
+              "minimum_normal_dot": 0.953037,
+              "minimum_face_area_ratio": 0.666132,
+              "self_intersections": 0,
+              "silhouette_area": 0.04226673,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.9752,
+                3.561448,
+                2.883597
+              ],
+              "bbox_fill": [
+                0.878706,
+                0.989291,
+                0.901124
+              ],
+              "signed_volume": 26.501857,
+              "mask_area": 0.349633,
+              "minimum_triangle_area": 0.000649589,
+              "minimum_normal_dot": 0.961997,
+              "minimum_face_area_ratio": 0.699087,
+              "self_intersections": 0,
+              "silhouette_area": 0.04264101,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                6.0783,
+                3.566267,
+                2.914805
+              ],
+              "bbox_fill": [
+                0.893868,
+                0.99063,
+                0.910877
+              ],
+              "signed_volume": 26.825731,
+              "mask_area": 0.349872,
+              "minimum_triangle_area": 0.000633072,
+              "minimum_normal_dot": 0.970227,
+              "minimum_face_area_ratio": 0.733087,
+              "self_intersections": 0,
+              "silhouette_area": 0.04301579,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                6.1814,
+                3.571086,
+                2.948066
+              ],
+              "bbox_fill": [
+                0.909029,
+                0.991968,
+                0.921271
+              ],
+              "signed_volume": 27.147175,
+              "mask_area": 0.350064,
+              "minimum_triangle_area": 0.000616722,
+              "minimum_normal_dot": 0.977411,
+              "minimum_face_area_ratio": 0.768127,
+              "self_intersections": 0,
+              "silhouette_area": 0.04339776,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                6.2845,
+                3.575905,
+                2.981426
+              ],
+              "bbox_fill": [
+                0.924191,
+                0.993307,
+                0.931696
+              ],
+              "signed_volume": 27.466281,
+              "mask_area": 0.35021,
+              "minimum_triangle_area": 0.000600529,
+              "minimum_normal_dot": 0.983199,
+              "minimum_face_area_ratio": 0.804204,
+              "self_intersections": 0,
+              "silhouette_area": 0.04378698,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.3876,
+                3.580724,
+                3.023931
+              ],
+              "bbox_fill": [
+                0.939353,
+                0.994646,
+                0.944978
+              ],
+              "signed_volume": 27.783145,
+              "mask_area": 0.350312,
+              "minimum_triangle_area": 0.000584475,
+              "minimum_normal_dot": 0.98848,
+              "minimum_face_area_ratio": 0.841315,
+              "self_intersections": 0,
+              "silhouette_area": 0.04418392,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.4907,
+                3.585543,
+                3.06776
+              ],
+              "bbox_fill": [
+                0.954515,
+                0.995984,
+                0.958675
+              ],
+              "signed_volume": 28.097866,
+              "mask_area": 0.350373,
+              "minimum_triangle_area": 0.000568551,
+              "minimum_normal_dot": 0.993058,
+              "minimum_face_area_ratio": 0.879453,
+              "self_intersections": 0,
+              "silhouette_area": 0.04457987,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.5938,
+                3.590362,
+                3.111589
+              ],
+              "bbox_fill": [
+                0.969676,
+                0.997323,
+                0.972372
+              ],
+              "signed_volume": 28.410537,
+              "mask_area": 0.350393,
+              "minimum_triangle_area": 0.000552743,
+              "minimum_normal_dot": 0.996696,
+              "minimum_face_area_ratio": 0.918615,
+              "self_intersections": 0,
+              "silhouette_area": 0.04498045,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.6969,
+                3.595181,
+                3.155676
+              ],
+              "bbox_fill": [
+                0.984838,
+                0.998661,
+                0.986149
+              ],
+              "signed_volume": 28.721262,
+              "mask_area": 0.350374,
+              "minimum_triangle_area": 0.000537039,
+              "minimum_normal_dot": 0.999116,
+              "minimum_face_area_ratio": 0.958799,
+              "self_intersections": 0,
+              "silhouette_area": 0.04538701,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.6,
+                3.2
+              ],
+              "bbox_fill": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "signed_volume": 29.030129,
+              "mask_area": 0.350319,
+              "minimum_triangle_area": 0.000521428,
+              "minimum_normal_dot": 1.0,
+              "minimum_face_area_ratio": 1.0,
+              "self_intersections": 0,
+              "silhouette_area": 0.04579536,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0333115
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.5,
+          "source_snapshot_weights": {
+            "BRAND_WIDE": 0.5,
+            "SINGLE_MERCH_WRAP": 0.5
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0562064,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                5.146,
+                3.503621,
+                2.826945
+              ],
+              "bbox_fill": [
+                0.756765,
+                0.973228,
+                0.88342
+              ],
+              "signed_volume": 26.835504,
+              "mask_area": 0.344682,
+              "minimum_triangle_area": 0.000926834,
+              "minimum_normal_dot": 0.836661,
+              "minimum_face_area_ratio": 0.47154,
+              "self_intersections": 0,
+              "silhouette_area": 0.04330382,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                5.3114,
+                3.513259,
+                2.854475
+              ],
+              "bbox_fill": [
+                0.781088,
+                0.975905,
+                0.892024
+              ],
+              "signed_volume": 27.135455,
+              "mask_area": 0.346021,
+              "minimum_triangle_area": 0.00088079,
+              "minimum_normal_dot": 0.862595,
+              "minimum_face_area_ratio": 0.510898,
+              "self_intersections": 0,
+              "silhouette_area": 0.04355073,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                5.4768,
+                3.522897,
+                2.882006
+              ],
+              "bbox_fill": [
+                0.805412,
+                0.978582,
+                0.900627
+              ],
+              "signed_volume": 27.41434,
+              "mask_area": 0.347174,
+              "minimum_triangle_area": 0.000836204,
+              "minimum_normal_dot": 0.887413,
+              "minimum_face_area_ratio": 0.553054,
+              "self_intersections": 0,
+              "silhouette_area": 0.04378729,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                5.6422,
+                3.532535,
+                2.909537
+              ],
+              "bbox_fill": [
+                0.829735,
+                0.98126,
+                0.90923
+              ],
+              "signed_volume": 27.673345,
+              "mask_area": 0.348145,
+              "minimum_triangle_area": 0.000792993,
+              "minimum_normal_dot": 0.910016,
+              "minimum_face_area_ratio": 0.598212,
+              "self_intersections": 0,
+              "silhouette_area": 0.0440125,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                5.8076,
+                3.542172,
+                2.937808
+              ],
+              "bbox_fill": [
+                0.854059,
+                0.983937,
+                0.918065
+              ],
+              "signed_volume": 27.913671,
+              "mask_area": 0.348939,
+              "minimum_triangle_area": 0.000751071,
+              "minimum_normal_dot": 0.930342,
+              "minimum_face_area_ratio": 0.646476,
+              "self_intersections": 0,
+              "silhouette_area": 0.04424069,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                5.973,
+                3.55181,
+                2.968931
+              ],
+              "bbox_fill": [
+                0.878382,
+                0.986614,
+                0.927791
+              ],
+              "signed_volume": 28.136506,
+              "mask_area": 0.349562,
+              "minimum_triangle_area": 0.000710341,
+              "minimum_normal_dot": 0.949116,
+              "minimum_face_area_ratio": 0.697826,
+              "self_intersections": 0,
+              "silhouette_area": 0.04447644,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                6.1384,
+                3.561448,
+                3.000621
+              ],
+              "bbox_fill": [
+                0.902706,
+                0.989291,
+                0.937694
+              ],
+              "signed_volume": 28.343048,
+              "mask_area": 0.350019,
+              "minimum_triangle_area": 0.000670713,
+              "minimum_normal_dot": 0.965826,
+              "minimum_face_area_ratio": 0.752236,
+              "self_intersections": 0,
+              "silhouette_area": 0.04471678,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.3038,
+                3.571086,
+                3.036072
+              ],
+              "bbox_fill": [
+                0.927029,
+                0.991968,
+                0.948772
+              ],
+              "signed_volume": 28.534488,
+              "mask_area": 0.350317,
+              "minimum_triangle_area": 0.0006321,
+              "minimum_normal_dot": 0.978375,
+              "minimum_face_area_ratio": 0.809682,
+              "self_intersections": 0,
+              "silhouette_area": 0.04496755,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.4692,
+                3.580724,
+                3.088327
+              ],
+              "bbox_fill": [
+                0.951353,
+                0.994646,
+                0.965102
+              ],
+              "signed_volume": 28.712017,
+              "mask_area": 0.350461,
+              "minimum_triangle_area": 0.000594402,
+              "minimum_normal_dot": 0.988936,
+              "minimum_face_area_ratio": 0.870141,
+              "self_intersections": 0,
+              "silhouette_area": 0.04523605,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.6346,
+                3.590362,
+                3.143802
+              ],
+              "bbox_fill": [
+                0.975676,
+                0.997323,
+                0.982438
+              ],
+              "signed_volume": 28.876835,
+              "mask_area": 0.35046,
+              "minimum_triangle_area": 0.000557538,
+              "minimum_normal_dot": 0.996813,
+              "minimum_face_area_ratio": 0.933588,
+              "self_intersections": 0,
+              "silhouette_area": 0.04550956,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.6,
+                3.2
+              ],
+              "bbox_fill": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "signed_volume": 29.030129,
+              "mask_area": 0.350319,
+              "minimum_triangle_area": 0.000521428,
+              "minimum_normal_dot": 1.0,
+              "minimum_face_area_ratio": 1.0,
+              "self_intersections": 0,
+              "silhouette_area": 0.04579536,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0562064
+            }
+          ],
+          "passed": true
+        },
+        {
+          "first_transition_progress": 0.75,
+          "source_snapshot_weights": {
+            "BRAND_WIDE": 0.25,
+            "SINGLE_MERCH_WRAP": 0.75
+          },
+          "retarget_rule": "retain current weights and multiply them by (1-t); set destination weight to t",
+          "coordinate_jump_at_switch": 0.0,
+          "normal_jump_at_switch": 0.0,
+          "max_step_rms": 0.0797308,
+          "samples": [
+            {
+              "t": 0.0,
+              "bbox_size": [
+                4.523,
+                3.455431,
+                2.832386
+              ],
+              "bbox_fill": [
+                0.665147,
+                0.959842,
+                0.885121
+              ],
+              "signed_volume": 27.347627,
+              "mask_area": 0.33683,
+              "minimum_triangle_area": 0.001008691,
+              "minimum_normal_dot": 0.6723,
+              "minimum_face_area_ratio": 0.360982,
+              "self_intersections": 0,
+              "silhouette_area": 0.0447268,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0
+            },
+            {
+              "t": 0.1,
+              "bbox_size": [
+                4.7507,
+                3.469888,
+                2.859372
+              ],
+              "bbox_fill": [
+                0.698632,
+                0.963858,
+                0.893554
+              ],
+              "signed_volume": 27.736939,
+              "mask_area": 0.339832,
+              "minimum_triangle_area": 0.001029648,
+              "minimum_normal_dot": 0.73842,
+              "minimum_face_area_ratio": 0.398104,
+              "self_intersections": 0,
+              "silhouette_area": 0.04477462,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.2,
+              "bbox_size": [
+                4.9784,
+                3.484345,
+                2.886359
+              ],
+              "bbox_fill": [
+                0.732118,
+                0.967874,
+                0.901987
+              ],
+              "signed_volume": 28.065519,
+              "mask_area": 0.342452,
+              "minimum_triangle_area": 0.001047557,
+              "minimum_normal_dot": 0.791909,
+              "minimum_face_area_ratio": 0.440956,
+              "self_intersections": 0,
+              "silhouette_area": 0.0448877,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.3,
+              "bbox_size": [
+                5.2061,
+                3.498802,
+                2.913345
+              ],
+              "bbox_fill": [
+                0.765603,
+                0.971889,
+                0.91042
+              ],
+              "signed_volume": 28.337727,
+              "mask_area": 0.344692,
+              "minimum_triangle_area": 0.00097257,
+              "minimum_normal_dot": 0.830871,
+              "minimum_face_area_ratio": 0.489758,
+              "self_intersections": 0,
+              "silhouette_area": 0.04501018,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.4,
+              "bbox_size": [
+                5.4338,
+                3.513259,
+                2.940332
+              ],
+              "bbox_fill": [
+                0.799088,
+                0.975905,
+                0.918854
+              ],
+              "signed_volume": 28.557909,
+              "mask_area": 0.346555,
+              "minimum_triangle_area": 0.00089914,
+              "minimum_normal_dot": 0.868385,
+              "minimum_face_area_ratio": 0.544519,
+              "self_intersections": 0,
+              "silhouette_area": 0.04512861,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.5,
+              "bbox_size": [
+                5.6615,
+                3.527716,
+                2.967319
+              ],
+              "bbox_fill": [
+                0.832574,
+                0.979921,
+                0.927287
+              ],
+              "signed_volume": 28.730417,
+              "mask_area": 0.348049,
+              "minimum_triangle_area": 0.000829182,
+              "minimum_normal_dot": 0.902955,
+              "minimum_face_area_ratio": 0.605016,
+              "self_intersections": 0,
+              "silhouette_area": 0.04522131,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.6,
+              "bbox_size": [
+                5.8892,
+                3.542172,
+                2.996037
+              ],
+              "bbox_fill": [
+                0.866059,
+                0.983937,
+                0.936262
+              ],
+              "signed_volume": 28.859604,
+              "mask_area": 0.34918,
+              "minimum_triangle_area": 0.000762407,
+              "minimum_normal_dot": 0.932809,
+              "minimum_face_area_ratio": 0.671764,
+              "self_intersections": 0,
+              "silhouette_area": 0.04529721,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.7,
+              "bbox_size": [
+                6.1169,
+                3.556629,
+                3.028164
+              ],
+              "bbox_fill": [
+                0.899544,
+                0.987953,
+                0.946301
+              ],
+              "signed_volume": 28.949819,
+              "mask_area": 0.349959,
+              "minimum_triangle_area": 0.000698537,
+              "minimum_normal_dot": 0.959266,
+              "minimum_face_area_ratio": 0.744706,
+              "self_intersections": 0,
+              "silhouette_area": 0.04538865,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.8,
+              "bbox_size": [
+                6.3446,
+                3.571086,
+                3.06545
+              ],
+              "bbox_fill": [
+                0.933029,
+                0.991968,
+                0.957953
+              ],
+              "signed_volume": 29.005408,
+              "mask_area": 0.350399,
+              "minimum_triangle_area": 0.000637271,
+              "minimum_normal_dot": 0.978692,
+              "minimum_face_area_ratio": 0.823776,
+              "self_intersections": 0,
+              "silhouette_area": 0.04549807,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 0.9,
+              "bbox_size": [
+                6.5723,
+                3.585543,
+                3.132156
+              ],
+              "bbox_fill": [
+                0.966515,
+                0.995984,
+                0.978799
+              ],
+              "signed_volume": 29.03073,
+              "mask_area": 0.350513,
+              "minimum_triangle_area": 0.000578324,
+              "minimum_normal_dot": 0.993404,
+              "minimum_face_area_ratio": 0.908898,
+              "self_intersections": 0,
+              "silhouette_area": 0.04563638,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            },
+            {
+              "t": 1.0,
+              "bbox_size": [
+                6.8,
+                3.6,
+                3.2
+              ],
+              "bbox_fill": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "signed_volume": 29.030129,
+              "mask_area": 0.350319,
+              "minimum_triangle_area": 0.000521428,
+              "minimum_normal_dot": 1.0,
+              "minimum_face_area_ratio": 1.0,
+              "self_intersections": 0,
+              "silhouette_area": 0.04579536,
+              "inside_canonical_envelope": true,
+              "canonical_fill_desirable": true,
+              "checks": {
+                "finite": true,
+                "volume": true,
+                "degenerate": true,
+                "normals": true,
+                "collapse": true,
+                "intersections": true,
+                "bbox": true,
+                "mask": true
+              },
+              "passed": true,
+              "step_rms": 0.0797308
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "system": "D-R3 / Final Associative Form Lock recovery",
+  "fill_policy": {
+    "canonical_envelope_max": [
+      6.8,
+      3.6,
+      3.2
+    ],
+    "relaxed_per_axis_fill_floor": 0.22
+  },
+  "runtime_contract": "retain current endpoint mixture at switch; blend snapshot directly to destination"
+}
