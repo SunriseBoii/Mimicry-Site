@@ -1,0 +1,233 @@
+{
+  "stage": "PS-03.4",
+  "baseline": "PS-03.3 D-R1 associative system",
+  "conclusion": "The seven D-R1 targets retain close global blob massing and several intended cues disappear at 96-180 px.",
+  "ps03_3_single_pair_metrics": [
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_DESIGN_TORSION",
+      "rms_displacement": 0.551016,
+      "max_displacement": 1.125235,
+      "projected_hull_area_relative_distance": 0.279958
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "rms_displacement": 0.696547,
+      "max_displacement": 1.39734,
+      "projected_hull_area_relative_distance": 0.361747
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.367556,
+      "max_displacement": 0.896323,
+      "projected_hull_area_relative_distance": 0.165668
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.477331,
+      "max_displacement": 1.059593,
+      "projected_hull_area_relative_distance": 0.152592
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.480273,
+      "max_displacement": 1.062816,
+      "projected_hull_area_relative_distance": 0.210797
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.461045,
+      "max_displacement": 0.944965,
+      "projected_hull_area_relative_distance": 0.268517
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "rms_displacement": 0.698882,
+      "max_displacement": 1.313041,
+      "projected_hull_area_relative_distance": 0.11359
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.502717,
+      "max_displacement": 0.949501,
+      "projected_hull_area_relative_distance": 0.158727
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.516515,
+      "max_displacement": 0.966132,
+      "projected_hull_area_relative_distance": 0.176887
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.54055,
+      "max_displacement": 1.002101,
+      "projected_hull_area_relative_distance": 0.096051
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.486508,
+      "max_displacement": 0.998585,
+      "projected_hull_area_relative_distance": 0.015888
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.487261,
+      "max_displacement": 1.099197,
+      "projected_hull_area_relative_distance": 0.307213
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.602144,
+      "max_displacement": 1.3047,
+      "projected_hull_area_relative_distance": 0.3277
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.411016,
+      "max_displacement": 0.899019,
+      "projected_hull_area_relative_distance": 0.236505
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.564263,
+      "max_displacement": 1.096585,
+      "projected_hull_area_relative_distance": 0.146071
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.321842,
+      "max_displacement": 0.877359,
+      "projected_hull_area_relative_distance": 0.015672
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.180823,
+      "max_displacement": 0.404244,
+      "projected_hull_area_relative_distance": 0.054091
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.331008,
+      "max_displacement": 0.606723,
+      "projected_hull_area_relative_distance": 0.123272
+    },
+    {
+      "source": "SINGLE_VIDEO_TEMPORAL",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.351777,
+      "max_displacement": 0.871598,
+      "projected_hull_area_relative_distance": 0.068686
+    },
+    {
+      "source": "SINGLE_VIDEO_TEMPORAL",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.367324,
+      "max_displacement": 0.697151,
+      "projected_hull_area_relative_distance": 0.1368
+    },
+    {
+      "source": "SINGLE_DIGITAL_SIGNAL",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.378082,
+      "max_displacement": 0.672644,
+      "projected_hull_area_relative_distance": 0.073137
+    }
+  ],
+  "ps03_3_content_digital": {
+    "rms_displacement": 0.480273,
+    "max_displacement": 1.062816,
+    "projected_hull_area_relative_distance": 0.210797
+  },
+  "ps03_4_content_digital": {
+    "rms_displacement": 0.635891,
+    "max_displacement": 1.24134,
+    "projected_hull_area_relative_distance": 0.337988
+  },
+  "revisions": {
+    "SINGLE_CONTENT_SEQUENCE": {
+      "rms_displacement": 0.434419,
+      "max_displacement": 0.722738,
+      "projected_hull_area_relative_distance": 0.033739,
+      "d_r1_association_readability_25": 14,
+      "d_r2_association_readability_25": 18,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "rms_displacement": 0.572178,
+      "max_displacement": 1.088154,
+      "projected_hull_area_relative_distance": 0.065615,
+      "d_r1_association_readability_25": 11,
+      "d_r2_association_readability_25": 15,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "rms_displacement": 0.705315,
+      "max_displacement": 1.086177,
+      "projected_hull_area_relative_distance": 0.044377,
+      "d_r1_association_readability_25": 11,
+      "d_r2_association_readability_25": 15,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "rms_displacement": 0.47144,
+      "max_displacement": 0.806086,
+      "projected_hull_area_relative_distance": 0.023359,
+      "d_r1_association_readability_25": 10,
+      "d_r2_association_readability_25": 14,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "rms_displacement": 0.464675,
+      "max_displacement": 0.986313,
+      "projected_hull_area_relative_distance": 0.108834,
+      "d_r1_association_readability_25": 11,
+      "d_r2_association_readability_25": 19,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "rms_displacement": 0.540799,
+      "max_displacement": 0.898904,
+      "projected_hull_area_relative_distance": 0.189466,
+      "d_r1_association_readability_25": 10,
+      "d_r2_association_readability_25": 16,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    },
+    "SINGLE_MERCH_WRAP": {
+      "rms_displacement": 0.441041,
+      "max_displacement": 0.779021,
+      "projected_hull_area_relative_distance": 0.489437,
+      "d_r1_association_readability_25": 11,
+      "d_r2_association_readability_25": 17,
+      "reason": "D-R1 preserved one living actor but the intended objects were subordinated to a shared blob silhouette; D-R2 rebuilds macro silhouette, mass distribution and one archetypal constructive cue."
+    }
+  },
+  "risk_summary": {
+    "GAMES": "routes must remain a board field rather than horns/crown or a literal controller",
+    "EVENT": "offset roofline must stay non-radial and avoid flower/volcano/mushroom",
+    "MERCH": "block core and continuous overlap must avoid capsule/stone/case"
+  },
+  "hash_conflict_resolution": {
+    "stale_prompt_hash": "2cd522cd9a1d0e90f10fc072835db1cd54a9ad1072478911713884646fc89bd8",
+    "user_confirmed_canonical_hash": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+    "recomputed_from_ps03_3_production_blend": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+    "resolved": true
+  }
+}

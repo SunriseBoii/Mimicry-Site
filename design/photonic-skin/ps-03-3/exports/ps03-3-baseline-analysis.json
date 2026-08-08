@@ -1,0 +1,227 @@
+{
+  "stage": "PS-03.3",
+  "baseline": "PS-03.2 abstract A",
+  "conclusion": "The seven A targets share close global massing and rely too strongly on subtle surface relief at 96-180 px.",
+  "ps03_2_single_pair_metrics": [
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_DESIGN_TORSION",
+      "rms_displacement": 0.139409,
+      "max_displacement": 0.253509,
+      "projected_hull_area_relative_distance": 0.021173
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "rms_displacement": 0.174346,
+      "max_displacement": 0.233907,
+      "projected_hull_area_relative_distance": 0.010562
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.142727,
+      "max_displacement": 0.25687,
+      "projected_hull_area_relative_distance": 0.01331
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.226514,
+      "max_displacement": 0.301214,
+      "projected_hull_area_relative_distance": 0.036147
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.0858,
+      "max_displacement": 0.219014,
+      "projected_hull_area_relative_distance": 0.015157
+    },
+    {
+      "source": "SINGLE_CONTENT_SEQUENCE",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.230901,
+      "max_displacement": 0.322761,
+      "projected_hull_area_relative_distance": 0.132255
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "rms_displacement": 0.175453,
+      "max_displacement": 0.309998,
+      "projected_hull_area_relative_distance": 0.031078
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.157229,
+      "max_displacement": 0.3882,
+      "projected_hull_area_relative_distance": 0.0077
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.229956,
+      "max_displacement": 0.39566,
+      "projected_hull_area_relative_distance": 0.014663
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.160452,
+      "max_displacement": 0.289144,
+      "projected_hull_area_relative_distance": 0.035577
+    },
+    {
+      "source": "SINGLE_DESIGN_TORSION",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.202906,
+      "max_displacement": 0.331295,
+      "projected_hull_area_relative_distance": 0.150248
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_GAMES_BRANCH",
+      "rms_displacement": 0.202355,
+      "max_displacement": 0.390265,
+      "projected_hull_area_relative_distance": 0.024127
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.309382,
+      "max_displacement": 0.411285,
+      "projected_hull_area_relative_distance": 0.047208
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.158171,
+      "max_displacement": 0.247359,
+      "projected_hull_area_relative_distance": 0.004644
+    },
+    {
+      "source": "SINGLE_EVENT_CONVERGENCE",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.21213,
+      "max_displacement": 0.324061,
+      "projected_hull_area_relative_distance": 0.122992
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "rms_displacement": 0.208806,
+      "max_displacement": 0.402044,
+      "projected_hull_area_relative_distance": 0.022537
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.134756,
+      "max_displacement": 0.269332,
+      "projected_hull_area_relative_distance": 0.028093
+    },
+    {
+      "source": "SINGLE_GAMES_BRANCH",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.159299,
+      "max_displacement": 0.243063,
+      "projected_hull_area_relative_distance": 0.143654
+    },
+    {
+      "source": "SINGLE_VIDEO_TEMPORAL",
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "rms_displacement": 0.23307,
+      "max_displacement": 0.377618,
+      "projected_hull_area_relative_distance": 0.049514
+    },
+    {
+      "source": "SINGLE_VIDEO_TEMPORAL",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.254628,
+      "max_displacement": 0.412909,
+      "projected_hull_area_relative_distance": 0.162528
+    },
+    {
+      "source": "SINGLE_DIGITAL_SIGNAL",
+      "target": "SINGLE_MERCH_WRAP",
+      "rms_displacement": 0.199993,
+      "max_displacement": 0.274497,
+      "projected_hull_area_relative_distance": 0.118901
+    }
+  ],
+  "ps03_2_content_digital": {
+    "rms_displacement": 0.0858,
+    "max_displacement": 0.219014,
+    "projected_hull_area_relative_distance": 0.015157
+  },
+  "ps03_3_content_digital": {
+    "rms_displacement": 0.480273,
+    "max_displacement": 1.062816,
+    "projected_hull_area_relative_distance": 0.210797
+  },
+  "revisions": {
+    "SINGLE_CONTENT_SEQUENCE": {
+      "rms_displacement": 0.577158,
+      "max_displacement": 1.008083,
+      "projected_hull_area_relative_distance": 0.58452,
+      "baseline_association_readability_25": 11,
+      "ps03_3_association_readability_25": 22,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "rms_displacement": 0.367836,
+      "max_displacement": 0.694128,
+      "projected_hull_area_relative_distance": 0.117265,
+      "baseline_association_readability_25": 10,
+      "ps03_3_association_readability_25": 20,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "rms_displacement": 0.529982,
+      "max_displacement": 0.939429,
+      "projected_hull_area_relative_distance": 0.02212,
+      "baseline_association_readability_25": 12,
+      "ps03_3_association_readability_25": 21,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "rms_displacement": 0.511616,
+      "max_displacement": 0.858749,
+      "projected_hull_area_relative_distance": 0.304651,
+      "baseline_association_readability_25": 10,
+      "ps03_3_association_readability_25": 20,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "rms_displacement": 0.472472,
+      "max_displacement": 0.896355,
+      "projected_hull_area_relative_distance": 0.295893,
+      "baseline_association_readability_25": 13,
+      "ps03_3_association_readability_25": 22,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "rms_displacement": 0.483838,
+      "max_displacement": 0.885319,
+      "projected_hull_area_relative_distance": 0.269754,
+      "baseline_association_readability_25": 11,
+      "ps03_3_association_readability_25": 21,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    },
+    "SINGLE_MERCH_WRAP": {
+      "rms_displacement": 0.432006,
+      "max_displacement": 0.757452,
+      "projected_hull_area_relative_distance": 0.335703,
+      "baseline_association_readability_25": 13,
+      "ps03_3_association_readability_25": 22,
+      "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+    }
+  },
+  "risk_summary": {
+    "GAMES": "three abstract shoulders could read as horns/crown",
+    "EVENT": "central crest could read as flower/volcano/portal",
+    "MERCH": "compact wrap could read as capsule/ingot"
+  }
+}

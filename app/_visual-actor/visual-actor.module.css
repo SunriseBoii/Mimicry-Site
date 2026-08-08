@@ -1,0 +1,139 @@
+.actor {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1.08 / 1;
+  isolation: isolate;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.poster,
+.posterShadow,
+.posterShell,
+.posterSpectrum,
+.posterHighlight {
+  position: absolute;
+}
+
+.poster {
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 58% 44%, rgb(255 255 255 / 46%), transparent 28%),
+    linear-gradient(145deg, #eeece4, #d9d8d1 72%, #c9cac5);
+}
+
+.poster[data-theme="dark"] {
+  background:
+    radial-gradient(circle at 58% 40%, rgb(255 255 255 / 8%), transparent 29%),
+    linear-gradient(145deg, #15171b, #090a0d 74%);
+}
+
+.posterShadow {
+  right: 11%;
+  bottom: 13%;
+  width: 70%;
+  height: 17%;
+  border-radius: 50%;
+  background: rgb(36 37 35 / 24%);
+  filter: blur(28px);
+  transform: rotate(-7deg);
+}
+
+.posterShell {
+  top: 18%;
+  right: 6%;
+  width: 86%;
+  height: 60%;
+  overflow: hidden;
+  border: 1px solid rgb(111 110 104 / 30%);
+  border-radius: 58% 18% 52% 31% / 56% 24% 49% 31%;
+  background:
+    radial-gradient(circle at 30% 25%, rgb(255 255 255 / 88%), transparent 26%),
+    linear-gradient(135deg, #f6f1e7, #cbc8c0 58%, #a8aaa6);
+  box-shadow:
+    inset -26px -34px 64px rgb(35 36 34 / 12%),
+    inset 18px 15px 46px rgb(255 255 255 / 52%);
+  clip-path: polygon(0 16%, 56% 0, 100% 51%, 60% 92%, 10% 100%, 22% 53%);
+  transform: rotate(-9deg) skewX(-5deg);
+}
+
+.poster[data-theme="dark"] .posterShell {
+  border-color: rgb(255 255 255 / 12%);
+  background:
+    radial-gradient(circle at 31% 24%, rgb(255 255 255 / 24%), transparent 23%),
+    linear-gradient(135deg, #393d43, #17191e 52%, #08090c);
+  box-shadow:
+    inset -26px -34px 64px rgb(0 0 0 / 52%),
+    inset 18px 15px 44px rgb(255 255 255 / 10%);
+}
+
+.posterSpectrum {
+  right: -9%;
+  bottom: -17%;
+  width: 92%;
+  height: 78%;
+  border-radius: 52% 20% 58% 28%;
+  background: linear-gradient(
+    112deg,
+    var(--poster-01),
+    var(--poster-02) 16%,
+    var(--poster-03) 32%,
+    var(--poster-04) 48%,
+    var(--poster-05) 64%,
+    var(--poster-06) 80%,
+    var(--poster-07)
+  );
+  filter: saturate(0.86);
+  mask-image: repeating-linear-gradient(122deg, #000 0 8px, transparent 9px 12px);
+  opacity: 0.66;
+  transform: rotate(-7deg);
+}
+
+.posterHighlight {
+  top: 12%;
+  left: 16%;
+  width: 58%;
+  height: 18%;
+  border-top: 2px solid rgb(255 255 255 / 72%);
+  border-radius: 50%;
+  filter: blur(1px);
+  transform: rotate(-13deg);
+}
+
+.posterLabel {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  color: rgb(32 34 33 / 62%);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.poster[data-theme="dark"] .posterLabel {
+  color: rgb(238 239 234 / 48%);
+}
+
+@media (max-width: 640px) {
+  .actor {
+    aspect-ratio: 1.16 / 1;
+  }
+
+  .posterShell {
+    top: 14%;
+    right: 2%;
+    width: 94%;
+    height: 66%;
+  }
+
+  .posterLabel {
+    right: 10px;
+    bottom: 9px;
+    font-size: 8px;
+  }
+}
+

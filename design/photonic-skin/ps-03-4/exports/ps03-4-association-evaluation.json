@@ -1,0 +1,86 @@
+{
+  "stage": "PS-03.4",
+  "system": "D-R2 / Final Associative Form Lock",
+  "direction": "D only",
+  "candidate_state_count": 21,
+  "candidate_variants_per_single": 3,
+  "refinement_cycles": 5,
+  "gate_thresholds": {
+    "total_100": 90,
+    "object_readability_25": 22,
+    "mimic_core_dna_20": 18,
+    "mobile_96px_10": 8,
+    "association_safety_5": 4
+  },
+  "unlabelled_gate": {
+    "board": "renders/ps03-4_d_only_unlabelled_lock_board.png",
+    "answer_key": "renders/ps03-4_d_only_answer_key_board.png",
+    "verdict": "NOT LOCKED",
+    "reason": "The final D-R2 endpoints are technically valid and more differentiated than D-R1, but the neutral 96 px silhouettes do not independently identify all seven intended object fields. CONTENT, DESIGN, EVENT, GAMES, DIGITAL and MERCH still require labels; VIDEO is closest but remains below the 90/100 gate."
+  },
+  "targets": [
+    {
+      "target": "SINGLE_CONTENT_SEQUENCE",
+      "association": "Editorial Folio",
+      "primary_cue": "two connected top fields and a shallow central fold",
+      "nearest_wrong_association": "shell / chair / mouth",
+      "scores": {"readability_25": 18, "dna_20": 19, "distinct_15": 13, "morph_15": 14, "b2b_10": 9, "mobile_10": 8, "safe_5": 4, "total_100": 85},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_DESIGN_TORSION",
+      "association": "Forming Palette",
+      "primary_cue": "wide work zone, narrow control side and counter-torsion",
+      "nearest_wrong_association": "bowl / shell / drapery",
+      "scores": {"readability_25": 15, "dna_20": 19, "distinct_15": 13, "morph_15": 14, "b2b_10": 9, "mobile_10": 7, "safe_5": 4, "total_100": 81},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "association": "Gathering Canopy",
+      "primary_cue": "offset apex and broad non-radial roof planes",
+      "nearest_wrong_association": "volcano / mushroom / flower",
+      "scores": {"readability_25": 15, "dna_20": 19, "distinct_15": 13, "morph_15": 14, "b2b_10": 9, "mobile_10": 7, "safe_5": 3, "total_100": 80},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_GAMES_BRANCH",
+      "association": "Decision Field",
+      "primary_cue": "one entry region, three divergent macro routes and decision zones",
+      "nearest_wrong_association": "controller / horns / crown / generic field",
+      "scores": {"readability_25": 14, "dna_20": 19, "distinct_15": 13, "morph_15": 14, "b2b_10": 9, "mobile_10": 7, "safe_5": 4, "total_100": 80},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "association": "Frame Sweep",
+      "primary_cue": "soft rectangular surface and one temporal sweep edge",
+      "nearest_wrong_association": "car / capsule / airfoil",
+      "scores": {"readability_25": 19, "dna_20": 19, "distinct_15": 14, "morph_15": 14, "b2b_10": 9, "mobile_10": 8, "safe_5": 4, "total_100": 87},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "association": "Routing Substrate",
+      "primary_cue": "directed Y-convergence, two broad nodes and one output shoulder",
+      "nearest_wrong_association": "generic relief field / alien hardware",
+      "scores": {"readability_25": 16, "dna_20": 19, "distinct_15": 14, "morph_15": 14, "b2b_10": 9, "mobile_10": 7, "safe_5": 4, "total_100": 83},
+      "status": "NOT LOCKED"
+    },
+    {
+      "target": "SINGLE_MERCH_WRAP",
+      "association": "Wrapped Parcel",
+      "primary_cue": "soft block core and continuous diagonal overlap",
+      "nearest_wrong_association": "capsule / stone / case",
+      "scores": {"readability_25": 17, "dna_20": 19, "distinct_15": 13, "morph_15": 14, "b2b_10": 9, "mobile_10": 7, "safe_5": 4, "total_100": 83},
+      "status": "NOT LOCKED"
+    }
+  ],
+  "content_digital_games_distinction": {
+    "geometry": "CONTENT uses a central two-field fold; DIGITAL uses converging routes and output shoulder; GAMES uses divergence from one entry into decision zones.",
+    "unlabelled_96px": "insufficient; the three fields remain too close in macro silhouette",
+    "passed": false
+  },
+  "production_status": "TECHNICALLY VALID BEST-EFFORT / NOT LOCKED",
+  "passed": false
+}

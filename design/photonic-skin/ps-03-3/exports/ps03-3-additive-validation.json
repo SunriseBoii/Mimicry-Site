@@ -1,0 +1,2686 @@
+{
+  "stage": "PS-03.3",
+  "target": "TRANSITION_TENSION",
+  "runtime_weights": [
+    0.04,
+    0.06
+  ],
+  "diagnostic_weights": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "combination_count": 72,
+  "terminals": [
+    {
+      "terminal": "MASTER",
+      "samples": [
+        {
+          "bbox_size": [
+            6.8,
+            3.6,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "signed_volume": 29.030129,
+          "mask_area": 0.350319,
+          "minimum_triangle_area": 0.000521428,
+          "minimum_normal_dot": 1.0,
+          "minimum_face_area_ratio": 1.0,
+          "self_intersections": 0,
+          "silhouette_area": 0.04579536,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.59712,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            0.9992,
+            1.0
+          ],
+          "signed_volume": 29.032228,
+          "mask_area": 0.350059,
+          "minimum_triangle_area": 0.000521591,
+          "minimum_normal_dot": 0.999998,
+          "minimum_face_area_ratio": 0.996986,
+          "self_intersections": 0,
+          "silhouette_area": 0.04581504,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 7.23e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.59568,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            0.9988,
+            1.0
+          ],
+          "signed_volume": 29.033277,
+          "mask_area": 0.349929,
+          "minimum_triangle_area": 0.000521673,
+          "minimum_normal_dot": 0.999995,
+          "minimum_face_area_ratio": 0.995482,
+          "self_intersections": 0,
+          "silhouette_area": 0.04582488,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0001085,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.582,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            0.995,
+            1.0
+          ],
+          "signed_volume": 29.043374,
+          "mask_area": 0.348693,
+          "minimum_triangle_area": 0.000522441,
+          "minimum_normal_dot": 0.999913,
+          "minimum_face_area_ratio": 0.981224,
+          "self_intersections": 0,
+          "silhouette_area": 0.0459187,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0004563,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.564,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            0.99,
+            1.0
+          ],
+          "signed_volume": 29.056958,
+          "mask_area": 0.347064,
+          "minimum_triangle_area": 0.000523438,
+          "minimum_normal_dot": 0.999647,
+          "minimum_face_area_ratio": 0.962587,
+          "self_intersections": 0,
+          "silhouette_area": 0.04604771,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0009242,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.528,
+            3.2
+          ],
+          "bbox_fill": [
+            1.0,
+            0.98,
+            1.0
+          ],
+          "signed_volume": 29.085141,
+          "mask_area": 0.343804,
+          "minimum_triangle_area": 0.00052341,
+          "minimum_normal_dot": 0.998534,
+          "minimum_face_area_ratio": 0.925751,
+          "self_intersections": 0,
+          "silhouette_area": 0.04631549,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.001895,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "BRAND_WIDE",
+      "samples": [
+        {
+          "bbox_size": [
+            6.392,
+            3.6,
+            2.88
+          ],
+          "bbox_fill": [
+            0.94,
+            1.0,
+            0.9
+          ],
+          "signed_volume": 24.555562,
+          "mask_area": 0.349674,
+          "minimum_triangle_area": 0.000476505,
+          "minimum_normal_dot": 0.996049,
+          "minimum_face_area_ratio": 0.832833,
+          "self_intersections": 0,
+          "silhouette_area": 0.04066086,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.59712,
+            2.880011
+          ],
+          "bbox_fill": [
+            0.94,
+            0.9992,
+            0.900004
+          ],
+          "signed_volume": 24.558557,
+          "mask_area": 0.349404,
+          "minimum_triangle_area": 0.000476671,
+          "minimum_normal_dot": 0.995861,
+          "minimum_face_area_ratio": 0.832755,
+          "self_intersections": 0,
+          "silhouette_area": 0.04068066,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 0.000122,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.59568,
+            2.880017
+          ],
+          "bbox_fill": [
+            0.94,
+            0.9988,
+            0.900005
+          ],
+          "signed_volume": 24.560056,
+          "mask_area": 0.349269,
+          "minimum_triangle_area": 0.000476756,
+          "minimum_normal_dot": 0.995762,
+          "minimum_face_area_ratio": 0.832715,
+          "self_intersections": 0,
+          "silhouette_area": 0.04069058,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.000183,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.582,
+            2.880071
+          ],
+          "bbox_fill": [
+            0.94,
+            0.995,
+            0.900022
+          ],
+          "signed_volume": 24.57442,
+          "mask_area": 0.347984,
+          "minimum_triangle_area": 0.00047754,
+          "minimum_normal_dot": 0.994739,
+          "minimum_face_area_ratio": 0.83234,
+          "self_intersections": 0,
+          "silhouette_area": 0.04078621,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.000768,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.564,
+            2.880142
+          ],
+          "bbox_fill": [
+            0.94,
+            0.99,
+            0.900044
+          ],
+          "signed_volume": 24.593614,
+          "mask_area": 0.346293,
+          "minimum_triangle_area": 0.000478556,
+          "minimum_normal_dot": 0.993198,
+          "minimum_face_area_ratio": 0.831841,
+          "self_intersections": 0,
+          "silhouette_area": 0.04091559,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0015496,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.528,
+            2.880285
+          ],
+          "bbox_fill": [
+            0.94,
+            0.98,
+            0.900089
+          ],
+          "signed_volume": 24.633011,
+          "mask_area": 0.342907,
+          "minimum_triangle_area": 0.000474408,
+          "minimum_normal_dot": 0.989409,
+          "minimum_face_area_ratio": 0.814696,
+          "self_intersections": 0,
+          "silhouette_area": 0.04119384,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.003154,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_CONTENT_SEQUENCE",
+      "samples": [
+        {
+          "bbox_size": [
+            6.596,
+            3.564,
+            2.816
+          ],
+          "bbox_fill": [
+            0.97,
+            0.99,
+            0.88
+          ],
+          "signed_volume": 36.801218,
+          "mask_area": 0.321123,
+          "minimum_triangle_area": 0.001769302,
+          "minimum_normal_dot": 0.203141,
+          "minimum_face_area_ratio": 0.481056,
+          "self_intersections": 0,
+          "silhouette_area": 0.07006386,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": -0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.596,
+            3.56112,
+            2.816
+          ],
+          "bbox_fill": [
+            0.97,
+            0.9892,
+            0.88
+          ],
+          "signed_volume": 36.810025,
+          "mask_area": 0.320989,
+          "minimum_triangle_area": 0.001768264,
+          "minimum_normal_dot": 0.202411,
+          "minimum_face_area_ratio": 0.480756,
+          "self_intersections": 0,
+          "silhouette_area": 0.07010172,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 0.0002393,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.596,
+            3.55968,
+            2.816
+          ],
+          "bbox_fill": [
+            0.97,
+            0.9888,
+            0.88
+          ],
+          "signed_volume": 36.814426,
+          "mask_area": 0.320923,
+          "minimum_triangle_area": 0.001767688,
+          "minimum_normal_dot": 0.202045,
+          "minimum_face_area_ratio": 0.480605,
+          "self_intersections": 0,
+          "silhouette_area": 0.07012066,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0003589,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.596,
+            3.546,
+            2.816
+          ],
+          "bbox_fill": [
+            0.97,
+            0.985,
+            0.88
+          ],
+          "signed_volume": 36.856445,
+          "mask_area": 0.320289,
+          "minimum_triangle_area": 0.001762204,
+          "minimum_normal_dot": 0.198578,
+          "minimum_face_area_ratio": 0.479176,
+          "self_intersections": 0,
+          "silhouette_area": 0.07030109,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0015007,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.596,
+            3.528,
+            2.830435
+          ],
+          "bbox_fill": [
+            0.97,
+            0.98,
+            0.884511
+          ],
+          "signed_volume": 36.91214,
+          "mask_area": 0.319457,
+          "minimum_triangle_area": 0.001754993,
+          "minimum_normal_dot": 0.194019,
+          "minimum_face_area_ratio": 0.477292,
+          "self_intersections": 0,
+          "silhouette_area": 0.07054052,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0030141,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.596,
+            3.492,
+            2.864878
+          ],
+          "bbox_fill": [
+            0.97,
+            0.97,
+            0.895275
+          ],
+          "signed_volume": 37.024966,
+          "mask_area": 0.317798,
+          "minimum_triangle_area": 0.00174062,
+          "minimum_normal_dot": 0.184917,
+          "minimum_face_area_ratio": 0.473513,
+          "self_intersections": 0,
+          "silhouette_area": 0.07102245,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0060799,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_DESIGN_TORSION",
+      "samples": [
+        {
+          "bbox_size": [
+            6.528,
+            3.564,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.99,
+            0.88
+          ],
+          "signed_volume": 28.366051,
+          "mask_area": 0.347383,
+          "minimum_triangle_area": 0.001245045,
+          "minimum_normal_dot": 0.28095,
+          "minimum_face_area_ratio": 0.512726,
+          "self_intersections": 0,
+          "silhouette_area": 0.05044895,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.56112,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.9892,
+            0.88
+          ],
+          "signed_volume": 28.372093,
+          "mask_area": 0.347146,
+          "minimum_triangle_area": 0.001245094,
+          "minimum_normal_dot": 0.278134,
+          "minimum_face_area_ratio": 0.514026,
+          "self_intersections": 0,
+          "silhouette_area": 0.05047697,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 0.000213,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.55968,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.9888,
+            0.88
+          ],
+          "signed_volume": 28.375118,
+          "mask_area": 0.347027,
+          "minimum_triangle_area": 0.001245122,
+          "minimum_normal_dot": 0.276727,
+          "minimum_face_area_ratio": 0.514678,
+          "self_intersections": 0,
+          "silhouette_area": 0.05049098,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0003196,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.546,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.985,
+            0.88
+          ],
+          "signed_volume": 28.403972,
+          "mask_area": 0.345902,
+          "minimum_triangle_area": 0.001245357,
+          "minimum_normal_dot": 0.263386,
+          "minimum_face_area_ratio": 0.520872,
+          "self_intersections": 0,
+          "silhouette_area": 0.05062446,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0013368,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.528,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.98,
+            0.88
+          ],
+          "signed_volume": 28.442277,
+          "mask_area": 0.344423,
+          "minimum_triangle_area": 0.00124311,
+          "minimum_normal_dot": 0.245921,
+          "minimum_face_area_ratio": 0.527169,
+          "self_intersections": 0,
+          "silhouette_area": 0.05080073,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0026872,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.492,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.97,
+            0.88
+          ],
+          "signed_volume": 28.520048,
+          "mask_area": 0.341469,
+          "minimum_triangle_area": 0.001229024,
+          "minimum_normal_dot": 0.211347,
+          "minimum_face_area_ratio": 0.52268,
+          "self_intersections": 0,
+          "silhouette_area": 0.05115657,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0054289,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_EVENT_CONVERGENCE",
+      "samples": [
+        {
+          "bbox_size": [
+            6.392,
+            3.492,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.97,
+            0.97
+          ],
+          "signed_volume": 24.681079,
+          "mask_area": 0.349339,
+          "minimum_triangle_area": 0.000905964,
+          "minimum_normal_dot": 0.676809,
+          "minimum_face_area_ratio": 0.447911,
+          "self_intersections": 0,
+          "silhouette_area": 0.04471845,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.48912,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.9692,
+            0.97
+          ],
+          "signed_volume": 24.688071,
+          "mask_area": 0.34906,
+          "minimum_triangle_area": 0.000906057,
+          "minimum_normal_dot": 0.67534,
+          "minimum_face_area_ratio": 0.447757,
+          "self_intersections": 0,
+          "silhouette_area": 0.04473282,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 0.0002833,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.48768,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.9688,
+            0.97
+          ],
+          "signed_volume": 24.69157,
+          "mask_area": 0.348921,
+          "minimum_triangle_area": 0.000906106,
+          "minimum_normal_dot": 0.674605,
+          "minimum_face_area_ratio": 0.44768,
+          "self_intersections": 0,
+          "silhouette_area": 0.04474,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0004251,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.474,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.965,
+            0.97
+          ],
+          "signed_volume": 24.724962,
+          "mask_area": 0.347597,
+          "minimum_triangle_area": 0.000906545,
+          "minimum_normal_dot": 0.667628,
+          "minimum_face_area_ratio": 0.446951,
+          "self_intersections": 0,
+          "silhouette_area": 0.04480839,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.001778,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.456,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.96,
+            0.97
+          ],
+          "signed_volume": 24.769264,
+          "mask_area": 0.345855,
+          "minimum_triangle_area": 0.000907129,
+          "minimum_normal_dot": 0.658451,
+          "minimum_face_area_ratio": 0.446003,
+          "self_intersections": 0,
+          "silhouette_area": 0.04489868,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.003573,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.392,
+            3.42,
+            3.104
+          ],
+          "bbox_fill": [
+            0.94,
+            0.95,
+            0.97
+          ],
+          "signed_volume": 24.859149,
+          "mask_area": 0.342369,
+          "minimum_triangle_area": 0.000908287,
+          "minimum_normal_dot": 0.640069,
+          "minimum_face_area_ratio": 0.44414,
+          "self_intersections": 0,
+          "silhouette_area": 0.04508465,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0072149,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_GAMES_BRANCH",
+      "samples": [
+        {
+          "bbox_size": [
+            6.528,
+            3.564,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.99,
+            0.88
+          ],
+          "signed_volume": 35.800082,
+          "mask_area": 0.343447,
+          "minimum_triangle_area": 0.001295311,
+          "minimum_normal_dot": 0.410478,
+          "minimum_face_area_ratio": 0.474268,
+          "self_intersections": 0,
+          "silhouette_area": 0.05845655,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.56112,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.9892,
+            0.88
+          ],
+          "signed_volume": 35.803497,
+          "mask_area": 0.343263,
+          "minimum_triangle_area": 0.001294415,
+          "minimum_normal_dot": 0.409182,
+          "minimum_face_area_ratio": 0.473957,
+          "self_intersections": 0,
+          "silhouette_area": 0.05847819,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 9.54e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.55968,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.9888,
+            0.88
+          ],
+          "signed_volume": 35.805211,
+          "mask_area": 0.343171,
+          "minimum_triangle_area": 0.001293968,
+          "minimum_normal_dot": 0.408534,
+          "minimum_face_area_ratio": 0.473802,
+          "self_intersections": 0,
+          "silhouette_area": 0.058489,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0001433,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.546,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.985,
+            0.88
+          ],
+          "signed_volume": 35.821593,
+          "mask_area": 0.342295,
+          "minimum_triangle_area": 0.001289703,
+          "minimum_normal_dot": 0.402355,
+          "minimum_face_area_ratio": 0.47233,
+          "self_intersections": 0,
+          "silhouette_area": 0.05859198,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0006009,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.528,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.98,
+            0.88
+          ],
+          "signed_volume": 35.843476,
+          "mask_area": 0.34114,
+          "minimum_triangle_area": 0.001284095,
+          "minimum_normal_dot": 0.394178,
+          "minimum_face_area_ratio": 0.470408,
+          "self_intersections": 0,
+          "silhouette_area": 0.05872992,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0012121,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.528,
+            3.492,
+            2.816
+          ],
+          "bbox_fill": [
+            0.96,
+            0.97,
+            0.88
+          ],
+          "signed_volume": 35.888344,
+          "mask_area": 0.338823,
+          "minimum_triangle_area": 0.001272877,
+          "minimum_normal_dot": 0.377675,
+          "minimum_face_area_ratio": 0.466606,
+          "self_intersections": 0,
+          "silhouette_area": 0.05900948,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0024654,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_VIDEO_TEMPORAL",
+      "samples": [
+        {
+          "bbox_size": [
+            6.664,
+            3.204,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.89,
+            0.88
+          ],
+          "signed_volume": 32.772015,
+          "mask_area": 0.355182,
+          "minimum_triangle_area": 0.001341294,
+          "minimum_normal_dot": 0.469218,
+          "minimum_face_area_ratio": 0.431063,
+          "self_intersections": 0,
+          "silhouette_area": 0.05937269,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": -0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.664,
+            3.20112,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.8892,
+            0.88
+          ],
+          "signed_volume": 32.769705,
+          "mask_area": 0.355006,
+          "minimum_triangle_area": 0.001340659,
+          "minimum_normal_dot": 0.470442,
+          "minimum_face_area_ratio": 0.430771,
+          "self_intersections": 0,
+          "silhouette_area": 0.0593915,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": -7.05e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.664,
+            3.19968,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.8888,
+            0.88
+          ],
+          "signed_volume": 32.768553,
+          "mask_area": 0.354918,
+          "minimum_triangle_area": 0.001340337,
+          "minimum_normal_dot": 0.471058,
+          "minimum_face_area_ratio": 0.430626,
+          "self_intersections": 0,
+          "silhouette_area": 0.0594009,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": -0.0001057,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.664,
+            3.186,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.885,
+            0.88
+          ],
+          "signed_volume": 32.7577,
+          "mask_area": 0.354081,
+          "minimum_triangle_area": 0.001337291,
+          "minimum_normal_dot": 0.476909,
+          "minimum_face_area_ratio": 0.429256,
+          "self_intersections": 0,
+          "silhouette_area": 0.0594904,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": -0.0004368,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.664,
+            3.168,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.88,
+            0.88
+          ],
+          "signed_volume": 32.743677,
+          "mask_area": 0.352976,
+          "minimum_triangle_area": 0.001333264,
+          "minimum_normal_dot": 0.484676,
+          "minimum_face_area_ratio": 0.427484,
+          "self_intersections": 0,
+          "silhouette_area": 0.05961039,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": -0.0008647,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.664,
+            3.132,
+            2.816
+          ],
+          "bbox_fill": [
+            0.98,
+            0.87,
+            0.88
+          ],
+          "signed_volume": 32.716491,
+          "mask_area": 0.350759,
+          "minimum_triangle_area": 0.00132513,
+          "minimum_normal_dot": 0.500428,
+          "minimum_face_area_ratio": 0.42406,
+          "self_intersections": 0,
+          "silhouette_area": 0.0598571,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": false,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": false,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": -0.0016943,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_DIGITAL_SIGNAL",
+      "samples": [
+        {
+          "bbox_size": [
+            6.46,
+            3.24,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.9,
+            0.88
+          ],
+          "signed_volume": 32.212574,
+          "mask_area": 0.333633,
+          "minimum_triangle_area": 0.001261599,
+          "minimum_normal_dot": 0.542178,
+          "minimum_face_area_ratio": 0.558745,
+          "self_intersections": 0,
+          "silhouette_area": 0.0552946,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": -0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.46,
+            3.23712,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.8992,
+            0.88
+          ],
+          "signed_volume": 32.215346,
+          "mask_area": 0.333419,
+          "minimum_triangle_area": 0.001260576,
+          "minimum_normal_dot": 0.541796,
+          "minimum_face_area_ratio": 0.558998,
+          "self_intersections": 0,
+          "silhouette_area": 0.05530759,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 8.6e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.46,
+            3.23568,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.8988,
+            0.88
+          ],
+          "signed_volume": 32.216736,
+          "mask_area": 0.333312,
+          "minimum_triangle_area": 0.001260071,
+          "minimum_normal_dot": 0.541605,
+          "minimum_face_area_ratio": 0.559126,
+          "self_intersections": 0,
+          "silhouette_area": 0.05531408,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0001292,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.46,
+            3.222,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.895,
+            0.88
+          ],
+          "signed_volume": 32.230058,
+          "mask_area": 0.332295,
+          "minimum_triangle_area": 0.00125523,
+          "minimum_normal_dot": 0.539784,
+          "minimum_face_area_ratio": 0.560371,
+          "self_intersections": 0,
+          "silhouette_area": 0.05537642,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0005428,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.46,
+            3.204,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.89,
+            0.88
+          ],
+          "signed_volume": 32.247914,
+          "mask_area": 0.330953,
+          "minimum_triangle_area": 0.001248843,
+          "minimum_normal_dot": 0.537366,
+          "minimum_face_area_ratio": 0.558847,
+          "self_intersections": 0,
+          "silhouette_area": 0.05546021,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0010971,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.46,
+            3.168,
+            2.816
+          ],
+          "bbox_fill": [
+            0.95,
+            0.88,
+            0.88
+          ],
+          "signed_volume": 32.284764,
+          "mask_area": 0.32826,
+          "minimum_triangle_area": 0.001236053,
+          "minimum_normal_dot": 0.532456,
+          "minimum_face_area_ratio": 0.55539,
+          "self_intersections": 0,
+          "silhouette_area": 0.05563109,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.002241,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "SINGLE_MERCH_WRAP",
+      "samples": [
+        {
+          "bbox_size": [
+            5.984,
+            3.24,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.9,
+            0.88
+          ],
+          "signed_volume": 29.252176,
+          "mask_area": 0.330451,
+          "minimum_triangle_area": 0.0007028,
+          "minimum_normal_dot": 0.665054,
+          "minimum_face_area_ratio": 0.364,
+          "self_intersections": 0,
+          "silhouette_area": 0.0512505,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            5.984,
+            3.23712,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.8992,
+            0.88
+          ],
+          "signed_volume": 29.253344,
+          "mask_area": 0.330248,
+          "minimum_triangle_area": 0.000702898,
+          "minimum_normal_dot": 0.665461,
+          "minimum_face_area_ratio": 0.363817,
+          "self_intersections": 0,
+          "silhouette_area": 0.05127468,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 3.99e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            5.984,
+            3.23568,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.8988,
+            0.88
+          ],
+          "signed_volume": 29.253931,
+          "mask_area": 0.330146,
+          "minimum_triangle_area": 0.000702943,
+          "minimum_normal_dot": 0.665666,
+          "minimum_face_area_ratio": 0.363725,
+          "self_intersections": 0,
+          "silhouette_area": 0.05128678,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 6e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            5.984,
+            3.222,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.895,
+            0.88
+          ],
+          "signed_volume": 29.259591,
+          "mask_area": 0.329179,
+          "minimum_triangle_area": 0.000703407,
+          "minimum_normal_dot": 0.667608,
+          "minimum_face_area_ratio": 0.362852,
+          "self_intersections": 0,
+          "silhouette_area": 0.05140191,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0002535,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            5.984,
+            3.204,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.89,
+            0.88
+          ],
+          "signed_volume": 29.267284,
+          "mask_area": 0.327905,
+          "minimum_triangle_area": 0.000704022,
+          "minimum_normal_dot": 0.67018,
+          "minimum_face_area_ratio": 0.361705,
+          "self_intersections": 0,
+          "silhouette_area": 0.05155414,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0005165,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            5.984,
+            3.168,
+            2.816
+          ],
+          "bbox_fill": [
+            0.88,
+            0.88,
+            0.88
+          ],
+          "signed_volume": 29.283492,
+          "mask_area": 0.325355,
+          "minimum_triangle_area": 0.00070528,
+          "minimum_normal_dot": 0.675369,
+          "minimum_face_area_ratio": 0.359416,
+          "self_intersections": 0,
+          "silhouette_area": 0.05186501,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0010706,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "COMPLEX_FOCUS",
+      "samples": [
+        {
+          "bbox_size": [
+            6.8,
+            3.204,
+            3.136
+          ],
+          "bbox_fill": [
+            1.0,
+            0.89,
+            0.98
+          ],
+          "signed_volume": 27.232653,
+          "mask_area": 0.331475,
+          "minimum_triangle_area": 0.000445589,
+          "minimum_normal_dot": 0.956958,
+          "minimum_face_area_ratio": 0.603394,
+          "self_intersections": 0,
+          "silhouette_area": 0.04605284,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": 0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.201192,
+            3.136
+          ],
+          "bbox_fill": [
+            1.0,
+            0.88922,
+            0.98
+          ],
+          "signed_volume": 27.234753,
+          "mask_area": 0.33121,
+          "minimum_triangle_area": 0.000445128,
+          "minimum_normal_dot": 0.956228,
+          "minimum_face_area_ratio": 0.600826,
+          "self_intersections": 0,
+          "silhouette_area": 0.04608687,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 7.71e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.199787,
+            3.136
+          ],
+          "bbox_fill": [
+            1.0,
+            0.88883,
+            0.98
+          ],
+          "signed_volume": 27.235806,
+          "mask_area": 0.331078,
+          "minimum_triangle_area": 0.0004449,
+          "minimum_normal_dot": 0.955859,
+          "minimum_face_area_ratio": 0.599544,
+          "self_intersections": 0,
+          "silhouette_area": 0.0461039,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0001158,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.186448,
+            3.136
+          ],
+          "bbox_fill": [
+            1.0,
+            0.885124,
+            0.98
+          ],
+          "signed_volume": 27.245923,
+          "mask_area": 0.329822,
+          "minimum_triangle_area": 0.000442729,
+          "minimum_normal_dot": 0.952236,
+          "minimum_face_area_ratio": 0.587437,
+          "self_intersections": 0,
+          "silhouette_area": 0.04626635,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0004873,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.168895,
+            3.136008
+          ],
+          "bbox_fill": [
+            1.0,
+            0.880249,
+            0.980003
+          ],
+          "signed_volume": 27.259536,
+          "mask_area": 0.32817,
+          "minimum_triangle_area": 0.000439901,
+          "minimum_normal_dot": 0.946874,
+          "minimum_face_area_ratio": 0.571687,
+          "self_intersections": 0,
+          "silhouette_area": 0.04648183,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0009872,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.141194,
+            3.136151
+          ],
+          "bbox_fill": [
+            1.0,
+            0.872554,
+            0.980047
+          ],
+          "signed_volume": 27.287792,
+          "mask_area": 0.324873,
+          "minimum_triangle_area": 0.000434334,
+          "minimum_normal_dot": 0.931818,
+          "minimum_face_area_ratio": 0.540917,
+          "self_intersections": 0,
+          "silhouette_area": 0.04691885,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": false,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": false,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0020247,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "COMPLEX_GATHER",
+      "samples": [
+        {
+          "bbox_size": [
+            6.324,
+            3.6,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            1.0,
+            1.0
+          ],
+          "signed_volume": 26.273133,
+          "mask_area": 0.35116,
+          "minimum_triangle_area": 0.000460093,
+          "minimum_normal_dot": 0.993602,
+          "minimum_face_area_ratio": 0.841266,
+          "self_intersections": 0,
+          "silhouette_area": 0.04164396,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": -0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.324,
+            3.597192,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            0.99922,
+            1.0
+          ],
+          "signed_volume": 26.275748,
+          "mask_area": 0.350886,
+          "minimum_triangle_area": 0.00046026,
+          "minimum_normal_dot": 0.99364,
+          "minimum_face_area_ratio": 0.842021,
+          "self_intersections": 0,
+          "silhouette_area": 0.04165967,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 9.95e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.324,
+            3.595787,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            0.99883,
+            1.0
+          ],
+          "signed_volume": 26.277059,
+          "mask_area": 0.350749,
+          "minimum_triangle_area": 0.000460347,
+          "minimum_normal_dot": 0.993659,
+          "minimum_face_area_ratio": 0.842398,
+          "self_intersections": 0,
+          "silhouette_area": 0.04166761,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 0.0001494,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.324,
+            3.582447,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            0.995124,
+            1.0
+          ],
+          "signed_volume": 26.289608,
+          "mask_area": 0.349445,
+          "minimum_triangle_area": 0.00046114,
+          "minimum_normal_dot": 0.99384,
+          "minimum_face_area_ratio": 0.845983,
+          "self_intersections": 0,
+          "silhouette_area": 0.0417444,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0006271,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.324,
+            3.564895,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            0.990249,
+            1.0
+          ],
+          "signed_volume": 26.306391,
+          "mask_area": 0.347728,
+          "minimum_triangle_area": 0.000462168,
+          "minimum_normal_dot": 0.994073,
+          "minimum_face_area_ratio": 0.847949,
+          "self_intersections": 0,
+          "silhouette_area": 0.04184704,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0012658,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.324,
+            3.52979,
+            3.2
+          ],
+          "bbox_fill": [
+            0.93,
+            0.980497,
+            1.0
+          ],
+          "signed_volume": 26.34088,
+          "mask_area": 0.344292,
+          "minimum_triangle_area": 0.000464169,
+          "minimum_normal_dot": 0.994522,
+          "minimum_face_area_ratio": 0.844002,
+          "self_intersections": 0,
+          "silhouette_area": 0.04205891,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0025786,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "terminal": "COMPLEX_DRIVE",
+      "samples": [
+        {
+          "bbox_size": [
+            6.8,
+            3.204,
+            3.072
+          ],
+          "bbox_fill": [
+            1.0,
+            0.89,
+            0.96
+          ],
+          "signed_volume": 26.237103,
+          "mask_area": 0.347563,
+          "minimum_triangle_area": 0.00047137,
+          "minimum_normal_dot": 0.992176,
+          "minimum_face_area_ratio": 0.843739,
+          "self_intersections": 0,
+          "silhouette_area": 0.04435622,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.0,
+          "volume_change_from_terminal": -0.0,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.20112,
+            3.071999
+          ],
+          "bbox_fill": [
+            1.0,
+            0.8892,
+            0.96
+          ],
+          "signed_volume": 26.237889,
+          "mask_area": 0.347285,
+          "minimum_triangle_area": 0.000471527,
+          "minimum_normal_dot": 0.992133,
+          "minimum_face_area_ratio": 0.842974,
+          "self_intersections": 0,
+          "silhouette_area": 0.04437681,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.04,
+          "volume_change_from_terminal": 3e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.19968,
+            3.071999
+          ],
+          "bbox_fill": [
+            1.0,
+            0.8888,
+            0.96
+          ],
+          "signed_volume": 26.238285,
+          "mask_area": 0.347147,
+          "minimum_triangle_area": 0.000471609,
+          "minimum_normal_dot": 0.992111,
+          "minimum_face_area_ratio": 0.842591,
+          "self_intersections": 0,
+          "silhouette_area": 0.04438716,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.06,
+          "volume_change_from_terminal": 4.51e-05,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.186,
+            3.071994
+          ],
+          "bbox_fill": [
+            1.0,
+            0.885,
+            0.959998
+          ],
+          "signed_volume": 26.242162,
+          "mask_area": 0.345827,
+          "minimum_triangle_area": 0.000472353,
+          "minimum_normal_dot": 0.991901,
+          "minimum_face_area_ratio": 0.838944,
+          "self_intersections": 0,
+          "silhouette_area": 0.04448763,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.25,
+          "volume_change_from_terminal": 0.0001928,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.168,
+            3.071988
+          ],
+          "bbox_fill": [
+            1.0,
+            0.88,
+            0.959996
+          ],
+          "signed_volume": 26.247564,
+          "mask_area": 0.34409,
+          "minimum_triangle_area": 0.000471885,
+          "minimum_normal_dot": 0.991291,
+          "minimum_face_area_ratio": 0.83408,
+          "self_intersections": 0,
+          "silhouette_area": 0.04462161,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": true,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": true,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 0.5,
+          "volume_change_from_terminal": 0.0003987,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        },
+        {
+          "bbox_size": [
+            6.8,
+            3.132,
+            3.071976
+          ],
+          "bbox_fill": [
+            1.0,
+            0.87,
+            0.959992
+          ],
+          "signed_volume": 26.259414,
+          "mask_area": 0.340611,
+          "minimum_triangle_area": 0.000466843,
+          "minimum_normal_dot": 0.989698,
+          "minimum_face_area_ratio": 0.817635,
+          "self_intersections": 0,
+          "silhouette_area": 0.04490739,
+          "inside_canonical_envelope": true,
+          "canonical_fill_desirable": false,
+          "checks": {
+            "finite": true,
+            "volume": true,
+            "degenerate": true,
+            "normals": true,
+            "collapse": true,
+            "intersections": true,
+            "bbox": false,
+            "mask": true
+          },
+          "passed": true,
+          "weight": 1.0,
+          "volume_change_from_terminal": 0.0008504,
+          "runtime_subtle_volume": true,
+          "diagnostic_mesh_integrity": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "system": "D / Controlled Associative Hierarchy",
+  "transition_target_coordinate_identity": "unchanged from PS-03.2",
+  "runtime_state_count": 24,
+  "full_combination_count": 72
+}

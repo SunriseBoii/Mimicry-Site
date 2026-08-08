@@ -40,3 +40,15 @@ next-env.d.ts
 /dist/
 /outputs/
 /work/
+
+# Python-generated cache
+__pycache__/
+*.py[cod]
+
+# Blender recovery backups
+*.blend1
+
+# Reproducible Photonic Skin build artifacts
+**/_baseline_cache.json
+**/_build_run.log
+**/_validation_run.log

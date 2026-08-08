@@ -1,0 +1,396 @@
+{
+  "book_components": 1,
+  "budget_sums_ok": true,
+  "deterministic_output_hash": "2232fe399b497becc30f535647c68c21536e902fc885d9e6da5612b92138cca3",
+  "duplicate_ids": 0,
+  "elapsed_seconds": 142.4,
+  "endpoint_volume_errors": {
+    "book": 6.366147147672698e-16,
+    "game": 2.1220490492242328e-16,
+    "sphere": 0.0
+  },
+  "finite_exported_values": true,
+  "game_state_components": 2,
+  "max_transition_volume_error": 2.1220490492242328e-16,
+  "merge_moment_t": 0.41666666666666663,
+  "missing_ids": 0,
+  "scale_count": 8192,
+  "segment_qa": [
+    {
+      "keys": [
+        {
+          "bonds": 24172,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.574,
+          "normal_flips": 0,
+          "t": 0.0
+        },
+        {
+          "bonds": 23256,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.6,
+          "normal_flips": 0,
+          "t": 0.08333333333333333
+        },
+        {
+          "bonds": 23439,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.6,
+          "normal_flips": 0,
+          "t": 0.16666666666666666
+        },
+        {
+          "bonds": 24349,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.502,
+          "normal_flips": 0,
+          "t": 0.25
+        },
+        {
+          "bonds": 26169,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.3333333333333333
+        },
+        {
+          "bonds": 29853,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.41666666666666663
+        },
+        {
+          "bonds": 39262,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.498,
+          "normal_flips": 0,
+          "t": 0.5
+        },
+        {
+          "bonds": 47611,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.486,
+          "normal_flips": 0,
+          "t": 0.5833333333333333
+        },
+        {
+          "bonds": 38865,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.6666666666666666
+        },
+        {
+          "bonds": 30065,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.75
+        },
+        {
+          "bonds": 26399,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.526,
+          "normal_flips": 0,
+          "t": 0.8333333333333333
+        },
+        {
+          "bonds": 25078,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.748,
+          "normal_flips": 0,
+          "t": 0.9166666666666666
+        },
+        {
+          "bonds": 25245,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.65,
+          "normal_flips": 10,
+          "t": 1.0
+        }
+      ],
+      "name": "sphere-book"
+    },
+    {
+      "keys": [
+        {
+          "bonds": 25245,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.65,
+          "normal_flips": 0,
+          "t": 0.0
+        },
+        {
+          "bonds": 25478,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.602,
+          "normal_flips": 0,
+          "t": 0.08333333333333333
+        },
+        {
+          "bonds": 25775,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.506,
+          "normal_flips": 0,
+          "t": 0.16666666666666666
+        },
+        {
+          "bonds": 28302,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.25
+        },
+        {
+          "bonds": 41832,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.499,
+          "normal_flips": 0,
+          "t": 0.3333333333333333
+        },
+        {
+          "bonds": 104194,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.407,
+          "normal_flips": 0,
+          "t": 0.41666666666666663
+        },
+        {
+          "bonds": 136502,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.353,
+          "normal_flips": 0,
+          "t": 0.5
+        },
+        {
+          "bonds": 124025,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 2069,
+          "min_pair_distance_over_l": 0.365,
+          "normal_flips": 0,
+          "t": 0.5833333333333333
+        },
+        {
+          "bonds": 97919,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 677,
+          "min_pair_distance_over_l": 0.309,
+          "normal_flips": 0,
+          "t": 0.6666666666666666
+        },
+        {
+          "bonds": 63280,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.49,
+          "normal_flips": 0,
+          "t": 0.75
+        },
+        {
+          "bonds": 27935,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.8333333333333333
+        },
+        {
+          "bonds": 24571,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.501,
+          "normal_flips": 0,
+          "t": 0.9166666666666666
+        },
+        {
+          "bonds": 24398,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.339,
+          "normal_flips": 26,
+          "t": 1.0
+        }
+      ],
+      "name": "book-game"
+    },
+    {
+      "keys": [
+        {
+          "bonds": 24398,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.339,
+          "normal_flips": 0,
+          "t": 0.0
+        },
+        {
+          "bonds": 25055,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.08333333333333333
+        },
+        {
+          "bonds": 26891,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.5,
+          "normal_flips": 0,
+          "t": 0.16666666666666666
+        },
+        {
+          "bonds": 50642,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.477,
+          "normal_flips": 0,
+          "t": 0.25
+        },
+        {
+          "bonds": 88824,
+          "cross_component_bonds_after_split": 0,
+          "cross_component_proximity_pairs": 0,
+          "min_pair_distance_over_l": 0.402,
+          "normal_flips": 0,
+          "t": 0.3333333333333333
+        },
+        {
+          "bonds": 92729,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.284,
+          "normal_flips": 0,
+          "t": 0.41666666666666663
+        },
+        {
+          "bonds": 66919,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.307,
+          "normal_flips": 0,
+          "t": 0.5
+        },
+        {
+          "bonds": 45932,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.473,
+          "normal_flips": 0,
+          "t": 0.5833333333333333
+        },
+        {
+          "bonds": 35211,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.499,
+          "normal_flips": 0,
+          "t": 0.6666666666666666
+        },
+        {
+          "bonds": 27908,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.502,
+          "normal_flips": 0,
+          "t": 0.75
+        },
+        {
+          "bonds": 23750,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.531,
+          "normal_flips": 0,
+          "t": 0.8333333333333333
+        },
+        {
+          "bonds": 23081,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.626,
+          "normal_flips": 0,
+          "t": 0.9166666666666666
+        },
+        {
+          "bonds": 24172,
+          "cross_component_bonds_after_split": null,
+          "cross_component_proximity_pairs": null,
+          "min_pair_distance_over_l": 0.574,
+          "normal_flips": 0,
+          "t": 1.0
+        }
+      ],
+      "name": "game-sphere"
+    }
+  ],
+  "sphere_components": 1,
+  "split_is_real": true,
+  "split_moment_t": 0.5833333333333333,
+  "target_validation": {
+    "book": {
+      "area": 11.94352986199301,
+      "boundary_edges": 0,
+      "components": 1,
+      "degenerate_faces": 0,
+      "face_count": 23452,
+      "finite": true,
+      "loose_vertices": 0,
+      "non_manifold_edges": 0,
+      "positive_volume": true,
+      "vertex_count": 11728,
+      "volume": 1.4368397185976642,
+      "watertight": true
+    },
+    "game": {
+      "area": 7.508977057211849,
+      "boundary_edges": 0,
+      "components": 2,
+      "degenerate_faces": 0,
+      "face_count": 15540,
+      "finite": true,
+      "loose_vertices": 0,
+      "non_manifold_edges": 0,
+      "positive_volume": true,
+      "vertex_count": 7774,
+      "volume": 0.7540780634160132,
+      "watertight": true
+    },
+    "sphere": {
+      "area": 12.561117116156876,
+      "boundary_edges": 0,
+      "components": 1,
+      "degenerate_faces": 0,
+      "face_count": 28172,
+      "finite": true,
+      "loose_vertices": 0,
+      "non_manifold_edges": 0,
+      "positive_volume": true,
+      "vertex_count": 14088,
+      "volume": 4.185475448952609,
+      "watertight": true
+    }
+  },
+  "unique_scale_ids": 8192,
+  "volume_ok": true
+}

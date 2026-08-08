@@ -1,0 +1,294 @@
+{
+  "stage": "PS-03.3",
+  "system": "D / Controlled Associative Hierarchy",
+  "source_policy": "all actor images are Blender renders; PIL is used only for layout, labels and crop composition",
+  "camera_material_contract": "same 55 mm camera, canonical roll, neutral ivory, lights and exposure for A/D",
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "fixed_mask_face_count": 2526,
+  "a_d_silhouette_metrics": {
+    "SINGLE_CONTENT_SEQUENCE": {
+      "silhouette_iou": 0.631464,
+      "silhouette_distance": 0.368536
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "silhouette_iou": 0.815803,
+      "silhouette_distance": 0.184197
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "silhouette_iou": 0.617925,
+      "silhouette_distance": 0.382075
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "silhouette_iou": 0.719565,
+      "silhouette_distance": 0.280435
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "silhouette_iou": 0.732994,
+      "silhouette_distance": 0.267006
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "silhouette_iou": 0.749175,
+      "silhouette_distance": 0.250825
+    },
+    "SINGLE_MERCH_WRAP": {
+      "silhouette_iou": 0.74296,
+      "silhouette_distance": 0.25704
+    }
+  },
+  "new_single_pairwise_silhouette_metrics": {
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_DESIGN_TORSION": {
+      "iou": 0.70865,
+      "distance": 0.29135
+    },
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_EVENT_CONVERGENCE": {
+      "iou": 0.594052,
+      "distance": 0.405948
+    },
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_GAMES_BRANCH": {
+      "iou": 0.80797,
+      "distance": 0.19203
+    },
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_VIDEO_TEMPORAL": {
+      "iou": 0.780527,
+      "distance": 0.219473
+    },
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_DIGITAL_SIGNAL": {
+      "iou": 0.75904,
+      "distance": 0.24096
+    },
+    "SINGLE_CONTENT_SEQUENCE__SINGLE_MERCH_WRAP": {
+      "iou": 0.735932,
+      "distance": 0.264068
+    },
+    "SINGLE_DESIGN_TORSION__SINGLE_EVENT_CONVERGENCE": {
+      "iou": 0.594273,
+      "distance": 0.405727
+    },
+    "SINGLE_DESIGN_TORSION__SINGLE_GAMES_BRANCH": {
+      "iou": 0.807311,
+      "distance": 0.192689
+    },
+    "SINGLE_DESIGN_TORSION__SINGLE_VIDEO_TEMPORAL": {
+      "iou": 0.817026,
+      "distance": 0.182974
+    },
+    "SINGLE_DESIGN_TORSION__SINGLE_DIGITAL_SIGNAL": {
+      "iou": 0.769818,
+      "distance": 0.230182
+    },
+    "SINGLE_DESIGN_TORSION__SINGLE_MERCH_WRAP": {
+      "iou": 0.85465,
+      "distance": 0.14535
+    },
+    "SINGLE_EVENT_CONVERGENCE__SINGLE_GAMES_BRANCH": {
+      "iou": 0.692578,
+      "distance": 0.307422
+    },
+    "SINGLE_EVENT_CONVERGENCE__SINGLE_VIDEO_TEMPORAL": {
+      "iou": 0.596405,
+      "distance": 0.403595
+    },
+    "SINGLE_EVENT_CONVERGENCE__SINGLE_DIGITAL_SIGNAL": {
+      "iou": 0.7193,
+      "distance": 0.2807
+    },
+    "SINGLE_EVENT_CONVERGENCE__SINGLE_MERCH_WRAP": {
+      "iou": 0.687089,
+      "distance": 0.312911
+    },
+    "SINGLE_GAMES_BRANCH__SINGLE_VIDEO_TEMPORAL": {
+      "iou": 0.866444,
+      "distance": 0.133556
+    },
+    "SINGLE_GAMES_BRANCH__SINGLE_DIGITAL_SIGNAL": {
+      "iou": 0.933288,
+      "distance": 0.066712
+    },
+    "SINGLE_GAMES_BRANCH__SINGLE_MERCH_WRAP": {
+      "iou": 0.839501,
+      "distance": 0.160499
+    },
+    "SINGLE_VIDEO_TEMPORAL__SINGLE_DIGITAL_SIGNAL": {
+      "iou": 0.818574,
+      "distance": 0.181426
+    },
+    "SINGLE_VIDEO_TEMPORAL__SINGLE_MERCH_WRAP": {
+      "iou": 0.770041,
+      "distance": 0.229959
+    },
+    "SINGLE_DIGITAL_SIGNAL__SINGLE_MERCH_WRAP": {
+      "iou": 0.832287,
+      "distance": 0.167713
+    }
+  },
+  "content_digital": {
+    "iou": 0.75904,
+    "distance": 0.24096
+  },
+  "outputs": [
+    {
+      "file": "renders/mobile/mobile_master_390.png",
+      "sha256": "213296d0796fb8dd3d3af87308ca15d0b7f9097f73b69fb8846514ddf4e48630",
+      "size_bytes": 29776
+    },
+    {
+      "file": "renders/mobile/mobile_brand-wide_390.png",
+      "sha256": "49d5ef0c92e43476a8f1d2bb7bdc6ee96fe70d7e5b8bc336d9d553620656210f",
+      "size_bytes": 28695
+    },
+    {
+      "file": "renders/mobile/mobile_content-sequence_390.png",
+      "sha256": "193ca88f40661770d9842ee9829eebddb68c69aeafc9362a716426ab5667ed66",
+      "size_bytes": 40125
+    },
+    {
+      "file": "renders/mobile/mobile_design-torsion_390.png",
+      "sha256": "a511605dbee6412c637625435835853b59883e579e458613ffeb116b902acaf2",
+      "size_bytes": 34678
+    },
+    {
+      "file": "renders/mobile/mobile_event-convergence_390.png",
+      "sha256": "cf0f735512153ff2628526b8abf1cd4305828bd60e518fe9be2a7c364c6f07f3",
+      "size_bytes": 34116
+    },
+    {
+      "file": "renders/mobile/mobile_games-branch_390.png",
+      "sha256": "cc6379a42ba19353d4afcc3b3cddce3aac3f5228a53fdb3ec1dc6a8fcda11bb4",
+      "size_bytes": 36569
+    },
+    {
+      "file": "renders/mobile/mobile_video-temporal_390.png",
+      "sha256": "5aa2ed7299eb8d47a6fe769c875e52b61d1179625786c8545570c8ef08637671",
+      "size_bytes": 37566
+    },
+    {
+      "file": "renders/mobile/mobile_digital-signal_390.png",
+      "sha256": "82c28f37d0520db099fdd5d9cdae8eb12698b49d387838fbd672cf21b2f5a845",
+      "size_bytes": 35530
+    },
+    {
+      "file": "renders/mobile/mobile_merch-wrap_390.png",
+      "sha256": "8c1c97693e8b0d1022eb8e56f629d4643c497219db185022e6c69d748586d48f",
+      "size_bytes": 34266
+    },
+    {
+      "file": "renders/mobile/mobile_complex-focus_390.png",
+      "sha256": "182ffdb73dba6ff22c340c61d88c65d75f3e2491fd2e5bd6a59ddedb8161c861",
+      "size_bytes": 30034
+    },
+    {
+      "file": "renders/mobile/mobile_complex-gather_390.png",
+      "sha256": "27367e10eced9728ea941e86d24805df89f4e144a3e5e307f7acfae883dbfeee",
+      "size_bytes": 28339
+    },
+    {
+      "file": "renders/mobile/mobile_complex-drive_390.png",
+      "sha256": "6a1d7d76ce3845bdfd6611fc2ef357f2ed886c0753ec3190faa3b6546e33c968",
+      "size_bytes": 28512
+    },
+    {
+      "file": "renders/ps03-3_mobile_390_board.png",
+      "sha256": "4f2161a4fe83d15fa6a7170291315fca3587f3584b24991ec816843f35db7bb1",
+      "size_bytes": 341235
+    },
+    {
+      "file": "renders/ps03-3_a-d_comparison_board.png",
+      "sha256": "0612dcadb3935c62d82e6c5daad27a672afeae36327a8f1ed2f8bce5d6477505",
+      "size_bytes": 826250
+    },
+    {
+      "file": "renders/ps03-3_full_system_board.png",
+      "sha256": "f5c1de8b92ffd3c0a38c1bccee0a522be83cf0bfaf3d3cd408f08cb8de346fd1",
+      "size_bytes": 595852
+    },
+    {
+      "file": "renders/ps03-3_object_readability_content-sequence.png",
+      "sha256": "0333c0df7a056fd231754b093eb086959dee59557384ddd309da25b0357c23ca",
+      "size_bytes": 562462
+    },
+    {
+      "file": "renders/ps03-3_object_readability_design-torsion.png",
+      "sha256": "2c70137735ea0683c6f88654a43c4a97fd588b15171d4cad49097562806cde35",
+      "size_bytes": 554408
+    },
+    {
+      "file": "renders/ps03-3_object_readability_event-convergence.png",
+      "sha256": "6bf1b9c7fc190ab0e172ed09acebb1d8b40a5ae3c526f1295ecea8b131726169",
+      "size_bytes": 549968
+    },
+    {
+      "file": "renders/ps03-3_object_readability_games-branch.png",
+      "sha256": "73dc12ec204c33875b546018f296d411fdda58c012c50d7789a73dd4b8d62fac",
+      "size_bytes": 552444
+    },
+    {
+      "file": "renders/ps03-3_object_readability_video-temporal.png",
+      "sha256": "eec35d468578210dd9a2e3bdfd405f0d758ccac889d3b0a9098727f77e575bca",
+      "size_bytes": 553661
+    },
+    {
+      "file": "renders/ps03-3_object_readability_digital-signal.png",
+      "sha256": "08d08affda53edabe32b0d973aeae5810fdad515c9a1f7cc2d74038c3d52f703",
+      "size_bytes": 550256
+    },
+    {
+      "file": "renders/ps03-3_object_readability_merch-wrap.png",
+      "sha256": "2adcc20afb0d8173065e1906652e21990ce46770f31aab0038f52967ed7b80e8",
+      "size_bytes": 548661
+    },
+    {
+      "file": "renders/ps03-3_high-risk_refinement_board.png",
+      "sha256": "43494a35faae7f38d6c1163e3bf3f1b776ac22d1f314232d290fca9c601ba843",
+      "size_bytes": 1066248
+    },
+    {
+      "file": "renders/ps03-3_photonic_mask_board.png",
+      "sha256": "1d082b639062ddcb671b8e1935c0cd7792c3ed256842f62b15401c585e9ee9e6",
+      "size_bytes": 640018
+    },
+    {
+      "file": "renders/ps03-3_transition_master-content_storyboard.png",
+      "sha256": "7a7b58d7f09b461fad6bf622646d8ecf4b9a75ecfbe483de1ae817c42b650e43",
+      "size_bytes": 175953
+    },
+    {
+      "file": "renders/ps03-3_transition_content-digital_storyboard.png",
+      "sha256": "daf1297b85c5751b550a33b59f7bad8316d79aabd525b2bbea12ed6133acff1c",
+      "size_bytes": 175026
+    },
+    {
+      "file": "renders/ps03-3_transition_design-merch_storyboard.png",
+      "sha256": "c6c4da235aecb5bab1d731581d72d6ef2c87faa738da519c05edf16c5ccae0eb",
+      "size_bytes": 162618
+    },
+    {
+      "file": "renders/ps03-3_transition_games-event_storyboard.png",
+      "sha256": "78530d37c6edbaa5c72a9ab0a0d2f8e258d7b1c3d6401ea60dcc5054e0aaa91e",
+      "size_bytes": 162627
+    },
+    {
+      "file": "renders/ps03-3_transition_video-complex-drive_storyboard.png",
+      "sha256": "4adc9fb6ee3aef83c46f75ae260990d2059078a217359419a0aaf75520daa7a3",
+      "size_bytes": 167700
+    },
+    {
+      "file": "renders/ps03-3_transition_retarget-content-design-event_storyboard.png",
+      "sha256": "0f436fcd6984b585e95f188a9ce98b8dcd863cd4025f7069a930845fc0cc787f",
+      "size_bytes": 166200
+    },
+    {
+      "file": "renders/ps03-3_transition_transition-tension_storyboard.png",
+      "sha256": "78bf802f26cd4d87698bfe546a1e41a5045ea49b444d93886594e1695bc0926f",
+      "size_bytes": 91186
+    },
+    {
+      "file": "renders/ps03-3_transition_board.png",
+      "sha256": "f14db7cf40c9935525e9dd4244f2c5c2d7e383886d686b4c5012148dd3cf0d32",
+      "size_bytes": 1114771
+    }
+  ],
+  "passed": true
+}

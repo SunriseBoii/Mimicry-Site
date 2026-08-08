@@ -1,0 +1,614 @@
+{
+  "bin_sha256": "2232fe399b497becc30f535647c68c21536e902fc885d9e6da5612b92138cca3",
+  "bin_size": 3088384,
+  "color_offset": 2949120,
+  "component_offset": 3047424,
+  "correspondence": {
+    "clusters": 48,
+    "cost": "wd*|dp|^2 + 0.35*(1-n.n') with component pre-grouping",
+    "method": "kmeans regions + Sinkhorn(eps=0.05) integer flows + block Hungarian + swap relaxation"
+  },
+  "key_times": [
+    0.0,
+    0.08333333333333333,
+    0.16666666666666666,
+    0.25,
+    0.3333333333333333,
+    0.41666666666666663,
+    0.5,
+    0.5833333333333333,
+    0.6666666666666666,
+    0.75,
+    0.8333333333333333,
+    0.9166666666666666,
+    1.0
+  ],
+  "keys_per_segment": 13,
+  "phases": [
+    {
+      "name": "tension",
+      "t": 0.0
+    },
+    {
+      "name": "submerge",
+      "t": 0.1
+    },
+    {
+      "name": "transport",
+      "t": 0.26
+    },
+    {
+      "name": "emerge",
+      "t": 0.72
+    },
+    {
+      "name": "stabilize",
+      "t": 0.9
+    }
+  ],
+  "plate_radius": 0.023928882632237126,
+  "quant_bounds": {
+    "hi": [
+      2.378847599029541,
+      1.5404269695281982,
+      1.6016008853912354
+    ],
+    "lo": [
+      -2.8510100841522217,
+      -1.733726978302002,
+      -2.0884690284729004
+    ]
+  },
+  "rotation_offset": 3055616,
+  "row_bytes": 81920,
+  "row_index": {
+    "segment:book-game": 14,
+    "segment:game-sphere": 25,
+    "segment:sphere-book": 3,
+    "state:book": 1,
+    "state:game": 2,
+    "state:sphere": 0
+  },
+  "rows_total": 36,
+  "scale_count": 8192,
+  "scale_range": [
+    0.85,
+    1.15
+  ],
+  "seed": 20260805,
+  "segments": [
+    {
+      "meta": [
+        {
+          "components": 1,
+          "phase": "tension",
+          "reserve": 2606,
+          "t": 0.0,
+          "transition": 0,
+          "visible": 5586,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.220301363469559,
+          "w": 0.0
+        },
+        {
+          "components": 1,
+          "phase": "tension",
+          "reserve": 2606,
+          "t": 0.08333333333333333,
+          "transition": 0,
+          "visible": 5586,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.220301363469559,
+          "w": 4.711614216527274e-05
+        },
+        {
+          "components": 1,
+          "phase": "submerge",
+          "reserve": 2606,
+          "t": 0.16666666666666666,
+          "transition": 1176,
+          "visible": 4410,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.111867062861997,
+          "w": 0.02973840917907432
+        },
+        {
+          "components": 1,
+          "phase": "submerge",
+          "reserve": 2606,
+          "t": 0.25,
+          "transition": 3814,
+          "visible": 1772,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.8959580572274697,
+          "w": 0.10629589137242197
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2606,
+          "t": 0.3333333333333333,
+          "transition": 5344,
+          "visible": 242,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.615756147692883,
+          "w": 0.21800301543309852
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2555,
+          "t": 0.41666666666666663,
+          "transition": 5637,
+          "visible": 0,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.330756260255307,
+          "w": 0.3531432340719943
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2021,
+          "t": 0.5,
+          "transition": 6171,
+          "visible": 0,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.102372512073007,
+          "w": 0.4999999999999999
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 900,
+          "t": 0.5833333333333333,
+          "transition": 7292,
+          "visible": 0,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.039039203753546,
+          "w": 0.6468567659280053
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 139,
+          "t": 0.6666666666666666,
+          "transition": 7831,
+          "visible": 222,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.256867400549269,
+          "w": 0.7819969845669014
+        },
+        {
+          "components": 1,
+          "phase": "emerge",
+          "reserve": 0,
+          "t": 0.75,
+          "transition": 5866,
+          "visible": 2326,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.624392507918264,
+          "w": 0.893704108627578
+        },
+        {
+          "components": 1,
+          "phase": "emerge",
+          "reserve": 0,
+          "t": 0.8333333333333333,
+          "transition": 1895,
+          "visible": 6297,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.038937798736557,
+          "w": 0.9702615908209256
+        },
+        {
+          "components": 1,
+          "phase": "stabilize",
+          "reserve": 0,
+          "t": 0.9166666666666666,
+          "transition": 0,
+          "visible": 8192,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.168483202117272,
+          "w": 0.9999528838578347
+        },
+        {
+          "components": 1,
+          "phase": "stabilize",
+          "reserve": 0,
+          "t": 1.0,
+          "transition": 0,
+          "visible": 8192,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.168483202117272,
+          "w": 1.0
+        }
+      ],
+      "name": "sphere-book",
+      "row_start": 3
+    },
+    {
+      "meta": [
+        {
+          "components": 1,
+          "phase": "tension",
+          "reserve": 0,
+          "t": 0.0,
+          "transition": 0,
+          "visible": 8192,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.168483202117272,
+          "w": 0.0
+        },
+        {
+          "components": 1,
+          "phase": "tension",
+          "reserve": 0,
+          "t": 0.08333333333333333,
+          "transition": 0,
+          "visible": 8192,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.168483202117272,
+          "w": 4.711614216527274e-05
+        },
+        {
+          "components": 1,
+          "phase": "submerge",
+          "reserve": 0,
+          "t": 0.16666666666666666,
+          "transition": 1807,
+          "visible": 6385,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 3.883483314679697,
+          "w": 0.02973840917907432
+        },
+        {
+          "components": 1,
+          "phase": "submerge",
+          "reserve": 0,
+          "t": 0.25,
+          "transition": 5675,
+          "visible": 2517,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 2.933963487678076,
+          "w": 0.10629589137242197
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 18,
+          "t": 0.3333333333333333,
+          "transition": 7849,
+          "visible": 325,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.1828400469650706,
+          "w": 0.21800301543309852
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 91,
+          "t": 0.41666666666666663,
+          "transition": 8101,
+          "visible": 0,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.0844814999537857,
+          "w": 0.3531432340719943
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 210,
+          "t": 0.5,
+          "transition": 7982,
+          "visible": 0,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 1.8690522921095576,
+          "w": 0.4999999999999999
+        },
+        {
+          "components": 2,
+          "phase": "transport",
+          "reserve": 270,
+          "t": 0.5833333333333333,
+          "transition": 7922,
+          "visible": 0,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 1.7527013279620622,
+          "w": 0.6468567659280053
+        },
+        {
+          "components": 2,
+          "phase": "transport",
+          "reserve": 276,
+          "t": 0.6666666666666666,
+          "transition": 7597,
+          "visible": 319,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.04609767672987,
+          "w": 0.7819969845669014
+        },
+        {
+          "components": 2,
+          "phase": "emerge",
+          "reserve": 276,
+          "t": 0.75,
+          "transition": 5464,
+          "visible": 2452,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.421779346533947,
+          "w": 0.893704108627578
+        },
+        {
+          "components": 2,
+          "phase": "emerge",
+          "reserve": 276,
+          "t": 0.8333333333333333,
+          "transition": 1756,
+          "visible": 6160,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 3.5920061570730852,
+          "w": 0.9702615908209256
+        },
+        {
+          "components": 2,
+          "phase": "stabilize",
+          "reserve": 276,
+          "t": 0.9166666666666666,
+          "transition": 0,
+          "visible": 7916,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 4.1989503618012565,
+          "w": 0.9999528838578347
+        },
+        {
+          "components": 2,
+          "phase": "stabilize",
+          "reserve": 276,
+          "t": 1.0,
+          "transition": 0,
+          "visible": 7916,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 4.1994301595915555,
+          "w": 1.0
+        }
+      ],
+      "name": "book-game",
+      "row_start": 14
+    },
+    {
+      "meta": [
+        {
+          "components": 2,
+          "phase": "tension",
+          "reserve": 276,
+          "t": 0.0,
+          "transition": 0,
+          "visible": 7916,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 4.1994301595915555,
+          "w": 0.0
+        },
+        {
+          "components": 2,
+          "phase": "tension",
+          "reserve": 276,
+          "t": 0.08333333333333333,
+          "transition": 0,
+          "visible": 7916,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 4.1989503618012565,
+          "w": 4.711614216527274e-05
+        },
+        {
+          "components": 2,
+          "phase": "submerge",
+          "reserve": 276,
+          "t": 0.16666666666666666,
+          "transition": 1824,
+          "visible": 6092,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 3.734506100791873,
+          "w": 0.02973840917907432
+        },
+        {
+          "components": 2,
+          "phase": "submerge",
+          "reserve": 276,
+          "t": 0.25,
+          "transition": 5672,
+          "visible": 2244,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.7317287190670685,
+          "w": 0.10629589137242197
+        },
+        {
+          "components": 2,
+          "phase": "transport",
+          "reserve": 414,
+          "t": 0.3333333333333333,
+          "transition": 7553,
+          "visible": 225,
+          "volume_corrected": 4.18547544895261,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 2.241855175171841,
+          "w": 0.21800301543309852
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 1205,
+          "t": 0.41666666666666663,
+          "transition": 6987,
+          "visible": 0,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 2.274001627121871,
+          "w": 0.3531432340719943
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2209,
+          "t": 0.5,
+          "transition": 5983,
+          "visible": 0,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 2.5539636377613077,
+          "w": 0.4999999999999999
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2621,
+          "t": 0.5833333333333333,
+          "transition": 5571,
+          "visible": 0,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 2.8084963655149005,
+          "w": 0.6468567659280053
+        },
+        {
+          "components": 1,
+          "phase": "transport",
+          "reserve": 2612,
+          "t": 0.6666666666666666,
+          "transition": 5358,
+          "visible": 222,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.165465921497319,
+          "w": 0.7819969845669014
+        },
+        {
+          "components": 1,
+          "phase": "emerge",
+          "reserve": 2606,
+          "t": 0.75,
+          "transition": 3857,
+          "visible": 1729,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 3.6711727924724116,
+          "w": 0.893704108627578
+        },
+        {
+          "components": 1,
+          "phase": "emerge",
+          "reserve": 2606,
+          "t": 0.8333333333333333,
+          "transition": 1279,
+          "visible": 4307,
+          "volume_corrected": 4.185475448952609,
+          "volume_error": 0.0,
+          "volume_raw": 4.050213046808582,
+          "w": 0.9702615908209256
+        },
+        {
+          "components": 1,
+          "phase": "stabilize",
+          "reserve": 2606,
+          "t": 0.9166666666666666,
+          "transition": 0,
+          "visible": 5586,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.220301363469559,
+          "w": 0.9999528838578347
+        },
+        {
+          "components": 1,
+          "phase": "stabilize",
+          "reserve": 2606,
+          "t": 1.0,
+          "transition": 0,
+          "visible": 5586,
+          "volume_corrected": 4.185475448952608,
+          "volume_error": 2.1220490492242328e-16,
+          "volume_raw": 4.220301363469559,
+          "w": 1.0
+        }
+      ],
+      "name": "game-sphere",
+      "row_start": 25
+    }
+  ],
+  "stage": "PS-03.M",
+  "states": {
+    "book": {
+      "area": 24.360732849720875,
+      "component_split": null,
+      "components": 1,
+      "neutral_share": 0.5565185546875,
+      "normalize_scale": 1.428166443878351,
+      "reserve": 0,
+      "surface_scale": 1.15,
+      "visible": 8192,
+      "volume": 4.185475448952611,
+      "volume_error": 6.366147147672698e-16,
+      "volume_raw": 1.4368397185976642
+    },
+    "game": {
+      "area": 23.53963756803925,
+      "component_split": {
+        "gamepad": 4748,
+        "queen": 3444
+      },
+      "components": 2,
+      "neutral_share": 0.5432036382011116,
+      "normalize_scale": 1.770555306328986,
+      "reserve": 276,
+      "surface_scale": 1.15,
+      "visible": 7916,
+      "volume": 4.18547544895261,
+      "volume_error": 2.1220490492242328e-16,
+      "volume_raw": 0.7540780634160132
+    },
+    "sphere": {
+      "area": 12.561117116156876,
+      "component_split": null,
+      "components": 1,
+      "neutral_share": 0.5970282849982098,
+      "normalize_scale": 1.0,
+      "reserve": 2606,
+      "surface_scale": 1.0,
+      "visible": 5586,
+      "volume": 4.185475448952609,
+      "volume_error": 0.0,
+      "volume_raw": 4.185475448952609
+    }
+  },
+  "v0": 4.185475448952609,
+  "volume_tolerance": 0.01
+}

@@ -1,0 +1,248 @@
+.lab {
+  --lab-bg: #0d0e11;
+  --lab-panel: #14161b;
+  --lab-line: #262a33;
+  --lab-ink: #e8e4da;
+  --lab-dim: #8f94a1;
+  --lab-accent: #75a900;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--lab-bg);
+  color: var(--lab-ink);
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--lab-line);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.footer {
+  border-top: 1px solid var(--lab-line);
+  border-bottom: none;
+  color: var(--lab-dim);
+}
+
+.wordmark {
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--lab-ink);
+  text-decoration: none;
+}
+
+.wordmark span {
+  color: var(--lab-dim);
+}
+
+.headerMeta {
+  display: flex;
+  gap: 18px;
+  color: var(--lab-dim);
+}
+
+.stage {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0;
+  min-height: 0;
+}
+
+.viewportShell {
+  position: relative;
+  min-height: 520px;
+  border-right: 1px solid var(--lab-line);
+  overflow: hidden;
+}
+
+.lab[data-preview="mobile"] .viewportShell {
+  /* Auto margins disable grid stretch, so an explicit width is required:
+     the only child (canvas wrapper) is absolutely positioned and has no
+     intrinsic width, which would otherwise collapse the shell to 0. */
+  width: min(390px, 100%);
+  margin: 0 auto;
+  border-left: 1px solid var(--lab-line);
+}
+
+.viewportTopline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--lab-dim);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.viewportTopline b {
+  color: var(--lab-ink);
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+  color: var(--lab-dim);
+  font-size: 13px;
+}
+
+.fallback code {
+  font-size: 11px;
+  color: var(--lab-ink);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  overflow-y: auto;
+  background: var(--lab-panel);
+}
+
+.controlsIntro span {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--lab-dim);
+}
+
+.controlsIntro p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--lab-ink);
+}
+
+.controlGroup {
+  border: 1px solid var(--lab-line);
+  border-radius: 8px;
+  padding: 10px 12px 12px;
+}
+
+.controlGroup legend {
+  padding: 0 6px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--lab-dim);
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.buttons button {
+  appearance: none;
+  border: 1px solid var(--lab-line);
+  background: transparent;
+  color: var(--lab-ink);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.buttons button:hover {
+  border-color: var(--lab-dim);
+}
+
+.buttons button[data-selected="true"] {
+  border-color: var(--lab-accent);
+  background: color-mix(in srgb, var(--lab-accent) 16%, transparent);
+}
+
+.buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scrubber {
+  display: block;
+  margin-top: 10px;
+}
+
+.scrubber span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--lab-dim);
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scrubber input {
+  width: 100%;
+  accent-color: var(--lab-accent);
+}
+
+.note {
+  margin: 8px 0 0;
+  font-size: 10px;
+  color: var(--lab-accent);
+  letter-spacing: 0.08em;
+}
+
+.readout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  border: 1px solid var(--lab-line);
+  border-radius: 8px;
+  padding: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.readout div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.readout span {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--lab-dim);
+  text-transform: uppercase;
+}
+
+.readout strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .stage {
+    grid-template-columns: 1fr;
+  }
+
+  .viewportShell {
+    min-height: 420px;
+    border-right: none;
+    border-bottom: 1px solid var(--lab-line);
+  }
+}

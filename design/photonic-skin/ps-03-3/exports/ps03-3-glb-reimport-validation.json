@@ -1,0 +1,644 @@
+{
+  "stage": "PS-03.3",
+  "blender_version": "4.5.3 LTS",
+  "file": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-3\\exports\\photonic-skin-c-r1-associative-morph-system.glb",
+  "file_sha256": "da174df68e6553d1d00682425fba8d8f13769a7f44bf55469156263995ef9406",
+  "file_size_bytes": 3111992,
+  "mesh_name": "MimicCoreMesh",
+  "runtime_vertex_count_after_seam_splits": 8692,
+  "triangle_count": 16640,
+  "shape_keys": [
+    "Basis",
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "morph_targets": [
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "attributes": [
+    ".corner_edge",
+    ".corner_vert",
+    ".edge_verts",
+    ".select_poly",
+    ".select_vert",
+    "UVMap",
+    "_PHOTONIC_MASK",
+    "_PHOTONIC_SLOT",
+    "custom_normal",
+    "material_index",
+    "position",
+    "sharp_edge",
+    "sharp_face"
+  ],
+  "one_hot_states": [
+    {
+      "name": "BRAND_WIDE",
+      "bounding_box": {
+        "min": [
+          -3.196,
+          -1.8,
+          -1.44
+        ],
+        "max": [
+          3.196,
+          1.8,
+          1.44
+        ],
+        "size": [
+          6.392,
+          3.6,
+          2.88
+        ],
+        "fill": [
+          0.94,
+          1.0,
+          0.9
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.196,
+          -1.8,
+          -1.44
+        ],
+        "max": [
+          3.196,
+          1.8,
+          1.44
+        ],
+        "size": [
+          6.392,
+          3.6,
+          2.88
+        ],
+        "fill": [
+          0.94,
+          1.0,
+          0.9
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_CONTENT_SEQUENCE",
+      "bounding_box": {
+        "min": [
+          -3.298,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.298,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.596,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.97,
+          0.99,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.298,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.298,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.596,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.97,
+          0.99,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_DESIGN_TORSION",
+      "bounding_box": {
+        "min": [
+          -3.264,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.264,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.528,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.96,
+          0.99,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.264,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.264,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.528,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.96,
+          0.99,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_EVENT_CONVERGENCE",
+      "bounding_box": {
+        "min": [
+          -3.196,
+          -1.746,
+          -1.552
+        ],
+        "max": [
+          3.196,
+          1.746,
+          1.552
+        ],
+        "size": [
+          6.392,
+          3.492,
+          3.104
+        ],
+        "fill": [
+          0.94,
+          0.97,
+          0.97
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.196,
+          -1.746,
+          -1.552
+        ],
+        "max": [
+          3.196,
+          1.746,
+          1.552
+        ],
+        "size": [
+          6.392,
+          3.492,
+          3.104
+        ],
+        "fill": [
+          0.94,
+          0.97,
+          0.97
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_GAMES_BRANCH",
+      "bounding_box": {
+        "min": [
+          -3.264,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.264,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.528,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.96,
+          0.99,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.264,
+          -1.782,
+          -1.408
+        ],
+        "max": [
+          3.264,
+          1.782,
+          1.408
+        ],
+        "size": [
+          6.528,
+          3.564,
+          2.816
+        ],
+        "fill": [
+          0.96,
+          0.99,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_VIDEO_TEMPORAL",
+      "bounding_box": {
+        "min": [
+          -3.332,
+          -1.602,
+          -1.408
+        ],
+        "max": [
+          3.332,
+          1.602,
+          1.408
+        ],
+        "size": [
+          6.664,
+          3.204,
+          2.816
+        ],
+        "fill": [
+          0.98,
+          0.89,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.332,
+          -1.602,
+          -1.408
+        ],
+        "max": [
+          3.332,
+          1.602,
+          1.408
+        ],
+        "size": [
+          6.664,
+          3.204,
+          2.816
+        ],
+        "fill": [
+          0.98,
+          0.89,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_DIGITAL_SIGNAL",
+      "bounding_box": {
+        "min": [
+          -3.23,
+          -1.62,
+          -1.408
+        ],
+        "max": [
+          3.23,
+          1.62,
+          1.408
+        ],
+        "size": [
+          6.46,
+          3.24,
+          2.816
+        ],
+        "fill": [
+          0.95,
+          0.9,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.23,
+          -1.62,
+          -1.408
+        ],
+        "max": [
+          3.23,
+          1.62,
+          1.408
+        ],
+        "size": [
+          6.46,
+          3.24,
+          2.816
+        ],
+        "fill": [
+          0.95,
+          0.9,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "SINGLE_MERCH_WRAP",
+      "bounding_box": {
+        "min": [
+          -2.992,
+          -1.62,
+          -1.408
+        ],
+        "max": [
+          2.992,
+          1.62,
+          1.408
+        ],
+        "size": [
+          5.984,
+          3.24,
+          2.816
+        ],
+        "fill": [
+          0.88,
+          0.9,
+          0.88
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -2.992,
+          -1.62,
+          -1.408
+        ],
+        "max": [
+          2.992,
+          1.62,
+          1.408
+        ],
+        "size": [
+          5.984,
+          3.24,
+          2.816
+        ],
+        "fill": [
+          0.88,
+          0.9,
+          0.88
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "COMPLEX_FOCUS",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.98
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.98
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "COMPLEX_GATHER",
+      "bounding_box": {
+        "min": [
+          -3.162,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.162,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.324,
+          3.6,
+          3.2
+        ],
+        "fill": [
+          0.93,
+          1.0,
+          1.0
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.162,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.162,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.324,
+          3.6,
+          3.2
+        ],
+        "fill": [
+          0.93,
+          1.0,
+          1.0
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "COMPLEX_DRIVE",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.536
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.536
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.072
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.96
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.536
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.536
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.072
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.96
+        ]
+      },
+      "bbox_matches": true
+    },
+    {
+      "name": "TRANSITION_TENSION",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.764,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.764,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.528,
+          3.2
+        ],
+        "fill": [
+          1.0,
+          0.98,
+          1.0
+        ]
+      },
+      "expected_bounding_box": {
+        "min": [
+          -3.4,
+          -1.764,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.764,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.528,
+          3.2
+        ],
+        "fill": [
+          1.0,
+          0.98,
+          1.0
+        ]
+      },
+      "bbox_matches": true
+    }
+  ],
+  "checks": {
+    "one_mesh": true,
+    "indexed_mesh": true,
+    "triangle_count": true,
+    "target_count": true,
+    "target_order": true,
+    "uv_present": true,
+    "mask_attribute_present": true,
+    "slot_attribute_present": true,
+    "all_one_hot_bounds": true
+  },
+  "passed": true
+}

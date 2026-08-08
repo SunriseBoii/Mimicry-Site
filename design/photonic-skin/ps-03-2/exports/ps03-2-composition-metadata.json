@@ -1,0 +1,273 @@
+{
+  "stage": "PS-03.2",
+  "camera": {
+    "location": [
+      9.0,
+      -12.0,
+      6.5
+    ],
+    "lens_mm": 55.0
+  },
+  "canonical_view_axis_roll_deg": 34.0,
+  "geometry_rotation": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "safe_text_zone": "x 0-100vw / y 7.7-73.5vh with graduated neutral scrim",
+  "cta_zone": "CTA ink, outline and black fill remain above actor",
+  "targets": [
+    {
+      "target": "MASTER",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        32,
+        504,
+        520,
+        309
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.33,
+      "projected_height_vh": 36.61,
+      "right_crop_percent": 31.15,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "BRAND_WIDE",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        46,
+        509,
+        492,
+        299
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 126.15,
+      "projected_height_vh": 35.43,
+      "right_crop_percent": 30.08,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_CONTENT_SEQUENCE",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        32,
+        509,
+        520,
+        299
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.33,
+      "projected_height_vh": 35.43,
+      "right_crop_percent": 31.15,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_DESIGN_TORSION",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        38,
+        501,
+        509,
+        315
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 130.51,
+      "projected_height_vh": 37.32,
+      "right_crop_percent": 30.84,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_EVENT_CONVERGENCE",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        44,
+        500,
+        497,
+        316
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 127.44,
+      "projected_height_vh": 37.44,
+      "right_crop_percent": 30.38,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_GAMES_BRANCH",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        38,
+        501,
+        508,
+        315
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 130.26,
+      "projected_height_vh": 37.32,
+      "right_crop_percent": 30.71,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_VIDEO_TEMPORAL",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        32,
+        493,
+        520,
+        331
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.33,
+      "projected_height_vh": 39.22,
+      "right_crop_percent": 31.15,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_DIGITAL_SIGNAL",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        33,
+        511,
+        519,
+        294
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.08,
+      "projected_height_vh": 34.83,
+      "right_crop_percent": 31.21,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "SINGLE_MERCH_WRAP",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        51,
+        515,
+        483,
+        287
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 123.85,
+      "projected_height_vh": 34.0,
+      "right_crop_percent": 29.81,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "COMPLEX_FOCUS",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        32,
+        505,
+        520,
+        306
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.33,
+      "projected_height_vh": 36.26,
+      "right_crop_percent": 31.15,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "COMPLEX_GATHER",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        50,
+        506,
+        486,
+        305
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 124.62,
+      "projected_height_vh": 36.14,
+      "right_crop_percent": 30.04,
+      "bottom_crop_percent": 0.0
+    },
+    {
+      "target": "COMPLEX_DRIVE",
+      "viewport": [
+        390,
+        844
+      ],
+      "actor_rect_px": [
+        32,
+        514,
+        520,
+        288
+      ],
+      "center_vw_vh": [
+        75.0,
+        78.0
+      ],
+      "projected_width_vw": 133.33,
+      "projected_height_vh": 34.12,
+      "right_crop_percent": 31.15,
+      "bottom_crop_percent": 0.0
+    }
+  ]
+}

@@ -1,0 +1,1474 @@
+{
+  "stage": "PS-03.3",
+  "system": "D / Controlled Associative Hierarchy",
+  "blender_version": "4.5.3 LTS",
+  "protected_ps03_2_checksums_before": {
+    "design/photonic-skin/ps-03-2/blender/photonic-skin-c-r1-morph-system.blend": "5ac6281101b82f8452cb70b570774563f55d7bd80adb80bea82a5964f42a7b88",
+    "design/photonic-skin/ps-03-2/blender/ps-03-2-morph-authoring-workbench.blend": "6063ae7a069fdb0291dc440c6fe1f48359f9afa5e33911255982bdac5f369a49",
+    "design/photonic-skin/ps-03-2/exports/photonic-skin-c-r1-morph-system.glb": "7647d4d0cac606a0860991e8c7441e7d7d395675c56cfcc8277640e6c1d73ed8",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-additive-validation.json": "ac47035154344b89d715509f9c257b9bc328b3c2da2da0e971f1bbda72e2c121",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-composition-metadata.json": "3d99611f0df95473e1a53e71dd2dd6308bacb803c234a4da85af0519d0fc52bd",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-glb-reimport-validation.json": "a0453c3d96c844221c3d649c7fd53cb100df60e122877dd9d56b5696e07594e2",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-pairwise-validation.json": "8f73e0120a5d4bb4e2ecc39e282b5249957db68fe7606a9c6cf3c56d40102917",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-retarget-validation.json": "e47fa4b55fe7fd608bda0379c6fe59333e1b295a465be6b9665c58fd83cbafde",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-target-manifest.json": "b9450b6f55280bc8967019bf303f83762099199bcb763f49e68d2ca0ba810656",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-technical-validation.json": "3b65074d44a7d3a8f92208cb57f4014e3245ee6cb1c1b78151cc6b3b5c9e8229",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-three-runtime-validation.json": "3e1e276d015ef514819bb75ca96b7e0ab420e203e261a8a43077a2aa3e91ff71",
+    "design/photonic-skin/ps-03-2/ps-03-2-morph-system-evaluation.md": "1c8a2236a949814059044c71a5cdddbd5d2ef1e13caad59f66e4d41580b13686",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_brand-wide.png": "357e65fbfb8b8fca37a078232604c035a569ef7f5b0ef8ea09272529f61a3f72",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-drive.png": "d35170cffae99104b76434cd22353320d20888dae052105ba954680b41bb33f2",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-focus.png": "99a4ca5665e1fa609d4dad4180d3ca57247f1a39aabd2bb49fda4ed7263e0626",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-gather.png": "351fd78547cafa369f25856885fb7c1619cb63d78b52996a1fda53a64c79c290",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_content-sequence.png": "33df514407035e0caa751b3a9022e5a0e3aa9594b1e709d2b07c51493800c60a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_design-torsion.png": "430ee0282567c2e3649bbbede0805a954beb09518f7cb8246f34b31acfcbe4a1",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_digital-signal.png": "1364d6f4b05d4fbbfb1f192e181c38e9139acf243dbf9b874444111149d98a98",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_event-convergence.png": "1e0231caf857e8084961b6139704b70dc94fa3225ec3d352390ca239ad65c168",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_games-branch.png": "4b0debae2a8881729f4feccb415ab76155fe65c79bc09ea852980668f739bd3a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_master.png": "a29a374ddc8994edeb29dbcc346dd5755f2f18c8120c8cf51a6dccf6cc1e3bbf",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_merch-wrap.png": "af06615d69f502685ea0f07c00bd42b0a34ac96c8a02a5ee8dd0415652b30e5a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_video-temporal.png": "f199e8e9ee60d8436798e2207a3f0d2b1b6b299f0cd45146a0dedd9dce6a0f98",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_front.png": "0973fea78c65279fdb5505e63195c1899ddece9f78ff5fae1690c3128fa9d98f",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_opposite.png": "3f932d29171312a18dd9278f2dd5190bc6e28306d4e46fb963b54eb872c4c6f8",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_side.png": "be6e4497b7cfdc539736ba84ed4bbf8f80e4c3250ab90bc5877dc535d4b9dbc6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_top.png": "06e2a6af0312120d52b88de2c1bef4350877928e24ada6338f517fb68b9280f9",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_front.png": "9644a8c449f131fa9c6d269b5fad6779af1debb238cefa6c29b74262799a92c0",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_opposite.png": "4c852f9fdb3922a9e49996ff5611089c43bba8ba1f987a5f5adc662bdbbf7079",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_side.png": "f03941cabeb711d90f38d2f0d47caf8329937f0a825cca69783afe3dbc8cc3d5",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_top.png": "0dc36c03be13e0e410bf1ae20d2fbf903f43a2c733707fbc37de5297db223354",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_front.png": "9ac6324b47cda407cce29d98b6ded848a62767e097f73d4600b8519bab31654f",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_opposite.png": "6a129dcc56f45639f9abea702124ed478153bbf70c1d3dda875d98d0f7fe2bfa",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_side.png": "db88607db9f16078e9543cffb2288c461e522f8a355339f38702f303d8f881fc",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_top.png": "58a2fba6d9ef3e1c96b2f97c1be1fd062f16119c10e764695802f235f0dab2db",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_front.png": "130a4c02e7ec737c7b40263eaff3c50f3d6525b0f39076c82dd04d2c5b4dd5b8",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_opposite.png": "15b85c1a3003648f3f70304cb25bd941ad005f8f4f7c87ff326212e8610790e3",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_side.png": "ed26828cb209dfd846e906b91f2acec299dd33d6bf8e332972321fb39815b56a",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_top.png": "5ea5ec3d9ba58232820c321aac3d252dc8455a033139683af279722c73a65b1c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_front.png": "119d8590a68f437d962db8fd10e7ea7761fbfc5ff1a09609fa1bfa8396bb1b0b",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_opposite.png": "0c186966fd28b1ff16bbae07c7552abbd24f764124d3d94a6cf3318fc7e199ad",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_side.png": "0a37d0fae40730c22cf1415b6dc798eb55bfda92a09402692122247efabb5b91",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_top.png": "bdd92fce1432eeefdf5e66adc7fc63315e8fa83529999b0a3657bfc4c82ede8e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_front.png": "5f66ecfc630f83b480dbcb68c44e44cfd18ba1b6317488a945198d63a8f69e4c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_opposite.png": "2538a0e34ad95c4efc99ea935780f9e8ce55cbeb6fc8732bc1014f10b27f6e0e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_side.png": "dbf0471bbdaf7fef328d860f623b48f11f5d79c5736530a8ca5da179546bf915",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_top.png": "9f5259d45ac0aec3d71122553f76693e5da66a6eab4f1cac33f7b266820c939c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_front.png": "34b6c03dca2b1c8e90df826d4309cb9932cde7aa461937ade91ef1dbc13c2e71",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_opposite.png": "f5bd63390000ea50c8eb433128e80ccaf5b3274c81a436ab05e447ded56ae887",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_side.png": "d3f5843811fca5a38551d585a46fe200564ee3c70db516f5ceef6c7c3879abf2",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_top.png": "5360f55d69e7632439364ea1e0dd491d6622a678f9b89172e51c58367b085a82",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_front.png": "8a1a4dfe38a6090cf87ed15c6b93f1c6f1bd7801ca92cd54187441dbbe8c0e03",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_opposite.png": "0bdb12eac415f29c58ec7d130d6240b82811608d483a75a766aa172bc78da6f1",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_side.png": "0ffe64e68e0ceb42a14e080ebd7d080f9e32e9701a4f03e90498a6d7654d31fd",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_top.png": "e2e4ac66d647dacf8b25d99c7e0d4555281feb5d61d3c19e12a4f502fa52c082",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_front.png": "1f55b03787bf2965556e6f6ebbf52f92fcf06f04b023502801016afc475e21c6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_opposite.png": "bcab68853f2902dee5c7b5835330dddf91561e21b47a7caeeddaf36bf4a0dea6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_side.png": "6055c13623e20ab0b6c32221c725a55f70422b21a460263a49a2fdd5d7cbf911",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_top.png": "d69764839b6651695f463a8991418fe9af17f87700b485d423035c7172168b1a",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_front.png": "5bcde2826d26654b8aa8150fa930c9915f2f48abb05aca6ef5ff0754fd6a9d15",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_opposite.png": "fe02ef99b2e1f79a660d8de7d0408704de7f08ac3eb5371c7b864ea241a45580",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_side.png": "3afd118e6a2dfa14af0aacbf5731d60877461446ac56a6675e86cef509191a3e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_top.png": "e1f6b5abadedcba82568f55f9066914268f8c41e205f513bada767dc66517b7c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_front.png": "3604e852d8a41f40a2d06a9aeee61d91ab914a020e82f8fd2f62bdcf1046db8b",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_opposite.png": "7adf989228ce5ebd4d671ed848f0aeb3e3590b74edbeb23a7685cd6c46e12c23",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_side.png": "a141c8c9aaaf5e26159ba48b66d1e5792848c0acdf73a1415115143c98c8c44e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_top.png": "15c345a989eee48d80243beba4744ebda3b607736df5b4df78610837f4367c88",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_front.png": "0c296f60cb2635f5d0e6b16c8a5c70cafe6b6c7c2a7ef46989a874dfbee9b524",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_opposite.png": "c278393a0192e2a75bfb9fb311665a8b3e76eccd9c4b864002ac778d9b1ced71",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_side.png": "4070cb8865d69897ce3eddf55eb07cd9de9fc84c45367a4b6811f1f00b096eb9",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_top.png": "42fc09cdca83a07dfc0adf22454fe2da4e674f544788f572135b7eab3fd1037b",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_brand-wide.png": "4afd5adff89dcd69aa3c6cb568457c08e53b0a845d588d21fa521d52570bbd4e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-drive.png": "6aa3285d38ff6ad7350d7a6d878407066d81715bde3c5eb16f912e9c9d89f964",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-focus.png": "ce3062066ceb395a5432aaaa8923d8bb390e206dcab58673cf059bb136187ac5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-gather.png": "d960f8378ff8e222c994842d6542fe344feaec68af17c4bec4da64858c1a2e47",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_content-sequence.png": "8b9f9d7932ea69540e05f901fdc60b5a48c59ef9f4576914474b16a2a0533a64",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_design-torsion.png": "17026d02c9c3d9e305fbdf6766c77e8f65e1f671abff67a978493f9862a8fa0f",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_digital-signal.png": "f39ba65220217c2f0d62cd1239130a61eedd888d97471bbab8074e62b9a3dd43",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_event-convergence.png": "febfb46b73623c834a5bd4229013d6fa9765a165f870485b07c6ccd2f739bd94",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_games-branch.png": "f6652afec59706ea1a4b6808871f4bc8b71e0dcfb20071c137efd72838b6166e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_master.png": "39915ce6ca226f3cdd7d7f1ed3c0e1d83644979d1a03bcc34548efdc6bb4229c",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_merch-wrap.png": "860c13aa8b52dbc91d62bd8583b96ba1b048c2dbee9116735fd3188cb4683201",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_video-temporal.png": "6095d6172e3254c70fbabb47f00adb3428b163e0d93473b6593181834e88624e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_brand-wide.png": "53133e7cf4394bed398de3fd2c730d4af45e7b04076e7ddbdda74e14626aa4d5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-drive.png": "bbd0f3932428471af143e0a497ef23f4d1cb281c93d0664c5749de866d36dfc9",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-focus.png": "eec1b246e347ee638390d2c04976a4b5f39f5eacc5f1b9dbeb7be59469ae83fc",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-gather.png": "1deadd022fce73610d15bd27b89d4c9bd41087a8a26ac602a63fb934b182f347",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_content-sequence.png": "d565c708e1ce3022eb9bee48a08da085102e527291a1cb7b7c9478d14aa5e766",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_design-torsion.png": "86d02689ca0df8682d861d04ecca4eb4492e0512399df6d8a9aa29035ce4ae3b",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_digital-signal.png": "aed6f49d160b455bd3f413e887424b04e99441fb1782be5834e0f0aa31c1bb13",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_event-convergence.png": "1408c77fa836272c4f44546642d9fe16a811b5b4940c0b986e8e2bfcfd3e5aa5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_games-branch.png": "e9009691905db5854a2ebb2c5f7dcb6011b984d232a37ac6705586e5e6a69a16",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_master.png": "14c6fa7152d1a81c50fd9c478bf1c89c2f8f4b8d7d1a16b4743890f631426d69",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_merch-wrap.png": "5546d2b1f9e3ffecf0f9c16e3936a10e59dbfcd160dfec88f38b15f63d13926a",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_video-temporal.png": "372f632e498e7deb2e607f3665a33820b2148939be139371f58f63de0ea9ff83",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_brand-wide.png": "7b99fadc2445ca4bf78a8377d4b5f0a495c64117f6577a7bd77166e5f121078d",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-drive.png": "7a517ab4acc1a391c02b2ce95aa9ab12973c6617971b461bf04f09b08e3dbd2b",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-focus.png": "a7e531145d3f96f4fb132e5c83f4e158cd269992a8ebba7e1bfbd281c4fe328a",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-gather.png": "5ffc3f4c515259c23cb7b590a7114eef612ece6fed2f975b2e3f00330bf66bb5",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_content-sequence.png": "3b587018177154dbda48d917c70e6ef17322c7fad8d4347da8d8cf4ab723effa",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_design-torsion.png": "6ff3f91bf276696a2870b57a5c85f80eb220c8c04320382c9cd0b5e9b992a6ae",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_digital-signal.png": "40d3774682e2e801caf7f1eb500666be100608ebdfe6aa2ca330b845eda148ea",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_event-convergence.png": "8c9ccde9ec680ba0b1959cd999245ca6ec4606af8bfd81520448ed0a49fee193",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_games-branch.png": "5330a74568ccc7da7e690568b97aa7b9b294b051d0864805df1472a8e9be2172",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_master.png": "54cf7ffdc1b537251c4a38a4a3f963d91a6d96b820606c0dc500a89426601882",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_merch-wrap.png": "fb6551e8b95b917b8671d0d8a0f6e59b216c8b17565c2275bf5940dc0d562a60",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_video-temporal.png": "884654ca984317e33b0c4f290e30ebe9870ccf4340cd8885527ce32ab46c7059",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_0.png": "b0ad0399aed496bb38e1ad41e83b397e8831512fbf345077df173a8089fe0241",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_1.png": "7b1997b268be0be2dab08ab8ad4c20ebecd7df1bde9c68b277abf1bd03d20b84",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_2.png": "eeaa97585301b292e249b11fd12e94749e0c70aee418b1820fd4426cbdedb942",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_3.png": "31995b7addd9d4aa568e09e57880636111c44842a225ad3e11883d03aaedff35",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_4.png": "119ab042d553b3a5e9c02408e389118b23941e165250fa1c6281abc358dcaa2c",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_0.png": "8d553caef3523c9f49920a98275c5328808203d3e36c9e247730d18d0c6d97a9",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_1.png": "7aa10e9abf594a1e962d33c9331542dd8a9747119f5868c0a30e2366e49fd766",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_2.png": "7c8b4e1717f54829b00ccb586fbcaf99e4104be089c8355be5352fb3578ce138",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_3.png": "0f311923609e6f5945f725d89c71c077ddc3f8204093009e8dc0b86bed826e02",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_4.png": "89f5de9791a74b4aab2f60c19f48c74409cdcdcbf99cfe408987c2bd1ccdb316",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_0.png": "1810c9cc6fa40b8db93dfd905cfe86b81d4727c36dd0699832da69671408b8fa",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_1.png": "ef298b9becfa1cbfb7229740679ccd9508ce966b7a0393055483975572891f58",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_2.png": "5af7e3124466198b25395cbe3b9c3dbc82f39a79443a19922c7fb7d035b653b9",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_3.png": "a469ea5bc262c5cbb3bd382a541cd70dc5b7b045ee9ab0394c4b1382a358de91",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_4.png": "1d1c23c5d0b3bf586459db1d0efed3fed694a212301782eee0e398b57922e64f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_0.png": "682f8a7ca8e779be4f098f1f611fc5be5c24a0438b13279cf7eadcba9c480ef2",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_1.png": "d53c29aeca97538ef6ba40af378a69e0581b7eb70423689f2e278308a98782bb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_2.png": "d56e7254b69e45968f0f15a3e31ba6c21782dfd044054acb66e9cb873d058c0e",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_3.png": "e6e04ef037a1839606edfb4f20069a382598c10f8466a5ccd942902a9513dd76",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_4.png": "280a04396a7ca59162d9791df59c8fd4ca79240040a3fe23f9673a1a4ed706bb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_0.png": "18de3856b21d064bf16d16eda78c1e8a89bf91745ace793f320cb1504d6074c1",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_1.png": "418b1f35018841caadc320deab2c15e8f6d1511dc15f9f7e9bb59e81395397d6",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_2.png": "0b6bf0f25d9fdfab12f744b3e5fb6ee3308b61a7bd96842541190430d1f270cb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_3.png": "5f2b5278624e1efa4c31c2104546b027738a665f2b10c21c24049b21960cb83f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_4.png": "9629f450293c25e363dd2bec78b2db0e7d331792337e7ac34920492577e525d1",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_0.png": "c2f9dd5ffa166b195f10017b0eb1da1a10229f1079141b717c8d1f0b1b8827b2",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_1.png": "871f810989c4460258133f1c9a498516466952ee205f1ecd29a2145286e5b96f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_2.png": "1fa8283b8b256b451076d0d1165ccddc4636f1ccae30a63931f99a274679d0b5",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_3.png": "db4d36fd7666ab16edf49c428543ff346feb6d31dd65c4a2fdf14f4369904fce",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_4.png": "76272dab5c8d316a97b847170299dba3d3f7840ffdae39d19f0d9de8fd179f1d",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_brand-wide.png": "4e695840bf139d6ab579596d34119f756c2e8c92c78abd1634bdfdc66f23f422",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-drive.png": "7096bc8ddd1513261876d0a7f4eee5bea17bcd44d07d78c2360cf0fdaf4d8ffe",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-focus.png": "10bc667263dae6cf08915f089a05f5d7207741816e4461d0d7295a83c93e553b",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-gather.png": "8a01a9b31fb2bcb67d68ac961e7f940ccb8850c6adc4c69187080327be8cc5ea",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_content-sequence.png": "52e043b2c7e814e5656105925ab8216848b73370a831d43e62c49991521f2c3b",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_design-torsion.png": "0ebd52c07d8347e02b1541d92358ef8ceba34c852ebbd0aa39f2dd9f9f17a109",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_digital-signal.png": "8dca36db872d133f085b412540051e7bb84209589b86c6a3fb9b7602c2f240cd",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_event-convergence.png": "e199739dc8e3dee20afb7d9c59115fee540d7b3f9950e4b27496e1fe45fd2080",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_games-branch.png": "13632b5ebbccc78ec3ed97793bd2753422e8e54d8c837507f9d813a2ca37ae66",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_master.png": "56fea2de7d34d2ba5df426ff39473ec43c883aad0e034b99907978d0d83dafb5",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_merch-wrap.png": "b1c30006ca9380f43d91768bc3685a23e4f1f69b5085a6728702bd10471e4215",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_video-temporal.png": "59070265e49f8c9e06f503ce86c7ef3f5699538f2cc2a7419ce815cb5994a40e",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_brand-wide_390.png": "cf1635bd7cb76adc260a0114e0d493aefce0c62f63f44e848c49e299207ecc3a",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-drive_390.png": "874ab715421acc13923f77682c76db11aa7225abdfa4f00bf84675b2c74d99d5",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-focus_390.png": "d2fbfbb2c1c55051cc58258b9f5e83494307b5d041b2cbc9fd43d1fd7d56ca48",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-gather_390.png": "350fa03f64a9a4bbfaaa50df9a434499b0528571da4580661855704da9eba50e",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_content-sequence_390.png": "12e1c9de3674c1cc710078fd0431d3652141b08b7652c447d2487a14cf62fa66",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_design-torsion_390.png": "769d79110e45623b61ede494a577fd31909e2ebaf1b40808c9b31321c9e137c6",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_digital-signal_390.png": "5510d8c050e27f495bff0727b5a5d67916eba032f60906036d50e11060ef963b",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_event-convergence_390.png": "e5ca62153b3c74bb15c5861d504afd2500770f50c21614d13bab58a9f89b7ba9",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_games-branch_390.png": "35d5560a2fc9c1463ae6b4d79b7cc9828dd74e97c112d7552ec477096fda7560",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_master_390.png": "ad641b96e46264faa80f4f04fe6c0f484f6a6b181a530740cce45964fefcc835",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_merch-wrap_390.png": "f6426ca87b14fe422d706be108d3e7ccbbc60f5e00dd280c365d9f961810da14",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_video-temporal_390.png": "b0ec81b066980bde88fb173faac60c76f7dc32b264bf361506ba9d21938639ff",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_complex_brand_board.png": "4f0dd456f3bef06d6123b1e0b1da47a4652e3bd74f73c679dcb1738354cd5c2c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_1.png": "e2e6f0be93bff011c5b61f65a41292ebd1b5bff320ff3d94dd62d6d9bfe24bd0",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_2.png": "5421f7a6f493ef5b058b2daccc57190dc4168d3cff14e80bd80363fa632fca4f",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_3.png": "8cd2607d4052e64dc453005a15813b2459641da6cc550d34799b5d85e86b132a",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_4.png": "9add47c95cbfc4759c7e073b81d79286800fc570c52db1206754a19b0d4ff297",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_full_system_board.png": "75e3298ba899245fe396b2ab56128123e9ca8e4a278f81a23822547f621b140c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_mobile_390_board.png": "e0950d71afb081d908c4dec20e1e0b9d21183f883312c75719a9f5f7357baaaf",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_photonic_mask_board.png": "690ee827d18c71fcb39f5367d1413ec95be28885f41349937f778b8f47608324",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_single_states_board.png": "12b20354db193171cd36ca84d42b997f2e0f5fde1d0a2037cf8244b295e30072",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_design-merch_storyboard.png": "8e5bc775ea786eafd788d289f92ac4eb34127bea683b1e087652e8b97cee65bf",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_focus-drive_storyboard.png": "6685dcce99f0aa70d8310ea5958f6065785463febce0deae6e9cdcc1a15076c8",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_games-event_storyboard.png": "f66453f4a70c3958880da8f14a97cac698cc6c80f589e125e4fa3c71e110f921",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_master-content_storyboard.png": "9149233412f14b52bc0f43e4cac6eb753dc809f1e5ede3dafbedc4fa76214f9c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_retarget-content-design-event_storyboard.png": "f82d454980d4491eb4829ae81e9d45d0fda3ae3da3bfacf16e373ddf8897de1a",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_storyboards.png": "2bdc492c3aee288dd254dae57c427bcab77cac55e2cdaef3a374e8772539c716",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_transition-tension_storyboard.png": "3274d944fc788e6453973ef208b604d9499a6ade0fb304841f1cf1264be71da3",
+    "design/photonic-skin/ps-03-2/scripts/__pycache__/build_ps03_2.cpython-311.pyc": "64f9534ea85a2e5e622fbd9b244274317e0c15ead6de594fe40e206c04b99f05",
+    "design/photonic-skin/ps-03-2/scripts/__pycache__/validate_ps03_2.cpython-311.pyc": "e4f75c586bff862dff0c910176dab83c79e0ab16a75f1b262c77edf941c5f909",
+    "design/photonic-skin/ps-03-2/scripts/build_ps03_2.py": "2537b9b5267290c0b930a91341418f1b5f24a650c7bed03835cef0d176ac4568",
+    "design/photonic-skin/ps-03-2/scripts/compose_ps03_2.py": "e7ff2f3f9be5346df2767f5ce2b3e8318e2b8749fbf4017378abfb430fe5360f",
+    "design/photonic-skin/ps-03-2/scripts/validate_ps03_2.py": "22f47338a59ffc6e43b7161ec1c33960ce06af289d0aaaa4a03076e286305a19",
+    "design/photonic-skin/ps-03-2/scripts/validate_ps03_2_runtime.mjs": "d318e2963d2e82e2fdaa8f1523f23133187043685803cff8abc910c3b881cc7a"
+  },
+  "common_topology": {
+    "vertex_count": 8322,
+    "face_count": 8480,
+    "triangle_count": 16640,
+    "edge_count": 16800,
+    "connected_components": 1,
+    "loose_vertices": 0,
+    "boundary_edges": 0,
+    "non_manifold_edges": 0,
+    "euler_characteristic": 2,
+    "connectivity_index_hash": "8883e7698bbd3a6aafef5a4a8a4ea5f04ee96d7ad7cc41cee841a94986e1e462",
+    "uv_hash": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683",
+    "mask_face_count": 2526,
+    "mask_face_index_hash": "67c2dd582fcbdb25d9905b98357340c7313292bfb20db6fdd5675e88d1f71c58"
+  },
+  "shape_key_order": [
+    "MASTER",
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "preserved_coordinate_identity": {
+    "MASTER": true,
+    "BRAND_WIDE": true,
+    "COMPLEX_FOCUS": true,
+    "COMPLEX_GATHER": true,
+    "COMPLEX_DRIVE": true,
+    "TRANSITION_TENSION": true
+  },
+  "endpoint_validation": {
+    "MASTER": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.8,
+            -1.6
+          ],
+          "max": [
+            3.4,
+            1.8,
+            1.6
+          ],
+          "size": [
+            6.8,
+            3.6,
+            3.2
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "signed_volume": 29.030129,
+        "volume_ratio_to_master": 1.0,
+        "minimum_triangle_area": 0.000521428,
+        "minimum_face_area_ratio_to_master": 1.0,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 1.0,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.350319,
+        "rms_displacement_from_master": 0.0,
+        "max_displacement_from_master": 0.0,
+        "position_hash": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+        "silhouette": {
+          "projected_width": 0.34355016,
+          "projected_height": 0.19823041,
+          "hull_area": 0.04579536,
+          "centroid": [
+            0.01622055,
+            -0.00274583
+          ],
+          "hull_vertices": 119
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "BRAND_WIDE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.196,
+            -1.8,
+            -1.44
+          ],
+          "max": [
+            3.196,
+            1.8,
+            1.44
+          ],
+          "size": [
+            6.392,
+            3.6,
+            2.88
+          ],
+          "fill": [
+            0.94,
+            1.0,
+            0.9
+          ]
+        },
+        "signed_volume": 24.555562,
+        "volume_ratio_to_master": 0.845865,
+        "minimum_triangle_area": 0.000476505,
+        "minimum_face_area_ratio_to_master": 0.832833,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.996049,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.349674,
+        "rms_displacement_from_master": 0.144396,
+        "max_displacement_from_master": 0.207583,
+        "position_hash": "c937128c998ac8511961a6905b9d2c71e63fbdbb0032a8a99dfee626572a3075",
+        "silhouette": {
+          "projected_width": 0.32203209,
+          "projected_height": 0.18455133,
+          "hull_area": 0.04066086,
+          "centroid": [
+            0.01414756,
+            -0.00204192
+          ],
+          "hull_vertices": 123
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_CONTENT_SEQUENCE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.298,
+            -1.782,
+            -1.408
+          ],
+          "max": [
+            3.298,
+            1.782,
+            1.408
+          ],
+          "size": [
+            6.596,
+            3.564,
+            2.816
+          ],
+          "fill": [
+            0.97,
+            0.99,
+            0.88
+          ]
+        },
+        "signed_volume": 36.801218,
+        "volume_ratio_to_master": 1.26769,
+        "minimum_triangle_area": 0.001769302,
+        "minimum_face_area_ratio_to_master": 0.481056,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.203141,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.321123,
+        "rms_displacement_from_master": 0.555123,
+        "max_displacement_from_master": 0.993195,
+        "position_hash": "a4c33d058d210b3d65525a8e33211ac672653d771981f34a78b186e2c4db90af",
+        "silhouette": {
+          "projected_width": 0.38073721,
+          "projected_height": 0.23987396,
+          "hull_area": 0.07006386,
+          "centroid": [
+            0.00426819,
+            -0.00727223
+          ],
+          "hull_vertices": 202
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_DESIGN_TORSION": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.264,
+            -1.782,
+            -1.408
+          ],
+          "max": [
+            3.264,
+            1.782,
+            1.408
+          ],
+          "size": [
+            6.528,
+            3.564,
+            2.816
+          ],
+          "fill": [
+            0.96,
+            0.99,
+            0.88
+          ]
+        },
+        "signed_volume": 28.366051,
+        "volume_ratio_to_master": 0.977125,
+        "minimum_triangle_area": 0.001245045,
+        "minimum_face_area_ratio_to_master": 0.512726,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.28095,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.347383,
+        "rms_displacement_from_master": 0.440954,
+        "max_displacement_from_master": 0.784738,
+        "position_hash": "950863d4e9f0e7cfd303faddfa9ded4892530d3688b81e6bbc8237b234728c7c",
+        "silhouette": {
+          "projected_width": 0.34562252,
+          "projected_height": 0.19467345,
+          "hull_area": 0.05044895,
+          "centroid": [
+            0.00844971,
+            -0.00216783
+          ],
+          "hull_vertices": 200
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_EVENT_CONVERGENCE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.196,
+            -1.746,
+            -1.552
+          ],
+          "max": [
+            3.196,
+            1.746,
+            1.552
+          ],
+          "size": [
+            6.392,
+            3.492,
+            3.104
+          ],
+          "fill": [
+            0.94,
+            0.97,
+            0.97
+          ]
+        },
+        "signed_volume": 24.681079,
+        "volume_ratio_to_master": 0.850188,
+        "minimum_triangle_area": 0.000905964,
+        "minimum_face_area_ratio_to_master": 0.447911,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.676809,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.349339,
+        "rms_displacement_from_master": 0.627675,
+        "max_displacement_from_master": 0.951087,
+        "position_hash": "8d4d04c86415fe63596c3f2992e9d6331b3828da92d71293e1880287c4873f6a",
+        "silhouette": {
+          "projected_width": 0.33245397,
+          "projected_height": 0.20204852,
+          "hull_area": 0.04471845,
+          "centroid": [
+            0.00257404,
+            -0.03432509
+          ],
+          "hull_vertices": 197
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_GAMES_BRANCH": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.264,
+            -1.782,
+            -1.408
+          ],
+          "max": [
+            3.264,
+            1.782,
+            1.408
+          ],
+          "size": [
+            6.528,
+            3.564,
+            2.816
+          ],
+          "fill": [
+            0.96,
+            0.99,
+            0.88
+          ]
+        },
+        "signed_volume": 35.800082,
+        "volume_ratio_to_master": 1.233204,
+        "minimum_triangle_area": 0.001295311,
+        "minimum_face_area_ratio_to_master": 0.474268,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.410478,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.343447,
+        "rms_displacement_from_master": 0.485003,
+        "max_displacement_from_master": 0.88468,
+        "position_hash": "8895b92413519b12f1bd3f47880766361c1271c2693c0452e461927142645c0d",
+        "silhouette": {
+          "projected_width": 0.37001156,
+          "projected_height": 0.21003579,
+          "hull_area": 0.05845655,
+          "centroid": [
+            0.00775588,
+            -0.01664409
+          ],
+          "hull_vertices": 206
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_VIDEO_TEMPORAL": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.332,
+            -1.602,
+            -1.408
+          ],
+          "max": [
+            3.332,
+            1.602,
+            1.408
+          ],
+          "size": [
+            6.664,
+            3.204,
+            2.816
+          ],
+          "fill": [
+            0.98,
+            0.89,
+            0.88
+          ]
+        },
+        "signed_volume": 32.772015,
+        "volume_ratio_to_master": 1.128897,
+        "minimum_triangle_area": 0.001341294,
+        "minimum_face_area_ratio_to_master": 0.431063,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.469218,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.355182,
+        "rms_displacement_from_master": 0.475219,
+        "max_displacement_from_master": 0.83359,
+        "position_hash": "16b5c925c9390b14602a901f5edbf3790cf07db4c166c9a6beac80e0ca9a8829",
+        "silhouette": {
+          "projected_width": 0.37618584,
+          "projected_height": 0.20297978,
+          "hull_area": 0.05937269,
+          "centroid": [
+            0.00889516,
+            -0.01015862
+          ],
+          "hull_vertices": 208
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_DIGITAL_SIGNAL": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.23,
+            -1.62,
+            -1.408
+          ],
+          "max": [
+            3.23,
+            1.62,
+            1.408
+          ],
+          "size": [
+            6.46,
+            3.24,
+            2.816
+          ],
+          "fill": [
+            0.95,
+            0.9,
+            0.88
+          ]
+        },
+        "signed_volume": 32.212574,
+        "volume_ratio_to_master": 1.109626,
+        "minimum_triangle_area": 0.001261599,
+        "minimum_face_area_ratio_to_master": 0.558745,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.542178,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.333633,
+        "rms_displacement_from_master": 0.508637,
+        "max_displacement_from_master": 0.934404,
+        "position_hash": "7b8767bb747a14622ce4cfa8ea3fd8a0a366d9bb6ee78f406ea32582470f21e5",
+        "silhouette": {
+          "projected_width": 0.37101954,
+          "projected_height": 0.20970399,
+          "hull_area": 0.0552946,
+          "centroid": [
+            0.00886266,
+            -0.02108678
+          ],
+          "hull_vertices": 199
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "SINGLE_MERCH_WRAP": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -2.992,
+            -1.62,
+            -1.408
+          ],
+          "max": [
+            2.992,
+            1.62,
+            1.408
+          ],
+          "size": [
+            5.984,
+            3.24,
+            2.816
+          ],
+          "fill": [
+            0.88,
+            0.9,
+            0.88
+          ]
+        },
+        "signed_volume": 29.252176,
+        "volume_ratio_to_master": 1.007649,
+        "minimum_triangle_area": 0.0007028,
+        "minimum_face_area_ratio_to_master": 0.364,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.665054,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.330451,
+        "rms_displacement_from_master": 0.458779,
+        "max_displacement_from_master": 0.745655,
+        "position_hash": "bc9fb1611e89714a327c455d048577442abf9bff60285089d811a6ceb53cd9fc",
+        "silhouette": {
+          "projected_width": 0.33358226,
+          "projected_height": 0.19498623,
+          "hull_area": 0.0512505,
+          "centroid": [
+            0.00409895,
+            -0.00821014
+          ],
+          "hull_vertices": 236
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "COMPLEX_FOCUS": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.602,
+            -1.568
+          ],
+          "max": [
+            3.4,
+            1.602,
+            1.568
+          ],
+          "size": [
+            6.8,
+            3.204,
+            3.136
+          ],
+          "fill": [
+            1.0,
+            0.89,
+            0.98
+          ]
+        },
+        "signed_volume": 27.232653,
+        "volume_ratio_to_master": 0.938082,
+        "minimum_triangle_area": 0.000445589,
+        "minimum_face_area_ratio_to_master": 0.603394,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.956958,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.331475,
+        "rms_displacement_from_master": 0.116931,
+        "max_displacement_from_master": 0.348431,
+        "position_hash": "5c97f9548c204cb7eb6b605d83aaee10f584fcbf0a2455576eda24585617ee6b",
+        "silhouette": {
+          "projected_width": 0.34483712,
+          "projected_height": 0.19526802,
+          "hull_area": 0.04605284,
+          "centroid": [
+            0.01638312,
+            0.00032458
+          ],
+          "hull_vertices": 124
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "COMPLEX_GATHER": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.162,
+            -1.8,
+            -1.6
+          ],
+          "max": [
+            3.162,
+            1.8,
+            1.6
+          ],
+          "size": [
+            6.324,
+            3.6,
+            3.2
+          ],
+          "fill": [
+            0.93,
+            1.0,
+            1.0
+          ]
+        },
+        "signed_volume": 26.273133,
+        "volume_ratio_to_master": 0.90503,
+        "minimum_triangle_area": 0.000460093,
+        "minimum_face_area_ratio_to_master": 0.841266,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.993602,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.35116,
+        "rms_displacement_from_master": 0.180907,
+        "max_displacement_from_master": 0.299817,
+        "position_hash": "2d336ae0f2c2000e3acbede998122ac1b69fca73ba7c1e65d774e1a6eeb71f62",
+        "silhouette": {
+          "projected_width": 0.31680228,
+          "projected_height": 0.19651207,
+          "hull_area": 0.04164396,
+          "centroid": [
+            0.01427416,
+            -0.0073801
+          ],
+          "hull_vertices": 118
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "COMPLEX_DRIVE": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.602,
+            -1.536
+          ],
+          "max": [
+            3.4,
+            1.602,
+            1.536
+          ],
+          "size": [
+            6.8,
+            3.204,
+            3.072
+          ],
+          "fill": [
+            1.0,
+            0.89,
+            0.96
+          ]
+        },
+        "signed_volume": 26.237103,
+        "volume_ratio_to_master": 0.903789,
+        "minimum_triangle_area": 0.00047137,
+        "minimum_face_area_ratio_to_master": 0.843739,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.992176,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.347563,
+        "rms_displacement_from_master": 0.126768,
+        "max_displacement_from_master": 0.2209,
+        "position_hash": "5783302ed5c96a852872bbe602bb169f731f08f02d07ee777e6697f0465c427a",
+        "silhouette": {
+          "projected_width": 0.3437572,
+          "projected_height": 0.19414889,
+          "hull_area": 0.04435622,
+          "centroid": [
+            0.0194739,
+            -0.00424344
+          ],
+          "hull_vertices": 127
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    },
+    "TRANSITION_TENSION": {
+      "metrics": {
+        "finite_coordinates": true,
+        "bounding_box": {
+          "min": [
+            -3.4,
+            -1.764,
+            -1.6
+          ],
+          "max": [
+            3.4,
+            1.764,
+            1.6
+          ],
+          "size": [
+            6.8,
+            3.528,
+            3.2
+          ],
+          "fill": [
+            1.0,
+            0.98,
+            1.0
+          ]
+        },
+        "signed_volume": 29.085141,
+        "volume_ratio_to_master": 1.001895,
+        "minimum_triangle_area": 0.00052341,
+        "minimum_face_area_ratio_to_master": 0.925751,
+        "zero_area_or_degenerate": 0,
+        "minimum_master_normal_dot": 0.998534,
+        "inverted_or_folded_faces": 0,
+        "nonadjacent_self_intersections": 0,
+        "active_surface_ratio": 0.343804,
+        "rms_displacement_from_master": 0.03435,
+        "max_displacement_from_master": 0.094162,
+        "position_hash": "a7aee5d071650bebee9be6a0fd1bcfeffd0504ddc151e4b7441edbb9d5bc5fb5",
+        "silhouette": {
+          "projected_width": 0.34398379,
+          "projected_height": 0.19884828,
+          "hull_area": 0.04631549,
+          "centroid": [
+            0.01674466,
+            -0.00186144
+          ],
+          "hull_vertices": 120
+        }
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "no_normal_inversion": true,
+        "no_local_collapse": true,
+        "no_self_intersections": true,
+        "inside_canonical_envelope": true,
+        "canonical_fill": true,
+        "mask_area": true
+      },
+      "passed": true
+    }
+  },
+  "mask_area_stats": {
+    "master": 0.350319,
+    "terminal_min": 0.321123,
+    "terminal_max": 0.355182,
+    "terminal_mean": 0.342562,
+    "fixed_face_count": 2526,
+    "face_index_hash": "67c2dd582fcbdb25d9905b98357340c7313292bfb20db6fdd5675e88d1f71c58"
+  },
+  "baseline_analysis": {
+    "stage": "PS-03.3",
+    "baseline": "PS-03.2 abstract A",
+    "conclusion": "The seven A targets share close global massing and rely too strongly on subtle surface relief at 96-180 px.",
+    "ps03_2_single_pair_metrics": [
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_DESIGN_TORSION",
+        "rms_displacement": 0.139409,
+        "max_displacement": 0.253509,
+        "projected_hull_area_relative_distance": 0.021173
+      },
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_EVENT_CONVERGENCE",
+        "rms_displacement": 0.174346,
+        "max_displacement": 0.233907,
+        "projected_hull_area_relative_distance": 0.010562
+      },
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_GAMES_BRANCH",
+        "rms_displacement": 0.142727,
+        "max_displacement": 0.25687,
+        "projected_hull_area_relative_distance": 0.01331
+      },
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_VIDEO_TEMPORAL",
+        "rms_displacement": 0.226514,
+        "max_displacement": 0.301214,
+        "projected_hull_area_relative_distance": 0.036147
+      },
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_DIGITAL_SIGNAL",
+        "rms_displacement": 0.0858,
+        "max_displacement": 0.219014,
+        "projected_hull_area_relative_distance": 0.015157
+      },
+      {
+        "source": "SINGLE_CONTENT_SEQUENCE",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.230901,
+        "max_displacement": 0.322761,
+        "projected_hull_area_relative_distance": 0.132255
+      },
+      {
+        "source": "SINGLE_DESIGN_TORSION",
+        "target": "SINGLE_EVENT_CONVERGENCE",
+        "rms_displacement": 0.175453,
+        "max_displacement": 0.309998,
+        "projected_hull_area_relative_distance": 0.031078
+      },
+      {
+        "source": "SINGLE_DESIGN_TORSION",
+        "target": "SINGLE_GAMES_BRANCH",
+        "rms_displacement": 0.157229,
+        "max_displacement": 0.3882,
+        "projected_hull_area_relative_distance": 0.0077
+      },
+      {
+        "source": "SINGLE_DESIGN_TORSION",
+        "target": "SINGLE_VIDEO_TEMPORAL",
+        "rms_displacement": 0.229956,
+        "max_displacement": 0.39566,
+        "projected_hull_area_relative_distance": 0.014663
+      },
+      {
+        "source": "SINGLE_DESIGN_TORSION",
+        "target": "SINGLE_DIGITAL_SIGNAL",
+        "rms_displacement": 0.160452,
+        "max_displacement": 0.289144,
+        "projected_hull_area_relative_distance": 0.035577
+      },
+      {
+        "source": "SINGLE_DESIGN_TORSION",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.202906,
+        "max_displacement": 0.331295,
+        "projected_hull_area_relative_distance": 0.150248
+      },
+      {
+        "source": "SINGLE_EVENT_CONVERGENCE",
+        "target": "SINGLE_GAMES_BRANCH",
+        "rms_displacement": 0.202355,
+        "max_displacement": 0.390265,
+        "projected_hull_area_relative_distance": 0.024127
+      },
+      {
+        "source": "SINGLE_EVENT_CONVERGENCE",
+        "target": "SINGLE_VIDEO_TEMPORAL",
+        "rms_displacement": 0.309382,
+        "max_displacement": 0.411285,
+        "projected_hull_area_relative_distance": 0.047208
+      },
+      {
+        "source": "SINGLE_EVENT_CONVERGENCE",
+        "target": "SINGLE_DIGITAL_SIGNAL",
+        "rms_displacement": 0.158171,
+        "max_displacement": 0.247359,
+        "projected_hull_area_relative_distance": 0.004644
+      },
+      {
+        "source": "SINGLE_EVENT_CONVERGENCE",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.21213,
+        "max_displacement": 0.324061,
+        "projected_hull_area_relative_distance": 0.122992
+      },
+      {
+        "source": "SINGLE_GAMES_BRANCH",
+        "target": "SINGLE_VIDEO_TEMPORAL",
+        "rms_displacement": 0.208806,
+        "max_displacement": 0.402044,
+        "projected_hull_area_relative_distance": 0.022537
+      },
+      {
+        "source": "SINGLE_GAMES_BRANCH",
+        "target": "SINGLE_DIGITAL_SIGNAL",
+        "rms_displacement": 0.134756,
+        "max_displacement": 0.269332,
+        "projected_hull_area_relative_distance": 0.028093
+      },
+      {
+        "source": "SINGLE_GAMES_BRANCH",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.159299,
+        "max_displacement": 0.243063,
+        "projected_hull_area_relative_distance": 0.143654
+      },
+      {
+        "source": "SINGLE_VIDEO_TEMPORAL",
+        "target": "SINGLE_DIGITAL_SIGNAL",
+        "rms_displacement": 0.23307,
+        "max_displacement": 0.377618,
+        "projected_hull_area_relative_distance": 0.049514
+      },
+      {
+        "source": "SINGLE_VIDEO_TEMPORAL",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.254628,
+        "max_displacement": 0.412909,
+        "projected_hull_area_relative_distance": 0.162528
+      },
+      {
+        "source": "SINGLE_DIGITAL_SIGNAL",
+        "target": "SINGLE_MERCH_WRAP",
+        "rms_displacement": 0.199993,
+        "max_displacement": 0.274497,
+        "projected_hull_area_relative_distance": 0.118901
+      }
+    ],
+    "ps03_2_content_digital": {
+      "rms_displacement": 0.0858,
+      "max_displacement": 0.219014,
+      "projected_hull_area_relative_distance": 0.015157
+    },
+    "ps03_3_content_digital": {
+      "rms_displacement": 0.480273,
+      "max_displacement": 1.062816,
+      "projected_hull_area_relative_distance": 0.210797
+    },
+    "revisions": {
+      "SINGLE_CONTENT_SEQUENCE": {
+        "rms_displacement": 0.577158,
+        "max_displacement": 1.008083,
+        "projected_hull_area_relative_distance": 0.58452,
+        "baseline_association_readability_25": 11,
+        "ps03_3_association_readability_25": 22,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_DESIGN_TORSION": {
+        "rms_displacement": 0.367836,
+        "max_displacement": 0.694128,
+        "projected_hull_area_relative_distance": 0.117265,
+        "baseline_association_readability_25": 10,
+        "ps03_3_association_readability_25": 20,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_EVENT_CONVERGENCE": {
+        "rms_displacement": 0.529982,
+        "max_displacement": 0.939429,
+        "projected_hull_area_relative_distance": 0.02212,
+        "baseline_association_readability_25": 12,
+        "ps03_3_association_readability_25": 21,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_GAMES_BRANCH": {
+        "rms_displacement": 0.511616,
+        "max_displacement": 0.858749,
+        "projected_hull_area_relative_distance": 0.304651,
+        "baseline_association_readability_25": 10,
+        "ps03_3_association_readability_25": 20,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_VIDEO_TEMPORAL": {
+        "rms_displacement": 0.472472,
+        "max_displacement": 0.896355,
+        "projected_hull_area_relative_distance": 0.295893,
+        "baseline_association_readability_25": 13,
+        "ps03_3_association_readability_25": 22,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_DIGITAL_SIGNAL": {
+        "rms_displacement": 0.483838,
+        "max_displacement": 0.885319,
+        "projected_hull_area_relative_distance": 0.269754,
+        "baseline_association_readability_25": 11,
+        "ps03_3_association_readability_25": 21,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      },
+      "SINGLE_MERCH_WRAP": {
+        "rms_displacement": 0.432006,
+        "max_displacement": 0.757452,
+        "projected_hull_area_relative_distance": 0.335703,
+        "baseline_association_readability_25": 13,
+        "ps03_3_association_readability_25": 22,
+        "reason": "PS-03.2 encoded meaning mainly in shallow ridge/channel rhythm; PS-03.3 changes silhouette, mass distribution and one structural cue."
+      }
+    },
+    "risk_summary": {
+      "GAMES": "three abstract shoulders could read as horns/crown",
+      "EVENT": "central crest could read as flower/volcano/portal",
+      "MERCH": "compact wrap could read as capsule/ingot"
+    }
+  },
+  "common_checks": {
+    "vertex_count": true,
+    "face_count": true,
+    "triangle_count": true,
+    "edge_count": true,
+    "connectivity_hash": true,
+    "uv_hash": true,
+    "mask_face_count": true,
+    "mask_hash": true,
+    "one_component": true,
+    "manifold": true,
+    "all_endpoints": true,
+    "preserved_coordinate_identity": true,
+    "shape_key_order": true,
+    "mask_mean": true,
+    "all_single_scores": true
+  },
+  "passed": true,
+  "protected_ps03_2_checksums_after": {
+    "design/photonic-skin/ps-03-2/blender/photonic-skin-c-r1-morph-system.blend": "5ac6281101b82f8452cb70b570774563f55d7bd80adb80bea82a5964f42a7b88",
+    "design/photonic-skin/ps-03-2/blender/ps-03-2-morph-authoring-workbench.blend": "6063ae7a069fdb0291dc440c6fe1f48359f9afa5e33911255982bdac5f369a49",
+    "design/photonic-skin/ps-03-2/exports/photonic-skin-c-r1-morph-system.glb": "7647d4d0cac606a0860991e8c7441e7d7d395675c56cfcc8277640e6c1d73ed8",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-additive-validation.json": "ac47035154344b89d715509f9c257b9bc328b3c2da2da0e971f1bbda72e2c121",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-composition-metadata.json": "3d99611f0df95473e1a53e71dd2dd6308bacb803c234a4da85af0519d0fc52bd",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-glb-reimport-validation.json": "a0453c3d96c844221c3d649c7fd53cb100df60e122877dd9d56b5696e07594e2",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-pairwise-validation.json": "8f73e0120a5d4bb4e2ecc39e282b5249957db68fe7606a9c6cf3c56d40102917",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-retarget-validation.json": "e47fa4b55fe7fd608bda0379c6fe59333e1b295a465be6b9665c58fd83cbafde",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-target-manifest.json": "b9450b6f55280bc8967019bf303f83762099199bcb763f49e68d2ca0ba810656",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-technical-validation.json": "3b65074d44a7d3a8f92208cb57f4014e3245ee6cb1c1b78151cc6b3b5c9e8229",
+    "design/photonic-skin/ps-03-2/exports/ps03-2-three-runtime-validation.json": "3e1e276d015ef514819bb75ca96b7e0ab420e203e261a8a43077a2aa3e91ff71",
+    "design/photonic-skin/ps-03-2/ps-03-2-morph-system-evaluation.md": "1c8a2236a949814059044c71a5cdddbd5d2ef1e13caad59f66e4d41580b13686",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_brand-wide.png": "357e65fbfb8b8fca37a078232604c035a569ef7f5b0ef8ea09272529f61a3f72",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-drive.png": "d35170cffae99104b76434cd22353320d20888dae052105ba954680b41bb33f2",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-focus.png": "99a4ca5665e1fa609d4dad4180d3ca57247f1a39aabd2bb49fda4ed7263e0626",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_complex-gather.png": "351fd78547cafa369f25856885fb7c1619cb63d78b52996a1fda53a64c79c290",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_content-sequence.png": "33df514407035e0caa751b3a9022e5a0e3aa9594b1e709d2b07c51493800c60a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_design-torsion.png": "430ee0282567c2e3649bbbede0805a954beb09518f7cb8246f34b31acfcbe4a1",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_digital-signal.png": "1364d6f4b05d4fbbfb1f192e181c38e9139acf243dbf9b874444111149d98a98",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_event-convergence.png": "1e0231caf857e8084961b6139704b70dc94fa3225ec3d352390ca239ad65c168",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_games-branch.png": "4b0debae2a8881729f4feccb415ab76155fe65c79bc09ea852980668f739bd3a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_master.png": "a29a374ddc8994edeb29dbcc346dd5755f2f18c8120c8cf51a6dccf6cc1e3bbf",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_merch-wrap.png": "af06615d69f502685ea0f07c00bd42b0a34ac96c8a02a5ee8dd0415652b30e5a",
+    "design/photonic-skin/ps-03-2/renders/_panels/canonical_video-temporal.png": "f199e8e9ee60d8436798e2207a3f0d2b1b6b299f0cd45146a0dedd9dce6a0f98",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_front.png": "0973fea78c65279fdb5505e63195c1899ddece9f78ff5fae1690c3128fa9d98f",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_opposite.png": "3f932d29171312a18dd9278f2dd5190bc6e28306d4e46fb963b54eb872c4c6f8",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_side.png": "be6e4497b7cfdc539736ba84ed4bbf8f80e4c3250ab90bc5877dc535d4b9dbc6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_brand-wide_top.png": "06e2a6af0312120d52b88de2c1bef4350877928e24ada6338f517fb68b9280f9",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_front.png": "9644a8c449f131fa9c6d269b5fad6779af1debb238cefa6c29b74262799a92c0",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_opposite.png": "4c852f9fdb3922a9e49996ff5611089c43bba8ba1f987a5f5adc662bdbbf7079",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_side.png": "f03941cabeb711d90f38d2f0d47caf8329937f0a825cca69783afe3dbc8cc3d5",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-drive_top.png": "0dc36c03be13e0e410bf1ae20d2fbf903f43a2c733707fbc37de5297db223354",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_front.png": "9ac6324b47cda407cce29d98b6ded848a62767e097f73d4600b8519bab31654f",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_opposite.png": "6a129dcc56f45639f9abea702124ed478153bbf70c1d3dda875d98d0f7fe2bfa",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_side.png": "db88607db9f16078e9543cffb2288c461e522f8a355339f38702f303d8f881fc",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-focus_top.png": "58a2fba6d9ef3e1c96b2f97c1be1fd062f16119c10e764695802f235f0dab2db",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_front.png": "130a4c02e7ec737c7b40263eaff3c50f3d6525b0f39076c82dd04d2c5b4dd5b8",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_opposite.png": "15b85c1a3003648f3f70304cb25bd941ad005f8f4f7c87ff326212e8610790e3",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_side.png": "ed26828cb209dfd846e906b91f2acec299dd33d6bf8e332972321fb39815b56a",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_complex-gather_top.png": "5ea5ec3d9ba58232820c321aac3d252dc8455a033139683af279722c73a65b1c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_front.png": "119d8590a68f437d962db8fd10e7ea7761fbfc5ff1a09609fa1bfa8396bb1b0b",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_opposite.png": "0c186966fd28b1ff16bbae07c7552abbd24f764124d3d94a6cf3318fc7e199ad",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_side.png": "0a37d0fae40730c22cf1415b6dc798eb55bfda92a09402692122247efabb5b91",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_content-sequence_top.png": "bdd92fce1432eeefdf5e66adc7fc63315e8fa83529999b0a3657bfc4c82ede8e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_front.png": "5f66ecfc630f83b480dbcb68c44e44cfd18ba1b6317488a945198d63a8f69e4c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_opposite.png": "2538a0e34ad95c4efc99ea935780f9e8ce55cbeb6fc8732bc1014f10b27f6e0e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_side.png": "dbf0471bbdaf7fef328d860f623b48f11f5d79c5736530a8ca5da179546bf915",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_design-torsion_top.png": "9f5259d45ac0aec3d71122553f76693e5da66a6eab4f1cac33f7b266820c939c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_front.png": "34b6c03dca2b1c8e90df826d4309cb9932cde7aa461937ade91ef1dbc13c2e71",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_opposite.png": "f5bd63390000ea50c8eb433128e80ccaf5b3274c81a436ab05e447ded56ae887",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_side.png": "d3f5843811fca5a38551d585a46fe200564ee3c70db516f5ceef6c7c3879abf2",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_digital-signal_top.png": "5360f55d69e7632439364ea1e0dd491d6622a678f9b89172e51c58367b085a82",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_front.png": "8a1a4dfe38a6090cf87ed15c6b93f1c6f1bd7801ca92cd54187441dbbe8c0e03",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_opposite.png": "0bdb12eac415f29c58ec7d130d6240b82811608d483a75a766aa172bc78da6f1",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_side.png": "0ffe64e68e0ceb42a14e080ebd7d080f9e32e9701a4f03e90498a6d7654d31fd",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_event-convergence_top.png": "e2e4ac66d647dacf8b25d99c7e0d4555281feb5d61d3c19e12a4f502fa52c082",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_front.png": "1f55b03787bf2965556e6f6ebbf52f92fcf06f04b023502801016afc475e21c6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_opposite.png": "bcab68853f2902dee5c7b5835330dddf91561e21b47a7caeeddaf36bf4a0dea6",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_side.png": "6055c13623e20ab0b6c32221c725a55f70422b21a460263a49a2fdd5d7cbf911",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_games-branch_top.png": "d69764839b6651695f463a8991418fe9af17f87700b485d423035c7172168b1a",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_front.png": "5bcde2826d26654b8aa8150fa930c9915f2f48abb05aca6ef5ff0754fd6a9d15",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_opposite.png": "fe02ef99b2e1f79a660d8de7d0408704de7f08ac3eb5371c7b864ea241a45580",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_side.png": "3afd118e6a2dfa14af0aacbf5731d60877461446ac56a6675e86cef509191a3e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_master_top.png": "e1f6b5abadedcba82568f55f9066914268f8c41e205f513bada767dc66517b7c",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_front.png": "3604e852d8a41f40a2d06a9aeee61d91ab914a020e82f8fd2f62bdcf1046db8b",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_opposite.png": "7adf989228ce5ebd4d671ed848f0aeb3e3590b74edbeb23a7685cd6c46e12c23",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_side.png": "a141c8c9aaaf5e26159ba48b66d1e5792848c0acdf73a1415115143c98c8c44e",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_merch-wrap_top.png": "15c345a989eee48d80243beba4744ebda3b607736df5b4df78610837f4367c88",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_front.png": "0c296f60cb2635f5d0e6b16c8a5c70cafe6b6c7c2a7ef46989a874dfbee9b524",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_opposite.png": "c278393a0192e2a75bfb9fb311665a8b3e76eccd9c4b864002ac778d9b1ced71",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_side.png": "4070cb8865d69897ce3eddf55eb07cd9de9fc84c45367a4b6811f1f00b096eb9",
+    "design/photonic-skin/ps-03-2/renders/_panels/control_video-temporal_top.png": "42fc09cdca83a07dfc0adf22454fe2da4e674f544788f572135b7eab3fd1037b",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_brand-wide.png": "4afd5adff89dcd69aa3c6cb568457c08e53b0a845d588d21fa521d52570bbd4e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-drive.png": "6aa3285d38ff6ad7350d7a6d878407066d81715bde3c5eb16f912e9c9d89f964",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-focus.png": "ce3062066ceb395a5432aaaa8923d8bb390e206dcab58673cf059bb136187ac5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_complex-gather.png": "d960f8378ff8e222c994842d6542fe344feaec68af17c4bec4da64858c1a2e47",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_content-sequence.png": "8b9f9d7932ea69540e05f901fdc60b5a48c59ef9f4576914474b16a2a0533a64",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_design-torsion.png": "17026d02c9c3d9e305fbdf6766c77e8f65e1f671abff67a978493f9862a8fa0f",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_digital-signal.png": "f39ba65220217c2f0d62cd1239130a61eedd888d97471bbab8074e62b9a3dd43",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_event-convergence.png": "febfb46b73623c834a5bd4229013d6fa9765a165f870485b07c6ccd2f739bd94",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_games-branch.png": "f6652afec59706ea1a4b6808871f4bc8b71e0dcfb20071c137efd72838b6166e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_master.png": "39915ce6ca226f3cdd7d7f1ed3c0e1d83644979d1a03bcc34548efdc6bb4229c",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_merch-wrap.png": "860c13aa8b52dbc91d62bd8583b96ba1b048c2dbee9116735fd3188cb4683201",
+    "design/photonic-skin/ps-03-2/renders/_panels/mask_video-temporal.png": "6095d6172e3254c70fbabb47f00adb3428b163e0d93473b6593181834e88624e",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_brand-wide.png": "53133e7cf4394bed398de3fd2c730d4af45e7b04076e7ddbdda74e14626aa4d5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-drive.png": "bbd0f3932428471af143e0a497ef23f4d1cb281c93d0664c5749de866d36dfc9",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-focus.png": "eec1b246e347ee638390d2c04976a4b5f39f5eacc5f1b9dbeb7be59469ae83fc",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_complex-gather.png": "1deadd022fce73610d15bd27b89d4c9bd41087a8a26ac602a63fb934b182f347",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_content-sequence.png": "d565c708e1ce3022eb9bee48a08da085102e527291a1cb7b7c9478d14aa5e766",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_design-torsion.png": "86d02689ca0df8682d861d04ecca4eb4492e0512399df6d8a9aa29035ce4ae3b",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_digital-signal.png": "aed6f49d160b455bd3f413e887424b04e99441fb1782be5834e0f0aa31c1bb13",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_event-convergence.png": "1408c77fa836272c4f44546642d9fe16a811b5b4940c0b986e8e2bfcfd3e5aa5",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_games-branch.png": "e9009691905db5854a2ebb2c5f7dcb6011b984d232a37ac6705586e5e6a69a16",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_master.png": "14c6fa7152d1a81c50fd9c478bf1c89c2f8f4b8d7d1a16b4743890f631426d69",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_merch-wrap.png": "5546d2b1f9e3ffecf0f9c16e3936a10e59dbfcd160dfec88f38b15f63d13926a",
+    "design/photonic-skin/ps-03-2/renders/_panels/mobile_actor_video-temporal.png": "372f632e498e7deb2e607f3665a33820b2148939be139371f58f63de0ea9ff83",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_brand-wide.png": "7b99fadc2445ca4bf78a8377d4b5f0a495c64117f6577a7bd77166e5f121078d",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-drive.png": "7a517ab4acc1a391c02b2ce95aa9ab12973c6617971b461bf04f09b08e3dbd2b",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-focus.png": "a7e531145d3f96f4fb132e5c83f4e158cd269992a8ebba7e1bfbd281c4fe328a",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_complex-gather.png": "5ffc3f4c515259c23cb7b590a7114eef612ece6fed2f975b2e3f00330bf66bb5",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_content-sequence.png": "3b587018177154dbda48d917c70e6ef17322c7fad8d4347da8d8cf4ab723effa",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_design-torsion.png": "6ff3f91bf276696a2870b57a5c85f80eb220c8c04320382c9cd0b5e9b992a6ae",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_digital-signal.png": "40d3774682e2e801caf7f1eb500666be100608ebdfe6aa2ca330b845eda148ea",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_event-convergence.png": "8c9ccde9ec680ba0b1959cd999245ca6ec4606af8bfd81520448ed0a49fee193",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_games-branch.png": "5330a74568ccc7da7e690568b97aa7b9b294b051d0864805df1472a8e9be2172",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_master.png": "54cf7ffdc1b537251c4a38a4a3f963d91a6d96b820606c0dc500a89426601882",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_merch-wrap.png": "fb6551e8b95b917b8671d0d8a0f6e59b216c8b17565c2275bf5940dc0d562a60",
+    "design/photonic-skin/ps-03-2/renders/_panels/silhouette_video-temporal.png": "884654ca984317e33b0c4f290e30ebe9870ccf4340cd8885527ce32ab46c7059",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_0.png": "b0ad0399aed496bb38e1ad41e83b397e8831512fbf345077df173a8089fe0241",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_1.png": "7b1997b268be0be2dab08ab8ad4c20ebecd7df1bde9c68b277abf1bd03d20b84",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_2.png": "eeaa97585301b292e249b11fd12e94749e0c70aee418b1820fd4426cbdedb942",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_3.png": "31995b7addd9d4aa568e09e57880636111c44842a225ad3e11883d03aaedff35",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_design-merch_4.png": "119ab042d553b3a5e9c02408e389118b23941e165250fa1c6281abc358dcaa2c",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_0.png": "8d553caef3523c9f49920a98275c5328808203d3e36c9e247730d18d0c6d97a9",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_1.png": "7aa10e9abf594a1e962d33c9331542dd8a9747119f5868c0a30e2366e49fd766",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_2.png": "7c8b4e1717f54829b00ccb586fbcaf99e4104be089c8355be5352fb3578ce138",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_3.png": "0f311923609e6f5945f725d89c71c077ddc3f8204093009e8dc0b86bed826e02",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_focus-drive_4.png": "89f5de9791a74b4aab2f60c19f48c74409cdcdcbf99cfe408987c2bd1ccdb316",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_0.png": "1810c9cc6fa40b8db93dfd905cfe86b81d4727c36dd0699832da69671408b8fa",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_1.png": "ef298b9becfa1cbfb7229740679ccd9508ce966b7a0393055483975572891f58",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_2.png": "5af7e3124466198b25395cbe3b9c3dbc82f39a79443a19922c7fb7d035b653b9",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_3.png": "a469ea5bc262c5cbb3bd382a541cd70dc5b7b045ee9ab0394c4b1382a358de91",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_games-event_4.png": "1d1c23c5d0b3bf586459db1d0efed3fed694a212301782eee0e398b57922e64f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_0.png": "682f8a7ca8e779be4f098f1f611fc5be5c24a0438b13279cf7eadcba9c480ef2",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_1.png": "d53c29aeca97538ef6ba40af378a69e0581b7eb70423689f2e278308a98782bb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_2.png": "d56e7254b69e45968f0f15a3e31ba6c21782dfd044054acb66e9cb873d058c0e",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_3.png": "e6e04ef037a1839606edfb4f20069a382598c10f8466a5ccd942902a9513dd76",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_master-content_4.png": "280a04396a7ca59162d9791df59c8fd4ca79240040a3fe23f9673a1a4ed706bb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_0.png": "18de3856b21d064bf16d16eda78c1e8a89bf91745ace793f320cb1504d6074c1",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_1.png": "418b1f35018841caadc320deab2c15e8f6d1511dc15f9f7e9bb59e81395397d6",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_2.png": "0b6bf0f25d9fdfab12f744b3e5fb6ee3308b61a7bd96842541190430d1f270cb",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_3.png": "5f2b5278624e1efa4c31c2104546b027738a665f2b10c21c24049b21960cb83f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_retarget-content-design-event_4.png": "9629f450293c25e363dd2bec78b2db0e7d331792337e7ac34920492577e525d1",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_0.png": "c2f9dd5ffa166b195f10017b0eb1da1a10229f1079141b717c8d1f0b1b8827b2",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_1.png": "871f810989c4460258133f1c9a498516466952ee205f1ecd29a2145286e5b96f",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_2.png": "1fa8283b8b256b451076d0d1165ccddc4636f1ccae30a63931f99a274679d0b5",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_3.png": "db4d36fd7666ab16edf49c428543ff346feb6d31dd65c4a2fdf14f4369904fce",
+    "design/photonic-skin/ps-03-2/renders/_panels/transition_transition-tension_4.png": "76272dab5c8d316a97b847170299dba3d3f7840ffdae39d19f0d9de8fd179f1d",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_brand-wide.png": "4e695840bf139d6ab579596d34119f756c2e8c92c78abd1634bdfdc66f23f422",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-drive.png": "7096bc8ddd1513261876d0a7f4eee5bea17bcd44d07d78c2360cf0fdaf4d8ffe",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-focus.png": "10bc667263dae6cf08915f089a05f5d7207741816e4461d0d7295a83c93e553b",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_complex-gather.png": "8a01a9b31fb2bcb67d68ac961e7f940ccb8850c6adc4c69187080327be8cc5ea",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_content-sequence.png": "52e043b2c7e814e5656105925ab8216848b73370a831d43e62c49991521f2c3b",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_design-torsion.png": "0ebd52c07d8347e02b1541d92358ef8ceba34c852ebbd0aa39f2dd9f9f17a109",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_digital-signal.png": "8dca36db872d133f085b412540051e7bb84209589b86c6a3fb9b7602c2f240cd",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_event-convergence.png": "e199739dc8e3dee20afb7d9c59115fee540d7b3f9950e4b27496e1fe45fd2080",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_games-branch.png": "13632b5ebbccc78ec3ed97793bd2753422e8e54d8c837507f9d813a2ca37ae66",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_master.png": "56fea2de7d34d2ba5df426ff39473ec43c883aad0e034b99907978d0d83dafb5",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_merch-wrap.png": "b1c30006ca9380f43d91768bc3685a23e4f1f69b5085a6728702bd10471e4215",
+    "design/photonic-skin/ps-03-2/renders/_panels/wire_video-temporal.png": "59070265e49f8c9e06f503ce86c7ef3f5699538f2cc2a7419ce815cb5994a40e",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_brand-wide_390.png": "cf1635bd7cb76adc260a0114e0d493aefce0c62f63f44e848c49e299207ecc3a",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-drive_390.png": "874ab715421acc13923f77682c76db11aa7225abdfa4f00bf84675b2c74d99d5",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-focus_390.png": "d2fbfbb2c1c55051cc58258b9f5e83494307b5d041b2cbc9fd43d1fd7d56ca48",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_complex-gather_390.png": "350fa03f64a9a4bbfaaa50df9a434499b0528571da4580661855704da9eba50e",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_content-sequence_390.png": "12e1c9de3674c1cc710078fd0431d3652141b08b7652c447d2487a14cf62fa66",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_design-torsion_390.png": "769d79110e45623b61ede494a577fd31909e2ebaf1b40808c9b31321c9e137c6",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_digital-signal_390.png": "5510d8c050e27f495bff0727b5a5d67916eba032f60906036d50e11060ef963b",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_event-convergence_390.png": "e5ca62153b3c74bb15c5861d504afd2500770f50c21614d13bab58a9f89b7ba9",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_games-branch_390.png": "35d5560a2fc9c1463ae6b4d79b7cc9828dd74e97c112d7552ec477096fda7560",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_master_390.png": "ad641b96e46264faa80f4f04fe6c0f484f6a6b181a530740cce45964fefcc835",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_merch-wrap_390.png": "f6426ca87b14fe422d706be108d3e7ccbbc60f5e00dd280c365d9f961810da14",
+    "design/photonic-skin/ps-03-2/renders/mobile/mobile_video-temporal_390.png": "b0ec81b066980bde88fb173faac60c76f7dc32b264bf361506ba9d21938639ff",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_complex_brand_board.png": "4f0dd456f3bef06d6123b1e0b1da47a4652e3bd74f73c679dcb1738354cd5c2c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_1.png": "e2e6f0be93bff011c5b61f65a41292ebd1b5bff320ff3d94dd62d6d9bfe24bd0",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_2.png": "5421f7a6f493ef5b058b2daccc57190dc4168d3cff14e80bd80363fa632fca4f",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_3.png": "8cd2607d4052e64dc453005a15813b2459641da6cc550d34799b5d85e86b132a",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_control_views_4.png": "9add47c95cbfc4759c7e073b81d79286800fc570c52db1206754a19b0d4ff297",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_full_system_board.png": "75e3298ba899245fe396b2ab56128123e9ca8e4a278f81a23822547f621b140c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_mobile_390_board.png": "e0950d71afb081d908c4dec20e1e0b9d21183f883312c75719a9f5f7357baaaf",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_photonic_mask_board.png": "690ee827d18c71fcb39f5367d1413ec95be28885f41349937f778b8f47608324",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_single_states_board.png": "12b20354db193171cd36ca84d42b997f2e0f5fde1d0a2037cf8244b295e30072",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_design-merch_storyboard.png": "8e5bc775ea786eafd788d289f92ac4eb34127bea683b1e087652e8b97cee65bf",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_focus-drive_storyboard.png": "6685dcce99f0aa70d8310ea5958f6065785463febce0deae6e9cdcc1a15076c8",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_games-event_storyboard.png": "f66453f4a70c3958880da8f14a97cac698cc6c80f589e125e4fa3c71e110f921",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_master-content_storyboard.png": "9149233412f14b52bc0f43e4cac6eb753dc809f1e5ede3dafbedc4fa76214f9c",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_retarget-content-design-event_storyboard.png": "f82d454980d4491eb4829ae81e9d45d0fda3ae3da3bfacf16e373ddf8897de1a",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_storyboards.png": "2bdc492c3aee288dd254dae57c427bcab77cac55e2cdaef3a374e8772539c716",
+    "design/photonic-skin/ps-03-2/renders/ps03-2_transition_transition-tension_storyboard.png": "3274d944fc788e6453973ef208b604d9499a6ade0fb304841f1cf1264be71da3",
+    "design/photonic-skin/ps-03-2/scripts/__pycache__/build_ps03_2.cpython-311.pyc": "64f9534ea85a2e5e622fbd9b244274317e0c15ead6de594fe40e206c04b99f05",
+    "design/photonic-skin/ps-03-2/scripts/__pycache__/validate_ps03_2.cpython-311.pyc": "e4f75c586bff862dff0c910176dab83c79e0ab16a75f1b262c77edf941c5f909",
+    "design/photonic-skin/ps-03-2/scripts/build_ps03_2.py": "2537b9b5267290c0b930a91341418f1b5f24a650c7bed03835cef0d176ac4568",
+    "design/photonic-skin/ps-03-2/scripts/compose_ps03_2.py": "e7ff2f3f9be5346df2767f5ce2b3e8318e2b8749fbf4017378abfb430fe5360f",
+    "design/photonic-skin/ps-03-2/scripts/validate_ps03_2.py": "22f47338a59ffc6e43b7161ec1c33960ce06af289d0aaaa4a03076e286305a19",
+    "design/photonic-skin/ps-03-2/scripts/validate_ps03_2_runtime.mjs": "d318e2963d2e82e2fdaa8f1523f23133187043685803cff8abc910c3b881cc7a"
+  },
+  "ps03_2_sources_unchanged": true,
+  "outputs": {
+    "workbench_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-3\\blender\\ps-03-3-associative-authoring-workbench.blend",
+    "production_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-3\\blender\\photonic-skin-c-r1-associative-morph-system.blend",
+    "glb": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-3\\exports\\photonic-skin-c-r1-associative-morph-system.glb",
+    "workbench_sha256": "439dd943109ba41e4316ce00bb8fe88d8898d33afcb28004827f21a598430543",
+    "production_blend_sha256": "50872a92b99f27936452f16c2a20bcd36f75ea12c776ab4a85845df1892937bd",
+    "glb_sha256": "da174df68e6553d1d00682425fba8d8f13769a7f44bf55469156263995ef9406",
+    "glb_size_bytes": 3111992
+  },
+  "glb_reimport_passed": true
+}

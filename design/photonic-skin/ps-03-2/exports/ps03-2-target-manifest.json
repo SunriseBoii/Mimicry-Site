@@ -1,0 +1,745 @@
+{
+  "stage": "PS-03.2",
+  "asset": "Photonic Skin C-R1 morph system",
+  "basis": {
+    "stable_name": "MASTER",
+    "position_hash": "2cd522cd9a1d0e90f10fc072835db1cd54a9ad1072478911713884646fc89bd8",
+    "reloaded_float32_position_hash": "54af439e6a4ce68f87fcfa20f8ef3d9c124aa62b416d8c29569fd37a18c55469",
+    "bounding_box": {
+      "min": [
+        -3.4,
+        -1.8,
+        -1.6
+      ],
+      "max": [
+        3.4,
+        1.8,
+        1.6
+      ],
+      "size": [
+        6.8,
+        3.6,
+        3.2
+      ],
+      "fill": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "signed_volume": 29.030129,
+    "mask_area": 0.350319,
+    "silhouette_metrics": {
+      "projected_width": 0.34355016,
+      "projected_height": 0.19823041,
+      "hull_area": 0.04579536,
+      "centroid": [
+        0.01622055,
+        -0.00274583
+      ],
+      "hull_vertices": 119
+    }
+  },
+  "target_count": 12,
+  "target_order": [
+    "BRAND_WIDE",
+    "SINGLE_CONTENT_SEQUENCE",
+    "SINGLE_DESIGN_TORSION",
+    "SINGLE_EVENT_CONVERGENCE",
+    "SINGLE_GAMES_BRANCH",
+    "SINGLE_VIDEO_TEMPORAL",
+    "SINGLE_DIGITAL_SIGNAL",
+    "SINGLE_MERCH_WRAP",
+    "COMPLEX_FOCUS",
+    "COMPLEX_GATHER",
+    "COMPLEX_DRIVE",
+    "TRANSITION_TENSION"
+  ],
+  "targets": [
+    {
+      "stable_name": "BRAND_WIDE",
+      "index": 0,
+      "semantic_role": "brand-wide terminal",
+      "competence": "Mimicry group",
+      "principle": "calm lateral release with retained asymmetry",
+      "position_hash": "bb3cfc7585e39ec33520d5d2a0217efcef942d77da3fd9fa33ea3e6ab5f95e35",
+      "rms_displacement_from_master": 0.144396,
+      "max_displacement_from_master": 0.207583,
+      "bounding_box": {
+        "min": [
+          -3.196,
+          -1.8,
+          -1.44
+        ],
+        "max": [
+          3.196,
+          1.8,
+          1.44
+        ],
+        "size": [
+          6.392,
+          3.6,
+          2.88
+        ],
+        "fill": [
+          0.94,
+          1.0,
+          0.9
+        ]
+      },
+      "signed_volume": 24.555562,
+      "mask_area": 0.349674,
+      "silhouette_metrics": {
+        "projected_width": 0.32203209,
+        "projected_height": 0.18455133,
+        "hull_area": 0.04066086,
+        "centroid": [
+          0.01414756,
+          -0.00204192
+        ],
+        "hull_vertices": 123
+      },
+      "main_risk": "pebble / cushion / generic blob",
+      "risk_level": 1,
+      "score_components": [
+        18,
+        19,
+        14,
+        13,
+        14,
+        9,
+        5
+      ],
+      "score_total": 92,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_CONTENT_SEQUENCE",
+      "index": 1,
+      "semantic_role": "single terminal",
+      "competence": "Content",
+      "principle": "three broad sequential beats on one directed ridge",
+      "position_hash": "d5168dd8e4a9fb8d34af18d673fdf888faef0cb00625dc09e62e7cb7829da311",
+      "rms_displacement_from_master": 0.076071,
+      "max_displacement_from_master": 0.162896,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.656,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.656,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.312,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.92,
+          0.98
+        ]
+      },
+      "signed_volume": 27.011439,
+      "mask_area": 0.351925,
+      "silhouette_metrics": {
+        "projected_width": 0.34332486,
+        "projected_height": 0.18941774,
+        "hull_area": 0.04421771,
+        "centroid": [
+          0.01696567,
+          -0.00372534
+        ],
+        "hull_vertices": 120
+      },
+      "main_risk": "paper / pages / waveform",
+      "risk_level": 2,
+      "score_components": [
+        18,
+        19,
+        14,
+        14,
+        13,
+        9,
+        5
+      ],
+      "score_total": 92,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_DESIGN_TORSION",
+      "index": 2,
+      "semantic_role": "single terminal",
+      "competence": "Design",
+      "principle": "small counter-torsion of two broad surfaces",
+      "position_hash": "f0141ec345a0268b04330bbed6c963e455796274b1bacd592b6f1501ebad88c1",
+      "rms_displacement_from_master": 0.122917,
+      "max_displacement_from_master": 0.231477,
+      "bounding_box": {
+        "min": [
+          -3.298,
+          -1.728,
+          -1.6
+        ],
+        "max": [
+          3.298,
+          1.728,
+          1.6
+        ],
+        "size": [
+          6.596,
+          3.456,
+          3.2
+        ],
+        "fill": [
+          0.97,
+          0.96,
+          1.0
+        ]
+      },
+      "signed_volume": 27.333923,
+      "mask_area": 0.345959,
+      "silhouette_metrics": {
+        "projected_width": 0.33338495,
+        "projected_height": 0.1974808,
+        "hull_area": 0.04515395,
+        "centroid": [
+          0.01555844,
+          -0.00129238
+        ],
+        "hull_vertices": 118
+      },
+      "main_risk": "fashion ribbon / shell",
+      "risk_level": 2,
+      "score_components": [
+        18,
+        19,
+        14,
+        14,
+        13,
+        9,
+        5
+      ],
+      "score_total": 92,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_EVENT_CONVERGENCE",
+      "index": 3,
+      "semantic_role": "single terminal",
+      "competence": "Events",
+      "principle": "lateral mass converges into one integrated crest",
+      "position_hash": "557b5701ca74d00881596603f83dc5e9b0bad7b381ba633e38b57bb990e5dc2d",
+      "rms_displacement_from_master": 0.151062,
+      "max_displacement_from_master": 0.240657,
+      "bounding_box": {
+        "min": [
+          -3.23,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.23,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.46,
+          3.6,
+          3.2
+        ],
+        "fill": [
+          0.95,
+          1.0,
+          1.0
+        ]
+      },
+      "signed_volume": 27.667988,
+      "mask_area": 0.349416,
+      "silhouette_metrics": {
+        "projected_width": 0.32491889,
+        "projected_height": 0.1998456,
+        "hull_area": 0.04375067,
+        "centroid": [
+          0.01544291,
+          -0.00814892
+        ],
+        "hull_vertices": 114
+      },
+      "main_risk": "stage / portal / flower / volcano",
+      "risk_level": 2,
+      "score_components": [
+        18,
+        18,
+        14,
+        14,
+        13,
+        9,
+        5
+      ],
+      "score_total": 91,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_GAMES_BRANCH",
+      "index": 4,
+      "semantic_role": "single terminal",
+      "competence": "Games",
+      "principle": "one mass distributes tension through three broad shoulders",
+      "position_hash": "740f5508db238a82338b1872f2bcd4b82e89a50ae117501744b4aa8b4ad452c4",
+      "rms_displacement_from_master": 0.141497,
+      "max_displacement_from_master": 0.328583,
+      "bounding_box": {
+        "min": [
+          -3.298,
+          -1.8,
+          -1.584
+        ],
+        "max": [
+          3.298,
+          1.8,
+          1.584
+        ],
+        "size": [
+          6.596,
+          3.6,
+          3.168
+        ],
+        "fill": [
+          0.97,
+          1.0,
+          0.99
+        ]
+      },
+      "signed_volume": 26.633194,
+      "mask_area": 0.337798,
+      "silhouette_metrics": {
+        "projected_width": 0.3340992,
+        "projected_height": 0.19781753,
+        "hull_area": 0.04480626,
+        "centroid": [
+          0.01448965,
+          -0.00222493
+        ],
+        "hull_vertices": 116
+      },
+      "main_risk": "horns / crown / toy / controller",
+      "risk_level": 3,
+      "score_components": [
+        18,
+        18,
+        13,
+        15,
+        12,
+        9,
+        5
+      ],
+      "score_total": 90,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_VIDEO_TEMPORAL",
+      "index": 5,
+      "semantic_role": "single terminal",
+      "competence": "Video",
+      "principle": "continuous temporal S-sweep between leading and trailing thirds",
+      "position_hash": "790b10b67482fd30d726e29ccff0a057081483a402c87428321ee413ad2ae35a",
+      "rms_displacement_from_master": 0.230941,
+      "max_displacement_from_master": 0.363686,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.674,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.674,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.348,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.93,
+          0.98
+        ]
+      },
+      "signed_volume": 26.330829,
+      "mask_area": 0.340311,
+      "silhouette_metrics": {
+        "projected_width": 0.34610156,
+        "projected_height": 0.18258629,
+        "hull_area": 0.04581605,
+        "centroid": [
+          0.0127883,
+          0.00081609
+        ],
+        "hull_vertices": 116
+      },
+      "main_risk": "lens / eye / camera / film",
+      "risk_level": 2,
+      "score_components": [
+        18,
+        19,
+        14,
+        14,
+        13,
+        9,
+        5
+      ],
+      "score_total": 92,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_DIGITAL_SIGNAL",
+      "index": 6,
+      "semantic_role": "single terminal",
+      "competence": "Digital",
+      "principle": "three shallow longitudinal tension channels converge forward",
+      "position_hash": "467766538921e6577e41b4548cf600df33ec530296e4dfa07d0b2017b0da9d55",
+      "rms_displacement_from_master": 0.115604,
+      "max_displacement_from_master": 0.286643,
+      "bounding_box": {
+        "min": [
+          -3.366,
+          -1.656,
+          -1.552
+        ],
+        "max": [
+          3.366,
+          1.656,
+          1.552
+        ],
+        "size": [
+          6.732,
+          3.312,
+          3.104
+        ],
+        "fill": [
+          0.99,
+          0.92,
+          0.97
+        ]
+      },
+      "signed_volume": 25.879229,
+      "mask_area": 0.351072,
+      "silhouette_metrics": {
+        "projected_width": 0.33969581,
+        "projected_height": 0.19291008,
+        "hull_area": 0.0435475,
+        "centroid": [
+          0.01504262,
+          -0.00713042
+        ],
+        "hull_vertices": 119
+      },
+      "main_risk": "circuit / server / sci-fi hardware",
+      "risk_level": 3,
+      "score_components": [
+        18,
+        18,
+        13,
+        15,
+        12,
+        9,
+        5
+      ],
+      "score_total": 90,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "SINGLE_MERCH_WRAP",
+      "index": 7,
+      "semantic_role": "single terminal",
+      "competence": "Merch",
+      "principle": "one broad tactile wrap gesture without a seam",
+      "position_hash": "dfb5cc4b0c955c757a2030faa805f4666737553ad5d59b9e213a81d22ec93ebd",
+      "rms_displacement_from_master": 0.221041,
+      "max_displacement_from_master": 0.316384,
+      "bounding_box": {
+        "min": [
+          -3.128,
+          -1.764,
+          -1.408
+        ],
+        "max": [
+          3.128,
+          1.764,
+          1.408
+        ],
+        "size": [
+          6.256,
+          3.528,
+          2.816
+        ],
+        "fill": [
+          0.92,
+          0.98,
+          0.88
+        ]
+      },
+      "signed_volume": 23.04234,
+      "mask_area": 0.329982,
+      "silhouette_metrics": {
+        "projected_width": 0.31656027,
+        "projected_height": 0.17663561,
+        "hull_area": 0.03836968,
+        "centroid": [
+          0.01066091,
+          -0.00294879
+        ],
+        "hull_vertices": 122
+      },
+      "main_risk": "box / package / capsule / ingot",
+      "risk_level": 2,
+      "score_components": [
+        18,
+        19,
+        14,
+        14,
+        12,
+        9,
+        5
+      ],
+      "score_total": 91,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_FOCUS",
+      "index": 8,
+      "semantic_role": "complex terminal",
+      "competence": "Focus",
+      "principle": "multiple fields resolve into one clear diagonal fold",
+      "position_hash": "3daeae5e7544abd94182dca4b09b957017f9b444c77c5e87c42cb5288970a187",
+      "rms_displacement_from_master": 0.116931,
+      "max_displacement_from_master": 0.348431,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.568
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.568
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.136
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.98
+        ]
+      },
+      "signed_volume": 27.232653,
+      "mask_area": 0.331475,
+      "silhouette_metrics": {
+        "projected_width": 0.34483712,
+        "projected_height": 0.19526802,
+        "hull_area": 0.04605284,
+        "centroid": [
+          0.01638312,
+          0.00032458
+        ],
+        "hull_vertices": 124
+      },
+      "main_risk": "arrow / lens / eye / tip",
+      "risk_level": 3,
+      "score_components": [
+        19,
+        19,
+        14,
+        14,
+        12,
+        9,
+        5
+      ],
+      "score_total": 92,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_GATHER",
+      "index": 9,
+      "semantic_role": "complex terminal",
+      "competence": "Gather",
+      "principle": "broad lateral participation gathers into a shared ridge",
+      "position_hash": "0aa817482a1e27cb83ad5e01af8760a7ae20a9a477623b7b3c5c228d0ead8aee",
+      "rms_displacement_from_master": 0.180907,
+      "max_displacement_from_master": 0.299817,
+      "bounding_box": {
+        "min": [
+          -3.162,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.162,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.324,
+          3.6,
+          3.2
+        ],
+        "fill": [
+          0.93,
+          1.0,
+          1.0
+        ]
+      },
+      "signed_volume": 26.273133,
+      "mask_area": 0.35116,
+      "silhouette_metrics": {
+        "projected_width": 0.31680228,
+        "projected_height": 0.19651207,
+        "hull_area": 0.04164396,
+        "centroid": [
+          0.01427416,
+          -0.0073801
+        ],
+        "hull_vertices": 118
+      },
+      "main_risk": "stage / portal / flower / bowl",
+      "risk_level": 2,
+      "score_components": [
+        19,
+        19,
+        14,
+        14,
+        13,
+        9,
+        5
+      ],
+      "score_total": 93,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "COMPLEX_DRIVE",
+      "index": 10,
+      "semantic_role": "complex terminal",
+      "competence": "Drive",
+      "principle": "blunt forward mass supported by a rear crest",
+      "position_hash": "ad102ae158ece6531d3673c3faab64311b056309d1a2b6c746dabe769c4a6419",
+      "rms_displacement_from_master": 0.126768,
+      "max_displacement_from_master": 0.2209,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.602,
+          -1.536
+        ],
+        "max": [
+          3.4,
+          1.602,
+          1.536
+        ],
+        "size": [
+          6.8,
+          3.204,
+          3.072
+        ],
+        "fill": [
+          1.0,
+          0.89,
+          0.96
+        ]
+      },
+      "signed_volume": 26.237103,
+      "mask_area": 0.347563,
+      "silhouette_metrics": {
+        "projected_width": 0.3437572,
+        "projected_height": 0.19414889,
+        "hull_area": 0.04435622,
+        "centroid": [
+          0.0194739,
+          -0.00424344
+        ],
+        "hull_vertices": 127
+      },
+      "main_risk": "rocket / automotive / airfoil / helmet",
+      "risk_level": 3,
+      "score_components": [
+        19,
+        18,
+        13,
+        14,
+        12,
+        9,
+        5
+      ],
+      "score_total": 90,
+      "validation_status": "pass"
+    },
+    {
+      "stable_name": "TRANSITION_TENSION",
+      "index": 11,
+      "semantic_role": "additive transition",
+      "competence": "runtime transition",
+      "principle": "small axis-aligned surface organization and transverse compression",
+      "position_hash": "0b2f53d3a741b30f956cfda6952a8559647b9db9b5a68a6ea58daadd5e61de12",
+      "rms_displacement_from_master": 0.03435,
+      "max_displacement_from_master": 0.094162,
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.764,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.764,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.528,
+          3.2
+        ],
+        "fill": [
+          1.0,
+          0.98,
+          1.0
+        ]
+      },
+      "signed_volume": 29.085141,
+      "mask_area": 0.343804,
+      "silhouette_metrics": {
+        "projected_width": 0.34398379,
+        "projected_height": 0.19884828,
+        "hull_area": 0.04631549,
+        "centroid": [
+          0.01674466,
+          -0.00186144
+        ],
+        "hull_vertices": 120
+      },
+      "main_risk": "breathing / organ pulse / sharpened tip",
+      "risk_level": 2,
+      "score_components": null,
+      "score_total": null,
+      "validation_status": "pass"
+    }
+  ],
+  "score_criteria": [
+    "semantic_match/20",
+    "C-R1B_DNA/20",
+    "premium_sculpture/15",
+    "distinctness/15",
+    "association_safety/15",
+    "direct_morph_quality/10",
+    "mobile_and_technical/5"
+  ]
+}

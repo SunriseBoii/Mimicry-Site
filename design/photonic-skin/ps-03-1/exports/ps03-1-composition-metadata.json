@@ -1,0 +1,63 @@
+{
+  "camera": {
+    "location": [
+      9.0,
+      -12.0,
+      6.5
+    ],
+    "lens_mm": 55.0
+  },
+  "canonical_orientation": {
+    "blender_view_axis_roll_deg": 34.0,
+    "offline_layout_roll_deg": -38.0,
+    "geometry_baked_rotation": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "desktop": {
+    "viewport": [
+      1440,
+      1000
+    ],
+    "actor_rect_px": [
+      803,
+      199,
+      726,
+      682
+    ],
+    "actor_center_vw_vh": [
+      81.0,
+      54.0
+    ],
+    "projected_width_vw": 50.42,
+    "projected_height_vh": 68.2,
+    "right_crop_percent_of_actor": 12.26,
+    "bottom_crop_percent_of_actor": 0.0,
+    "safe_text_zone": "x 0–57.3vw / y 8.6–76.3vh, restored from current UI screenshot",
+    "cta_zone": "preserved opaque; actor remains behind UI"
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "actor_rect_px": [
+      32,
+      414,
+      520,
+      488
+    ],
+    "actor_center_vw_vh": [
+      75.0,
+      78.0
+    ],
+    "projected_width_vw": 133.33,
+    "projected_height_vh": 57.82,
+    "right_crop_percent_of_actor": 31.15,
+    "bottom_crop_percent_of_actor": 11.89,
+    "safe_text_zone": "x 0–100vw / y 7.7–73.5vh with graduated neutral scrim",
+    "cta_zone": "CTA ink, outline and black fill restored above actor"
+  }
+}

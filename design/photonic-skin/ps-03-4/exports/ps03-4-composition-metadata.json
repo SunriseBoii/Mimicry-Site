@@ -1,0 +1,40 @@
+{
+  "stage": "PS-03.4",
+  "system": "D-R2 only",
+  "source_policy": "all actor imagery is Blender-rendered; PIL is used only for deterministic layout, labels and crop composition",
+  "candidate_state_count": 21,
+  "refinement_cycles": 5,
+  "unlabelled_order": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07"
+  ],
+  "visual_gate": "NOT LOCKED",
+  "outputs": {
+    "renders/ps03-4_d_only_unlabelled_lock_board.png": "365430be9500ebb2ea6568c3d995c1d41410f11431208b386294e6b34fa0d6bc",
+    "renders/ps03-4_d_only_answer_key_board.png": "a22343a60e1e4d7fba0b2c94e9b967b0b627ed7d5096549f4da8e24fc3c97779",
+    "renders/ps03-4_d_only_system_board.png": "b5e825046877df38d4c84bf2c079a19d8ba8ea2c683de5164278eb9be2bd485f",
+    "renders/ps03-4_d_only_association_views_board.png": "19038e723965674b3396e096983830fb737827ad24e14b98a70e0750c2c02fd8",
+    "renders/ps03-4_d_only_mobile_390_board.png": "3b133daee0782dedc56876adbed2b78665cf1020791b7c5092c1260889515665",
+    "renders/ps03-4_d_only_photonic_mask_board.png": "06260ffa4389ed24685c1eb7f1a542c3e306bfcaf1e62c3baa0c68db670226d8",
+    "renders/ps03-4_d_only_transition_board.png": "5204b1ec8c0835090b81588c5184d26dabf38c1500959a4b5952ed4c0fdd49e2"
+  },
+  "candidate_boards": [
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_content-sequence.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_design-torsion.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_event-convergence.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_games-branch.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_video-temporal.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_digital-signal.png",
+    "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-4\\renders\\candidates\\ps03-4_candidate_merch-wrap.png"
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "passed": true
+}

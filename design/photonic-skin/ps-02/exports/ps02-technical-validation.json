@@ -1,0 +1,461 @@
+{
+  "blender_version": "4.5.3 LTS",
+  "common_topology": {
+    "vertex_count": 8322,
+    "face_count": 8480,
+    "triangle_count": 16640,
+    "edge_count": 16800,
+    "connected_components": 1,
+    "loose_vertices": 0,
+    "non_manifold_edges": 0,
+    "euler_characteristic": 2,
+    "topology_hash": "8883e7698bbd3a6aafef5a4a8a4ea5f04ee96d7ad7cc41cee841a94986e1e462",
+    "uv_hashes": {
+      "A": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683",
+      "B": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683",
+      "C": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683"
+    },
+    "uv_identical": true,
+    "shape_keys": [
+      "MASTER",
+      "SINGLE_TEST",
+      "COMPLEX_TEST",
+      "BRAND_WIDE_TEST"
+    ],
+    "active_face_count": 2526
+  },
+  "candidates": {
+    "A": {
+      "label": "Directed Fold",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "active_surface_ratio": 0.310424,
+      "morph_validation_passed": true,
+      "morph_checks": [
+        {
+          "target": "SINGLE_TEST",
+          "progress": 0,
+          "signed_volume": 34.649583,
+          "min_triangle_area": 0.000413742,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 25,
+          "signed_volume": 33.50415,
+          "min_triangle_area": 0.000405194,
+          "min_master_normal_dot": 0.999811,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 50,
+          "signed_volume": 32.374022,
+          "min_triangle_area": 0.00039663,
+          "min_master_normal_dot": 0.999241,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 75,
+          "signed_volume": 31.259538,
+          "min_triangle_area": 0.00038805,
+          "min_master_normal_dot": 0.998291,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 100,
+          "signed_volume": 30.161032,
+          "min_triangle_area": 0.000379455,
+          "min_master_normal_dot": 0.996959,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 0,
+          "signed_volume": 34.649583,
+          "min_triangle_area": 0.000413742,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 25,
+          "signed_volume": 34.455813,
+          "min_triangle_area": 0.000407933,
+          "min_master_normal_dot": 0.997842,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 50,
+          "signed_volume": 34.261934,
+          "min_triangle_area": 0.000402185,
+          "min_master_normal_dot": 0.990179,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 75,
+          "signed_volume": 34.067962,
+          "min_triangle_area": 0.000396501,
+          "min_master_normal_dot": 0.972822,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 100,
+          "signed_volume": 33.87392,
+          "min_triangle_area": 0.000390876,
+          "min_master_normal_dot": 0.932049,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 0,
+          "signed_volume": 34.649583,
+          "min_triangle_area": 0.000413742,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 25,
+          "signed_volume": 36.36775,
+          "min_triangle_area": 0.000420391,
+          "min_master_normal_dot": 0.999738,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 50,
+          "signed_volume": 38.125637,
+          "min_triangle_area": 0.000427083,
+          "min_master_normal_dot": 0.998966,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 75,
+          "signed_volume": 39.92294,
+          "min_triangle_area": 0.000433816,
+          "min_master_normal_dot": 0.997705,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 100,
+          "signed_volume": 41.759363,
+          "min_triangle_area": 0.00044059,
+          "min_master_normal_dot": 0.995976,
+          "nonadjacent_self_intersections": 0
+        }
+      ]
+    },
+    "B": {
+      "label": "Lifted Crest",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "active_surface_ratio": 0.347224,
+      "morph_validation_passed": true,
+      "morph_checks": [
+        {
+          "target": "SINGLE_TEST",
+          "progress": 0,
+          "signed_volume": 36.978389,
+          "min_triangle_area": 0.000834211,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 25,
+          "signed_volume": 35.637161,
+          "min_triangle_area": 0.000816542,
+          "min_master_normal_dot": 0.999795,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 50,
+          "signed_volume": 34.317262,
+          "min_triangle_area": 0.000799053,
+          "min_master_normal_dot": 0.999179,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 75,
+          "signed_volume": 33.019016,
+          "min_triangle_area": 0.000781649,
+          "min_master_normal_dot": 0.998148,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 100,
+          "signed_volume": 31.74274,
+          "min_triangle_area": 0.000764359,
+          "min_master_normal_dot": 0.996699,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 0,
+          "signed_volume": 36.978389,
+          "min_triangle_area": 0.000834211,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 25,
+          "signed_volume": 36.750351,
+          "min_triangle_area": 0.00080585,
+          "min_master_normal_dot": 0.996746,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 50,
+          "signed_volume": 36.518229,
+          "min_triangle_area": 0.000763132,
+          "min_master_normal_dot": 0.986491,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 75,
+          "signed_volume": 36.282019,
+          "min_triangle_area": 0.000721569,
+          "min_master_normal_dot": 0.967092,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 100,
+          "signed_volume": 36.041724,
+          "min_triangle_area": 0.0006812,
+          "min_master_normal_dot": 0.936811,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 0,
+          "signed_volume": 36.978389,
+          "min_triangle_area": 0.000834211,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 25,
+          "signed_volume": 38.851772,
+          "min_triangle_area": 0.000848067,
+          "min_master_normal_dot": 0.9997,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 50,
+          "signed_volume": 40.77005,
+          "min_triangle_area": 0.000861999,
+          "min_master_normal_dot": 0.998814,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 75,
+          "signed_volume": 42.732979,
+          "min_triangle_area": 0.000876005,
+          "min_master_normal_dot": 0.997364,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 100,
+          "signed_volume": 44.740313,
+          "min_triangle_area": 0.00089008,
+          "min_master_normal_dot": 0.995375,
+          "nonadjacent_self_intersections": 0
+        }
+      ]
+    },
+    "C": {
+      "label": "Tensioned Core",
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "active_surface_ratio": 0.366072,
+      "morph_validation_passed": true,
+      "morph_checks": [
+        {
+          "target": "SINGLE_TEST",
+          "progress": 0,
+          "signed_volume": 26.214867,
+          "min_triangle_area": 0.00054124,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 25,
+          "signed_volume": 25.255283,
+          "min_triangle_area": 0.00053274,
+          "min_master_normal_dot": 0.999734,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 50,
+          "signed_volume": 24.309753,
+          "min_triangle_area": 0.000524204,
+          "min_master_normal_dot": 0.998928,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 75,
+          "signed_volume": 23.378568,
+          "min_triangle_area": 0.000515635,
+          "min_master_normal_dot": 0.997562,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "SINGLE_TEST",
+          "progress": 100,
+          "signed_volume": 22.462015,
+          "min_triangle_area": 0.000507032,
+          "min_master_normal_dot": 0.995623,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 0,
+          "signed_volume": 26.214867,
+          "min_triangle_area": 0.00054124,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 25,
+          "signed_volume": 26.102848,
+          "min_triangle_area": 0.000506872,
+          "min_master_normal_dot": 0.994597,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 50,
+          "signed_volume": 25.985823,
+          "min_triangle_area": 0.000472626,
+          "min_master_normal_dot": 0.980208,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 75,
+          "signed_volume": 25.863932,
+          "min_triangle_area": 0.000439306,
+          "min_master_normal_dot": 0.956229,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "COMPLEX_TEST",
+          "progress": 100,
+          "signed_volume": 25.737315,
+          "min_triangle_area": 0.000407146,
+          "min_master_normal_dot": 0.920558,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 0,
+          "signed_volume": 26.214867,
+          "min_triangle_area": 0.00054124,
+          "min_master_normal_dot": 1.0,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 25,
+          "signed_volume": 27.602866,
+          "min_triangle_area": 0.000549046,
+          "min_master_normal_dot": 0.999781,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 50,
+          "signed_volume": 29.025008,
+          "min_triangle_area": 0.00055691,
+          "min_master_normal_dot": 0.999139,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 75,
+          "signed_volume": 30.481092,
+          "min_triangle_area": 0.000564827,
+          "min_master_normal_dot": 0.9981,
+          "nonadjacent_self_intersections": 0
+        },
+        {
+          "target": "BRAND_WIDE_TEST",
+          "progress": 100,
+          "signed_volume": 31.970914,
+          "min_triangle_area": 0.000572799,
+          "min_master_normal_dot": 0.996688,
+          "nonadjacent_self_intersections": 0
+        }
+      ]
+    }
+  }
+}

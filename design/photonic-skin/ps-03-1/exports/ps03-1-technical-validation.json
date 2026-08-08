@@ -1,0 +1,235 @@
+{
+  "stage": "PS-03.1",
+  "asset": "C-R1 / Directed Tensioned Core",
+  "blender_version": "4.5.3 LTS",
+  "source": {
+    "blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-02\\blender\\ps-02-mimic-core.blend",
+    "validation": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-02\\exports\\ps02-technical-validation.json",
+    "blend_sha256": "e8abe8b9fedea06a082b14c8df1fe2468561d3acfb7bb7f49d93fb8f7c59d942",
+    "validation_sha256": "4122a080df85b29b352560d14eb22af85c9fb5b15080a87d5f642d9978b4683d",
+    "blend_sha256_after": "e8abe8b9fedea06a082b14c8df1fe2468561d3acfb7bb7f49d93fb8f7c59d942"
+  },
+  "common_topology": {
+    "vertex_count": 8322,
+    "face_count": 8480,
+    "triangle_count": 16640,
+    "edge_count": 16800,
+    "connected_components": 1,
+    "loose_vertices": 0,
+    "non_manifold_edges": 0,
+    "euler_characteristic": 2,
+    "connectivity_index_hash": "8883e7698bbd3a6aafef5a4a8a4ea5f04ee96d7ad7cc41cee841a94986e1e462",
+    "uv_hash": "c5eff463ac2b978f0470e1fef6fffc4eb5a01fe06f66262b3effba5518e67683",
+    "mask_face_count": 2526,
+    "mask_face_index_hash": "67c2dd582fcbdb25d9905b98357340c7313292bfb20db6fdd5675e88d1f71c58",
+    "directed_axis": [
+      0.86241817,
+      0.28078729,
+      0.42118093
+    ]
+  },
+  "refinement": {
+    "method": "coordinate-only local deformation fields derived from C; no global A/C blend",
+    "recommended": "R1B",
+    "variants": {
+      "R1A": {
+        "label": "C-R1A / 15%",
+        "visual_direction": 15,
+        "strength": 0.74
+      },
+      "R1B": {
+        "label": "C-R1B / 20%",
+        "visual_direction": 20,
+        "strength": 1.0
+      },
+      "R1C": {
+        "label": "C-R1C / 25%",
+        "visual_direction": 25,
+        "strength": 1.28
+      }
+    }
+  },
+  "variants": {
+    "R1A": {
+      "key": "R1A",
+      "metrics": {
+        "vertex_count": 8322,
+        "face_count": 8480,
+        "triangle_count": 16640,
+        "edge_count": 16800,
+        "connected_components": 1,
+        "loose_vertices": 0,
+        "non_manifold_edges": 0,
+        "euler_characteristic": 2
+      },
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "signed_volume": 28.645659,
+      "minimum_triangle_area": 0.000543459,
+      "zero_area_triangles": 0,
+      "minimum_source_normal_dot": 0.865371,
+      "nonadjacent_self_intersections": 0,
+      "active_surface_ratio": 0.345605,
+      "rms_displacement_from_c": 0.205924,
+      "max_displacement_from_c": 0.395018,
+      "central_angular_x_variation": 0.079703,
+      "central_variation_reduction": 0.54762,
+      "position_hash": "2f0937cd7be7c70ddc13e223bace086a8d516de26bb24ba05ad3d7261723588d",
+      "checks": {
+        "vertex_count": true,
+        "triangle_count": true,
+        "connected_surface": true,
+        "manifold": true,
+        "no_loose_vertices": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "normals_not_inverted": true,
+        "no_self_intersections": true,
+        "bounding_box_exact": true,
+        "mask_area_in_range": true
+      },
+      "passed": true
+    },
+    "R1B": {
+      "key": "R1B",
+      "metrics": {
+        "vertex_count": 8322,
+        "face_count": 8480,
+        "triangle_count": 16640,
+        "edge_count": 16800,
+        "connected_components": 1,
+        "loose_vertices": 0,
+        "non_manifold_edges": 0,
+        "euler_characteristic": 2
+      },
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "signed_volume": 29.030129,
+      "minimum_triangle_area": 0.000521428,
+      "zero_area_triangles": 0,
+      "minimum_source_normal_dot": 0.856498,
+      "nonadjacent_self_intersections": 0,
+      "active_surface_ratio": 0.350319,
+      "rms_displacement_from_c": 0.224019,
+      "max_displacement_from_c": 0.435505,
+      "central_angular_x_variation": 0.083122,
+      "central_variation_reduction": 0.528218,
+      "position_hash": "2cd522cd9a1d0e90f10fc072835db1cd54a9ad1072478911713884646fc89bd8",
+      "checks": {
+        "vertex_count": true,
+        "triangle_count": true,
+        "connected_surface": true,
+        "manifold": true,
+        "no_loose_vertices": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "normals_not_inverted": true,
+        "no_self_intersections": true,
+        "bounding_box_exact": true,
+        "mask_area_in_range": true
+      },
+      "passed": true
+    },
+    "R1C": {
+      "key": "R1C",
+      "metrics": {
+        "vertex_count": 8322,
+        "face_count": 8480,
+        "triangle_count": 16640,
+        "edge_count": 16800,
+        "connected_components": 1,
+        "loose_vertices": 0,
+        "non_manifold_edges": 0,
+        "euler_characteristic": 2
+      },
+      "bounding_box": {
+        "min": [
+          -3.4,
+          -1.8,
+          -1.6
+        ],
+        "max": [
+          3.4,
+          1.8,
+          1.6
+        ],
+        "size": [
+          6.8,
+          3.6,
+          3.2
+        ]
+      },
+      "signed_volume": 29.429827,
+      "minimum_triangle_area": 0.000498113,
+      "zero_area_triangles": 0,
+      "minimum_source_normal_dot": 0.8381,
+      "nonadjacent_self_intersections": 0,
+      "active_surface_ratio": 0.355337,
+      "rms_displacement_from_c": 0.249973,
+      "max_displacement_from_c": 0.500396,
+      "central_angular_x_variation": 0.087331,
+      "central_variation_reduction": 0.504326,
+      "position_hash": "885e1a30b6da2ff9851860d142c5db4a9023d8ea5939574747c2a05cdb7ffee9",
+      "checks": {
+        "vertex_count": true,
+        "triangle_count": true,
+        "connected_surface": true,
+        "manifold": true,
+        "no_loose_vertices": true,
+        "positive_volume": true,
+        "no_degenerate_triangles": true,
+        "normals_not_inverted": true,
+        "no_self_intersections": true,
+        "bounding_box_exact": true,
+        "mask_area_in_range": true
+      },
+      "passed": true
+    }
+  },
+  "common_checks": {
+    "source_topology_hash_matches": true,
+    "source_uv_hash_matches": true,
+    "source_active_face_count_matches": true,
+    "source_validation_topology_matches": true,
+    "all_variants_pass": true
+  },
+  "passed": true,
+  "outputs": {
+    "workbench_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-1\\blender\\ps-03-1-c-r1-refinement-workbench.blend",
+    "final_blend": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-1\\blender\\c-r1-directed-tensioned-core.blend",
+    "glb": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-1\\exports\\c-r1-directed-tensioned-core.glb",
+    "workbench_blend_sha256": "22249a9227ba9a35d46715d149ae8553e77b22089b0299a4ede5a636ae2714f0",
+    "final_blend_sha256": "b15d49b1064f8a8e8a6e13cb6688aad79b72fe3c1344ae42cee5a0f369fd7e1e",
+    "glb_sha256": "ffd8bcc83326e4957a4a4d5ccaa5ba2184159696a6a165c26553a1f4dd29f791"
+  }
+}
