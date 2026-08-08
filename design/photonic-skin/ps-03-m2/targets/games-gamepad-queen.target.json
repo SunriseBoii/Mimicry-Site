@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "games-gamepad-queen",
+  "targetVersion": "1.0.0",
+  "competencyId": "games",
+  "displayName": "Gamepad + Queen",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 2,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.0
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Игры: геймпад + ферзь)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2, migrated verbatim from PS-03.M sd_gamepad / sd_queen",
+    "baseline": "design/photonic-skin/ps-03-m/scripts/sdf_targets.py"
+  },
+  "components": [
+    {
+      "componentId": "gamepad",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-0.62, 0.0, -0.28], "rotateDeg": [0.0, -9.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.65,
+      "minimumMassWeight": 0.45,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.05 },
+        "children": [
+          {
+            "provider": "smooth_union",
+            "params": { "k": 0.05 },
+            "children": [
+              {
+                "provider": "smooth_union",
+                "params": { "k": 0.075 },
+                "children": [
+                  { "provider": "rounded_box", "params": { "half": [0.64, 0.37, 0.20], "radius": 0.11 } },
+                  {
+                    "provider": "smooth_union",
+                    "params": { "k": 0.02 },
+                    "children": [
+                      { "provider": "capsule", "params": { "a": [-0.48, 0.16, 0.0], "b": [-0.68, -0.54, -0.06], "radius": 0.205 } },
+                      { "provider": "capsule", "params": { "a": [0.48, 0.16, 0.0], "b": [0.68, -0.54, -0.06], "radius": 0.205 } }
+                    ]
+                  }
+                ]
+              },
+              {
+                "provider": "union",
+                "children": [
+                  { "provider": "sphere", "params": { "radius": 0.115, "center": [-0.25, 0.11, 0.22] } },
+                  { "provider": "sphere", "params": { "radius": 0.115, "center": [0.25, 0.11, 0.22] } }
+                ]
+              }
+            ]
+          },
+          { "provider": "capsule", "params": { "a": [0.0, -0.66, 0.10], "b": [0.0, -0.34, -0.02], "radius": 0.21 } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "face-plate", "importance": 1.0, "falloff": 0.07,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.11, "center": [0.0, 0.0, 0.27] } } },
+        { "zoneId": "waist-notch", "importance": 1.1, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.0, -0.70, 0.12], "b": [0.0, -0.34, -0.02], "radius": 0.26 } },
+          "notes": "The U between the grips is the strongest gamepad cue at 96 px." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "grip-ends", "importance": 1.0, "falloff": 0.08,
+          "region": { "provider": "slab", "params": { "axis": "y", "half": 0.22, "center": [0.0, -0.60, 0.0] } } }
+      ],
+      "densityZones": [
+        { "zoneId": "grip-density", "weight": 1.0, "falloff": 0.09,
+          "region": { "provider": "slab", "params": { "axis": "y", "half": 0.34, "center": [0.0, -0.55, 0.0] } } },
+        { "zoneId": "face-density", "weight": 0.7, "falloff": 0.09,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.19, "center": [0.0, 0.0, 0.24] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "face-field", "competencyId": "games", "falloff": 0.05,
+          "region": {
+            "provider": "intersect",
+            "children": [
+              { "provider": "slab", "params": { "axis": "z", "half": 0.30, "center": [0.0, 0.0, 0.44] } },
+              { "provider": "slab", "params": { "axis": "x", "half": 0.45 } }
+            ]
+          } },
+        { "zoneId": "grip-tips", "competencyId": "games", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "y", "half": 0.30, "center": [0.0, -0.72, 0.0] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "toward-queen", "kind": "bridgeZone", "point": [0.42, 0.0, 0.05], "radius": 0.30,
+          "notes": "Where a transition compiler may grow matter toward the second component." },
+        { "anchorId": "face-protected", "kind": "protectedZone",
+          "region": { "provider": "rounded_box", "params": { "half": [0.50, 0.30, 0.10], "radius": 0.08, "center": [0.0, 0.05, 0.20] } } }
+      ]
+    },
+    {
+      "componentId": "queen",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.92, 0.0, -0.10], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.35,
+      "minimumMassWeight": 0.25,
+      "geometryProvider": {
+        "provider": "revolved_profile",
+        "params": {
+          "axis": "z",
+          "height": 2.0,
+          "radialScale": 1.22,
+          "profile": [
+            [0.000, 0.340], [0.060, 0.330], [0.110, 0.240], [0.180, 0.190],
+            [0.320, 0.130], [0.500, 0.100], [0.610, 0.125], [0.660, 0.175],
+            [0.690, 0.130], [0.760, 0.140], [0.860, 0.210], [0.905, 0.165],
+            [0.940, 0.080], [0.975, 0.062], [1.000, 0.000]
+          ],
+          "angularScallops": { "count": 7, "depth": 0.070, "band": [0.815, 0.905] }
+        }
+      },
+      "featureZones": [
+        { "zoneId": "coronet", "importance": 1.6, "falloff": 0.06,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.15, "center": [0.0, 0.0, 0.72] } },
+          "notes": "The notched crown is the only thing separating a queen from a pawn." },
+        { "zoneId": "waist", "importance": 0.8, "falloff": 0.06,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.10, "center": [0.0, 0.0, 0.0] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "base-plinth", "importance": 0.9, "falloff": 0.07,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.11, "center": [0.0, 0.0, -0.88] } } }
+      ],
+      "densityZones": [
+        { "zoneId": "coronet-density", "weight": 1.6, "falloff": 0.09,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.28, "center": [0.0, 0.0, 0.72] } } },
+        { "zoneId": "plinth-density", "weight": 0.9, "falloff": 0.09,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.14, "center": [0.0, 0.0, -0.86] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "crown-cap", "competencyId": "games", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.52, "center": [0.0, 0.0, 1.00] } } },
+        { "zoneId": "plinth-band", "competencyId": "games", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.20, "center": [0.0, 0.0, -0.98] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "toward-gamepad", "kind": "bridgeZone", "point": [-0.28, 0.0, -0.35], "radius": 0.30 },
+        { "anchorId": "stem-neck", "kind": "splitNeck", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0], "radius": 0.16,
+          "notes": "Thinnest section; a compiler must thicken it before any split is attempted here." },
+        { "anchorId": "axis-transport", "kind": "transportZone",
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.96], "b": [0.0, 0.0, 0.92], "radius": 0.10 } } }
+      ]
+    }
+  ]
+}

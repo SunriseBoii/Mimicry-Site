@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "merch-tee-thermos-box",
+  "targetVersion": "1.0.0",
+  "competencyId": "merch",
+  "displayName": "T-shirt + Thermos + Open Box",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 3,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.2
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Мерч: футболка + термос + открытая коробка)",
+    "approvalStatus": "requires-human-approval",
+    "authored": "PS-03.M2 declarative target, shared provider registry only.",
+    "interpretation": "The t-shirt is a folded garment volume, not a cloth sheet: it must carry skin, so it is authored as a thick torso plate with two mirrored sleeve stubs. The box is open at the top with real wall thickness; no flaps, which would be fragile.",
+    "notes": "The composition of the Merch target is a candidate in the source document, not an approved form."
+  },
+  "components": [
+    {
+      "componentId": "tee",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-1.110, 0.626, -0.36], "rotateDeg": [0.0, 0.0, 125.0], "scale": 1.15 },
+      "massWeight": 0.42,
+      "minimumMassWeight": 0.28,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.05 },
+        "children": [
+          {
+            "provider": "smooth_union",
+            "params": { "k": 0.06 },
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.46, 0.54, 0.115], "radius": 0.095 },
+                "notes": "Folded torso." },
+              {
+                "provider": "mirror",
+                "params": { "axis": "x" },
+                "children": [
+                  { "provider": "rounded_box",
+                    "params": { "half": [0.27, 0.18, 0.105], "radius": 0.085 },
+                    "transform": { "translate": [0.68, 0.30, 0.0], "rotateDeg": [0.0, 0.0, -8.0] },
+                    "notes": "One sleeve definition; the mirror operator produces both." }
+                ]
+              }
+            ]
+          },
+          { "provider": "capsule", "params": { "a": [0.0, 0.58, -0.40], "b": [0.0, 0.58, 0.40], "radius": 0.20 },
+            "notes": "Neck notch." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "neck-notch", "importance": 1.4, "falloff": 0.05,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.58, -0.40], "b": [0.0, 0.58, 0.40], "radius": 0.31 } } },
+        { "zoneId": "sleeves", "importance": 1.2, "falloff": 0.06,
+          "region": {
+            "provider": "mirror",
+            "params": { "axis": "x" },
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.32, 0.26, 0.17], "radius": 0.08, "center": [0.68, 0.30, 0.0] } }
+            ]
+          },
+          "notes": "The T of the silhouette lives in the two sleeve stubs." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "tee-outline", "importance": 1.1, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.95, 0.58, 0.30], "radius": 0.10 } },
+              { "provider": "rounded_box", "params": { "half": [0.30, 0.38, 0.60], "radius": 0.10 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "sleeve-density", "weight": 1.2, "falloff": 0.08,
+          "region": {
+            "provider": "mirror",
+            "params": { "axis": "x" },
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.36, 0.30, 0.21], "radius": 0.08, "center": [0.68, 0.30, 0.0] } }
+            ]
+          } },
+        { "zoneId": "neck-density", "weight": 1.3, "falloff": 0.08,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.58, -0.40], "b": [0.0, 0.58, 0.40], "radius": 0.33 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "chest-print", "competencyId": "merch", "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.34, "center": [0.0, 0.02, 0.10] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "toward-thermos", "kind": "bridgeZone", "point": [0.44, 0.34, 0.0], "radius": 0.24 }
+      ]
+    },
+    {
+      "componentId": "thermos",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.528, 0.554, -0.03], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.13,
+      "minimumMassWeight": 0.08,
+      "geometryProvider": {
+        "provider": "revolved_profile",
+        "params": {
+          "axis": "z",
+          "height": 0.95,
+          "profile": [
+            [0.000, 0.170], [0.030, 0.200], [0.080, 0.215], [0.600, 0.215],
+            [0.640, 0.185], [0.680, 0.205], [0.940, 0.205], [0.970, 0.180],
+            [1.000, 0.120]
+          ]
+        }
+      },
+      "featureZones": [
+        { "zoneId": "cap-seam", "importance": 1.4, "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.09, "center": [0.0, 0.0, 0.14] } },
+          "notes": "The cap seam is what separates a thermos from a plain cylinder." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "body-profile", "importance": 1.0, "falloff": 0.06,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.40, "center": [0.0, 0.0, -0.14] } } }
+      ],
+      "densityZones": [
+        { "zoneId": "seam-density", "weight": 1.3, "falloff": 0.07,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.11, "center": [0.0, 0.0, 0.14] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "cap", "competencyId": "merch", "falloff": 0.04,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.26, "center": [0.0, 0.0, 0.46] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "toward-box", "kind": "bridgeZone", "point": [0.14, -0.20, -0.30], "radius": 0.22 }
+      ]
+    },
+    {
+      "componentId": "open-box",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.455, -1.086, -0.12], "rotateDeg": [0.0, 0.0, -14.0], "scale": 1.0 },
+      "massWeight": 0.45,
+      "minimumMassWeight": 0.32,
+      "geometryProvider": {
+        "provider": "subtract",
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.52, 0.52, 0.34], "radius": 0.07 } },
+          { "provider": "rounded_box", "params": { "half": [0.37, 0.37, 0.34], "radius": 0.05, "center": [0.0, 0.0, 0.15] },
+            "notes": "Interior cavity, open through the top; 0.15 walls and floor." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "box-mouth", "importance": 1.5, "falloff": 0.06,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.56, 0.56, 0.16], "radius": 0.07, "center": [0.0, 0.0, 0.28] } },
+              { "provider": "rounded_box", "params": { "half": [0.30, 0.30, 0.40], "radius": 0.05 } }
+            ]
+          },
+          "notes": "The open rim is the only thing that distinguishes the box from a cube." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "box-corners", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.56, 0.56, 0.38], "radius": 0.07 } },
+              { "provider": "rounded_box", "params": { "half": [0.40, 0.40, 0.60], "radius": 0.07 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "mouth-density", "weight": 1.5, "falloff": 0.08,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.14, "center": [0.0, 0.0, 0.30] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "inner-liner", "competencyId": "merch", "falloff": 0.05,
+          "region": { "provider": "rounded_box", "params": { "half": [0.40, 0.40, 0.36], "radius": 0.05, "center": [0.0, 0.0, 0.14] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "cavity-transport", "kind": "transportZone",
+          "region": { "provider": "rounded_box", "params": { "half": [0.34, 0.34, 0.18], "radius": 0.05, "center": [0.0, 0.0, 0.10] } } },
+        { "anchorId": "toward-tee", "kind": "bridgeZone", "point": [-0.46, 0.30, -0.10], "radius": 0.24 }
+      ]
+    }
+  ]
+}

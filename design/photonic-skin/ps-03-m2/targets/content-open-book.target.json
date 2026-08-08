@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "content-open-book",
+  "targetVersion": "1.0.0",
+  "competencyId": "content",
+  "displayName": "Open Book",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 1,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.2
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Контент: открытая книга)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2, migrated verbatim from PS-03.M sd_state_book",
+    "baseline": "design/photonic-skin/ps-03-m/scripts/sdf_targets.py"
+  },
+  "components": [
+    {
+      "componentId": "book-body",
+      "semanticRole": "primary",
+      "connectivityRole": "standalone",
+      "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 1.0,
+      "geometryProvider": {
+        "provider": "displace_gaussian_band",
+        "params": { "amount": 0.0081, "axis": "x", "center": 1.05, "sharpness": 18.0, "useAbs": true },
+        "children": [
+          {
+            "provider": "smooth_subtract",
+            "params": { "k": 0.04 },
+            "children": [
+              {
+                "provider": "smooth_union",
+                "params": { "k": 0.08 },
+                "children": [
+                  {
+                    "provider": "smooth_union",
+                    "params": { "k": 0.05 },
+                    "children": [
+                      {
+                        "provider": "rounded_box",
+                        "params": { "half": [0.62, 0.92, 0.165], "radius": 0.05 },
+                        "transform": { "translate": [-0.516153, 0.0, 0.229806], "rotateDeg": [0.0, 24.0, 0.0] }
+                      },
+                      {
+                        "provider": "rounded_box",
+                        "params": { "half": [0.62, 0.92, 0.165], "radius": 0.05 },
+                        "transform": { "translate": [0.516153, 0.0, 0.229806], "rotateDeg": [0.0, -24.0, 0.0] }
+                      }
+                    ]
+                  },
+                  {
+                    "provider": "capsule",
+                    "params": { "a": [0.0, -0.8648, -0.10], "b": [0.0, 0.8648, -0.10], "radius": 0.20 }
+                  }
+                ]
+              },
+              {
+                "provider": "capsule",
+                "params": { "a": [0.0, -0.9384, 0.16], "b": [0.0, 0.9384, 0.16], "radius": 0.135 }
+              }
+            ]
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "hinge-valley",
+          "importance": 1.2,
+          "falloff": 0.07,
+          "region": { "provider": "slab", "params": { "axis": "x", "half": 0.13 } },
+          "notes": "The central fold is what separates an open book from a slab."
+        },
+        {
+          "zoneId": "page-block-edges",
+          "importance": 1.0,
+          "falloff": 0.07,
+          "region": {
+            "provider": "mirror",
+            "params": { "axis": "x" },
+            "children": [
+              { "provider": "slab", "params": { "axis": "x", "half": 0.13, "center": [1.12, 0.0, 0.0] } }
+            ]
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "outer-rim",
+          "importance": 1.0,
+          "falloff": 0.08,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [1.30, 1.12, 0.90], "radius": 0.15 } },
+              { "provider": "rounded_box", "params": { "half": [1.04, 0.84, 1.30], "radius": 0.15 } }
+            ]
+          },
+          "notes": "Perimeter band of both wings: the contour that has to survive at 96 px."
+        }
+      ],
+      "densityZones": [
+        { "zoneId": "hinge-density", "weight": 1.4, "falloff": 0.09,
+          "region": { "provider": "slab", "params": { "axis": "x", "half": 0.22 } } },
+        { "zoneId": "edge-density", "weight": 1.0, "falloff": 0.09,
+          "region": { "provider": "mirror", "params": { "axis": "x" },
+            "children": [ { "provider": "slab", "params": { "axis": "x", "half": 0.26, "center": [1.15, 0.0, 0.0] } } ] } },
+        { "zoneId": "head-tail-density", "weight": 0.8, "falloff": 0.09,
+          "region": { "provider": "mirror", "params": { "axis": "y" },
+            "children": [ { "provider": "slab", "params": { "axis": "y", "half": 0.26, "center": [0.0, 0.92, 0.0] } } ] } }
+      ],
+      "colorZones": [
+        { "zoneId": "spine-line", "competencyId": "content", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "x", "half": 0.17 } } },
+        { "zoneId": "page-edges", "competencyId": "content", "falloff": 0.05,
+          "region": { "provider": "mirror", "params": { "axis": "x" },
+            "children": [ { "provider": "slab", "params": { "axis": "x", "half": 0.16, "center": [1.15, 0.0, 0.0] } } ] } },
+        { "zoneId": "reading-ribbon", "competencyId": "content", "falloff": 0.05,
+          "region": { "provider": "plane_slab", "params": { "normal": [-0.35, 1.0, 0.0], "offset": 0.23596, "half": 0.13214 } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0],
+          "notes": "Spine direction is the lead axis of the form." },
+        { "anchorId": "spine-protected", "kind": "protectedZone",
+          "region": { "provider": "capsule", "params": { "a": [0.0, -0.86, -0.05], "b": [0.0, 0.86, -0.05], "radius": 0.26 } },
+          "notes": "The hinge must stay solid: it carries the whole read of the form." },
+        { "anchorId": "spine-transport", "kind": "transportZone",
+          "region": { "provider": "capsule", "params": { "a": [0.0, -0.80, -0.05], "b": [0.0, 0.80, -0.05], "radius": 0.16 } } }
+      ]
+    }
+  ]
+}

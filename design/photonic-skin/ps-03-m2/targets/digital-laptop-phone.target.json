@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "digital-laptop-phone",
+  "targetVersion": "1.0.0",
+  "competencyId": "digital",
+  "displayName": "Laptop + Smartphone",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 2,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.5
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Digital: ноутбук + телефон)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2 declarative target, shared provider registry only.",
+    "interpretation": "The open laptop is one connected shell: base and screen are separate atomic components joined at the hinge (connectivityRole attached)."
+  },
+  "components": [
+    {
+      "componentId": "laptop-base",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-0.06, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.54,
+      "minimumMassWeight": 0.38,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.03 },
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.78, 0.55, 0.11], "radius": 0.055 } },
+          { "provider": "rounded_box", "params": { "half": [0.64, 0.40, 0.10], "radius": 0.05, "center": [0.0, -0.05, 0.16] },
+            "notes": "Keyboard well: the recess that stops the base reading as a plain slab." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "keyboard-well", "importance": 1.4, "falloff": 0.06,
+          "region": { "provider": "rounded_box", "params": { "half": [0.64, 0.40, 0.09], "radius": 0.05, "center": [0.0, -0.05, 0.09] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "base-rim", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.82, 0.59, 0.40], "radius": 0.08 } },
+              { "provider": "rounded_box", "params": { "half": [0.66, 0.43, 0.60], "radius": 0.08 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "well-density", "weight": 1.2, "falloff": 0.08,
+          "region": { "provider": "rounded_box", "params": { "half": [0.68, 0.44, 0.14], "radius": 0.05, "center": [0.0, -0.05, 0.08] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "keyboard-field", "competencyId": "digital", "falloff": 0.05,
+          "region": { "provider": "rounded_box", "params": { "half": [0.68, 0.44, 0.14], "radius": 0.05, "center": [0.0, -0.05, 0.06] } } },
+        { "zoneId": "front-lip", "competencyId": "digital", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "y", "half": 0.13, "center": [0.0, -0.52, 0.0] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "hinge-protected", "kind": "protectedZone",
+          "region": { "provider": "capsule", "params": { "a": [-0.74, 0.55, 0.09], "b": [0.74, 0.55, 0.09], "radius": 0.18 } },
+          "notes": "The hinge line carries the whole open-laptop read." },
+        { "anchorId": "toward-phone", "kind": "bridgeZone", "point": [0.80, -0.16, 0.0], "radius": 0.24 }
+      ]
+    },
+    {
+      "componentId": "laptop-screen",
+      "semanticRole": "secondary",
+      "connectivityRole": "attached",
+      "parentComponentId": "laptop-base",
+      "attachmentBlend": 0.07,
+      "canonicalTransform": { "translate": [-0.06, 0.42, 0.573], "rotateDeg": [105.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.35,
+      "minimumMassWeight": 0.24,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.03 },
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.78, 0.50, 0.085], "radius": 0.05 } },
+          { "provider": "rounded_box", "params": { "half": [0.66, 0.39, 0.06], "radius": 0.04, "center": [0.0, 0.02, -0.11] },
+            "notes": "Shallow screen bezel recess on the face turned toward the viewer." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "screen-face", "importance": 1.5, "falloff": 0.06,
+          "region": { "provider": "rounded_box", "params": { "half": [0.68, 0.41, 0.07], "radius": 0.04, "center": [0.0, 0.02, -0.07] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "screen-rim", "importance": 1.1, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.82, 0.54, 0.40], "radius": 0.08 } },
+              { "provider": "rounded_box", "params": { "half": [0.66, 0.38, 0.60], "radius": 0.08 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "screen-edge-density", "weight": 1.1, "falloff": 0.08,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.84, 0.56, 0.40], "radius": 0.08 } },
+              { "provider": "rounded_box", "params": { "half": [0.64, 0.36, 0.60], "radius": 0.08 } }
+            ]
+          } }
+      ],
+      "colorZones": [
+        { "zoneId": "screen-field", "competencyId": "digital", "falloff": 0.05,
+          "region": { "provider": "rounded_box", "params": { "half": [0.70, 0.43, 0.12], "radius": 0.05, "center": [0.0, 0.02, -0.05] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "hinge-neck", "kind": "splitNeck", "point": [0.0, -0.50, 0.0], "direction": [0.0, 1.0, 0.0], "radius": 0.16 }
+      ]
+    },
+    {
+      "componentId": "smartphone",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [1.32, -0.18, -0.005], "rotateDeg": [0.0, 0.0, -18.0], "scale": 1.0 },
+      "massWeight": 0.11,
+      "minimumMassWeight": 0.06,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.03 },
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.27, 0.52, 0.085], "radius": 0.06 } },
+          { "provider": "rounded_box", "params": { "half": [0.20, 0.44, 0.05], "radius": 0.04, "center": [0.0, 0.0, 0.11] } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "phone-screen", "importance": 1.3, "falloff": 0.05,
+          "region": { "provider": "rounded_box", "params": { "half": [0.21, 0.45, 0.06], "radius": 0.04, "center": [0.0, 0.0, 0.06] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "phone-outline", "importance": 1.0, "falloff": 0.06,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.30, 0.55, 0.30], "radius": 0.07 } },
+              { "provider": "rounded_box", "params": { "half": [0.19, 0.44, 0.60], "radius": 0.07 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "phone-density", "weight": 0.9, "falloff": 0.07,
+          "region": { "provider": "rounded_box", "params": { "half": [0.30, 0.56, 0.20], "radius": 0.07 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "phone-field", "competencyId": "digital", "falloff": 0.04,
+          "region": { "provider": "rounded_box", "params": { "half": [0.23, 0.47, 0.11], "radius": 0.04, "center": [0.0, 0.0, 0.04] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "toward-laptop", "kind": "bridgeZone", "point": [-0.30, 0.10, 0.0], "radius": 0.20 }
+      ]
+    }
+  ]
+}

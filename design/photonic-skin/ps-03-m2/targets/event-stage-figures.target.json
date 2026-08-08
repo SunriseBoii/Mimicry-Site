@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "event-stage-figures",
+  "targetVersion": "1.0.0",
+  "competencyId": "event",
+  "displayName": "Stage / Portal + Three Figures",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 1,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 3.0
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Event: сцена/портал + три манекена)",
+    "approvalStatus": "requires-human-approval",
+    "authored": "PS-03.M2 declarative target, shared provider registry only.",
+    "interpretation": "The source names 'сцена/портал' as one slot; it is built as a stage deck carrying a portal arch. The three figures stand on the deck, so the whole target is one connected shell built from five atomic components. Mannequins are torso plus head only: arms and legs would be fragile below 96 px and cannot carry skin.",
+    "notes": "The composition of the Event target is a candidate in the source document, not an approved form."
+  },
+  "components": [
+    {
+      "componentId": "stage-deck",
+      "semanticRole": "structure",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.0, 0.0, -0.55], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.61,
+      "minimumMassWeight": 0.44,
+      "geometryProvider": {
+        "provider": "rounded_plate",
+        "params": { "radii": [1.16, 0.86], "thickness": 0.26, "edgeRadius": 0.09 }
+      },
+      "featureZones": [
+        { "zoneId": "deck-lip", "importance": 0.9, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_plate", "params": { "radii": [1.20, 0.90], "thickness": 0.60, "edgeRadius": 0.08 } },
+              { "provider": "rounded_plate", "params": { "radii": [0.98, 0.68], "thickness": 0.90, "edgeRadius": 0.08 } }
+            ]
+          } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "deck-edge", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_plate", "params": { "radii": [1.22, 0.92], "thickness": 0.60, "edgeRadius": 0.08 } },
+              { "provider": "rounded_plate", "params": { "radii": [1.02, 0.72], "thickness": 0.90, "edgeRadius": 0.08 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "edge-density", "weight": 1.0, "falloff": 0.08,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_plate", "params": { "radii": [1.24, 0.94], "thickness": 0.60, "edgeRadius": 0.08 } },
+              { "provider": "rounded_plate", "params": { "radii": [0.96, 0.66], "thickness": 0.90, "edgeRadius": 0.08 } }
+            ]
+          } }
+      ],
+      "colorZones": [
+        { "zoneId": "apron-band", "competencyId": "event", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.10, "center": [0.0, 0.0, -0.11] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [1.0, 0.0, 0.0] },
+        { "anchorId": "deck-transport", "kind": "transportZone",
+          "region": { "provider": "rounded_plate", "params": { "radii": [0.90, 0.60], "thickness": 0.14, "edgeRadius": 0.05 } } }
+      ]
+    },
+    {
+      "componentId": "portal-arch",
+      "semanticRole": "structure",
+      "connectivityRole": "attached",
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.08,
+      "canonicalTransform": { "translate": [0.0, -0.60, 0.17], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.27,
+      "minimumMassWeight": 0.18,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.92, 0.11, 0.72], "radius": 0.09 } },
+          { "provider": "rounded_box", "params": { "half": [0.52, 0.30, 0.52], "radius": 0.30, "center": [0.0, 0.0, -0.27] },
+            "notes": "Arched opening, cut all the way through the wall." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "arch-opening", "importance": 1.6, "falloff": 0.06,
+          "region": { "provider": "rounded_box", "params": { "half": [0.66, 0.26, 0.62], "radius": 0.32, "center": [0.0, 0.0, -0.24] } },
+          "notes": "The opening is what makes this a portal rather than a wall." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "arch-crown", "importance": 1.2, "falloff": 0.07,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.22, "center": [0.0, 0.0, 0.52] } } }
+      ],
+      "densityZones": [
+        { "zoneId": "opening-density", "weight": 1.5, "falloff": 0.09,
+          "region": { "provider": "rounded_box", "params": { "half": [0.70, 0.30, 0.66], "radius": 0.32, "center": [0.0, 0.0, -0.24] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "lintel-band", "competencyId": "event", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.20, "center": [0.0, 0.0, 0.58] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "opening-protected", "kind": "protectedZone",
+          "region": { "provider": "rounded_box", "params": { "half": [0.56, 0.36, 0.56], "radius": 0.30, "center": [0.0, 0.0, -0.27] } } }
+      ]
+    },
+    {
+      "componentId": "figure-left",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.06,
+      "canonicalTransform": { "translate": [-0.62, 0.24, 0.033], "rotateDeg": [0.0, 0.0, 14.0], "scale": 1.15 },
+      "massWeight": 0.04,
+      "minimumMassWeight": 0.02,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "tapered_capsule",
+            "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.14], "radiusA": 0.165, "radiusB": 0.120 } },
+          { "provider": "sphere", "params": { "radius": 0.135, "center": [0.0, 0.0, 0.34] } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "head", "importance": 1.3, "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.19, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "figure-profile", "importance": 1.2, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.36], "radius": 0.22 } } }
+      ],
+      "densityZones": [
+        { "zoneId": "figure-density", "weight": 1.2, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.28], "b": [0.0, 0.0, 0.38], "radius": 0.24 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "figure-head-tint", "competencyId": "event", "falloff": 0.04,
+          "region": { "provider": "sphere", "params": { "radius": 0.16, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "foot-neck", "kind": "splitNeck", "point": [0.0, 0.0, -0.28], "direction": [0.0, 0.0, 1.0], "radius": 0.16 }
+      ]
+    },
+    {
+      "componentId": "figure-centre",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.06,
+      "canonicalTransform": { "translate": [0.02, 0.10, 0.079], "rotateDeg": [0.0, 0.0, -8.0], "scale": 1.25 },
+      "massWeight": 0.04,
+      "minimumMassWeight": 0.02,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "tapered_capsule",
+            "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.14], "radiusA": 0.165, "radiusB": 0.120 } },
+          { "provider": "sphere", "params": { "radius": 0.135, "center": [0.0, 0.0, 0.34] } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "head", "importance": 1.3, "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.19, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "figure-profile", "importance": 1.2, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.36], "radius": 0.22 } } }
+      ],
+      "densityZones": [
+        { "zoneId": "figure-density", "weight": 1.2, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.28], "b": [0.0, 0.0, 0.38], "radius": 0.24 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "figure-head-tint", "competencyId": "event", "falloff": 0.04,
+          "region": { "provider": "sphere", "params": { "radius": 0.16, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "foot-neck", "kind": "splitNeck", "point": [0.0, 0.0, -0.28], "direction": [0.0, 0.0, 1.0], "radius": 0.16 }
+      ]
+    },
+    {
+      "componentId": "figure-right",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.06,
+      "canonicalTransform": { "translate": [0.64, 0.30, 0.001], "rotateDeg": [0.0, 0.0, -22.0], "scale": 1.08 },
+      "massWeight": 0.04,
+      "minimumMassWeight": 0.02,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "tapered_capsule",
+            "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.14], "radiusA": 0.165, "radiusB": 0.120 } },
+          { "provider": "sphere", "params": { "radius": 0.135, "center": [0.0, 0.0, 0.34] } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "head", "importance": 1.3, "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.19, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "figure-profile", "importance": 1.2, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.30], "b": [0.0, 0.0, 0.36], "radius": 0.22 } } }
+      ],
+      "densityZones": [
+        { "zoneId": "figure-density", "weight": 1.2, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.0, 0.0, -0.28], "b": [0.0, 0.0, 0.38], "radius": 0.24 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "figure-head-tint", "competencyId": "event", "falloff": 0.04,
+          "region": { "provider": "sphere", "params": { "radius": 0.16, "center": [0.0, 0.0, 0.34] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 0.0, 1.0] },
+        { "anchorId": "foot-neck", "kind": "splitNeck", "point": [0.0, 0.0, -0.28], "direction": [0.0, 0.0, 1.0], "radius": 0.16 }
+      ]
+    }
+  ]
+}

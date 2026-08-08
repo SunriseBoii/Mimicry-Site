@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "sphere-master",
+  "targetVersion": "1.0.0",
+  "competencyId": "master",
+  "displayName": "Sphere Master",
+  "targetRole": "master",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": {
+    "mode": "uniformCompositeVolume",
+    "volumeTolerance": 0.01,
+    "masterVolumeRef": "self",
+    "notes": "This target defines V0 for the whole library."
+  },
+  "validationPolicy": {
+    "expectedComponents": 1,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 1.05
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Hero: почти идеальная сфера)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2, migrated from PS-03.M sd_state_sphere",
+    "baseline": "design/photonic-skin/ps-03-m/scripts/sdf_targets.py"
+  },
+  "components": [
+    {
+      "componentId": "master-core",
+      "semanticRole": "primary",
+      "connectivityRole": "standalone",
+      "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 1.0,
+      "geometryProvider": {
+        "provider": "sphere",
+        "params": { "radius": 1.0 }
+      },
+      "silhouetteZones": [
+        {
+          "zoneId": "equator-ring",
+          "importance": 0.6,
+          "falloff": 0.08,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.30 } },
+          "notes": "A neutral sphere has no privileged contour; the equator band is the reference the other targets' silhouette bias is read against."
+        }
+      ],
+      "colorZones": [
+        { "zoneId": "spot-content", "competencyId": "content", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [0.1867, 0.4801, 0.8571] } } },
+        { "zoneId": "spot-design", "competencyId": "design", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [-0.7359, -0.3631, 0.5714] } } },
+        { "zoneId": "spot-event", "competencyId": "event", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [0.9201, -0.2679, 0.2857] } } },
+        { "zoneId": "spot-games", "competencyId": "games", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [-0.5192, 0.8547, 0.0] } } },
+        { "zoneId": "spot-video", "competencyId": "video", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [-0.1864, -0.94, -0.2857] } } },
+        { "zoneId": "spot-digital", "competencyId": "digital", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [0.6614, 0.4858, -0.5714] } } },
+        { "zoneId": "spot-merch", "competencyId": "merch", "falloff": 0.08,
+          "region": { "provider": "sphere", "params": { "radius": 0.4796, "center": [-0.5121, 0.0556, -0.8571] } } }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [0.0, 0.0, 0.0],
+          "direction": [1.0, 0.0, 0.0],
+          "notes": "Neutral master has no preferred lead; +X is the canonical forward."
+        },
+        {
+          "anchorId": "core-transport",
+          "kind": "transportZone",
+          "radius": 0.62,
+          "region": { "provider": "sphere", "params": { "radius": 0.62 } },
+          "notes": "Interior volume available for submerged scale transport."
+        }
+      ]
+    }
+  ]
+}

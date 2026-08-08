@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "design-palette-brushes",
+  "targetVersion": "1.0.0",
+  "competencyId": "design",
+  "displayName": "Palette + Brushes",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 3,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.5
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Дизайн: палитра + две кисти)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2 held-out admission test: authored only from TargetDefinition data and the shared provider registry.",
+    "interpretation": "The thumb hole is a real through-hole (the SDF substrate allows genus change); brush handles are thickened to stay above the skin's minimum construction thickness."
+  },
+  "components": [
+    {
+      "componentId": "palette-board",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-0.10, 0.0, -0.42], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+      "massWeight": 0.83,
+      "minimumMassWeight": 0.60,
+      "geometryProvider": {
+        "provider": "smooth_subtract",
+        "params": { "k": 0.05 },
+        "children": [
+          {
+            "provider": "smooth_union",
+            "params": { "k": 0.10 },
+            "children": [
+              {
+                "provider": "rounded_plate",
+                "params": { "radii": [1.02, 0.78], "thickness": 0.30, "edgeRadius": 0.11 }
+              },
+              {
+                "provider": "rounded_plate",
+                "params": { "radii": [0.46, 0.40], "thickness": 0.28, "edgeRadius": 0.10, "center": [0.72, -0.34, 0.0] },
+                "notes": "Thumb lobe: the asymmetric bulge that makes the oval read as a palette."
+              }
+            ]
+          },
+          {
+            "provider": "capsule",
+            "params": { "a": [0.60, -0.28, -0.60], "b": [0.60, -0.28, 0.60], "radius": 0.20 },
+            "notes": "Thumb hole, cut all the way through."
+          }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "thumb-hole-rim", "importance": 1.5, "falloff": 0.06,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "capsule", "params": { "a": [0.60, -0.28, -0.60], "b": [0.60, -0.28, 0.60], "radius": 0.34 } },
+              { "provider": "capsule", "params": { "a": [0.60, -0.28, -0.60], "b": [0.60, -0.28, 0.60], "radius": 0.19 } }
+            ]
+          },
+          "notes": "Without the hole the board is a generic slab." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "board-rim", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_plate", "params": { "radii": [1.06, 0.82], "thickness": 1.60, "edgeRadius": 0.10 } },
+              { "provider": "rounded_plate", "params": { "radii": [0.82, 0.58], "thickness": 2.00, "edgeRadius": 0.10 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "hole-density", "weight": 1.5, "falloff": 0.09,
+          "region": { "provider": "capsule", "params": { "a": [0.60, -0.28, -0.60], "b": [0.60, -0.28, 0.60], "radius": 0.36 } } },
+        { "zoneId": "rim-density", "weight": 0.9, "falloff": 0.09,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_plate", "params": { "radii": [1.10, 0.86], "thickness": 1.60, "edgeRadius": 0.10 } },
+              { "provider": "rounded_plate", "params": { "radii": [0.80, 0.56], "thickness": 2.00, "edgeRadius": 0.10 } }
+            ]
+          } }
+      ],
+      "colorZones": [
+        { "zoneId": "dab-a", "competencyId": "design", "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.40, "center": [-0.58, 0.30, 0.10] } } },
+        { "zoneId": "dab-b", "competencyId": "design", "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.37, "center": [-0.12, 0.42, 0.10] } } },
+        { "zoneId": "dab-c", "competencyId": "design", "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.35, "center": [0.22, -0.06, 0.10] } } },
+        { "zoneId": "dab-d", "competencyId": "design", "falloff": 0.05,
+          "region": { "provider": "sphere", "params": { "radius": 0.34, "center": [-0.70, -0.30, 0.10] } } },
+        { "zoneId": "board-underside", "competencyId": "design", "falloff": 0.06,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.13, "center": [0.0, 0.0, -0.30] } },
+          "notes": "Keeps the coloured share honest when the board is seen from below." }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [1.0, 0.0, 0.0] },
+        { "anchorId": "hole-protected", "kind": "protectedZone",
+          "region": { "provider": "capsule", "params": { "a": [0.60, -0.28, -0.60], "b": [0.60, -0.28, 0.60], "radius": 0.30 } },
+          "notes": "A compiler must not close the hole while the board still reads as a palette." },
+        { "anchorId": "toward-brushes", "kind": "bridgeZone", "point": [-0.20, 0.52, 0.16], "radius": 0.26 }
+      ]
+    },
+    {
+      "componentId": "brush-upper",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.02, 0.10, 0.44], "rotateDeg": [0.0, 0.0, -35.0], "scale": 1.0 },
+      "massWeight": 0.09,
+      "minimumMassWeight": 0.05,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "tapered_capsule",
+            "params": { "a": [-0.86, 0.0, 0.0], "b": [0.30, 0.0, 0.0], "radiusA": 0.105, "radiusB": 0.145 },
+            "notes": "Handle, thickened well past the four-module minimum." },
+          { "provider": "torus",
+            "params": { "majorRadius": 0.135, "minorRadius": 0.062, "axis": "x", "center": [0.34, 0.0, 0.0] },
+            "notes": "Ferrule ring." },
+          { "provider": "tapered_capsule",
+            "params": { "a": [0.36, 0.0, 0.0], "b": [0.74, 0.0, 0.0], "radiusA": 0.155, "radiusB": 0.075 },
+            "notes": "Bristle head." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "bristle-head", "importance": 1.4, "falloff": 0.05,
+          "region": { "provider": "capsule", "params": { "a": [0.34, 0.0, 0.0], "b": [0.78, 0.0, 0.0], "radius": 0.20 } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "brush-length", "importance": 1.1, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [-0.90, 0.0, 0.0], "b": [0.78, 0.0, 0.0], "radius": 0.19 } } }
+      ],
+      "densityZones": [
+        { "zoneId": "head-density", "weight": 1.3, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.30, 0.0, 0.0], "b": [0.80, 0.0, 0.0], "radius": 0.22 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "loaded-bristles", "competencyId": "design", "falloff": 0.04,
+          "region": { "provider": "capsule", "params": { "a": [0.40, 0.0, 0.0], "b": [0.80, 0.0, 0.0], "radius": 0.19 } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [1.0, 0.0, 0.0] },
+        { "anchorId": "handle-neck", "kind": "splitNeck", "point": [-0.30, 0.0, 0.0], "direction": [1.0, 0.0, 0.0], "radius": 0.12 },
+        { "anchorId": "toward-board", "kind": "bridgeZone", "point": [-0.10, -0.30, -0.32], "radius": 0.24 }
+      ]
+    },
+    {
+      "componentId": "brush-lower",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-0.02, -0.06, 0.00], "rotateDeg": [0.0, 0.0, 32.0], "scale": 0.92 },
+      "massWeight": 0.08,
+      "minimumMassWeight": 0.04,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "tapered_capsule",
+            "params": { "a": [-0.86, 0.0, 0.0], "b": [0.30, 0.0, 0.0], "radiusA": 0.105, "radiusB": 0.145 } },
+          { "provider": "torus",
+            "params": { "majorRadius": 0.135, "minorRadius": 0.062, "axis": "x", "center": [0.34, 0.0, 0.0] } },
+          { "provider": "tapered_capsule",
+            "params": { "a": [0.36, 0.0, 0.0], "b": [0.74, 0.0, 0.0], "radiusA": 0.155, "radiusB": 0.075 } }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "bristle-head", "importance": 1.4, "falloff": 0.05,
+          "region": { "provider": "capsule", "params": { "a": [0.34, 0.0, 0.0], "b": [0.78, 0.0, 0.0], "radius": 0.20 } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "brush-length", "importance": 1.1, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [-0.90, 0.0, 0.0], "b": [0.78, 0.0, 0.0], "radius": 0.19 } } }
+      ],
+      "densityZones": [
+        { "zoneId": "head-density", "weight": 1.3, "falloff": 0.07,
+          "region": { "provider": "capsule", "params": { "a": [0.30, 0.0, 0.0], "b": [0.80, 0.0, 0.0], "radius": 0.22 } } }
+      ],
+      "colorZones": [
+        { "zoneId": "loaded-bristles", "competencyId": "design", "falloff": 0.04,
+          "region": { "provider": "capsule", "params": { "a": [0.40, 0.0, 0.0], "b": [0.80, 0.0, 0.0], "radius": 0.19 } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [1.0, 0.0, 0.0] },
+        { "anchorId": "handle-neck", "kind": "splitNeck", "point": [-0.30, 0.0, 0.0], "direction": [1.0, 0.0, 0.0], "radius": 0.12 },
+        { "anchorId": "toward-board", "kind": "bridgeZone", "point": [-0.10, -0.24, -0.10], "radius": 0.24 }
+      ]
+    }
+  ]
+}

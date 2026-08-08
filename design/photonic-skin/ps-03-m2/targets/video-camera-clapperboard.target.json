@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "video-camera-clapperboard",
+  "targetVersion": "1.0.0",
+  "competencyId": "video",
+  "displayName": "Camera + Clapperboard",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": { "translate": [0.0, 0.0, 0.0], "rotateDeg": [0.0, 0.0, 0.0], "scale": 1.0 },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": { "mode": "uniformCompositeVolume", "volumeTolerance": 0.01, "masterVolumeRef": "sphere-master" },
+  "validationPolicy": {
+    "expectedComponents": 2,
+    "requireWatertight": true,
+    "minThickness": 0.158,
+    "maxAspectRatio": 4.4
+  },
+  "coverageProfiles": [8192, 4096, 2048, 1024, 512],
+  "lodProfiles": {
+    "desktop": { "viewportPx": 1440, "coverageBudget": 8192 },
+    "mobile": { "viewportPx": 390, "coverageBudget": 2048 }
+  },
+  "provenance": {
+    "source": "docs/photonic-skin/mimicry_photonic_skin_context_checkpoint_2026-08-04.md §4 (Видео: камера + хлопушка)",
+    "approvalStatus": "machine-valid",
+    "authored": "PS-03.M2 declarative target, shared provider registry only.",
+    "interpretation": "Diagonal stripes of the slate are declared as colour zones, not as geometry, so nothing disappears at 96 px."
+  },
+  "components": [
+    {
+      "componentId": "camera",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [0.545, -0.778, 0.02], "rotateDeg": [0.0, 0.0, 125.0], "scale": 1.0 },
+      "massWeight": 0.70,
+      "minimumMassWeight": 0.52,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.07 },
+        "children": [
+          {
+            "provider": "smooth_union",
+            "params": { "k": 0.025 },
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.46, 0.34, 0.30], "radius": 0.10 },
+                "notes": "Body." },
+              { "provider": "tapered_capsule",
+                "params": { "a": [0.34, 0.0, 0.03], "b": [0.94, 0.0, 0.03], "radiusA": 0.225, "radiusB": 0.225 },
+                "notes": "Lens barrel: long enough to read as an optic at 96 px." },
+              { "provider": "torus",
+                "params": { "majorRadius": 0.245, "minorRadius": 0.062, "axis": "x", "center": [0.95, 0.0, 0.03] },
+                "notes": "Front ring, thick enough to carry skin." }
+            ]
+          },
+          { "provider": "rounded_box",
+            "params": { "half": [0.34, 0.12, 0.09], "radius": 0.07, "center": [-0.04, 0.0, 0.38] },
+            "notes": "Top handle." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "lens-front", "importance": 1.6, "falloff": 0.06,
+          "region": { "provider": "capsule", "params": { "a": [0.64, 0.0, 0.03], "b": [0.92, 0.0, 0.03], "radius": 0.30 } },
+          "notes": "The optic is the single strongest camera cue." },
+        { "zoneId": "top-handle", "importance": 1.0, "falloff": 0.06,
+          "region": { "provider": "rounded_box", "params": { "half": [0.38, 0.16, 0.14], "radius": 0.07, "center": [-0.04, 0.0, 0.38] } } }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "body-profile", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.56, 0.38, 0.34], "radius": 0.10 } },
+              { "provider": "rounded_box", "params": { "half": [0.40, 0.22, 0.20], "radius": 0.10 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "lens-density", "weight": 1.5, "falloff": 0.08,
+          "region": { "provider": "capsule", "params": { "a": [0.50, 0.0, 0.03], "b": [0.94, 0.0, 0.03], "radius": 0.32 } } },
+        { "zoneId": "handle-density", "weight": 0.9, "falloff": 0.08,
+          "region": { "provider": "rounded_box", "params": { "half": [0.40, 0.18, 0.18], "radius": 0.07, "center": [-0.04, 0.0, 0.38] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "lens-ring", "competencyId": "video", "falloff": 0.05,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "capsule", "params": { "a": [0.80, 0.0, 0.03], "b": [0.96, 0.0, 0.03], "radius": 0.32 } },
+              { "provider": "capsule", "params": { "a": [0.80, 0.0, 0.03], "b": [0.96, 0.0, 0.03], "radius": 0.225 } }
+            ]
+          },
+          "notes": "Annulus around the front of the barrel, not the whole optic." },
+        { "zoneId": "record-band", "competencyId": "video", "falloff": 0.05,
+          "region": { "provider": "slab", "params": { "axis": "z", "half": 0.13, "center": [0.0, 0.0, 0.42] } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [1.0, 0.0, 0.0] },
+        { "anchorId": "lens-protected", "kind": "protectedZone",
+          "region": { "provider": "capsule", "params": { "a": [0.46, 0.0, 0.03], "b": [0.90, 0.0, 0.03], "radius": 0.28 } } },
+        { "anchorId": "toward-slate", "kind": "bridgeZone", "point": [0.30, -0.34, -0.24], "radius": 0.26 }
+      ]
+    },
+    {
+      "componentId": "clapperboard",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": { "translate": [-0.660, 0.942, 0.02], "rotateDeg": [-40.0, 0.0, -55.0], "scale": 1.0 },
+      "massWeight": 0.30,
+      "minimumMassWeight": 0.18,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": { "k": 0.05 },
+        "children": [
+          { "provider": "rounded_box", "params": { "half": [0.58, 0.34, 0.09], "radius": 0.05 },
+            "notes": "Slate." },
+          { "provider": "rounded_box",
+            "params": { "half": [0.58, 0.24, 0.080], "radius": 0.05 },
+            "transform": { "translate": [0.0, 0.460, 0.298], "rotateDeg": [62.0, 0.0, 0.0] },
+            "notes": "Clapper stick, hinged at the back edge and open at 60 degrees so the gap survives at 96 px." }
+        ]
+      },
+      "featureZones": [
+        { "zoneId": "clapper-stick", "importance": 1.6, "falloff": 0.06,
+          "region": { "provider": "rounded_box", "params": { "half": [0.62, 0.24, 0.20], "radius": 0.07, "center": [0.0, 0.46, 0.30] } },
+          "notes": "Without the raised stick the slate is just a plate." }
+      ],
+      "silhouetteZones": [
+        { "zoneId": "slate-rim", "importance": 1.0, "falloff": 0.07,
+          "region": {
+            "provider": "subtract",
+            "children": [
+              { "provider": "rounded_box", "params": { "half": [0.62, 0.46, 0.30], "radius": 0.06 } },
+              { "provider": "rounded_box", "params": { "half": [0.46, 0.30, 0.60], "radius": 0.06 } }
+            ]
+          } }
+      ],
+      "densityZones": [
+        { "zoneId": "stick-density", "weight": 1.4, "falloff": 0.08,
+          "region": { "provider": "rounded_box", "params": { "half": [0.64, 0.28, 0.24], "radius": 0.07, "center": [0.0, 0.46, 0.30] } } }
+      ],
+      "colorZones": [
+        { "zoneId": "stripe-a", "competencyId": "video", "falloff": 0.04,
+          "region": { "provider": "plane_slab", "params": { "normal": [1.0, 1.0, 0.0], "offset": 0.14, "half": 0.100 } } },
+        { "zoneId": "stripe-b", "competencyId": "video", "falloff": 0.04,
+          "region": { "provider": "plane_slab", "params": { "normal": [1.0, 1.0, 0.0], "offset": -0.26, "half": 0.100 } } },
+        { "zoneId": "stripe-c", "competencyId": "video", "falloff": 0.04,
+          "region": { "provider": "plane_slab", "params": { "normal": [1.0, 1.0, 0.0], "offset": 0.54, "half": 0.100 } } }
+      ],
+      "transitionAnchors": [
+        { "anchorId": "primary-axis", "kind": "primaryAxis", "point": [0.0, 0.0, 0.0], "direction": [0.0, 1.0, 0.0] },
+        { "anchorId": "hinge-neck", "kind": "splitNeck", "point": [0.0, 0.42, 0.09], "direction": [1.0, 0.0, 0.0], "radius": 0.14 },
+        { "anchorId": "toward-camera", "kind": "bridgeZone", "point": [-0.52, 0.0, -0.02], "radius": 0.24 }
+      ]
+    }
+  ]
+}
