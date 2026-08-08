@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mimicry.group/schemas/photonic-skin/state-definition/1.0.0",
+  "title": "PS-03.M3 StateDefinition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "stateId",
+    "stateVersion",
+    "displayName",
+    "stateRole",
+    "competencyIds",
+    "compositionMode",
+    "sourceTargets",
+    "componentSelections",
+    "assemblyProfile",
+    "canonicalCoordinateSystem",
+    "canonicalTransform",
+    "normalizationPolicy",
+    "surfaceEnvelopePolicy",
+    "identityPolicy",
+    "lodPolicy",
+    "reservePolicy",
+    "transitionAffordances",
+    "validationPolicy",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "stateId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "stateVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "stateRole": { "enum": ["master", "single", "complex", "brand_wide"] },
+    "competencyIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "maxItems": 7
+    },
+    "focusCompetencyId": { "type": ["string", "null"] },
+    "compositionMode": { "enum": ["MASTER", "SINGLE", "FOCUS", "GATHER", "DRIVE"] },
+    "sourceTargets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sourceTarget" },
+      "minItems": 1
+    },
+    "componentSelections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/componentSelection" },
+      "minItems": 1
+    },
+    "assemblyProfile": { "type": "object" },
+    "canonicalCoordinateSystem": { "type": "object" },
+    "canonicalTransform": { "$ref": "#/$defs/transform" },
+    "normalizationPolicy": { "type": "object" },
+    "canonicalBounds": { "type": "object" },
+    "surfaceEnvelopePolicy": { "type": "object" },
+    "identityPolicy": { "type": "object" },
+    "lodPolicy": { "type": "object" },
+    "reservePolicy": { "type": "object" },
+    "transitionAffordances": { "type": "object" },
+    "validationPolicy": { "type": "object" },
+    "provenance": { "type": "object" }
+  },
+  "$defs": {
+    "transform": {
+      "type": "object",
+      "required": ["translate", "rotateEulerDegrees", "scale"],
+      "properties": {
+        "translate": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+        "rotateEulerDegrees": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+        "scale": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "sourceTarget": {
+      "type": "object",
+      "required": ["targetId", "targetVersion", "definitionHash"],
+      "properties": {
+        "targetId": { "type": "string" },
+        "targetVersion": { "type": "string" },
+        "definitionHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "componentSelection": {
+      "type": "object",
+      "required": [
+        "targetId",
+        "targetVersion",
+        "componentId",
+        "semanticRole",
+        "assemblyRole",
+        "massWeight",
+        "minimumMassWeight",
+        "surfaceImportance",
+        "canonicalTransform",
+        "connectivityIntent",
+        "featureRetentionPolicy",
+        "silhouetteRetentionPolicy",
+        "mobilePolicy",
+        "transitionAnchors"
+      ],
+      "properties": {
+        "targetId": { "type": "string" },
+        "targetVersion": { "type": "string" },
+        "componentId": { "type": "string" },
+        "semanticRole": { "type": "string" },
+        "assemblyRole": { "enum": ["primary", "support", "echo", "anchor"] },
+        "massWeight": { "type": "number", "minimum": 0 },
+        "minimumMassWeight": { "type": "number", "minimum": 0 },
+        "surfaceImportance": { "type": "number", "minimum": 0 },
+        "canonicalTransform": { "$ref": "#/$defs/transform" },
+        "parentAssemblyNode": { "type": ["string", "null"] },
+        "connectivityIntent": { "enum": ["preserve", "fuse", "separate"] },
+        "featureRetentionPolicy": { "type": "object" },
+        "silhouetteRetentionPolicy": { "type": "object" },
+        "mobilePolicy": { "type": "object" },
+        "transitionAnchors": { "type": "array", "items": { "type": "object" } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "full-focus-primary-echo",
+    "exposurePolicy": "protected-centroid-occlusion-v1",
+    "placement": "compact-overlap",
+    "profileVersion": "1.0.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      1.7528908282463713,
+      1.9048197289225306,
+      0.7478920377786171
+    ],
+    "min": [
+      -2.3229954220435136,
+      -1.706271249711899,
+      -1.0657772750705479
+    ],
+    "size": [
+      4.075886250289885,
+      3.6110909786344294,
+      1.813669312849165
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "digital",
+    "event",
+    "merch",
+    "video"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.9602868803981679,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "laptop-base",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.4756,
+      "minimumMassWeight": 0.38,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge line carries the whole open-laptop read.",
+          "region": {
+            "params": {
+              "a": [
+                -0.74,
+                0.55,
+                0.09
+              ],
+              "b": [
+                0.74,
+                0.55,
+                0.09
+              ],
+              "radius": 0.18
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-phone",
+          "kind": "bridgeZone",
+          "point": [
+            0.8,
+            -0.16,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "echo",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          204.06422739549458
+        ],
+        "scale": 1.354481858924789,
+        "translate": [
+          -0.23650106277455063,
+          0.5295915853811388,
+          -0.0528844096270127
+        ]
+      },
+      "componentId": "figure-right",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.11480000000000001,
+      "minimumMassWeight": 0.02,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-1-shell-16",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "echo",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          294.0642273954946
+        ],
+        "scale": 0.6498224367057891,
+        "translate": [
+          -0.5295915853811388,
+          -0.23650106277455057,
+          -0.04982893105904445
+        ]
+      },
+      "componentId": "tee",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.11480000000000001,
+      "minimumMassWeight": 0.11480000000000001,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-2-shell-32",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-thermos",
+          "kind": "bridgeZone",
+          "point": [
+            0.44,
+            0.34,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "echo",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          384.0642273954946
+        ],
+        "scale": 0.5505739180163636,
+        "translate": [
+          0.23650106277455055,
+          -0.5295915853811388,
+          0.1416802149608946
+        ]
+      },
+      "componentId": "camera",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.1148,
+      "minimumMassWeight": 0.1148,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-3-shell-48",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "lens-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "a": [
+                0.46,
+                0.0,
+                0.03
+              ],
+              "b": [
+                0.9,
+                0.0,
+                0.03
+              ],
+              "radius": 0.28
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-slate",
+          "kind": "bridgeZone",
+          "point": [
+            0.3,
+            -0.34,
+            -0.24
+          ],
+          "radius": 0.26
+        }
+      ]
+    },
+    {
+      "assemblyRole": "anchor",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5646216173286172,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "master-core",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.18,
+      "minimumMassWeight": 0.000546849734593922,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-4-shell-64",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "sphere-master",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "notes": "Neutral master has no preferred lead; +X is the canonical forward.",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "core-transport",
+          "kind": "transportZone",
+          "notes": "Interior volume available for submerged scale transport.",
+          "radius": 0.62,
+          "region": {
+            "params": {
+              "radius": 0.62
+            },
+            "provider": "sphere"
+          }
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "Complex Focus Digital Event Merch Video Focus Digital",
+  "focusCompetencyId": "digital",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "builder": "ps03m3-builder-v1",
+    "sourceDefinitionHashes": {
+      "digital-laptop-phone": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "event-stage-figures": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "merch-tee-thermos-box": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9",
+      "sphere-master": "0d446fb340e86c233961a9ac74db4f84264e9ca0153798724e5955e4ce82f21b",
+      "video-camera-clapperboard": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762"
+    },
+    "stage": "PS-03.M3"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9",
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762",
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "0d446fb340e86c233961a9ac74db4f84264e9ca0153798724e5955e4ce82f21b",
+      "targetId": "sphere-master",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-digital-event-merch-video-focus-digital",
+  "stateRole": "complex",
+  "stateVersion": "1.0.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": true,
+    "maximumAreaRatio": 2.645,
+    "preferredAreaRatio": 2.6
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": true,
+    "surfaceEnvelope": 2.645,
+    "volumeTolerance": 0.01
+  }
+}

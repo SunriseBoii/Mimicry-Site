@@ -1,0 +1,558 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "full-focus-primary-echo",
+    "exposurePolicy": "protected-centroid-occlusion-v1",
+    "placement": "compact-overlap",
+    "profileVersion": "1.0.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      1.3900525465657747,
+      1.0004401998327364,
+      0.9133118767892632
+    ],
+    "min": [
+      -2.3795865963844243,
+      -2.659040817493309,
+      -0.9133118767892632
+    ],
+    "size": [
+      3.769639142950199,
+      3.6594810173260455,
+      1.8266237535785264
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "event",
+    "video"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8041451517178116,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "stage-deck",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.3120388510708949,
+      "minimumMassWeight": 0.3120388510708949,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "deck-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "edgeRadius": 0.05,
+              "radii": [
+                0.9,
+                0.6
+              ],
+              "thickness": 0.14
+            },
+            "provider": "rounded_plate"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8041451517178116,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "portal-arch",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.11767557695500581,
+      "minimumMassWeight": 0.11767557695500581,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "opening-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                -0.27
+              ],
+              "half": [
+                0.56,
+                0.36,
+                0.56
+              ],
+              "radius": 0.3
+            },
+            "provider": "rounded_box"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8041451517178116,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "figure-left",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.0291598870994521,
+      "minimumMassWeight": 0.02,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8041451517178116,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "figure-centre",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.03710277270463224,
+      "minimumMassWeight": 0.02,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8041451517178115,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "figure-right",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.02402291217001494,
+      "minimumMassWeight": 0.02,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "echo",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          294.0642273954946
+        ],
+        "scale": 0.8869832469490896,
+        "translate": [
+          -0.48393713836552343,
+          -0.2161130401215721,
+          -0.04982893105904445
+        ]
+      },
+      "componentId": "camera",
+      "connectivityIntent": "fuse",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 0.48,
+      "minimumMassWeight": 0.48,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-1-shell-16",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "lens-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "a": [
+                0.46,
+                0.0,
+                0.03
+              ],
+              "b": [
+                0.9,
+                0.0,
+                0.03
+              ],
+              "radius": 0.28
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-slate",
+          "kind": "bridgeZone",
+          "point": [
+            0.3,
+            -0.34,
+            -0.24
+          ],
+          "radius": 0.26
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "Complex Focus Event Video Focus Event",
+  "focusCompetencyId": "event",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "builder": "ps03m3-builder-v1",
+    "sourceDefinitionHashes": {
+      "event-stage-figures": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "video-camera-clapperboard": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762"
+    },
+    "stage": "PS-03.M3"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762",
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-event-video-focus-event",
+  "stateRole": "complex",
+  "stateVersion": "1.0.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": true,
+    "maximumAreaRatio": 2.645,
+    "preferredAreaRatio": 2.6
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": true,
+    "surfaceEnvelope": 2.645,
+    "volumeTolerance": 0.01
+  }
+}

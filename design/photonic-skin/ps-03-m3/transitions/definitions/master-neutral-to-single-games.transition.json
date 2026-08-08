@@ -1,0 +1,69 @@
+{
+  "buildConfigHash": "7478c81082666451d9592efa13769709af4f9dd2ce5df54c7b0c509682ab720a",
+  "componentRoutingPolicy": {
+    "mode": "canonical-group-coherent",
+    "pairSpecific": false
+  },
+  "continuityPolicy": {
+    "endpointAcceleration": 0.0,
+    "endpointVelocity": 0.0,
+    "orientation": "shortest-nlerp",
+    "position": "C2"
+  },
+  "durationPolicy": {
+    "baselineRange": [
+      1.4,
+      1.8
+    ],
+    "seconds": 1.67,
+    "shellDeltaExtension": 0.12
+  },
+  "fromState": "master-neutral",
+  "motionProfile": "quintic-route-v1",
+  "phasePolicy": {
+    "boundaries": [
+      0.0,
+      0.12,
+      0.36,
+      0.68,
+      0.9,
+      1.0
+    ],
+    "profile": [
+      "release",
+      "gather-route",
+      "split-merge",
+      "approach",
+      "settle"
+    ]
+  },
+  "primaryAxis": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m3-builder-v1",
+    "stage": "PS-03.M3"
+  },
+  "reserveTransportPolicy": {
+    "mode": "finite-subsurface-route",
+    "opacityOnly": false
+  },
+  "schemaVersion": "1.0.0",
+  "sourceStateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+  "splitMergePolicy": {
+    "mode": "shell-delta-routed",
+    "preserveProtectedZones": true
+  },
+  "targetStateHash": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+  "toState": "single-games",
+  "transitionId": "master-neutral-to-single-games",
+  "transitionVersion": "1.0.0",
+  "validationPolicy": {
+    "endpointTolerance": 1e-06,
+    "finite": true,
+    "maximumStepFraction": 0.08
+  }
+}

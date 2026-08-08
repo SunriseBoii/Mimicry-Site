@@ -1,0 +1,16 @@
+{
+  "stage": "PS-03.M3",
+  "method": "two clean builds; SHA-256 comparison of state, transition, identity, manifest, Gate A and QA artifacts",
+  "deterministic": true,
+  "fileCount": 351,
+  "firstAggregateSha256": "28d53102494bef0602df3f0b0afe99deeaa9f135140990876919416e419e7450",
+  "secondAggregateSha256": "28d53102494bef0602df3f0b0afe99deeaa9f135140990876919416e419e7450",
+  "differingFiles": [],
+  "firstBuild": "PS-03.M3 built: N=16384, states=154, transitions=18, fingerprint=81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+  "secondBuild": "PS-03.M3 built: N=16384, states=154, transitions=18, fingerprint=81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+  "excluded": [
+    "ps03m3-build-performance.json",
+    "ps03m3-browser-performance.json",
+    "renders"
+  ]
+}

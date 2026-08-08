@@ -1,0 +1,15 @@
+{
+  "defaultComplexMode": "FOCUS",
+  "identityMapping": "canonical master IDs to weighted component samples, sorted independently per state",
+  "modes": [
+    "FOCUS",
+    "GATHER",
+    "DRIVE"
+  ],
+  "normalization": "resolved mass allocation sums to V0",
+  "placement": "compact overlap / directed axis",
+  "schemaVersion": "1.0.0",
+  "selection": "full source for SINGLE; metric-bounded focus plus area-efficient primary echoes for COMPLEX; neutral core for cardinality >=4",
+  "surfaceExposure": "protected centroid occlusion",
+  "thinProtectionModules": 4.0
+}

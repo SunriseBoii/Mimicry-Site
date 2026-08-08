@@ -1,0 +1,187 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "full-focus-primary-echo",
+    "exposurePolicy": "protected-centroid-occlusion-v1",
+    "placement": "source-preserving",
+    "profileVersion": "1.0.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      0.999626,
+      0.999626,
+      0.999626
+    ],
+    "min": [
+      -0.999626,
+      -0.999626,
+      -0.999626
+    ],
+    "size": [
+      1.999252,
+      1.999252,
+      1.999252
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [],
+  "componentSelections": [
+    {
+      "assemblyRole": "primary",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0,
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "componentId": "master-core",
+      "connectivityIntent": "preserve",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "massWeight": 1.0,
+      "minimumMassWeight": 0.000546849734593922,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "source-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 16,
+        "protected": true
+      },
+      "surfaceImportance": 1.35,
+      "targetId": "sphere-master",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "notes": "Neutral master has no preferred lead; +X is the canonical forward.",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "core-transport",
+          "kind": "transportZone",
+          "notes": "Interior volume available for submerged scale transport.",
+          "radius": 0.62,
+          "region": {
+            "params": {
+              "radius": 0.62
+            },
+            "provider": "sphere"
+          }
+        }
+      ]
+    }
+  ],
+  "compositionMode": "MASTER",
+  "displayName": "Master Neutral",
+  "focusCompetencyId": null,
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "human-approved-source",
+    "builder": "ps03m3-builder-v1",
+    "sourceDefinitionHashes": {
+      "sphere-master": "0d446fb340e86c233961a9ac74db4f84264e9ca0153798724e5955e4ce82f21b"
+    },
+    "stage": "PS-03.M3"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "0d446fb340e86c233961a9ac74db4f84264e9ca0153798724e5955e4ce82f21b",
+      "targetId": "sphere-master",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "master-neutral",
+  "stateRole": "master",
+  "stateVersion": "1.0.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": false,
+    "maximumAreaRatio": 2.645,
+    "preferredAreaRatio": 2.6
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": false,
+    "surfaceEnvelope": 2.645,
+    "volumeTolerance": 0.01
+  }
+}

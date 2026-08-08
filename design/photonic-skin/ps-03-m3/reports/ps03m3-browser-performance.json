@@ -1,0 +1,85 @@
+{
+  "stage": "PS-03.M3",
+  "measured": true,
+  "date": "2026-08-08",
+  "environment": "Codex in-app Chromium browser on Windows; WebGL2; Next.js development server",
+  "telemetryMethod": "rolling 750 ms requestAnimationFrame window reported by the isolated lab; representative values after warm-up",
+  "benchmarkState": "representative static, complex and real 1-to-3-shell split scenarios",
+  "fixedIdentityFingerprint": "81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+  "measuredBudgets": [
+    {
+      "budget": 8192,
+      "medianFrameMs": 6.1,
+      "p95FrameMs": 6.7,
+      "fps": 158,
+      "drawCalls": 1,
+      "triangles": 65536,
+      "runtimeMemoryEstimateMiB": 2.38,
+      "scenario": "MASTER -> SINGLE static"
+    },
+    {
+      "budget": 12288,
+      "medianFrameMs": 6.1,
+      "p95FrameMs": 6.6,
+      "fps": 163,
+      "drawCalls": 1,
+      "triangles": 98304,
+      "runtimeMemoryEstimateMiB": 2.69,
+      "scenario": "MASTER -> BRAND_WIDE complex debug"
+    },
+    {
+      "budget": 16384,
+      "medianFrameMs": 6.1,
+      "p95FrameMs": 8.0,
+      "fps": 155,
+      "drawCalls": 1,
+      "triangles": 131072,
+      "runtimeMemoryEstimateMiB": 3.0,
+      "scenario": "SINGLE content -> SINGLE design real 1-to-3-shell split at t=0.308"
+    }
+  ],
+  "estimatedOnlyBudgets": [
+    {
+      "budget": 24576,
+      "stateBufferMiBEach": 0.9375,
+      "transitionBufferMiBEach": 0.515625,
+      "estimatedTwoStatesPlusSevenPaddedFloatTexturesMiB": 5.375,
+      "browserRendered": false
+    },
+    {
+      "budget": 32768,
+      "stateBufferMiBEach": 1.25,
+      "transitionBufferMiBEach": 0.6875,
+      "estimatedTwoStatesPlusSevenPaddedFloatTexturesMiB": 6.0,
+      "browserRendered": false
+    }
+  ],
+  "selection": {
+    "budget": 16384,
+    "reason": "first Gate A candidate that passes every one of the 127 canonical competency combinations plus MASTER; measured browser cost remains within the one-draw-call lab target"
+  },
+  "interactionChecks": {
+    "playPauseScrub": true,
+    "reversePlayback": true,
+    "componentDebug": true,
+    "topCamera": true,
+    "viewport180": true,
+    "viewport96": true,
+    "reducedMotionDisablesPlay": true
+  },
+  "network": {
+    "twoStatePayloadMiB": 1.25,
+    "representativeStatePairLoadMs": 20,
+    "observedStatePairLoadRangeMs": [11, 41]
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 1,
+    "warning": "THREE.Clock deprecation warning emitted by the current Three.js/react-three-fiber dependency path"
+  },
+  "evidence": [
+    "renders/browser-lab-desktop.png",
+    "renders/browser-lab-split-shells.png"
+  ],
+  "caveat": "24k and 32k are analytic capacity estimates, not browser measurements, because Gate A freezes the persistent identity space at the first passing candidate N=16384."
+}
