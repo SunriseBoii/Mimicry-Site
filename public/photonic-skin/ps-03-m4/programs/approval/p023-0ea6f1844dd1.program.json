@@ -1,0 +1,510 @@
+{
+  "bridgeTracks": [
+    {
+      "end": 0.72,
+      "groupIndex": 1,
+      "memberCount": 24,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 2,
+      "memberCount": 24,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 3,
+      "memberCount": 24,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 4,
+      "memberCount": 24,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 5,
+      "memberCount": 23,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 6,
+      "memberCount": 23,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 7,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 8,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 10,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 12,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    }
+  ],
+  "buffers": {
+    "groupTracks": {
+      "byteLength": 832,
+      "recordCount": 13,
+      "recordStride": 64,
+      "sha256": "3e33f86d0289da73c917f29b57acf16ab1271a8871d585ee2f2283c2a829e3a4"
+    },
+    "perId": {
+      "byteLength": 524288,
+      "recordCount": 16384,
+      "recordStride": 32,
+      "sha256": "feb1341fb700020a33b76ba73a83065cb757db19f6823628946ba3bcd2192c3c"
+    }
+  },
+  "byteLayout": {
+    "endianness": "little",
+    "groupTracks": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "sourceCenter",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "targetCenter",
+          "offset": 12
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "routeControl",
+          "offset": 24
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "direction",
+          "offset": 36
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseStart",
+          "offset": 42
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseEnd",
+          "offset": 44
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealStart",
+          "offset": 46
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealEnd",
+          "offset": 48
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeStart",
+          "offset": 50
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeEnd",
+          "offset": 52
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "sourceMacro",
+          "offset": 54
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "targetMacro",
+          "offset": 56
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 58
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "memberCount",
+          "offset": 60
+        },
+        {
+          "components": 2,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 62
+        }
+      ],
+      "recordStride": 64
+    },
+    "perId": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localSource",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localTarget",
+          "offset": 6
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "residual",
+          "offset": 12
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "depth",
+          "offset": 18
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationStart",
+          "offset": 20
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationEnd",
+          "offset": 22
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "scaleBias",
+          "offset": 24
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "groupIndex",
+          "offset": 26
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 28
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "phaseOffset",
+          "offset": 30
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 31
+        }
+      ],
+      "recordStride": 32
+    }
+  },
+  "hashes": {
+    "contentSha256": "bdf019ebf39837dcd8a1e816c20a47d0c1a6f9df4d0d780d7a80571e6d76772e",
+    "groupTracksSha256": "3e33f86d0289da73c917f29b57acf16ab1271a8871d585ee2f2283c2a829e3a4",
+    "motionProfileSha256": "8497c32a25c858540b63ccb6e628a21e239c69e89ec39e1fb619e446a3e340bb",
+    "perIdSha256": "feb1341fb700020a33b76ba73a83065cb757db19f6823628946ba3bcd2192c3c",
+    "requestSha256": "0ea6f1844dd188f82415ab35b2a47b6ba75874b02dd2e57f91b0f061cdbb8032",
+    "sourceRecordsSha256": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "sourceStateSha256": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "targetRecordsSha256": "77af2812048b67239f81d22e3fa257ad478393b0b11d1f2e5ed14cd8ccb3ce26",
+    "targetStateSha256": "77af2812048b67239f81d22e3fa257ad478393b0b11d1f2e5ed14cd8ccb3ce26"
+  },
+  "header": {
+    "activationPolicy": {
+      "bridgePulseMaximum": 0.035,
+      "bridgeThickness": 0.72,
+      "depthRouteFraction": 0.18,
+      "endpointHoldOutsideHandoff": true,
+      "localMorphWidthFraction": 0.12,
+      "minimumGeometricScale": 0.18,
+      "phaseOffsetRange": 0.38,
+      "routeOnlyDuringLocalHandoff": true
+    },
+    "actorTrack": {
+      "centerEnd": [
+        -0.018603412974574463,
+        0.011668257216690847,
+        -0.2153263771020013
+      ],
+      "centerStart": [
+        0.00019211315122363848,
+        -0.00047229951854044216,
+        -0.06702525234063561
+      ],
+      "rotationAxis": [
+        -0.66159919151569,
+        -0.74952027538305,
+        0.02249147784154
+      ],
+      "rotationRadians": 0.045,
+      "sourcePose": {
+        "orientation": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "translationAmplitude": 0.012,
+      "translationAxis": [
+        -0.12532052850994,
+        0.08094803924514,
+        -0.9888084648082
+      ],
+      "window": [
+        0.0,
+        0.11
+      ]
+    },
+    "compilerVersion": "ps03m4-transition-compiler-v2",
+    "deterministicSeed": 2510301113,
+    "directionAxis": [
+      -0.12532052850994,
+      0.08094803924514,
+      -0.9888084648082
+    ],
+    "durationSeconds": 1.18,
+    "groupCount": 13,
+    "identityCount": 16384,
+    "isNoOp": false,
+    "motionProfileId": "directed-plastic-release",
+    "motionProfileVersion": "2.1.0",
+    "phasePolicy": {
+      "basis": "quintic-c2-window-v1",
+      "sequence": [
+        "anticipation",
+        "release",
+        "regroup",
+        "reveal",
+        "approach",
+        "settle",
+        "idle-handoff"
+      ],
+      "windows": {
+        "anticipation": [
+          0.0,
+          0.11
+        ],
+        "approach": [
+          0.62,
+          0.94
+        ],
+        "regroup": [
+          0.24,
+          0.68
+        ],
+        "release": [
+          0.07,
+          0.38
+        ],
+        "reveal": [
+          0.4,
+          0.82
+        ],
+        "settle": [
+          0.86,
+          1.0
+        ]
+      }
+    },
+    "reducedMotion": false,
+    "settlePolicy": {
+      "maximumAmplitudeFraction": 0.018,
+      "window": [
+        0.86,
+        1.0
+      ]
+    },
+    "sourceKind": "frozen-state",
+    "sourceStateId": "single-content",
+    "targetStateId": "complex-gather-content-design-digital-event-games-merch",
+    "triggerMode": "qa",
+    "viewportProfile": "desktop"
+  },
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "programId": "single-content-to-complex-gather-content-design-digital-event-games-merch-qa-desktop-0ea6f1844dd1",
+  "programVersion": "2.0.0",
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m4-transition-compiler-v2",
+    "geometryOnly": true,
+    "pairSpecificBranches": false,
+    "stage": "PS-03.M4",
+    "targetSpecificBranches": false
+  },
+  "routingGraph": [
+    {
+      "groupIndex": 0,
+      "memberCount": 2302,
+      "relation": "preserve",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 1,
+      "memberCount": 288,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 2,
+      "memberCount": 288,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 3,
+      "memberCount": 288,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 4,
+      "memberCount": 288,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1028
+    },
+    {
+      "groupIndex": 5,
+      "memberCount": 287,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1285
+    },
+    {
+      "groupIndex": 6,
+      "memberCount": 287,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1542
+    },
+    {
+      "groupIndex": 7,
+      "memberCount": 1850,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 4097
+    },
+    {
+      "groupIndex": 8,
+      "memberCount": 2225,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 8194
+    },
+    {
+      "groupIndex": 9,
+      "memberCount": 1364,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 12291
+    },
+    {
+      "groupIndex": 10,
+      "memberCount": 1570,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 16388
+    },
+    {
+      "groupIndex": 11,
+      "memberCount": 2110,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 20485
+    },
+    {
+      "groupIndex": 12,
+      "memberCount": 3237,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 24582
+    }
+  ],
+  "schemaVersion": "1.0.0"
+}

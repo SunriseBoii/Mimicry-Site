@@ -1,0 +1,118 @@
+{
+  "policy": "smallest outward/perpendicular Event-only rigid translation resolving all 8 QA cases",
+  "stage": "PS-03.M3.1R",
+  "states": {
+    "complex-focus-content-design-digital-event-merch-focus-content": {
+      "failuresBefore": [
+        "top/desktop/event:figure-right:dust"
+      ],
+      "probeCount": 1,
+      "probes": [
+        {
+          "directionIndex": 0,
+          "failureCount": 0,
+          "failures": [],
+          "magnitude": 0.01,
+          "offset": [
+            0.009128455519676209,
+            -0.004083051979541778,
+            0.0
+          ]
+        }
+      ],
+      "selected": {
+        "directionIndex": 0,
+        "failureCount": 0,
+        "failures": [],
+        "magnitude": 0.01,
+        "offset": [
+          0.009128455519676209,
+          -0.004083051979541778,
+          0.0
+        ]
+      }
+    },
+    "complex-focus-digital-event-games-merch-video-focus-digital": {
+      "failuresBefore": [
+        "canonical/mobile390/event:figure-right:dust"
+      ],
+      "probeCount": 5,
+      "probes": [
+        {
+          "directionIndex": 0,
+          "failureCount": 1,
+          "failures": [
+            "canonical/mobile390/event:figure-right:dust"
+          ],
+          "magnitude": 0.01,
+          "offset": [
+            -0.005225921869277954,
+            0.008525828123092652,
+            0.0
+          ]
+        },
+        {
+          "directionIndex": 1,
+          "failureCount": 1,
+          "failures": [
+            "canonical/mobile390/event:figure-right:dust"
+          ],
+          "magnitude": 0.01,
+          "offset": [
+            0.005225921869277954,
+            -0.008525828123092652,
+            0.0
+          ]
+        },
+        {
+          "directionIndex": 2,
+          "failureCount": 1,
+          "failures": [
+            "canonical/mobile390/event:figure-right:dust"
+          ],
+          "magnitude": 0.01,
+          "offset": [
+            -0.008525828123092652,
+            -0.005225921869277954,
+            0.0
+          ]
+        },
+        {
+          "directionIndex": 3,
+          "failureCount": 1,
+          "failures": [
+            "canonical/mobile390/event:figure-right:dust"
+          ],
+          "magnitude": 0.01,
+          "offset": [
+            0.008525828123092652,
+            0.005225921869277954,
+            0.0
+          ]
+        },
+        {
+          "directionIndex": 0,
+          "failureCount": 0,
+          "failures": [],
+          "magnitude": 0.02,
+          "offset": [
+            -0.010451843738555908,
+            0.017051656246185303,
+            0.0
+          ]
+        }
+      ],
+      "selected": {
+        "directionIndex": 0,
+        "failureCount": 0,
+        "failures": [],
+        "magnitude": 0.02,
+        "offset": [
+          -0.010451843738555908,
+          0.017051656246185303,
+          0.0
+        ]
+      }
+    }
+  }
+}

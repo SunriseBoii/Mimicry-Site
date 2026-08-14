@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "directed-plastic-release",
+  "profileVersion": "2.1.0",
+  "triggerMode": {
+    "default": "route",
+    "supported": ["route", "scroll", "preview", "qa"]
+  },
+  "timingPolicy": {
+    "durationBoundsSeconds": [0.18, 1.35],
+    "variants": {
+      "route": {
+        "desktop": { "durationSeconds": 0.98, "anticipationSeconds": 0.11, "hardCapSeconds": 1.35 },
+        "mobile": { "durationSeconds": 0.78, "anticipationSeconds": 0.08, "hardCapSeconds": 1.1 }
+      },
+      "scroll": {
+        "desktop": { "durationSeconds": 0.98, "anticipationSeconds": 0.0, "responseLambdaPerSecond": 11.0, "scrubDriven": true },
+        "mobile": { "durationSeconds": 0.78, "anticipationSeconds": 0.0, "responseLambdaPerSecond": 14.0, "scrubDriven": true }
+      },
+      "preview": {
+        "desktop": { "durationSeconds": 0.42, "anticipationSeconds": 0.04, "geometryInfluence": 0.35 },
+        "mobile": { "durationSeconds": 0.36, "anticipationSeconds": 0.0, "geometryInfluence": 0.25 }
+      },
+      "qa": {
+        "desktop": { "durationSeconds": 0.98, "anticipationSeconds": 0.11, "hardCapSeconds": 1.35 },
+        "mobile": { "durationSeconds": 0.78, "anticipationSeconds": 0.08, "hardCapSeconds": 1.1 }
+      }
+    }
+  },
+  "phasePolicy": {
+    "sequence": ["anticipation", "release", "regroup", "reveal", "approach", "settle", "idle-handoff"],
+    "windows": {
+      "anticipation": [0.0, 0.11],
+      "release": [0.07, 0.38],
+      "regroup": [0.24, 0.68],
+      "reveal": [0.4, 0.82],
+      "approach": [0.62, 0.94],
+      "settle": [0.86, 1.0]
+    },
+    "spatialDelayFraction": 0.075,
+    "basis": "quintic-c2-window-v1"
+  },
+  "globalPosePolicy": {
+    "mode": "geometry-derived-bounded-actor",
+    "translationAmplitudeFraction": { "desktop": 0.012, "mobile": 0.006 },
+    "rotationRadiansMax": { "desktop": 0.045, "mobile": 0.022 },
+    "cameraMotion": false,
+    "endpointIdentityPose": true
+  },
+  "groupCoherencePolicy": {
+    "mode": "source-target-transition-group-shell-pairs",
+    "centerWeighting": "active-protected-mass",
+    "localSkinBlend": "spatial-narrow-quintic-handoff-v2",
+    "localHandoffSpanFraction": 0.38,
+    "localMorphWidthFraction": 0.12,
+    "routeOnlyDuringLocalHandoff": true,
+    "endpointHoldOutsideHandoff": true,
+    "denseAssignment": false
+  },
+  "routeFieldPolicy": {
+    "mode": "geometry-principal-axis-directed",
+    "directionSource": "request-or-endpoint-principal-axis",
+    "maximumMacroRoute": 0.24,
+    "baseMacroRoute": 0.025,
+    "distanceFactor": 0.075,
+    "maximumResidual": 0.032,
+    "residualDistanceFraction": 0.018,
+    "mobileAmplitudeFactor": 0.68,
+    "previewAmplitudeFactor": 0.35,
+    "pairSpecificOverrides": false
+  },
+  "splitMergePolicy": {
+    "mode": "shell-graph-staging",
+    "bridgeWindow": [0.3, 0.72],
+    "bridgePeak": 0.5,
+    "maximumBridgeFractionPerGroup": 0.08,
+    "maximumBridgeIdsPerGroup": 96,
+    "bridgeThickness": 0.72,
+    "protectedIdsEligible": false,
+    "opacityOnly": false
+  },
+  "reserveTransportPolicy": {
+    "mode": "finite-normal-depth",
+    "emergenceWindow": [0.18, 0.72],
+    "immersionWindow": [0.08, 0.78],
+    "depthRouteFraction": 0.18,
+    "spatialOrderingFraction": 0.1,
+    "minimumGeometricScale": 0.18,
+    "opacityOnly": false
+  },
+  "featureProtectionPolicy": {
+    "sourceReleaseDelay": 0.055,
+    "targetRevealAdvance": 0.05,
+    "routeAmplitudeFactor": 0.58,
+    "flags": ["feature", "silhouette"]
+  },
+  "orientationPolicy": {
+    "mode": "shortest-path-quaternion-slerp",
+    "normalizeEverySample": true,
+    "normalSource": "transported-orientation",
+    "allowBasisSpin": false
+  },
+  "scalePolicy": {
+    "mode": "endpoint-exact-quintic",
+    "activeGlobalMinimumFraction": 0.82,
+    "bridgePulseMaximum": 0.035,
+    "opacityMasking": false
+  },
+  "settlePolicy": {
+    "mode": "single-c2-material-independent-pulse",
+    "maximumAmplitudeFraction": { "desktop": 0.018, "mobile": 0.008 },
+    "cycles": 1,
+    "driftAfterEnd": false
+  },
+  "retargetPolicy": {
+    "mode": "transient-snapshot",
+    "positionBasis": "quintic-hermite-initial-velocity-v1",
+    "preserveVelocity": true,
+    "preserveOrientation": true,
+    "preserveScale": true,
+    "generationWins": "latest"
+  },
+  "lodPolicy": {
+    "mode": "strict-persistent-id-prefix",
+    "preserveGroupPhase": true,
+    "renumberIds": false,
+    "probeCount": 512
+  },
+  "reducedMotionPolicy": {
+    "mode": "target-next-render-step",
+    "anticipation": false,
+    "splitMergeAnimation": false,
+    "inertia": false,
+    "actorPose": false,
+    "idle": false,
+    "cloudCrossfade": false
+  },
+  "validationPolicy": {
+    "endpointPositionTolerance": 1e-7,
+    "endpointScaleTolerance": 1e-6,
+    "quaternionNormTolerance": 0.0002,
+    "finiteRequired": true,
+    "c2PhaseWindows": true,
+    "identityCount": 16384,
+    "identitySpaceVersion": "ps03m3-identity-v1"
+  },
+  "provenance": {
+    "stage": "PS-03.M4",
+    "grammar": "Directed Photonic Release geometry-only",
+    "colorMaterialStage": "PS-04",
+    "targetSpecificBranches": false,
+    "approvalStatus": "requires-human-approval"
+  }
+}

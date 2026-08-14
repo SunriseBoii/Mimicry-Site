@@ -1,0 +1,618 @@
+{
+  "competencyOrder": [
+    "content",
+    "design",
+    "digital",
+    "event",
+    "games",
+    "merch",
+    "video"
+  ],
+  "descriptors": [
+    {
+      "allowedScale": [
+        0.34,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -12.0,
+        12.0
+      ],
+      "aspectRatio": 2.477,
+      "assemblyEmblem": [
+        "book-body"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "content",
+      "depthBudget": 0.42,
+      "flatness": 0.68,
+      "forbiddenOrientations": [
+        "page plane edge-on",
+        "spine above page blocks",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 180,
+        "mobile390": 90,
+        "silhouette180": 24,
+        "silhouette96": 8
+      },
+      "preferredCanonicalThreeQuarter": "balanced-front",
+      "profileComponents": {
+        "desktop": [
+          "book-body"
+        ],
+        "mobile390": [
+          "book-body"
+        ],
+        "silhouette180": [
+          "book-body"
+        ],
+        "silhouette96": [
+          "book-body"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 50896.16,
+        "canonical": 47213.03
+      },
+      "protectedRecognizabilityFeatures": [
+        "open-page valley",
+        "spine",
+        "paired page blocks"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "book-body"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-content"
+    },
+    {
+      "allowedScale": [
+        0.36,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -14.0,
+        14.0
+      ],
+      "aspectRatio": 1.841,
+      "assemblyEmblem": [
+        "palette-board",
+        "brush-upper",
+        "brush-lower"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "design",
+      "depthBudget": 0.5,
+      "flatness": 0.46,
+      "forbiddenOrientations": [
+        "palette edge-on",
+        "brushes detached from board",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 180,
+        "mobile390": 90,
+        "silhouette180": 24,
+        "silhouette96": 8
+      },
+      "preferredCanonicalThreeQuarter": "front-right",
+      "profileComponents": {
+        "desktop": [
+          "palette-board",
+          "brush-upper",
+          "brush-lower"
+        ],
+        "mobile390": [
+          "palette-board",
+          "brush-upper",
+          "brush-lower"
+        ],
+        "silhouette180": [
+          "palette-board"
+        ],
+        "silhouette96": [
+          "palette-board"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 53413.17,
+        "canonical": 49033.96
+      },
+      "protectedRecognizabilityFeatures": [
+        "palette hole",
+        "board perimeter",
+        "crossed brush gesture"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "palette-board",
+          "brush-upper",
+          "brush-lower"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-design"
+    },
+    {
+      "allowedScale": [
+        0.34,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -10.0,
+        10.0
+      ],
+      "aspectRatio": 2.18,
+      "assemblyEmblem": [
+        "laptop-base",
+        "laptop-screen",
+        "smartphone"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "digital",
+      "depthBudget": 0.48,
+      "flatness": 0.74,
+      "forbiddenOrientations": [
+        "screen edge-on",
+        "closed-book silhouette",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 190,
+        "mobile390": 96,
+        "silhouette180": 28,
+        "silhouette96": 9
+      },
+      "preferredCanonicalThreeQuarter": "front-left",
+      "profileComponents": {
+        "desktop": [
+          "laptop-base",
+          "laptop-screen",
+          "smartphone"
+        ],
+        "mobile390": [
+          "laptop-base",
+          "laptop-screen",
+          "smartphone"
+        ],
+        "silhouette180": [
+          "laptop-base",
+          "laptop-screen"
+        ],
+        "silhouette96": [
+          "laptop-base",
+          "laptop-screen"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 86159.29,
+        "canonical": 81082.6
+      },
+      "protectedRecognizabilityFeatures": [
+        "screen-base hinge",
+        "open screen",
+        "phone slab"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "laptop-base",
+          "laptop-screen",
+          "smartphone"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-digital"
+    },
+    {
+      "allowedScale": [
+        0.38,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -8.0,
+        8.0
+      ],
+      "aspectRatio": 1.522,
+      "assemblyEmblem": [
+        "stage-deck",
+        "portal-arch",
+        "figure-left",
+        "figure-centre",
+        "figure-right"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "event",
+      "depthBudget": 0.58,
+      "flatness": 0.24,
+      "forbiddenOrientations": [
+        "portal below deck",
+        "stage edge-on",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 190,
+        "mobile390": 96,
+        "silhouette180": 28,
+        "silhouette96": 9
+      },
+      "preferredCanonicalThreeQuarter": "front-left",
+      "profileComponents": {
+        "desktop": [
+          "stage-deck",
+          "portal-arch",
+          "figure-centre",
+          "figure-right"
+        ],
+        "mobile390": [
+          "stage-deck",
+          "portal-arch",
+          "figure-centre",
+          "figure-right"
+        ],
+        "silhouette180": [
+          "stage-deck",
+          "portal-arch"
+        ],
+        "silhouette96": [
+          "stage-deck",
+          "portal-arch"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 60659.28,
+        "canonical": 58908.68
+      },
+      "protectedRecognizabilityFeatures": [
+        "raised portal",
+        "stage deck",
+        "audience figures"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "stage-deck",
+          "portal-arch",
+          "figure-left",
+          "figure-centre",
+          "figure-right"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-event"
+    },
+    {
+      "allowedScale": [
+        0.36,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -12.0,
+        12.0
+      ],
+      "aspectRatio": 2.438,
+      "assemblyEmblem": [
+        "gamepad",
+        "queen"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "games",
+      "depthBudget": 0.52,
+      "flatness": 0.4,
+      "forbiddenOrientations": [
+        "grips above controller",
+        "controller edge-on",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 180,
+        "mobile390": 90,
+        "silhouette180": 24,
+        "silhouette96": 8
+      },
+      "preferredCanonicalThreeQuarter": "front-right",
+      "profileComponents": {
+        "desktop": [
+          "gamepad",
+          "queen"
+        ],
+        "mobile390": [
+          "gamepad",
+          "queen"
+        ],
+        "silhouette180": [
+          "gamepad"
+        ],
+        "silhouette96": [
+          "gamepad"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 56177.83,
+        "canonical": 55558.67
+      },
+      "protectedRecognizabilityFeatures": [
+        "gamepad grips",
+        "controller bridge",
+        "queen crown"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "gamepad",
+          "queen"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-games"
+    },
+    {
+      "allowedScale": [
+        0.34,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -10.0,
+        10.0
+      ],
+      "aspectRatio": 3.371,
+      "assemblyEmblem": [
+        "tee",
+        "thermos",
+        "open-box"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "merch",
+      "depthBudget": 0.62,
+      "flatness": 0.38,
+      "forbiddenOrientations": [
+        "tee inverted",
+        "box closed by view",
+        "thermos horizontal"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 190,
+        "mobile390": 96,
+        "silhouette180": 28,
+        "silhouette96": 9
+      },
+      "preferredCanonicalThreeQuarter": "front-right",
+      "profileComponents": {
+        "desktop": [
+          "tee",
+          "thermos",
+          "open-box"
+        ],
+        "mobile390": [
+          "tee",
+          "thermos",
+          "open-box"
+        ],
+        "silhouette180": [
+          "tee"
+        ],
+        "silhouette96": [
+          "tee"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 66137.8,
+        "canonical": 62243.97
+      },
+      "protectedRecognizabilityFeatures": [
+        "tee shoulders",
+        "thermos cap",
+        "open box cavity"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "tee",
+          "thermos",
+          "open-box"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-merch"
+    },
+    {
+      "allowedScale": [
+        0.34,
+        1.35
+      ],
+      "allowedTiltDegrees": [
+        -12.0,
+        12.0
+      ],
+      "aspectRatio": 4.095,
+      "assemblyEmblem": [
+        "camera",
+        "clapperboard"
+      ],
+      "canonicalEulerDegrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "competencyId": "video",
+      "depthBudget": 0.58,
+      "flatness": 0.7,
+      "forbiddenOrientations": [
+        "lens away from canonical",
+        "camera edge-on",
+        "upside-down"
+      ],
+      "minimumProjectedFootprintPx": {
+        "desktop": 190,
+        "mobile390": 96,
+        "silhouette180": 28,
+        "silhouette96": 9
+      },
+      "preferredCanonicalThreeQuarter": "front-left",
+      "profileComponents": {
+        "desktop": [
+          "camera",
+          "clapperboard"
+        ],
+        "mobile390": [
+          "camera",
+          "clapperboard"
+        ],
+        "silhouette180": [
+          "camera"
+        ],
+        "silhouette96": [
+          "camera"
+        ]
+      },
+      "projectedAreaCalibration": {
+        "alternate": 46494.33,
+        "canonical": 44516.02
+      },
+      "protectedRecognizabilityFeatures": [
+        "camera lens",
+        "camera body",
+        "clapper hinge"
+      ],
+      "reflectionAllowed": false,
+      "rigidComponentGroups": [
+        [
+          "camera",
+          "clapperboard"
+        ]
+      ],
+      "semanticForward": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "semanticPivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semanticUp": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "singleStateRef": "single-video"
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "stage": "PS-03.M3.1"
+}

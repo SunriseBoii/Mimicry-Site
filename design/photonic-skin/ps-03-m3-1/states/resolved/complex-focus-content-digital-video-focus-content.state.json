@@ -1,0 +1,611 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "descriptor-assembly-emblem",
+    "exposurePolicy": "source-surface-preserving-no-master-core",
+    "placement": "semantic-focus-solver-v1",
+    "profileVersion": "3.1.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      3.5813537000187994,
+      3.2342348526887688,
+      1.879944034954284
+    ],
+    "min": [
+      -2.7538138331389126,
+      -2.3775717614291136,
+      -1.3980415087619236
+    ],
+    "size": [
+      6.335167533157712,
+      5.611806614117882,
+      3.2779855437162073
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "content",
+    "digital",
+    "video"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8387168919680656,
+        "translate": [
+          -1.4065619216483096,
+          -1.103196799398508,
+          0.19909445001953233
+        ]
+      },
+      "componentId": "book-body",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.5899920636484142,
+      "minimumMassWeight": 0.0,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "content-open-book",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "notes": "Spine direction is the lead axis of the form.",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "spine-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge must stay solid: it carries the whole read of the form.",
+          "region": {
+            "params": {
+              "a": [
+                0.0,
+                -0.86,
+                -0.05
+              ],
+              "b": [
+                0.0,
+                0.86,
+                -0.05
+              ],
+              "radius": 0.26
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "spine-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "a": [
+                0.0,
+                -0.8,
+                -0.05
+              ],
+              "b": [
+                0.0,
+                0.8,
+                -0.05
+              ],
+              "radius": 0.16
+            },
+            "provider": "capsule"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.4897567660424765,
+        "translate": [
+          1.5087825221014226,
+          2.1763070001912674,
+          1.3363860188917434
+        ]
+      },
+      "componentId": "laptop-base",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.06309285689427079,
+      "minimumMassWeight": 0.044640076503398726,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-1",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge line carries the whole open-laptop read.",
+          "region": {
+            "params": {
+              "a": [
+                -0.74,
+                0.55,
+                0.09
+              ],
+              "b": [
+                0.74,
+                0.55,
+                0.09
+              ],
+              "radius": 0.18
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-phone",
+          "kind": "bridgeZone",
+          "point": [
+            0.8,
+            -0.16,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.4897567660424765,
+        "translate": [
+          1.5087825221014226,
+          2.1763070001912674,
+          1.3363860188917434
+        ]
+      },
+      "componentId": "laptop-screen",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.04122971956319318,
+      "minimumMassWeight": 0.028193732528462353,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-2",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-neck",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.4897567660424765,
+        "translate": [
+          1.5087825221014226,
+          2.1763070001912674,
+          1.3363860188917434
+        ]
+      },
+      "componentId": "smartphone",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.013151309077795848,
+      "minimumMassWeight": 0.007048433132115588,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-3",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-laptop",
+          "kind": "bridgeZone",
+          "point": [
+            -0.3,
+            0.1,
+            0.0
+          ],
+          "radius": 0.2
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6638329547376107,
+        "translate": [
+          2.2309123456994855,
+          1.3510157732220525,
+          -0.9381971188526785
+        ]
+      },
+      "componentId": "camera",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.2012201234496852,
+      "minimumMassWeight": 0.15211770642448952,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-4",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "lens-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "a": [
+                0.46,
+                0.0,
+                0.03
+              ],
+              "b": [
+                0.9,
+                0.0,
+                0.03
+              ],
+              "radius": 0.28
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-slate",
+          "kind": "bridgeZone",
+          "point": [
+            0.3,
+            -0.34,
+            -0.24
+          ],
+          "radius": 0.26
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6638329547376107,
+        "translate": [
+          2.2309123456994855,
+          1.3510157732220525,
+          -0.9381971188526785
+        ]
+      },
+      "componentId": "clapperboard",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.09131392736664078,
+      "minimumMassWeight": 0.05265612914693868,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-5",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.42,
+            0.09
+          ],
+          "radius": 0.14
+        },
+        {
+          "anchorId": "toward-camera",
+          "kind": "bridgeZone",
+          "point": [
+            -0.52,
+            0.0,
+            -0.02
+          ],
+          "radius": 0.24
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "COMPLEX / Focus / Content + Digital + Video / Lead: Content",
+  "focusCompetencyId": "content",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0-with-presentation-frame",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "baselineContentHash": "56c36e0d720f5e272823aab553d46c112529a2522bf81e4be8f7926a0cbd9161",
+    "baselineDefinitionHash": "ad120d57eb1cba01cff29fc40f4e762fd04d1e5d4fe7dcc59bd8b9bc8123eec7",
+    "baselineStateId": "complex-focus-content-digital-video-focus-content",
+    "builder": "ps03m31-presentation-builder-v1",
+    "sourceDefinitionHashes": {
+      "content-open-book": "5f19dc0562c2845b9864e862a7a8482309bd95c0b7169d63f0442b3c991af6e9",
+      "digital-laptop-phone": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "video-camera-clapperboard": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762"
+    },
+    "stage": "PS-03.M3.1"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack-hidden"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "5f19dc0562c2845b9864e862a7a8482309bd95c0b7169d63f0442b3c991af6e9",
+      "targetId": "content-open-book",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762",
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-content-digital-video-focus-content",
+  "stateRole": "complex",
+  "stateVersion": "3.1.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": false,
+    "maximumAreaRatio": 8.0,
+    "preferredAreaRatio": 6.0
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": false,
+    "surfaceEnvelope": 8.0,
+    "volumeTolerance": 0.01
+  }
+}

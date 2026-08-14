@@ -1,0 +1,160 @@
+{
+  "baselineStateCount": 154,
+  "counts": [
+    {
+      "cardinality": 7,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "brand_wide"
+    },
+    {
+      "cardinality": 7,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "brand_wide"
+    },
+    {
+      "cardinality": 2,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 3,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 4,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 5,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 6,
+      "compositionMode": "DRIVE",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 2,
+      "compositionMode": "FOCUS",
+      "count": 22,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 3,
+      "compositionMode": "FOCUS",
+      "count": 37,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 4,
+      "compositionMode": "FOCUS",
+      "count": 38,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 5,
+      "compositionMode": "FOCUS",
+      "count": 25,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 6,
+      "compositionMode": "FOCUS",
+      "count": 12,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 2,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 3,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 4,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 5,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 6,
+      "compositionMode": "GATHER",
+      "count": 1,
+      "stateRole": "complex"
+    },
+    {
+      "cardinality": 0,
+      "compositionMode": "MASTER",
+      "count": 1,
+      "stateRole": "master"
+    },
+    {
+      "cardinality": 1,
+      "compositionMode": "SINGLE",
+      "count": 7,
+      "stateRole": "single"
+    }
+  ],
+  "descriptorHash": "b6e38914b4cec8577d8842d49690a7941a1a4978ab7624308882780290d8b952",
+  "deterministicFingerprint": "21a78652d529eb0b1d34765aad42f0ae8379aa3f7fb9d3ec5af698548464d6e5",
+  "frozenContracts": {
+    "m3Fingerprint": "81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+    "m3IdentityOriginSha256": "be43f82dd46fb7f0327aacc62d30980c9a32c215eeedf9c1b6a872ccf3cddda6",
+    "m4AggregateContentHash": "8ebb908374f02801f0b837e2c827a018f12ebbeb8761bbd7d1f9ea5c402497c9",
+    "m4FrozenM3": {
+      "deterministicAggregateSha256": "28d53102494bef0602df3f0b0afe99deeaa9f135140990876919416e419e7450",
+      "deterministicFingerprint": "81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+      "identityCount": 16384,
+      "identitySpaceVersion": "ps03m3-identity-v1",
+      "manifestPath": "/photonic-skin/ps-03-m3/manifest.json",
+      "manifestSha256": "35e60cf93875df95021249cc26ef3bdcbae6bcb03eac4af650660537858bcda8",
+      "stateBuffersCopiedIntoM4": false,
+      "stateCount": 154,
+      "stateRecordStride": 40
+    }
+  },
+  "m31StateCount": 154,
+  "masterCoreCause": {
+    "builderRule": "baseSource=master for cardinality >= 4; master-core appended as anchor",
+    "confirmed": true,
+    "m31Fix": "no master source or component is selected in any multi-competency endpoint",
+    "shares": {
+      "4": 0.18,
+      "5": 0.36,
+      "6": 0.46,
+      "7": 0.46
+    }
+  },
+  "singleContentHashes": {
+    "single-content": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "single-design": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f",
+    "single-digital": "22492a97afb03cfb26ce2a6151ae2bc418b8ec33b5958ad1e777b81ec3af8f79",
+    "single-event": "ca3b14bc0bf5b91c13f6288809783db9948f041dfb300bd9aa12f652c5a14763",
+    "single-games": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+    "single-merch": "de23b15eecf3ecb9e5a885bd67c2035375fca80060c675806bffe2d9f1deca53",
+    "single-video": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b"
+  },
+  "stage": "PS-03.M3.1",
+  "wallSeconds": 47.75802870001644
+}

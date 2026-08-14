@@ -1,0 +1,51 @@
+{
+  "algorithm": "sha256(sorted relative path + NUL + bytes + NUL)",
+  "hash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+  "files": [
+    {
+      "path": "app/visual-lab/photonic-skin-m4-1r/M41Lab.tsx",
+      "bytes": 40622,
+      "sha256": "7c5027998da9779cbf720ad3c8da7421696c3e1110c21b4bb24ceb7fa589e1d7"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-m4-1r/m41r-lab.module.css",
+      "bytes": 7507,
+      "sha256": "88ae4d0ba175e835743bc4cfb4b24370375f214cd49544b9fd9173a966ccea25"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-m4-1r/M41Scene.tsx",
+      "bytes": 54399,
+      "sha256": "6976d5d6740eb5f24512599fe2ad5daaff0626ea91bf0fe6d06e1b8fb6e6f9eb"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-m4-1r/page.tsx",
+      "bytes": 294,
+      "sha256": "b346a73ab56d4c8ab960e65fc69950b43a25af560fbcf5ba0cb284749991db9a"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-m4-1r/photonic-presentation.ts",
+      "bytes": 6888,
+      "sha256": "985557667bb5d1a7997bcf34b1f78794610d46062b0ea5a8cbedd16c865fc2f0"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1r/scripts/build-visual-boards.py",
+      "bytes": 9821,
+      "sha256": "b5ae942ea4e4e02990a7db35a0eb16463b17f393ada98e6ff05cba08e50e9989"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1r/scripts/finalize-checkpoint.ts",
+      "bytes": 20898,
+      "sha256": "1b4a6c88125468f42eace8a149f2e6b4fec858d2188577ea112da5f2d17bca6f"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1r/scripts/qa-presentation.ts",
+      "bytes": 20971,
+      "sha256": "5648cf1e2f392fbd8592c82b3588838d2d7b2bd32d28063aa10e758f31555186"
+    },
+    {
+      "path": "tests/photonic-m41r-presentation.test.ts",
+      "bytes": 13839,
+      "sha256": "2b7fade6d9efdf96bfccea206776ce4eaa8c1027ee0dc67b3e3013529aaa1f5d"
+    }
+  ]
+}

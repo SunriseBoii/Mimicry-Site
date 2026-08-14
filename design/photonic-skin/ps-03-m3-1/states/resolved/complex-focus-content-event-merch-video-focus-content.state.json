@@ -1,0 +1,957 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "descriptor-assembly-emblem",
+    "exposurePolicy": "source-surface-preserving-no-master-core",
+    "placement": "semantic-focus-solver-v1",
+    "profileVersion": "3.1.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      3.3192064866911943,
+      2.7650792936364352,
+      2.910708858988361
+    ],
+    "min": [
+      -2.92011544923613,
+      -2.536413733748045,
+      -2.3919728201475854
+    ],
+    "size": [
+      6.239321935927324,
+      5.30149302738448,
+      5.302681679135946
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "content",
+    "event",
+    "merch",
+    "video"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.7783020954986684,
+        "translate": [
+          -1.6699093356842318,
+          -1.3538350675761213,
+          0.16754825544988322
+        ]
+      },
+      "componentId": "book-body",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.4714597257478028,
+      "minimumMassWeight": 0.0,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "content-open-book",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "notes": "Spine direction is the lead axis of the form.",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "spine-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge must stay solid: it carries the whole read of the form.",
+          "region": {
+            "params": {
+              "a": [
+                0.0,
+                -0.86,
+                -0.05
+              ],
+              "b": [
+                0.0,
+                0.86,
+                -0.05
+              ],
+              "radius": 0.26
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "spine-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "a": [
+                0.0,
+                -0.8,
+                -0.05
+              ],
+              "b": [
+                0.0,
+                0.8,
+                -0.05
+              ],
+              "radius": 0.16
+            },
+            "provider": "capsule"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5374048272976116,
+        "translate": [
+          0.711806801469202,
+          2.0964917983761673,
+          2.300348639360962
+        ]
+      },
+      "componentId": "stage-deck",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.09313437750532069,
+      "minimumMassWeight": 0.0682900398462753,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-1",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "deck-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "edgeRadius": 0.05,
+              "radii": [
+                0.9,
+                0.6
+              ],
+              "thickness": 0.14
+            },
+            "provider": "rounded_plate"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5374048272976116,
+        "translate": [
+          0.711806801469202,
+          2.0964917983761673,
+          2.300348639360962
+        ]
+      },
+      "componentId": "portal-arch",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.03512268286359608,
+      "minimumMassWeight": 0.027936834482567167,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-2",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "opening-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                -0.27
+              ],
+              "half": [
+                0.56,
+                0.36,
+                0.56
+              ],
+              "radius": 0.3
+            },
+            "provider": "rounded_box"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5374048272976116,
+        "translate": [
+          0.711806801469202,
+          2.0964917983761673,
+          2.300348639360962
+        ]
+      },
+      "componentId": "figure-left",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.008703364737475842,
+      "minimumMassWeight": 0.003104092720285241,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-3",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5374048272976116,
+        "translate": [
+          0.711806801469202,
+          2.0964917983761673,
+          2.300348639360962
+        ]
+      },
+      "componentId": "figure-centre",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.011074081409119892,
+      "minimumMassWeight": 0.003104092720285241,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-4",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5374048272976116,
+        "translate": [
+          0.711806801469202,
+          2.0964917983761673,
+          2.300348639360962
+        ]
+      },
+      "componentId": "figure-right",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.0071701294987495294,
+      "minimumMassWeight": 0.003104092720285241,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-5",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5187211327174218,
+        "translate": [
+          1.3889237375117678,
+          1.3226438714703779,
+          0.16754825544988322
+        ]
+      },
+      "componentId": "tee",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.058392841002017776,
+      "minimumMassWeight": 0.039080477002326044,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-6",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-thermos",
+          "kind": "bridgeZone",
+          "point": [
+            0.44,
+            0.34,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5187211327174218,
+        "translate": [
+          1.3889237375117678,
+          1.3226438714703779,
+          0.16754825544988322
+        ]
+      },
+      "componentId": "thermos",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.01825437524286075,
+      "minimumMassWeight": 0.011165850572093154,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-7",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-box",
+          "kind": "bridgeZone",
+          "point": [
+            0.14,
+            -0.2,
+            -0.3
+          ],
+          "radius": 0.22
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5187211327174218,
+        "translate": [
+          1.3889237375117678,
+          1.3226438714703779,
+          0.16754825544988322
+        ]
+      },
+      "componentId": "open-box",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.0629259159062859,
+      "minimumMassWeight": 0.044663402288372615,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-8",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "cavity-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                0.1
+              ],
+              "half": [
+                0.34,
+                0.34,
+                0.18
+              ],
+              "radius": 0.05
+            },
+            "provider": "rounded_box"
+          }
+        },
+        {
+          "anchorId": "toward-tee",
+          "kind": "bridgeZone",
+          "point": [
+            -0.46,
+            0.3,
+            -0.1
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6160154692020047,
+        "translate": [
+          2.0660406735543333,
+          0.5487959445645885,
+          -1.9652521284611957
+        ]
+      },
+      "componentId": "camera",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.16079400056652374,
+      "minimumMassWeight": 0.1215565031651208,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-3-shell-9",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "lens-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "a": [
+                0.46,
+                0.0,
+                0.03
+              ],
+              "b": [
+                0.9,
+                0.0,
+                0.03
+              ],
+              "radius": 0.28
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-slate",
+          "kind": "bridgeZone",
+          "point": [
+            0.3,
+            -0.34,
+            -0.24
+          ],
+          "radius": 0.26
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6160154692020047,
+        "translate": [
+          2.0660406735543333,
+          0.5487959445645885,
+          -1.9652521284611957
+        ]
+      },
+      "componentId": "clapperboard",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.07296850552024703,
+      "minimumMassWeight": 0.04207725109561874,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-3-shell-10",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.42,
+            0.09
+          ],
+          "radius": 0.14
+        },
+        {
+          "anchorId": "toward-camera",
+          "kind": "bridgeZone",
+          "point": [
+            -0.52,
+            0.0,
+            -0.02
+          ],
+          "radius": 0.24
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "COMPLEX / Focus / Content + Event + Merch + Video / Lead: Content",
+  "focusCompetencyId": "content",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0-with-presentation-frame",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "baselineContentHash": "94f855b1946e49f07a6bcce1f98b9389718f3511e33b4a40cc978a19af2ffc28",
+    "baselineDefinitionHash": "48ac4a1e141db11f34c9fd9906eef00ab36878e429cae29cbcea101d2c610f2f",
+    "baselineStateId": "complex-focus-content-event-merch-video-focus-content",
+    "builder": "ps03m31-presentation-builder-v1",
+    "sourceDefinitionHashes": {
+      "content-open-book": "5f19dc0562c2845b9864e862a7a8482309bd95c0b7169d63f0442b3c991af6e9",
+      "event-stage-figures": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "merch-tee-thermos-box": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9",
+      "video-camera-clapperboard": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762"
+    },
+    "stage": "PS-03.M3.1"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack-hidden"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "5f19dc0562c2845b9864e862a7a8482309bd95c0b7169d63f0442b3c991af6e9",
+      "targetId": "content-open-book",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9",
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "435b9d3030fff9f6a2c65ec3b2eb7cee570966873f85bab0f83940732045c762",
+      "targetId": "video-camera-clapperboard",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-content-event-merch-video-focus-content",
+  "stateRole": "complex",
+  "stateVersion": "3.1.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": false,
+    "maximumAreaRatio": 8.0,
+    "preferredAreaRatio": 6.0
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": false,
+    "surfaceEnvelope": 8.0,
+    "volumeTolerance": 0.01
+  }
+}

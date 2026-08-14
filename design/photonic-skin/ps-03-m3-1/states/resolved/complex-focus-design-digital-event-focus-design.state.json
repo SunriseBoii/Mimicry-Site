@@ -1,0 +1,940 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "descriptor-assembly-emblem",
+    "exposurePolicy": "source-surface-preserving-no-master-core",
+    "placement": "semantic-focus-solver-v1",
+    "profileVersion": "3.1.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      3.1330904758365055,
+      2.6715576785308635,
+      2.0235607385968652
+    ],
+    "min": [
+      -2.6074966350803037,
+      -1.9080732178214388,
+      -1.9065127563433597
+    ],
+    "size": [
+      5.74058711091681,
+      4.5796308963523025,
+      3.930073494940225
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "design",
+    "digital",
+    "event"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8615794583926776,
+        "translate": [
+          -0.9935411914873037,
+          -0.7934685504058332,
+          0.11844681700769936
+        ]
+      },
+      "componentId": "palette-board",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.532802236109119,
+      "minimumMassWeight": 0.38374016551144247,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hole-protected",
+          "kind": "protectedZone",
+          "notes": "A compiler must not close the hole while the board still reads as a palette.",
+          "region": {
+            "params": {
+              "a": [
+                0.6,
+                -0.28,
+                -0.6
+              ],
+              "b": [
+                0.6,
+                -0.28,
+                0.6
+              ],
+              "radius": 0.3
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-brushes",
+          "kind": "bridgeZone",
+          "point": [
+            -0.2,
+            0.52,
+            0.16
+          ],
+          "radius": 0.26
+        }
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8615794583926776,
+        "translate": [
+          -0.9935411914873037,
+          -0.7934685504058332,
+          0.11844681700769936
+        ]
+      },
+      "componentId": "brush-upper",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.059863654366727914,
+      "minimumMassWeight": 0.031978347125953537,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-1",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "handle-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "radius": 0.12
+        },
+        {
+          "anchorId": "toward-board",
+          "kind": "bridgeZone",
+          "point": [
+            -0.1,
+            -0.3,
+            -0.32
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.8615794583926776,
+        "translate": [
+          -0.9935411914873037,
+          -0.7934685504058332,
+          0.11844681700769936
+        ]
+      },
+      "componentId": "brush-lower",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.04690105204322383,
+      "minimumMassWeight": 0.02558267770076283,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-2",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "handle-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "radius": 0.12
+        },
+        {
+          "anchorId": "toward-board",
+          "kind": "bridgeZone",
+          "point": [
+            -0.1,
+            -0.24,
+            -0.1
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5140554863879326,
+        "translate": [
+          1.2349466685456776,
+          2.011428699186422,
+          1.4530347148627591
+        ]
+      },
+      "componentId": "laptop-base",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.072957317145711,
+      "minimumMassWeight": 0.05161947610527369,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-3",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge line carries the whole open-laptop read.",
+          "region": {
+            "params": {
+              "a": [
+                -0.74,
+                0.55,
+                0.09
+              ],
+              "b": [
+                0.74,
+                0.55,
+                0.09
+              ],
+              "radius": 0.18
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-phone",
+          "kind": "bridgeZone",
+          "point": [
+            0.8,
+            -0.16,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5140554863879326,
+        "translate": [
+          1.2349466685456776,
+          2.011428699186422,
+          1.4530347148627591
+        ]
+      },
+      "componentId": "laptop-screen",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.0476759156910797,
+      "minimumMassWeight": 0.03260177438227812,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-4",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-neck",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5140554863879326,
+        "translate": [
+          1.2349466685456776,
+          2.011428699186422,
+          1.4530347148627591
+        ]
+      },
+      "componentId": "smartphone",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.015207493756034796,
+      "minimumMassWeight": 0.00815044359556953,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-5",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-laptop",
+          "kind": "bridgeZone",
+          "point": [
+            -0.3,
+            0.1,
+            0.0
+          ],
+          "radius": 0.2
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6078526403106298,
+        "translate": [
+          2.082350931121788,
+          1.0429666848137242,
+          -1.2161410808473603
+        ]
+      },
+      "componentId": "stage-deck",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.13477217863395793,
+      "minimumMassWeight": 0.09882062559076561,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-6",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "deck-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "edgeRadius": 0.05,
+              "radii": [
+                0.9,
+                0.6
+              ],
+              "thickness": 0.14
+            },
+            "provider": "rounded_plate"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6078526403106298,
+        "translate": [
+          2.082350931121788,
+          1.0429666848137242,
+          -1.2161410808473603
+        ]
+      },
+      "componentId": "portal-arch",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.05082506176332148,
+      "minimumMassWeight": 0.040426619559858656,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-7",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "opening-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                -0.27
+              ],
+              "half": [
+                0.56,
+                0.36,
+                0.56
+              ],
+              "radius": 0.3
+            },
+            "provider": "rounded_box"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6078526403106298,
+        "translate": [
+          2.082350931121788,
+          1.0429666848137242,
+          -1.2161410808473603
+        ]
+      },
+      "componentId": "figure-left",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.012594398100192097,
+      "minimumMassWeight": 0.004491846617762073,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-8",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6078526403106299,
+        "translate": [
+          2.082350931121788,
+          1.0429666848137242,
+          -1.2161410808473603
+        ]
+      },
+      "componentId": "figure-centre",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.016024996546432434,
+      "minimumMassWeight": 0.004491846617762073,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-9",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.6078526403106299,
+        "translate": [
+          2.082350931121788,
+          1.0429666848137242,
+          -1.2161410808473603
+        ]
+      },
+      "componentId": "figure-right",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.01037569584419971,
+      "minimumMassWeight": 0.004491846617762073,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-10",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "COMPLEX / Focus / Design + Digital + Event / Lead: Design",
+  "focusCompetencyId": "design",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0-with-presentation-frame",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "baselineContentHash": "bc6027115b894b0b37c459170879f5076c425b23cdd9428748542285d1c55a37",
+    "baselineDefinitionHash": "5c297f643300aecc1cb721e85de781d66794e54fa7352b54aee6365da8d46d6c",
+    "baselineStateId": "complex-focus-design-digital-event-focus-design",
+    "builder": "ps03m31-presentation-builder-v1",
+    "sourceDefinitionHashes": {
+      "design-palette-brushes": "d16425cb8c109ae13777bd6464df11a3012fc0fb9121fd1b6c3f157d805a33db",
+      "digital-laptop-phone": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "event-stage-figures": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210"
+    },
+    "stage": "PS-03.M3.1"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack-hidden"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "d16425cb8c109ae13777bd6464df11a3012fc0fb9121fd1b6c3f157d805a33db",
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-design-digital-event-focus-design",
+  "stateRole": "complex",
+  "stateVersion": "3.1.0",
+  "surfaceEnvelopePolicy": {
+    "contactCull": false,
+    "maximumAreaRatio": 8.0,
+    "preferredAreaRatio": 6.0
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": false,
+    "surfaceEnvelope": 8.0,
+    "volumeTolerance": 0.01
+  }
+}

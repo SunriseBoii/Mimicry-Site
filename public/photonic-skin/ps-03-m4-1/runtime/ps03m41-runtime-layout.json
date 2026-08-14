@@ -1,0 +1,193 @@
+{
+  "endianness": "little",
+  "groupTracks": {
+    "endianness": "little",
+    "fields": [
+      {
+        "dtype": "<f4",
+        "name": "sourceCenter",
+        "offset": 0,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f4",
+        "name": "targetCenter",
+        "offset": 12,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f4",
+        "name": "routeControl",
+        "offset": 24,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f2",
+        "name": "direction",
+        "offset": 36,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f2",
+        "name": "releaseStart",
+        "offset": 42,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "releaseEnd",
+        "offset": 44,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "revealStart",
+        "offset": 46,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "revealEnd",
+        "offset": 48,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "bridgeStart",
+        "offset": 50,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "bridgeEnd",
+        "offset": 52,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "sourceMacro",
+        "offset": 54,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "targetMacro",
+        "offset": 56,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "flags",
+        "offset": 58,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "memberCount",
+        "offset": 60,
+        "shape": []
+      },
+      {
+        "dtype": "|u1",
+        "name": "_padding",
+        "offset": 62,
+        "shape": [
+          2
+        ]
+      }
+    ],
+    "stride": 64
+  },
+  "layoutVersion": "ps03m41.program.v2.1",
+  "loadPolicy": "source/target M3.1R states and M4.1 program loaded on demand; no endpoint buffers copied into M4.1",
+  "perId": {
+    "endianness": "little",
+    "fields": [
+      {
+        "dtype": "<f2",
+        "name": "localSource",
+        "offset": 0,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f2",
+        "name": "localTarget",
+        "offset": 6,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f2",
+        "name": "residual",
+        "offset": 12,
+        "shape": [
+          3
+        ]
+      },
+      {
+        "dtype": "<f2",
+        "name": "depth",
+        "offset": 18,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "activationStart",
+        "offset": 20,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "activationEnd",
+        "offset": 22,
+        "shape": []
+      },
+      {
+        "dtype": "<f2",
+        "name": "scaleBias",
+        "offset": 24,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "groupIndex",
+        "offset": 26,
+        "shape": []
+      },
+      {
+        "dtype": "<u2",
+        "name": "flags",
+        "offset": 28,
+        "shape": []
+      },
+      {
+        "dtype": "|u1",
+        "name": "phaseOffset",
+        "offset": 30,
+        "shape": []
+      },
+      {
+        "dtype": "|u1",
+        "name": "_padding",
+        "offset": 31,
+        "shape": []
+      }
+    ],
+    "stride": 32
+  },
+  "stateInput": {
+    "owner": "frozen PS-03.M3.1R",
+    "stride": 40
+  }
+}

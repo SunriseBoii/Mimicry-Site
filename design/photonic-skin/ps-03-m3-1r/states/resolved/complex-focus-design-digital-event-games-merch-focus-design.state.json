@@ -1,0 +1,1349 @@
+{
+  "assemblyProfile": {
+    "componentSelection": "descriptor-assembly-emblem",
+    "exposurePolicy": "source-surface-preserving-no-master-core",
+    "placement": "semantic-focus-solver-v1",
+    "profileVersion": "3.1.0"
+  },
+  "canonicalBounds": {
+    "max": [
+      4.42369123959834,
+      3.516957046967528,
+      1.8921030275275363
+    ],
+    "min": [
+      -3.3651439697939756,
+      -2.62905629014911,
+      -2.1101770575440737
+    ],
+    "size": [
+      7.788835209392316,
+      6.1460133371166386,
+      4.00228008507161
+    ]
+  },
+  "canonicalCoordinateSystem": {
+    "forwardAxis": "+X",
+    "handedness": "right",
+    "originPolicy": "canonicalBoundsCenter",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "upAxis": "+Z"
+  },
+  "canonicalTransform": {
+    "rotateEulerDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0,
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "competencyIds": [
+    "design",
+    "digital",
+    "event",
+    "games",
+    "merch"
+  ],
+  "componentSelections": [
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.781183868146922,
+        "translate": [
+          -1.9017897264200176,
+          -1.6184574683402724,
+          0.07119382209130569
+        ]
+      },
+      "componentId": "palette-board",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.39713652340230515,
+      "minimumMassWeight": 0.2860296464480831,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-0",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hole-protected",
+          "kind": "protectedZone",
+          "notes": "A compiler must not close the hole while the board still reads as a palette.",
+          "region": {
+            "params": {
+              "a": [
+                0.6,
+                -0.28,
+                -0.6
+              ],
+              "b": [
+                0.6,
+                -0.28,
+                0.6
+              ],
+              "radius": 0.3
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-brushes",
+          "kind": "bridgeZone",
+          "point": [
+            -0.2,
+            0.52,
+            0.16
+          ],
+          "radius": 0.26
+        }
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.781183868146922,
+        "translate": [
+          -1.9017897264200176,
+          -1.6184574683402724,
+          0.07119382209130569
+        ]
+      },
+      "componentId": "brush-upper",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.044620765383744695,
+      "minimumMassWeight": 0.023835803870673595,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-1",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "handle-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "radius": 0.12
+        },
+        {
+          "anchorId": "toward-board",
+          "kind": "bridgeZone",
+          "point": [
+            -0.1,
+            -0.3,
+            -0.32
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.7811838681469219,
+        "translate": [
+          -1.9017897264200176,
+          -1.6184574683402724,
+          0.07119382209130569
+        ]
+      },
+      "componentId": "brush-lower",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.03495878862742202,
+      "minimumMassWeight": 0.019068643096538877,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-0-shell-2",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.18,
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "handle-neck",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "radius": 0.12
+        },
+        {
+          "anchorId": "toward-board",
+          "kind": "bridgeZone",
+          "point": [
+            -0.1,
+            -0.24,
+            -0.1
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.44420651071658046,
+        "translate": [
+          0.16507574274416015,
+          0.9743952218047153,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "laptop-base",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.04707535660149986,
+      "minimumMassWeight": 0.033307217703539345,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-3",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-protected",
+          "kind": "protectedZone",
+          "notes": "The hinge line carries the whole open-laptop read.",
+          "region": {
+            "params": {
+              "a": [
+                -0.74,
+                0.55,
+                0.09
+              ],
+              "b": [
+                0.74,
+                0.55,
+                0.09
+              ],
+              "radius": 0.18
+            },
+            "provider": "capsule"
+          }
+        },
+        {
+          "anchorId": "toward-phone",
+          "kind": "bridgeZone",
+          "point": [
+            0.8,
+            -0.16,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.44420651071658046,
+        "translate": [
+          0.16507574274416015,
+          0.9743952218047153,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "laptop-screen",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.030762654388430462,
+      "minimumMassWeight": 0.021036137496972217,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-4",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "hinge-neck",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            -0.5,
+            0.0
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.44420651071658046,
+        "translate": [
+          0.16507574274416015,
+          0.9743952218047153,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "smartphone",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.009812561914120586,
+      "minimumMassWeight": 0.005259034374243054,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-1-shell-5",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-laptop",
+          "kind": "bridgeZone",
+          "point": [
+            -0.3,
+            0.1,
+            0.0
+          ],
+          "radius": 0.2
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          18.0
+        ],
+        "scale": 0.5252586686303364,
+        "translate": [
+          2.3240305021557455,
+          2.863480636289852,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "stage-deck",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.08696109749325653,
+      "minimumMassWeight": 0.06376353149030338,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-6",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "deck-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "edgeRadius": 0.05,
+              "radii": [
+                0.9,
+                0.6
+              ],
+              "thickness": 0.14
+            },
+            "provider": "rounded_plate"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          18.0
+        ],
+        "scale": 0.5252586686303364,
+        "translate": [
+          2.3240305021557455,
+          2.863480636289852,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "portal-arch",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.03279462568535897,
+      "minimumMassWeight": 0.026085081064215018,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-7",
+      "semanticRole": "structure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "opening-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                -0.27
+              ],
+              "half": [
+                0.56,
+                0.36,
+                0.56
+              ],
+              "radius": 0.3
+            },
+            "provider": "rounded_box"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          18.0
+        ],
+        "scale": 0.5252586686303364,
+        "translate": [
+          2.3240305021557455,
+          2.863480636289852,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "figure-left",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.00812647455996331,
+      "minimumMassWeight": 0.0028983423404683357,
+      "mobilePolicy": {
+        "eligible": false,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-8",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          18.0
+        ],
+        "scale": 0.5252586686303364,
+        "translate": [
+          2.3240305021557455,
+          2.863480636289852,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "figure-centre",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.010340051642173893,
+      "minimumMassWeight": 0.0028983423404683357,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-9",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          18.0
+        ],
+        "scale": 0.5252586686303364,
+        "translate": [
+          2.3240305021557455,
+          2.863480636289852,
+          1.2955378683372887
+        ]
+      },
+      "componentId": "figure-right",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.006694867642664074,
+      "minimumMassWeight": 0.0028983423404683357,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-2-shell-10",
+      "semanticRole": "figure",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.28
+          ],
+          "radius": 0.16
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5433293479262075,
+        "translate": [
+          0.9424800375950384,
+          0.08593317054656863,
+          -1.153150224154677
+        ]
+      },
+      "componentId": "gamepad",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.10401504990421606,
+      "minimumMassWeight": 0.07217752835408826,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-3-shell-11",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "games-gamepad-queen",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-queen",
+          "kind": "bridgeZone",
+          "notes": "Where a transition compiler may grow matter toward the second component.",
+          "point": [
+            0.42,
+            0.0,
+            0.05
+          ],
+          "radius": 0.3
+        },
+        {
+          "anchorId": "face-protected",
+          "kind": "protectedZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.05,
+                0.2
+              ],
+              "half": [
+                0.5,
+                0.3,
+                0.1
+              ],
+              "radius": 0.08
+            },
+            "provider": "rounded_box"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5433293479262075,
+        "translate": [
+          0.9424800375950384,
+          0.08593317054656863,
+          -1.153150224154677
+        ]
+      },
+      "componentId": "queen",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.05637945754931342,
+      "minimumMassWeight": 0.04009862686338237,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-3-shell-12",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "games-gamepad-queen",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-gamepad",
+          "kind": "bridgeZone",
+          "point": [
+            -0.28,
+            0.0,
+            -0.35
+          ],
+          "radius": 0.3
+        },
+        {
+          "anchorId": "stem-neck",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "splitNeck",
+          "notes": "Thinnest section; a compiler must thicken it before any split is attempted here.",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.16
+        },
+        {
+          "anchorId": "axis-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.96
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.92
+              ],
+              "radius": 0.1
+            },
+            "provider": "capsule"
+          }
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5069972536936009,
+        "translate": [
+          3.1014347970066236,
+          1.9750185850317052,
+          -1.153150224154677
+        ]
+      },
+      "componentId": "tee",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.05452235442272214,
+      "minimumMassWeight": 0.036490083057548674,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-4-shell-13",
+      "semanticRole": "primary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-thermos",
+          "kind": "bridgeZone",
+          "point": [
+            0.44,
+            0.34,
+            0.0
+          ],
+          "radius": 0.24
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5069972536936009,
+        "translate": [
+          3.1014347970066236,
+          1.9750185850317052,
+          -1.153150224154677
+        ]
+      },
+      "componentId": "thermos",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.0170444098913123,
+      "minimumMassWeight": 0.010425738016442476,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-4-shell-14",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "toward-box",
+          "kind": "bridgeZone",
+          "point": [
+            0.14,
+            -0.2,
+            -0.3
+          ],
+          "radius": 0.22
+        }
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "canonicalTransform": {
+        "rotateEulerDegrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 0.5069972536936009,
+        "translate": [
+          3.1014347970066236,
+          1.9750185850317052,
+          -1.153150224154677
+        ]
+      },
+      "componentId": "open-box",
+      "connectivityIntent": "preserve-emblem",
+      "featureRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "massWeight": 0.05875496089149652,
+      "minimumMassWeight": 0.041702952065769905,
+      "mobilePolicy": {
+        "eligible": true,
+        "minimumLod": 512
+      },
+      "parentAssemblyNode": "m31-4-shell-15",
+      "semanticRole": "secondary",
+      "silhouetteRetentionPolicy": {
+        "minimumLodQuota": 24,
+        "protected": true
+      },
+      "surfaceImportance": 1.0,
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0",
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "anchorId": "cavity-transport",
+          "kind": "transportZone",
+          "region": {
+            "params": {
+              "center": [
+                0.0,
+                0.0,
+                0.1
+              ],
+              "half": [
+                0.34,
+                0.34,
+                0.18
+              ],
+              "radius": 0.05
+            },
+            "provider": "rounded_box"
+          }
+        },
+        {
+          "anchorId": "toward-tee",
+          "kind": "bridgeZone",
+          "point": [
+            -0.46,
+            0.3,
+            -0.1
+          ],
+          "radius": 0.24
+        }
+      ]
+    }
+  ],
+  "compositionMode": "FOCUS",
+  "displayName": "COMPLEX / Focus / Design + Digital + Event + Games + Merch / Lead: Design",
+  "focusCompetencyId": "design",
+  "identityPolicy": {
+    "mapping": "canonical-master-stratified",
+    "size": 16384,
+    "spaceVersion": "ps03m3-identity-v1"
+  },
+  "lodPolicy": {
+    "levels": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "nested": true,
+    "priority": "protected-zones-weighted-round-robin"
+  },
+  "normalizationPolicy": {
+    "mode": "preserve-v0-with-presentation-frame",
+    "targetVolume": 4.185075142010032,
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "baselineContentHash": "990a58b43b9432076afb9b25d6949c89ae66f6fe385ac0ee03d3cfbbc03fa515",
+    "baselineDefinitionHash": "d806a1498edf04dd0f9f16f955bc64969a305bdf12e71c656bdccbcee1d35bae",
+    "baselineStage": "PS-03.M3.1",
+    "baselineStateId": "complex-focus-design-digital-event-games-merch-focus-design",
+    "baselineStateVersion": "3.1.0",
+    "builder": "ps03m31r-presentation-builder-v1",
+    "orientationPatch": "event-rigid-yaw",
+    "sourceDefinitionHashes": {
+      "design-palette-brushes": "d16425cb8c109ae13777bd6464df11a3012fc0fb9121fd1b6c3f157d805a33db",
+      "digital-laptop-phone": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "event-stage-figures": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "games-gamepad-queen": "0596ae4166b8ace7ea66f87367ca24daff00bc0f0134f07056f4d0dfe55f2b4b",
+      "merch-tee-thermos-box": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9"
+    },
+    "stage": "PS-03.M3.1R"
+  },
+  "reservePolicy": {
+    "depthRange": [
+      0.16,
+      0.32
+    ],
+    "emergenceOrder": "lod-priority",
+    "mode": "canonical-subsurface-pack-hidden"
+  },
+  "schemaVersion": "1.0.0",
+  "sourceTargets": [
+    {
+      "definitionHash": "d16425cb8c109ae13777bd6464df11a3012fc0fb9121fd1b6c3f157d805a33db",
+      "targetId": "design-palette-brushes",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "0340464f4076842396fbf90619a94a2402f7a4480b1c640be54efa1c43bc92c1",
+      "targetId": "digital-laptop-phone",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "789fc3cb34eb829b1179eab7a1b2f054e187be007f7749b7fbeccc6886453210",
+      "targetId": "event-stage-figures",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "0596ae4166b8ace7ea66f87367ca24daff00bc0f0134f07056f4d0dfe55f2b4b",
+      "targetId": "games-gamepad-queen",
+      "targetVersion": "1.0.0"
+    },
+    {
+      "definitionHash": "5ebb20072989ac39e1c6aac6bec50cae62201c067d8d0e73850f55205b3258c9",
+      "targetId": "merch-tee-thermos-box",
+      "targetVersion": "1.0.0"
+    }
+  ],
+  "stateId": "complex-focus-design-digital-event-games-merch-focus-design",
+  "stateRole": "complex",
+  "stateVersion": "3.1.1",
+  "surfaceEnvelopePolicy": {
+    "contactCull": false,
+    "maximumAreaRatio": 8.0,
+    "preferredAreaRatio": 6.0
+  },
+  "transitionAffordances": {
+    "allowedInternalTransport": true,
+    "inheritTargetAnchors": true,
+    "primaryAxis": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "validationPolicy": {
+    "allowDeclaredFusionOverlap": false,
+    "surfaceEnvelope": 8.0,
+    "volumeTolerance": 0.01
+  }
+}

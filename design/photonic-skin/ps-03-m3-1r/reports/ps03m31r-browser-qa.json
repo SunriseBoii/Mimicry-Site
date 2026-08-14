@@ -1,0 +1,43 @@
+{
+  "stage": "PS-03.M3.1R",
+  "url": "http://localhost:3000/visual-lab/photonic-skin-m3-1r",
+  "status": "PASS",
+  "cleanConsoleErrorCount": 0,
+  "thirdPartyWarningCount": 2,
+  "thirdPartyWarning": "THREE.Clock deprecation emitted by the current @react-three/fiber / Three.js dependency path; no application error and no runtime failure",
+  "defaultState": {
+    "ready": true,
+    "version": "M3.1R",
+    "stateId": "single-event",
+    "camera": "canonical",
+    "profile": "desktop",
+    "comparison": "m31r"
+  },
+  "comparisonChecks": {
+    "m31ToM31R": { "canvasCount": 2, "passed": true },
+    "oldCanonicalToNewCanonical": { "canvasCount": 2, "passed": true },
+    "newCanonicalToNewAlternate": { "canvasCount": 2, "passed": true }
+  },
+  "eventPresets": {
+    "single": "single-event",
+    "focusLead": "complex-focus-content-design-digital-event-focus-event",
+    "focusSupport": "complex-focus-content-design-digital-event-focus-content",
+    "gather": "complex-gather-content-design-digital-event",
+    "drive": "complex-drive-content-design-digital-event",
+    "brandWide": "brand-wide-gather-content-design-digital-event-games-merch-video"
+  },
+  "profileChecks": {
+    "desktop": [512, 512],
+    "mobile390": [390, 390],
+    "silhouette180": [180, 180],
+    "silhouette96": [96, 96]
+  },
+  "resizeChecks": [
+    { "viewport": [1280, 720], "horizontalOverflow": false, "ready": true },
+    { "viewport": [900, 800], "horizontalOverflow": false, "ready": true },
+    { "viewport": [390, 844], "horizontalOverflow": false, "ready": true }
+  ],
+  "cameraChecks": ["canonical", "alternate", "side", "top"],
+  "debugChecks": ["neutral", "components", "safe", "occlusion", "orientation", "silhouette"],
+  "zUpCameraContractVisible": true
+}

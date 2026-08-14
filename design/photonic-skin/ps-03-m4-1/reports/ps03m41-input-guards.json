@@ -1,0 +1,61 @@
+{
+  "buildConfigHash": "d31e66da04589c9a19b7fcbea3fa309199939d918d19c664cecf8c87e4e9f781",
+  "guardVersion": "1.0.0",
+  "historicalM4AggregateSha256": "640e2fb5c1ada184db127314a94fb1ed28d3b407a95c9b2da0badfc18ea71194",
+  "historicalM4Checks": {
+    "aggregateContentHash": true,
+    "buildConfigHash": true,
+    "frozenStateFingerprint": true,
+    "motionProfileHash": true,
+    "stage": true
+  },
+  "historicalM4Expected": {
+    "aggregateContentHash": "8ebb908374f02801f0b837e2c827a018f12ebbeb8761bbd7d1f9ea5c402497c9",
+    "buildConfigHash": "5f91904fcfcdeb7647e219bb52de526ee2dfa5ecb24b14b9cd61e0a75b84b3f4",
+    "frozenStateFingerprint": "81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+    "motionProfileHash": "8497c32a25c858540b63ccb6e628a21e239c69e89ec39e1fb619e446a3e340bb",
+    "stage": "PS-03.M4"
+  },
+  "historicalM4FileCount": 1176,
+  "historicalM4ManifestPath": "design/photonic-skin/ps-03-m4/exports/ps03m4-manifest.json",
+  "homepageAggregateSha256": "c4d5aa9d6f84e54361331f08d105ed1d39860ce0614c8a25980c271bde3d70a2",
+  "homepageFileCount": 4,
+  "m3Checks": {
+    "allStateEntries": true,
+    "deterministicFingerprint": true,
+    "deterministicRebuild": true,
+    "identityCount": true,
+    "identityRange": true,
+    "identitySpaceVersion": true,
+    "manifestSha256": true,
+    "publicManifestMatches": true,
+    "stage": true,
+    "stateCount": true,
+    "stateRecordStride": true,
+    "version": true
+  },
+  "m3Expected": {
+    "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "identityCount": 16384,
+    "identityRange": [
+      0,
+      16383
+    ],
+    "identitySpaceVersion": "ps03m3-identity-v1",
+    "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "stage": "PS-03.M3.1R",
+    "stateCount": 154,
+    "stateRecordStride": 40,
+    "version": "3.1.1"
+  },
+  "m3FrozenAggregateSha256": "a5004157c32d08a6a3096d08d0bb4b7c141eae9031461aa8a93774e1bf529c34",
+  "m3FrozenFileCount": 491,
+  "m3ManifestPath": "design/photonic-skin/ps-03-m3-1r/exports/ps03m31r-manifest.json",
+  "motionProfileHash": "f2f25cb2dd6bddc422f0a6d8961fe677ce0f92e10607fecf8692567b8903f381",
+  "schemaHashes": {
+    "motionProfile": "df93e8ae9dc19dc1d6232519ae7372199f73c15fe3f5aced59015a535098cf3f",
+    "transitionProgram": "1dd35194c1664c8771a1e90500b4e9b875c6e4671d27cca7f0f38dceb815498e",
+    "transitionRequest": "19c56588c0242609be955a1664b26c270413aa361ec3f7d5af786cf0ab84c7c1"
+  },
+  "stage": "PS-03.M4.1"
+}

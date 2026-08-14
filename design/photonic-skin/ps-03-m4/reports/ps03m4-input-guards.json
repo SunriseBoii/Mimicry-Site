@@ -1,0 +1,44 @@
+{
+  "buildConfigHash": "5f91904fcfcdeb7647e219bb52de526ee2dfa5ecb24b14b9cd61e0a75b84b3f4",
+  "guardVersion": "1.0.0",
+  "homepageAggregateSha256": "c4d5aa9d6f84e54361331f08d105ed1d39860ce0614c8a25980c271bde3d70a2",
+  "homepageFileCount": 4,
+  "m3Checks": {
+    "allStateEntries": true,
+    "deterministicAggregate": true,
+    "deterministicFingerprint": true,
+    "identityCount": true,
+    "identityRange": true,
+    "identitySpaceVersion": true,
+    "manifestSha256": true,
+    "publicManifestMatches": true,
+    "stage": true,
+    "stateCount": true,
+    "stateRecordStride": true,
+    "transitionRecordStride": true
+  },
+  "m3Expected": {
+    "deterministicAggregateSha256": "28d53102494bef0602df3f0b0afe99deeaa9f135140990876919416e419e7450",
+    "deterministicFingerprint": "81bbfbdf1c2d1f26340bcd1318620d5ad9975a2c830ca3ed8552f026d488351f",
+    "identityCount": 16384,
+    "identityRange": [
+      0,
+      16383
+    ],
+    "identitySpaceVersion": "ps03m3-identity-v1",
+    "manifestSha256": "35e60cf93875df95021249cc26ef3bdcbae6bcb03eac4af650660537858bcda8",
+    "stateCount": 154,
+    "stateRecordStride": 40,
+    "transitionRecordStride": 22
+  },
+  "m3FrozenAggregateSha256": "c953ef9657e228ef2e937086f646d6ac8fb13c34ec187523cce77599b688be68",
+  "m3FrozenFileCount": 360,
+  "m3ManifestPath": "design/photonic-skin/ps-03-m3/exports/ps03m3-manifest.json",
+  "motionProfileHash": "8497c32a25c858540b63ccb6e628a21e239c69e89ec39e1fb619e446a3e340bb",
+  "schemaHashes": {
+    "motionProfile": "4c17e69ed4181d8d3c9dbcfc67c5e566637265c3d4e45dcb71674e548c9f71a7",
+    "transitionProgram": "756add7c45eaa28b21d4937da36b3850c60fb339459e937d4c556fdc7a176ca8",
+    "transitionRequest": "18817a2c86cde6f8a7aac3dd668e807aea166acc45b0f8974d57000d9a1527ad"
+  },
+  "stage": "PS-03.M4"
+}

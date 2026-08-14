@@ -1,0 +1,398 @@
+{
+  "bridgeTracks": [
+    {
+      "end": 0.72,
+      "groupIndex": 1,
+      "memberCount": 96,
+      "mode": "merge",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 2,
+      "memberCount": 96,
+      "mode": "merge",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    }
+  ],
+  "buffers": {
+    "groupTracks": {
+      "byteLength": 192,
+      "recordCount": 3,
+      "recordStride": 64,
+      "sha256": "a1f9a35e7af3965bd9eb618f43edd767b924a4e6425dbe402ee7ed56b1ae90b0"
+    },
+    "perId": {
+      "byteLength": 524288,
+      "recordCount": 16384,
+      "recordStride": 32,
+      "sha256": "2f819c006bc6777bcd83b5d2d739b14094c8d1068fe753c04aeb6cfce4d3f133"
+    }
+  },
+  "byteLayout": {
+    "endianness": "little",
+    "groupTracks": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "sourceCenter",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "targetCenter",
+          "offset": 12
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "routeControl",
+          "offset": 24
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "direction",
+          "offset": 36
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseStart",
+          "offset": 42
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseEnd",
+          "offset": 44
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealStart",
+          "offset": 46
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealEnd",
+          "offset": 48
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeStart",
+          "offset": 50
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeEnd",
+          "offset": 52
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "sourceMacro",
+          "offset": 54
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "targetMacro",
+          "offset": 56
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 58
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "memberCount",
+          "offset": 60
+        },
+        {
+          "components": 2,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 62
+        }
+      ],
+      "recordStride": 64
+    },
+    "perId": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localSource",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localTarget",
+          "offset": 6
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "residual",
+          "offset": 12
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "depth",
+          "offset": 18
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationStart",
+          "offset": 20
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationEnd",
+          "offset": 22
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "scaleBias",
+          "offset": 24
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "groupIndex",
+          "offset": 26
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 28
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "phaseOffset",
+          "offset": 30
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 31
+        }
+      ],
+      "recordStride": 32
+    }
+  },
+  "hashes": {
+    "contentSha256": "83e078f7760114bcbec7552618f95d2eb7f0c6179b823c00a2fa3eafaec3cbc2",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "groupTracksSha256": "a1f9a35e7af3965bd9eb618f43edd767b924a4e6425dbe402ee7ed56b1ae90b0",
+    "motionProfileSha256": "f2f25cb2dd6bddc422f0a6d8961fe677ce0f92e10607fecf8692567b8903f381",
+    "perIdSha256": "2f819c006bc6777bcd83b5d2d739b14094c8d1068fe753c04aeb6cfce4d3f133",
+    "requestSha256": "b17b3bac28d675af14837a819b0106b03e22107d09923c7d9f4c0e0556649494",
+    "sourceRecordsSha256": "de23b15eecf3ecb9e5a885bd67c2035375fca80060c675806bffe2d9f1deca53",
+    "sourceStateSha256": "de23b15eecf3ecb9e5a885bd67c2035375fca80060c675806bffe2d9f1deca53",
+    "targetRecordsSha256": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "targetStateSha256": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638"
+  },
+  "header": {
+    "activationPolicy": {
+      "bridgePulseMaximum": 0.035,
+      "bridgeThickness": 0.72,
+      "depthRouteFraction": 0.18,
+      "endpointHoldOutsideHandoff": true,
+      "localMorphWidthFraction": 0.12,
+      "minimumGeometricScale": 0.18,
+      "phaseOffsetRange": 0.38,
+      "routeOnlyDuringLocalHandoff": true
+    },
+    "actorTrack": {
+      "centerEnd": [
+        0.00019211315122363848,
+        -0.00047229951854044216,
+        -0.06702525234063561
+      ],
+      "centerStart": [
+        0.5962506876813098,
+        -0.17995066780610358,
+        -0.31503880587940575
+      ],
+      "rotationAxis": [
+        -0.287361488266,
+        -0.957818905163,
+        0.002513955927
+      ],
+      "rotationRadians": 0.045,
+      "sourcePose": {
+        "orientation": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "translationAmplitude": 0.012,
+      "translationAxis": [
+        -0.889531642479,
+        0.267845635571,
+        0.37012453652
+      ],
+      "window": [
+        0.0,
+        0.11
+      ]
+    },
+    "compilerVersion": "ps03m41-transition-compiler-v2.1",
+    "deterministicSeed": 4068137084,
+    "directionAxis": [
+      -0.889531642479,
+      0.267845635571,
+      0.37012453652
+    ],
+    "durationSeconds": 1.091269250252806,
+    "endpointExactness": {
+      "fields": [
+        "position",
+        "normal",
+        "orientation",
+        "scale",
+        "status",
+        "flags",
+        "component",
+        "shell",
+        "transitionGroup",
+        "reserveDepth"
+      ],
+      "times": [
+        0.0,
+        1.0
+      ]
+    },
+    "endpointLibrary": {
+      "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+      "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+      "stage": "PS-03.M3.1R",
+      "stateVersion": "3.1.1"
+    },
+    "groupCount": 3,
+    "identityCount": 16384,
+    "isNoOp": false,
+    "motionProfileId": "directed-plastic-release",
+    "motionProfileVersion": "2.2.0",
+    "phasePolicy": {
+      "basis": "quintic-c2-window-v1",
+      "sequence": [
+        "anticipation",
+        "release",
+        "regroup",
+        "reveal",
+        "approach",
+        "settle",
+        "idle-handoff"
+      ],
+      "windows": {
+        "anticipation": [
+          0.0,
+          0.11
+        ],
+        "approach": [
+          0.62,
+          0.94
+        ],
+        "regroup": [
+          0.24,
+          0.68
+        ],
+        "release": [
+          0.07,
+          0.38
+        ],
+        "reveal": [
+          0.4,
+          0.82
+        ],
+        "settle": [
+          0.86,
+          1
+        ]
+      }
+    },
+    "reducedMotion": false,
+    "settlePolicy": {
+      "maximumAmplitudeFraction": 0.018,
+      "window": [
+        0.86,
+        1
+      ]
+    },
+    "sourceKind": "frozen-state",
+    "sourceStateId": "single-merch",
+    "targetStateId": "single-content",
+    "triggerMode": "qa",
+    "viewportProfile": "desktop"
+  },
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "programId": "single-merch-to-single-content-qa-desktop-b17b3bac28d6",
+  "programVersion": "2.1.0",
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m41-transition-compiler-v2.1",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointLibraryManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "endpointLibraryStage": "PS-03.M3.1R",
+    "endpointLibraryVersion": "3.1.1",
+    "geometryOnly": true,
+    "pairSpecificBranches": false,
+    "stage": "PS-03.M4.1",
+    "targetSpecificBranches": false
+  },
+  "routingGraph": [
+    {
+      "groupIndex": 0,
+      "memberCount": 6114,
+      "relation": "preserve",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 1,
+      "memberCount": 2135,
+      "relation": "merge",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 2,
+      "memberCount": 8135,
+      "relation": "merge",
+      "sourceMacroGroup": 514,
+      "targetMacroGroup": 0
+    }
+  ],
+  "schemaVersion": "1.1.0"
+}

@@ -1,0 +1,187 @@
+{
+  "stage": "PS-03.M4.1",
+  "reportVersion": "ps03m41.browser-runtime.v1",
+  "endpointLibrary": {
+    "stage": "PS-03.M3.1R",
+    "stateVersion": "3.1.1",
+    "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2"
+  },
+  "measuredScope": "Built Next.js lab, TypeScript CPU/compiler parity, WebGL2 transform-feedback parity, context recovery, single-clock controls, production versus lab-only scroll semantics, rapid retargeting, responsive canvas sizing, reduced motion, nested LOD, and M3.1R/historical-M4 comparison views",
+  "machineValid": true,
+  "approvalBlocked": true,
+  "pythonTsParityValid": true,
+  "pythonGpuParityValid": true,
+  "pythonGpuParityStatus": "pass",
+  "contextRestoreValid": true,
+  "contextRestoreStatus": "restored",
+  "staleLoadCannotOverrideNewTarget": true,
+  "hiddenTabResumeValid": true,
+  "reducedMotionStatic": true,
+  "lodMotionSemanticsStable": true,
+  "scrubDeterministic": true,
+  "reverseValid": true,
+  "retargetContinuityValid": true,
+  "productionScrollChangesPlayhead": false,
+  "labScrollScrubChangesPlayhead": true,
+  "oneShotSettlesToStaticIdle": true,
+  "canvasResizeObserverValid": true,
+  "previousM4ComparisonValid": true,
+  "sideBySideEndpointComparisonValid": true,
+  "browserConsoleErrorCount": 0,
+  "browserConsoleWarningCount": 4,
+  "browserConsoleWarnings": [
+    "THREE.Clock deprecation warning emitted by the bundled Three/Fiber runtime; no application error was recorded"
+  ],
+  "cpuGoldenScope": {
+    "programId": "master-neutral-to-single-design-qa-desktop-df9497a657e2",
+    "timeSamples": 46,
+    "persistentIds": 12,
+    "evaluations": 552,
+    "maxPositionError": 4.9787654887722965e-8,
+    "maxVelocityError": 5.0090654291068404e-8,
+    "maxOrientationError": 6.789538342655277e-8,
+    "maxNormalError": 1.0153847040950126e-7,
+    "maxScaleError": 4.8756305104369346e-8,
+    "maxRoleError": 0,
+    "maxActorError": 4.97120399289841e-8
+  },
+  "exactCompilerScope": {
+    "approvalBufferParity": true,
+    "arbitraryFixtures": 4,
+    "modes": [
+      "route-desktop",
+      "lab-scroll-scrub-mobile-explicit-direction",
+      "qa-desktop-reduced-motion",
+      "qa-mobile-self-no-op"
+    ],
+    "verifiedChannels": [
+      "program metadata",
+      "request hash",
+      "group-track buffer and hash",
+      "per-ID buffer and hash",
+      "content hash",
+      "M3.1R endpoint fingerprint and manifest hash"
+    ]
+  },
+  "gpuProbe": {
+    "entryPoint": "window.__PS03M41_GPU_PARITY__()",
+    "implementation": "WebGL2 transform feedback using the M4.1 lab vertex evaluator",
+    "status": "pass",
+    "programId": "master-neutral-to-single-design-qa-desktop-df9497a657e2",
+    "timeSamples": 46,
+    "persistentIds": 12,
+    "evaluations": 552,
+    "maxPositionError": 1.2101581573498166e-6,
+    "p95PositionError": 2.613151550701076e-7,
+    "maxVelocityError": 0.007557586993657439,
+    "p95VelocityError": 0.0012838770720926332,
+    "maxVelocityNormalizedError": 0.007557586993657439,
+    "p95VelocityNormalizedError": 0.0005505672114016757,
+    "maxOrientationError": 3.308698272697086e-6,
+    "p95OrientationError": 2.3729047775311596e-7,
+    "maxNormalError": 8.213054847716617e-6,
+    "p95NormalError": 4.931934356744438e-7,
+    "maxScaleError": 6.883743286500987e-7,
+    "p95ScaleError": 2.500000007010783e-8,
+    "maxActivationError": 1.5836279165792888e-7,
+    "p95ActivationError": 0,
+    "maxBridgeError": 0,
+    "p95BridgeError": 0,
+    "maxGroupPhaseError": 7.766784667628812e-7,
+    "p95GroupPhaseError": 4.9943702621383864e-8,
+    "maxActorPoseError": 5.804124355301976e-7,
+    "p95ActorPoseError": 4.382122680544366e-8,
+    "worstVelocitySample": {
+      "t": 0.62001,
+      "persistentId": 511,
+      "axis": 2,
+      "actual": -0.12186788699365744,
+      "expected": -0.1143103,
+      "epsilon": 0.0010000000000000009
+    }
+  },
+  "browserEnvironment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+    "platform": "Win32",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "devicePixelRatio": 1.5,
+    "webgl2": true,
+    "gpuVendor": "Google Inc. (Intel)",
+    "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32
+  },
+  "interactionEvidence": {
+    "frameTiming": {
+      "medianMs": 6.1,
+      "p95Ms": 7.0,
+      "reportedFps": 165,
+      "mainDraws": 1,
+      "triangles": 131072,
+      "textureEstimateMiB": 4,
+      "firstLoadMs": 162,
+      "compileMs": 148.4
+    },
+    "desktopCanvas": {
+      "cssWidth": 874,
+      "cssHeight": 398,
+      "drawingBufferWidth": 1311,
+      "drawingBufferHeight": 597
+    },
+    "responsiveCanvas": {
+      "mobile390": { "cssWidth": 373, "cssHeight": 679 },
+      "frame180": { "cssWidth": 178, "cssHeight": 179 },
+      "frame96": { "cssWidth": 94, "cssHeight": 95 }
+    },
+    "reducedMotion": {
+      "playhead": 1.0,
+      "slider": 1.0,
+      "isDragging": false
+    },
+    "nestedLodSelectedIdPosition": {
+      "lod512": [-0.522, 0.808, -0.272],
+      "lod16384": [-0.522, 0.808, -0.272]
+    },
+    "rapidRetargetStatus": "4-state sequential retarget chain ready",
+    "rapidRetargetFinalPair": "rapid snapshot chain -> complex-drive-content-design-digital",
+    "sideBySideCanvasCount": 2,
+    "previousM4Iframe": "/visual-lab/photonic-skin-m4?source=master-neutral&target=single-design&progress=0.000"
+  },
+  "screenshots": [
+    {
+      "path": "design/photonic-skin/ps-03-m4-1/renders/browser/desktop-runtime.png",
+      "bytes": 72878,
+      "sha256": "4d081a258a01a0b8f5649b348ea8066d23bfc59bb8d7df6d5c20cd5c37850f75"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1/renders/browser/desktop-side-by-side.png",
+      "bytes": 83809,
+      "sha256": "e62d2510402dd37866184b7cc69da4e6eac1f25e1409751eb2edd3070c56d563"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1/renders/browser/mobile-390-canvas.png",
+      "bytes": 26762,
+      "sha256": "b3d6b705e30c314d884ce7ba02d57656f47b3779d73ce853a29ee6e15ca17821"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1/renders/browser/mobile-390-runtime.png",
+      "bytes": 35256,
+      "sha256": "7f711340d3dd9f863a52e50fc7b8e016a630ae26bcc22dfe8b49be5327f423cd"
+    },
+    {
+      "path": "design/photonic-skin/ps-03-m4-1/renders/browser/mobile-reduced-static.png",
+      "bytes": 37710,
+      "sha256": "5b99ed368e4fdbd8c24edf923c4dd1a71227f3855083a4b706f01c4e199ea41a"
+    }
+  ],
+  "testResults": {
+    "typecheck": "pass",
+    "focusedRuntime": "14/14 pass",
+    "pythonCore": "11/11 pass",
+    "eslint": "pass with zero errors and zero warnings for M4.1 lab and runtime test",
+    "productionBuild": "pass; /visual-lab/photonic-skin-m4-1 prerendered"
+  },
+  "humanStatus": "HUMAN REVIEW REQUIRED"
+}

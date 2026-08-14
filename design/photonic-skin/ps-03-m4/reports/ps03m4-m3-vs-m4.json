@@ -1,0 +1,21 @@
+{
+  "baseline": "frozen transition-v1",
+  "candidate": "transition-v2",
+  "fullNRiskSuite": {
+    "m3MeanMidSphericalCollapse": 0.41832062221730704,
+    "m4MeanMidSphericalCollapse": 0.47057295062510157,
+    "programCount": 35,
+    "programsWithLowerOrEqualCollapse": 21
+  },
+  "interpretation": "numeric proxies support visual review; they do not replace human motion approval",
+  "pairProbeNonMaster": {
+    "m3MeanMidSourceLikeness": 0.52253500232368,
+    "m3MeanMidSphericalCollapse": 0.36236081146698185,
+    "m3MeanMidTargetLikeness": 0.5126573599842972,
+    "m4MeanMidSourceLikeness": 0.9375027338161231,
+    "m4MeanMidSphericalCollapse": 0.30247441441982736,
+    "m4MeanMidTargetLikeness": 0.35003998132955333,
+    "pairCount": 23256
+  },
+  "stage": "PS-03.M4"
+}

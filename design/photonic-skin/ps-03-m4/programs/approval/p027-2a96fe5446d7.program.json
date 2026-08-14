@@ -1,0 +1,699 @@
+{
+  "bridgeTracks": [
+    {
+      "end": 0.72,
+      "groupIndex": 1,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 2,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 3,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 4,
+      "memberCount": 82,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 5,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 7,
+      "memberCount": 69,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 9,
+      "memberCount": 7,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 10,
+      "memberCount": 96,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 11,
+      "memberCount": 19,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 13,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 14,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 15,
+      "memberCount": 16,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 16,
+      "memberCount": 19,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 17,
+      "memberCount": 21,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 19,
+      "memberCount": 12,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 21,
+      "memberCount": 2,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 22,
+      "memberCount": 47,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    }
+  ],
+  "buffers": {
+    "groupTracks": {
+      "byteLength": 1984,
+      "recordCount": 31,
+      "recordStride": 64,
+      "sha256": "6e09f91b95e8b25a4afafdd1cc05074c539662087e81f78ed122f2bafe247c2f"
+    },
+    "perId": {
+      "byteLength": 524288,
+      "recordCount": 16384,
+      "recordStride": 32,
+      "sha256": "4adb08ade9e58b1d99b17a606c469fb3a6f28382ce9be0f61d34d8eef83f2387"
+    }
+  },
+  "byteLayout": {
+    "endianness": "little",
+    "groupTracks": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "sourceCenter",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "targetCenter",
+          "offset": 12
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "routeControl",
+          "offset": 24
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "direction",
+          "offset": 36
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseStart",
+          "offset": 42
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseEnd",
+          "offset": 44
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealStart",
+          "offset": 46
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealEnd",
+          "offset": 48
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeStart",
+          "offset": 50
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeEnd",
+          "offset": 52
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "sourceMacro",
+          "offset": 54
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "targetMacro",
+          "offset": 56
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 58
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "memberCount",
+          "offset": 60
+        },
+        {
+          "components": 2,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 62
+        }
+      ],
+      "recordStride": 64
+    },
+    "perId": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localSource",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localTarget",
+          "offset": 6
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "residual",
+          "offset": 12
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "depth",
+          "offset": 18
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationStart",
+          "offset": 20
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationEnd",
+          "offset": 22
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "scaleBias",
+          "offset": 24
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "groupIndex",
+          "offset": 26
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 28
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "phaseOffset",
+          "offset": 30
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 31
+        }
+      ],
+      "recordStride": 32
+    }
+  },
+  "hashes": {
+    "contentSha256": "3de435d2b9159309728584f95daf323f3252da0b87fe3dbb335739072ca99348",
+    "groupTracksSha256": "6e09f91b95e8b25a4afafdd1cc05074c539662087e81f78ed122f2bafe247c2f",
+    "motionProfileSha256": "8497c32a25c858540b63ccb6e628a21e239c69e89ec39e1fb619e446a3e340bb",
+    "perIdSha256": "4adb08ade9e58b1d99b17a606c469fb3a6f28382ce9be0f61d34d8eef83f2387",
+    "requestSha256": "2a96fe5446d78cfc27e48c407c593ee3500f13ac27033aab13dad0efae1a3d4c",
+    "sourceRecordsSha256": "ef89546713fb4c28e57e198722f0dd7e0181617200ea0f24df9ad89a01bba204",
+    "sourceStateSha256": "ef89546713fb4c28e57e198722f0dd7e0181617200ea0f24df9ad89a01bba204",
+    "targetRecordsSha256": "284208eae2b8fabe2719b7551a6e0b350ba6a0df1471db4bbfbe29531349fd9b",
+    "targetStateSha256": "284208eae2b8fabe2719b7551a6e0b350ba6a0df1471db4bbfbe29531349fd9b"
+  },
+  "header": {
+    "activationPolicy": {
+      "bridgePulseMaximum": 0.035,
+      "bridgeThickness": 0.72,
+      "depthRouteFraction": 0.18,
+      "endpointHoldOutsideHandoff": true,
+      "localMorphWidthFraction": 0.12,
+      "minimumGeometricScale": 0.18,
+      "phaseOffsetRange": 0.38,
+      "routeOnlyDuringLocalHandoff": true
+    },
+    "actorTrack": {
+      "centerEnd": [
+        0.07127977459502681,
+        0.06447364482368378,
+        -0.1735280333775206
+      ],
+      "centerStart": [
+        -0.19895515779117628,
+        -0.31036990341481796,
+        -0.6384165970789475
+      ],
+      "rotationAxis": [
+        -0.8142245011629,
+        0.58052669795564,
+        0.00521676784381
+      ],
+      "rotationRadians": 0.045,
+      "sourcePose": {
+        "orientation": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "translationAmplitude": 0.012,
+      "translationAxis": [
+        0.41226935827909,
+        0.57185985439696,
+        0.70923217859403
+      ],
+      "window": [
+        0.0,
+        0.11
+      ]
+    },
+    "compilerVersion": "ps03m4-transition-compiler-v2",
+    "deterministicSeed": 4276416486,
+    "directionAxis": [
+      0.41226935827909,
+      0.57185985439696,
+      0.70923217859403
+    ],
+    "durationSeconds": 1.18,
+    "groupCount": 31,
+    "identityCount": 16384,
+    "isNoOp": false,
+    "motionProfileId": "directed-plastic-release",
+    "motionProfileVersion": "2.1.0",
+    "phasePolicy": {
+      "basis": "quintic-c2-window-v1",
+      "sequence": [
+        "anticipation",
+        "release",
+        "regroup",
+        "reveal",
+        "approach",
+        "settle",
+        "idle-handoff"
+      ],
+      "windows": {
+        "anticipation": [
+          0.0,
+          0.11
+        ],
+        "approach": [
+          0.62,
+          0.94
+        ],
+        "regroup": [
+          0.24,
+          0.68
+        ],
+        "release": [
+          0.07,
+          0.38
+        ],
+        "reveal": [
+          0.4,
+          0.82
+        ],
+        "settle": [
+          0.86,
+          1.0
+        ]
+      }
+    },
+    "reducedMotion": false,
+    "settlePolicy": {
+      "maximumAmplitudeFraction": 0.018,
+      "window": [
+        0.86,
+        1.0
+      ]
+    },
+    "sourceKind": "frozen-state",
+    "sourceStateId": "complex-focus-digital-event-focus-digital",
+    "targetStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "triggerMode": "qa",
+    "viewportProfile": "desktop"
+  },
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "programId": "complex-focus-digital-event-focus-digital-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-2a96fe5446d7",
+  "programVersion": "2.0.0",
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m4-transition-compiler-v2",
+    "geometryOnly": true,
+    "pairSpecificBranches": false,
+    "stage": "PS-03.M4",
+    "targetSpecificBranches": false
+  },
+  "routingGraph": [
+    {
+      "groupIndex": 0,
+      "memberCount": 1404,
+      "relation": "preserve",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 1,
+      "memberCount": 194,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 2,
+      "memberCount": 193,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1028
+    },
+    {
+      "groupIndex": 3,
+      "memberCount": 193,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1542
+    },
+    {
+      "groupIndex": 4,
+      "memberCount": 1025,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 4097
+    },
+    {
+      "groupIndex": 5,
+      "memberCount": 1322,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 8194
+    },
+    {
+      "groupIndex": 6,
+      "memberCount": 810,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 12291
+    },
+    {
+      "groupIndex": 7,
+      "memberCount": 855,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 16388
+    },
+    {
+      "groupIndex": 8,
+      "memberCount": 1261,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 20485
+    },
+    {
+      "groupIndex": 9,
+      "memberCount": 978,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 24582
+    },
+    {
+      "groupIndex": 10,
+      "memberCount": 2217,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 28679
+    },
+    {
+      "groupIndex": 11,
+      "memberCount": 226,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 12,
+      "memberCount": 194,
+      "relation": "preserve",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 13,
+      "memberCount": 193,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 14,
+      "memberCount": 193,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1285
+    },
+    {
+      "groupIndex": 15,
+      "memberCount": 193,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1799
+    },
+    {
+      "groupIndex": 16,
+      "memberCount": 236,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 4097
+    },
+    {
+      "groupIndex": 17,
+      "memberCount": 251,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 8194
+    },
+    {
+      "groupIndex": 18,
+      "memberCount": 91,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 12291
+    },
+    {
+      "groupIndex": 19,
+      "memberCount": 148,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 16388
+    },
+    {
+      "groupIndex": 20,
+      "memberCount": 106,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 20485
+    },
+    {
+      "groupIndex": 21,
+      "memberCount": 127,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 24582
+    },
+    {
+      "groupIndex": 22,
+      "memberCount": 582,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 28679
+    },
+    {
+      "groupIndex": 23,
+      "memberCount": 395,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 24,
+      "memberCount": 348,
+      "relation": "preserve",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 4097
+    },
+    {
+      "groupIndex": 25,
+      "memberCount": 435,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 8194
+    },
+    {
+      "groupIndex": 26,
+      "memberCount": 330,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 12291
+    },
+    {
+      "groupIndex": 27,
+      "memberCount": 315,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 16388
+    },
+    {
+      "groupIndex": 28,
+      "memberCount": 537,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 20485
+    },
+    {
+      "groupIndex": 29,
+      "memberCount": 385,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 24582
+    },
+    {
+      "groupIndex": 30,
+      "memberCount": 647,
+      "relation": "split",
+      "sourceMacroGroup": 4097,
+      "targetMacroGroup": 28679
+    }
+  ],
+  "schemaVersion": "1.0.0"
+}

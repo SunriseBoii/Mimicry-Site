@@ -1,0 +1,24 @@
+{
+  "stage": "PS-03.M3.1R",
+  "status": "PASS",
+  "inspectionMethod": "vision inspection of original/high-detail board images after rendering from final endpoint buffers",
+  "candidateBoardInspected": true,
+  "comparisonBoardsInspected": 12,
+  "issues": [],
+  "checks": {
+    "cameraRolePromotionVisible": true,
+    "eventCanonicalFrontalAndReadable": true,
+    "eventAlternateThreeQuarterReadable": true,
+    "portalOpeningReadable": true,
+    "stageDeckHorizontal": true,
+    "figuresAttachedToStage": true,
+    "focusGatherDrivePreserved": true,
+    "digitalMerchVideoNoAddedRotation": true,
+    "mobile390Readable": true,
+    "silhouette180Readable": true,
+    "silhouette96Readable": true,
+    "safeFrameAndOcclusionReadable": true,
+    "endpointDustResolved": true,
+    "hashMappingReadable": true
+  }
+}

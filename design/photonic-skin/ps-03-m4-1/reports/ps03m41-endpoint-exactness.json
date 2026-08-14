@@ -1,0 +1,36 @@
+{
+  "contract": {
+    "contractVersion": "ps03m41.endpoint-exact.v1",
+    "directedNonSelfPairs": 23562,
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "fields": [
+      "position",
+      "normal",
+      "orientation",
+      "scale",
+      "status",
+      "flags",
+      "component",
+      "shell",
+      "transitionGroup",
+      "reserveDepth"
+    ],
+    "fullNIdentityCount": 16384,
+    "fullNMinimumPrograms": 35,
+    "probeIdentityCount": 512,
+    "selfPairs": 154,
+    "times": [
+      0.0,
+      1.0
+    ]
+  },
+  "contractSha256": "50e03e1e9c3568e15aa0178a7023b1f29d7120b49db22d175e6b28aeb0020134",
+  "directedPairCount": 23562,
+  "directedPairEndpointsExact": true,
+  "fullNComplete": true,
+  "fullNProgramCount": 35,
+  "passed": true,
+  "selfTransitionCount": 154,
+  "selfTransitionsNoOp": true,
+  "stage": "PS-03.M4.1"
+}

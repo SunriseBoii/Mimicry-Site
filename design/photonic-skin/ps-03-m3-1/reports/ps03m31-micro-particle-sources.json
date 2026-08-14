@@ -1,0 +1,65 @@
+{
+  "stage": "PS-03.M3.1",
+  "rule": "A visible endpoint component is either readable at the profile floor or absent from that presentation profile.",
+  "sources": [
+    {
+      "componentId": "event:figure-left",
+      "semanticOwner": "event",
+      "affectedViews": ["side/desktop", "top/desktop"],
+      "historicalDetectionCount": 10,
+      "cause": "The left audience figure was nearly fully depth-occluded in dense multi-state Event emblems, leaving 1–2 raster pixels.",
+      "fix": "Keep its real particles in the fixed-stride endpoint buffer, but omit the optional subfeature from all presentation profiles; stage-deck, portal-arch, and other audience figures preserve the Event emblem.",
+      "examples": [
+        {
+          "stateId": "complex-focus-content-design-event-games-video-focus-content",
+          "componentIndex": 6,
+          "activeParticleCount": 213,
+          "sampleParticleIds": [81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 391, 443]
+        },
+        {
+          "stateId": "complex-drive-content-design-digital-event",
+          "componentIndex": 9,
+          "activeParticleCount": 332,
+          "sampleParticleIds": [129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 337, 341]
+        }
+      ]
+    },
+    {
+      "componentId": "event:figure-right",
+      "semanticOwner": "event",
+      "affectedViews": ["alternate/mobile390"],
+      "historicalDetectionCount": 1,
+      "cause": "The right audience figure in a directed four-competency DRIVE endpoint reduced to one visible pixel at mobile390.",
+      "fix": "A deterministic DRIVE+mobile390 presentation rule omits this optional subfeature. FOCUS/GATHER mobile390 and DRIVE desktop retain it.",
+      "examples": [
+        {
+          "stateId": "complex-drive-content-design-digital-event",
+          "componentIndex": 11,
+          "activeParticleCount": 294,
+          "sampleParticleIds": [156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 305, 369, 375]
+        }
+      ]
+    }
+  ],
+  "ruledOut": [
+    {
+      "source": "reserve/subsurface records",
+      "reason": "Their status is non-active and the neutral M3.1 endpoint renderer excludes them; no final dust finding originated from reserve records."
+    },
+    {
+      "source": "M4 echo/runtime particles",
+      "reason": "M4 runtime data is outside M3.1, was not rebuilt, and does not participate in static endpoint validation."
+    },
+    {
+      "source": "master-core",
+      "reason": "No multi-state component map contains master-core; measured count is zero across 146 COMPLEX/BRAND_WIDE endpoints."
+    }
+  ],
+  "verification": {
+    "method": "exact component-ID + nearest-depth point-splat pass",
+    "stateCount": 154,
+    "stateViewCount": 1232,
+    "views": ["canonical", "alternate", "side", "top"],
+    "finalEndpointDustFailures": 0
+  }
+}

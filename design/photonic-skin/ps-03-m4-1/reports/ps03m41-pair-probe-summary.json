@@ -1,0 +1,832 @@
+{
+  "allDirectedPairsPassed": true,
+  "allPairsPassOrAreReported": true,
+  "directedPairCount": 23562,
+  "endpointExactness": {
+    "allEndpointsExact": true,
+    "expectedPairCount": 23562,
+    "fields": [
+      "position",
+      "normal",
+      "orientation",
+      "scale",
+      "status",
+      "flags",
+      "component",
+      "shell",
+      "transitionGroup",
+      "reserveDepth"
+    ],
+    "t0ExactPairCount": 23562,
+    "t1ExactPairCount": 23562
+  },
+  "expectedDirectedPairCount": 23562,
+  "failedPairCount": 0,
+  "failureHistogram": {},
+  "failurePairsAggregateSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "failureReasonCount": 0,
+  "fullProgramBuffersPersisted": 0,
+  "method": "same v2 compiler/evaluator; full group tracks and deterministic nested-LOD IDs; dense phase-aware grid; aggregated worst cases only",
+  "nonMasterComparison": {
+    "m3MeanMidSourceLikeness": 0.5844307598552035,
+    "m3MeanMidSphericalCollapse": 0.2767402143796734,
+    "m3MeanMidTargetLikeness": 0.5875828200944282,
+    "m4MeanMidSourceLikeness": 0.9179615443741783,
+    "m4MeanMidSphericalCollapse": 0.28023968746993516,
+    "m4MeanMidTargetLikeness": 0.4077738740288071,
+    "pairCount": 23256
+  },
+  "policy": {
+    "activeCommonMinimumScaleRatio": 0.045,
+    "clumpingRatioMin": 0.08,
+    "collisionRatioMax": 0.12,
+    "endpointOrientationTolerance": 0.003,
+    "endpointPositionTolerance": 2e-05,
+    "endpointScaleTolerance": 0.002,
+    "maximumAccelerationFractionAt60HzSquared": 0.1,
+    "maximumOrientationStepRadians": 0.9,
+    "maximumStepFraction": 0.5,
+    "normalLengthErrorMax": 0.003,
+    "parityGroupPhaseTolerance": 2e-06,
+    "parityOrientationTolerance": 0.0004,
+    "parityPositionToleranceFloat32": 3e-05,
+    "parityScaleTolerance": 0.0002,
+    "phaseBoundaryPositionDeltaMax": 0.002,
+    "phaseBoundaryScaleDeltaMax": 0.002,
+    "piecewiseC1BoundaryVelocityJumpFraction": 0.02,
+    "piecewiseC2BoundaryAccelerationJumpFraction": 0.1,
+    "policyVersion": "ps03m41.qa.v2",
+    "quaternionNormErrorMax": 0.003,
+    "referenceFrameRateHz": 60.0,
+    "retargetPositionTolerance": 3e-05,
+    "retargetVelocityTolerance": 0.003,
+    "screenBoundsExpansionMax": 1.75,
+    "settleResidualAmplitudeRatioMaxDesktop": 0.018,
+    "settleResidualAmplitudeRatioMaxMobile": 0.008,
+    "silhouetteOrphanRatioMarginVsM3OrEndpoints": 0.04,
+    "silhouetteOutsideLargestPointRatioMarginVsM3OrEndpoints": 0.04,
+    "silhouetteSignificantComponentMarginVsM3OrEndpoints": 1,
+    "sphericalCollapseMarginVsM3OrEndpoints": 0.0
+  },
+  "probeIdentityCount": 512,
+  "probeIdentityPolicy": "frozen nested LOD prefix IDs 0..511; no renumbering",
+  "probeVersion": "ps03m41.all-pairs.512.v1",
+  "stage": "PS-03.M4.1",
+  "timeGrid": [
+    0.0,
+    0.05,
+    0.07,
+    0.1,
+    0.11,
+    0.2,
+    0.24,
+    0.25,
+    0.35,
+    0.38,
+    0.4,
+    0.5,
+    0.62,
+    0.65,
+    0.68,
+    0.75,
+    0.82,
+    0.86,
+    0.9,
+    0.94,
+    0.95,
+    1.0
+  ],
+  "timeSampleCount": 22,
+  "worstCases": {
+    "crossingProxyMax": [
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-games-merch-video-focus-content",
+        "targetStateId": "complex-focus-digital-games-focus-digital",
+        "value": 0.6012024048096193
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-merch-video-focus-content",
+        "targetStateId": "single-video",
+        "value": 0.5984095427435387
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-digital-video-focus-digital",
+        "targetStateId": "complex-focus-design-digital-games-video-focus-design",
+        "value": 0.5976331360946746
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-merch-video-focus-event",
+        "targetStateId": "complex-focus-content-event-games-video-focus-content",
+        "value": 0.5976095617529881
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-video-focus-content",
+        "targetStateId": "complex-focus-digital-games-focus-digital",
+        "value": 0.5963855421686747
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-video-focus-design",
+        "targetStateId": "complex-focus-content-games-focus-content",
+        "value": 0.5951903807615231
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "targetStateId": "complex-focus-content-games-merch-video-focus-content",
+        "value": 0.5943775100401606
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-video-focus-event",
+        "targetStateId": "complex-focus-content-design-event-video-focus-content",
+        "value": 0.594059405940594
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-merch-focus-digital",
+        "targetStateId": "complex-focus-games-video-focus-games",
+        "value": 0.593939393939394
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-games-video-focus-design",
+        "targetStateId": "complex-focus-event-games-merch-focus-event",
+        "value": 0.5935613682092555
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event-games",
+        "targetStateId": "complex-focus-design-merch-video-focus-design",
+        "value": 0.5923694779116466
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-merch-video-focus-design",
+        "targetStateId": "complex-focus-digital-video-focus-digital",
+        "value": 0.5887096774193549
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event",
+        "targetStateId": "complex-focus-event-games-merch-video-focus-event",
+        "value": 0.588
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-merch-focus-digital",
+        "targetStateId": "complex-focus-design-event-focus-design",
+        "value": 0.5878787878787879
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-digital-video-focus-digital",
+        "targetStateId": "complex-focus-design-digital-event-merch-video-focus-design",
+        "value": 0.5877712031558185
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-games-video-focus-design",
+        "targetStateId": "complex-focus-event-merch-video-focus-event",
+        "value": 0.5876494023904383
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-event-games-video-focus-content",
+        "targetStateId": "complex-focus-digital-event-merch-focus-digital",
+        "value": 0.5871743486973948
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-merch-focus-design",
+        "targetStateId": "complex-focus-content-design-event-games-video-focus-content",
+        "value": 0.5863453815261044
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-games-merch-video-focus-games",
+        "targetStateId": "complex-focus-digital-merch-video-focus-digital",
+        "value": 0.5861386138613861
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-video-focus-design",
+        "targetStateId": "complex-focus-event-games-merch-focus-event",
+        "value": 0.5831663326653307
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-games-merch-video-focus-content",
+        "targetStateId": "complex-focus-digital-event-merch-video-focus-digital",
+        "value": 0.5831663326653307
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-video-focus-content",
+        "targetStateId": "single-event",
+        "value": 0.5830039525691699
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-focus-design",
+        "targetStateId": "complex-focus-design-digital-merch-video-focus-design",
+        "value": 0.5826771653543307
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event-games-merch",
+        "targetStateId": "complex-focus-design-merch-video-focus-design",
+        "value": 0.5818181818181818
+      }
+    ],
+    "localNeighbourLogDistortionP95Max": [
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-games-merch-video-focus-design",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 4.001912291244405
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event-games",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.939685047544271
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.929581891122779
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-games-focus-event",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.90123005178136
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-games-video-focus-event",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.87318195297686
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-focus-digital",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.8598554364642363
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-video-focus-content",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.854000842773615
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-focus-games",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8523580081487805
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-focus-event",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.851797034515588
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-games-video-focus-content",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.843635594993486
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-drive-content-design-digital-event-games",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8411310067230438
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-games-merch-video-focus-design",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8394723893947456
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-digital-event-video-focus-digital",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8388050516801187
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-focus-content",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.830783023973163
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-focus-design",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.827489276652121
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-focus-event",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8269091259587498
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-games-video-focus-design",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.825712362521701
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-focus-event",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8201136963044915
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-merch-focus-content",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.819136818266612
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-focus-content",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8172927063862723
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-games-merch-focus-design",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.8093697286736132
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-digital-event-games-merch-video-focus-design",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.8081634489344984
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital-event",
+        "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+        "value": 3.8041524420342436
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-games-video-focus-content",
+        "targetStateId": "complex-drive-content-design-digital-event-games-merch",
+        "value": 3.80398989401642
+      }
+    ],
+    "m4MidSphericalCollapse": [
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 0.6236476764791892
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-content-design-digital-event-focus-digital",
+        "value": 0.6025375016778126
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "single-content",
+        "value": 0.5905457156801517
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-event-games-merch-video-focus-event",
+        "value": 0.5883521164586343
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "single-design",
+        "value": 0.5875477993752647
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-event-merch-video-focus-design",
+        "value": 0.5873058232391557
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-digital-event-games-focus-design",
+        "value": 0.5858867654549145
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-digital-merch-video-focus-design",
+        "value": 0.5854260115179939
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-digital-event-games-video-focus-digital",
+        "value": 0.5846866955621882
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "single-games",
+        "value": 0.5845094041589977
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-games-video-focus-design",
+        "value": 0.5834130957277635
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-digital-video-focus-design",
+        "value": 0.5832340149010626
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-digital-focus-design",
+        "value": 0.5830699075130603
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "single-video",
+        "value": 0.5824073041192002
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-digital-event-video-focus-design",
+        "value": 0.5821140638511455
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-event-focus-design",
+        "value": 0.5814630081931376
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-event-games-video-focus-design",
+        "value": 0.5812604491536074
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-event-merch-focus-design",
+        "value": 0.5811577543988056
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "master-neutral",
+        "value": 0.581146907008868
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-merch-focus-design",
+        "value": 0.5800964937504136
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-merch-video-focus-design",
+        "value": 0.5797178660526195
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-digital-event-merch-video-focus-digital",
+        "value": 0.5790168892978205
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-content-digital-games-merch-video-focus-content",
+        "value": 0.5777208041863097
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "single-event",
+        "targetStateId": "complex-focus-design-event-games-focus-design",
+        "value": 0.5776109051658194
+      }
+    ],
+    "maximumStepFraction": [
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-focus-content",
+        "targetStateId": "complex-focus-content-merch-video-focus-content",
+        "value": 0.2164453589306137
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-focus-content",
+        "targetStateId": "complex-focus-content-digital-video-focus-content",
+        "value": 0.21629132908745494
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-video-focus-content",
+        "targetStateId": "complex-focus-content-event-focus-content",
+        "value": 0.2161350469497477
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design",
+        "targetStateId": "complex-focus-content-digital-focus-content",
+        "value": 0.21564937441807905
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-focus-content",
+        "targetStateId": "complex-gather-content-design",
+        "value": 0.2156385584610383
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-video-focus-content",
+        "targetStateId": "complex-focus-content-event-focus-content",
+        "value": 0.2144548526361199
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design",
+        "targetStateId": "complex-focus-content-design-focus-content",
+        "value": 0.21414086971111898
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-merch-video-focus-content",
+        "targetStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "value": 0.21335596341703217
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-merch-video-focus-content",
+        "targetStateId": "complex-focus-content-design-digital-games-merch-focus-content",
+        "value": 0.2131088619873459
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-focus-content",
+        "targetStateId": "complex-focus-content-design-video-focus-content",
+        "value": 0.21240388108253483
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-drive-content-design",
+        "targetStateId": "complex-focus-content-design-focus-design",
+        "value": 0.2123757583830401
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "targetStateId": "complex-focus-content-design-digital-event-games-focus-games",
+        "value": 0.2120782636096201
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-games-focus-games",
+        "targetStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "value": 0.2112983657980733
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "targetStateId": "complex-focus-content-design-event-merch-video-focus-content",
+        "value": 0.2107258732619926
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design",
+        "targetStateId": "complex-focus-content-event-focus-content",
+        "value": 0.20941563567190233
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-focus-design",
+        "targetStateId": "complex-drive-content-design",
+        "value": 0.20880775092747098
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-event-games-merch-focus-content",
+        "targetStateId": "complex-focus-content-design-digital-event-games-focus-games",
+        "value": 0.208476131190484
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-event-focus-content",
+        "targetStateId": "complex-focus-content-design-games-focus-content",
+        "value": 0.2083398734663459
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-games-focus-design",
+        "targetStateId": "complex-drive-content-design",
+        "value": 0.20797144683774263
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-video-focus-content",
+        "targetStateId": "complex-focus-content-design-event-games-merch-focus-content",
+        "value": 0.2074505295766905
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-games-focus-content",
+        "targetStateId": "complex-focus-content-event-focus-content",
+        "value": 0.20736296005424393
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design",
+        "targetStateId": "complex-focus-content-design-focus-design",
+        "value": 0.20655987315895938
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-merch-video-focus-content",
+        "targetStateId": "complex-focus-content-event-focus-content",
+        "value": 0.20624991630464226
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-event-focus-design",
+        "targetStateId": "complex-focus-content-event-video-focus-content",
+        "value": 0.20623539422881013
+      }
+    ],
+    "screenBoundsExpansionMax": [
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-games-video-focus-event",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.2637887872427096
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-event-games-video-focus-event",
+        "value": 1.261097635688174
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-content-games-video-focus-content",
+        "value": 1.2421000168183076
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-games-video-focus-content",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.2414795467322406
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-games-merch-focus-event",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.231619805785645
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-digital-event-games-merch-video-focus-digital",
+        "value": 1.2279343664785989
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-event-games-merch-focus-event",
+        "value": 1.2226342617899217
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-design-games-video-focus-design",
+        "value": 1.2194091951367543
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-digital-event-games-merch-video-focus-digital",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.2143123975718106
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-games-video-focus-design",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.2112101576163183
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-digital-games-video-focus-digital",
+        "value": 1.2042091423503583
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-games-focus-content",
+        "targetStateId": "complex-focus-content-design-digital-focus-digital",
+        "value": 1.2021357734638733
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-focus-digital",
+        "targetStateId": "complex-focus-content-games-focus-content",
+        "value": 1.2021357734638733
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-design-games-merch-focus-design",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.1994534519575968
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-digital-games-video-focus-digital",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.1956372641095885
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-focus-content",
+        "targetStateId": "complex-focus-merch-video-focus-merch",
+        "value": 1.1956116287340808
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-focus-content",
+        "targetStateId": "complex-focus-digital-merch-video-focus-digital",
+        "value": 1.1891333451241002
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-merch-focus-content",
+        "targetStateId": "single-merch",
+        "value": 1.188181238746021
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-focus-digital",
+        "targetStateId": "complex-focus-content-digital-focus-content",
+        "value": 1.18756117295531
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-event-games-video-focus-event",
+        "targetStateId": "complex-gather-content-design-digital-event-games",
+        "value": 1.1875543873217105
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-games-focus-content",
+        "targetStateId": "complex-focus-content-design-digital-event-focus-digital",
+        "value": 1.185297431196538
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-design-digital-event-focus-digital",
+        "targetStateId": "complex-focus-content-games-focus-content",
+        "value": 1.185297431196538
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-focus-content-digital-games-merch-video-focus-content",
+        "targetStateId": "complex-gather-content-design-digital",
+        "value": 1.1832801395099686
+      },
+      {
+        "failureReasons": [],
+        "sourceStateId": "complex-gather-content-design-digital",
+        "targetStateId": "complex-focus-content-digital-games-merch-video-focus-content",
+        "value": 1.1830305861466213
+      }
+    ]
+  }
+}

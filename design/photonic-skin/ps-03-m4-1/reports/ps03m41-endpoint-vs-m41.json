@@ -1,0 +1,26 @@
+{
+  "baseline": "frozen PS-03.M3.1R endpoint library",
+  "candidate": "PS-03.M4.1 directed transition-v2.1",
+  "fullNRiskSuite": {
+    "m3MeanMidSphericalCollapse": 0.3562481798587472,
+    "m4MeanMidSphericalCollapse": 0.40997218247960093,
+    "programCount": 35,
+    "programsWithLowerOrEqualCollapse": 18
+  },
+  "historicalM4": {
+    "aggregateContentHash": "8ebb908374f02801f0b837e2c827a018f12ebbeb8761bbd7d1f9ea5c402497c9",
+    "preservedUnchanged": true,
+    "stage": "PS-03.M4"
+  },
+  "interpretation": "numeric proxies support visual review; they do not replace human motion approval",
+  "pairProbeNonMaster": {
+    "m3MeanMidSourceLikeness": 0.5844307598552035,
+    "m3MeanMidSphericalCollapse": 0.2767402143796734,
+    "m3MeanMidTargetLikeness": 0.5875828200944282,
+    "m4MeanMidSourceLikeness": 0.9179615443741783,
+    "m4MeanMidSphericalCollapse": 0.28023968746993516,
+    "m4MeanMidTargetLikeness": 0.4077738740288071,
+    "pairCount": 23256
+  },
+  "stage": "PS-03.M4.1"
+}

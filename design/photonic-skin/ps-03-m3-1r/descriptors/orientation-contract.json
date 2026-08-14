@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-03.M3.1R",
+  "stateVersion": "3.1.1",
+  "builderVersion": "ps03m31r-presentation-builder-v1",
+  "baselineStage": "PS-03.M3.1",
+  "baselineFingerprint": "21a78652d529eb0b1d34765aad42f0ae8379aa3f7fb9d3ec5af698548464d6e5",
+  "cameraRolePromotion": {
+    "canonical": [2.8, -7.8, 4.6],
+    "alternate": [5.6, -6.4, 4.1],
+    "side": [8.8, 0.0, 1.4],
+    "top": [0.01, -0.01, 9.4],
+    "fovDegrees": 33.0
+  },
+  "eventOrientation": {
+    "semanticPivot": [0.0, 0.0, 0.0],
+    "semanticUp": [0.0, 0.0, 1.0],
+    "semanticForward": [0.0, -1.0, 0.0],
+    "candidateYawDegrees": [12.0, 15.0, 18.0],
+    "selectedEulerDegrees": [0.0, 0.0, 18.0],
+    "selectionRule": "minimum sweep yaw satisfying screen-space QA and visual review; +18 clears endpoint dust and is within 0.253 degrees of the approximate canonical 2-degree boundary",
+    "translationPolicy": "Only two proven screen-space conflicts receive the smallest outward Event-only rigid translation from a deterministic 0.01-unit sweep; all five components move together.",
+    "translationOverrides": {
+      "complex-focus-content-design-digital-event-merch-focus-content": [0.009128455519676209, -0.004083051979541778, 0.0],
+      "complex-focus-digital-event-games-merch-video-focus-digital": [-0.010451843738555908, 0.017051656246185303, 0.0]
+    },
+    "rigidComponentGroup": ["stage-deck", "portal-arch", "figure-left", "figure-centre", "figure-right"],
+    "pitchAllowed": false,
+    "rollAllowed": false,
+    "reflectionAllowed": false
+  }
+}

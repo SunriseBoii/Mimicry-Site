@@ -1,0 +1,543 @@
+{
+  "bridgeTracks": [
+    {
+      "end": 0.72,
+      "groupIndex": 1,
+      "memberCount": 96,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 4,
+      "memberCount": 96,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 6,
+      "memberCount": 46,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 8,
+      "memberCount": 22,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 9,
+      "memberCount": 34,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 11,
+      "memberCount": 23,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 12,
+      "memberCount": 38,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 13,
+      "memberCount": 27,
+      "mode": "regroup",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    }
+  ],
+  "buffers": {
+    "groupTracks": {
+      "byteLength": 1024,
+      "recordCount": 16,
+      "recordStride": 64,
+      "sha256": "ab249bd5d396f289422133dc92fec801772a1c61fe9b23d79cf3291372f62e8e"
+    },
+    "perId": {
+      "byteLength": 524288,
+      "recordCount": 16384,
+      "recordStride": 32,
+      "sha256": "e2b4eac0b97b2c112b271bc54b4111eb54736be05934d400fb7276ca22614e90"
+    }
+  },
+  "byteLayout": {
+    "endianness": "little",
+    "groupTracks": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "sourceCenter",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "targetCenter",
+          "offset": 12
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "routeControl",
+          "offset": 24
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "direction",
+          "offset": 36
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseStart",
+          "offset": 42
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseEnd",
+          "offset": 44
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealStart",
+          "offset": 46
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealEnd",
+          "offset": 48
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeStart",
+          "offset": 50
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeEnd",
+          "offset": 52
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "sourceMacro",
+          "offset": 54
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "targetMacro",
+          "offset": 56
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 58
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "memberCount",
+          "offset": 60
+        },
+        {
+          "components": 2,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 62
+        }
+      ],
+      "recordStride": 64
+    },
+    "perId": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localSource",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localTarget",
+          "offset": 6
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "residual",
+          "offset": 12
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "depth",
+          "offset": 18
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationStart",
+          "offset": 20
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationEnd",
+          "offset": 22
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "scaleBias",
+          "offset": 24
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "groupIndex",
+          "offset": 26
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 28
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "phaseOffset",
+          "offset": 30
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 31
+        }
+      ],
+      "recordStride": 32
+    }
+  },
+  "hashes": {
+    "contentSha256": "05a6605ff883987f77b567f75df4414834e153da89d67f2c8db91b6e48289e73",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "groupTracksSha256": "ab249bd5d396f289422133dc92fec801772a1c61fe9b23d79cf3291372f62e8e",
+    "motionProfileSha256": "f2f25cb2dd6bddc422f0a6d8961fe677ce0f92e10607fecf8692567b8903f381",
+    "perIdSha256": "e2b4eac0b97b2c112b271bc54b4111eb54736be05934d400fb7276ca22614e90",
+    "requestSha256": "17ad9239fce396ed41923c017281f33f5fa94c2c26dd4349a2c0fa20789c899b",
+    "sourceRecordsSha256": "f50afd49ef13d01b491b1022ffdf8ed77bfff3263950e70e0aa3edc6f33f0594",
+    "sourceStateSha256": "f50afd49ef13d01b491b1022ffdf8ed77bfff3263950e70e0aa3edc6f33f0594",
+    "targetRecordsSha256": "cd499022caec3b147c7608e23b90c75e5515c78d9825aa13dfdc5a43f17c2c2c",
+    "targetStateSha256": "cd499022caec3b147c7608e23b90c75e5515c78d9825aa13dfdc5a43f17c2c2c"
+  },
+  "header": {
+    "activationPolicy": {
+      "bridgePulseMaximum": 0.035,
+      "bridgeThickness": 0.72,
+      "depthRouteFraction": 0.18,
+      "endpointHoldOutsideHandoff": true,
+      "localMorphWidthFraction": 0.12,
+      "minimumGeometricScale": 0.18,
+      "phaseOffsetRange": 0.38,
+      "routeOnlyDuringLocalHandoff": true
+    },
+    "actorTrack": {
+      "centerEnd": [
+        0.0067457069934031555,
+        -0.013410814206073152,
+        -0.2569473263476105
+      ],
+      "centerStart": [
+        0.14834218531153448,
+        0.12246662206792402,
+        -0.08718484524835435
+      ],
+      "rotationAxis": [
+        0.694339845809,
+        -0.719640406132,
+        -0.003140761697
+      ],
+      "rotationRadians": 0.03035797119140625,
+      "sourcePose": {
+        "orientation": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "translationAmplitude": 0.012,
+      "translationAxis": [
+        -0.545686458984,
+        -0.52364633596,
+        -0.654232988558
+      ],
+      "window": [
+        0.0,
+        0.11
+      ]
+    },
+    "compilerVersion": "ps03m41-transition-compiler-v2.1",
+    "deterministicSeed": 2628613201,
+    "directionAxis": [
+      -0.545686458984,
+      -0.52364633596,
+      -0.654232988558
+    ],
+    "durationSeconds": 1.018976086036002,
+    "endpointExactness": {
+      "fields": [
+        "position",
+        "normal",
+        "orientation",
+        "scale",
+        "status",
+        "flags",
+        "component",
+        "shell",
+        "transitionGroup",
+        "reserveDepth"
+      ],
+      "times": [
+        0.0,
+        1.0
+      ]
+    },
+    "endpointLibrary": {
+      "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+      "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+      "stage": "PS-03.M3.1R",
+      "stateVersion": "3.1.1"
+    },
+    "groupCount": 16,
+    "identityCount": 16384,
+    "isNoOp": false,
+    "motionProfileId": "directed-plastic-release",
+    "motionProfileVersion": "2.2.0",
+    "phasePolicy": {
+      "basis": "quintic-c2-window-v1",
+      "sequence": [
+        "anticipation",
+        "release",
+        "regroup",
+        "reveal",
+        "approach",
+        "settle",
+        "idle-handoff"
+      ],
+      "windows": {
+        "anticipation": [
+          0.0,
+          0.11
+        ],
+        "approach": [
+          0.62,
+          0.94
+        ],
+        "regroup": [
+          0.24,
+          0.68
+        ],
+        "release": [
+          0.07,
+          0.38
+        ],
+        "reveal": [
+          0.4,
+          0.82
+        ],
+        "settle": [
+          0.86,
+          1
+        ]
+      }
+    },
+    "reducedMotion": false,
+    "settlePolicy": {
+      "maximumAmplitudeFraction": 0.018,
+      "window": [
+        0.86,
+        1
+      ]
+    },
+    "sourceKind": "frozen-state",
+    "sourceStateId": "complex-focus-content-design-focus-content",
+    "targetStateId": "complex-focus-content-design-focus-design",
+    "triggerMode": "qa",
+    "viewportProfile": "desktop"
+  },
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "programId": "complex-focus-content-design-focus-content-to-complex-focus-content-design-focus-design-qa-desktop-17ad9239fce3",
+  "programVersion": "2.1.0",
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m41-transition-compiler-v2.1",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointLibraryManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "endpointLibraryStage": "PS-03.M3.1R",
+    "endpointLibraryVersion": "3.1.1",
+    "geometryOnly": true,
+    "pairSpecificBranches": false,
+    "stage": "PS-03.M4.1",
+    "targetSpecificBranches": false
+  },
+  "routingGraph": [
+    {
+      "groupIndex": 0,
+      "memberCount": 3241,
+      "relation": "preserve",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 1,
+      "memberCount": 5184,
+      "relation": "regroup",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 2,
+      "memberCount": 1035,
+      "relation": "regroup",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 3,
+      "memberCount": 877,
+      "relation": "regroup",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 4,
+      "memberCount": 1266,
+      "relation": "regroup",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 5,
+      "memberCount": 1875,
+      "relation": "preserve",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 6,
+      "memberCount": 569,
+      "relation": "regroup",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 7,
+      "memberCount": 294,
+      "relation": "regroup",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 8,
+      "memberCount": 270,
+      "relation": "regroup",
+      "sourceMacroGroup": 514,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 9,
+      "memberCount": 414,
+      "relation": "regroup",
+      "sourceMacroGroup": 514,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 10,
+      "memberCount": 118,
+      "relation": "preserve",
+      "sourceMacroGroup": 514,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 11,
+      "memberCount": 278,
+      "relation": "regroup",
+      "sourceMacroGroup": 514,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 12,
+      "memberCount": 463,
+      "relation": "regroup",
+      "sourceMacroGroup": 771,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 13,
+      "memberCount": 337,
+      "relation": "regroup",
+      "sourceMacroGroup": 771,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 14,
+      "memberCount": 66,
+      "relation": "regroup",
+      "sourceMacroGroup": 771,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 15,
+      "memberCount": 97,
+      "relation": "preserve",
+      "sourceMacroGroup": 771,
+      "targetMacroGroup": 771
+    }
+  ],
+  "schemaVersion": "1.1.0"
+}

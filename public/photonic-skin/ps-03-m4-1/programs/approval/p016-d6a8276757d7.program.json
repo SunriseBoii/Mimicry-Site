@@ -1,0 +1,823 @@
+{
+  "bridgeTracks": [
+    {
+      "end": 0.72,
+      "groupIndex": 1,
+      "memberCount": 71,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 4,
+      "memberCount": 39,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 5,
+      "memberCount": 32,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 6,
+      "memberCount": 14,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 7,
+      "memberCount": 54,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 8,
+      "memberCount": 34,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 12,
+      "memberCount": 53,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 13,
+      "memberCount": 38,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 15,
+      "memberCount": 15,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 17,
+      "memberCount": 13,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 18,
+      "memberCount": 57,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 19,
+      "memberCount": 78,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 23,
+      "memberCount": 30,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 24,
+      "memberCount": 27,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 25,
+      "memberCount": 13,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 26,
+      "memberCount": 44,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 27,
+      "memberCount": 26,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 31,
+      "memberCount": 44,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 32,
+      "memberCount": 34,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 34,
+      "memberCount": 12,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 36,
+      "memberCount": 8,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    },
+    {
+      "end": 0.72,
+      "groupIndex": 37,
+      "memberCount": 44,
+      "mode": "split",
+      "peak": 0.5,
+      "start": 0.3,
+      "thickness": 0.72
+    }
+  ],
+  "buffers": {
+    "groupTracks": {
+      "byteLength": 2432,
+      "recordCount": 38,
+      "recordStride": 64,
+      "sha256": "07f69c43287dffb631263c9eb0c07ba911a15e58800da1c5b9572fd1ff3e04c5"
+    },
+    "perId": {
+      "byteLength": 524288,
+      "recordCount": 16384,
+      "recordStride": 32,
+      "sha256": "2c384ce46b775a9c38e2e0acdc18e6474f03bdbdbed35921ce91ee80f1418d9a"
+    }
+  },
+  "byteLayout": {
+    "endianness": "little",
+    "groupTracks": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "sourceCenter",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "targetCenter",
+          "offset": 12
+        },
+        {
+          "components": 3,
+          "dtype": "<f4",
+          "name": "routeControl",
+          "offset": 24
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "direction",
+          "offset": 36
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseStart",
+          "offset": 42
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "releaseEnd",
+          "offset": 44
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealStart",
+          "offset": 46
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "revealEnd",
+          "offset": 48
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeStart",
+          "offset": 50
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "bridgeEnd",
+          "offset": 52
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "sourceMacro",
+          "offset": 54
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "targetMacro",
+          "offset": 56
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 58
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "memberCount",
+          "offset": 60
+        },
+        {
+          "components": 2,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 62
+        }
+      ],
+      "recordStride": 64
+    },
+    "perId": {
+      "fields": [
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localSource",
+          "offset": 0
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "localTarget",
+          "offset": 6
+        },
+        {
+          "components": 3,
+          "dtype": "<f2",
+          "name": "residual",
+          "offset": 12
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "depth",
+          "offset": 18
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationStart",
+          "offset": 20
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "activationEnd",
+          "offset": 22
+        },
+        {
+          "components": 1,
+          "dtype": "<f2",
+          "name": "scaleBias",
+          "offset": 24
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "groupIndex",
+          "offset": 26
+        },
+        {
+          "components": 1,
+          "dtype": "<u2",
+          "name": "flags",
+          "offset": 28
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "phaseOffset",
+          "offset": 30
+        },
+        {
+          "components": 1,
+          "dtype": "|u1",
+          "name": "_padding",
+          "offset": 31
+        }
+      ],
+      "recordStride": 32
+    }
+  },
+  "hashes": {
+    "contentSha256": "6aea13efb0ba51f3c3f269d4aadc2d3368d7a7a9f51c4f1e5301d770d47abcca",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "groupTracksSha256": "07f69c43287dffb631263c9eb0c07ba911a15e58800da1c5b9572fd1ff3e04c5",
+    "motionProfileSha256": "f2f25cb2dd6bddc422f0a6d8961fe677ce0f92e10607fecf8692567b8903f381",
+    "perIdSha256": "2c384ce46b775a9c38e2e0acdc18e6474f03bdbdbed35921ce91ee80f1418d9a",
+    "requestSha256": "d6a8276757d71bfdfa77872cecd9e5869ebb028e02f2149b647c6810e293ed9b",
+    "sourceRecordsSha256": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+    "sourceStateSha256": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+    "targetRecordsSha256": "27e2f5bcf2637050ccdaa43ce3e342106ef444532f1cb7d4afa4f56d87f541bc",
+    "targetStateSha256": "27e2f5bcf2637050ccdaa43ce3e342106ef444532f1cb7d4afa4f56d87f541bc"
+  },
+  "header": {
+    "activationPolicy": {
+      "bridgePulseMaximum": 0.035,
+      "bridgeThickness": 0.72,
+      "depthRouteFraction": 0.18,
+      "endpointHoldOutsideHandoff": true,
+      "localMorphWidthFraction": 0.12,
+      "minimumGeometricScale": 0.18,
+      "phaseOffsetRange": 0.38,
+      "routeOnlyDuringLocalHandoff": true
+    },
+    "actorTrack": {
+      "centerEnd": [
+        -0.07499034343119959,
+        -0.11718751882609979,
+        -0.13343695540107248
+      ],
+      "centerStart": [
+        0.14179458833504222,
+        0.12253464560605876,
+        -0.41498780495809484
+      ],
+      "rotationAxis": [
+        0.740559449998,
+        -0.671988027139,
+        -0.001947408443
+      ],
+      "rotationRadians": 0.045,
+      "sourcePose": {
+        "orientation": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "translationAmplitude": 0.012,
+      "translationAxis": [
+        -0.505749136655,
+        -0.559260630852,
+        0.656845002685
+      ],
+      "window": [
+        0.0,
+        0.11
+      ]
+    },
+    "compilerVersion": "ps03m41-transition-compiler-v2.1",
+    "deterministicSeed": 3446921876,
+    "directionAxis": [
+      -0.505749136655,
+      -0.559260630852,
+      0.656845002685
+    ],
+    "durationSeconds": 1.18,
+    "endpointExactness": {
+      "fields": [
+        "position",
+        "normal",
+        "orientation",
+        "scale",
+        "status",
+        "flags",
+        "component",
+        "shell",
+        "transitionGroup",
+        "reserveDepth"
+      ],
+      "times": [
+        0.0,
+        1.0
+      ]
+    },
+    "endpointLibrary": {
+      "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+      "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+      "stage": "PS-03.M3.1R",
+      "stateVersion": "3.1.1"
+    },
+    "groupCount": 38,
+    "identityCount": 16384,
+    "isNoOp": false,
+    "motionProfileId": "directed-plastic-release",
+    "motionProfileVersion": "2.2.0",
+    "phasePolicy": {
+      "basis": "quintic-c2-window-v1",
+      "sequence": [
+        "anticipation",
+        "release",
+        "regroup",
+        "reveal",
+        "approach",
+        "settle",
+        "idle-handoff"
+      ],
+      "windows": {
+        "anticipation": [
+          0.0,
+          0.11
+        ],
+        "approach": [
+          0.62,
+          0.94
+        ],
+        "regroup": [
+          0.24,
+          0.68
+        ],
+        "release": [
+          0.07,
+          0.38
+        ],
+        "reveal": [
+          0.4,
+          0.82
+        ],
+        "settle": [
+          0.86,
+          1
+        ]
+      }
+    },
+    "reducedMotion": false,
+    "settlePolicy": {
+      "maximumAmplitudeFraction": 0.018,
+      "window": [
+        0.86,
+        1
+      ]
+    },
+    "sourceKind": "frozen-state",
+    "sourceStateId": "single-games",
+    "targetStateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+    "triggerMode": "qa",
+    "viewportProfile": "desktop"
+  },
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "programId": "single-games-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-d6a8276757d7",
+  "programVersion": "2.1.0",
+  "provenance": {
+    "approvalStatus": "requires-human-approval",
+    "compiler": "ps03m41-transition-compiler-v2.1",
+    "endpointLibraryFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "endpointLibraryManifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "endpointLibraryStage": "PS-03.M3.1R",
+    "endpointLibraryVersion": "3.1.1",
+    "geometryOnly": true,
+    "pairSpecificBranches": false,
+    "stage": "PS-03.M4.1",
+    "targetSpecificBranches": false
+  },
+  "routingGraph": [
+    {
+      "groupIndex": 0,
+      "memberCount": 1260,
+      "relation": "preserve",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 1,
+      "memberCount": 882,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 2,
+      "memberCount": 220,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 3,
+      "memberCount": 174,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 4,
+      "memberCount": 477,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1028
+    },
+    {
+      "groupIndex": 5,
+      "memberCount": 400,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1285
+    },
+    {
+      "groupIndex": 6,
+      "memberCount": 169,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1542
+    },
+    {
+      "groupIndex": 7,
+      "memberCount": 667,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 1799
+    },
+    {
+      "groupIndex": 8,
+      "memberCount": 424,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 2056
+    },
+    {
+      "groupIndex": 9,
+      "memberCount": 99,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 2313
+    },
+    {
+      "groupIndex": 10,
+      "memberCount": 128,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 2570
+    },
+    {
+      "groupIndex": 11,
+      "memberCount": 99,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 2827
+    },
+    {
+      "groupIndex": 12,
+      "memberCount": 655,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 3084
+    },
+    {
+      "groupIndex": 13,
+      "memberCount": 472,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 3341
+    },
+    {
+      "groupIndex": 14,
+      "memberCount": 535,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 3598
+    },
+    {
+      "groupIndex": 15,
+      "memberCount": 178,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 3855
+    },
+    {
+      "groupIndex": 16,
+      "memberCount": 695,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 4112
+    },
+    {
+      "groupIndex": 17,
+      "memberCount": 824,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 4369
+    },
+    {
+      "groupIndex": 18,
+      "memberCount": 706,
+      "relation": "split",
+      "sourceMacroGroup": 0,
+      "targetMacroGroup": 4626
+    },
+    {
+      "groupIndex": 19,
+      "memberCount": 968,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 0
+    },
+    {
+      "groupIndex": 20,
+      "memberCount": 823,
+      "relation": "preserve",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 257
+    },
+    {
+      "groupIndex": 21,
+      "memberCount": 155,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 514
+    },
+    {
+      "groupIndex": 22,
+      "memberCount": 148,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 771
+    },
+    {
+      "groupIndex": 23,
+      "memberCount": 375,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1028
+    },
+    {
+      "groupIndex": 24,
+      "memberCount": 333,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1285
+    },
+    {
+      "groupIndex": 25,
+      "memberCount": 151,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1542
+    },
+    {
+      "groupIndex": 26,
+      "memberCount": 542,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 1799
+    },
+    {
+      "groupIndex": 27,
+      "memberCount": 320,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 2056
+    },
+    {
+      "groupIndex": 28,
+      "memberCount": 92,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 2313
+    },
+    {
+      "groupIndex": 29,
+      "memberCount": 93,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 2570
+    },
+    {
+      "groupIndex": 30,
+      "memberCount": 71,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 2827
+    },
+    {
+      "groupIndex": 31,
+      "memberCount": 541,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 3084
+    },
+    {
+      "groupIndex": 32,
+      "memberCount": 418,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 3341
+    },
+    {
+      "groupIndex": 33,
+      "memberCount": 406,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 3598
+    },
+    {
+      "groupIndex": 34,
+      "memberCount": 144,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 3855
+    },
+    {
+      "groupIndex": 35,
+      "memberCount": 561,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 4112
+    },
+    {
+      "groupIndex": 36,
+      "memberCount": 632,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 4369
+    },
+    {
+      "groupIndex": 37,
+      "memberCount": 547,
+      "relation": "split",
+      "sourceMacroGroup": 257,
+      "targetMacroGroup": 4626
+    }
+  ],
+  "schemaVersion": "1.1.0"
+}

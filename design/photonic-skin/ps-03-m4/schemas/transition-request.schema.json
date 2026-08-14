@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mimicry.group/schemas/photonic-skin/ps-03-m4/transition-request.schema.json",
+  "title": "TransitionRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "targetStateId",
+    "identitySpaceVersion",
+    "motionProfileId",
+    "triggerMode",
+    "viewportProfile",
+    "directionIntent",
+    "deterministicSeed"
+  ],
+  "oneOf": [
+    {
+      "required": ["sourceStateId"],
+      "not": { "required": ["sourceSnapshot"] }
+    },
+    {
+      "required": ["sourceSnapshot"],
+      "not": { "required": ["sourceStateId"] }
+    }
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "sourceStateId": { "$ref": "#/$defs/stateId" },
+    "sourceSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshotHash", "recordCount"],
+      "properties": {
+        "snapshotHash": { "$ref": "#/$defs/sha256" },
+        "recordCount": { "type": "integer", "minimum": 1, "maximum": 16384 },
+        "sourceProgramHash": { "$ref": "#/$defs/sha256" },
+        "capturedProgress": { "type": "number", "minimum": 0, "maximum": 1 },
+        "generation": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "targetStateId": { "$ref": "#/$defs/stateId" },
+    "identitySpaceVersion": { "const": "ps03m3-identity-v1" },
+    "motionProfileId": { "const": "directed-plastic-release" },
+    "triggerMode": { "enum": ["route", "scroll", "preview", "qa"] },
+    "viewportProfile": { "enum": ["desktop", "mobile"] },
+    "directionIntent": {
+      "oneOf": [
+        { "const": "auto" },
+        {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      ]
+    },
+    "durationOverride": { "type": "number", "minimum": 0.18, "maximum": 1.35 },
+    "deterministicSeed": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "probeIdentityCount": { "type": "integer", "minimum": 1, "maximum": 16384 },
+    "reducedMotion": { "type": "boolean", "default": false }
+  },
+  "$defs": {
+    "stateId": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "baselineFingerprint": "21a78652d529eb0b1d34765aad42f0ae8379aa3f7fb9d3ec5af698548464d6e5",
+  "builderVersion": "ps03m31r-presentation-builder-v1",
+  "cameraContract": {
+    "cameraAnimated": false,
+    "cameras": {
+      "alternate": [
+        5.6,
+        -6.4,
+        4.1
+      ],
+      "canonical": [
+        2.8,
+        -7.8,
+        4.6
+      ],
+      "side": [
+        8.8,
+        0.0,
+        1.4
+      ],
+      "top": [
+        0.01,
+        -0.01,
+        9.4
+      ]
+    },
+    "diagnosticViews": [
+      "side",
+      "top"
+    ],
+    "fovDegrees": 33.0,
+    "normalization": "per-state presentation anchor and uniform scale; camera rig is fixed",
+    "productionViews": [
+      "canonical",
+      "alternate"
+    ],
+    "profiles": {
+      "desktop": {
+        "height": 512,
+        "safeMargin": 0.06,
+        "width": 512
+      },
+      "mobile390": {
+        "height": 390,
+        "safeMargin": 0.05,
+        "width": 390
+      },
+      "silhouette180": {
+        "height": 180,
+        "safeMargin": 0.05,
+        "width": 180
+      },
+      "silhouette96": {
+        "height": 96,
+        "safeMargin": 0.05,
+        "width": 96
+      }
+    }
+  },
+  "complexAndBrandWideCount": 146,
+  "deterministicFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+  "eventContainingStatesRebuilt": 83,
+  "eventContentHashesChanged": 83,
+  "eventTranslationOverrideCount": 2,
+  "nonEventBuffersByteIdentical": 71,
+  "selectedEventEulerDegrees": [
+    0.0,
+    0.0,
+    18.0
+  ],
+  "semanticStateIdsPreserved": true,
+  "stage": "PS-03.M3.1R",
+  "stateCount": 154,
+  "status": "GEOMETRY BUILT / SCREEN QA PENDING"
+}

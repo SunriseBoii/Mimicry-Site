@@ -1,0 +1,545 @@
+{
+  "stage": "PS-03.M4.1R",
+  "generatedAt": "2026-08-14T13:42:42.138Z",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+    "platform": "Win32",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "devicePixelRatio": 1.5,
+    "webgl2": true,
+    "gpuVendor": "Google Inc. (Intel)",
+    "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32
+  },
+  "audit": {
+    "legacyM41": {
+      "canvasCss": [
+        874,
+        398
+      ],
+      "drawingBuffer": [
+        1311,
+        597
+      ],
+      "dpr": 1.5,
+      "worldUp": [
+        0,
+        1,
+        0
+      ]
+    },
+    "approvedM31r": {
+      "canvasCss": [
+        512,
+        512
+      ],
+      "drawingBuffer": [
+        768,
+        768
+      ],
+      "dpr": 1.5,
+      "worldUp": [
+        0,
+        0,
+        1
+      ]
+    },
+    "correctedM41r": {
+      "canvasCss": [
+        512,
+        512
+      ],
+      "drawingBuffer": [
+        768,
+        768
+      ],
+      "dpr": 1.5,
+      "worldUp": [
+        0,
+        0,
+        1
+      ],
+      "diagnostics": {
+        "m41r-main": {
+          "preset": "canonical",
+          "position": [
+            2.8,
+            -7.8,
+            4.6
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "quaternion": [
+            0.4997763039342373,
+            0.08698601965612429,
+            0.14777041992066833,
+            0.849011767531338
+          ],
+          "fov": 33,
+          "aspect": 1,
+          "near": 0.01,
+          "far": 100,
+          "matrixWorld": [
+            0.9411946707617074,
+            0.33786475360676677,
+            2.7755575615628914e-17,
+            0,
+            -0.1639705480160119,
+            0.4567750980446045,
+            0.8743398476505979,
+            0,
+            0.2954086171950472,
+            -0.822924005043346,
+            0.48531415682043444,
+            0,
+            2.8,
+            -7.8,
+            4.6,
+            1
+          ],
+          "matrixWorldInverse": [
+            0.9411946707617075,
+            -0.16397054801601188,
+            0.29540861719504724,
+            0,
+            0.33786475360676677,
+            0.4567750980446044,
+            -0.8229240050433458,
+            0,
+            5.551115123125783e-17,
+            0.8743398476505979,
+            0.4853141568204345,
+            0,
+            -6.223413063564398e-16,
+            -2.657888477387354e-15,
+            -9.478396488858229,
+            1
+          ],
+          "projectionMatrix": [
+            3.3759434225912455,
+            0,
+            0,
+            0,
+            0,
+            3.3759434225912455,
+            0,
+            0,
+            0,
+            0,
+            -1.0002000200020003,
+            -1,
+            0,
+            0,
+            -0.020002000200020003,
+            0
+          ],
+          "viewProjectionMatrix": [
+            3.177419958135919,
+            -0.5535552930733373,
+            -0.2954677048272495,
+            -0.29540861719504724,
+            1.140612292664176,
+            1.5420468878471536,
+            0.8230886063044807,
+            0.8229240050433458,
+            1.8740250587963278e-16,
+            2.9517218577854676,
+            -0.48541122935905245,
+            -0.4853141568204345,
+            -2.100989039800866e-15,
+            -8.972881123216898e-15,
+            9.46029035754287,
+            9.478396488858229
+          ]
+        }
+      }
+    }
+  },
+  "profiles": [
+    {
+      "name": "event-canonical-mobile390",
+      "canvas": [
+        390,
+        390,
+        585,
+        585
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "design-canonical-mobile390",
+      "canvas": [
+        390,
+        390,
+        585,
+        585
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "event-canonical-silhouette180",
+      "canvas": [
+        180,
+        180,
+        180,
+        180
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "event-canonical-silhouette96",
+      "canvas": [
+        96,
+        96,
+        96,
+        96
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "event-canonical-dpr1",
+      "canvas": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "event-canonical-dpr1-5",
+      "canvas": [
+        512,
+        512,
+        768,
+        768
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    },
+    {
+      "name": "event-canonical-dpr2",
+      "canvas": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "context": "READY",
+      "triangles": "131,072 / 4 MiB"
+    }
+  ],
+  "parity": {
+    "sideBySide": {
+      "canvases": [
+        {
+          "drawing": [
+            768,
+            768
+          ],
+          "rect": [
+            120.33333587646484,
+            82.01042175292969,
+            512,
+            512
+          ]
+        },
+        {
+          "drawing": [
+            768,
+            768
+          ],
+          "rect": [
+            632.3333740234375,
+            82.01042175292969,
+            512,
+            512
+          ]
+        }
+      ],
+      "mode": "side-by-side",
+      "scrollY": 0
+    },
+    "overlays": [
+      {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-03-m4-1r/renders/browser/parity-blink.png",
+        "canvases": [
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          },
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          }
+        ],
+        "context": "READY",
+        "mode": "blink"
+      },
+      {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-03-m4-1r/renders/browser/parity-difference.png",
+        "canvases": [
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          },
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          }
+        ],
+        "context": "READY",
+        "mode": "difference"
+      },
+      {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-03-m4-1r/renders/browser/parity-silhouette-xor.png",
+        "canvases": [
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          },
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          }
+        ],
+        "context": "READY",
+        "mode": "silhouette-xor"
+      },
+      {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-03-m4-1r/renders/browser/parity-component-difference.png",
+        "canvases": [
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          },
+          {
+            "css": [
+              512,
+              512
+            ],
+            "drawing": [
+              768,
+              768
+            ]
+          }
+        ],
+        "context": "READY",
+        "mode": "component-difference"
+      }
+    ]
+  },
+  "dpr": [
+    {
+      "value": 1,
+      "css": [
+        512,
+        512
+      ],
+      "drawing": [
+        512,
+        512
+      ]
+    },
+    {
+      "value": 1.5,
+      "css": [
+        512,
+        512
+      ],
+      "drawing": [
+        768,
+        768
+      ]
+    },
+    {
+      "value": 2,
+      "css": [
+        512,
+        512
+      ],
+      "drawing": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "resizeRecovery": {
+    "wideBefore": [
+      512,
+      512,
+      768,
+      768
+    ],
+    "narrow": [
+      390,
+      390,
+      585,
+      585
+    ],
+    "wideAfter": [
+      512,
+      512,
+      768,
+      768
+    ],
+    "cameraDiagnosticStable": true
+  },
+  "webglMotionParity": {
+    "measured": true,
+    "valid": true,
+    "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+    "sampleCount": 552,
+    "timeSampleCount": 46,
+    "maxPositionError": 0.000001612881469714722,
+    "p95PositionError": 3.2256469728597637e-7,
+    "maxVelocityError": 0.019954273944904344,
+    "p95VelocityError": 0.001483144222091415,
+    "maxVelocityNormalizedError": 0.010749045357957747,
+    "p95VelocityNormalizedError": 0.0007957985732256349,
+    "maxOrientationError": 0.000005193958663940457,
+    "p95OrientationError": 2.2299499513600551e-7,
+    "maxNormalError": 0.000009805042648303175,
+    "p95NormalError": 4.5860648155079953e-7,
+    "maxScaleError": 6.100715637114007e-7,
+    "p95ScaleError": 2.500000007010783e-8,
+    "maxActivationError": 3.053740477154676e-7,
+    "p95ActivationError": 8.099601406241774e-9,
+    "maxBridgeError": 0,
+    "p95BridgeError": 0,
+    "maxGroupPhaseError": 7.680610656368714e-7,
+    "p95GroupPhaseError": 6.448287963312094e-8,
+    "maxActorPoseError": 4.7203392982558823e-7,
+    "p95ActorPoseError": 4.372955299914794e-8,
+    "worstVelocitySample": {
+      "t": 0.75,
+      "persistentId": 0,
+      "axis": 1,
+      "actual": -100.2188456260551,
+      "expected": -100.2387999,
+      "epsilon": 0.0010000000000000009
+    }
+  },
+  "contextRestore": {
+    "status": "restored"
+  },
+  "retargetFinal": {
+    "t": "1.000",
+    "readout": "snapshot 50% → brand-wide-gather-content-design-digital-event-games-merch-videot=1.000 · IDLENEUTRAL",
+    "canvas": [
+      512,
+      512,
+      768,
+      768
+    ]
+  },
+  "screenshots": {
+    "count": 47,
+    "files": [
+      "00-m41-before-event-canonical.png",
+      "01-m31r-approved-event-canonical.png",
+      "02-m41r-first-event-canonical.png",
+      "brand-wide-drive.png",
+      "brand-wide-gather.png",
+      "design-canonical-mobile390.png",
+      "drive-card4.png",
+      "event-canonical-dpr1-5.png",
+      "event-canonical-dpr1.png",
+      "event-canonical-dpr2.png",
+      "event-canonical-mobile390.png",
+      "event-canonical-silhouette180.png",
+      "event-canonical-silhouette96.png",
+      "event-lead.png",
+      "event-reduced-endpoint.png",
+      "event-static-idle.png",
+      "event-support.png",
+      "event-transition-mid25.png",
+      "event-transition-mid50.png",
+      "event-transition-mid75.png",
+      "event-transition-t0.png",
+      "event-transition-t1.png",
+      "focus-card4.png",
+      "gather-card4.png",
+      "parity-blink.png",
+      "parity-component-difference.png",
+      "parity-difference.png",
+      "parity-side-by-side.png",
+      "parity-silhouette-xor.png",
+      "recovery-narrow.png",
+      "recovery-wide-after.png",
+      "recovery-wide-before.png",
+      "retarget-final-endpoint.png",
+      "single-content-alternate-desktop512.png",
+      "single-content-canonical-desktop512.png",
+      "single-design-alternate-desktop512.png",
+      "single-design-canonical-desktop512.png",
+      "single-digital-alternate-desktop512.png",
+      "single-digital-canonical-desktop512.png",
+      "single-event-alternate-desktop512.png",
+      "single-event-canonical-desktop512.png",
+      "single-games-alternate-desktop512.png",
+      "single-games-canonical-desktop512.png",
+      "single-merch-alternate-desktop512.png",
+      "single-merch-canonical-desktop512.png",
+      "single-video-alternate-desktop512.png",
+      "single-video-canonical-desktop512.png"
+    ]
+  },
+  "visualBoards": {
+    "count": 18,
+    "path": "design/photonic-skin/ps-03-m4-1r/renders/approval-pack"
+  }
+}

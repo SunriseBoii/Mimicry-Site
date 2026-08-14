@@ -1,0 +1,159 @@
+{
+  "stage": "PS-03.M4.1R",
+  "schemaVersion": "1.0.0",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "labPath": "/visual-lab/photonic-skin-m4-1r",
+  "endpointBaseline": {
+    "stage": "PS-03.M3.1R",
+    "version": "3.1.1",
+    "stateCount": 154,
+    "fingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "manifestSha256": "530ca41e0faecf291ea9f674a7e383ae8739af0bddad578a765a7c264129ea82",
+    "changed": false
+  },
+  "motionBaseline": {
+    "stage": "PS-03.M4.1",
+    "manifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "expectedManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "aggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "expectedAggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "programCount": 35,
+    "checkedProgramFiles": 105,
+    "checkedProgramBytes": 18863938,
+    "failures": [],
+    "bytePreserved": true,
+    "recompiled": false
+  },
+  "presentationPatch": {
+    "algorithm": "sha256(sorted relative path + NUL + bytes + NUL)",
+    "hash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "files": [
+      {
+        "path": "app/visual-lab/photonic-skin-m4-1r/M41Lab.tsx",
+        "bytes": 40622,
+        "sha256": "7c5027998da9779cbf720ad3c8da7421696c3e1110c21b4bb24ceb7fa589e1d7"
+      },
+      {
+        "path": "app/visual-lab/photonic-skin-m4-1r/m41r-lab.module.css",
+        "bytes": 7507,
+        "sha256": "88ae4d0ba175e835743bc4cfb4b24370375f214cd49544b9fd9173a966ccea25"
+      },
+      {
+        "path": "app/visual-lab/photonic-skin-m4-1r/M41Scene.tsx",
+        "bytes": 54399,
+        "sha256": "6976d5d6740eb5f24512599fe2ad5daaff0626ea91bf0fe6d06e1b8fb6e6f9eb"
+      },
+      {
+        "path": "app/visual-lab/photonic-skin-m4-1r/page.tsx",
+        "bytes": 294,
+        "sha256": "b346a73ab56d4c8ab960e65fc69950b43a25af560fbcf5ba0cb284749991db9a"
+      },
+      {
+        "path": "app/visual-lab/photonic-skin-m4-1r/photonic-presentation.ts",
+        "bytes": 6888,
+        "sha256": "985557667bb5d1a7997bcf34b1f78794610d46062b0ea5a8cbedd16c865fc2f0"
+      },
+      {
+        "path": "design/photonic-skin/ps-03-m4-1r/scripts/build-visual-boards.py",
+        "bytes": 9821,
+        "sha256": "b5ae942ea4e4e02990a7db35a0eb16463b17f393ada98e6ff05cba08e50e9989"
+      },
+      {
+        "path": "design/photonic-skin/ps-03-m4-1r/scripts/finalize-checkpoint.ts",
+        "bytes": 20898,
+        "sha256": "1b4a6c88125468f42eace8a149f2e6b4fec858d2188577ea112da5f2d17bca6f"
+      },
+      {
+        "path": "design/photonic-skin/ps-03-m4-1r/scripts/qa-presentation.ts",
+        "bytes": 20971,
+        "sha256": "5648cf1e2f392fbd8592c82b3588838d2d7b2bd32d28063aa10e758f31555186"
+      },
+      {
+        "path": "tests/photonic-m41r-presentation.test.ts",
+        "bytes": 13839,
+        "sha256": "2b7fade6d9efdf96bfccea206776ce4eaa8c1027ee0dc67b3e3013529aaa1f5d"
+      }
+    ]
+  },
+  "parity": {
+    "sourceTargetCases": 2464,
+    "passed": 2464,
+    "standaloneCases": 1232,
+    "eventDesignFourCameraCases": 64,
+    "caseDigestSha256": "143094e18d39b29d8c09d0df989528e0e96b598b4516ccf001cf345d1b802c49",
+    "maximums": {
+      "cameraMatrixMaxAbs": 0,
+      "presentationMatrixMaxAbs": 0,
+      "ndcMaxAbs": 0,
+      "centroidDeltaPx": 0,
+      "bboxDeltaPx": 0,
+      "semanticAxisMaxAbs": 0,
+      "clippedReference": 0,
+      "clippedCandidate": 0
+    },
+    "minimums": {
+      "silhouetteIou": 1,
+      "componentIou": 1
+    }
+  },
+  "browserQa": {
+    "environment": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "hardwareConcurrency": 20,
+      "deviceMemoryGiB": 32,
+      "devicePixelRatio": 1.5,
+      "webgl2": true,
+      "gpuVendor": "Google Inc. (Intel)",
+      "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "maxVertexTextureUnits": 16,
+      "maxCombinedTextureUnits": 32
+    },
+    "webglMotionParity": {
+      "measured": true,
+      "valid": true,
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "sampleCount": 552,
+      "timeSampleCount": 46,
+      "maxPositionError": 0.000001612881469714722,
+      "p95PositionError": 3.2256469728597637e-7,
+      "maxVelocityError": 0.019954273944904344,
+      "p95VelocityError": 0.001483144222091415,
+      "maxVelocityNormalizedError": 0.010749045357957747,
+      "p95VelocityNormalizedError": 0.0007957985732256349,
+      "maxOrientationError": 0.000005193958663940457,
+      "p95OrientationError": 2.2299499513600551e-7,
+      "maxNormalError": 0.000009805042648303175,
+      "p95NormalError": 4.5860648155079953e-7,
+      "maxScaleError": 6.100715637114007e-7,
+      "p95ScaleError": 2.500000007010783e-8,
+      "maxActivationError": 3.053740477154676e-7,
+      "p95ActivationError": 8.099601406241774e-9,
+      "maxBridgeError": 0,
+      "p95BridgeError": 0,
+      "maxGroupPhaseError": 7.680610656368714e-7,
+      "p95GroupPhaseError": 6.448287963312094e-8,
+      "maxActorPoseError": 4.7203392982558823e-7,
+      "p95ActorPoseError": 4.372955299914794e-8,
+      "worstVelocitySample": {
+        "t": 0.75,
+        "persistentId": 0,
+        "axis": 1,
+        "actual": -100.2188456260551,
+        "expected": -100.2387999,
+        "epsilon": 0.0010000000000000009
+      }
+    },
+    "contextRestore": {
+      "status": "restored"
+    },
+    "screenshotCount": 47,
+    "visualBoardCount": 18
+  },
+  "restrictions": {
+    "ps04Started": false,
+    "productionIntegrated": false,
+    "commitCreated": false,
+    "deployed": false
+  }
+}

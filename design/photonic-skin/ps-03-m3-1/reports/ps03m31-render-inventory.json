@@ -1,0 +1,128 @@
+{
+  "stage": "PS-03.M3.1",
+  "boardCount": 18,
+  "source": "deterministic component-ID + nearest-depth point-splat rendering of real state buffers",
+  "focusLeadCoverage": {
+    "runtimeManifestLeads": [
+      "content",
+      "design",
+      "digital",
+      "event",
+      "games",
+      "merch"
+    ],
+    "qaOnlySolverProbe": "video",
+    "allSevenCovered": true,
+    "manifestStateAddedForProbe": false
+  },
+  "boards": [
+    {
+      "file": "renders/board-baseline-vs-m31.png",
+      "width": 1200,
+      "height": 1134,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-single-emblems.png",
+      "width": 1200,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-focus-cardinality.png",
+      "width": 900,
+      "height": 314,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-focus-leads.png",
+      "width": 1200,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-gather.png",
+      "width": 1200,
+      "height": 314,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-drive.png",
+      "width": 1200,
+      "height": 314,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-brand-wide.png",
+      "width": 960,
+      "height": 414,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-all-multi-canonical.png",
+      "width": 1800,
+      "height": 2604,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-risk-suite.png",
+      "width": 1300,
+      "height": 294,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-production-views.png",
+      "width": 900,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-diagnostic-views.png",
+      "width": 900,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-mobile390.png",
+      "width": 1200,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-silhouettes.png",
+      "width": 1200,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-component-id.png",
+      "width": 1300,
+      "height": 294,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-safe-frame-occlusion.png",
+      "width": 1300,
+      "height": 294,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-master-core-absence.png",
+      "width": 900,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-endpoint-dust.png",
+      "width": 900,
+      "height": 574,
+      "source": "real-state-buffer"
+    },
+    {
+      "file": "renders/board-state-inventory.png",
+      "width": 1600,
+      "height": 748,
+      "source": "real-state-buffer"
+    }
+  ]
+}

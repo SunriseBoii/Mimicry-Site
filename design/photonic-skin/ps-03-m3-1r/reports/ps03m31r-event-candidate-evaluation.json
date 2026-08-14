@@ -1,0 +1,93 @@
+{
+  "baselineFingerprint": "21a78652d529eb0b1d34765aad42f0ae8379aa3f7fb9d3ec5af698548464d6e5",
+  "candidateBoard": {
+    "cellCount": 63,
+    "height": 1708,
+    "path": "renders/board-event-orientation-candidates.png",
+    "width": 2088
+  },
+  "candidateBuffersPersisted": 21,
+  "candidates": [
+    {
+      "alternateDifferenceDegrees": 29.18592516570965,
+      "angularPass": true,
+      "canonicalDifferenceDegrees": 7.7468366054261235,
+      "checkedComponents": 1934,
+      "checkedEventStates": 83,
+      "checkedOwnerRows": 710,
+      "checkedStateViews": 166,
+      "failureCount": 5,
+      "failures": [
+        "complex-focus-content-event-games-merch-focus-content/canonical/event:figure-right: dust",
+        "complex-focus-design-event-merch-video-focus-design/canonical/event:figure-right: dust",
+        "complex-focus-digital-event-games-merch-focus-digital/canonical/event:figure-right: dust",
+        "complex-focus-digital-event-games-video-focus-digital/canonical/event:figure-right: dust",
+        "complex-focus-digital-event-merch-video-focus-digital/canonical/event:figure-right: dust"
+      ],
+      "forwardHorizontal": [
+        0.20791169081775934,
+        -0.9781476007338057
+      ],
+      "machinePass": false,
+      "minimumPortalVisibleAreaPx": 479,
+      "minimumPortalVisibleRatio": 0.97922232116355,
+      "pitchDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "rotationDeterminant": 1.0,
+      "yawDegrees": 12.0
+    },
+    {
+      "alternateDifferenceDegrees": 26.185925165709648,
+      "angularPass": true,
+      "canonicalDifferenceDegrees": 4.746836605426177,
+      "checkedComponents": 1934,
+      "checkedEventStates": 83,
+      "checkedOwnerRows": 710,
+      "checkedStateViews": 166,
+      "failureCount": 2,
+      "failures": [
+        "complex-focus-design-event-games-merch-video-focus-design/canonical/event:figure-right: dust",
+        "complex-focus-digital-event-games-merch-video-focus-digital/canonical/event:figure-right: dust"
+      ],
+      "forwardHorizontal": [
+        0.25881904510252074,
+        -0.9659258262890683
+      ],
+      "machinePass": false,
+      "minimumPortalVisibleAreaPx": 486,
+      "minimumPortalVisibleRatio": 0.9762114537444934,
+      "pitchDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "rotationDeterminant": 0.9999999999999999,
+      "yawDegrees": 15.0
+    },
+    {
+      "alternateDifferenceDegrees": 23.18592516570963,
+      "angularPass": true,
+      "canonicalDifferenceDegrees": 1.7468366054262363,
+      "checkedComponents": 1934,
+      "checkedEventStates": 83,
+      "checkedOwnerRows": 710,
+      "checkedStateViews": 166,
+      "failureCount": 0,
+      "failures": [],
+      "forwardHorizontal": [
+        0.3090169943749474,
+        -0.9510565162951535
+      ],
+      "machinePass": true,
+      "minimumPortalVisibleAreaPx": 495,
+      "minimumPortalVisibleRatio": 0.97847533632287,
+      "pitchDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "rotationDeterminant": 0.9999999999999999,
+      "yawDegrees": 18.0
+    }
+  ],
+  "method": "rigid Event yaw applied to real M3.1 state records; exact component-ID + nearest-depth projection",
+  "representativeStateCount": 7,
+  "selectedYawDegrees": 18.0,
+  "selectionPolicy": "minimum machine-passing yaw, with a 0.5-degree tolerance on the brief's approximate canonical target; final selection remains subject to vision inspection",
+  "selectionRationale": "+12 and +15 leave 1-3 px right-figure dust in dense FOCUS states; +18 clears all dust and lands 0.253 degrees inside the documented approximate-angle tolerance",
+  "stage": "PS-03.M3.1R"
+}

@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mimicry.group/schemas/photonic-skin/ps-03-m4-1/transition-program.schema.json",
+  "title": "TransitionProgram",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "programVersion",
+    "programId",
+    "identitySpaceVersion",
+    "header",
+    "routingGraph",
+    "bridgeTracks",
+    "buffers",
+    "byteLayout",
+    "hashes",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.1.0"
+    },
+    "programVersion": {
+      "const": "2.1.0"
+    },
+    "programId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identitySpaceVersion": {
+      "const": "ps03m3-identity-v1"
+    },
+    "header": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "compilerVersion",
+        "sourceStateId",
+        "targetStateId",
+        "motionProfileId",
+        "triggerMode",
+        "viewportProfile",
+        "identityCount",
+        "groupCount",
+        "durationSeconds",
+        "isNoOp",
+        "phasePolicy",
+        "actorTrack"
+      ]
+    },
+    "routingGraph": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "groupIndex",
+          "sourceMacroGroup",
+          "targetMacroGroup",
+          "relation",
+          "memberCount"
+        ],
+        "properties": {
+          "groupIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "sourceMacroGroup": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "targetMacroGroup": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "relation": {
+            "enum": [
+              "preserve",
+              "regroup",
+              "split",
+              "merge"
+            ]
+          },
+          "memberCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16384
+          }
+        }
+      }
+    },
+    "bridgeTracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "groupIndex",
+          "mode",
+          "start",
+          "peak",
+          "end",
+          "thickness",
+          "memberCount"
+        ],
+        "properties": {
+          "groupIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "mode": {
+            "enum": [
+              "split",
+              "merge",
+              "regroup"
+            ]
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "peak": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "end": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "thickness": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "memberCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16384
+          }
+        }
+      }
+    },
+    "buffers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "groupTracks",
+        "perId"
+      ],
+      "properties": {
+        "groupTracks": {
+          "$ref": "#/$defs/buffer"
+        },
+        "perId": {
+          "$ref": "#/$defs/buffer"
+        }
+      }
+    },
+    "byteLayout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "endianness",
+        "groupTracks",
+        "perId"
+      ],
+      "properties": {
+        "endianness": {
+          "const": "little"
+        },
+        "groupTracks": {
+          "$ref": "#/$defs/layout"
+        },
+        "perId": {
+          "$ref": "#/$defs/layout"
+        }
+      }
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceStateSha256",
+        "targetStateSha256",
+        "sourceRecordsSha256",
+        "targetRecordsSha256",
+        "motionProfileSha256",
+        "requestSha256",
+        "groupTracksSha256",
+        "perIdSha256",
+        "endpointLibraryFingerprint",
+        "endpointManifestSha256",
+        "contentSha256"
+      ],
+      "properties": {
+        "sourceStateSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "targetStateSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "sourceRecordsSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "targetRecordsSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "motionProfileSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "requestSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "groupTracksSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "perIdSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "endpointLibraryFingerprint": {
+          "$ref": "#/$defs/sha256"
+        },
+        "endpointManifestSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "contentSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "buffer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordCount",
+        "recordStride",
+        "byteLength",
+        "sha256"
+      ],
+      "properties": {
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recordStride": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "byteLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordStride",
+        "fields"
+      ],
+      "properties": {
+        "recordStride": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "offset",
+              "dtype",
+              "components"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "dtype": {
+                "type": "string"
+              },
+              "components": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

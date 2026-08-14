@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mimicry.group/schemas/photonic-skin/ps-03-m4-1/motion-profile.schema.json",
+  "title": "MotionProfileDefinition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "profileId",
+    "profileVersion",
+    "triggerMode",
+    "timingPolicy",
+    "phasePolicy",
+    "globalPosePolicy",
+    "groupCoherencePolicy",
+    "routeFieldPolicy",
+    "splitMergePolicy",
+    "reserveTransportPolicy",
+    "featureProtectionPolicy",
+    "orientationPolicy",
+    "scalePolicy",
+    "settlePolicy",
+    "productionScrollPolicy",
+    "retargetPolicy",
+    "lodPolicy",
+    "reducedMotionPolicy",
+    "validationPolicy",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "profileId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "profileVersion": {
+      "type": "string",
+      "pattern": "^2\\.[0-9]+\\.[0-9]+$"
+    },
+    "triggerMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default",
+        "supported"
+      ],
+      "properties": {
+        "default": {
+          "enum": [
+            "route",
+            "lab-scroll-scrub",
+            "preview",
+            "qa"
+          ]
+        },
+        "supported": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "route"
+            },
+            {
+              "const": "lab-scroll-scrub"
+            },
+            {
+              "const": "preview"
+            },
+            {
+              "const": "qa"
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "timingPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "durationBoundsSeconds",
+        "variants"
+      ],
+      "properties": {
+        "durationBoundsSeconds": {
+          "$ref": "#/$defs/window"
+        },
+        "variants": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "route",
+            "lab-scroll-scrub",
+            "preview",
+            "qa"
+          ],
+          "properties": {
+            "route": {
+              "$ref": "#/$defs/timingVariant"
+            },
+            "lab-scroll-scrub": {
+              "$ref": "#/$defs/timingVariant"
+            },
+            "preview": {
+              "$ref": "#/$defs/timingVariant"
+            },
+            "qa": {
+              "$ref": "#/$defs/timingVariant"
+            }
+          }
+        }
+      }
+    },
+    "phasePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "windows",
+        "spatialDelayFraction",
+        "basis"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "anticipation"
+            },
+            {
+              "const": "release"
+            },
+            {
+              "const": "regroup"
+            },
+            {
+              "const": "reveal"
+            },
+            {
+              "const": "approach"
+            },
+            {
+              "const": "settle"
+            },
+            {
+              "const": "idle-handoff"
+            }
+          ],
+          "items": false,
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "windows": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/window"
+          },
+          "required": [
+            "anticipation",
+            "release",
+            "regroup",
+            "reveal",
+            "approach",
+            "settle"
+          ]
+        },
+        "spatialDelayFraction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.15
+        },
+        "basis": {
+          "const": "quintic-c2-window-v1"
+        }
+      }
+    },
+    "globalPosePolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "groupCoherencePolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "routeFieldPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "splitMergePolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "reserveTransportPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "featureProtectionPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "orientationPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "scalePolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "settlePolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "productionScrollPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "retargetPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "lodPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "reducedMotionPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "validationPolicy": {
+      "$ref": "#/$defs/policyObject"
+    },
+    "provenance": {
+      "$ref": "#/$defs/policyObject"
+    }
+  },
+  "$defs": {
+    "window": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "timingVariant": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "desktop",
+        "mobile"
+      ],
+      "properties": {
+        "desktop": {
+          "type": "object",
+          "required": [
+            "durationSeconds"
+          ],
+          "additionalProperties": true
+        },
+        "mobile": {
+          "type": "object",
+          "required": [
+            "durationSeconds"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "policyObject": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true
+    }
+  }
+}

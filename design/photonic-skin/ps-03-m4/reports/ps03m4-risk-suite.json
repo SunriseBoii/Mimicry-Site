@@ -1,0 +1,688 @@
+{
+  "coverage": [
+    "brand-wide-complex",
+    "brand-wide-master",
+    "complex-brand-wide",
+    "complex-master",
+    "complex-single",
+    "focus-swap",
+    "gather-drive",
+    "master-brand-wide",
+    "master-complex",
+    "master-single-family",
+    "maximum-active-delta",
+    "maximum-aspect-change",
+    "maximum-surface-area-change",
+    "merge-or-return",
+    "one-three-split",
+    "one-two-split",
+    "reserve-heavy",
+    "simple-route",
+    "single-complex",
+    "single-master-family",
+    "single-single-topology",
+    "single-single-topology-diverse",
+    "three-one-merge",
+    "three-two-merge",
+    "two-one-merge",
+    "two-three-split"
+  ],
+  "minimumRequired": 32,
+  "nameUse": "approval/report labels only; compiler receives declarative records",
+  "selectedCount": 35,
+  "selectionUsesOnlyMeasuredStateMetrics": true,
+  "selectionVersion": "ps03m4-risk-v1",
+  "stage": "PS-03.M4",
+  "transitions": [
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.35430908203125,
+        "aspectLogDelta": 0.9071856545521627,
+        "componentDelta": 0.0,
+        "reserveDeltaRatio": 0.35430908203125,
+        "score": 7.275575752460268,
+        "shellDelta": 0.0,
+        "surfaceAreaDeltaRatio": 0.48379818359237686
+      },
+      "scenarioId": "qa-000-master-neutral-to-single-content",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 0,
+      "targetStateId": "single-content"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.35430908203125,
+        "aspectLogDelta": 0.9071856545521627,
+        "componentDelta": 0.0,
+        "reserveDeltaRatio": 0.35430908203125,
+        "score": 7.275575752460268,
+        "shellDelta": 0.0,
+        "surfaceAreaDeltaRatio": 0.48379818359237686
+      },
+      "scenarioId": "qa-001-single-content-to-master-neutral",
+      "sourceStateId": "single-content",
+      "suiteIndex": 1,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.4078369140625,
+        "aspectLogDelta": 0.6102536122329962,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.4078369140625,
+        "score": 17.411925758748726,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.5189502262130935
+      },
+      "scenarioId": "qa-002-master-neutral-to-single-design",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 2,
+      "targetStateId": "single-design"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.4078369140625,
+        "aspectLogDelta": 0.6102536122329963,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.4078369140625,
+        "score": 17.411925758748726,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.5189502262130935
+      },
+      "scenarioId": "qa-003-single-design-to-master-neutral",
+      "sourceStateId": "single-design",
+      "suiteIndex": 3,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.60919189453125,
+        "aspectLogDelta": 0.7791531143697675,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.60919189453125,
+        "score": 16.411218956146953,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.617043997212968
+      },
+      "scenarioId": "qa-004-master-neutral-to-single-digital",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 4,
+      "targetStateId": "single-digital"
+    },
+    {
+      "coverage": [
+        "maximum-active-delta",
+        "maximum-surface-area-change",
+        "merge-or-return",
+        "reserve-heavy",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.60919189453125,
+        "aspectLogDelta": 0.7791531143697675,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.60919189453125,
+        "score": 16.411218956146953,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.617043997212968
+      },
+      "scenarioId": "qa-005-single-digital-to-master-neutral",
+      "sourceStateId": "single-digital",
+      "suiteIndex": 5,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.5296630859375,
+        "aspectLogDelta": 0.42001941082338995,
+        "componentDelta": 4.0,
+        "reserveDeltaRatio": 0.5296630859375,
+        "score": 12.654787980379057,
+        "shellDelta": 0.0,
+        "surfaceAreaDeltaRatio": 0.5835168509929107
+      },
+      "scenarioId": "qa-006-master-neutral-to-single-event",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 6,
+      "targetStateId": "single-event"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.5296630859375,
+        "aspectLogDelta": 0.4200194108233899,
+        "componentDelta": 4.0,
+        "reserveDeltaRatio": 0.5296630859375,
+        "score": 12.654787980379057,
+        "shellDelta": 0.0,
+        "surfaceAreaDeltaRatio": 0.5835168509929107
+      },
+      "scenarioId": "qa-007-single-event-to-master-neutral",
+      "sourceStateId": "single-event",
+      "suiteIndex": 7,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.3302001953125,
+        "aspectLogDelta": 0.891164948186503,
+        "componentDelta": 1.0,
+        "reserveDeltaRatio": 0.3302001953125,
+        "score": 11.910256359050184,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.4662096475708708
+      },
+      "scenarioId": "qa-008-master-neutral-to-single-games",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 8,
+      "targetStateId": "single-games"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.3302001953125,
+        "aspectLogDelta": 0.8911649481865029,
+        "componentDelta": 1.0,
+        "reserveDeltaRatio": 0.3302001953125,
+        "score": 11.910256359050184,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.4662096475708708
+      },
+      "scenarioId": "qa-009-single-games-to-master-neutral",
+      "sourceStateId": "single-games",
+      "suiteIndex": 9,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.57818603515625,
+        "aspectLogDelta": 1.2153052424374227,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.57818603515625,
+        "score": 20.880467961455533,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.6046500218822756
+      },
+      "scenarioId": "qa-010-master-neutral-to-single-merch",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 10,
+      "targetStateId": "single-merch"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.57818603515625,
+        "aspectLogDelta": 1.2153052424374227,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.57818603515625,
+        "score": 20.880467961455533,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.6046500218822756
+      },
+      "scenarioId": "qa-011-single-merch-to-master-neutral",
+      "sourceStateId": "single-merch",
+      "suiteIndex": 11,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-single-family",
+        "simple-route"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.347900390625,
+        "aspectLogDelta": 1.4098497184156333,
+        "componentDelta": 1.0,
+        "reserveDeltaRatio": 0.347900390625,
+        "score": 13.192619942401988,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.47924632722828886
+      },
+      "scenarioId": "qa-012-master-neutral-to-single-video",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 12,
+      "targetStateId": "single-video"
+    },
+    {
+      "coverage": [
+        "merge-or-return",
+        "single-master-family"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.347900390625,
+        "aspectLogDelta": 1.4098497184156333,
+        "componentDelta": 1.0,
+        "reserveDeltaRatio": 0.347900390625,
+        "score": 13.192619942401988,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.47924632722828886
+      },
+      "scenarioId": "qa-013-single-video-to-master-neutral",
+      "sourceStateId": "single-video",
+      "suiteIndex": 13,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "master-brand-wide",
+        "one-three-split"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.5274658203125,
+        "aspectLogDelta": 0.6952460924335211,
+        "componentDelta": 7.0,
+        "reserveDeltaRatio": 0.5274658203125,
+        "score": 44.17634061211922,
+        "shellDelta": 7.0,
+        "surfaceAreaDeltaRatio": 0.5825034334008719
+      },
+      "scenarioId": "qa-014-master-neutral-to-brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 14,
+      "targetStateId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    {
+      "coverage": [
+        "brand-wide-master",
+        "three-one-merge"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.5274658203125,
+        "aspectLogDelta": 0.695246092433521,
+        "componentDelta": 7.0,
+        "reserveDeltaRatio": 0.5274658203125,
+        "score": 44.17634061211922,
+        "shellDelta": 7.0,
+        "surfaceAreaDeltaRatio": 0.5825034334008719
+      },
+      "scenarioId": "qa-015-brand-wide-gather-content-design-digital-event-games-merch-video-to-master-neutral",
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "suiteIndex": 15,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "one-two-split"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.58624267578125,
+        "aspectLogDelta": 0.8406846212142354,
+        "componentDelta": 5.0,
+        "reserveDeltaRatio": 0.58624267578125,
+        "score": 19.2361588887878,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.6079510147937323
+      },
+      "scenarioId": "qa-016-master-neutral-to-complex-focus-event-merch-focus-event",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 16,
+      "targetStateId": "complex-focus-event-merch-focus-event"
+    },
+    {
+      "coverage": [
+        "two-one-merge"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.58624267578125,
+        "aspectLogDelta": 0.8406846212142354,
+        "componentDelta": 5.0,
+        "reserveDeltaRatio": 0.58624267578125,
+        "score": 19.2361588887878,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.6079510147937323
+      },
+      "scenarioId": "qa-017-complex-focus-event-merch-focus-event-to-master-neutral",
+      "sourceStateId": "complex-focus-event-merch-focus-event",
+      "suiteIndex": 17,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "two-three-split"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.1795654296875,
+        "aspectLogDelta": 0.7146036259821122,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.1795654296875,
+        "score": 34.079702335822596,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.19828397104334783
+      },
+      "scenarioId": "qa-018-single-video-to-brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceStateId": "single-video",
+      "suiteIndex": 18,
+      "targetStateId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    {
+      "coverage": [
+        "three-two-merge"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.1795654296875,
+        "aspectLogDelta": 0.7146036259821124,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.1795654296875,
+        "score": 34.079702335822596,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.19828397104334783
+      },
+      "scenarioId": "qa-019-brand-wide-gather-content-design-digital-event-games-merch-video-to-single-video",
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "suiteIndex": 19,
+      "targetStateId": "single-video"
+    },
+    {
+      "coverage": [
+        "single-single-topology",
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.223876953125,
+        "aspectLogDelta": 0.30811958788525995,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.223876953125,
+        "score": 13.888056167305919,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.23411742161415983
+      },
+      "scenarioId": "qa-020-single-merch-to-single-content",
+      "sourceStateId": "single-merch",
+      "suiteIndex": 20,
+      "targetStateId": "single-content"
+    },
+    {
+      "coverage": [
+        "master-complex"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.47442626953125,
+        "aspectLogDelta": 0.8379780268397033,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.47442626953125,
+        "score": 38.760382913795624,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.5565246502964877
+      },
+      "scenarioId": "qa-021-master-neutral-to-complex-focus-content-design-digital-event-games-merch-focus-merch",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 21,
+      "targetStateId": "complex-focus-content-design-digital-event-games-merch-focus-merch"
+    },
+    {
+      "coverage": [
+        "complex-master"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.47442626953125,
+        "aspectLogDelta": 0.8379780268397032,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.47442626953125,
+        "score": 38.760382913795624,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.5565246502964877
+      },
+      "scenarioId": "qa-022-complex-focus-content-design-digital-event-games-merch-focus-merch-to-master-neutral",
+      "sourceStateId": "complex-focus-content-design-digital-event-games-merch-focus-merch",
+      "suiteIndex": 22,
+      "targetStateId": "master-neutral"
+    },
+    {
+      "coverage": [
+        "single-complex"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.1446533203125,
+        "aspectLogDelta": 0.32159653922570625,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.1446533203125,
+        "score": 32.79126683828825,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.16489356643473557
+      },
+      "scenarioId": "qa-023-single-content-to-complex-gather-content-design-digital-event-games-merch",
+      "sourceStateId": "single-content",
+      "suiteIndex": 23,
+      "targetStateId": "complex-gather-content-design-digital-event-games-merch"
+    },
+    {
+      "coverage": [
+        "complex-single"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.1446533203125,
+        "aspectLogDelta": 0.32159653922570625,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.1446533203125,
+        "score": 32.79126683828825,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.16489356643473557
+      },
+      "scenarioId": "qa-024-complex-gather-content-design-digital-event-games-merch-to-single-content",
+      "sourceStateId": "complex-gather-content-design-digital-event-games-merch",
+      "suiteIndex": 24,
+      "targetStateId": "single-content"
+    },
+    {
+      "coverage": [
+        "focus-swap"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.06304931640625,
+        "aspectLogDelta": 0.0614769592285666,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.06304931640625,
+        "score": 11.048803786745395,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.0677032285653051
+      },
+      "scenarioId": "qa-025-complex-focus-content-design-focus-design-to-complex-focus-content-design-focus-content",
+      "sourceStateId": "complex-focus-content-design-focus-design",
+      "suiteIndex": 25,
+      "targetStateId": "complex-focus-content-design-focus-content"
+    },
+    {
+      "coverage": [
+        "gather-drive"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.06781005859375,
+        "aspectLogDelta": 0.034079840680960476,
+        "componentDelta": 0.0,
+        "reserveDeltaRatio": 0.06781005859375,
+        "score": 1.065957223081223,
+        "shellDelta": 0.0,
+        "surfaceAreaDeltaRatio": 0.07363073543772083
+      },
+      "scenarioId": "qa-026-complex-gather-content-design-digital-to-complex-drive-content-design-digital",
+      "sourceStateId": "complex-gather-content-design-digital",
+      "suiteIndex": 26,
+      "targetStateId": "complex-drive-content-design-digital"
+    },
+    {
+      "coverage": [
+        "complex-brand-wide"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.2156982421875,
+        "aspectLogDelta": 0.3354662209881258,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.2156982421875,
+        "score": 33.85481626673307,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.23820196740272703
+      },
+      "scenarioId": "qa-027-complex-focus-digital-event-focus-digital-to-brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceStateId": "complex-focus-digital-event-focus-digital",
+      "suiteIndex": 27,
+      "targetStateId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    {
+      "coverage": [
+        "brand-wide-complex"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.2156982421875,
+        "aspectLogDelta": 0.33546622098812584,
+        "componentDelta": 6.0,
+        "reserveDeltaRatio": 0.2156982421875,
+        "score": 33.85481626673307,
+        "shellDelta": 6.0,
+        "surfaceAreaDeltaRatio": 0.23820196740272703
+      },
+      "scenarioId": "qa-028-brand-wide-gather-content-design-digital-event-games-merch-video-to-complex-focus-digital-event-focus-digital",
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "suiteIndex": 28,
+      "targetStateId": "complex-focus-digital-event-focus-digital"
+    },
+    {
+      "coverage": [
+        "maximum-aspect-change"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.4530029296875,
+        "aspectLogDelta": 1.7630848527448455,
+        "componentDelta": 1.0,
+        "reserveDeltaRatio": 0.4530029296875,
+        "score": 15.324927609241671,
+        "shellDelta": 1.0,
+        "surfaceAreaDeltaRatio": 0.5450890990007918
+      },
+      "scenarioId": "qa-029-master-neutral-to-complex-focus-digital-merch-focus-digital",
+      "sourceStateId": "master-neutral",
+      "suiteIndex": 29,
+      "targetStateId": "complex-focus-digital-merch-focus-digital"
+    },
+    {
+      "coverage": [
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.223876953125,
+        "aspectLogDelta": 0.30811958788526,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.223876953125,
+        "score": 13.888056167305919,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.23411742161415983
+      },
+      "scenarioId": "qa-030-single-content-to-single-merch",
+      "sourceStateId": "single-content",
+      "suiteIndex": 30,
+      "targetStateId": "single-merch"
+    },
+    {
+      "coverage": [
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.04852294921875,
+        "aspectLogDelta": 0.7952858316140328,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.04852294921875,
+        "score": 12.29970195146265,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.05074195904383413
+      },
+      "scenarioId": "qa-031-single-merch-to-single-event",
+      "sourceStateId": "single-merch",
+      "suiteIndex": 31,
+      "targetStateId": "single-event"
+    },
+    {
+      "coverage": [
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.04852294921875,
+        "aspectLogDelta": 0.7952858316140328,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.04852294921875,
+        "score": 12.29970195146265,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.05074195904383413
+      },
+      "scenarioId": "qa-032-single-event-to-single-merch",
+      "sourceStateId": "single-event",
+      "suiteIndex": 32,
+      "targetStateId": "single-merch"
+    },
+    {
+      "coverage": [
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.121826171875,
+        "aspectLogDelta": 0.1902342014096064,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.121826171875,
+        "score": 12.177933110481863,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.13422025806505966
+      },
+      "scenarioId": "qa-033-single-event-to-single-design",
+      "sourceStateId": "single-event",
+      "suiteIndex": 33,
+      "targetStateId": "single-design"
+    },
+    {
+      "coverage": [
+        "single-single-topology-diverse"
+      ],
+      "risk": {
+        "activeDeltaRatio": 0.121826171875,
+        "aspectLogDelta": 0.19023420140960634,
+        "componentDelta": 2.0,
+        "reserveDeltaRatio": 0.121826171875,
+        "score": 12.177933110481863,
+        "shellDelta": 2.0,
+        "surfaceAreaDeltaRatio": 0.13422025806505966
+      },
+      "scenarioId": "qa-034-single-design-to-single-event",
+      "sourceStateId": "single-design",
+      "suiteIndex": 34,
+      "targetStateId": "single-event"
+    }
+  ]
+}
