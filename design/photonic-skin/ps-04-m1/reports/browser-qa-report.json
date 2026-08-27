@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "PASS",
+  "date": "2026-08-14",
+  "route": "/visual-lab/photonic-skin-ps04-m1",
+  "environment": {
+    "browser": "Chrome 151",
+    "platform": "Windows",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "webgl": "WebGL2",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics, Direct3D11 vs_5_0 ps_5_0)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32
+  },
+  "renderer": {
+    "cssCanvas": [512, 512],
+    "drawingBuffer": [768, 768],
+    "explicitDpr": 1.5,
+    "outputColorSpace": "SRGBColorSpace",
+    "toneMapping": "shader-owned ACES; renderer NoToneMapping",
+    "antialias": true,
+    "alpha": true,
+    "shadows": false,
+    "environmentMap": false
+  },
+  "resources": {
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 16,
+    "textureEstimateMiB": 4,
+    "steadyObservedFps": 160,
+    "steadyObservedP95Ms": 6.4
+  },
+  "gpuParity": {
+    "status": "PASS",
+    "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+    "samples": 552,
+    "sampleTimes": 46,
+    "maxPositionDelta": 0.000001612881469714722,
+    "maxOrientationDelta": 0.000005193958663940457,
+    "maxNormalDelta": 0.000009805042648303175,
+    "maxScaleDelta": 0.0000006100715637114007,
+    "maxActivationDelta": 0.0000003053740477154676,
+    "endpointsExact": true,
+    "presentationMatrixChanged": false,
+    "cameraUp": [0, 0, 1]
+  },
+  "contextRestore": {
+    "status": "restored",
+    "drawingBufferAfter": [768, 768],
+    "resourcesRestored": true,
+    "materialUniformsRestored": true
+  },
+  "responsiveRecovery": {
+    "sequence": [1440, 820, 1440],
+    "cssCanvasAfter": [512, 512],
+    "drawingBufferAfter": [768, 768],
+    "cameraDiagnosticIdentical": true
+  },
+  "comparison": {
+    "independentCanvasCount": 2,
+    "eachCssCanvas": [512, 512],
+    "eachDrawingBuffer": [768, 768],
+    "cameraDiagnosticsIdentical": true
+  },
+  "legacyRoute": {
+    "route": "/visual-lab/photonic-skin-m4-1r",
+    "status": "READY",
+    "canvas": [512, 512],
+    "drawingBuffer": [768, 768],
+    "consoleErrors": 0
+  },
+  "profilesChecked": ["desktop", "mobile390", "180", "96"],
+  "themesChecked": ["light", "dark"],
+  "posesChecked": ["canonical", "alternate"],
+  "warnings": [
+    "Chrome/ANGLE emitted a non-fatal shader optimization convergence warning.",
+    "The frozen Three.js path emits the existing THREE.Clock deprecation warning."
+  ],
+  "consoleErrorsAfterShaderFix": 0
+}

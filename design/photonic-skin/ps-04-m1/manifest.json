@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-04.M1",
+  "title": "Material Foundation",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "generatedAt": "2026-08-14",
+  "routes": [
+    "/visual-lab/photonic-skin-ps04-m1",
+    "/visual-lab/photonic-skin-ps04-m1/preview"
+  ],
+  "frozenBaseline": {
+    "m41AggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41ManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPresentationPatchHash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpointFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "states": 154,
+    "transitionPrograms": 35,
+    "motionFiles": 105
+  },
+  "implementation": {
+    "materialType": "THREE.RawShaderMaterial",
+    "actors": 1,
+    "instancedElements": 16384,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 16,
+    "textureEstimateMiB": 4,
+    "vertexEvaluator": "byte/math-equivalent frozen M4.1R evaluator plus surface-only varyings",
+    "fragmentLayer": "GGX/Cook-Torrance studio key/fill, ambient/contact, rim, weak clearcoat, ACES, sRGB",
+    "environmentMap": false,
+    "emissive": false,
+    "bloom": false,
+    "postprocessing": false
+  },
+  "checkpointAggregates": {
+    "method": "SHA-256 over sorted relative-path + TAB + file-SHA256 + LF records",
+    "source": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "browserFrames": "cab79e4683ca81f242373561c42b29c66d7db27d42a356c8435c8a03836da0a1",
+    "approvalBoards": "9b35d357754071ca2cfffe27fc1d250be8f923af921c048cad0908cee90cb524"
+  },
+  "sourceFiles": [
+    "app/visual-lab/photonic-skin-ps04-m1/material-foundation.ts",
+    "app/visual-lab/photonic-skin-ps04-m1/page.tsx",
+    "app/visual-lab/photonic-skin-ps04-m1/PS04M1Lab.tsx",
+    "app/visual-lab/photonic-skin-ps04-m1/PS04M1Scene.tsx",
+    "app/visual-lab/photonic-skin-ps04-m1/ps04m1.module.css",
+    "app/visual-lab/photonic-skin-ps04-m1/use-ps04-runtime.ts",
+    "app/visual-lab/photonic-skin-ps04-m1/preview/page.tsx",
+    "app/visual-lab/photonic-skin-ps04-m1/preview/PS04M1Preview.tsx",
+    "app/visual-lab/photonic-skin-ps04-m1/preview/preview.module.css",
+    "tests/photonic-ps04-m1.test.ts",
+    "design/photonic-skin/ps-04-m1/scripts/build-visual-boards.py"
+  ],
+  "reports": [
+    "reports/baseline.md",
+    "reports/browser-qa-report.json",
+    "reports/test-results.md",
+    "reports/visual-review.md",
+    "reports/approval-report.md"
+  ],
+  "browserFrames": [
+    "brand-wide-gather-dark.png", "brand-wide-gather-light.png",
+    "closeup-dark.png", "closeup-light.png", "context-restored-final.png",
+    "drive-dark.png", "drive-light.png", "focus-dark.png", "focus-light.png",
+    "gather-dark.png", "gather-light.png", "hero-dark.png", "hero-light.png",
+    "legacy-m41r-route.png", "master-dark-desktop.png", "master-light-desktop.png",
+    "mobile-dark.png", "mobile-light.png", "old-vs-dark-master.png", "old-vs-light-master.png",
+    "resize-narrow.png", "silhouette180-dark.png", "silhouette180-light.png",
+    "silhouette96-dark.png", "silhouette96-light.png",
+    "single-content-alternate-dark.png", "single-content-alternate-light.png",
+    "single-content-canonical-dark.png", "single-content-canonical-light.png",
+    "single-design-alternate-dark.png", "single-design-alternate-light.png",
+    "single-design-canonical-dark.png", "single-design-canonical-light.png",
+    "single-digital-alternate-dark.png", "single-digital-alternate-light.png",
+    "single-digital-canonical-dark.png", "single-digital-canonical-light.png",
+    "single-event-alternate-dark.png", "single-event-alternate-light.png",
+    "single-event-canonical-dark.png", "single-event-canonical-light.png",
+    "single-games-alternate-dark.png", "single-games-alternate-light.png",
+    "single-games-canonical-dark.png", "single-games-canonical-light.png",
+    "single-merch-alternate-dark.png", "single-merch-alternate-light.png",
+    "single-merch-canonical-dark.png", "single-merch-canonical-light.png",
+    "single-video-alternate-dark.png", "single-video-alternate-light.png",
+    "single-video-canonical-dark.png", "single-video-canonical-light.png",
+    "static-gpu-parity.png", "variation-off-static.png"
+  ],
+  "approvalBoards": [
+    "01-old-light-dark.png",
+    "02-master-light-dark.png",
+    "03-single-canonical-light.png",
+    "04-single-canonical-dark.png",
+    "05-single-alternate-light.png",
+    "06-single-alternate-dark.png",
+    "07-focus-gather-drive-light.png",
+    "08-focus-gather-drive-dark.png",
+    "09-brand-wide-gather.png",
+    "10-material-closeup.png",
+    "11-desktop-hero.png",
+    "12-mobile-profile.png",
+    "13-silhouette-180-96.png",
+    "14-static-parity-context.png",
+    "15-difference-silhouette-diagnostics.png"
+  ],
+  "excluded": [
+    "PS-04.M2 color field",
+    "palette transition and retarget",
+    "SINGLE slash-wave",
+    "idle breathing or new rotation",
+    "production homepage integration",
+    "commit, push, deploy"
+  ]
+}

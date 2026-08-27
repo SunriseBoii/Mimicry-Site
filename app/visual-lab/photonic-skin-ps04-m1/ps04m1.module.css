@@ -1,0 +1,376 @@
+.lab {
+  --ink: #17191b;
+  --muted: #6c706f;
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  min-height: 100vh;
+  color: var(--ink);
+  background: #eeece7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lab[data-theme="dark"] {
+  --ink: #eff1ef;
+  --muted: #9ba1a2;
+  --line: color-mix(in srgb, var(--ink) 16%, transparent);
+  background: #0d1012;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 34px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header h1 {
+  margin: 4px 0 8px;
+  font-size: clamp(30px, 4vw, 58px);
+  font-weight: 520;
+  letter-spacing: -0.055em;
+}
+
+.header p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.statusBlock {
+  display: grid;
+  align-content: start;
+  justify-items: end;
+  gap: 7px;
+  min-width: 190px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.statusBlock a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.statusBlock span[data-status="restored"] {
+  color: #2f8f64;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  min-height: calc(100vh - 140px);
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  min-width: 0;
+  min-height: calc(100vh - 140px);
+  padding: 34px;
+  overflow: auto;
+  background:
+    linear-gradient(var(--line), var(--line)) 50% 34px / 1px calc(100% - 68px) no-repeat,
+    linear-gradient(90deg, var(--line), var(--line)) 34px 50% / calc(100% - 68px) 1px no-repeat;
+}
+
+.stage figure {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ps04-background);
+  isolation: isolate;
+  box-sizing: content-box;
+}
+
+.stage figure figcaption {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 3;
+  padding: 5px 7px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ps04-background) 86%, transparent);
+  border: 1px solid var(--line);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.stage[data-frame="desktop"] figure {
+  width: 512px;
+  height: 512px;
+}
+
+.stage[data-frame="mobile390"] figure {
+  width: 390px;
+  height: 390px;
+}
+
+.stage[data-frame="silhouette180"] figure {
+  width: 180px;
+  height: 180px;
+}
+
+.stage[data-frame="silhouette96"] figure {
+  width: 96px;
+  height: 96px;
+}
+
+.stage[data-frame="silhouette96"] figcaption,
+.stage[data-frame="silhouette180"] figcaption {
+  display: none;
+}
+
+.comparisonGrid {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: min-content;
+}
+
+.legacyPane {
+  --ps04-background: #090b0c;
+}
+
+.stage[data-closeup="true"] .foundationPane canvas {
+  transform: scale(1.85);
+  transform-origin: 58% 45%;
+}
+
+.loading,
+.error {
+  position: absolute;
+  z-index: 5;
+  padding: 10px 12px;
+  background: var(--ps04-background);
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.error {
+  color: #c74732;
+}
+
+.controls {
+  border-left: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ps04-background) 38%, transparent);
+}
+
+.controls section {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.controls h2 {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.controls label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.controls output {
+  justify-self: end;
+  margin-top: -18px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.controls select,
+.controls button {
+  min-height: 34px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font: inherit;
+}
+
+.controls select {
+  width: 100%;
+  padding: 0 8px;
+  color-scheme: light dark;
+}
+
+.controls button {
+  padding: 7px 9px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.controls button:hover,
+.controls button:focus-visible,
+.controls button[data-active="true"] {
+  color: var(--ps04-background);
+  background: var(--ink);
+  outline: none;
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.segmented,
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.buttonGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sampleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.sampleGrid button {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.check {
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+}
+
+.check input {
+  margin: 0;
+}
+
+.contract {
+  margin: 0;
+  padding: 9px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  font-size: 9px;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+}
+
+.metrics {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+.metrics div {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+}
+
+.metrics dt {
+  color: var(--muted);
+}
+
+.metrics dd {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.qaActions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 10px;
+  align-items: center;
+  font-size: 10px;
+}
+
+@media (max-width: 980px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .stage {
+    position: relative;
+    min-height: 620px;
+  }
+
+  .controls {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .comparisonGrid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    padding: 20px;
+  }
+
+  .statusBlock {
+    display: none;
+  }
+
+  .stage {
+    min-height: 460px;
+    padding: 18px;
+  }
+
+  .stage[data-frame="desktop"] figure,
+  .stage[data-frame="mobile390"] figure {
+    width: min(390px, calc(100vw - 36px));
+    height: min(390px, calc(100vw - 36px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage canvas {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .lab,
+  .stage figure,
+  .controls button,
+  .controls select {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    forced-color-adjust: auto;
+  }
+}
