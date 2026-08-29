@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "PASS",
+  "date": "2026-08-27",
+  "route": "/visual-lab/photonic-skin-ps04-m2",
+  "previewRoute": "/visual-lab/photonic-skin-ps04-m2/preview",
+  "environment": {
+    "browser": "Microsoft Edge via Playwright Chromium channel=msedge",
+    "platform": "Windows",
+    "webgl": "WebGL2",
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU Direct3D11 vs_5_0 ps_5_0)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32
+  },
+  "renderer": {
+    "cssCanvas": [512, 512],
+    "drawingBuffer": [768, 768],
+    "explicitDpr": 1.5,
+    "outputColorSpace": "SRGBColorSpace",
+    "toneMapping": "shader-owned ACES; renderer NoToneMapping",
+    "antialias": true,
+    "alpha": true,
+    "shadows": false,
+    "environmentMap": false,
+    "paletteLut": "uniform vec4[32], no extra texture unit"
+  },
+  "resources": {
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 16,
+    "textureEstimateMiB": 4
+  },
+  "performance": {
+    "method": "in-page frame-delta p50/p95 after warm-up; same GPU, N=16384, camera, DPR 1.5, 768×768 drawing buffer",
+    "m1Playing": { "fps": 158, "p95Ms": 6.6, "drawCalls": 1, "triangles": 131072, "programs": 1, "geometries": 1, "textures": 16 },
+    "m2Playing": { "fps": 140, "medianMs": 6.1, "p95Ms": 6.8, "drawCalls": 1, "triangles": 131072, "programs": 1, "geometries": 1, "textures": 16 },
+    "p95RelativeDelta": 0.030,
+    "note": "Demand-loop stills can report 0 draws if stats are sampled before the invalidated frame. Playing numbers are authoritative."
+  },
+  "gpuParity": {
+    "vertex": {
+      "status": "PASS",
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "samples": 552,
+      "sampleTimes": 46,
+      "maxPositionDelta": 1.612881469714722e-6,
+      "maxOrientationDelta": 5.283365631103543e-6,
+      "maxNormalDelta": 9.894449615466261e-6,
+      "maxScaleDelta": 6.100715637114007e-7,
+      "maxActivationDelta": 3.053740477154676e-7,
+      "endpointsExact": true,
+      "cameraUp": [0, 0, 1]
+    },
+    "field": {
+      "status": "PASS",
+      "semanticSamples": 32896,
+      "envelopeSamples": 4369,
+      "maxSemanticWeightError": 1.091303700739843e-7,
+      "maxUnselectedWeight": 0,
+      "maxEnvelopeError": 7.898766840597204e-8
+    }
+  },
+  "contextRestore": {
+    "status": "restored",
+    "evidence": "renders/browser/context-restored.png",
+    "nonTrivialPalette": "single-content at phase 0.37",
+    "flash": "none observed"
+  },
+  "responsiveRecovery": {
+    "sequence": [1440, 820, 1440],
+    "evidence": ["resize-narrow.png", "resize-wide.png"]
+  },
+  "legacyRoutes": {
+    "m1": { "route": "/visual-lab/photonic-skin-ps04-m1", "status": "READY", "evidence": "legacy-m1-route.png" },
+    "m41r": { "route": "/visual-lab/photonic-skin-m4-1r", "status": "READY", "evidence": "legacy-m41r-route.png" }
+  },
+  "profilesChecked": ["desktop", "mobile390", "180", "96"],
+  "themesChecked": ["light", "dark"],
+  "posesChecked": ["canonical", "alternate", "side", "top"],
+  "warnings": [
+    "Existing THREE.Clock deprecation from the frozen Three.js path.",
+    "Chrome/ANGLE non-fatal shader optimization convergence warning, including dyn_index of the 32-sample palette LUT."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "folder": "retarget",
+  "params": {
+    "state": "single-content",
+    "theme": "light",
+    "phase": "0.2",
+    "play": "0"
+  },
+  "scenario": "lab button Run A → B → C interruption; source LUT captured from displayed field at each interrupt",
+  "delaysMs": [0, 120, 280, 500, 900],
+  "cumulativeMs": [0, 120, 400, 900, 1800],
+  "timestamps": [
+    { "index": 0, "ms": 0, "note": "settled SINGLE content before retarget" },
+    { "index": 1, "ms": 120, "note": "after first retarget toward design+video" },
+    { "index": 2, "ms": 400, "note": "interrupted toward event+digital+merch" },
+    { "index": 3, "ms": 900, "note": "transient blend continuing" },
+    { "index": 4, "ms": 1800, "note": "past 0.8s settle window" }
+  ]
+}

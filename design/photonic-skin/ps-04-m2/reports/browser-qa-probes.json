@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-08-27T16:25:00+03:00",
+  "route": "/visual-lab/photonic-skin-ps04-m2",
+  "gpuParity": {
+    "field": {
+      "measured": true,
+      "valid": true,
+      "semanticSamples": 32896,
+      "envelopeSamples": 4369,
+      "maxSemanticWeightError": 1.091303700739843e-7,
+      "maxSemanticSumError": 2.9802322387695312e-8,
+      "maxUnselectedWeight": 0,
+      "maxEnvelopeError": 7.898766840597204e-8
+    },
+    "vertex": {
+      "measured": true,
+      "valid": true,
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "sampleCount": 552,
+      "timeSampleCount": 46,
+      "maxPositionError": 1.612881469714722e-6,
+      "maxOrientationError": 5.283365631103543e-6,
+      "maxNormalError": 9.894449615466261e-6,
+      "maxScaleError": 6.100715637114007e-7,
+      "maxActivationError": 3.053740477154676e-7,
+      "maxBridgeError": 0,
+      "maxGroupPhaseError": 7.680610656368714e-7,
+      "maxActorPoseError": 2.1308748722123627e-7,
+      "maxVelocityError": 0.019954273944904344,
+      "p95VelocityError": 0.0014499563504668607
+    }
+  },
+  "performance": {
+    "method": "in-page frame delta p50/p95 after warm-up, same GPU/N/camera/DPR/drawing buffer",
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU Direct3D11 vs_5_0 ps_5_0)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32,
+    "m1Playing": {
+      "fps": 158,
+      "p95Ms": 6.6,
+      "drawCalls": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "geometries": 1,
+      "textures": 16,
+      "drawingBuffer": [768, 768],
+      "dpr": 1.5
+    },
+    "m2Playing": {
+      "fps": 140,
+      "medianMs": 6.1,
+      "p95Ms": 6.8,
+      "drawCalls": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "geometries": 1,
+      "textures": 16,
+      "textureMiB": 4,
+      "drawingBuffer": [768, 768],
+      "dpr": 1.5
+    },
+    "p95RelativeDelta": 0.030
+  },
+  "warnings": [
+    "Existing THREE.Clock deprecation from the frozen Three.js path.",
+    "Chrome/ANGLE non-fatal shader optimization convergence warning, including dyn_index of the 32-sample palette LUT."
+  ]
+}

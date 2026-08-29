@@ -1,0 +1,20 @@
+{
+  "folder": "geometry-color",
+  "params": {
+    "source": "master-neutral",
+    "state": "single-event",
+    "theme": "light",
+    "phase": "0.25",
+    "play": "0"
+  },
+  "scenario": "frozen geometry progress 0 / 0.25 / 0.5 / 0.75 / 1 with color phase held at 0.25",
+  "intervalMs": 250,
+  "progresses": [0, 0.25, 0.5, 0.75, 1],
+  "timestamps": [
+    { "index": 0, "ms": 0, "progress": 0 },
+    { "index": 1, "ms": 250, "progress": 0.25 },
+    { "index": 2, "ms": 500, "progress": 0.5 },
+    { "index": 3, "ms": 750, "progress": 0.75 },
+    { "index": 4, "ms": 1000, "progress": 1 }
+  ]
+}
