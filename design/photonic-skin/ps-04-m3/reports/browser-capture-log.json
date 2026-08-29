@@ -1,0 +1,40 @@
+{
+  "runId": "ps04-m3-20260828",
+  "capturedAt": "2026-08-28T11:20:22.911Z",
+  "base": "http://localhost:3000",
+  "frames": [
+    {
+      "name": "video-master-idle-32s",
+      "at": "2026-08-28T11:19:08.433Z"
+    },
+    {
+      "name": "video-single-rock-26s",
+      "at": "2026-08-28T11:19:36.250Z"
+    },
+    {
+      "name": "video-handoff-179",
+      "at": "2026-08-28T11:19:43.871Z"
+    },
+    {
+      "name": "video-retarget-abc",
+      "at": "2026-08-28T11:19:54.457Z"
+    },
+    {
+      "name": "video-focus-gather-drive",
+      "at": "2026-08-28T11:20:03.900Z"
+    },
+    {
+      "name": "video-master-turn-accelerated-labeled",
+      "at": "2026-08-28T11:20:22.910Z"
+    }
+  ],
+  "failures": [],
+  "videos": {
+    "masterIdle32s": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\master-idle-32s-realtime.webm",
+    "singleRock26s": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\single-content-rock-26s-realtime.webm",
+    "handoff179": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\handoff-179-realtime.webm",
+    "retarget": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\retarget-abc-realtime.webm",
+    "focusGatherDrive": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\focus-gather-drive-realtime.webm",
+    "masterTurnAccelerated": "C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-04-m3\\renders\\browser\\video\\master-turn-15s-ACCELERATED-NOT-REALTIME.webm"
+  }
+}

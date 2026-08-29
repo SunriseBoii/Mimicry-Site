@@ -1,0 +1,43 @@
+{
+  "runId": "ps04-m3-20260828",
+  "capturedAt": "2026-08-28T11:20:22.911Z",
+  "browser": "Edge channel msedge, headless, ANGLE D3D11",
+  "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "gpuVertex": {
+    "valid": true,
+    "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+    "sampleCount": 552,
+    "timeSampleCount": 46,
+    "maxPositionError": 1.612881469714722e-6,
+    "maxIdleEvalPositionDelta": 0
+  },
+  "gpuField": {
+    "valid": true,
+    "semanticSamples": 32896,
+    "envelopeSamples": 4369,
+    "maxSemanticWeightError": 1.091303700739843e-7,
+    "maxUnselectedWeight": 0
+  },
+  "resources": {
+    "lastActorDrawCalls": 1,
+    "lastActorTriangles": 131072,
+    "programs": 1,
+    "textures": 16,
+    "drawingBuffer": [768, 768],
+    "dpr": 1.5
+  },
+  "stills": "design/photonic-skin/ps-04-m3/renders/browser/*.png plus sequences/",
+  "videos": {
+    "masterIdle32s": "renders/browser/video/master-idle-32s-realtime.webm",
+    "singleRock26s": "renders/browser/video/single-content-rock-26s-realtime.webm",
+    "handoff179": "renders/browser/video/handoff-179-realtime.webm",
+    "retarget": "renders/browser/video/retarget-abc-realtime.webm",
+    "focusGatherDrive": "renders/browser/video/focus-gather-drive-realtime.webm",
+    "masterTurnAccelerated": "renders/browser/video/master-turn-15s-ACCELERATED-NOT-REALTIME.webm"
+  },
+  "notes": [
+    "First capture pass wrote stills then failed on missing Playwright ffmpeg. ffmpeg was installed; videos-only retry succeeded without overwriting PNGs.",
+    "Screenshot sequences are ~8 Hz, not 30 Hz. WebM containers are 25 fps.",
+    "Hero stills were captured before preview last-draw vs no-new-frame copy was split."
+  ]
+}

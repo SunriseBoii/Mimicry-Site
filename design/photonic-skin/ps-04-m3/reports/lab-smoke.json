@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "capturedAt": "2026-08-28T10:45:12.560Z",
+  "log": [
+    {
+      "step": "ready",
+      "ms": 4532
+    },
+    {
+      "step": "idle",
+      "ms": 4554,
+      "requested": "master-neutral",
+      "draws": 0,
+      "triangles": 0,
+      "programs": 0,
+      "textures": 0,
+      "overlayEnabled": true,
+      "scale": 1.0000321045498974
+    },
+    {
+      "step": "event-request",
+      "ms": 229,
+      "requested": "single-event",
+      "settled": "master-neutral",
+      "status": "transitioning",
+      "progress": 0.13505948708221377,
+      "loading": false,
+      "phase": "release"
+    }
+  ]
+}

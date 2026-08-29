@@ -1,0 +1,963 @@
+{
+  "capturedAt": "2026-08-28T09:18:24.211Z",
+  "gitHead": "ded950b8047ca08a3797ac3d872dba3dd56b34e3",
+  "workingTree": "HEAD clean; untracked M2 only (app/visual-lab/photonic-skin-ps04-m2, design/photonic-skin/ps-04-m2, tests/photonic-ps04-m2.test.ts)",
+  "fileCount": 191,
+  "files": [
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\material-foundation.ts",
+      "bytes": 1042,
+      "sha256": "2d4aea7df103ed85994f2279833e7b5d10af053a930e9f8639aba3e573f65525"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\page.tsx",
+      "bytes": 378,
+      "sha256": "1229ad8ca1d7b251fc16f4b281b24a6fa3d02c52e3376552a8e6b306f24a93be"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\palette-controller.ts",
+      "bytes": 5882,
+      "sha256": "78a5ac18f930686026b654925bca876e819b3a524a2ceb5270f7f87bf20a905f"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\photonic-field.ts",
+      "bytes": 6878,
+      "sha256": "cf27aa69808f69fa3c1e95d54494d389213b82d9c1d015b8b78adabd495a4f26"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\photonic-palette.ts",
+      "bytes": 5185,
+      "sha256": "5c3986cc7baaeb4e5724c19fa941ab492f701a1a98e4c5b78e42caf2eaa5c5bf"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\preview\\page.tsx",
+      "bytes": 398,
+      "sha256": "c9de78a49ff448902489aa2614fd91d90b714824175aa856225e2b4b90ed9608"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\preview\\preview.module.css",
+      "bytes": 3071,
+      "sha256": "68aacd3de1f27aec50069c21fc8e54e309734996cefbb2bc5ba011fca5a5c4f1"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\preview\\PS04M2Preview.tsx",
+      "bytes": 4879,
+      "sha256": "d468367fd71c76621448c7bd8bc3afb92421f25ae2fde5a99065ca96d6adb5f7"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\preview\\PS04M2PreviewClient.tsx",
+      "bytes": 191,
+      "sha256": "175eb942979f5da69c6025f9fc19601d1fc0fccf539a58ec036f4406aea871ba"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\ps04m2.module.css",
+      "bytes": 6950,
+      "sha256": "8fba8036630df42e299223def2b54dd9491537c75167e4b53e8aeab3eb805206"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\PS04M2Lab.tsx",
+      "bytes": 29115,
+      "sha256": "4c1f5327ae42db1468275c466d7801669fdbe5c889da295acbee0e2568e5bbc2"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\PS04M2LabClient.tsx",
+      "bytes": 179,
+      "sha256": "638efc0c287572a8a15690f6fc7d79eb5f7253cfe9e909242c328c2c74489058"
+    },
+    {
+      "path": "app\\visual-lab\\photonic-skin-ps04-m2\\PS04M2Scene.tsx",
+      "bytes": 78466,
+      "sha256": "dac1e05f291a90812b168c522f2a16f2baad82f819fb466b900cc9bd8366088e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\manifest.json",
+      "bytes": 10953,
+      "sha256": "14a612a53d4006a595a8e70c0d19c86ec0eb76549aa73a5e3ea878ce4c3ea9f8"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\01-m1-neutral-to-m2-color.png",
+      "bytes": 509872,
+      "sha256": "1153ca75180d10d3f59490f29dd9af03aa66e214741f8c741b414d09a10d1936"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\02-master-phases.png",
+      "bytes": 595065,
+      "sha256": "44de71b2f13bd555c72acf41b85ae2365664287db0b7bf9264ca5b56bed56342"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\03-single-canonical-light.png",
+      "bytes": 312444,
+      "sha256": "14a543d5954f0aaa66c5d234a276aeaa970a758e1bd11beed78742effeab212c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\04-single-canonical-dark.png",
+      "bytes": 347163,
+      "sha256": "22a92e0e61439721a4c5ebfbf9f849b1d9103669e60ba17e62578e4577ff16ad"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\05-single-alternate-both.png",
+      "bytes": 556834,
+      "sha256": "c9c4fbe07b92cb292dc172736dbfbc7840bd3db16d657f57f00ccba4be589d7c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\06-single-slash-phases.png",
+      "bytes": 317663,
+      "sha256": "23bf3956d0eab7e209a9d740ccdbd119d30ed9f01384126ffbaea357d4b6c03e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\07-two-competences.png",
+      "bytes": 204139,
+      "sha256": "194ff15a059d1cd52e2c4f9bd936ccdd4ae3ac41febb9d0e86ac1900734d46f7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\08-three-competences.png",
+      "bytes": 276562,
+      "sha256": "2d6e22796360a349732137697d6cb45e804f3cff34d4073f928e2a68b5e2bbc8"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\09-four-competences.png",
+      "bytes": 287887,
+      "sha256": "b911471b7c2a1424ab4ae962b4c1a37501e67d535333b96073835204b715878e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\10-brand-wide-phases.png",
+      "bytes": 192493,
+      "sha256": "be651486148787111e74dc9ced28a3a5f99ced58c42c22fd8fb4c3cacba7a980"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\11-material-closeup.png",
+      "bytes": 857791,
+      "sha256": "6ecdd9becc342e952a2658c0d934099528112702032beb7feaedabc90a4e6e52"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\12-hero-desktop-mobile.png",
+      "bytes": 545739,
+      "sha256": "38b972c9b8c460891024ca1e178376fcb0527e38b40001eef6d4272643ba4522"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\13-silhouette-180-96.png",
+      "bytes": 38851,
+      "sha256": "a1f13b4ba2c699242b3680657d8e0821b4eeeb279b526d0fd913f91ef435c41b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\14-field-diagnostics.png",
+      "bytes": 319409,
+      "sha256": "dc57825f74bc3a46e4cee1e9c83a15c3c984871a354c54f2b4d98fafe1bd99e4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\boards\\15-lifecycle-parity.png",
+      "bytes": 246524,
+      "sha256": "a432dc108d2135396cf820caa42650fd71a8ad600210c2cffe9f8b8d34711d87"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-dark-phase-0.png",
+      "bytes": 50302,
+      "sha256": "dea3f1930141cdae8d298c010d930c2356807d342f17873d5bf1820d26394a06"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-dark-phase-025.png",
+      "bytes": 50050,
+      "sha256": "ce0bf88d75c90a72a99575f71616b3bf527e5f23289782c63265ae7c84ce78b7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-dark-phase-05.png",
+      "bytes": 49708,
+      "sha256": "d10c09c270b78bffaa6db501176670725fa4a9ef199cafbeba0396c05cb03a18"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-dark-phase-075.png",
+      "bytes": 50034,
+      "sha256": "da1c7eb25b2f29f642d53776671cd55500db7ba1493a0950bdca7ec842fadda5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-drive-dark.png",
+      "bytes": 21233,
+      "sha256": "42fe46b788530a07d9124f1db2786b841936089da30d09d0ba3ef50bdbc6b432"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-drive-light.png",
+      "bytes": 20544,
+      "sha256": "32e8af474a30eddc288d4012599ae32df2adaa69556b27cf69059cf117b2fadc"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-light-phase-0.png",
+      "bytes": 47910,
+      "sha256": "82813de1308df5aa183f45647cebe87928959ea2a8d56f73c12f6a872beee72c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-light-phase-025.png",
+      "bytes": 47292,
+      "sha256": "ddc157d4e681dff6ccb055984fbc219e0eba9563408e9f85a4490f8fcc7456dd"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-light-phase-05.png",
+      "bytes": 46852,
+      "sha256": "3b9a075974144ed314a92024634ccf0c67041b6c37605042fd3195c15cd747a2"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\brand-wide-light-phase-075.png",
+      "bytes": 47363,
+      "sha256": "d3c941e5acdb123e69c2adb93b471f9a4a8db3bc59cab4ed1fc477d4b6806a63"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\closeup-full-dark.png",
+      "bytes": 221067,
+      "sha256": "5f95381a9bb2b03452163163d74401b40f926f4ca0853cb4362d756a6b3ea1fe"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\closeup-full-light.png",
+      "bytes": 189631,
+      "sha256": "cc7210ef4a075b840e1ff34f34f88bc426195d42c5ace9e37d5528f090bfe95c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\closeup-neutral-dark.png",
+      "bytes": 199704,
+      "sha256": "2589ad3085821cff5837fefaa5ce1715c4dc3680fc7b1b8067ad680fe6cb1421"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\closeup-neutral-light.png",
+      "bytes": 176034,
+      "sha256": "26df5d7707768ab542c7f3a00edfabbe995a55f49bc61d56dfb81f4b9b9be693"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\context-restored.png",
+      "bytes": 94634,
+      "sha256": "931c6bf7f6c9774554cbc3082cf0f245773a96bb1598a1e904d807e41e5f47c5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\custom-mismatch.png",
+      "bytes": 98180,
+      "sha256": "5166e9f01f21239bfec2037f23e4722b4605349c9eaef2569f5d914545a8bf29"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\field-camera-canonical.png",
+      "bytes": 44357,
+      "sha256": "5e9406a7436269db3d14e7d7b63b1e8c67f81e841971a76ac58be916bf332404"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\field-camera-side.png",
+      "bytes": 46481,
+      "sha256": "f71005253811175818f8f1f86669a1fac2def4837bf19ce8e48d5117e9290ab7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\field-camera-top.png",
+      "bytes": 67115,
+      "sha256": "2b5807fe0c3ae9d39757a61891face92c04c3807ce4f2dde72cae2b280495a29"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\field-coverage.png",
+      "bytes": 35865,
+      "sha256": "01de3840084066c7b708350ce222601a117fc8520e1d38ec2037743e78c59b3d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\field-semantic.png",
+      "bytes": 74732,
+      "sha256": "d1f6e5a16c621821d9e028ab25e729192571dbf7d90ce5665a1c154c43055868"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-drive-dark.png",
+      "bytes": 37216,
+      "sha256": "ed48747f8221cc3d0efc2356c09d459a3480e9528b1b1e50862c0b5892746cff"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-drive-light.png",
+      "bytes": 33955,
+      "sha256": "8ccf0b656cb00c1caa6eead816e2c89c3cca0ed997ae10c92a97734f69744177"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-focus-dark.png",
+      "bytes": 65547,
+      "sha256": "3923e7222d66aafcd8f28b1af6e2f96d87d11cf95ab7bc445b22ee8e00d1c124"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-focus-light.png",
+      "bytes": 58835,
+      "sha256": "2e3865e03976dd3b1d5250bd126417b3dfdc62f3b94ab6062a99c708bf6355f5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-gather-dark.png",
+      "bytes": 98515,
+      "sha256": "846ec07348778cabacb730afe8ccfdb25502536ccd41ca5a37187f598bb4b58a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\four-gather-light.png",
+      "bytes": 86834,
+      "sha256": "89b18c5b41f0cb948c36839c0e3757614f4867fd4792e7ee9220e997479e8835"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\hero-desktop-dark.png",
+      "bytes": 548298,
+      "sha256": "fb23980d49f49106c3ad8db018537c6ba501114346852487f8479de08219edb3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\hero-desktop-light.png",
+      "bytes": 429886,
+      "sha256": "cfd616b943099ad4b3812df83a8f0969cd1913f082e89e6ceae072836f55c143"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\hero-mobile-dark.png",
+      "bytes": 190659,
+      "sha256": "6b628ea46e37b93bdef9a66da2ab5f8922ea48a2662687473ec95ff7a2532553"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\hero-mobile-light.png",
+      "bytes": 156352,
+      "sha256": "af649f90fb11760e399f4038314d2f00a822977ace97b4f5b1f0bf91582dc7fa"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\legacy-m1-route.png",
+      "bytes": 196121,
+      "sha256": "8f8efe9c568f9199bf123919815f249b2de225e92c527d2aa273469b09d46595"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\legacy-m41r-route.png",
+      "bytes": 81941,
+      "sha256": "72b1c77e3c335dc42dc2ddb8ca7aedae8ea666b590eddadf3f9d71c8b5e2ee32"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\m1-bypass-dark.png",
+      "bytes": 155034,
+      "sha256": "195dd6f157fdaf5fa6c99bd22dac335ad33f0c4bf3b3f76bab0b30df9ae604d1"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\m1-bypass-light.png",
+      "bytes": 121399,
+      "sha256": "e35179a7155b4fd7e059d252797fcf97d2a548a1bf8de617512c242a49ab4fd4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\m1-renderer-dark.png",
+      "bytes": 155079,
+      "sha256": "a277b08ae8aecf679eb2b13226097b80c57747b64f1419fef6e8825c96bf1235"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\m1-renderer-light.png",
+      "bytes": 121437,
+      "sha256": "328b015c138a14143a16daf7bf0dcedd9e4bbd24c08d8d2874155967e92a8579"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-dark-color.png",
+      "bytes": 174568,
+      "sha256": "3123f9581884d2a0ab06f268677f4c8dbd2a488bd1852397029463fc804f6eba"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-dark-phase-0.png",
+      "bytes": 171529,
+      "sha256": "a7625b0c4de6437deb6dabe4ad0b0fcb709d4673e150a7744f8e7b351b2a9d4d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-dark-phase-025.png",
+      "bytes": 174568,
+      "sha256": "3123f9581884d2a0ab06f268677f4c8dbd2a488bd1852397029463fc804f6eba"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-dark-phase-05.png",
+      "bytes": 170548,
+      "sha256": "68acc4693ae63929f13454bde338a3242e52295a83af73a3fc7c8cc38e6b6c6a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-dark-phase-075.png",
+      "bytes": 171424,
+      "sha256": "a9490f6d44527592d4ba2c861836935bc04ba5e13c1cb1c9c47153bcf8f9b45b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-light-color.png",
+      "bytes": 138450,
+      "sha256": "2386310a95087af3b0fc8b57b9b4e19b72855a7ac4310943a229c94a8b5d34a6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-light-phase-0.png",
+      "bytes": 150556,
+      "sha256": "941d5a70098ef72a8c182aef717edd45948bf43fb600550857a49f2d25751b05"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-light-phase-025.png",
+      "bytes": 138450,
+      "sha256": "2386310a95087af3b0fc8b57b9b4e19b72855a7ac4310943a229c94a8b5d34a6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-light-phase-05.png",
+      "bytes": 123327,
+      "sha256": "268ce0757ffac176822179bbc20f5d5c3ef5c1fc4c5ed0dd06e97edb1fe8806c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\master-light-phase-075.png",
+      "bytes": 135482,
+      "sha256": "d248dd2858571293c5115ce7e7ae0f7bc3fdfd7879e413b5235ffc8eaec5620c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\mobile-dark.png",
+      "bytes": 110916,
+      "sha256": "50fd327a658efa623f299d07b8f25ccd996e423e6a415caca51ca759a69ca832"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\mobile-light.png",
+      "bytes": 87352,
+      "sha256": "844c0a93acc9b8217f15563d234aee056a9628b54d2dded20a9a1036a98f4cd2"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\reduced-motion.png",
+      "bytes": 94804,
+      "sha256": "4e919d516c62523c4903b3400fe7ce4d04ef32f6b3e99d246c4496d2820087a3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\resize-narrow.png",
+      "bytes": 164428,
+      "sha256": "24284b4ce67b8f56824c9df34ba80fbd4098013d3c89d233d9d94e491b52de1e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\resize-wide.png",
+      "bytes": 198631,
+      "sha256": "744f5344613c33ccaaffa882f04bc2f188f81240bb401419c400cc84172807eb"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-00.png",
+      "bytes": 61440,
+      "sha256": "d9407894eb2c64a78f3cf16fb82be6d5ce80e73297a18bda79322a64a5f91a4e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-01.png",
+      "bytes": 61954,
+      "sha256": "1daefbd0818bd8ef074834ef7367f56bc8f1aeee71c066f06e87552df4ece670"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-02.png",
+      "bytes": 61810,
+      "sha256": "04fc7a458624ca3e357ae80a9c784428d06f57ded1c5f0cda6b1a09cefafc5bf"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-03.png",
+      "bytes": 61758,
+      "sha256": "0ea80871b71721af2ac812bccf86fe40768c0b683db609a0e5f4b37060715647"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-04.png",
+      "bytes": 61638,
+      "sha256": "5e8553ba636c4f58104c80236ae6435b3f2c40d353416a4400f490f413b4e682"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-05.png",
+      "bytes": 61403,
+      "sha256": "26d5beac80322bfcd52bd922a6af54451d9738f44d0081955a07cef4858a1289"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-06.png",
+      "bytes": 61052,
+      "sha256": "41fdcd7a04e33f396012fd4cff030b6e77a8464813cdf6b88ca1a5681dfc05af"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\frame-07.png",
+      "bytes": 61007,
+      "sha256": "9b251e28d9ffb21d1c4af01b54051558f30bb609c6befbdcb10bee89252a0844"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\gather-cycle\\timestamps.json",
+      "bytes": 564,
+      "sha256": "b0e64bc19b80c64c85f21dfbe71aa8923ee0396e35b744e5fe0b4516b1131fb5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\frame-00.png",
+      "bytes": 155549,
+      "sha256": "07bdb6907d0cbdd6a21e271bbc574e37da47eb7359d1b92ea5e2d0fca6f65b8f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\frame-01.png",
+      "bytes": 155549,
+      "sha256": "07bdb6907d0cbdd6a21e271bbc574e37da47eb7359d1b92ea5e2d0fca6f65b8f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\frame-02.png",
+      "bytes": 155549,
+      "sha256": "07bdb6907d0cbdd6a21e271bbc574e37da47eb7359d1b92ea5e2d0fca6f65b8f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\frame-03.png",
+      "bytes": 154626,
+      "sha256": "81c1d7a07ec7eaff8fc97958b59e4b28097d9a092614d2295f82a4c9cafb681b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\frame-04.png",
+      "bytes": 155549,
+      "sha256": "07bdb6907d0cbdd6a21e271bbc574e37da47eb7359d1b92ea5e2d0fca6f65b8f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\geometry-color\\timestamps.json",
+      "bytes": 591,
+      "sha256": "fadeac8501022544cf52ca60b2bf4a1112aaf182aeac650aece9cd6aeeebd6e7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-00.png",
+      "bytes": 150411,
+      "sha256": "45828c5f6186ecad9aa870ae45a29e82be9db6c1cb10ee5c484b733471b02c60"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-01.png",
+      "bytes": 143822,
+      "sha256": "ec0f8cfa490f84b9fa5878e0431c4404a9f4d7b3cac04cf23179025260b82789"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-02.png",
+      "bytes": 133747,
+      "sha256": "b437645baffc0c874621979e6711466ba8a5c964278227230ba203c33edec07c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-03.png",
+      "bytes": 125389,
+      "sha256": "695247e8427bf6d0c52a2eeb293c2f0ec211bf244336cba74ea7cf18bac65c9f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-04.png",
+      "bytes": 125023,
+      "sha256": "1ecc91233c5ae60561108baef34b7bfc511c0f8ca14742f04260ae3096ffe374"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-05.png",
+      "bytes": 131842,
+      "sha256": "8773a58820b8833c995ac95118bc636b37f6da66ca4c40fa27dc5022a77d9fd6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-06.png",
+      "bytes": 141582,
+      "sha256": "c28e7bd95176d134a3821579dd827197989c280e0f031cb64bc8f95386c83891"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\frame-07.png",
+      "bytes": 149000,
+      "sha256": "a883be961b0cca0c861833ae4305e8a6939fe1f065c8334bd2e0f84a182063a2"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\master-cycle\\timestamps.json",
+      "bytes": 550,
+      "sha256": "841849369f93a22d4467d1956b2fe3ce9ea95d6297535ce7a2952fd2a81be97d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\frame-00.png",
+      "bytes": 96236,
+      "sha256": "2d08d2d4100f90935978a4c4d9a96879398c231e169c06d31eb72a13ed2bfe87"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\frame-01.png",
+      "bytes": 93885,
+      "sha256": "ab1d57a5e202100a618b0bbb9ffb087ff727a03478f249c094c37317edeb4e7c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\frame-02.png",
+      "bytes": 94204,
+      "sha256": "aea4830c1063586424f7a7cc243e8b259a5cf65a42c632f63c99f45ea77ee3da"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\frame-03.png",
+      "bytes": 98782,
+      "sha256": "4d42bb3dec01a5eb2af40db50b912addbac34a0aaedea478bd61c95270beedeb"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\frame-04.png",
+      "bytes": 98782,
+      "sha256": "4d42bb3dec01a5eb2af40db50b912addbac34a0aaedea478bd61c95270beedeb"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\retarget\\timestamps.json",
+      "bytes": 738,
+      "sha256": "b6e9e3833c2ca757e79a0f95c74d9645754c7a6969ac8f3e35a14aa874ef250a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-00.png",
+      "bytes": 97536,
+      "sha256": "adcb67e514a728595ec3626bdc21009959e7aab461fb3efa3eb43c2889828bc7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-01.png",
+      "bytes": 96200,
+      "sha256": "1be2fd87ce306cbabc144347e8ca87fb7624c214bb0a1c0ded279a7884768f73"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-02.png",
+      "bytes": 94677,
+      "sha256": "7cee9fc482f76aa3fe2f3eac3dc93f725af708feba47107f7d65dbee34cf7d70"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-03.png",
+      "bytes": 95981,
+      "sha256": "e5e23042f7efad6a98641085fd69150b52338ad9f29ea7671c0f51d9075443a6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-04.png",
+      "bytes": 97796,
+      "sha256": "0a192b2b103b59a61adf9d6f1d142f9e97ed3b6af07fd35047126e999ac7e63d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-05.png",
+      "bytes": 98265,
+      "sha256": "752598745d6c08879022cf952f21c8acaf3bd315e51781baf3eb01390c5f5f0b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-06.png",
+      "bytes": 98921,
+      "sha256": "9f7e0d1318c34455ec69d7a403b0a50bf1f3b3c65171d2d222a16721c521bdaf"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\frame-07.png",
+      "bytes": 98134,
+      "sha256": "761384652b61d600cdca9b259eb8c684cae824cc8aa5a9b3a8a00cbf0947ca9e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\sequences\\single-content-cycle\\timestamps.json",
+      "bytes": 555,
+      "sha256": "40823b22c3c3567da21f1af6c1d410dbb1f3954890f254a4b2496621d0512cce"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette180-dark.png",
+      "bytes": 3463,
+      "sha256": "73cd0f9d93389eef8c9e97ce46f54f58a82868dd6300d2e7b3a342f6655f477a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette180-light.png",
+      "bytes": 3396,
+      "sha256": "beb7217ead62fac13d7174d02b5fb15d43598fee40dd6b0fe409d9e3a2d495ad"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette96-dark.png",
+      "bytes": 1512,
+      "sha256": "94d8448dec8d73a5b0cc890b81dd4232f5a4f4550006a404b72701e22fe3a372"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette96-gather-dark.png",
+      "bytes": 2752,
+      "sha256": "29dd860d6ef356b66724b7ec92476106b7d4d2501410e7257b1e2ccd68db5ea6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette96-gather-light.png",
+      "bytes": 2701,
+      "sha256": "20b2d89c7fb43b9cf7db41c241b6314b8a271519597c5a99b4f2cd52a11e6f54"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\silhouette96-light.png",
+      "bytes": 1491,
+      "sha256": "443df0a61f55082bf5e1abcda23bc7969cbb27adef9af23ad7e95f1c7de30366"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-content-alternate-dark.png",
+      "bytes": 117062,
+      "sha256": "489978561650b7e1ab379b5e813687bda3c94fcbe3d506a1f4ff26f6c4680290"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-content-alternate-light.png",
+      "bytes": 93550,
+      "sha256": "68bb17f4bed3e5bc6be49e94fcaa2b714748766a9be5fa6e45e2a3de54d5d0d3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-content-canonical-dark.png",
+      "bytes": 109239,
+      "sha256": "48516f9e5ee6cbbed5e12f97962df36bc0512348c9fa3e2e5219e20ccbcdc44d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-content-canonical-light.png",
+      "bytes": 95590,
+      "sha256": "1e9b4a5eafe4207d19aff082ee5a52324c5d6191f4c82774be4fd9a176373ab4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-design-alternate-dark.png",
+      "bytes": 140454,
+      "sha256": "efea91b8a7a675e2baddb490dec911311a84d853523ab3a9b5576fd698b5efb3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-design-alternate-light.png",
+      "bytes": 112688,
+      "sha256": "fe1241e78676638a8c374c3a0a96eff05209d96fb76cc3dc719f8a7fce1bf3b0"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-design-canonical-dark.png",
+      "bytes": 143618,
+      "sha256": "463c4ceeaef906badd19f1e8f8277e17dd80d4fe8ec493fd88af7646ac50ed3a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-design-canonical-light.png",
+      "bytes": 111489,
+      "sha256": "3311d2d68b9438f53b8bda63a49bbc9bc3ada15a3fa8a26adff2bd0c71c437b7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-digital-alternate-dark.png",
+      "bytes": 106917,
+      "sha256": "090edc93d66c0ed4b64f27245ea1c2ce4dc24451cc35a7365824ac8107abad1c"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-digital-alternate-light.png",
+      "bytes": 90747,
+      "sha256": "03554a371ecfa402d20a8eca4d33156c76603f629a3925a065e4d3418beeb47f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-digital-canonical-dark.png",
+      "bytes": 110738,
+      "sha256": "91ca09b19b57007465f875837d1a45b877fc482eb0cb6ff9f5ae2872a58dcf9b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-digital-canonical-light.png",
+      "bytes": 86330,
+      "sha256": "d66a70cbeb0e38906e8f1b2f157f184cdc59b8ad546c756fe7960a94f37adfcb"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-event-alternate-dark.png",
+      "bytes": 194856,
+      "sha256": "5bd7d2aebb21e52de6485f2d728656d522217c2c58acd987c77fbdf1beb55ad8"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-event-alternate-light.png",
+      "bytes": 162765,
+      "sha256": "d66d63e06e68a13af9f1cb0181f280eee8780d23597a82338be1efb9e731d4ce"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-event-canonical-dark.png",
+      "bytes": 193787,
+      "sha256": "db074b55f45d4809f72e23c501c4c41f68a52edd6fa10a348c5f005695d6a687"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-event-canonical-light.png",
+      "bytes": 155549,
+      "sha256": "07bdb6907d0cbdd6a21e271bbc574e37da47eb7359d1b92ea5e2d0fca6f65b8f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-games-alternate-dark.png",
+      "bytes": 82084,
+      "sha256": "369ba0cee71ce40dc1844210bf82f3ff4e42c136b4950276b7d2ddc151056718"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-games-alternate-light.png",
+      "bytes": 71521,
+      "sha256": "bf5de49e4208ff5134918137e36fe33113ee7b42eacca9aa4fb4ea77e10fccdb"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-games-canonical-dark.png",
+      "bytes": 82531,
+      "sha256": "0980d56990276fe73f791a44b8654d8fdd79761d9d42ea32a8f00ed5c629b1ac"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-games-canonical-light.png",
+      "bytes": 70084,
+      "sha256": "2614d862bdea8b03c245867bcae5e4d79abb51dfb085deb2674da77f56d80639"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-merch-alternate-dark.png",
+      "bytes": 48313,
+      "sha256": "93c24df5e43ae16a83eaf74dccbafa2b279156ea9d31e663980f9d48c8660e9e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-merch-alternate-light.png",
+      "bytes": 43809,
+      "sha256": "5a0dd5e912567dc95d6642d329ff7dd3b0a68aa7d6f3044502d31e172e19f4c8"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-merch-canonical-dark.png",
+      "bytes": 49422,
+      "sha256": "6797c8ca48897aa6fe1cf1be8c80a16ac6a9f4d7ee3c48201f78fb06164bbbee"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-merch-canonical-light.png",
+      "bytes": 44193,
+      "sha256": "bd340b20e1a6d163ae68ebfe6847174a14365672b4c7d96c155d7ceee6d12921"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-video-alternate-dark.png",
+      "bytes": 56156,
+      "sha256": "00d43aa839cdf86657f9751e25d00a269bbdd998d09d5ee82425691e0d0120d3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-video-alternate-light.png",
+      "bytes": 49849,
+      "sha256": "1702f49eb36ae3a37794dadcd9df9164c8668bc8b8571cd27ba172f540a98652"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-video-canonical-dark.png",
+      "bytes": 56311,
+      "sha256": "babdacff7bf3609a8f381846405dfe751ce8d4262304e063ca7ed32e7c497623"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\single-video-canonical-light.png",
+      "bytes": 48869,
+      "sha256": "63aae1456dea2b27bba8a0796697257f926693e178fd7aebc99bd21cb5d3f3de"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-dark-phase-0.png",
+      "bytes": 110670,
+      "sha256": "f9f1d6d8432491db0597f81f1d6a469664bd1b4081cef92403fdb22d70891fc5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-dark-phase-025.png",
+      "bytes": 109239,
+      "sha256": "48516f9e5ee6cbbed5e12f97962df36bc0512348c9fa3e2e5219e20ccbcdc44d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-dark-phase-05.png",
+      "bytes": 112233,
+      "sha256": "1f45bfbb236e54c4415cf29f9b57995f1ef5f10fcdcedf68ff8ffa2cba112cda"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-dark-phase-075.png",
+      "bytes": 111359,
+      "sha256": "baa0192da4196e1ae61a4274e9c13a66c9535b2be787d7c38eebc37ef15a96d7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-light-phase-0.png",
+      "bytes": 98618,
+      "sha256": "c4f67c08765cef36c0447c3a25f2be11ce592008dcc434588105265814dde9a4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-light-phase-025.png",
+      "bytes": 95590,
+      "sha256": "1e9b4a5eafe4207d19aff082ee5a52324c5d6191f4c82774be4fd9a176373ab4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-light-phase-05.png",
+      "bytes": 96302,
+      "sha256": "0af52214f5c46ceab73ae28cc2eeadf6c4c500997f14705303cd490c131adb84"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\slash-content-light-phase-075.png",
+      "bytes": 98202,
+      "sha256": "803a7539df364e10e602d838f2c2005ad93128aeaed23dd8828f12d40aa1109f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-drive-dark.png",
+      "bytes": 47979,
+      "sha256": "998cee3371b9574b629893657fac7f07fcd777aec55180e1215f38a4eefb18b1"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-drive-light.png",
+      "bytes": 43385,
+      "sha256": "2fa16c3ec63a3a775a542f89d6351c9f26d2d5bc0d7f60805fad24c89ca814d3"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-focus-dark.png",
+      "bytes": 65529,
+      "sha256": "fa475ce991621d01ac1916cbf160ca12c5709db53e2f091a66f845fb4f959406"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-focus-light.png",
+      "bytes": 55580,
+      "sha256": "5c035e92c485b0b7aae536e96292ab37289b0f50bf8a765ce11cc886b0a3be43"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-gather-dark.png",
+      "bytes": 83110,
+      "sha256": "b340ffc65dcd906821f983d08228a36ce923f5e226e17645e88d835d56f64178"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\three-gather-light.png",
+      "bytes": 69460,
+      "sha256": "bd8af962df900b0d2739882f93bb8f5efcef657bbcf75f75f42b5c6fc2019832"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-drive-dark.png",
+      "bytes": 64378,
+      "sha256": "323bf5710b70ee4fe5290cf85ffcd0e47b3b0f1927c2abf2179dfd91d8a0d16f"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-drive-light.png",
+      "bytes": 56088,
+      "sha256": "d0ba96c933ee19bf57f868bfffc304d5c1774fc67326d54689a953d42e7a61f8"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-focus-dark.png",
+      "bytes": 47237,
+      "sha256": "7b358a3ba68f3d5693f2921b6524cc820929b861e6ee563d5ce377ce65721c5b"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-focus-light.png",
+      "bytes": 40715,
+      "sha256": "8b8acd9b396dc805e86485fbfdd6b96c043fe96e1c98197fe905e60669d3c97e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-focusContrast-dark.png",
+      "bytes": 61315,
+      "sha256": "5a587b32cfbc077f750e9d9e955dfb66a1a33cc9d1de6262061d078da50ca26a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-focusContrast-light.png",
+      "bytes": 53500,
+      "sha256": "6cfc5391f3f01a5efa38a0810ca233d2176e3f151716b202126a2df9414533f4"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-gather-dark.png",
+      "bytes": 61979,
+      "sha256": "cbb4e62f80e6a6985011da01a3db62afb84d832a95a6db461825899cf163ed6e"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\renders\\browser\\two-gather-light.png",
+      "bytes": 52494,
+      "sha256": "1401ee12a70d8cd6bab9ed6840ed98157f0599d32a80886e42347982042fcba5"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\approval-report.md",
+      "bytes": 8813,
+      "sha256": "3d402efa48cb329f367cfd7f275d7279b13c305a01171a944b159ee32604dd78"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\baseline.md",
+      "bytes": 2725,
+      "sha256": "ff2c158b4ac20d275e32607e71ec4a129050eba95d63d9710e46921b6d5982da"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\browser-qa-probes.json",
+      "bytes": 2175,
+      "sha256": "310753109653e4ae94e83521cf1ad59a2132c77f76665cd0bbbb06bac201da38"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\browser-qa-report.json",
+      "bytes": 3330,
+      "sha256": "19e8508f2c798b21679121ab50aa946b38cec1413bcd705698a429dc4457f254"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\checkpoint-hashes.json",
+      "bytes": 7742,
+      "sha256": "a9b62add16493abd9c2ffd9e6e8aabe04b6f19f6c8d71aa5d436674a47651477"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\test-results.md",
+      "bytes": 2875,
+      "sha256": "316564534a074e2ee61b6c41565e52224d7e2c8b2ad48f605818fd7676c7f2c6"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\reports\\visual-review.md",
+      "bytes": 3774,
+      "sha256": "a5f70abd224a29a34d8cc0fb300673775c97f2d23817e0556576602ed8d42d8a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\build-visual-boards.py",
+      "bytes": 10219,
+      "sha256": "3ff8266bca3461c517de376d08ebc42495b5d27ec3c54cc7a14d7ca90e07eb45"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\capture-browser-evidence.mjs",
+      "bytes": 16713,
+      "sha256": "933fb730037ff2bb9c66aa29281a1250907b7aa5bb1b0c1c73735746d0798aba"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\hash-checkpoint.mjs",
+      "bytes": 3389,
+      "sha256": "26cd8c15a0f2b3136c76bdaa95eb9f75ed05280a6905ae3850b28fcf8dde5fa7"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\measure-field-spans.ts",
+      "bytes": 2176,
+      "sha256": "57ff0bf0d3705e5fb49644836c463576455382cd672a93f6468dafc84bff168a"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\recapture-hero-mobile-and-m1.mjs",
+      "bytes": 2304,
+      "sha256": "d1caf2d58e917d75bbda5000c5f9ca76485d870a4238100a067bf6300efd9ef1"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\recapture-hero.mjs",
+      "bytes": 2702,
+      "sha256": "032c1e9bf5eebda8459ab433755157e2acce7dd66eed39d1b7cbc5d38d6d8f3d"
+    },
+    {
+      "path": "design\\photonic-skin\\ps-04-m2\\scripts\\run-gpu-parity-probes.mjs",
+      "bytes": 3552,
+      "sha256": "06ad53cb82f8d494d286e49434ac541cce2a943f52b44124fb26344325b82dfa"
+    },
+    {
+      "path": "tests/photonic-ps04-m2.test.ts",
+      "bytes": 15480,
+      "sha256": "5a8b50179da49a7208904bda8bb6ca84a942589a3d47a4b61e7eeb25b6aa004d"
+    }
+  ]
+}

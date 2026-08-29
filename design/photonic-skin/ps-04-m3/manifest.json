@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-04.M3",
+  "title": "Surface Motion & Transition Choreography",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "generatedAt": "2026-08-28",
+  "routes": [
+    "/visual-lab/photonic-skin-ps04-m3",
+    "/visual-lab/photonic-skin-ps04-m3/preview"
+  ],
+  "ownerPermission": "Owner reviewed M2 and said it is acceptable to proceed to PS-04.M3. This continues the M2 visual direction. It does not close M1/M2 aesthetic limitations.",
+  "frozenBaseline": {
+    "m41AggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41ManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPresentationPatchHash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpointFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "states": 154,
+    "transitionPrograms": 35,
+    "motionFiles": 105,
+    "m1SourceAggregate": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "m2SourceAggregate": "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d",
+    "m2ManifestSha256": "14a612a53d4006a595a8e70c0d19c86ec0eb76549aa73a5e3ea878ce4c3ea9f8"
+  },
+  "implementation": {
+    "materialType": "THREE.RawShaderMaterial",
+    "actors": 1,
+    "instancedElements": 16384,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 16,
+    "paletteLut": "uniform vec4[32]",
+    "extraTextures": 0,
+    "anchor": [0, 0, 0],
+    "fieldOrigin": [0, 0, 0],
+    "fieldScale": 3.6,
+    "fieldDirection": [0.8830222215884446, 0.3213938047957942, 0.34202014329552427],
+    "idlePresets": {
+      "master": { "breath": "±1.2% / 8s", "rotation": "360° about +Z / 180s" },
+      "single": { "breath": "±0.5% / 9s", "rotation": "rock ±3° / 26s" },
+      "focus": { "breath": "±0.5% / 9s", "rotation": "rock ±3° / 26s" },
+      "gather": { "breath": "±0.5% / 9s", "rotation": "rock ±3° / 26s" },
+      "drive": { "breath": "±0.5% / 9s", "rotation": "rock ±3° / 26s" },
+      "brand-wide": { "breath": "±0.35% / 10s", "rotation": "rock ±3° / 30s" }
+    },
+    "profilePolicy": {
+      "desktop": "full idle",
+      "mobile390": "full idle",
+      "silhouette180": "breath ×0.45, rotation off",
+      "silhouette96": "decorative idle off"
+    },
+    "handoff": {
+      "residualFade": "C2 to identity by reveal start 0.40",
+      "c0": true,
+      "c1": false,
+      "masterYaw": "shortest slerp during spherical anticipation/release window"
+    },
+    "paletteGeometryLink": "c2Window(progress, regroup[0]=0.24, reveal[0]=0.40)",
+    "dtClampSeconds": 0.1
+  },
+  "checkpointAggregates": {
+    "method": "SHA-256 over sorted relative-path + TAB + file-SHA256 + LF records",
+    "source": "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1",
+    "browserFrames": "28a683929169681d16e1c147e4d3d1b6d3fd90bb3aa64a0d61b4f0cd29fa2de5",
+    "approvalBoards": "e600964c5e33f59a52a9e89684faaeb761d3d4a48d8d2f9af0b05c72a60c5165",
+    "reports": "6aa3738234068b78c9ae23b67a452960e8acc51322fde09edb0552d222aa78db",
+    "browserFileCount": 548,
+    "boardCount": 11,
+    "excludedFromHash": [
+      "design/photonic-skin/ps-04-m3/manifest.json"
+    ]
+  },
+  "gates": {
+    "npmTest": "125/125",
+    "focusedM3": "18/18",
+    "python": "4/4 + 11/11 + 11/11",
+    "typecheck": "pass",
+    "lint": "pass",
+    "buildPages": 37,
+    "gpuVertex": "552/46 valid",
+    "gpuField": "32896+4369 valid"
+  }
+}

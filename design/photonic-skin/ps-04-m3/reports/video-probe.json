@@ -1,0 +1,18 @@
+{
+  "probedAt": "2026-08-28T11:22:00.000Z",
+  "container": "VP8 WebM, Playwright recordVideo 1440×920, declared 25 fps",
+  "clips": [
+    { "file": "master-idle-32s-realtime.webm", "durationSec": 37.16, "note": "Includes ~5s goto/waitReady then 32s idle. t=2s can be empty; t=16 and t=30 show MASTER idle." },
+    { "file": "single-content-rock-26s-realtime.webm", "durationSec": 28.36, "note": "Includes setup plus 26s rock." },
+    { "file": "handoff-179-realtime.webm", "durationSec": 7.88, "note": "Includes waitReady + yaw seek + 5s after request. Morph is inside this file, not at t=0." },
+    { "file": "retarget-abc-realtime.webm", "durationSec": 9.8, "note": "A→B→C with last request wins." },
+    { "file": "focus-gather-drive-realtime.webm", "durationSec": 10.0, "note": "Same-mask FOCUS→GATHER→DRIVE, Dark." },
+    { "file": "master-turn-15s-ACCELERATED-NOT-REALTIME.webm", "durationSec": 19.56, "note": "Labeled accelerated yaw sweep. Not a 180s realtime turn." }
+  ],
+  "pngSequenceCaptureHz": {
+    "handoff-179": "~8 Hz actual (screenshot overhead ~120ms/frame over 11.7s, not 30 Hz)",
+    "retarget-abc": "variable; frame 4 delayed by second request (~1.4s gap)",
+    "master-color-survey": "4 Hz labeled survey of 32s",
+    "single-rock-excerpt": "~8 s excerpt, intended 15 Hz, screenshot-limited"
+  }
+}
