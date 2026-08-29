@@ -1,0 +1,25 @@
+{
+  "runId": "ps04-m4-2026-08-29T122647398Z",
+  "ok": true,
+  "capturedAt": "2026-08-29T12:28:59.382Z",
+  "videos": [
+    { "name": "full-down-up", "elapsedMs": 22557, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/full-down-up.webm" },
+    { "name": "chapter-03", "elapsedMs": 5254, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/chapter-03.webm" },
+    { "name": "chapter-05", "elapsedMs": 7653, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/chapter-05.webm" },
+    { "name": "chapter-06", "elapsedMs": 4942, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/chapter-06.webm" },
+    { "name": "dynamic-unlock", "elapsedMs": 5765, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/dynamic-unlock.webm" },
+    { "name": "rapid-reversal", "elapsedMs": 4677, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/rapid-reversal.webm" },
+    { "name": "footer-exit-return", "elapsedMs": 5508, "file": "design/photonic-skin/ps-04-m4/renders/browser/video/footer-exit-return.webm" }
+  ],
+  "probes": {
+    "darkBackground": "rgb(9, 11, 13)",
+    "successGraphNode": "03.3",
+    "context": "restored",
+    "headerCount": 1,
+    "canvasCount": 1,
+    "previewHook": true,
+    "consoleErrors": [],
+    "rawConsole": []
+  },
+  "playback": "wall-clock 1x; later watched via watch-recordings.mjs at playbackRate=1 until ended"
+}

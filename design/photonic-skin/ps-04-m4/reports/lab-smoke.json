@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "capturedAt": "2026-08-29T12:45:56.774Z",
+  "log": [
+    {
+      "step": "ready",
+      "ms": 4599
+    },
+    {
+      "step": "idle",
+      "canvases": 1,
+      "node": "01",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 16
+    },
+    {
+      "step": "hero-anchor-build",
+      "node": "03.1"
+    },
+    {
+      "step": "wheel-in-chapter-05",
+      "before": 6302,
+      "y": 7702,
+      "node": "05.5"
+    },
+    {
+      "step": "footer",
+      "node": "08",
+      "draws": 1,
+      "actorDraw": false
+    },
+    {
+      "step": "wheel-from-footer",
+      "beforeWheel": 13500,
+      "y": 13500,
+      "node": "08"
+    },
+    {
+      "step": "return-hero",
+      "canvases": 1,
+      "headers": 1,
+      "programs": 1,
+      "textures": 16
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-04.M4",
+  "title": "Full-page Site Composition & Scroll Orchestration",
+  "status": "CONDITIONAL / HUMAN REVIEW REQUIRED",
+  "generatedAt": "2026-08-29",
+  "routes": [
+    "/visual-lab/photonic-skin-ps04-m4",
+    "/visual-lab/photonic-skin-ps04-m4/preview"
+  ],
+  "ownerPermission": "Owner completed M3, attached homepage SVG and navigation sketch, asked to keep those decisions, and allowed PS-04.M4 to start. This does not close M1–M3 aesthetic limits or approve the new composition.",
+  "frozenBaseline": {
+    "m41AggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41ManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPresentationPatchHash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpointFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "states": 154,
+    "transitionPrograms": 35,
+    "motionFiles": 105,
+    "m1SourceAggregate": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "m2SourceAggregate": "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d",
+    "m2ManifestSha256": "14a612a53d4006a595a8e70c0d19c86ec0eb76549aa73a5e3ea878ce4c3ea9f8",
+    "m3SourceAggregate": "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1",
+    "m3ManifestSha256": "1c80aeb9e02e1e17988311bc73dc86b87f53cd5ae3e223550f017cd8736f6fac"
+  },
+  "implementation": {
+    "materialType": "THREE.RawShaderMaterial",
+    "actors": 1,
+    "canvases": 1,
+    "sessions": 1,
+    "instancedElements": 16384,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "textures": 16,
+    "screens": 18,
+    "horizontalChapters": 3,
+    "temporaryNonNodes": 2,
+    "scrollModel": "one document vertical route; sticky tracks; CSS translate3d",
+    "composition": "square WebGL viewport/scissor after frozen overlay; camera aspect 1; up [0,0,1]",
+    "successHoldMs": 4200,
+    "contactDelayMs": 480
+  },
+  "conditionalReasons": [
+    "390x844 is emulated, not a physical device test",
+    "Some R3F p95 samples exceed 16.7 ms on Intel headless (pacing / sparse retarget windows, not GPU timers)"
+  ],
+  "checkpointAggregates": {
+    "method": "SHA-256 over sorted relative-path + TAB + file-SHA256 + LF records",
+    "source": "e45efd4b2c4ad38cf55d18c861e43bee342b22d118ec8ec79cfd3cfba6274ec5",
+    "browserFrames": "e02096bec070f30e60de27821b9cbd00e14f446c7827521232def57d42bcc1d3",
+    "approvalBoards": "90bf33a3050c171b1587c9a24f1975cc8792e8fb58c7d1419dbf255d0cee3298",
+    "reports": "9a8c2f5a479dcc5d00ed346888b3966c579616cafa850bd5ffc44defc30f9ca0",
+    "browserFileCount": 97,
+    "boardCount": 7,
+    "excludedFromHash": [
+      "design/photonic-skin/ps-04-m4/manifest.json"
+    ]
+  },
+  "gates": {
+    "npmTest": "135/135",
+    "focusedM4": "10/10",
+    "python": "4/4 + 11/11 + 11/11",
+    "typecheck": "pass",
+    "lint": "pass",
+    "buildPages": 39,
+    "gpuVertex": "552/46 valid",
+    "gpuField": "32896+4369 valid",
+    "videosWatchedAt1x": 7
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "runId": "ps04-m4-2026-08-29T122647398Z",
+  "ok": true,
+  "shots": "browser PNG pack in design/photonic-skin/ps-04-m4/renders/browser",
+  "videos": [
+    { "name": "full-down-up", "elapsedMs": 22557 },
+    { "name": "chapter-03", "elapsedMs": 5254 },
+    { "name": "chapter-05", "elapsedMs": 7653 },
+    { "name": "chapter-06", "elapsedMs": 4942 },
+    { "name": "dynamic-unlock", "elapsedMs": 5765 },
+    { "name": "rapid-reversal", "elapsedMs": 4677 },
+    { "name": "footer-exit-return", "elapsedMs": 5508 }
+  ],
+  "probes": {
+    "darkBackground": "rgb(9, 11, 13)",
+    "successGraphNode": "03.3",
+    "context": "restored",
+    "headerCount": 1,
+    "canvasCount": 1,
+    "previewHook": true,
+    "consoleErrors": []
+  }
+}

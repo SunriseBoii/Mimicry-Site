@@ -1,0 +1,321 @@
+{
+  "capturedAt": "2026-08-29T16:03:21.985Z",
+  "gates": [
+    {
+      "node": "01",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 902,
+        "top": 325,
+        "width": 354,
+        "height": 354,
+        "right": 1256,
+        "bottom": 679,
+        "pixelCount": 97087
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "02",
+      "pass": true,
+      "failures": [],
+      "family": "BRAND_WIDE",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 837,
+        "top": 412,
+        "width": 424,
+        "height": 209,
+        "right": 1261,
+        "bottom": 621,
+        "pixelCount": 21993
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.1",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 843,
+        "top": 412,
+        "width": 412,
+        "height": 208,
+        "right": 1255,
+        "bottom": 620,
+        "pixelCount": 21234
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.2",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 842,
+        "top": 408,
+        "width": 424,
+        "height": 182,
+        "right": 1266,
+        "bottom": 590,
+        "pixelCount": 33928
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.3",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 845,
+        "top": 407,
+        "width": 420,
+        "height": 186,
+        "right": 1265,
+        "bottom": 593,
+        "pixelCount": 33947
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "04",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 903,
+        "top": 326,
+        "width": 352,
+        "height": 352,
+        "right": 1255,
+        "bottom": 678,
+        "pixelCount": 96015
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.1",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-content",
+      "fraction": 1,
+      "bbox": {
+        "left": 59,
+        "top": 352,
+        "width": 540,
+        "height": 348,
+        "right": 599,
+        "bottom": 700,
+        "pixelCount": 114477
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.2",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 96,
+        "top": 261,
+        "width": 534,
+        "height": 450,
+        "right": 630,
+        "bottom": 711,
+        "pixelCount": 141141
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.3",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-event",
+      "fraction": 1,
+      "bbox": {
+        "left": 88,
+        "top": 290,
+        "width": 552,
+        "height": 412,
+        "right": 640,
+        "bottom": 702,
+        "pixelCount": 193930
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.4",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-games",
+      "fraction": 1,
+      "bbox": {
+        "left": 67,
+        "top": 299,
+        "width": 516,
+        "height": 385,
+        "right": 583,
+        "bottom": 684,
+        "pixelCount": 65504
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.5",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 245,
+        "top": 378,
+        "width": 243,
+        "height": 340,
+        "right": 488,
+        "bottom": 718,
+        "pixelCount": 46607
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.6",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-digital",
+      "fraction": 1,
+      "bbox": {
+        "left": 135,
+        "top": 322,
+        "width": 509,
+        "height": 373,
+        "right": 644,
+        "bottom": 695,
+        "pixelCount": 94621
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.7",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-merch",
+      "fraction": 1,
+      "bbox": {
+        "left": 223,
+        "top": 402,
+        "width": 259,
+        "height": 242,
+        "right": 482,
+        "bottom": 644,
+        "pixelCount": 38036
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.1",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 902,
+        "top": 326,
+        "width": 351,
+        "height": 351,
+        "right": 1253,
+        "bottom": 677,
+        "pixelCount": 95333
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.2",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 905,
+        "top": 328,
+        "width": 347,
+        "height": 348,
+        "right": 1252,
+        "bottom": 676,
+        "pixelCount": 93266
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.3",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 905,
+        "top": 328,
+        "width": 348,
+        "height": 348,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 93379
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "07",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 904,
+        "top": 327,
+        "width": 349,
+        "height": 349,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 94081
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "08",
+      "pass": true,
+      "failures": [],
+      "family": "none",
+      "geometry": null,
+      "fraction": 0,
+      "bbox": null,
+      "actorDraw": false
+    }
+  ]
+}

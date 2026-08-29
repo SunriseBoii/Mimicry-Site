@@ -1,0 +1,110 @@
+{
+  "capturedAt": "2026-08-29T12:00:00.000Z",
+  "note": "Reconstructed after the M4 implementation pass from an unchanged frozen tree. No reset/clean/stash was performed. M2 and M3 were already committed on HEAD; they were not untracked relative to older commit ded950b.",
+  "gitHead": "f9e45229da988ed1e98fb032f18864af22a0315f",
+  "gitHeadSubject": "feat(photonic-skin): add PS-04.M2 photonic color field lab",
+  "historyNote": "dba82d1 (M3) is an ancestor of f9e4522 (M2 commit on top of M3).",
+  "workingTreeAtStart": "HEAD clean except untracked docs/mimicry-homepage-topology-checkpoint-2026-08-29.md (user file, preserved).",
+  "doNotTreatGitHeadAsSoleBaseline": true,
+  "frozenVerificationBeforeEdits": {
+    "m41Aggregate": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41Manifest": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPatch": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpoints": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "m1Source": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "m2Source": "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d",
+    "m2ManifestFile": "14a612a53d4006a595a8e70c0d19c86ec0eb76549aa73a5e3ea878ce4c3ea9f8",
+    "m3Source": "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1",
+    "m3ManifestFile": "1c80aeb9e02e1e17988311bc73dc86b87f53cd5ae3e223550f017cd8736f6fac",
+    "matched": true
+  },
+  "m3SourceFilesSha256": [
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/idle-motion.ts",
+      "bytes": 12274,
+      "sha256": "8a87d9a1482026f53ab760fc8b56be7241f47d6df4967506c44255d6c12da1d2"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/material-foundation.ts",
+      "bytes": 1199,
+      "sha256": "fdd14216af7256cb3a4c4dcfbfde29f10a5010258248f9ef4aad1115f9bc79f4"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/page.tsx",
+      "bytes": 370,
+      "sha256": "bbc0d1670cf19377913f0f0776ca21d1557e1e511bf8869f3332978ac0097038"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/palette-driver.ts",
+      "bytes": 6823,
+      "sha256": "59e3415663cf5308e69b43951172c6649854506a53d7fbdabe739fa2806d8e17"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/phase-adapter.ts",
+      "bytes": 5133,
+      "sha256": "da797ffb283d4c98eb907e5bbb7b06c51ba7028d3e0276dd65e32d3d4179b71f"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/PS04M3Lab.tsx",
+      "bytes": 25513,
+      "sha256": "e8adbcacf0de39fe7e8d1e87cd24b6a6cd76769fff0c7e89b0d9a9bc2ab560fb"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/PS04M3LabClient.tsx",
+      "bytes": 179,
+      "sha256": "c2fce9f1cb1701922e2da891c633978f168af19f40e4251d5a6bb5d6a6aed30b"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/PS04M3Scene.tsx",
+      "bytes": 81416,
+      "sha256": "8328003f8c269f7dafc8ee734d11a187aa042ad8e6ee3c4447e379bea9612e60"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/ps04m3.module.css",
+      "bytes": 7496,
+      "sha256": "87a98b2d4bf82506f7181c65ddf4093902a5ef8357febf7c2e27dddb5822ab3a"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/runtime.ts",
+      "bytes": 3276,
+      "sha256": "ac2c25f3e826338f8592385fc91150836eb806071fdd16b9ca39aae118b417cd"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/session.ts",
+      "bytes": 18707,
+      "sha256": "0ff7d9ed39a6068c8f491cd829674409d75fdd6c0b2d3923f04c240958217b84"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/preview/page.tsx",
+      "bytes": 380,
+      "sha256": "c2232d4fa41d191798dfcc86dc9dc87961437888f90a352723f1290d5a8bf073"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/preview/PS04M3Preview.tsx",
+      "bytes": 6987,
+      "sha256": "812c096d8256295182b16bf03d2c0fe2e410669c7ca85891727b6c68e819bedf"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/preview/PS04M3PreviewClient.tsx",
+      "bytes": 191,
+      "sha256": "947bb480417997902d94d851cb5b991ce899cafbd1543ae84b8b30975e54694f"
+    },
+    {
+      "path": "app/visual-lab/photonic-skin-ps04-m3/preview/preview.module.css",
+      "bytes": 3071,
+      "sha256": "68aacd3de1f27aec50069c21fc8e54e309734996cefbb2bc5ba011fca5a5c4f1"
+    },
+    {
+      "path": "tests/photonic-ps04-m3.test.ts",
+      "bytes": 21168,
+      "sha256": "f5860183dbe6bedb2b823691a7d1aafe593d8d6683579e6543c1c8605e6a0289"
+    }
+  ],
+  "contractsObserved": {
+    "sessionOwner": "PhotonicMotionSession is constructed once in PS04M4Lab. The lab RAF clock ticks it. Scene useFrame only reads snapshot(). Views do not tick independently.",
+    "latestRequestWins": "beginRequest → captureJoint → compile → commitTransition only if isCurrent(revision).",
+    "frozenVsComposition": "M4 copies M3 shader strings byte-for-byte. Site placement is a square WebGL viewport/scissor after overlay, camera aspect locked to 1, up [0,0,1]. No uCompose uniforms.",
+    "themeReducedPause": "Theme updates M1/M2 material uniforms without remounting Canvas. Dark paper #090B0D. Reduced motion via session. Footer sets instancedMesh.visible=false and session.setOffscreen(true).",
+    "visibleFalse": "Canvas and session stay mounted. Actor draw 0 is expected. Reverse restore does not recompile the material system."
+  }
+}

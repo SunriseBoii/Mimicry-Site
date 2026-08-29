@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-04.M4.R1",
+  "title": "Actor Visibility & Semantic Mapping Remediation",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "generatedAt": "2026-08-29",
+  "previousStage": "PS-04.M4",
+  "previousStatus": "CONDITIONAL / HUMAN REVIEW REQUIRED",
+  "previousCheckpoint": "design/photonic-skin/ps-04-m4/",
+  "routes": [
+    "/visual-lab/photonic-skin-ps04-m4",
+    "/visual-lab/photonic-skin-ps04-m4/preview"
+  ],
+  "productionHomepage": "unchanged",
+  "gitHeadAtStart": "f9e45229da988ed1e98fb032f18864af22a0315f",
+  "rootCause": "CSS slot was pre-multiplied by DPR, then THREE.WebGLRenderer.setViewport multiplied again",
+  "frozenBaseline": {
+    "m41AggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41ManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPresentationPatchHash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpointFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "m1SourceAggregate": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "m2SourceAggregate": "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d",
+    "m3SourceAggregate": "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1",
+    "previousM4Source": "e45efd4b2c4ad38cf55d18c861e43bee342b22d118ec8ec79cfd3cfba6274ec5"
+  },
+  "implementation": {
+    "materialType": "THREE.RawShaderMaterial",
+    "actors": 1,
+    "canvases": 1,
+    "sessions": 1,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "siteFitProfiles": {
+      "master": 1,
+      "brandWide": 1.16,
+      "complex": 1.14,
+      "single": 1.36,
+      "none": 1
+    }
+  },
+  "checkpointAggregates": {
+    "method": "SHA-256 over sorted relative-path + TAB + file-SHA256 + LF records",
+    "source": "f86d717b652d66ae30d72fd480a386e9fbf5d8b9efa297325ae8c6f9b10b5d12",
+    "browserFrames": "3b64d2ec2be9c8a19291c3c977ccb3895040b0da9fff3b0e162b8a36a86ff0d1",
+    "approvalBoards": "4bfdda8c98a93590bf3af25ab862c2822706bd13c2231c3cd86ea0e9d7a3b039",
+    "reports": "09304518b0be7d7390d898a379fe43e8f34c655b306806cd2a49bd1fab51b1b9",
+    "browserFileCount": 108,
+    "boardCount": 10,
+    "excludedFromHash": [
+      "design/photonic-skin/ps-04-m4-r1/manifest.json"
+    ]
+  },
+  "gates": {
+    "npmTest": "142/142",
+    "focusedM4": "17/17",
+    "python": "4/4 + 11/11 + 11/11",
+    "typecheck": "pass",
+    "lint": "pass",
+    "productionBuild": "pass, 39 pages, / unchanged",
+    "gpuVertex": "552/46 valid (M3, M4 identity, M4 ordinary)",
+    "gpuField": "32896+4369 valid",
+    "visibilityGates": "18/18",
+    "dprCssDriftPx": 0.04,
+    "contextRestore": "restored",
+    "videosWatchedAt1x": 3
+  },
+  "humanReviewRequired": [
+    "About BRAND_WIDE visual weight versus MASTER",
+    "SINGLE Event/Design filling the left slot versus smaller merch",
+    "Emulated 390 CTA overlap",
+    "Envelope 28–36vw is a starting guide, not an aesthetic PASS"
+  ]
+}

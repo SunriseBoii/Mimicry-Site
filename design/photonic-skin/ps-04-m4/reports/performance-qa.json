@@ -1,0 +1,430 @@
+{
+  "capturedAt": "2026-08-29T12:21:04.737Z",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+    "platform": "Win32",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "devicePixelRatio": 1.5,
+    "webgl2": true,
+    "gpuVendor": "Google Inc. (Intel)",
+    "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32,
+    "outputColorSpace": "srgb",
+    "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+    "antialias": true,
+    "alpha": true
+  },
+  "note": "Frame deltas are browser rAF pacing, not GPU timers. Historical RTX/Intel numbers are not mixed in.",
+  "scenarios": {
+    "m3Idle": {
+      "stats": {
+        "fps": 162,
+        "medianMs": 6,
+        "p95Ms": 15,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          768,
+          768
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      }
+    },
+    "idleOrdinary": {
+      "stats": {
+        "fps": 154,
+        "medianMs": 6.1,
+        "p95Ms": 7.1,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "01",
+      "composition": {
+        "x": 1295,
+        "y": 240,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 1100.8959999873803,
+        "cssCenterY": 502.5599996822612,
+        "cssSize": 475.1999997859206
+      }
+    },
+    "verticalHorizontalBoundary": {
+      "stats": {
+        "fps": 136,
+        "medianMs": 6.1,
+        "p95Ms": 20.2,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "03.1",
+      "composition": {
+        "x": 1295,
+        "y": 240,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 1100.8959999999963,
+        "cssCenterY": 502.55999999998863,
+        "cssSize": 475.1999999999924
+      }
+    },
+    "rapidCompetency": {
+      "stats": {
+        "fps": 20,
+        "medianMs": 50,
+        "p95Ms": 50,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "05.7",
+      "composition": {
+        "x": 119,
+        "y": 240,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 316.8028296241218,
+        "cssCenterY": 502.56,
+        "cssSize": 475.20000000000005
+      }
+    },
+    "leftPlacement": {
+      "stats": {
+        "fps": 20,
+        "medianMs": 50,
+        "p95Ms": 50,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "05.1",
+      "composition": {
+        "x": 119,
+        "y": 240,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 316.8000000731448,
+        "cssCenterY": 502.56,
+        "cssSize": 475.20000000000005
+      }
+    },
+    "rightPlacement": {
+      "stats": {
+        "fps": 20,
+        "medianMs": 50,
+        "p95Ms": 50,
+        "drawCalls": 1,
+        "triangles": 131072,
+        "textureMiB": 4,
+        "programs": 1,
+        "geometries": 1,
+        "textures": 16,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": true
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "06.2",
+      "composition": {
+        "x": 1256,
+        "y": 240,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 1074.681382471597,
+        "cssCenterY": 502.56,
+        "cssSize": 475.20000000000005
+      }
+    },
+    "footerExit": {
+      "stats": {
+        "fps": 143,
+        "medianMs": 6.1,
+        "p95Ms": 19.3,
+        "drawCalls": 0,
+        "triangles": 0,
+        "textureMiB": 4,
+        "programs": 0,
+        "geometries": 0,
+        "textures": 0,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": false
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "08",
+      "composition": {
+        "x": 1468,
+        "y": -895,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": false,
+        "actorDraw": false,
+        "identity": false,
+        "cssCenterX": 1216.0802315786348,
+        "cssCenterY": 1258.8164717874206,
+        "cssSize": 475.20000000000005
+      }
+    },
+    "footerReturn": {
+      "stats": {
+        "fps": 157,
+        "medianMs": 6.1,
+        "p95Ms": 14.9,
+        "drawCalls": 0,
+        "triangles": 0,
+        "textureMiB": 4,
+        "programs": 0,
+        "geometries": 0,
+        "textures": 0,
+        "dpr": 1.5,
+        "drawingBuffer": [
+          2160,
+          1350
+        ],
+        "lastActorDrawCalls": 1,
+        "lastActorTriangles": 131072,
+        "newFrame": false
+      },
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+        "platform": "Win32",
+        "hardwareConcurrency": 20,
+        "deviceMemoryGiB": 32,
+        "devicePixelRatio": 1.5,
+        "webgl2": true,
+        "gpuVendor": "Google Inc. (Intel)",
+        "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "maxVertexTextureUnits": 16,
+        "maxCombinedTextureUnits": 32,
+        "outputColorSpace": "srgb",
+        "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+        "antialias": true,
+        "alpha": true
+      },
+      "node": "07",
+      "composition": {
+        "x": 1295,
+        "y": 236,
+        "width": 713,
+        "height": 713,
+        "fullWidth": 2160,
+        "fullHeight": 1350,
+        "visible": true,
+        "actorDraw": true,
+        "identity": false,
+        "cssCenterX": 1101.2297531679717,
+        "cssCenterY": 504.75129814613274,
+        "cssSize": 475.20000000000005
+      }
+    },
+    "unlock": {
+      "unlock": {
+        "competencies": true,
+        "brief": false
+      },
+      "node": "07"
+    }
+  }
+}

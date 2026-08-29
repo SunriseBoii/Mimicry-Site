@@ -1,0 +1,339 @@
+{
+  "capturedAt": "2026-08-29T14:37:21.573Z",
+  "gates": [
+    {
+      "node": "01",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 901,
+        "top": 325,
+        "width": 356,
+        "height": 355,
+        "right": 1257,
+        "bottom": 680,
+        "pixelCount": 97552
+      },
+      "actorDraw": true,
+      "siteFitScale": 1
+    },
+    {
+      "node": "02",
+      "pass": true,
+      "failures": [],
+      "family": "BRAND_WIDE",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 820,
+        "top": 364,
+        "width": 336,
+        "height": 398,
+        "right": 1156,
+        "bottom": 762,
+        "pixelCount": 51000
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.1508107809171813
+    },
+    {
+      "node": "03.1",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 843,
+        "top": 413,
+        "width": 414,
+        "height": 207,
+        "right": 1257,
+        "bottom": 620,
+        "pixelCount": 21205
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.1401524789742734
+    },
+    {
+      "node": "03.2",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 820,
+        "top": 381,
+        "width": 481,
+        "height": 285,
+        "right": 1301,
+        "bottom": 666,
+        "pixelCount": 47717
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.1400082090811485
+    },
+    {
+      "node": "03.3",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 845,
+        "top": 408,
+        "width": 420,
+        "height": 184,
+        "right": 1265,
+        "bottom": 592,
+        "pixelCount": 33740
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.140000093036908
+    },
+    {
+      "node": "04",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 904,
+        "top": 327,
+        "width": 351,
+        "height": 351,
+        "right": 1255,
+        "bottom": 678,
+        "pixelCount": 95147
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.0001107082457037
+    },
+    {
+      "node": "05.1",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-content",
+      "fraction": 1,
+      "bbox": {
+        "left": 127,
+        "top": 343,
+        "width": 518,
+        "height": 397,
+        "right": 645,
+        "bottom": 740,
+        "pixelCount": 118710
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3433410776867685
+    },
+    {
+      "node": "05.2",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 94,
+        "top": 261,
+        "width": 518,
+        "height": 448,
+        "right": 612,
+        "bottom": 709,
+        "pixelCount": 141332
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3599995693730282
+    },
+    {
+      "node": "05.3",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-event",
+      "fraction": 1,
+      "bbox": {
+        "left": 96,
+        "top": 254,
+        "width": 516,
+        "height": 462,
+        "right": 612,
+        "bottom": 716,
+        "pixelCount": 152366
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3599999821176594
+    },
+    {
+      "node": "05.4",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-games",
+      "fraction": 1,
+      "bbox": {
+        "left": 94,
+        "top": 298,
+        "width": 488,
+        "height": 382,
+        "right": 582,
+        "bottom": 680,
+        "pixelCount": 63677
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3599999999993602
+    },
+    {
+      "node": "05.5",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 130,
+        "top": 375,
+        "width": 425,
+        "height": 346,
+        "right": 555,
+        "bottom": 721,
+        "pixelCount": 70383
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3599999999999879
+    },
+    {
+      "node": "05.6",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-digital",
+      "fraction": 1,
+      "bbox": {
+        "left": 135,
+        "top": 323,
+        "width": 477,
+        "height": 370,
+        "right": 612,
+        "bottom": 693,
+        "pixelCount": 92613
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.3599999999999999
+    },
+    {
+      "node": "05.7",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-merch",
+      "fraction": 1,
+      "bbox": {
+        "left": 222,
+        "top": 388,
+        "width": 283,
+        "height": 260,
+        "right": 505,
+        "bottom": 648,
+        "pixelCount": 46504
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.36
+    },
+    {
+      "node": "06.1",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 901,
+        "top": 325,
+        "width": 356,
+        "height": 355,
+        "right": 1257,
+        "bottom": 680,
+        "pixelCount": 97583
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.0000106053576323
+    },
+    {
+      "node": "06.2",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 902,
+        "top": 325,
+        "width": 354,
+        "height": 355,
+        "right": 1256,
+        "bottom": 680,
+        "pixelCount": 97100
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.0000005122216526
+    },
+    {
+      "node": "06.3",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 903,
+        "top": 326,
+        "width": 352,
+        "height": 353,
+        "right": 1255,
+        "bottom": 679,
+        "pixelCount": 95604
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.0000000222020808
+    },
+    {
+      "node": "07",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 904,
+        "top": 328,
+        "width": 350,
+        "height": 349,
+        "right": 1254,
+        "bottom": 677,
+        "pixelCount": 94079
+      },
+      "actorDraw": true,
+      "siteFitScale": 1.0000000009219703
+    },
+    {
+      "node": "08",
+      "pass": true,
+      "failures": [],
+      "family": "none",
+      "geometry": null,
+      "fraction": 0,
+      "bbox": null,
+      "actorDraw": false,
+      "siteFitScale": 1.0000000000552896
+    }
+  ]
+}

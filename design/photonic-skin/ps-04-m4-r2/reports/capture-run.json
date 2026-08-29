@@ -1,0 +1,4059 @@
+{
+  "runId": "ps04-m4-r2-2026-08-29T155328788Z",
+  "stage": "PS-04.M4.R2",
+  "shots": [],
+  "videos": [
+    {
+      "name": "full-down-up",
+      "startedAt": "2026-08-29T16:02:11.131Z",
+      "elapsedMs": 31468,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/full-down-up.webm"
+    },
+    {
+      "name": "near-far-snap",
+      "startedAt": "2026-08-29T16:02:43.032Z",
+      "elapsedMs": 3809,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/near-far-snap.webm"
+    },
+    {
+      "name": "rapid-reverse-cancel",
+      "startedAt": "2026-08-29T16:02:47.267Z",
+      "elapsedMs": 6671,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/rapid-reverse-cancel.webm"
+    },
+    {
+      "name": "right-left-unclipped",
+      "startedAt": "2026-08-29T16:02:54.278Z",
+      "elapsedMs": 6283,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/right-left-unclipped.webm"
+    },
+    {
+      "name": "horizontal-chapter-05",
+      "startedAt": "2026-08-29T16:03:01.054Z",
+      "elapsedMs": 7967,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/horizontal-chapter-05.webm"
+    },
+    {
+      "name": "rapid-task-mask-retarget",
+      "startedAt": "2026-08-29T16:03:09.427Z",
+      "elapsedMs": 6613,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/rapid-task-mask-retarget.webm"
+    },
+    {
+      "name": "footer-exit-return",
+      "startedAt": "2026-08-29T16:03:16.402Z",
+      "elapsedMs": 5371,
+      "playback": "recorded at wall-clock 1x; dwell is real time, not accelerated",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r2/renders/browser/video/footer-exit-return.webm"
+    }
+  ],
+  "dpr": [
+    {
+      "dpr": 1,
+      "windowDpr": 1,
+      "activeNodeId": "01",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000008047477,
+        "top": 243.3600001060223,
+        "width": 518.3999990675148,
+        "height": 518.3999990675148
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 901,
+        "top": 324,
+        "width": 356,
+        "height": 356,
+        "right": 1257,
+        "bottom": 680,
+        "pixelCount": 97843
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.800000338505,
+        502.55999963977973
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.35999999935244087,
+        0.5759999989639054
+      ],
+      "siteClipOffset": [
+        0.4983333338034792,
+        -0.11679999919951056
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000008047477,
+        "top": 243.3600001060223,
+        "width": 518.3999990675148,
+        "height": 518.3999990675148
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 1,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 2,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 158,
+        "p95Ms": 9.3
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "dpr": 1.25,
+      "windowDpr": 1.25,
+      "activeNodeId": "01",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1800,
+        1125
+      ],
+      "rendererDpr": 1.25,
+      "actorViewportCss": {
+        "left": 819.6359979049087,
+        "top": 243.36474258112304,
+        "width": 518.3582881419314,
+        "height": 518.3582881419314
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1800,
+        "height": 1125
+      },
+      "actorMaskBBoxCss": {
+        "left": 900.8,
+        "top": 324,
+        "width": 356,
+        "height": 356,
+        "right": 1256.8,
+        "bottom": 680,
+        "pixelCount": 152921
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8151419758744,
+        502.54388665208876
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.35997103343189685,
+        0.5759536534910349
+      ],
+      "siteClipOffset": [
+        0.4983543638553811,
+        -0.1167641925601971
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6359979049087,
+        "top": 243.36474258112304,
+        "width": 518.3582881419314,
+        "height": 518.3582881419314
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 1,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 2,
+      "windowDevicePixelRatio": 1.25,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1800,
+        1125
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 155,
+        "p95Ms": 10
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "dpr": 1.5,
+      "windowDpr": 1.5,
+      "activeNodeId": "01",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        2160,
+        1350
+      ],
+      "rendererDpr": 1.5,
+      "actorViewportCss": {
+        "left": 819.6388154313581,
+        "top": 243.36511377905197,
+        "width": 518.3550233890614,
+        "height": 518.3550233890614
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 2160,
+        "height": 1350
+      },
+      "actorMaskBBoxCss": {
+        "left": 900.6666666666666,
+        "top": 324,
+        "width": 356.66666666666663,
+        "height": 356,
+        "right": 1257.3333333333333,
+        "bottom": 680,
+        "pixelCount": 220247
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8163271258888,
+        502.5426254735827
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.35996876624240376,
+        0.5759500259878461
+      ],
+      "siteClipOffset": [
+        0.49835600989706785,
+        -0.11676138994129481
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6388154313581,
+        "top": 243.36511377905197,
+        "width": 518.3550233890614,
+        "height": 518.3550233890614
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 1,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 2,
+      "windowDevicePixelRatio": 1.5,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        2160,
+        1350
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 148,
+        "p95Ms": 11.6
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "dpr": 2,
+      "windowDpr": 2,
+      "activeNodeId": "01",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        2880,
+        1800
+      ],
+      "rendererDpr": 2,
+      "actorViewportCss": {
+        "left": 819.6282361648127,
+        "top": 243.36372000266596,
+        "width": 518.3672819042644,
+        "height": 518.3672819042644
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 2880,
+        "height": 1800
+      },
+      "actorMaskBBoxCss": {
+        "left": 900.5,
+        "top": 323.5,
+        "width": 356.5,
+        "height": 356.5,
+        "right": 1257,
+        "bottom": 680,
+        "pixelCount": 391731
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.811877116945,
+        502.54736095479814
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.35997727910018357,
+        0.5759636465602938
+      ],
+      "siteClipOffset": [
+        0.4983498293290902,
+        -0.11677191323288483
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6282361648127,
+        "top": 243.36372000266596,
+        "width": 518.3672819042644,
+        "height": 518.3672819042644
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 1,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 2,
+      "windowDevicePixelRatio": 2,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        2880,
+        1800
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 133,
+        "p95Ms": 13.3
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    }
+  ],
+  "screens": [
+    {
+      "node": "03.1",
+      "phase": "before-task",
+      "activeNodeId": "03.1",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000011511,
+        "top": 243.36000000015167,
+        "width": 518.3999999986662,
+        "height": 518.3999999986662
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 903,
+        "top": 326,
+        "width": 352,
+        "height": 352,
+        "right": 1255,
+        "bottom": 678,
+        "pixelCount": 96208
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000000004843,
+        502.5599999994848
+      ],
+      "siteFitScale": 1.0001378726420107,
+      "siteClipScale": [
+        0.3599999999990737,
+        0.575999999998518
+      ],
+      "siteClipOffset": [
+        0.49833333333400587,
+        -0.11679999999885504
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000011511,
+        "top": 243.36000000015167,
+        "width": 518.3999999986662,
+        "height": 518.3999999986662
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 6,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 138,
+        "p95Ms": 18.2
+      }
+    },
+    {
+      "node": "03.1",
+      "task": "explain",
+      "activeNodeId": "03.1",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-digital-event-games-merch-focus-content",
+      "paletteMask": 127,
+      "resolution": "same-family-fallback",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000000267,
+        "top": 243.36000000000354,
+        "width": 518.3999999999692,
+        "height": 518.3999999999692
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 472,
+        "top": 387,
+        "width": 689,
+        "height": 343,
+        "right": 1161,
+        "bottom": 730,
+        "pixelCount": 97797
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000000000113,
+        502.5599999999881
+      ],
+      "siteFitScale": 1.1362321297146842,
+      "siteClipScale": [
+        0.3599999999999786,
+        0.5759999999999658
+      ],
+      "siteClipOffset": [
+        0.49833333333334906,
+        -0.11679999999997359
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000000267,
+        "top": 243.36000000000354,
+        "width": 518.3999999999692,
+        "height": 518.3999999999692
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 347.60000000002674,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 7,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.1",
+      "task": "involve",
+      "activeNodeId": "03.1",
+      "requestedFamily": "GATHER",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000000001,
+        "top": 243.36000000000007,
+        "width": 518.3999999999996,
+        "height": 518.3999999999996
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 0,
+        "top": 43,
+        "width": 1392,
+        "height": 857,
+        "right": 1392,
+        "bottom": 900,
+        "pixelCount": 294711
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.5599999999999
+      ],
+      "siteFitScale": 1.1399799936259742,
+      "siteClipScale": [
+        0.35999999999999976,
+        0.5759999999999996
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.1167999999999999
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000000001,
+        "top": 243.36000000000007,
+        "width": 518.3999999999996,
+        "height": 518.3999999999996
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 819.6000000000001,
+        "right": 54.00000000000023,
+        "top": 200.36000000000007,
+        "bottom": 138.24000000000024
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 7,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.1",
+      "task": "train",
+      "activeNodeId": "03.1",
+      "requestedFamily": "DRIVE",
+      "resolvedGeometryId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 0,
+        "top": 196,
+        "width": 1330,
+        "height": 704,
+        "right": 1330,
+        "bottom": 900,
+        "pixelCount": 184196
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.1399999232470424,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 819.5999999999999,
+        "right": 0,
+        "top": 47.360000000000014,
+        "bottom": 138.24
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 7,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.1",
+      "task": "introduce",
+      "activeNodeId": "03.1",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 0,
+        "top": 193,
+        "width": 1327,
+        "height": 707,
+        "right": 1327,
+        "bottom": 900,
+        "pixelCount": 184154
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.159873766447568,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 819.5999999999999,
+        "right": 0,
+        "top": 50.360000000000014,
+        "bottom": 138.24
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 7,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.2",
+      "mask": "mask-1",
+      "activeNodeId": "03.2",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-digital-event-games-merch-focus-content",
+      "paletteMask": 1,
+      "resolution": "same-family-fallback",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 839,
+        "top": 353,
+        "width": 446,
+        "height": 303,
+        "right": 1285,
+        "bottom": 656,
+        "pixelCount": 27086
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.1400003057296435,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 145,
+        "p95Ms": 20.7
+      }
+    },
+    {
+      "node": "03.2",
+      "mask": "mask-2",
+      "activeNodeId": "03.2",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-focus-content",
+      "paletteMask": 3,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 830,
+        "top": 350,
+        "width": 472,
+        "height": 315,
+        "right": 1302,
+        "bottom": 665,
+        "pixelCount": 29544
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.1400000227807408,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.2",
+      "mask": "mask-3",
+      "activeNodeId": "03.2",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-event-focus-content",
+      "paletteMask": 7,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 820,
+        "top": 344,
+        "width": 489,
+        "height": 326,
+        "right": 1309,
+        "bottom": 670,
+        "pixelCount": 31745
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.140000000190585,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.2",
+      "mask": "mask-4",
+      "activeNodeId": "03.2",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-event-games-focus-content",
+      "paletteMask": 15,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 821,
+        "top": 344,
+        "width": 490,
+        "height": 326,
+        "right": 1311,
+        "bottom": 670,
+        "pixelCount": 32076
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.1400000000014303,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "03.2",
+      "mask": "mask-7",
+      "activeNodeId": "03.2",
+      "requestedFamily": "FOCUS",
+      "resolvedGeometryId": "complex-focus-content-design-digital-event-games-merch-focus-content",
+      "paletteMask": 127,
+      "resolution": "same-family-fallback",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 827,
+        "top": 348,
+        "width": 476,
+        "height": 318,
+        "right": 1303,
+        "bottom": 666,
+        "pixelCount": 30349
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8,
+        502.56
+      ],
+      "siteFitScale": 1.1400000000000108,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983333333333333,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5999999999999,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 20,
+        "p95Ms": 50
+      }
+    },
+    {
+      "node": "01",
+      "phase": "mask-diag",
+      "activeNodeId": "01",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6009752019622,
+        "top": 243.3601284789886,
+        "width": 518.3988700040753,
+        "height": 518.3988700040753
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 902,
+        "top": 325,
+        "width": 354,
+        "height": 354,
+        "right": 1256,
+        "bottom": 679,
+        "pixelCount": 97087
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.800410204,
+        502.55956348102626
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.35999921528060785,
+        0.5759987444489726
+      ],
+      "siteClipOffset": [
+        0.49833390306111114,
+        -0.11679902995783609
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6009752019622,
+        "top": 243.3601284789886,
+        "width": 518.3988700040753,
+        "height": 518.3988700040753
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 1,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 5,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 135,
+        "p95Ms": 22.5
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "02",
+      "phase": "mask-diag",
+      "activeNodeId": "02",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.600000608137,
+        "top": 243.36000008011962,
+        "width": 518.3999992953335,
+        "height": 518.3999992953335
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 837,
+        "top": 412,
+        "width": 424,
+        "height": 209,
+        "right": 1261,
+        "bottom": 621,
+        "pixelCount": 21993
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000002558038,
+        502.55999972778636
+      ],
+      "siteFitScale": 1.1598839938299323,
+      "siteClipScale": [
+        0.35999999951064826,
+        0.5759999992170373
+      ],
+      "siteClipOffset": [
+        0.49833333368861643,
+        -0.11679999939508068
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.600000608137,
+        "top": 243.36000008011962,
+        "width": 518.3999992953335,
+        "height": 518.3999992953335
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 2,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 7,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 120,
+        "p95Ms": 27.2
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "03.1",
+      "phase": "mask-diag",
+      "activeNodeId": "03.1",
+      "requestedFamily": "GATHER",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000415027,
+        "top": 243.36000000546778,
+        "width": 518.3999999519098,
+        "height": 518.3999999519098
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 843,
+        "top": 412,
+        "width": 412,
+        "height": 208,
+        "right": 1255,
+        "bottom": 620,
+        "pixelCount": 21234
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000000174575,
+        502.55999998142266
+      ],
+      "siteFitScale": 1.1415459277349511,
+      "siteClipScale": [
+        0.359999999966604,
+        0.5759999999465664
+      ],
+      "siteClipOffset": [
+        0.4983333333575799,
+        -0.11679999995871704
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000415027,
+        "top": 243.36000000546778,
+        "width": 518.3999999519098,
+        "height": 518.3999999519098
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 9,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 135,
+        "p95Ms": 22.9
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "03.2",
+      "phase": "mask-diag",
+      "activeNodeId": "03.2",
+      "requestedFamily": "GATHER",
+      "resolvedGeometryId": "complex-gather-content-design",
+      "paletteMask": 3,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000000226,
+        "top": 243.3600000000029,
+        "width": 518.3999999999737,
+        "height": 518.3999999999737
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 842,
+        "top": 408,
+        "width": 424,
+        "height": 182,
+        "right": 1266,
+        "bottom": 590,
+        "pixelCount": 33928
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000000000095,
+        502.55999999998977
+      ],
+      "siteFitScale": 1.1400008462185174,
+      "siteClipScale": [
+        0.3599999999999817,
+        0.5759999999999708
+      ],
+      "siteClipOffset": [
+        0.4983333333333466,
+        -0.11679999999997714
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000000226,
+        "top": 243.3600000000029,
+        "width": 518.3999999999737,
+        "height": 518.3999999999737
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 11,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 128,
+        "p95Ms": 23.3
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "03.3",
+      "phase": "mask-diag",
+      "activeNodeId": "03.3",
+      "requestedFamily": "GATHER",
+      "resolvedGeometryId": "complex-gather-content-design",
+      "paletteMask": 3,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000000042,
+        "top": 243.36000000000018,
+        "width": 518.3999999999975,
+        "height": 518.3999999999975
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 845,
+        "top": 407,
+        "width": 420,
+        "height": 186,
+        "right": 1265,
+        "bottom": 593,
+        "pixelCount": 33947
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.800000000003,
+        502.5599999999989
+      ],
+      "siteFitScale": 1.140000061651151,
+      "siteClipScale": [
+        0.35999999999999827,
+        0.5759999999999972
+      ],
+      "siteClipOffset": [
+        0.4983333333333373,
+        -0.11679999999999746
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000000042,
+        "top": 243.36000000000018,
+        "width": 518.3999999999975,
+        "height": 518.3999999999975
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 5,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 13,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 133,
+        "p95Ms": 22.5
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "04",
+      "phase": "mask-diag",
+      "activeNodeId": "04",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6000000000006,
+        "top": 243.36,
+        "width": 518.3999999999997,
+        "height": 518.3999999999997
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 903,
+        "top": 326,
+        "width": 352,
+        "height": 352,
+        "right": 1255,
+        "bottom": 678,
+        "pixelCount": 96015
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.8000000000004,
+        502.5599999999999
+      ],
+      "siteFitScale": 1.000113146540184,
+      "siteClipScale": [
+        0.3599999999999998,
+        0.5759999999999997
+      ],
+      "siteClipOffset": [
+        0.49833333333333396,
+        -0.11679999999999979
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6000000000006,
+        "top": 243.36,
+        "width": 518.3999999999997,
+        "height": 518.3999999999997
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 6,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 15,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 128,
+        "p95Ms": 22.8
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.1",
+      "phase": "mask-diag",
+      "activeNodeId": "05.1",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-content",
+      "paletteMask": 1,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 94.96349330730573,
+        "top": 243.36,
+        "width": 518.3999999999999,
+        "height": 518.3999999999999
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 59,
+        "top": 352,
+        "width": 540,
+        "height": 348,
+        "right": 599,
+        "bottom": 700,
+        "pixelCount": 114477
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        354.16349330730566,
+        502.55999999999995
+      ],
+      "siteFitScale": 1.3593240784569167,
+      "siteClipScale": [
+        0.35999999999999993,
+        0.5759999999999998
+      ],
+      "siteClipOffset": [
+        -0.5081062592954089,
+        -0.1167999999999999
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 94.96349330730573,
+        "top": 243.36,
+        "width": 518.3999999999999,
+        "height": 518.3999999999999
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 35.963493307305725,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 7,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 17,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 124,
+        "p95Ms": 24.9
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.2",
+      "phase": "mask-diag",
+      "activeNodeId": "05.2",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-design",
+      "paletteMask": 2,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.60128075295489,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 96,
+        "top": 261,
+        "width": 534,
+        "height": 450,
+        "right": 630,
+        "bottom": 711,
+        "pixelCount": 141141
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.8012807529549,
+        502.56
+      ],
+      "siteFitScale": 1.35999936509515,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.5099982211764515,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.60128075295489,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 0,
+        "right": 17.998719247045074,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 8,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 19,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 119,
+        "p95Ms": 29.5
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.3",
+      "phase": "mask-diag",
+      "activeNodeId": "05.3",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-event",
+      "paletteMask": 4,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.60000166682022,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 88,
+        "top": 290,
+        "width": 552,
+        "height": 412,
+        "right": 640,
+        "bottom": 702,
+        "pixelCount": 193930
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.8000016668202,
+        502.56
+      ],
+      "siteFitScale": 1.3599999991737113,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.509999997684972,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.60000166682022,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 5.600001666820219,
+        "right": 27.999998333179747,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 9,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 21,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 118,
+        "p95Ms": 29
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.4",
+      "phase": "mask-diag",
+      "activeNodeId": "05.4",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-games",
+      "paletteMask": 8,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.60000000163478,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 67,
+        "top": 299,
+        "width": 516,
+        "height": 385,
+        "right": 583,
+        "bottom": 684,
+        "pixelCount": 65504
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.80000000163477,
+        502.56
+      ],
+      "siteFitScale": 1.3599999999991896,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.5099999999977295,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.60000000163478,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 26.600000001634783,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 10,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 23,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 120,
+        "p95Ms": 25.8
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.5",
+      "phase": "mask-diag",
+      "activeNodeId": "05.5",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-video",
+      "paletteMask": 16,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.6000000000019,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 245,
+        "top": 378,
+        "width": 243,
+        "height": 340,
+        "right": 488,
+        "bottom": 718,
+        "pixelCount": 46607
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.8000000000019,
+        502.56
+      ],
+      "siteFitScale": 1.3599999999999968,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.5099999999999973,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.6000000000019,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 11,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 25,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 125,
+        "p95Ms": 22.3
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.6",
+      "phase": "mask-diag",
+      "activeNodeId": "05.6",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-digital",
+      "paletteMask": 32,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.6000000000002,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 135,
+        "top": 322,
+        "width": 509,
+        "height": 373,
+        "right": 644,
+        "bottom": 695,
+        "pixelCount": 94621
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.8000000000002,
+        502.56
+      ],
+      "siteFitScale": 1.3599999999999997,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.5099999999999998,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.6000000000002,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": true,
+        "left": 0,
+        "right": 31.999999999999773,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 12,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 27,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 123,
+        "p95Ms": 26.2
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "05.7",
+      "phase": "mask-diag",
+      "activeNodeId": "05.7",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-merch",
+      "paletteMask": 64,
+      "resolution": "exact",
+      "slot": "left",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 93.60000000000002,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 223,
+        "top": 402,
+        "width": 259,
+        "height": 242,
+        "right": 482,
+        "bottom": 644,
+        "pixelCount": 38036
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        352.8,
+        502.56
+      ],
+      "siteFitScale": 1.36,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        -0.51,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 93.60000000000002,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 13,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 29,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 124,
+        "p95Ms": 23.5
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "06.1",
+      "phase": "mask-diag",
+      "activeNodeId": "06.1",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 818.5483007833709,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 902,
+        "top": 326,
+        "width": 351,
+        "height": 351,
+        "right": 1253,
+        "bottom": 677,
+        "pixelCount": 95333
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1077.748300783371,
+        502.56
+      ],
+      "siteFitScale": 1.0005215037437831,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4968726399769041,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 818.5483007833709,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 14,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 31,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 120,
+        "p95Ms": 27.6
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "06.2",
+      "phase": "mask-diag",
+      "activeNodeId": "06.2",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5199948499601,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 905,
+        "top": 328,
+        "width": 347,
+        "height": 348,
+        "right": 1252,
+        "bottom": 676,
+        "pixelCount": 93266
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.7199948499601,
+        502.56
+      ],
+      "siteFitScale": 1.0000396719752258,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.49822221506938913,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5199948499601,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 15,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 33,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 137,
+        "p95Ms": 23.7
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "06.3",
+      "phase": "mask-diag",
+      "activeNodeId": "06.3",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5956927256882,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 905,
+        "top": 328,
+        "width": 348,
+        "height": 348,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 93379
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.7956927256882,
+        502.56
+      ],
+      "siteFitScale": 1.0000021358385018,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.49832735100790027,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5956927256882,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 16,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 35,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 122,
+        "p95Ms": 24.6
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "07",
+      "phase": "mask-diag",
+      "activeNodeId": "07",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.5996928469099,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 904,
+        "top": 327,
+        "width": 349,
+        "height": 349,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 94081
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.79969284691,
+        502.56
+      ],
+      "siteFitScale": 1.0000001523073176,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.4983329067318194,
+        -0.11680000000000001
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.5996928469099,
+        "top": 243.36,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 17,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 37,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 132,
+        "p95Ms": 25.1
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    },
+    {
+      "node": "08",
+      "phase": "mask-diag",
+      "activeNodeId": "08",
+      "requestedFamily": "none",
+      "resolvedGeometryId": null,
+      "paletteMask": 0,
+      "resolution": "none",
+      "slot": "none",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 933.1783274248714,
+        "top": 1012.4982646692324,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": null,
+      "actorVisibleFraction": 0,
+      "actorCenterCss": [
+        1192.3783274248715,
+        1271.6982646692325
+      ],
+      "siteFitScale": 1.0000000020970745,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.6560810103123216,
+        -1.8259961437094052
+      ],
+      "siteCompositionEnabled": 0,
+      "siteEnvelopeCss": {
+        "left": 933.1783274248714,
+        "top": 1012.4982646692324,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": null,
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 18,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": false,
+      "revision": 39,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 134,
+        "p95Ms": 24.4
+      },
+      "gate": {
+        "pass": true,
+        "failures": []
+      }
+    }
+  ],
+  "gates": [
+    {
+      "node": "01",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 902,
+        "top": 325,
+        "width": 354,
+        "height": 354,
+        "right": 1256,
+        "bottom": 679,
+        "pixelCount": 97087
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "02",
+      "pass": true,
+      "failures": [],
+      "family": "BRAND_WIDE",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 837,
+        "top": 412,
+        "width": 424,
+        "height": 209,
+        "right": 1261,
+        "bottom": 621,
+        "pixelCount": 21993
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.1",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 843,
+        "top": 412,
+        "width": 412,
+        "height": 208,
+        "right": 1255,
+        "bottom": 620,
+        "pixelCount": 21234
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.2",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 842,
+        "top": 408,
+        "width": 424,
+        "height": 182,
+        "right": 1266,
+        "bottom": 590,
+        "pixelCount": 33928
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "03.3",
+      "pass": true,
+      "failures": [],
+      "family": "GATHER",
+      "geometry": "complex-gather-content-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 845,
+        "top": 407,
+        "width": 420,
+        "height": 186,
+        "right": 1265,
+        "bottom": 593,
+        "pixelCount": 33947
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "04",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 903,
+        "top": 326,
+        "width": 352,
+        "height": 352,
+        "right": 1255,
+        "bottom": 678,
+        "pixelCount": 96015
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.1",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-content",
+      "fraction": 1,
+      "bbox": {
+        "left": 59,
+        "top": 352,
+        "width": 540,
+        "height": 348,
+        "right": 599,
+        "bottom": 700,
+        "pixelCount": 114477
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.2",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-design",
+      "fraction": 1,
+      "bbox": {
+        "left": 96,
+        "top": 261,
+        "width": 534,
+        "height": 450,
+        "right": 630,
+        "bottom": 711,
+        "pixelCount": 141141
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.3",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-event",
+      "fraction": 1,
+      "bbox": {
+        "left": 88,
+        "top": 290,
+        "width": 552,
+        "height": 412,
+        "right": 640,
+        "bottom": 702,
+        "pixelCount": 193930
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.4",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-games",
+      "fraction": 1,
+      "bbox": {
+        "left": 67,
+        "top": 299,
+        "width": 516,
+        "height": 385,
+        "right": 583,
+        "bottom": 684,
+        "pixelCount": 65504
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.5",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-video",
+      "fraction": 1,
+      "bbox": {
+        "left": 245,
+        "top": 378,
+        "width": 243,
+        "height": 340,
+        "right": 488,
+        "bottom": 718,
+        "pixelCount": 46607
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.6",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-digital",
+      "fraction": 1,
+      "bbox": {
+        "left": 135,
+        "top": 322,
+        "width": 509,
+        "height": 373,
+        "right": 644,
+        "bottom": 695,
+        "pixelCount": 94621
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "05.7",
+      "pass": true,
+      "failures": [],
+      "family": "SINGLE",
+      "geometry": "single-merch",
+      "fraction": 1,
+      "bbox": {
+        "left": 223,
+        "top": 402,
+        "width": 259,
+        "height": 242,
+        "right": 482,
+        "bottom": 644,
+        "pixelCount": 38036
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.1",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 902,
+        "top": 326,
+        "width": 351,
+        "height": 351,
+        "right": 1253,
+        "bottom": 677,
+        "pixelCount": 95333
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.2",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 905,
+        "top": 328,
+        "width": 347,
+        "height": 348,
+        "right": 1252,
+        "bottom": 676,
+        "pixelCount": 93266
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "06.3",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 905,
+        "top": 328,
+        "width": 348,
+        "height": 348,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 93379
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "07",
+      "pass": true,
+      "failures": [],
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "fraction": 1,
+      "bbox": {
+        "left": 904,
+        "top": 327,
+        "width": 349,
+        "height": 349,
+        "right": 1253,
+        "bottom": 676,
+        "pixelCount": 94081
+      },
+      "actorDraw": true
+    },
+    {
+      "node": "08",
+      "pass": true,
+      "failures": [],
+      "family": "none",
+      "geometry": null,
+      "fraction": 0,
+      "bbox": null,
+      "actorDraw": false
+    }
+  ],
+  "probes": {
+    "productionHasM4": false,
+    "dprCssInvariant": {
+      "cssLeft": [
+        819.6000008047477,
+        819.6359979049087,
+        819.6388154313581,
+        819.6282361648127
+      ],
+      "cssSize": [
+        518.3999990675148,
+        518.3582881419314,
+        518.3550233890614,
+        518.3672819042644
+      ],
+      "leftDrift": 0.03881462661047408,
+      "sizeDrift": 0.04497567845339745
+    },
+    "overlayActorStable": {
+      "briefId": "complex-focus-content-design-focus-content",
+      "contactId": "complex-focus-content-design-focus-content",
+      "successId": "complex-focus-content-design-focus-content",
+      "briefMask": 3,
+      "contactMask": 3,
+      "successMask": 3
+    },
+    "footer": {
+      "activeNodeId": "08",
+      "requestedFamily": "none",
+      "resolvedGeometryId": null,
+      "paletteMask": 0,
+      "resolution": "none",
+      "slot": "none",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 934.6793367223906,
+        "top": 1022.6628893979221,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": null,
+      "actorVisibleFraction": 0,
+      "actorCenterCss": [
+        1193.8793367223907,
+        1281.8628893979221
+      ],
+      "siteFitScale": 1.000000000441616,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.6581657454477647,
+        -1.848584198662049
+      ],
+      "siteCompositionEnabled": 0,
+      "siteEnvelopeCss": {
+        "left": 934.6793367223906,
+        "top": 1022.6628893979221,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": null,
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 29,
+        "suppressed": false,
+        "lastInput": "pointer"
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": false,
+      "revision": 55,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 158,
+        "p95Ms": 9.6
+      }
+    },
+    "footerReturn": {
+      "activeNodeId": "07",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 831.4606829307572,
+        "top": 323.6790627796958,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": null,
+      "actorVisibleFraction": 0,
+      "actorCenterCss": [
+        1090.6606829307573,
+        582.8790627796958
+      ],
+      "siteFitScale": 1.000000000040857,
+      "siteClipScale": [
+        0.36,
+        0.576
+      ],
+      "siteClipOffset": [
+        0.5148065040704961,
+        -0.2952868061771019
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 831.4606829307572,
+        "top": 323.6790627796958,
+        "width": 518.4,
+        "height": 518.4
+      },
+      "envelopeOverflow": null,
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0,
+        "revision": 30,
+        "suppressed": false,
+        "lastInput": "pointer"
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 57,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 148,
+        "p95Ms": 18
+      }
+    },
+    "footerSessionStable": true,
+    "context": "restored",
+    "preview": {
+      "headerCount": 1,
+      "canvasCount": 1,
+      "hook": true
+    },
+    "direct-01": {
+      "requested": "01",
+      "landed": "01",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-02": {
+      "requested": "02",
+      "landed": "02",
+      "family": "BRAND_WIDE",
+      "geometry": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "canvases": 1
+    },
+    "direct-03.1": {
+      "requested": "03.1",
+      "landed": "03.1",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-03.2": {
+      "requested": "03.2",
+      "landed": "01",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-03.3": {
+      "requested": "03.3",
+      "landed": "01",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-04": {
+      "requested": "04",
+      "landed": "04",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-05.1": {
+      "requested": "05.1",
+      "landed": "05.1",
+      "family": "SINGLE",
+      "geometry": "single-content",
+      "canvases": 1
+    },
+    "direct-05.2": {
+      "requested": "05.2",
+      "landed": "05.2",
+      "family": "SINGLE",
+      "geometry": "single-design",
+      "canvases": 1
+    },
+    "direct-05.3": {
+      "requested": "05.3",
+      "landed": "05.3",
+      "family": "SINGLE",
+      "geometry": "single-event",
+      "canvases": 1
+    },
+    "direct-05.4": {
+      "requested": "05.4",
+      "landed": "05.4",
+      "family": "SINGLE",
+      "geometry": "single-games",
+      "canvases": 1
+    },
+    "direct-05.5": {
+      "requested": "05.5",
+      "landed": "05.5",
+      "family": "SINGLE",
+      "geometry": "single-video",
+      "canvases": 1
+    },
+    "direct-05.6": {
+      "requested": "05.6",
+      "landed": "05.6",
+      "family": "SINGLE",
+      "geometry": "single-digital",
+      "canvases": 1
+    },
+    "direct-05.7": {
+      "requested": "05.7",
+      "landed": "05.7",
+      "family": "SINGLE",
+      "geometry": "single-merch",
+      "canvases": 1
+    },
+    "direct-06.1": {
+      "requested": "06.1",
+      "landed": "06.1",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-06.2": {
+      "requested": "06.2",
+      "landed": "06.2",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-06.3": {
+      "requested": "06.3",
+      "landed": "06.3",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-07": {
+      "requested": "07",
+      "landed": "07",
+      "family": "MASTER",
+      "geometry": "master-neutral",
+      "canvases": 1
+    },
+    "direct-08": {
+      "requested": "08",
+      "landed": "08",
+      "family": "none",
+      "geometry": null,
+      "canvases": 1
+    },
+    "unclippedTransition": {
+      "activeNodeId": "04",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "resolution": "exact",
+      "slot": "right",
+      "canvasCssSize": [
+        1440,
+        900
+      ],
+      "drawingBufferSize": [
+        1440,
+        900
+      ],
+      "rendererDpr": 1,
+      "actorViewportCss": {
+        "left": 819.6024619672855,
+        "top": 243.36032435442024,
+        "width": 518.3971472442566,
+        "height": 518.3971472442566
+      },
+      "actorViewportDevice": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "actorMaskBBoxCss": {
+        "left": 901,
+        "top": 323,
+        "width": 356,
+        "height": 357,
+        "right": 1257,
+        "bottom": 680,
+        "pixelCount": 98700
+      },
+      "actorVisibleFraction": 1,
+      "actorCenterCss": [
+        1078.801035589414,
+        502.55889797654856
+      ],
+      "siteFitScale": 1,
+      "siteClipScale": [
+        0.3599980189196227,
+        0.5759968302713963
+      ],
+      "siteClipOffset": [
+        0.4983347716519637,
+        -0.11679755105899692
+      ],
+      "siteCompositionEnabled": 1,
+      "siteEnvelopeCss": {
+        "left": 819.6024619672855,
+        "top": 243.36032435442024,
+        "width": 518.3971472442566,
+        "height": 518.3971472442566
+      },
+      "envelopeOverflow": {
+        "overflow": false,
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      },
+      "magnetism": {
+        "mode": "programmatic",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 0.3333333333333333,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": null
+      },
+      "sessionId": "ps04-m4-r2",
+      "actorDraw": true,
+      "revision": 56,
+      "windowDevicePixelRatio": 1,
+      "canvasClient": [
+        1440,
+        900
+      ],
+      "canvasBuffer": [
+        1440,
+        900
+      ],
+      "canvases": 1,
+      "stats": {
+        "drawCalls": 1,
+        "triangles": 131072,
+        "programs": 1,
+        "fps": 144,
+        "p95Ms": 20.9
+      }
+    },
+    "magnetNear": {
+      "node": "01",
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": "01",
+        "distancePx": 160,
+        "velocityPxPerMs": 0,
+        "revision": 3,
+        "suppressed": false,
+        "lastInput": "wheel"
+      },
+      "scrollY": 2
+    },
+    "magnetFar": {
+      "node": "01",
+      "magnetism": {
+        "mode": "idle",
+        "candidateId": null,
+        "distancePx": 0,
+        "velocityPxPerMs": 2.748538012653951,
+        "revision": 4,
+        "suppressed": false,
+        "lastInput": "wheel"
+      },
+      "scrollY": 378
+    },
+    "magnetFast": {
+      "node": "03.1",
+      "magnetism": {
+        "mode": "magnetic",
+        "candidateId": "04",
+        "distancePx": 180,
+        "velocityPxPerMs": -10.129310324008484,
+        "revision": 32,
+        "suppressed": false,
+        "lastInput": "wheel"
+      },
+      "scrollY": 2527
+    },
+    "lockedBefore": {
+      "unlock": {
+        "competencies": false,
+        "brief": false
+      },
+      "node": "03.1"
+    },
+    "unlockedAfter": {
+      "unlock": {
+        "competencies": true,
+        "brief": false
+      },
+      "node": "03.2"
+    },
+    "dialogMagnetism": {
+      "mode": "user",
+      "candidateId": null,
+      "distancePx": 0,
+      "velocityPxPerMs": 0,
+      "revision": 5,
+      "suppressed": true,
+      "lastInput": "wheel"
+    },
+    "gateSummary": {
+      "failed": [],
+      "passed": [
+        "01",
+        "02",
+        "03.1",
+        "03.2",
+        "03.3",
+        "04",
+        "05.1",
+        "05.2",
+        "05.3",
+        "05.4",
+        "05.5",
+        "05.6",
+        "05.7",
+        "06.1",
+        "06.2",
+        "06.3",
+        "07",
+        "08"
+      ]
+    }
+  },
+  "ok": true
+}
