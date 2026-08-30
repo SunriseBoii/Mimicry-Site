@@ -1,0 +1,156 @@
+[
+  {
+    "name": "master-content",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "single-content"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 197,
+    "runningSamples": 126,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "content-design",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "single-design"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 109,
+    "runningSamples": 100,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "design-event",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-design",
+      "single-event"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 138,
+    "runningSamples": 112,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "event-games",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-event",
+      "single-games"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 124,
+    "runningSamples": 100,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "games-video",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-games",
+      "single-video"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 106,
+    "runningSamples": 86,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "merch-master",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-merch",
+      "master-neutral"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 144,
+    "runningSamples": 120,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "master-brand-wide",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "brand-wide-gather-content-design-digital-event-games-merch-video"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 146,
+    "runningSamples": 129,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "left-right-slot",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "master-neutral"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 150,
+    "runningSamples": 94,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "mask-master-content",
+    "emptyActorFrames": 1,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "single-content"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 33,
+    "runningSamples": 29,
+    "minArea": 93942,
+    "maxArea": 259692
+  },
+  {
+    "name": "mask-content-design",
+    "emptyActorFrames": 1,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "single-design"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 26,
+    "runningSamples": 25,
+    "minArea": 185645,
+    "maxArea": 252120
+  },
+  {
+    "name": "mask-design-event",
+    "emptyActorFrames": 1,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-design",
+      "single-event"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 27,
+    "runningSamples": 27,
+    "minArea": 190638,
+    "maxArea": 254650
+  }
+]

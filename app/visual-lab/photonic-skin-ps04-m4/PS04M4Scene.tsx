@@ -47,6 +47,7 @@ import {
   semanticWeightsForCoordinate,
 } from "../photonic-skin-ps04-m2/photonic-palette";
 import type { OverlayUniforms, PhotonicMotionSession } from "../photonic-skin-ps04-m3/session";
+import { CONTINUITY_FLOOR } from "./continuity-overlay";
 
 export const IDENTITY_OVERLAY: OverlayUniforms = {
   enabled: false,
@@ -155,6 +156,13 @@ export interface SceneEnvironment {
 
 export type EvaluatorMode = "m4" | "m3";
 
+export interface TransitionUniforms {
+  paletteOwnershipMode: 0 | 1;
+  continuityEnabled: 0 | 1;
+  continuityFloor: number;
+  identity: boolean;
+}
+
 export interface SceneProps {
   source: DecodedState;
   target: DecodedState;
@@ -176,6 +184,7 @@ export interface SceneProps {
   session?: PhotonicMotionSession;
   sessionShouldAnimate?: boolean;
   compositionRef?: { current: CompositionViewport };
+  transitionRef?: { current: TransitionUniforms };
   actorMask?: boolean;
   onStats: (value: SceneStats) => void;
   onEnvironment?: (value: SceneEnvironment) => void;
@@ -376,6 +385,9 @@ uniform int uIdleEnabled;
 uniform vec2 uSiteClipScale;
 uniform vec2 uSiteClipOffset;
 uniform float uSiteCompositionEnabled;
+uniform float uContinuityEnabled;
+uniform float uContinuityFloor;
+uniform float uPaletteOwnershipMode;
 out vec3 vColor;
 out float vShade;
 out vec3 vEvalPosition;
@@ -387,6 +399,7 @@ out vec4 vEvalActorOrientation;
 out vec3 vSurfaceNormalView;
 out vec3 vViewPosition;
 flat out float vPersistentSeed;
+flat out float vPaletteOwnership;
 flat out float vFieldScalar;
 
 float smooth5(float value) {
@@ -602,6 +615,17 @@ void main() {
   float idleScale = uIdleEnabled == 1 ? uIdleScale : 1.0;
   vec3 idlePoint = uIdleAnchor + idleScale * quatRotate(idleQuat, basePoint - uIdleAnchor);
   vec3 presented = (idlePoint + frameTranslate) * frameScale;
+  float continuityLift = 1.0;
+  if (uContinuityEnabled > 0.5 && uEvaluator == 1 && t > 0.0 && t < 1.0) {
+    float persistent = sourceActive * targetActive;
+    float immersing = sourceActive * (1.0 - targetActive);
+    float emerging = (1.0 - sourceActive) * targetActive;
+    float protectedActivation = max(activation, max(persistent, max(immersing * (1.0 - localT), emerging * localT)) * uContinuityFloor);
+    float frozenFactor = max(mix(uMinimumGeometricScale, 1.0, clamp(activation, 0.0, 1.0)), 0.0001);
+    float overlayFactor = mix(uMinimumGeometricScale, 1.0, clamp(protectedActivation, 0.0, 1.0));
+    continuityLift = overlayFactor / frozenFactor;
+  }
+  presented += quatRotate(idleQuat, local * (continuityLift - 1.0)) * idleScale * frameScale;
   vec4 clipPosition = projectionMatrix * modelViewMatrix * vec4(presented, 1.0);
   vec4 siteClip = clipPosition;
   if (uSiteCompositionEnabled > 0.5) {
@@ -638,6 +662,11 @@ void main() {
   vEvalOrientation = orientation;
   vEvalNormal = normal;
   vEvalChannels = vec4(geometricScale, activation, bridge, localT);
+  float ownership = localT;
+  if (sourceActive > 0.5 && targetActive < 0.5) ownership = 0.0;
+  if (t <= 0.0) ownership = 0.0;
+  if (t >= 1.0) ownership = 1.0;
+  vPaletteOwnership = ownership;
   vEvalActorPosition = actorPosition;
   vEvalActorOrientation = actorOrientation;
 }`;
@@ -731,6 +760,7 @@ in vec4 vEvalActorOrientation;
 in vec3 vSurfaceNormalView;
 in vec3 vViewPosition;
 flat in float vPersistentSeed;
+flat in float vPaletteOwnership;
 flat in float vFieldScalar;
 uniform int uDebug;
 uniform float uThemeMix;
@@ -762,6 +792,7 @@ uniform int uPaletteMask;
 uniform vec3 uPaletteTokens[7];
 uniform vec4 uPaletteSourceLut[${FIELD_LUT_SIZE}];
 uniform float uPaletteProgress;
+uniform float uPaletteOwnershipMode;
 uniform float uReducedMotion;
 uniform int uColorEnabled;
 uniform int uColorLayer;
@@ -858,7 +889,8 @@ void main() {
     envelope = m2BandEnvelope(vFieldScalar, phase);
     float targetPresence = m2SelectedCount(uPaletteMask) > 0 ? 1.0 : 0.0;
     vec4 targetField = vec4(m2PaletteColor(paletteCoordinate, uPaletteMask), targetPresence);
-    field = mix(m2SourceLut(paletteCoordinate), targetField, saturate(uPaletteProgress));
+    float paletteMix = uPaletteOwnershipMode > 0.5 ? saturate(vPaletteOwnership) : saturate(uPaletteProgress);
+    field = mix(m2SourceLut(paletteCoordinate), targetField, paletteMix);
   }
 
   if (uFieldDiagnostic == 1) {
@@ -1548,6 +1580,9 @@ function M41Content(props: SceneProps) {
     uSiteClipScale: { value: new THREE.Vector2(1, 1) },
     uSiteClipOffset: { value: new THREE.Vector2(0, 0) },
     uSiteCompositionEnabled: { value: 0 },
+    uContinuityEnabled: { value: 0 },
+    uContinuityFloor: { value: CONTINUITY_FLOOR },
+    uPaletteOwnershipMode: { value: 0 },
     uThemeMix: { value: props.material.themeMix },
     uLightAlbedo: { value: new THREE.Color(LIGHT_MATERIAL.albedo) },
     uDarkAlbedo: { value: new THREE.Color(DARK_MATERIAL.albedo) },
@@ -1653,6 +1688,11 @@ function M41Content(props: SceneProps) {
     uniformsRef.current.uPaletteMask.value = color.palette.mask;
     uniformsRef.current.uPaletteProgress.value = color.paletteProgress;
     uniformsRef.current.uReducedMotion.value = color.reducedMotion ? 1 : 0;
+    const liveTransition = props.transitionRef?.current;
+    const identityBypass = Boolean(liveTransition?.identity || props.reducedMotion);
+    uniformsRef.current.uContinuityEnabled.value = identityBypass ? 0 : (liveTransition?.continuityEnabled ?? 0);
+    uniformsRef.current.uContinuityFloor.value = liveTransition?.continuityFloor ?? CONTINUITY_FLOOR;
+    uniformsRef.current.uPaletteOwnershipMode.value = identityBypass ? 0 : (liveTransition?.paletteOwnershipMode ?? 0);
     if (lastSourceLut.current !== color.sourceLut) {
       color.sourceLut.forEach((sample, index) => {
         sourceLutUniforms[index].set(sample.color[0], sample.color[1], sample.color[2], sample.presence);

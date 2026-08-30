@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "stage": "PS-04.M4.R3",
+  "title": "Transition Continuity, Palette Synchronization & Frame Pacing",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "generatedAt": "2026-08-29",
+  "previousStage": "PS-04.M4.R2",
+  "previousStatus": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "previousCheckpoint": "design/photonic-skin/ps-04-m4-r2/",
+  "routes": [
+    "/visual-lab/photonic-skin-ps04-m4",
+    "/visual-lab/photonic-skin-ps04-m4/preview"
+  ],
+  "productionHomepage": "unchanged",
+  "gitHeadAtStart": "83355149cf7b204fdfe82a9031e8bfe3d9c77797",
+  "specMentionedPreviousHead": "f9e45229da988ed1e98fb032f18864af22a0315f",
+  "sessionId": "ps04-m4-r3",
+  "clock": {
+    "owner": "PhotonicMotionSession.tick(dt)",
+    "coordinator": "ActorTransitionCoordinator",
+    "ticksPerFrame": 1,
+    "duplicateToken": "ignored"
+  },
+  "palette": {
+    "perPersistentOwnership": true,
+    "varying": "vPaletteOwnership",
+    "globalColorPhaseReset": false,
+    "unselectedLeak": 0
+  },
+  "continuityOverlay": {
+    "kind": "M4-only radius lift after presented",
+    "floor": 0.38,
+    "identityBypass": true,
+    "frozenProgramsRewritten": false
+  },
+  "magnetism": {
+    "inputIdleMs": 160,
+    "activationRadiusFactor": 0.25,
+    "snapDurationMs": 340,
+    "retuned": false
+  },
+  "composition": {
+    "viewport": "full-canvas",
+    "scissor": "disabled",
+    "retuned": false
+  },
+  "frozenBaseline": {
+    "m41AggregateContentHash": "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361",
+    "m41ManifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+    "m41rPresentationPatchHash": "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0",
+    "m31rEndpointFingerprint": "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2",
+    "m1SourceAggregate": "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb",
+    "m2SourceAggregate": "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d",
+    "m3SourceAggregate": "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1",
+    "previousM4R1Source": "f86d717b652d66ae30d72fd480a386e9fbf5d8b9efa297325ae8c6f9b10b5d12",
+    "previousM4R2Source": "726bc3bbf3f6c8d754b82204d4d02a20cd519fb836e1c5521c0ccb5d224e4333",
+    "m4R3Source": "9c8f6a4b65c99bee6bfc711af01f6b57d0486e9bd742e708bd7f50580f156284"
+  },
+  "gates": {
+    "focused": "38/38",
+    "npmTest": "163/163",
+    "python": "4+11+11",
+    "typescript": "pass",
+    "eslint": "pass",
+    "buildPages": 39,
+    "gpuParity": "valid",
+    "unselectedLeak": 0,
+    "sessionId": "ps04-m4-r3",
+    "idleRafP95Ms": 6.3,
+    "contentToDesignRafP95Ms": 6.3,
+    "rapid20RafP95Ms": 672.7,
+    "gpuTimerExtension": "EXT_disjoint_timer_query_webgl2",
+    "gpuDrawTimeSampled": false,
+    "contextRestore": "restored"
+  },
+  "m5Started": false,
+  "commit": false
+}

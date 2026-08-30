@@ -425,6 +425,17 @@ export class ScrollCompositionController {
     return this.mode;
   }
 
+  getPendingTarget() {
+    return this.pendingTarget;
+  }
+
+  committedActorNodeId(): ScreenNodeId {
+    if (this.pendingTarget && (this.mode === "programmatic" || this.mode === "restore" || this.mode === "magnetic")) {
+      return this.pendingTarget;
+    }
+    return this.snapshot.activeNodeId;
+  }
+
   getMagnetism(): MagnetismSnapshot {
     return {
       mode: this.mode,

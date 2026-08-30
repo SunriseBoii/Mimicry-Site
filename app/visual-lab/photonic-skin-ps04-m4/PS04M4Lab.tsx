@@ -49,6 +49,11 @@ import {
 } from "./components/ScreenFixtures";
 import { nextUnlocked, previousUnlocked, ScrollCompositionController, type MagnetismSnapshot, type ScrollProgress } from "./scroll-controller";
 import { SCREEN_NODE_BY_ID, type ScreenNodeId } from "./topology";
+import { ActorTransitionCoordinator, interceptGeometryLinkedProgress, semanticActorKey, type DisplayedPlacement, type ActorTransitionTransaction } from "./transition-coordinator";
+import { GeometryIdTrace, traceFromTransaction } from "./geometry-id-trace";
+import { NaturalRafRecorder } from "./natural-raf-recorder";
+import { CONTINUITY_FLOOR } from "./continuity-overlay";
+import type { TransitionUniforms } from "./PS04M4Scene";
 import styles from "./ps04m4.module.css";
 
 const EMPTY_STATS: SceneStats = {
@@ -94,16 +99,21 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const [flow, setFlow] = useState<BuildFlowState>(INITIAL_BUILD_FLOW);
   const [activeNode, setActiveNode] = useState<ScreenNodeId>("01");
   const [ui, setUi] = useState<SessionSnapshot | null>(null);
+  const [txUi, setTxUi] = useState<ActorTransitionTransaction | null>(null);
   const systemReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const reducedMotion = systemReduced || manualReduced;
+  const applyLinkedPaletteRef = useRef<(progress: number) => void>(() => undefined);
   const session = useMemo(() => new PhotonicMotionSession({
     reducedMotion: bootstrapReducedMotion(),
     overlayMode: "m3-combined",
     profile: "desktop",
   }), []);
+  useLayoutEffect(() => {
+    applyLinkedPaletteRef.current = interceptGeometryLinkedProgress(session.palette);
+  }, [session]);
   const controller = useMemo(() => new ScrollCompositionController(), []);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m4-r2";
+  const sessionId = "ps04-m4-r3";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -121,6 +131,16 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const dprRef = useRef(dpr);
   const identityRef = useRef(identity);
   const reducedRef = useRef(reducedMotion);
+  const coordinatorRef = useRef(new ActorTransitionCoordinator());
+  const traceRef = useRef(new GeometryIdTrace());
+  const perfRef = useRef(new NaturalRafRecorder());
+  const transitionRef = useRef<TransitionUniforms>({
+    paletteOwnershipMode: 0,
+    continuityEnabled: 0,
+    continuityFloor: CONTINUITY_FLOOR,
+    identity,
+  });
+  const lastFrameTokenRef = useRef(-1);
 
   const startClock = useCallback(() => {
     const clock = clockRef.current;
@@ -130,21 +150,45 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     const loop = (now: number) => {
       const hidden = document.visibilityState === "hidden";
       session.setHidden(hidden);
-      const dt = (now - clock.previous) / 1000;
+      const dtRaw = (now - clock.previous) / 1000;
       clock.previous = now;
-      if (!hidden && !session.snapshot().offscreen) {
-        session.tick(dt, ++clock.token);
+      const offscreen = session.snapshot().offscreen;
+      const coordinator = coordinatorRef.current;
+      if (!hidden && !offscreen) {
+        const token = ++clock.token;
+        const gated = coordinator.noteSessionTick(token);
+        if (gated.accepted) {
+          const t0 = performance.now();
+          session.tick(dtRaw, token);
+          perfRef.current.noteTickMs(performance.now() - t0);
+        }
+      }
+      const dt = Math.min(Math.max(dtRaw, 0), 0.1);
+      const sessionSnap = session.snapshot();
+      coordinator.syncFromSession({
+        geometryProgress: sessionSnap.geometryProgress,
+        phase: sessionSnap.phaseAdapter,
+        sessionTime: sessionSnap.sessionTime,
+        programId: session.getProgram()?.programId ?? null,
+        reducedMotion: reducedRef.current,
+        identity: identityRef.current,
+        sessionStatus: sessionSnap.status,
+        geometryPlaying: sessionSnap.status === "transitioning" && sessionSnap.geometryProgress < 1,
+      });
+      const tx = coordinator.snapshot();
+      if ((tx.status === "running" || tx.status === "settled") && (tx.kind === "geometry" || tx.kind === "palette-only")) {
+        applyLinkedPaletteRef.current(tx.paletteProgress);
       }
       const progress = controller.getProgress();
       progressRef.current = progress;
       const host = canvasHostRef.current;
       const size = { width: host?.clientWidth || window.innerWidth, height: host?.clientHeight || window.innerHeight };
-      const target = targetForNode(progress.activeNodeId);
+      const committedNode = controller.committedActorNodeId();
       const index = stateIndexRef.current;
       const flowNow = flowRef.current;
       const nextContract = index
         ? resolveScreenActorContract({
-          nodeId: progress.activeNodeId,
+          nodeId: committedNode,
           overlay: flowNow.overlay,
           index,
           flow: {
@@ -152,15 +196,15 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
             taskSelected: Boolean(flowNow.taskId),
             competencies: flowNow.competencies,
             competenciesConfirmed: flowNow.competenciesConfirmed,
-            settledStateId: session.snapshot().settledStateId,
+            settledStateId: sessionSnap.settledStateId,
           },
         })
         : null;
       if (nextContract) {
         contractRef.current = nextContract;
-        const requestKey = `${nextContract.hostNodeId}:${nextContract.nodeId}:${nextContract.resolvedGeometryId}:${nextContract.paletteMask}:${nextContract.family}`;
-        if (requestKey !== requestKeyRef.current) {
-          requestKeyRef.current = requestKey;
+        const semantic = semanticActorKey(nextContract).serialized;
+        if (semantic !== requestKeyRef.current) {
+          requestKeyRef.current = semantic;
           requestActorRef.current(nextContract);
           setContract(nextContract);
         }
@@ -168,24 +212,39 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       const liveDpr = dprRef.current;
       const liveIdentity = identityRef.current;
       const liveReduced = reducedRef.current;
-      const sampled = sampleComposition({
+      const target = targetForNode(progress.activeNodeId);
+      const sourceSample = sampleComposition({
         width: size.width,
         height: size.height,
         dpr: liveDpr,
-        placement: nextContract?.slot === "none" ? "exit" : (nextContract?.slot ?? target.placement),
-        exitProgress: target.visible ? 0 : 1,
+        placement: tx.sourceSlot === "none" ? "exit" : tx.sourceSlot,
+        exitProgress: tx.sourceSlot === "none" ? 1 : 0,
         reducedMotion: liveReduced,
         identity: liveIdentity,
-        fitProfile: nextContract?.fitProfile ?? "master",
+        fitProfile: tx.sourceFitProfile,
       });
-      const k = liveReduced ? 1 : 1 - Math.exp(-dt / 0.28);
-      visualRef.current.x += (sampled.cssCenterX - visualRef.current.x) * k;
-      visualRef.current.y += (sampled.cssCenterY - visualRef.current.y) * k;
-      visualRef.current.size += (sampled.cssSize - visualRef.current.size) * k;
-      visualRef.current.siteFit += (sampled.siteFitScale - visualRef.current.siteFit) * k;
+      const targetSample = sampleComposition({
+        width: size.width,
+        height: size.height,
+        dpr: liveDpr,
+        placement: tx.targetSlot === "none" ? "exit" : tx.targetSlot,
+        exitProgress: tx.targetSlot === "none" ? 1 : 0,
+        reducedMotion: liveReduced,
+        identity: liveIdentity,
+        fitProfile: tx.targetFitProfile,
+      });
+      const siteU = liveReduced || liveIdentity ? 1 : tx.siteProgress;
+      const mixedX = sourceSample.cssCenterX + (targetSample.cssCenterX - sourceSample.cssCenterX) * siteU;
+      const mixedY = sourceSample.cssCenterY + (targetSample.cssCenterY - sourceSample.cssCenterY) * siteU;
+      const mixedSize = sourceSample.cssSize + (targetSample.cssSize - sourceSample.cssSize) * siteU;
+      const mixedFit = tx.sourceFit + (tx.targetFit - tx.sourceFit) * siteU;
+      visualRef.current.x = mixedX;
+      visualRef.current.y = mixedY;
+      visualRef.current.size = mixedSize;
+      visualRef.current.siteFit = mixedFit;
       if (!target.visible) visualRef.current.exitHold = (visualRef.current.exitHold ?? 0) + dt;
       else visualRef.current.exitHold = 0;
-      const distance = Math.hypot(sampled.cssCenterX - visualRef.current.x, sampled.cssCenterY - visualRef.current.y);
+      const distance = Math.hypot(targetSample.cssCenterX - visualRef.current.x, targetSample.cssCenterY - visualRef.current.y);
       const hide = !target.visible && (liveReduced || distance < 12 || visualRef.current.exitHold > 0.72);
       visualRef.current.visible = target.visible || !hide;
       compositionRef.current = viewportFromCenter({
@@ -198,15 +257,39 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         visible: visualRef.current.visible,
         identity: liveIdentity,
         siteFitScale: liveIdentity ? 1 : visualRef.current.siteFit,
-        slot: sampled.slot,
+        slot: siteU >= 1 ? targetSample.slot : sourceSample.slot,
       });
+      transitionRef.current = {
+        paletteOwnershipMode: tx.paletteOwnershipMode,
+        continuityEnabled: tx.continuityEnabled,
+        continuityFloor: CONTINUITY_FLOOR,
+        identity: liveIdentity,
+      };
       if (!visualRef.current.visible) session.setOffscreen(true);
-      else if (session.snapshot().offscreen && target.visible) session.setOffscreen(false);
-      if (now - clock.lastUi > 160 || clock.lastUi === 0) {
-        setUi(session.snapshot());
-        clock.lastUi = now;
+      else if (sessionSnap.offscreen && target.visible) session.setOffscreen(false);
+      if (tx.revision !== lastFrameTokenRef.current && tx.status === "running") {
+        coordinator.noteFirstWebglChange(now);
+        lastFrameTokenRef.current = tx.revision;
       }
-      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || visualRef.current.visible !== target.visible || (!target.visible && visualRef.current.visible) || k < 0.99) {
+      if (traceRef.current.recordingNow) {
+        traceRef.current.push(traceFromTransaction({
+          frameToken: clock.token,
+          timestamp: now,
+          transaction: tx,
+          activeNodeId: progress.activeNodeId,
+          committedNodeId: committedNode,
+          actorDraw: compositionRef.current.actorDraw,
+          frameDeltaMs: dt * 1000,
+        }));
+      }
+      if (now - clock.lastUi > 160 || clock.lastUi === 0) {
+        setUi(sessionSnap);
+        setTxUi(tx);
+        clock.lastUi = now;
+        perfRef.current.markReactCommit();
+      }
+      const siteMoving = siteU < 0.999 && visualRef.current.visible !== target.visible;
+      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running") {
         clock.frame = requestAnimationFrame(loop);
       } else {
         clock.running = false;
@@ -232,6 +315,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     const unsub = controller.subscribeDiscrete((progress) => {
       progressRef.current = progress;
       setActiveNode(progress.activeNodeId);
+      coordinatorRef.current.noteCommittedNode(controller.committedActorNodeId(), performance.now());
       startClock();
     });
     startClock();
@@ -256,12 +340,32 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     loadRuntimeManifests(controllerAbort.signal).then(async ({ m3, m4 }) => {
       setManifest(m3);
       setMotionManifest(m4);
+      stateIndexRef.current = indexStates(m3.states);
       const entry = m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
       const state = await loadEntry(entry);
       const program = await compileFrozenPair(state, state, m3, m4, {
         reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"), signal: controllerAbort.signal,
       });
       session.bootstrapSettled(state, program);
+      const bootContract = stateIndexRef.current
+        ? resolveScreenActorContract({
+          nodeId: "01",
+          index: indexStates(m3.states),
+          flow: {
+            taskId: null,
+            taskSelected: false,
+            competencies: [],
+            competenciesConfirmed: false,
+            settledStateId: state.entry.stateId,
+          },
+        })
+        : null;
+      if (bootContract) {
+        coordinatorRef.current.adoptSettled(bootContract, identity);
+        requestKeyRef.current = semanticActorKey(bootContract).serialized;
+        contractRef.current = bootContract;
+        setContract(bootContract);
+      }
       setLoading(false);
       startClock();
       const node = labQuery().get("node");
@@ -277,22 +381,53 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   }, [session]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
+    const coordinator = coordinatorRef.current;
+    const live = coordinator.displayedPlacement();
+    const displayed: DisplayedPlacement = {
+      slot: live.slot,
+      fit: visualRef.current.siteFit,
+      fitProfile: live.fitProfile,
+      paletteMask: session.palette.snapshot().palette.mask,
+      paletteProgress: session.palette.snapshot().paletteProgress,
+      geometryId: live.geometryId ?? session.snapshot().settledStateId,
+      nodeId: live.nodeId,
+    };
+    const { decision, transaction } = coordinator.begin({
+      next,
+      displayed,
+      nowSeconds: session.snapshot().sessionTime,
+      reducedMotion,
+      identity,
+      nowMs: performance.now(),
+    });
+    if (decision.kind === "noop") return;
+    setContract(next);
     if (!manifest) return;
-    const request = requestFromContract(next);
-    if (!request.stateId) return;
-    if (session.snapshot().requestedStateId === request.stateId) {
-      if (session.palette.snapshot().palette.mask !== request.paletteMask) {
-        session.palette.setMask(request.paletteMask, { mode: "immediate" });
-      }
+    if (decision.kind === "exit") {
+      startClock();
       return;
     }
+    if (decision.kind === "palette-only") {
+      session.palette.setMask(next.paletteMask, {
+        mode: reducedMotion ? "immediate" : "free",
+      });
+      startClock();
+      return;
+    }
+    if (decision.kind === "site-only") {
+      startClock();
+      return;
+    }
+    const request = requestFromContract(next);
+    if (!request.stateId) return;
     const revision = session.beginRequest(request.stateId);
+    if (!coordinator.isCurrent(transaction.revision)) return;
     const captured = session.captureJoint();
     try {
       const entry = manifest.states.find((item) => item.stateId === request.stateId);
       if (!entry) return;
       const nextState = await loadEntry(entry);
-      if (!session.isCurrent(revision)) return;
+      if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
       const currentTarget = session.getTarget();
       const currentSource = session.getSource();
       const settled = captured.geometryProgress >= 1 && currentTarget && !currentTarget.entry.stateId.startsWith("runtime-snapshot-");
@@ -300,21 +435,34 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         const program = await compileFrozenPair(currentTarget, nextState, manifest, motionManifest, {
           reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"),
         });
-        if (!session.isCurrent(revision)) return;
+        if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
         session.commitTransition({ revision, source: currentTarget, target: nextState, program, captured, play: true });
       } else if (currentSource && currentTarget) {
         const { liveSource, program } = compileLiveRetarget(captured, currentSource, nextState, manifest, {
           reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"),
         });
-        if (!session.isCurrent(revision)) return;
+        if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
         session.commitTransition({ revision, source: liveSource, target: nextState, program, captured, play: true });
       }
-      session.palette.setMask(request.paletteMask, { mode: "immediate" });
+      const after = session.palette.snapshot();
+      if (after.palette.mask !== request.paletteMask) {
+        session.palette.setMask(request.paletteMask, {
+          mode: reducedMotion ? "immediate" : "geometry-linked",
+        });
+      }
+      coordinator.syncFromSession({
+        geometryProgress: session.snapshot().geometryProgress,
+        phase: session.snapshot().phaseAdapter,
+        sessionTime: session.snapshot().sessionTime,
+        programId: session.getProgram()?.programId ?? null,
+        reducedMotion,
+        identity,
+      });
       startClock();
     } catch (reason) {
       if (session.isCurrent(revision)) setError(reason instanceof Error ? reason.message : String(reason));
     }
-  }, [manifest, motionManifest, reducedMotion, session, startClock]);
+  }, [identity, manifest, motionManifest, reducedMotion, session, startClock]);
 
   const actorRequest: ActorRequest | null = contract ? requestFromContract(contract) : null;
 
@@ -428,13 +576,15 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       sessionId,
       actorDraw: composition.actorDraw,
       revision: controller.getProgress().revision,
+      transaction: coordinatorRef.current.snapshot(),
+      committedNodeId: controller.committedActorNodeId(),
     };
   }, [controller]);
 
   useEffect(() => {
     window.__PS04M4_LAB__ = {
       runId: "ps04-m4",
-      stage: "PS-04.M4.R2",
+      stage: "PS-04.M4.R3",
       mode,
       get ready() {
         return Boolean(target && !loading && (stats.lastActorDrawCalls > 0 || window.__PS04M4_SCENE_READY__ || compositionRef.current.actorDraw === false));
@@ -458,6 +608,58 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       loading,
       reducedMotion,
       sessionId,
+      transaction: () => coordinatorRef.current.snapshot(),
+      startTrace: () => { traceRef.current.start(); },
+      stopTrace: () => traceRef.current.stop(),
+      trace: () => traceRef.current.snapshot(),
+      startPerf: (scenario: string) => { perfRef.current.start(scenario); },
+      stopPerf: () => {
+        perfRef.current.noteResources({
+          canvases: document.querySelectorAll("canvas").length,
+          programs: stats.programs,
+          textures: stats.textures,
+          geometries: stats.geometries,
+          draws: stats.lastActorDrawCalls,
+        });
+        const latencies = coordinatorRef.current.latencies();
+        if (latencies.requestDelayMs != null) perfRef.current.noteRequestLatency(latencies.requestDelayMs);
+        return perfRef.current.stop();
+      },
+      sampleTransition: async (durationMs = 1400) => {
+        const rows: Array<Record<string, unknown>> = [];
+        const started = performance.now();
+        await new Promise<void>((resolve) => {
+          const step = (now: number) => {
+            const tx = coordinatorRef.current.snapshot();
+            const composition = compositionRef.current;
+            const measured = new URLSearchParams(window.location.search).get("actorMask") === "1"
+              ? window.__PS04M4_MEASURE_ACTOR__?.() ?? null
+              : null;
+            const box = measured?.actorMaskBBoxCss ?? null;
+            const width = box ? box.right - box.left : 0;
+            const height = box ? box.bottom - box.top : 0;
+            rows.push({
+              elapsedMs: now - started,
+              revision: tx.revision,
+              semanticPhase: tx.semanticPhase,
+              geometryProgress: tx.geometryProgress,
+              paletteProgress: tx.paletteProgress,
+              siteProgress: tx.siteProgress,
+              sourceGeometryId: tx.sourceGeometryId,
+              targetGeometryId: tx.targetGeometryId,
+              actorDraw: composition.actorDraw,
+              area: width * height,
+              maxDim: Math.max(width, height),
+              visibleFraction: measured?.actorVisibleFraction ?? null,
+            });
+            if (now - started < durationMs) requestAnimationFrame(step);
+            else resolve();
+          };
+          requestAnimationFrame(step);
+        });
+        return rows;
+      },
+      committedNode: () => controller.committedActorNodeId(),
       requestState: (stateId: string) => {
         const current = contractRef.current;
         void requestActor({
@@ -523,6 +725,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
             session={session}
             sessionShouldAnimate={!snapshot.pauseAll && document.visibilityState !== "hidden"}
             compositionRef={compositionRef}
+            transitionRef={transitionRef}
             actorMask={actorMask}
             diagnosticId="motion"
             onStats={setStats}
@@ -598,10 +801,12 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       ) : null}
       {hud ? (
         <aside className={styles.hud} data-qa="m4-hud">
-          <div>PS-04.M4.R2 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
+          <div>PS-04.M4.R3 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
           <div>
             {contract ? <>{contract.requestedFamily} → {contract.resolvedGeometryId ?? "none"}<span className={styles.badge}>{contract.resolution}</span></> : "boot"}
           </div>
+          <div>rev {txUi?.revision ?? ui?.requestRevision ?? 0} · {txUi?.semanticPhase ?? ui?.phaseAdapter.motionPhase ?? "idle"} · g {(txUi?.geometryProgress ?? ui?.geometryProgress ?? 1).toFixed(2)} · p {(txUi?.paletteProgress ?? ui?.palette.paletteProgress ?? 1).toFixed(2)} · s {(txUi?.siteProgress ?? 1).toFixed(2)}</div>
+          <div>{txUi?.sourceGeometryId ?? "—"} → {txUi?.targetGeometryId ?? "—"} · own {txUi?.paletteOwnershipMode ?? 0} · cont {txUi?.continuityEnabled ?? 0}</div>
           <div>mask {contract?.paletteMask ?? 0} · slot {contract?.slot ?? "none"} · fit {contract?.fitProfile ?? "none"}</div>
           <div>
             {stats.lastActorDrawCalls} draw / {stats.lastActorTriangles} tri · dpr {stats.dpr}

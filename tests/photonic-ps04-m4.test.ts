@@ -184,6 +184,12 @@ test("M4 composition identity keeps the frozen M3 vertex evaluator", () => {
   assert.match(m4Scene, /uSiteClipOffset/);
   assert.match(m4Scene, /uSiteCompositionEnabled/);
   assert.match(m4Scene, /clipPosition\.x \* uSiteClipScale/);
+  assert.match(m4Scene, /uContinuityEnabled > 0.5 && uEvaluator == 1/);
+  assert.match(m4Scene, /vPaletteOwnership/);
+  assert.match(fragmentShader(m4Scene), /uPaletteOwnershipMode > 0.5/);
+  assert.doesNotMatch(m4Lab, /Math\.exp\(-dt \/ 0\.28\)/);
+  assert.doesNotMatch(m4Lab, /setMask\(request\.paletteMask, \{ mode: "immediate" \}\)/);
+  assert.match(m4Lab, /ActorTransitionCoordinator/);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/<instancedMesh/g) ?? []).length, 1);
   assert.doesNotMatch(m4Scene, /uCompose(?!ition)/);
@@ -751,7 +757,7 @@ test("one session owner, one Canvas, footer reverse does not remount the session
     /footer has no Mimic; session stays mounted/,
   );
   assert.doesNotMatch(m4Lab, /key=\{.*activeNode/);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r2"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r3"/);
 });
 
 test("direct-load contract is host-node equivalent for every node", () => {
@@ -1065,7 +1071,7 @@ test("M4.R2 full-canvas clip-space composition preserves square projection", () 
     900,
   );
   assert.equal(cutoff.cutoff, true);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r2"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r3"/);
   assert.equal((m4Scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/<instancedMesh/g) ?? []).length, 1);
