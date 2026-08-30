@@ -30,6 +30,9 @@ export interface NaturalRafReport {
   geometryRecreationCount: number;
   materialRecreationCount: number;
   textureUploadCount: number;
+  initTextureCount?: number;
+  r6LongTasks?: Array<{ duration: number; start: number; name: string }>;
+  r6Measures?: Array<{ name: string; durationMs: number; startMs: number; endMs: number }>;
   longTasks: Array<{ duration: number; start: number; name: string }>;
   gpuTimer: {
     available: boolean;

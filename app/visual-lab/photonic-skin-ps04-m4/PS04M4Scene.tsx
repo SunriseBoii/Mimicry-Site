@@ -7,16 +7,14 @@
  */
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { CameraPreset, DebugMode, DecodedState, LabFrame, M3Manifest } from "../photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../photonic-skin-m4-1/m41-evaluator";
 import {
   IDENTITY_COMPOSITION,
   applyCompositionViewport,
-  cssFromDeviceBBox,
   restoreFullCanvasViewport,
-  visibleFractionFor,
   type ActorMaskBBox,
   type CompositionViewport,
 } from "./composition";
@@ -25,7 +23,6 @@ import {
   cameraDiagnostic,
   interpolatePresentationFrames,
   resolvePresentationFrame,
-  visibleComponents,
 } from "../photonic-skin-m4-1r/photonic-presentation";
 import {
   MATERIAL_THEME_PRESETS,
@@ -57,6 +54,24 @@ import {
   type GeometryProgramBind,
   type GeometryRenderAck,
 } from "./geometry-authority";
+import {
+  DisjointGpuTimer,
+  type R6Instrumentation,
+} from "./r6-instrumentation";
+import type { GpuTextureBank, GpuTexturePool } from "./gpu-texture-pool";
+import {
+  STATE_TEXTURE_SIZE,
+  programTextures,
+  stateTexture,
+} from "./texture-pack";
+import {
+  applyBankSamplers,
+  emptyFramebufferSilhouette,
+  getMaterialSamplerSnapshot,
+  liveBankMatchesCpu,
+  measureFramebufferSilhouette,
+  type IsolationCommand,
+} from "./gpu-bank-diagnostics";
 
 export const IDENTITY_OVERLAY: OverlayUniforms = {
   enabled: false,
@@ -118,6 +133,18 @@ declare global {
     __PS04M4_LAB__?: Record<string, unknown>;
     __PS04M4_PREVIEW__?: Record<string, unknown>;
     __PS04M4_MEASURE_ACTOR__?: () => ActorMaskMeasure | null;
+    __PS04M4_ACTOR_RESOURCE_READY__?: boolean;
+    __PS04M4_ACTOR_FRAMEBUFFER_READY__?: boolean;
+    __PS04M4_GPU_DIAG__?: {
+      forceInvalidateOnly: () => { ok: true };
+      forceRebindActiveBankOnly: () => { ok: true; bankId: number | null };
+      forceReuploadActiveBankOnly: () => { ok: true; bankId: number | null };
+      forceFullBankRepublish: () => { ok: true; bankId: number | null };
+      getMaterialSamplerSnapshot: () => ReturnType<typeof getMaterialSamplerSnapshot> | null;
+      textureInventory: () => unknown;
+      liveBankGpuParity: () => unknown;
+      framebufferSilhouette: () => unknown;
+    };
     __PS04M4_MATERIAL_UNIFORMS__?: {
       mask: number;
       progress: number;
@@ -221,144 +248,19 @@ export interface SceneProps {
   geometryAckRef?: { current: GeometryRenderAck };
   onGeometryAck?: (ack: GeometryRenderAck) => void;
   reproduceR4Geometry?: boolean;
+  r6Staging?: boolean;
+  gpuPool?: GpuTexturePool | null;
+  gpuTimer?: DisjointGpuTimer | null;
+  instrumentation?: R6Instrumentation | null;
   actorMask?: boolean;
   onStats: (value: SceneStats) => void;
   onEnvironment?: (value: SceneEnvironment) => void;
+  onRenderer?: (renderer: THREE.WebGLRenderer) => void;
   onContextState?: (state: "ready" | "lost" | "restored") => void;
 }
 
-const STATE_TEXTURE_SIZE = 128;
-const TRACK_TEXTURE_WIDTH = 256;
 const LIGHT_MATERIAL = MATERIAL_THEME_PRESETS.light;
 const DARK_MATERIAL = MATERIAL_THEME_PRESETS.dark;
-
-function dataTexture(data: Float32Array, width: number, height: number) {
-  const texture = new THREE.DataTexture(data, width, height, THREE.RGBAFormat, THREE.FloatType);
-  texture.needsUpdate = true;
-  texture.magFilter = THREE.NearestFilter;
-  texture.minFilter = THREE.NearestFilter;
-  texture.generateMipmaps = false;
-  texture.flipY = false;
-  return texture;
-}
-
-type StateTextureKind = "position" | "normal" | "orientation" | "meta";
-
-function stateTexture(state: DecodedState, kind: StateTextureKind, profile?: LabFrame) {
-  const data = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  const shown = profile ? visibleComponents(state.entry, profile) : null;
-  for (let id = 0; id < state.recordCount; id += 1) {
-    const out = id * 4;
-    const p = id * 3;
-    const q = id * 4;
-    if (kind === "position") {
-      data[out] = state.position[p];
-      data[out + 1] = state.position[p + 1];
-      data[out + 2] = state.position[p + 2];
-      data[out + 3] = state.scale[id];
-    } else if (kind === "normal") {
-      data[out] = state.normal[p];
-      data[out + 1] = state.normal[p + 1];
-      data[out + 2] = state.normal[p + 2];
-      // Frozen M3 route delay; M4 reserve transport uses compiled per-ID depth.
-      data[out + 3] = ((id * 0.61803398875) % 1) * 0.08;
-    } else if (kind === "orientation") {
-      data[out] = state.orientation[q];
-      data[out + 1] = state.orientation[q + 1];
-      data[out + 2] = state.orientation[q + 2];
-      data[out + 3] = state.orientation[q + 3];
-    } else if (kind === "meta") {
-      data[out] = state.component[id];
-      data[out + 1] = state.shell[id];
-      data[out + 2] = state.status[id];
-      // Preserve flags in the low byte and bind M3.1R component visibility in
-      // the high marker without adding a seventeenth vertex texture.
-      data[out + 3] = state.flags[id] + ((shown?.has(state.component[id]) ?? true) ? 256 : 0);
-    }
-  }
-  return dataTexture(data, STATE_TEXTURE_SIZE, STATE_TEXTURE_SIZE);
-}
-
-function m3RouteData(source: DecodedState, target: DecodedState) {
-  const data = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  const axis = new THREE.Vector3(1, 0, 0);
-  const delta = new THREE.Vector3();
-  const lateral = new THREE.Vector3();
-  const averageNormal = new THREE.Vector3();
-  for (let id = 0; id < source.recordCount; id += 1) {
-    const p = id * 3;
-    const out = id * 4;
-    delta.set(target.position[p] - source.position[p], target.position[p + 1] - source.position[p + 1], target.position[p + 2] - source.position[p + 2]);
-    averageNormal.set(source.normal[p] + target.normal[p], source.normal[p + 1] + target.normal[p + 1], source.normal[p + 2] + target.normal[p + 2]).normalize();
-    lateral.crossVectors(delta, axis);
-    if (lateral.lengthSq() < 1e-10) lateral.crossVectors(averageNormal, new THREE.Vector3(0, 1, 0));
-    lateral.normalize();
-    const group = Math.min(source.transitionGroup[id], target.transitionGroup[id]);
-    const amplitude = Math.min(0.36, 0.08 + delta.length() * 0.11) * (group % 2 ? -1 : 1);
-    const normalBias = Math.min(0.12, delta.length() * 0.035);
-    data[out] = lateral.x * amplitude + averageNormal.x * normalBias;
-    data[out + 1] = lateral.y * amplitude + averageNormal.y * normalBias;
-    data[out + 2] = lateral.z * amplitude + averageNormal.z * normalBias;
-    data[out + 3] = ((id * 0.61803398875) % 1) * 0.08;
-  }
-  return data;
-}
-
-function programTextures(program: TransitionProgram, source: DecodedState, target: DecodedState) {
-  const m3Route = m3RouteData(source, target);
-  const residual = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  const lanes = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  const velocity = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  const activation = new Float32Array(STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 4);
-  for (let id = 0; id < program.recordCount; id += 1) {
-    const out = id * 4;
-    const p = id * 3;
-    residual[out] = program.residual[p];
-    residual[out + 1] = program.residual[p + 1];
-    residual[out + 2] = program.residual[p + 2];
-    residual[out + 3] = program.phaseDelay[id];
-    lanes[out] = program.trackIndex[id];
-    lanes[out + 1] = program.compiled?.perId.flags[id] ?? program.bridgeWeight[id];
-    lanes[out + 2] = program.compiled?.perId.depth[id] ?? 0;
-    lanes[out + 3] = m3Route[out];
-    velocity[out] = program.sourceVelocity?.[p] ?? 0;
-    velocity[out + 1] = program.sourceVelocity?.[p + 1] ?? 0;
-    velocity[out + 2] = program.sourceVelocity?.[p + 2] ?? 0;
-    velocity[out + 3] = program.sourceScaleVelocity?.[id] ?? 0;
-    activation[out] = program.compiled?.perId.activationStart[id] ?? 0.18 + program.phaseDelay[id];
-    activation[out + 1] = program.compiled?.perId.activationEnd[id] ?? 0.72 + program.phaseDelay[id];
-    activation[out + 2] = m3Route[out + 1];
-    activation[out + 3] = m3Route[out + 2];
-  }
-  const height = Math.max(1, Math.ceil(program.tracks.length / TRACK_TEXTURE_WIDTH));
-  const sourceTracks = new Float32Array(TRACK_TEXTURE_WIDTH * height * 4);
-  const targetTracks = new Float32Array(TRACK_TEXTURE_WIDTH * height * 4);
-  const routes = new Float32Array(TRACK_TEXTURE_WIDTH * height * 4);
-  const windows = new Float32Array(TRACK_TEXTURE_WIDTH * height * 4);
-  program.tracks.forEach((track, id) => {
-    const out = id * 4;
-    const exact = program.compiled?.groupTracks[id];
-    sourceTracks.set([...track.sourceCenter, exact?.direction[0] ?? 1], out);
-    targetTracks.set([...track.targetCenter, exact?.releaseEnd ?? 0.38], out);
-    routes.set([...track.route, exact?.revealEnd ?? 0.82], out);
-    windows.set([
-      exact?.bridgeStart ?? 0.3,
-      exact?.bridgeEnd ?? 0.72,
-      exact?.direction[1] ?? 0,
-      exact?.direction[2] ?? 0,
-    ], out);
-  });
-  return {
-    residual: dataTexture(residual, STATE_TEXTURE_SIZE, STATE_TEXTURE_SIZE),
-    lanes: dataTexture(lanes, STATE_TEXTURE_SIZE, STATE_TEXTURE_SIZE),
-    velocity: dataTexture(velocity, STATE_TEXTURE_SIZE, STATE_TEXTURE_SIZE),
-    activation: dataTexture(activation, STATE_TEXTURE_SIZE, STATE_TEXTURE_SIZE),
-    sourceTracks: dataTexture(sourceTracks, TRACK_TEXTURE_WIDTH, height),
-    targetTracks: dataTexture(targetTracks, TRACK_TEXTURE_WIDTH, height),
-    routes: dataTexture(routes, TRACK_TEXTURE_WIDTH, height),
-    windows: dataTexture(windows, TRACK_TEXTURE_WIDTH, height),
-  };
-}
 
 const vertexShader = `
 precision highp float;
@@ -903,7 +805,7 @@ ${fieldShaderFunctions}
 
 void main() {
   if (uActorMask == 1) {
-    outColor = vec4(1.0, 1.0, 0.0, 1.0);
+    outColor = vec4(1.0, 1.0, 1.0, 1.0);
     return;
   }
   if (uDebug != 0) {
@@ -1519,7 +1421,7 @@ function TrackOverlay({ program, mode, frame }: { program: TransitionProgram; mo
 }
 
 function M41Content(props: SceneProps) {
-  const { gl, get } = useThree();
+  const { gl, get, invalidate, scene, camera } = useThree();
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const progressRef = useRef(props.progress);
   const lastSourceLutHash = useRef<string | null>(null);
@@ -1538,16 +1440,30 @@ function M41Content(props: SceneProps) {
   } | null>(null);
   const geometryFrameToken = useRef(0);
   const frameStats = useRef({ elapsed: 0, frames: 0, samples: [] as number[] });
-  const stateTextures = useMemo(() => ({
-    source: stateTexture(props.source, "position"),
-    target: stateTexture(props.target, "position"),
-    sourceNormal: stateTexture(props.source, "normal"),
-    targetNormal: stateTexture(props.target, "normal"),
-    sourceQuat: stateTexture(props.source, "orientation"),
-    targetQuat: stateTexture(props.target, "orientation"),
-    sourceMeta: stateTexture(props.source, "meta", props.profile),
-    targetMeta: stateTexture(props.target, "meta", props.profile),
-  }), [props.profile, props.source, props.target]);
+  const staging = Boolean(props.r6Staging && props.gpuPool);
+  const lastPoolGeneration = useRef(-1);
+  const hitchProbe = useRef(0);
+  const boundGpuReadyRef = useRef(false);
+  const actorFramebufferReadyRef = useRef(false);
+  const pendingIsolation = useRef<IsolationCommand | null>(null);
+  const lastSilhouette = useRef<ReturnType<typeof measureFramebufferSilhouette> | null>(null);
+  const boundBankRef = useRef<GpuTextureBank | null>(null);
+  const probingMaskRef = useRef(false);
+  const maskTargetRef = useRef<THREE.WebGLRenderTarget | null>(null);
+  const maskProbeAttempts = useRef(0);
+  const stateTextures = useMemo(() => {
+    if (staging && props.gpuPool) return props.gpuPool.active().textures;
+    return {
+      source: stateTexture(props.source, "position"),
+      target: stateTexture(props.target, "position"),
+      sourceNormal: stateTexture(props.source, "normal"),
+      targetNormal: stateTexture(props.target, "normal"),
+      sourceQuat: stateTexture(props.source, "orientation"),
+      targetQuat: stateTexture(props.target, "orientation"),
+      sourceMeta: stateTexture(props.source, "meta", props.profile),
+      targetMeta: stateTexture(props.target, "meta", props.profile),
+    };
+  }, [staging, props.gpuPool, props.profile, props.source, props.target]);
   const sourceFrame = useMemo(() => resolvePresentationFrame(props.source.entry), [props.source.entry]);
   const targetFrame = useMemo(() => resolvePresentationFrame(props.target.entry), [props.target.entry]);
   const currentFrame = interpolatePresentationFrames(
@@ -1556,8 +1472,11 @@ function M41Content(props: SceneProps) {
     props.reducedMotion ? 1 : props.progress,
   );
   const compiledTextures = useMemo(
-    () => programTextures(props.program, props.source, props.target),
-    [props.program, props.source, props.target],
+    () => {
+      if (staging && props.gpuPool) return props.gpuPool.active().textures;
+      return programTextures(props.program, props.source, props.target);
+    },
+    [staging, props.gpuPool, props.program, props.source, props.target],
   );
   const packetTexturesRef = useRef<{
     key: string;
@@ -1717,7 +1636,7 @@ function M41Content(props: SceneProps) {
   }, [geometry, material]);
 
   useEffect(() => {
-    if (props.actorMask) gl.setClearColor(0x140028, 1);
+    if (props.actorMask) gl.setClearColor(0x000000, 1);
     else gl.setClearColor(0x000000, 0);
   }, [gl, props.actorMask]);
 
@@ -1726,6 +1645,7 @@ function M41Content(props: SceneProps) {
     viewport: new THREE.Vector4(),
     scissor: new THREE.Vector4(),
     scissorTest: false,
+    drawStarted: 0,
   });
   const applyProgramBind = (
     program: typeof props.program,
@@ -1787,7 +1707,50 @@ function M41Content(props: SceneProps) {
   const onGeometryAck = props.onGeometryAck;
 
   useFrame((_, rawDelta) => {
+    const useFrameStarted = performance.now();
+    if (hitchProbe.current && props.instrumentation) {
+      props.instrumentation.mark("r6:frame-after-bind", { gapMs: performance.now() - hitchProbe.current });
+      hitchProbe.current = 0;
+    }
     const delta = Math.min(rawDelta, 0.05);
+    const context = gl.getContext();
+    if (props.gpuTimer && context instanceof WebGL2RenderingContext && !props.gpuTimer.available) {
+      props.gpuTimer.attach(context);
+    }
+    if (staging && props.gpuPool && props.gpuPool.contextGeneration !== lastPoolGeneration.current) {
+      boundGpuReadyRef.current = false;
+      actorFramebufferReadyRef.current = false;
+      displayedGeometryRef.current = null;
+      boundBankRef.current = null;
+      lastPoolGeneration.current = props.gpuPool.contextGeneration;
+      window.__PS04M4_ACTOR_RESOURCE_READY__ = false;
+      window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = false;
+    }
+    const isolation = pendingIsolation.current;
+    if (isolation && staging && props.gpuPool) {
+      const active = props.gpuPool.active();
+      if (isolation === "invalidate") invalidate();
+      if (isolation === "rebind" || isolation === "republish") {
+        applyBankSamplers(uniformsRef.current, active);
+        applyProgramBind(
+          active.program ?? props.program,
+          active.source ?? props.source,
+          active.target ?? props.target,
+          active.textures,
+          active.textures,
+          active.sourceFrame ?? sourceFrame,
+          active.targetFrame ?? targetFrame,
+          progressRef.current,
+        );
+        boundBankRef.current = active;
+        boundGpuReadyRef.current = active.gpuReady;
+      }
+      if (isolation === "reupload" || isolation === "republish") {
+        active.reuploadPacked(gl, props.instrumentation ?? undefined);
+      }
+      invalidate();
+      pendingIsolation.current = null;
+    }
     const sessionSnap = props.session?.snapshot();
     const geo = geometrySnapshotSlot?.current ?? null;
     const packet = programBindSlot?.current ?? null;
@@ -1837,19 +1800,38 @@ function M41Content(props: SceneProps) {
         }
       }
     } else if (!displayed) {
-      applyProgramBind(props.program, props.source, props.target, stateTextures, compiledTextures, sourceFrame, targetFrame, 1);
-      boundProgramId.current = props.program.programId;
-      compileCountRef.current += 1;
-      displayedGeometryRef.current = {
-        revision: geo?.revision ?? 0,
-        programId: props.program.programId,
-        sourceId: props.source.entry.stateId,
-        targetId: props.target.entry.stateId,
-        progress: 1,
-        sourceTextureUuid: stateTextures.source.uuid,
-        targetTextureUuid: stateTextures.target.uuid,
-        bindFrameToken: frameToken,
-      };
+      const initialBank = staging ? props.gpuPool?.active() ?? null : null;
+      const initialReady = !staging || Boolean(initialBank?.gpuReady && initialBank.allAcknowledged());
+      if (initialReady) {
+        const bindState = initialBank?.textures ?? stateTextures;
+        const bindCompiled = initialBank?.textures ?? compiledTextures;
+        const bindSourceFrame = initialBank?.sourceFrame ?? sourceFrame;
+        const bindTargetFrame = initialBank?.targetFrame ?? targetFrame;
+        applyProgramBind(props.program, props.source, props.target, bindState, bindCompiled, bindSourceFrame, bindTargetFrame, 1);
+        if (initialBank) {
+          applyBankSamplers(uniformsRef.current, initialBank);
+          boundBankRef.current = initialBank;
+          props.gpuPool?.promoteToActive(initialBank);
+        }
+        boundGpuReadyRef.current = true;
+        window.__PS04M4_ACTOR_RESOURCE_READY__ = true;
+        actorFramebufferReadyRef.current = false;
+        maskProbeAttempts.current = 0;
+        window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = false;
+        invalidate();
+        boundProgramId.current = props.program.programId;
+        compileCountRef.current += 1;
+        displayedGeometryRef.current = {
+          revision: geo?.revision ?? 0,
+          programId: props.program.programId,
+          sourceId: props.source.entry.stateId,
+          targetId: props.target.entry.stateId,
+          progress: 1,
+          sourceTextureUuid: bindState.source.uuid,
+          targetTextureUuid: bindState.target.uuid,
+          bindFrameToken: frameToken,
+        };
+      }
     }
     if (!props.reproduceR4Geometry) {
     const settledEndpointBind = Boolean(packet && !packet.bindCommitted && geo && packet.revision === geo.revision
@@ -1868,40 +1850,77 @@ function M41Content(props: SceneProps) {
       } : null,
     });
     if ((atomic || settledEndpointBind) && packet) {
-      const packetMatchesProps = packet.program.programId === props.program.programId
-        && packet.source.entry.stateId === props.source.entry.stateId
-        && packet.target.entry.stateId === props.target.entry.stateId;
       let bindState = stateTextures;
       let bindCompiled = compiledTextures;
       let bindSourceFrame = sourceFrame;
       let bindTargetFrame = targetFrame;
-      if (!packetMatchesProps) {
-        const key = `${packet.source.entry.stateId}|${packet.target.entry.stateId}|${packet.program.programId}`;
-        if (packetTexturesRef.current?.key !== key) {
-          packetTexturesRef.current = {
-            key,
-            state: {
-              source: stateTexture(packet.source, "position"),
-              target: stateTexture(packet.target, "position"),
-              sourceNormal: stateTexture(packet.source, "normal"),
-              targetNormal: stateTexture(packet.target, "normal"),
-              sourceQuat: stateTexture(packet.source, "orientation"),
-              targetQuat: stateTexture(packet.target, "orientation"),
-              sourceMeta: stateTexture(packet.source, "meta", props.profile),
-              targetMeta: stateTexture(packet.target, "meta", props.profile),
-            },
-            compiled: programTextures(packet.program, packet.source, packet.target),
-            sourceFrame: resolvePresentationFrame(packet.source.entry),
-            targetFrame: resolvePresentationFrame(packet.target.entry),
-          };
+      let skipBind = false;
+      let bindBank: GpuTextureBank | null = null;
+      if (staging && props.gpuPool) {
+        bindBank = (packet.bankId != null ? props.gpuPool.findById(packet.bankId) : null)
+          ?? props.gpuPool.findByRevision(packet.revision)
+          ?? null;
+        if (packet.gpuReady === false || !bindBank || !bindBank.gpuReady || !bindBank.allAcknowledged()
+          || (bindBank.revision != null && packet.revision != null && bindBank.revision !== packet.revision)
+          || (packet.bankGeneration != null && bindBank.generation !== packet.bankGeneration)) {
+          props.instrumentation?.noteStaleBind();
+          skipBind = true;
+        } else {
+          bindState = bindBank.textures;
+          bindCompiled = bindBank.textures;
+          bindSourceFrame = bindBank.sourceFrame ?? sourceFrame;
+          bindTargetFrame = bindBank.targetFrame ?? targetFrame;
         }
-        bindState = packetTexturesRef.current.state;
-        bindCompiled = packetTexturesRef.current.compiled;
-        bindSourceFrame = packetTexturesRef.current.sourceFrame;
-        bindTargetFrame = packetTexturesRef.current.targetFrame;
+      } else {
+        const packetMatchesProps = packet.program.programId === props.program.programId
+          && packet.source.entry.stateId === props.source.entry.stateId
+          && packet.target.entry.stateId === props.target.entry.stateId;
+        if (!packetMatchesProps) {
+          const key = `${packet.source.entry.stateId}|${packet.target.entry.stateId}|${packet.program.programId}`;
+          if (packetTexturesRef.current?.key !== key) {
+            props.instrumentation?.mark("r6:data-texture-create", { key });
+            packetTexturesRef.current = {
+              key,
+              state: {
+                source: stateTexture(packet.source, "position"),
+                target: stateTexture(packet.target, "position"),
+                sourceNormal: stateTexture(packet.source, "normal"),
+                targetNormal: stateTexture(packet.target, "normal"),
+                sourceQuat: stateTexture(packet.source, "orientation"),
+                targetQuat: stateTexture(packet.target, "orientation"),
+                sourceMeta: stateTexture(packet.source, "meta", props.profile),
+                targetMeta: stateTexture(packet.target, "meta", props.profile),
+              },
+              compiled: programTextures(packet.program, packet.source, packet.target),
+              sourceFrame: resolvePresentationFrame(packet.source.entry),
+              targetFrame: resolvePresentationFrame(packet.target.entry),
+            };
+          }
+          bindState = packetTexturesRef.current.state;
+          bindCompiled = packetTexturesRef.current.compiled;
+          bindSourceFrame = packetTexturesRef.current.sourceFrame;
+          bindTargetFrame = packetTexturesRef.current.targetFrame;
+        }
       }
       const bindProgress = atomic && !props.reducedMotion && geo?.status !== "settled" ? 0 : 1;
+      if (!skipBind) {
+      props.instrumentation?.begin("r6:atomic-uniform-bind");
       applyProgramBind(packet.program, packet.source, packet.target, bindState, bindCompiled, bindSourceFrame, bindTargetFrame, bindProgress);
+      if (bindBank && props.gpuPool) {
+        applyBankSamplers(uniformsRef.current, bindBank);
+        props.gpuPool.promoteToActive(bindBank);
+        boundBankRef.current = bindBank;
+        boundGpuReadyRef.current = true;
+        window.__PS04M4_ACTOR_RESOURCE_READY__ = true;
+        actorFramebufferReadyRef.current = false;
+        maskProbeAttempts.current = 0;
+        window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = false;
+      }
+      invalidate();
+      props.instrumentation?.noteAtomicBind(packet.revision);
+      props.instrumentation?.end("r6:atomic-uniform-bind", { revision: packet.revision, programId: packet.program.programId });
+      props.instrumentation?.mark("r6:first-render-after-bind", { revision: packet.revision, progress: bindProgress });
+      hitchProbe.current = performance.now();
       boundProgramId.current = packet.program.programId;
       compileCountRef.current += 1;
       displayedGeometryRef.current = {
@@ -1914,6 +1933,7 @@ function M41Content(props: SceneProps) {
         targetTextureUuid: bindState.target.uuid,
         bindFrameToken: frameToken,
       };
+      }
     } else if (props.reducedMotion || geo?.status === "settled") {
       uniformsRef.current.uProgress.value = 1;
       progressRef.current = 1;
@@ -1992,10 +2012,81 @@ function M41Content(props: SceneProps) {
       });
     }
 
+    const actorHidden = !props.compositionRef?.current?.actorDraw;
+    const footerNeedsPublish = actorHidden && (
+      lastActorDraw.current.calls !== 0
+      || (lastSilhouette.current?.visiblePixelCount ?? 0) !== 0
+      || lastSilhouette.current?.actorDraw === true
+    );
+
+    if (meshRef.current) {
+      const viewport = props.compositionRef?.current;
+      const resourceReady = !staging || boundGpuReadyRef.current;
+      meshRef.current.visible = resourceReady && Boolean(viewport?.actorDraw && viewport.visible);
+      window.__PS04M4_ACTOR_RESOURCE_READY__ = resourceReady;
+      if (!viewport?.actorDraw) {
+        lastSilhouette.current = emptyFramebufferSilhouette({ gl, actorDraw: false });
+        lastActorDraw.current = { calls: 0, triangles: 0 };
+        actorFramebufferReadyRef.current = true;
+        window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = true;
+      } else if (
+        staging
+        && resourceReady
+        && meshRef.current.visible
+        && !actorFramebufferReadyRef.current
+        && !props.actorMask
+        && !probingMaskRef.current
+        && maskProbeAttempts.current < 180
+      ) {
+        maskProbeAttempts.current += 1;
+        const drawingW = gl.domElement.width;
+        const drawingH = gl.domElement.height;
+        if (drawingW >= 2 && drawingH >= 2) {
+          let target = maskTargetRef.current;
+          if (!target || target.width !== drawingW || target.height !== drawingH) {
+            target?.dispose();
+            target = new THREE.WebGLRenderTarget(drawingW, drawingH);
+            maskTargetRef.current = target;
+          }
+          const previousMask = uniformsRef.current.uActorMask.value;
+          const previousClear = gl.getClearColor(new THREE.Color());
+          const previousAlpha = gl.getClearAlpha();
+          uniformsRef.current.uActorMask.value = 1;
+          probingMaskRef.current = true;
+          gl.setRenderTarget(target);
+          gl.setClearColor(0x000000, 1);
+          gl.clear();
+          gl.render(scene, camera);
+          const pixels = new Uint8Array(drawingW * drawingH * 4);
+          gl.readRenderTargetPixels(target, 0, 0, drawingW, drawingH, pixels);
+          gl.setRenderTarget(null);
+          gl.setClearColor(previousClear, previousAlpha);
+          uniformsRef.current.uActorMask.value = previousMask;
+          probingMaskRef.current = false;
+          const silhouette = measureFramebufferSilhouette({
+            gl,
+            actorMask: true,
+            actorDraw: true,
+            pixels,
+            drawingWidth: drawingW,
+            drawingHeight: drawingH,
+          });
+          lastSilhouette.current = silhouette;
+          if (silhouette.visiblePixelCount > 0 && !silhouette.failDrawWithoutPixels) {
+            actorFramebufferReadyRef.current = true;
+            window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = true;
+          }
+        }
+      }
+    }
+
     const actorCalls = gl.info.render.calls;
     const actorTriangles = gl.info.render.triangles;
-    const newFrame = actorCalls > 0;
-    if (newFrame) {
+    const newFrame = !actorHidden && actorCalls > 0;
+    if (actorHidden) {
+      lastActorDraw.current = { calls: 0, triangles: 0 };
+      lastSilhouette.current = emptyFramebufferSilhouette({ gl, actorDraw: false });
+    } else if (actorCalls > 0) {
       lastActorDraw.current = { calls: actorCalls, triangles: actorTriangles };
     }
 
@@ -2003,7 +2094,7 @@ function M41Content(props: SceneProps) {
     frameStats.current.frames += 1;
     frameStats.current.samples.push(delta * 1000);
     if (frameStats.current.samples.length > 180) frameStats.current.samples.shift();
-    const publish = !readyRef.current || frameStats.current.elapsed >= 0.75;
+    const publish = !readyRef.current || frameStats.current.elapsed >= 0.75 || (lastActorDraw.current.calls > 0 && !window.__PS04M4_SCENE_READY__) || footerNeedsPublish;
     if (publish) {
       const samples = [...frameStats.current.samples].sort((a, b) => a - b);
       const quantile = (p: number) => samples[Math.min(samples.length - 1, Math.floor(samples.length * p))] ?? 0;
@@ -2035,6 +2126,14 @@ function M41Content(props: SceneProps) {
       }
     }
     gl.info.reset();
+    const useFrameMs = performance.now() - useFrameStarted;
+    if (useFrameMs >= 50) {
+      props.instrumentation?.mark("r6:slow-useframe", {
+        durationMs: useFrameMs,
+        bound: boundProgramId.current,
+        progress: uniformsRef.current.uProgress.value,
+      });
+    }
   });
 
   const applySiteComposition = () => {
@@ -2057,7 +2156,8 @@ function M41Content(props: SceneProps) {
       canvasCssHeight: cssH,
     };
     if (meshRef.current) {
-      meshRef.current.visible = viewport.actorDraw && viewport.visible;
+      const ready = !staging || boundGpuReadyRef.current;
+      meshRef.current.visible = ready && viewport.actorDraw && viewport.visible;
       meshRef.current.scale.setScalar(viewport.identity ? 1 : viewport.siteFitScale);
     }
     uniformsRef.current.uSiteClipScale.value.set(
@@ -2072,25 +2172,145 @@ function M41Content(props: SceneProps) {
       ? 0
       : viewport.siteCompositionEnabled;
     applyCompositionViewport(gl, viewport);
+    restoreRef.current.drawStarted = performance.now();
+    props.gpuTimer?.begin();
   };
 
   const restoreSiteComposition = () => {
+    props.gpuTimer?.end();
+    const drawMs = performance.now() - (restoreRef.current.drawStarted || 0);
+    if (drawMs >= 50 && restoreRef.current.drawStarted) {
+      props.instrumentation?.mark("r6:slow-draw", { durationMs: drawMs });
+    }
     const previous = restoreRef.current;
     if (previous.viewport.z > 0 && previous.viewport.w > 0) {
       gl.setViewport(previous.viewport.x, previous.viewport.y, previous.viewport.z, previous.viewport.w);
       gl.setScissor(previous.scissor.x, previous.scissor.y, previous.scissor.z, previous.scissor.w);
       gl.setScissorTest(previous.scissorTest);
-      return;
+    } else {
+      restoreFullCanvasViewport(gl, gl.domElement.clientWidth || 1, gl.domElement.clientHeight || 1);
     }
-    restoreFullCanvasViewport(gl, gl.domElement.clientWidth || 1, gl.domElement.clientHeight || 1);
+    if (probingMaskRef.current) return;
+    const viewport = props.compositionRef?.current;
+    const actorDraw = Boolean(viewport?.actorDraw);
+    if (meshRef.current?.visible && !actorFramebufferReadyRef.current) {
+      const silhouette = measureFramebufferSilhouette({
+        gl,
+        actorMask: props.actorMask === true,
+        actorDraw,
+      });
+      lastSilhouette.current = silhouette;
+      if (!actorDraw) {
+        actorFramebufferReadyRef.current = true;
+        window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = true;
+      } else if (silhouette.visiblePixelCount > 0 && !silhouette.failDrawWithoutPixels) {
+        actorFramebufferReadyRef.current = true;
+        window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = true;
+      }
+    } else if (!actorDraw) {
+      lastSilhouette.current = emptyFramebufferSilhouette({ gl, actorDraw: false });
+      lastActorDraw.current = { calls: 0, triangles: 0 };
+      actorFramebufferReadyRef.current = true;
+      window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ = true;
+    }
   };
 
+  useLayoutEffect(() => {
+    if (meshRef.current && staging && !boundGpuReadyRef.current) {
+      meshRef.current.visible = false;
+    }
+  });
   useEffect(() => {
-    window.__PS04M4_MEASURE_ACTOR__ = () => measureActorMask(gl, props.actorMask === true);
+    return () => {
+      maskTargetRef.current?.dispose();
+      maskTargetRef.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    window.__PS04M4_MEASURE_ACTOR__ = () => {
+      const viewport = props.compositionRef?.current;
+      const silhouette = measureFramebufferSilhouette({
+        gl,
+        actorMask: props.actorMask === true,
+        actorDraw: Boolean(viewport?.actorDraw),
+      });
+      lastSilhouette.current = silhouette;
+      return {
+        actorMaskBBoxCss: silhouette.bbox,
+        actorVisibleFraction: silhouette.actorVisibleFraction,
+        drawingBufferSize: silhouette.drawingBuffer,
+        rendererDpr: silhouette.dpr,
+        canvasCssSize: [gl.domElement.clientWidth || 1, gl.domElement.clientHeight || 1],
+      };
+    };
+    window.__PS04M4_GPU_DIAG__ = {
+      forceInvalidateOnly: () => {
+        pendingIsolation.current = "invalidate";
+        invalidate();
+        return { ok: true };
+      },
+      forceRebindActiveBankOnly: () => {
+        pendingIsolation.current = "rebind";
+        invalidate();
+        return { ok: true, bankId: props.gpuPool?.active().id ?? null };
+      },
+      forceReuploadActiveBankOnly: () => {
+        pendingIsolation.current = "reupload";
+        invalidate();
+        return { ok: true, bankId: props.gpuPool?.active().id ?? null };
+      },
+      forceFullBankRepublish: () => {
+        pendingIsolation.current = "republish";
+        invalidate();
+        return { ok: true, bankId: props.gpuPool?.active().id ?? null };
+      },
+      getMaterialSamplerSnapshot: () => getMaterialSamplerSnapshot({
+        material,
+        pool: props.gpuPool,
+        programCount: gl.info.programs?.length ?? 0,
+      }),
+      textureInventory: () => {
+        const pool = props.gpuPool;
+        const active = pool?.active() ?? null;
+        const snapshot = getMaterialSamplerSnapshot({
+          material,
+          pool: pool ?? null,
+          programCount: gl.info.programs?.length ?? 0,
+        });
+        return {
+          pool: pool?.snapshot() ?? null,
+          active: active ? {
+            ...active.snapshot(pool?.roleOf(active) ?? "active"),
+            slots: active.slotInventory(),
+          } : null,
+          samplers: snapshot,
+        };
+      },
+      liveBankGpuParity: () => {
+        const bank = boundBankRef.current ?? props.gpuPool?.active() ?? null;
+        if (!bank?.source || !bank.target) return { pass: false, reason: "no-bank" };
+        const ids = [0, 1, 7, 64, 255, 1024, 4096, 8191].filter((id) => id < (bank.source?.recordCount ?? 0));
+        const sampled = liveBankMatchesCpu({ bank, ids });
+        const samplers = getMaterialSamplerSnapshot({
+          material,
+          pool: props.gpuPool,
+          programCount: gl.info.programs?.length ?? 0,
+        });
+        return {
+          liveBankGpuParity: sampled.pass && samplers.allSamplerUuidsMatchActiveBank,
+          ...sampled,
+          generation: bank.generation,
+          bankId: bank.id,
+          allSamplerUuidsMatchActiveBank: samplers.allSamplerUuidsMatchActiveBank,
+        };
+      },
+      framebufferSilhouette: () => lastSilhouette.current,
+    };
     return () => {
       if (window.__PS04M4_MEASURE_ACTOR__) delete window.__PS04M4_MEASURE_ACTOR__;
+      if (window.__PS04M4_GPU_DIAG__) delete window.__PS04M4_GPU_DIAG__;
     };
-  }, [gl, props.actorMask]);
+  }, [gl, invalidate, material, props.actorMask, props.compositionRef, props.gpuPool]);
 
   return (
     <>
@@ -2111,59 +2331,7 @@ function M41Content(props: SceneProps) {
   );
 }
 
-function measureActorMask(gl: THREE.WebGLRenderer, actorMask: boolean): ActorMaskMeasure | null {
-  const context = gl.getContext();
-  const dpr = gl.getPixelRatio() || 1;
-  const canvas = gl.domElement;
-  const drawingW = canvas.width;
-  const drawingH = canvas.height;
-  const cssW = canvas.clientWidth || 1;
-  const cssH = canvas.clientHeight || 1;
-  if (drawingW < 2 || drawingH < 2) {
-    return {
-      actorMaskBBoxCss: null,
-      actorVisibleFraction: 0,
-      drawingBufferSize: [drawingW, drawingH],
-      rendererDpr: dpr,
-      canvasCssSize: [cssW, cssH],
-    };
-  }
-  const pixels = new Uint8Array(drawingW * drawingH * 4);
-  context.readPixels(0, 0, drawingW, drawingH, context.RGBA, context.UNSIGNED_BYTE, pixels);
-  let minX = drawingW;
-  let minY = drawingH;
-  let maxX = -1;
-  let maxY = -1;
-  let count = 0;
-  for (let y = 0; y < drawingH; y += 1) {
-    for (let x = 0; x < drawingW; x += 1) {
-      const offset = (y * drawingW + x) * 4;
-      const r = pixels[offset];
-      const g = pixels[offset + 1];
-      const b = pixels[offset + 2];
-      const a = pixels[offset + 3];
-      const hit = actorMask
-        ? r > 180 && g > 180 && b < 40 && a > 8
-        : a > 12;
-      if (!hit) continue;
-      count += 1;
-      if (x < minX) minX = x;
-      if (y < minY) minY = y;
-      if (x > maxX) maxX = x;
-      if (y > maxY) maxY = y;
-    }
-  }
-  const bbox = cssFromDeviceBBox({ minX, minY, maxX, maxY, count }, drawingH, dpr);
-  return {
-    actorMaskBBoxCss: bbox,
-    actorVisibleFraction: visibleFractionFor(bbox, cssW, cssH),
-    drawingBufferSize: [drawingW, drawingH],
-    rendererDpr: dpr,
-    canvasCssSize: [cssW, cssH],
-  };
-}
-
-export function PS04M4Scene(props: SceneProps) {
+export function PS04M4SceneView(props: SceneProps) {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 1, height: 1 });
@@ -2217,7 +2385,10 @@ export function PS04M4Scene(props: SceneProps) {
             button.dataset.status = "running";
             delete button.dataset.result;
             delete button.dataset.error;
-            const parityPromise = runPS04M4GpuGoldenParity(props.source, props.target, props.program);
+            const source = props.session?.getSource() ?? props.source;
+            const target = props.session?.getTarget() ?? props.target;
+            const program = props.session?.getProgram() ?? props.program;
+            const parityPromise = runPS04M4GpuGoldenParity(source, target, program);
             window.__PS04M4_GPU_PARITY_PROMISE__ = parityPromise;
             void parityPromise.then((result) => {
               window.__PS04M4_GPU_PARITY_RESULT__ = result;
@@ -2291,6 +2462,7 @@ export function PS04M4Scene(props: SceneProps) {
         };
         canvas.dataset.ps04M4Environment = JSON.stringify(environment);
         props.onEnvironment?.(environment);
+        props.onRenderer?.(gl);
         canvas.addEventListener("webglcontextlost", (event) => {
           if (!canvas.isConnected) return;
           event.preventDefault();
@@ -2306,7 +2478,7 @@ export function PS04M4Scene(props: SceneProps) {
         });
       }}
     >
-      <DemandRenderInvalidator signature={`${canvasSize.width}:${canvasSize.height}:${props.source.entry.contentHash}:${props.target.entry.contentHash}:${props.program.programId}:${props.progress}:${props.overlay?.enabled ? 1 : 0}:${props.overlay?.scale ?? 1}:${props.overlay?.quaternion?.join(",") ?? ""}:${props.material.theme}:${props.material.themeMix}:${props.material.colorEnabled}:${props.material.colorLayer}:${props.material.diagnostic}:${props.material.colorController.snapshot().phase}:${props.material.colorController.snapshot().palette.mask}:${props.material.colorController.snapshot().paletteProgress}:${props.actorMask ? 1 : 0}`} />
+      <DemandRenderInvalidator signature={`${canvasSize.width}:${canvasSize.height}:${props.source.entry.contentHash}:${props.target.entry.contentHash}:${props.program.programId}:${props.material.theme}:${props.actorMask ? 1 : 0}`} />
       <M41Content
         {...props}
       />
@@ -2314,3 +2486,20 @@ export function PS04M4Scene(props: SceneProps) {
     </div>
   );
 }
+
+function sceneRenderEqual(prev: SceneProps, next: SceneProps) {
+  if (prev.reproduceR4Geometry || next.reproduceR4Geometry) return false;
+  return prev.dpr === next.dpr
+    && prev.reducedMotion === next.reducedMotion
+    && Boolean(prev.r6Staging) === Boolean(next.r6Staging)
+    && Boolean(prev.actorMask) === Boolean(next.actorMask)
+    && prev.material.theme === next.material.theme
+    && prev.debugMode === next.debugMode
+    && prev.session === next.session
+    && prev.gpuPool === next.gpuPool
+    && Boolean(prev.sessionShouldAnimate) === Boolean(next.sessionShouldAnimate)
+    && prev.cameraPreset === next.cameraPreset
+    && prev.evaluator === next.evaluator;
+}
+
+export const PS04M4Scene = memo(PS04M4SceneView, sceneRenderEqual);

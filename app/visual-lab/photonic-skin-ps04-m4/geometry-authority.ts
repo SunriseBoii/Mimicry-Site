@@ -37,6 +37,10 @@ export interface GeometryProgramBind {
   bindCommitted: boolean;
   bindFrameToken: number | null;
   preparedAtMs: number;
+  gpuReady?: boolean;
+  resourceState?: "absent" | "cpu-preparing" | "cpu-ready" | "gpu-staging" | "gpu-ready" | "bound";
+  bankId?: number;
+  bankGeneration?: number;
 }
 
 export interface GeometryRenderAck {
@@ -133,6 +137,8 @@ export function canAtomicBind(args: {
   const snapshot = args.snapshot;
   if (!packet || !snapshot) return false;
   if (packet.bindCommitted) return false;
+  if (packet.gpuReady === false) return false;
+  if (packet.resourceState && packet.resourceState !== "gpu-ready" && packet.resourceState !== "bound") return false;
   if (!snapshot.programReady) return false;
   if (packet.revision !== snapshot.revision) return false;
   if (snapshot.status === "settled") return false;

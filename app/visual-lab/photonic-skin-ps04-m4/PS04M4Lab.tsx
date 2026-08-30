@@ -62,9 +62,13 @@ import {
   type GeometryRenderAck,
 } from "./geometry-authority";
 import { NavigationDirector } from "./navigation-token";
-import { TransitionProgramCache } from "./transition-prewarm";
+import { frozenProgramKey, reachableFrozenPairs, TransitionProgramCache } from "./transition-prewarm";
 import type { TransitionUniforms } from "./PS04M4Scene";
 import styles from "./ps04m4.module.css";
+import { GpuTexturePool } from "./gpu-texture-pool";
+import { ActorResourcePipeline } from "./resource-lifecycle";
+import { compileBroker } from "./compile-broker";
+import { DisjointGpuTimer, R6Instrumentation, r6GpuTimerEnabled, r6StagingEnabled } from "./r6-instrumentation";
 
 const EMPTY_STATS: SceneStats = {
   fps: 0, medianMs: 0, p95Ms: 0, drawCalls: 0, triangles: 0, textureMiB: 0,
@@ -96,6 +100,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const hideUi = actorMask || query.get("ui") === "0";
   const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
   const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
+  const r6Staging = r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
   const [theme, setTheme] = useState<MaterialTheme>(query.get("theme") === "dark" ? "dark" : "light");
   const [dpr, setDpr] = useState(() => parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(query.get("reduced") === "1");
@@ -134,7 +139,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     }
   }, [controller]);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m4-r5";
+  const sessionId = "ps04-m4-r6-r1";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -166,12 +171,28 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const programBindRef = useRef<GeometryProgramBind | null>(null);
   const geometryAckRef = useRef<GeometryRenderAck>({ ...EMPTY_GEOMETRY_ACK });
   const navigationRef = useRef(new NavigationDirector());
-  const programCacheRef = useRef(new TransitionProgramCache());
+  const programCache = useMemo(() => new TransitionProgramCache(), []);
+  const gpuPool = useMemo(() => new GpuTexturePool(), []);
+  const r6 = useMemo(() => new R6Instrumentation(), []);
+  const gpuTimer = useMemo(() => {
+    const timer = new DisjointGpuTimer();
+    timer.enabled = r6GpuTimerEnabled(typeof window === "undefined" ? "" : window.location.search);
+    return timer;
+  }, []);
+  const pipeline = useMemo(() => new ActorResourcePipeline(programCache, gpuPool, r6), [programCache, gpuPool, r6]);
+  const programCacheRef = useRef(programCache);
+  const gpuPoolRef = useRef(gpuPool);
+  const r6Ref = useRef(r6);
+  const gpuTimerRef = useRef(gpuTimer);
+  const pipelineRef = useRef(pipeline);
+  const r6StagingRef = useRef(r6Staging);
   const lastSettledRevisionRef = useRef(0);
   const lastFrameTokenRef = useRef(-1);
   const continuityLiftRef = useRef(continuityLift);
   const reproduceR4GeometryRef = useRef(reproduceR4Geometry);
   const geometryLogRef = useRef<{ recording: boolean; frames: Array<Record<string, unknown>> }>({ recording: false, frames: [] });
+  const manifestsRef = useRef<{ m3: M3Manifest | null; m4: M41Manifest | null }>({ m3: null, m4: null });
+  const lookaheadPinsRef = useRef<Set<string>>(new Set());
 
   const startClock = useCallback(() => {
     const clock = clockRef.current;
@@ -179,6 +200,9 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     clock.running = true;
     clock.previous = performance.now();
     const loop = (now: number) => {
+      const clockStarted = performance.now();
+      const split = { tick: 0, sync: 0, nav: 0, compose: 0, ui: 0 };
+      const rafSkewMs = clockStarted - now;
       const hidden = document.visibilityState === "hidden";
       session.setHidden(hidden);
       const dtRaw = (now - clock.previous) / 1000;
@@ -195,6 +219,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         }
       }
       const dt = Math.min(Math.max(dtRaw, 0), 0.1);
+      split.tick = performance.now() - clockStarted;
       const sessionSnap = session.snapshot();
       coordinator.syncFromSession({
         geometryProgress: sessionSnap.geometryProgress,
@@ -237,6 +262,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         coordinator.acknowledgeRender(ack);
       }
       geometrySnapshotRef.current = coordinator.geometrySnapshot();
+      split.sync = performance.now() - clockStarted;
       const progress = controller.getProgress();
       progressRef.current = progress;
       const host = canvasHostRef.current;
@@ -292,6 +318,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
           setContract(actorContract);
         }
       }
+      split.nav = performance.now() - clockStarted;
       const liveDpr = dprRef.current;
       const liveIdentity = identityRef.current;
       const liveReduced = reducedRef.current;
@@ -316,11 +343,12 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         identity: liveIdentity,
         fitProfile: tx.targetFitProfile,
       });
-      const siteU = liveReduced || liveIdentity ? 1 : tx.siteProgress;
+      const siteU = liveReduced || liveIdentity ? 1 : tx.slotProgress;
+      const fitU = liveReduced || liveIdentity ? 1 : tx.fitProgress;
       const mixedX = sourceSample.cssCenterX + (targetSample.cssCenterX - sourceSample.cssCenterX) * siteU;
       const mixedY = sourceSample.cssCenterY + (targetSample.cssCenterY - sourceSample.cssCenterY) * siteU;
       const mixedSize = sourceSample.cssSize + (targetSample.cssSize - sourceSample.cssSize) * siteU;
-      const mixedFit = tx.sourceFit + (tx.targetFit - tx.sourceFit) * siteU;
+      const mixedFit = tx.sourceFit + (tx.targetFit - tx.sourceFit) * fitU;
       visualRef.current.x = mixedX;
       visualRef.current.y = mixedY;
       visualRef.current.size = mixedSize;
@@ -400,15 +428,23 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
           });
         }
       }
+      split.compose = performance.now() - clockStarted;
       if (now - clock.lastUi > 160 || clock.lastUi === 0) {
         setUi(sessionSnap);
         setTxUi(tx);
         clock.lastUi = now;
         perfRef.current.markReactCommit();
       }
+      split.ui = performance.now() - clockStarted;
+      const clockMs = split.ui;
+      if (clockMs >= 50 || rafSkewMs >= 50) r6Ref.current.mark("r6:slow-clock", { durationMs: clockMs, rafSkewMs, visual: tx.visualLifecycle, node: progress.activeNodeId, split });
       const siteMoving = siteU < 0.999 && visualRef.current.visible !== target.visible;
       const geoStatus = coordinator.geometrySnapshot().status;
-      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || geometryLogRef.current.recording) {
+      const preparing = tx.visualLifecycle === "preparing" || pipelineRef.current.visual === "preparing";
+      if (tx.status === "settled" && pipelineRef.current.visual === "morphing") {
+        pipelineRef.current.markSettled();
+      }
+      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || preparing || geometryLogRef.current.recording) {
         clock.frame = requestAnimationFrame(loop);
       } else {
         clock.running = false;
@@ -435,6 +471,33 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       progressRef.current = progress;
       setActiveNode(progress.activeNodeId);
       coordinatorRef.current.noteCommittedNode(controller.committedActorNodeId(), performance.now());
+      r6Ref.current.mark("r6:semantic-node-commit", { nodeId: progress.activeNodeId, scrollY: window.scrollY });
+      const manifests = manifestsRef.current;
+      if (manifests.m3) {
+        const node = controller.committedActorNodeId();
+        const direction = controller.getProgress().direction;
+        const pairs = reachableFrozenPairs(node, direction);
+        const viewport = window.innerWidth <= 430 ? "mobile" : "desktop";
+        programCacheRef.current.setBudget(viewport === "mobile");
+        lookaheadPinsRef.current = programCacheRef.current.replacePins(
+          pairs.map(([from, to]) => frozenProgramKey(from, to, reducedRef.current, viewport)),
+          lookaheadPinsRef.current,
+          pipelineRef.current.pinnedIntentKey ? [pipelineRef.current.pinnedIntentKey] : [],
+        );
+        programCacheRef.current.startRoutePrewarm({
+          current: node,
+          manifest: manifests.m3,
+          motion: manifests.m4,
+          reducedMotion: reducedRef.current,
+          direction,
+          hidden: () => session.snapshot().offscreen
+            || document.visibilityState === "hidden"
+            || coordinatorRef.current.snapshot().visualLifecycle === "morphing"
+            || coordinatorRef.current.snapshot().visualLifecycle === "preparing"
+            || pipelineRef.current.state === "gpu-staging"
+            || pipelineRef.current.state === "cpu-preparing",
+        });
+      }
       startClock();
     });
     startClock();
@@ -460,6 +523,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     loadRuntimeManifests(controllerAbort.signal).then(async ({ m3, m4 }) => {
       setManifest(m3);
       setMotionManifest(m4);
+      manifestsRef.current = { m3, m4 };
       stateIndexRef.current = indexStates(m3.states);
       const entry = m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
       const state = await cache.loadState(entry);
@@ -492,6 +556,16 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         requestKeyRef.current = semanticActorKey(bootContract).serialized;
         contractRef.current = bootContract;
         setContract(bootContract);
+        if (r6StagingRef.current) {
+          pipelineRef.current.hydrateResident({
+            revision: coordinatorRef.current.snapshot().revision,
+            navigationToken: navigationRef.current.lastToken(),
+            source: state,
+            target: state,
+            program,
+            viewport: typeof window !== "undefined" && window.innerWidth <= 430 ? "mobile" : "desktop",
+          });
+        }
       }
       setLoading(false);
       startClock();
@@ -500,9 +574,13 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         manifest: m3,
         motion: m4,
         reducedMotion,
+        direction: controller.getProgress().direction,
         hidden: () => session.snapshot().offscreen
           || document.visibilityState === "hidden"
-          || coordinatorRef.current.snapshot().status === "running",
+          || coordinatorRef.current.snapshot().visualLifecycle === "morphing"
+          || coordinatorRef.current.snapshot().visualLifecycle === "preparing"
+          || pipelineRef.current.state === "gpu-staging"
+          || pipelineRef.current.state === "cpu-preparing",
       });
       const node = labQuery().get("node");
       if (node && SCREEN_NODE_BY_ID[node as ScreenNodeId]) {
@@ -547,6 +625,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     setContract(next);
     if (!manifest) return;
     if (decision.kind === "exit") {
+      pipelineRef.current.cancelPending("exit");
       startClock();
       return;
     }
@@ -563,6 +642,30 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     }
     const request = requestFromContract(next);
     if (!request.stateId) return;
+    r6Ref.current.mark("r6:navigation-intent", { nodeId: next.hostNodeId, revision: transaction.revision });
+    const geo = coordinator.geometrySnapshot();
+    const sourceChoice = selectProgramSourceMode({
+      shaderProgress: geo.shaderProgress,
+      boundTargetGeometryId: geo.boundTargetGeometryId,
+      boundSourceGeometryId: geo.boundSourceGeometryId,
+      settledGeometryId: geo.settledGeometryId,
+      sessionSourceId: session.getSource()?.entry.stateId ?? null,
+      sessionTargetId: session.getTarget()?.entry.stateId ?? null,
+      sessionProgress: session.snapshot().geometryProgress,
+    });
+    if (r6StagingRef.current && !reproduceR4GeometryRef.current && sourceChoice.mode === "frozen" && sourceChoice.sourceGeometryId) {
+      pipelineRef.current.request({
+        revision: transaction.revision,
+        navigationToken: navigationRef.current.lastToken(),
+        sourceId: sourceChoice.sourceGeometryId,
+        targetId: request.stateId,
+        reducedMotion,
+        viewport: typeof window !== "undefined" && window.innerWidth <= 430 ? "mobile" : "desktop",
+        prefer: controller.getProgress().direction < 0 ? "pending" : "forward",
+      });
+      startClock();
+      return;
+    }
     const revision = session.beginRequest(request.stateId);
     if (!coordinator.isCurrent(transaction.revision)) return;
     const captured = session.captureJoint();
@@ -656,7 +759,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     } catch (reason) {
       if (session.isCurrent(revision)) setError(reason instanceof Error ? reason.message : String(reason));
     }
-  }, [identity, manifest, motionManifest, reducedMotion, session, startClock]);
+  }, [identity, manifest, motionManifest, reducedMotion, session, startClock, controller]);
 
   const actorRequest: ActorRequest | null = contract ? requestFromContract(contract) : null;
 
@@ -668,9 +771,50 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     reducedRef.current = reducedMotion;
     continuityLiftRef.current = continuityLift;
     reproduceR4GeometryRef.current = reproduceR4Geometry;
+    r6StagingRef.current = r6Staging;
     requestActorRef.current = (next) => { void requestActor(next); };
+    const pipeline = pipelineRef.current;
+    pipeline.onReady = (packet) => {
+      const coordinator = coordinatorRef.current;
+      if (!coordinator.isCurrent(packet.revision)) {
+        r6Ref.current.noteStaleBind();
+        return;
+      }
+      r6Ref.current.mark("r6:idle-handoff", { revision: packet.revision });
+      const sessionRevision = session.beginRequest(packet.target.entry.stateId);
+      if (!session.isCurrent(sessionRevision) || !coordinator.isCurrent(packet.revision)) return;
+      const captured = session.captureJoint();
+      programBindRef.current = {
+        revision: packet.revision,
+        navigationToken: packet.navigationToken,
+        program: packet.program,
+        source: packet.source,
+        target: packet.target,
+        bindCommitted: false,
+        bindFrameToken: null,
+        preparedAtMs: packet.preparedAtMs,
+        gpuReady: packet.bank.gpuReady === true,
+        resourceState: "gpu-ready",
+        bankId: packet.bank.id,
+        bankGeneration: packet.bank.generation,
+      };
+      r6Ref.current.mark("r6:geometry-transaction-start", { revision: packet.revision });
+      session.commitTransition({
+        revision: sessionRevision,
+        source: packet.source,
+        target: packet.target,
+        program: packet.program,
+        captured,
+        play: false,
+      });
+      coordinator.markProgramReady(packet.revision, packet.program.programId, packet.preparedAtMs);
+      pipeline.markBound(packet.revision);
+      startClock();
+    };
+    pipeline.yieldGate.attach();
+    r6Ref.current.startLongTasks();
     startClock();
-  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex, continuityLift, reproduceR4Geometry]);
+  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex, continuityLift, reproduceR4Geometry, r6Staging, session]);
 
   const navigate = useCallback((id: ScreenNodeId) => controller.scrollToNode(id), [controller]);
 
@@ -787,16 +931,32 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       programCache: programCacheRef.current.stats,
       continuityLift: continuityLiftRef.current,
       material: window.__PS04M4_MATERIAL_UNIFORMS__ ?? null,
+      resource: pipelineRef.current.snapshot(),
+      gpuPool: gpuPoolRef.current.snapshot(),
+      visualLifecycle: coordinatorRef.current.snapshot().visualLifecycle,
+      idleEnabled: session.snapshot().overlayEnabled,
+      idleScale: session.snapshot().overlay.scale,
+      r6Staging: r6StagingRef.current,
+      scrollY: typeof window !== "undefined" ? window.scrollY : 0,
     };
   }, [controller, session, sessionId]);
 
   useEffect(() => {
     window.__PS04M4_LAB__ = {
       runId: "ps04-m4",
-        stage: "PS-04.M4.R5",
+      stage: "PS-04.M4.R6.R1",
       mode,
       get ready() {
-        return Boolean(target && !loading && (stats.lastActorDrawCalls > 0 || window.__PS04M4_SCENE_READY__ || compositionRef.current.actorDraw === false));
+        return Boolean(target && !loading);
+      },
+      get labReady() {
+        return Boolean(target && !loading);
+      },
+      get actorResourceReady() {
+        return window.__PS04M4_ACTOR_RESOURCE_READY__ === true;
+      },
+      get actorFramebufferReady() {
+        return window.__PS04M4_ACTOR_FRAMEBUFFER_READY__ === true;
       },
       get activeNode() {
         return controller.getProgress().activeNodeId;
@@ -828,9 +988,28 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         targetId: programBindRef.current.target.entry.stateId,
         bindCommitted: programBindRef.current.bindCommitted,
         bindFrameToken: programBindRef.current.bindFrameToken,
+        gpuReady: programBindRef.current.gpuReady ?? null,
+        bankId: programBindRef.current.bankId ?? null,
+        bankGeneration: programBindRef.current.bankGeneration ?? null,
       } : null,
+      resource: () => pipelineRef.current.snapshot(),
+      gpuPool: () => gpuPoolRef.current.snapshot(),
+      r6: () => ({
+        ...r6Ref.current.snapshot(),
+        gpuTimer: gpuTimerRef.current.snapshot(),
+        stagingEnabled: r6StagingRef.current,
+        compileWorker: compileBroker.usingWorker,
+        compileWorkerError: compileBroker.lastError,
+        compileReceiveMs: compileBroker.lastReceiveMs,
+        phases: session.snapshot().phases,
+        overlayEnabled: session.snapshot().overlayEnabled,
+        visualLifecycle: coordinatorRef.current.snapshot().visualLifecycle,
+        resource: pipelineRef.current.snapshot(),
+        scrollY: window.scrollY,
+      }),
       navigation: () => controller.getModeSnapshot(),
       lastActorTarget: () => navigationRef.current.lastIssuedTarget(),
+      idleOverlay: () => session.snapshot().overlay,
       programCache: () => programCacheRef.current.stats,
       startTrace: () => { traceRef.current.start(); },
       stopTrace: () => traceRef.current.stop(),
@@ -854,7 +1033,35 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         const latencies = coordinatorRef.current.latencies();
         if (latencies.requestDelayMs != null) perfRef.current.noteRequestLatency(latencies.requestDelayMs);
         if (latencies.transitionDurationMs != null) perfRef.current.noteTransitionDuration(latencies.transitionDurationMs);
-        return perfRef.current.stop();
+        const report = perfRef.current.stop();
+        const gpu = gpuTimerRef.current.snapshot();
+        report.gpuTimer = {
+          available: gpu.available,
+          extension: gpu.extension,
+          disjoint: gpu.disjoint,
+          gpuMs: gpu.count
+            ? {
+              p50: Number((gpu.p50 ?? 0).toFixed(3)),
+              p95: Number((gpu.p95 ?? 0).toFixed(3)),
+              p99: Number((gpu.max ?? 0).toFixed(3)),
+              max: Number((gpu.max ?? 0).toFixed(3)),
+              mean: Number((gpu.p50 ?? 0).toFixed(3)),
+              count: gpu.count,
+              over16_7: 0,
+              over33_3: 0,
+              over50: 0,
+              consecutiveMissedMax: 0,
+            }
+            : null,
+          note: gpu.available
+            ? `EXT_disjoint_timer_query_webgl2 sampled ${gpu.count} actor draws`
+            : "GPU timer unavailable",
+        };
+        report.textureUploadCount = r6Ref.current.textureUploadCount;
+        report.initTextureCount = r6Ref.current.initTextureCount;
+        report.r6LongTasks = r6Ref.current.longTasks.slice();
+        report.r6Measures = r6Ref.current.measures.slice(-48);
+        return report;
       },
       sampleTransition: async (durationMs = 1400) => {
         const rows: Array<Record<string, unknown>> = [];
@@ -937,6 +1144,14 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       closeOverlay: () => setFlow(closeOverlay),
       loseContext: () => document.getElementById("ps04m4-context-restore-run-motion")?.dispatchEvent(new MouseEvent("click", { bubbles: true })),
       canvasCount: () => document.querySelectorAll("canvas").length,
+      forceInvalidateOnly: () => window.__PS04M4_GPU_DIAG__?.forceInvalidateOnly?.(),
+      forceRebindActiveBankOnly: () => window.__PS04M4_GPU_DIAG__?.forceRebindActiveBankOnly?.(),
+      forceReuploadActiveBankOnly: () => window.__PS04M4_GPU_DIAG__?.forceReuploadActiveBankOnly?.(),
+      forceFullBankRepublish: () => window.__PS04M4_GPU_DIAG__?.forceFullBankRepublish?.(),
+      getMaterialSamplerSnapshot: () => window.__PS04M4_GPU_DIAG__?.getMaterialSamplerSnapshot?.() ?? null,
+      textureInventory: () => window.__PS04M4_GPU_DIAG__?.textureInventory?.() ?? null,
+      liveBankGpuParity: () => window.__PS04M4_GPU_DIAG__?.liveBankGpuParity?.() ?? null,
+      framebufferSilhouette: () => window.__PS04M4_GPU_DIAG__?.framebufferSilhouette?.() ?? null,
     };
     if (mode === "preview") window.__PS04M4_PREVIEW__ = window.__PS04M4_LAB__;
   }, [activeNode, actorRequest, contextState, controller, diagnostics, environment, flow.overlay, flow.unlock, identity, loading, mode, navigate, reducedMotion, requestActor, session, sessionId, startClock, stats, target, theme]);
@@ -975,15 +1190,37 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
             geometryAckRef={geometryAckRef}
             onGeometryAck={(ack) => { geometryAckRef.current = ack; }}
             reproduceR4Geometry={reproduceR4Geometry}
+            r6Staging={r6Staging}
+            gpuPool={r6Staging ? gpuPool : null}
+            gpuTimer={gpuTimer}
+            instrumentation={r6}
             actorMask={actorMask}
             diagnosticId="motion"
             onStats={setStats}
             onEnvironment={setEnvironment}
+            onRenderer={(renderer) => pipelineRef.current.attachRenderer(renderer)}
             onContextState={(state) => {
               setContextState(state);
-              if (state === "lost") session.setPauseAll(true);
+              if (state === "lost") {
+                session.setPauseAll(true);
+                pipelineRef.current.contextLost();
+              }
               if (state === "restored") {
                 session.setPauseAll(false);
+                pipelineRef.current.restoreGpu();
+                const sourceState = session.getSource();
+                const targetState = session.getTarget();
+                const restoredProgram = session.getProgram();
+                if (r6StagingRef.current && sourceState && targetState && restoredProgram) {
+                  pipelineRef.current.hydrateResident({
+                    revision: coordinatorRef.current.snapshot().revision,
+                    navigationToken: navigationRef.current.lastToken(),
+                    source: sourceState,
+                    target: targetState,
+                    program: restoredProgram,
+                    viewport: typeof window !== "undefined" && window.innerWidth <= 430 ? "mobile" : "desktop",
+                  });
+                }
                 startClock();
               }
             }}
@@ -1050,7 +1287,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       ) : null}
       {hud ? (
         <aside className={styles.hud} data-qa="m4-hud">
-          <div>PS-04.M4.R4 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
+          <div>PS-04.M4.R6.R1 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
           <div>
             {contract ? <>{contract.requestedFamily} → {contract.resolvedGeometryId ?? "none"}<span className={styles.badge}>{contract.resolution}</span></> : "boot"}
           </div>

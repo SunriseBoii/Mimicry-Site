@@ -1,19 +1,24 @@
 /**
- * Route-aware frozen-program prewarm. Ordinary adjacent M4 transitions must
- * not compile on the user path. Live interrupt retargets still compile when
- * a runtime snapshot is the source; those are reported separately.
+ * Route-aware frozen-program prewarm with a byte-accounted LRU.
+ * CPU cache hits are not GPU readiness. Prewarm must not bind, tick
+ * geometry, or disable idle.
  */
 
 import type { DecodedState, M3Manifest, StateEntry } from "../photonic-skin-m4-1/m41-data";
 import type { M41Manifest } from "../photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../photonic-skin-m4-1/m41-evaluator";
-import { compileFrozenPair, loadEntry, viewportForFrame } from "../photonic-skin-ps04-m3/runtime";
+import { loadEntry } from "../photonic-skin-ps04-m3/runtime";
+import { compileBroker } from "./compile-broker";
 import {
   CANONICAL_BRAND_WIDE_ID,
   MASTER_STATE_ID,
   SINGLE_STATE_IDS,
 } from "./screen-actor-contract";
-import { GRAPH_EDGES, topologyNeighbors, type ScreenNodeId } from "./topology";
+import { topologyNeighbors, type ScreenNodeId } from "./topology";
+import { decodedStateBytes, programCpuBytes } from "./texture-pack";
+
+export const CPU_CACHE_BUDGET_DESKTOP = 96 * 1024 * 1024;
+export const CPU_CACHE_BUDGET_MOBILE = 32 * 1024 * 1024;
 
 export type PrewarmStatus = "idle" | "ready" | "compiling" | "cached" | "miss";
 
@@ -26,6 +31,8 @@ export interface PrewarmStats {
   cached: number;
   lastKey: string | null;
   lastStatus: PrewarmStatus;
+  bytes: number;
+  evictions: number;
 }
 
 const DEFAULT_GEOMETRY: Record<string, string> = {
@@ -56,10 +63,11 @@ export function frozenProgramKey(sourceId: string, targetId: string, reducedMoti
   return `${sourceId}|${targetId}|${reducedMotion ? 1 : 0}|${viewport}`;
 }
 
-export function reachableFrozenPairs(current: ScreenNodeId): Array<readonly [string, string]> {
+export function reachableFrozenPairs(current: ScreenNodeId, direction: 1 | -1 = 1): Array<readonly [string, string]> {
   const pairs: Array<readonly [string, string]> = [];
   const seen = new Set<string>();
-  const push = (fromNode: string, toNode: string) => {
+  const push = (fromNode: string | undefined, toNode: string | undefined) => {
+    if (!fromNode || !toNode) return;
     const from = defaultGeometryForNode(fromNode);
     const to = defaultGeometryForNode(toNode);
     if (!from || !to || from === to) return;
@@ -68,11 +76,20 @@ export function reachableFrozenPairs(current: ScreenNodeId): Array<readonly [str
     seen.add(key);
     pairs.push([from, to]);
   };
-  for (const neighbor of topologyNeighbors(current)) push(current, neighbor);
-  for (const neighbor of topologyNeighbors(current)) push(neighbor, current);
-  for (const edge of GRAPH_EDGES) {
-    push(edge.from, edge.to);
-    push(edge.to, edge.from);
+  const neighbors = topologyNeighbors(current);
+  const next = direction === 1 ? neighbors[0] : neighbors[neighbors.length - 1];
+  const previous = direction === 1 ? neighbors[neighbors.length - 1] : neighbors[0];
+  push(current, next);
+  push(next, current);
+  push(current, previous);
+  push(previous, current);
+  if (neighbors[1]) {
+    push(current, neighbors[1]);
+    push(neighbors[1], current);
+  }
+  if (current === "04") {
+    push("04", "05.1");
+    push("05.1", "04");
   }
   return pairs;
 }
@@ -111,19 +128,62 @@ function freezeProgram(program: TransitionProgram): TransitionProgram {
   };
 }
 
+interface CacheEntry {
+  key: string;
+  program: TransitionProgram;
+  bytes: number;
+  lastUsed: number;
+  pin: number;
+}
+
 export class TransitionProgramCache {
-  private readonly programs = new Map<string, TransitionProgram>();
+  private readonly programs = new Map<string, CacheEntry>();
   private readonly inflight = new Map<string, Promise<TransitionProgram>>();
   private readonly states = new Map<string, DecodedState>();
+  private readonly pins = new Set<string>();
   private idleHandle: IdleHandle | null = null;
   private cancelled = false;
+  private clock = 0;
+  manifest: M3Manifest | null = null;
+  motion: M41Manifest | null = null;
+  budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
   readonly stats: PrewarmStats = {
     hits: 0, misses: 0, compiles: 0, prewarms: 0, inflight: 0, cached: 0, lastKey: null, lastStatus: "idle",
+    bytes: 0, evictions: 0,
   };
+
+  setBudget(mobile: boolean) {
+    this.budgetBytes = mobile ? CPU_CACHE_BUDGET_MOBILE : CPU_CACHE_BUDGET_DESKTOP;
+    this.evictIfNeeded();
+  }
+
+  size() {
+    return this.programs.size;
+  }
+
+  byteLength() {
+    let bytes = 0;
+    for (const entry of this.programs.values()) bytes += entry.bytes;
+    for (const state of this.states.values()) bytes += decodedStateBytes(state);
+    return bytes;
+  }
+
+  pinnedKeys() {
+    return [...this.pins];
+  }
+
+  peekState(stateId: string) {
+    return this.states.get(stateId) ?? null;
+  }
 
   lookup(sourceId: string, targetId: string, reducedMotion: boolean, viewport = "desktop") {
     const key = frozenProgramKey(sourceId, targetId, reducedMotion, viewport);
-    return this.programs.get(key) ?? null;
+    const entry = this.programs.get(key);
+    if (entry) {
+      entry.lastUsed = ++this.clock;
+      return entry.program;
+    }
+    return null;
   }
 
   status(sourceId: string, targetId: string, reducedMotion: boolean, viewport = "desktop"): PrewarmStatus {
@@ -131,6 +191,25 @@ export class TransitionProgramCache {
     if (this.programs.has(key)) return "cached";
     if (this.inflight.has(key)) return "compiling";
     return "miss";
+  }
+
+  pin(key: string) {
+    this.pins.add(key);
+  }
+
+  unpin(key: string) {
+    this.pins.delete(key);
+  }
+
+  replacePins(keys: readonly string[], previous?: ReadonlySet<string> | readonly string[], keep: Iterable<string> = []) {
+    const next = new Set(keys);
+    const prior = previous ? new Set(previous) : this.pins;
+    const preserved = new Set(keep);
+    for (const key of prior) {
+      if (!next.has(key) && !preserved.has(key)) this.unpin(key);
+    }
+    for (const key of next) this.pin(key);
+    return next;
   }
 
   rememberState(state: DecodedState) {
@@ -154,14 +233,17 @@ export class TransitionProgramCache {
     viewport?: "desktop" | "mobile";
     signal?: AbortSignal;
   }) {
+    this.manifest = args.manifest;
+    this.motion = args.motion;
     const viewport = args.viewport ?? "desktop";
     const key = frozenProgramKey(args.source.entry.stateId, args.target.entry.stateId, args.reducedMotion, viewport);
     this.stats.lastKey = key;
     const cached = this.programs.get(key);
     if (cached) {
+      cached.lastUsed = ++this.clock;
       this.stats.hits += 1;
       this.stats.lastStatus = "cached";
-      return cached;
+      return cached.program;
     }
     const pending = this.inflight.get(key);
     if (pending) {
@@ -171,18 +253,30 @@ export class TransitionProgramCache {
     this.stats.misses += 1;
     this.stats.compiles += 1;
     this.stats.lastStatus = "compiling";
-    const work = compileFrozenPair(args.source, args.target, args.manifest, args.motion, {
+    const work = compileBroker.compile({
+      source: args.source,
+      target: args.target,
+      manifest: args.manifest,
+      motion: args.motion,
       reducedMotion: args.reducedMotion,
-      trigger: "qa",
-      viewport: viewportForFrame(viewport),
+      viewport,
       signal: args.signal,
     }).then((program) => {
       const frozen = freezeProgram(program);
-      this.programs.set(key, frozen);
+      const bytes = programCpuBytes(frozen);
+      this.programs.set(key, {
+        key,
+        program: frozen,
+        bytes,
+        lastUsed: ++this.clock,
+        pin: this.pins.has(key) ? 1 : 0,
+      });
       this.stats.cached = this.programs.size;
+      this.stats.bytes = this.byteLength();
       this.inflight.delete(key);
       this.stats.inflight = this.inflight.size;
       this.stats.lastStatus = "cached";
+      this.evictIfNeeded();
       return frozen;
     }).catch((reason) => {
       this.inflight.delete(key);
@@ -195,25 +289,33 @@ export class TransitionProgramCache {
     return work;
   }
 
+  evictIfNeeded() {
+    while (this.byteLength() > this.budgetBytes && this.programs.size > 0) {
+      let victim: CacheEntry | null = null;
+      for (const entry of this.programs.values()) {
+        if (this.pins.has(entry.key)) continue;
+        if (!victim || entry.lastUsed < victim.lastUsed) victim = entry;
+      }
+      if (!victim) break;
+      this.programs.delete(victim.key);
+      this.stats.evictions += 1;
+      this.stats.cached = this.programs.size;
+      this.stats.bytes = this.byteLength();
+    }
+  }
+
   startRoutePrewarm(args: {
     current: ScreenNodeId;
     manifest: M3Manifest;
     motion: M41Manifest | null;
     reducedMotion: boolean;
     hidden: () => boolean;
+    direction?: 1 | -1;
   }) {
     this.cancelled = false;
-    const queue = reachableFrozenPairs(args.current);
-    const neighbors = new Set(topologyNeighbors(args.current).flatMap((id) => {
-      const from = defaultGeometryForNode(args.current);
-      const to = defaultGeometryForNode(id);
-      return from && to && from !== to ? [`${from}|${to}`, `${to}|${from}`] : [];
-    }));
-    queue.sort((left, right) => {
-      const leftNear = neighbors.has(`${left[0]}|${left[1]}`) ? 0 : 1;
-      const rightNear = neighbors.has(`${right[0]}|${right[1]}`) ? 0 : 1;
-      return leftNear - rightNear;
-    });
+    this.manifest = args.manifest;
+    this.motion = args.motion;
+    const queue = reachableFrozenPairs(args.current, args.direction ?? 1);
     const step = () => {
       if (this.cancelled) return;
       if (args.hidden() || typeof document !== "undefined" && document.visibilityState === "hidden") {
@@ -249,7 +351,7 @@ export class TransitionProgramCache {
         }
       })();
     };
-    this.idleHandle = scheduleIdle(step, 1);
+    this.idleHandle = scheduleIdle(step, 160);
   }
 
   pause() {
@@ -260,5 +362,18 @@ export class TransitionProgramCache {
   cancel() {
     this.cancelled = true;
     this.pause();
+  }
+
+  insertStubForTest(key: string, bytes: number) {
+    this.programs.set(key, {
+      key,
+      program: { programId: key } as TransitionProgram,
+      bytes,
+      lastUsed: ++this.clock,
+      pin: 0,
+    });
+    this.stats.cached = this.programs.size;
+    this.stats.bytes = this.byteLength();
+    this.evictIfNeeded();
   }
 }

@@ -478,7 +478,7 @@ test("R3 lab keeps one session tick owner and one Canvas/material/program/draw",
   assert.equal((m4Lab.match(/new PhotonicMotionSession/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r5"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r6-r1"/);
   assert.match(m4Scene, /identityBypass \? 0/);
   assert.match(m4Lab, /NaturalRafRecorder/);
 });

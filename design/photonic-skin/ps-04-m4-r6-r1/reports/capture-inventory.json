@@ -1,0 +1,392 @@
+{
+  "capturedAt": "2026-08-30T17:13:02.764Z",
+  "shots": [
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/02-r6r1-fresh-light-dpr1.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/04-r6r1-fresh-dark-dpr1.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/09-fresh-light-dpr1.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/10-fresh-light-dpr1.5.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/11-fresh-light-dpr2.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/10b-fresh-dark-dpr1.5.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/11b-fresh-dark-dpr2.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/12-mobile-390.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/21-mask-bbox-hero.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/21b-mask-bbox-content.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/boards/22-live-bank-parity.png"
+  ],
+  "videos": [
+    {
+      "name": "fresh-load-no-interaction",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/fresh-load-no-interaction.webm"
+    },
+    {
+      "name": "cold-navigation-visible",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/cold-navigation-visible.webm"
+    },
+    {
+      "name": "continuous-idle-visible",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/continuous-idle-visible.webm"
+    },
+    {
+      "name": "warm-content-design",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/warm-content-design.webm"
+    },
+    {
+      "name": "seven-singles",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/seven-singles.webm"
+    },
+    {
+      "name": "right-left",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/right-left.webm"
+    },
+    {
+      "name": "rapid-latest-target",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/rapid-latest-target.webm"
+    },
+    {
+      "name": "context-restore",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/context-restore.webm"
+    },
+    {
+      "name": "second-resource-cycle",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r6-r1/renders/browser/video/second-resource-cycle.webm"
+    }
+  ],
+  "screens": [
+    {
+      "name": "mask-content",
+      "node": "05.1",
+      "actorDraw": true,
+      "actorFramebufferReady": true,
+      "draws": 1,
+      "silhouette": {
+        "visiblePixelCount": 114309,
+        "bbox": {
+          "left": 58,
+          "top": 352,
+          "width": 541,
+          "height": 348,
+          "right": 599,
+          "bottom": 700,
+          "pixelCount": 114309
+        },
+        "bboxWidth": 541,
+        "bboxHeight": 348,
+        "bboxArea": 188268,
+        "actorVisibleFraction": 1,
+        "centroid": {
+          "x": 338.3513196686175,
+          "y": 522.1118634578204
+        },
+        "edgeClipping": false,
+        "drawingBuffer": [
+          1440,
+          900
+        ],
+        "dpr": 1,
+        "actorDraw": true,
+        "failDrawWithoutPixels": false,
+        "pass": true
+      },
+      "liveBank": {
+        "liveBankGpuParity": true,
+        "pass": true,
+        "samples": [
+          {
+            "id": 0,
+            "source": [
+              -0.5221105813980103,
+              0.808149516582489,
+              -0.2715802490711212
+            ],
+            "target": [
+              -0.19169731438159943,
+              -1.3518242835998535,
+              -0.5394763946533203
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              -0.017168765887618065,
+              0.2721310257911682
+            ]
+          },
+          {
+            "id": 1,
+            "source": [
+              0.9685426950454712,
+              0.13962112367153168,
+              -0.2049853503704071
+            ],
+            "target": [
+              -0.07968141883611679,
+              0.509549081325531,
+              -0.16743534803390503
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              0.024476615712046623,
+              -0.18131911754608154
+            ]
+          },
+          {
+            "id": 7,
+            "source": [
+              -0.9122273921966553,
+              0.2919408977031708,
+              -0.2870738208293915
+            ],
+            "target": [
+              -0.19075986742973328,
+              0.48288947343826294,
+              0.002037287224084139
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              0.16216662526130676,
+              -0.10888414829969406
+            ]
+          },
+          {
+            "id": 64,
+            "source": [
+              0.8850746750831604,
+              -0.42555269598960876,
+              -0.1861666738986969
+            ],
+            "target": [
+              -1.4935407638549805,
+              -0.4540936052799225,
+              0.19830386340618134
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              0.3161619305610657,
+              -0.04755180701613426
+            ]
+          },
+          {
+            "id": 255,
+            "source": [
+              -0.8196595311164856,
+              0.5467743873596191,
+              0.168949693441391
+            ],
+            "target": [
+              -1.5919685363769531,
+              0.9613847732543945,
+              0.25368285179138184
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              0.04441630467772484,
+              -0.17530716955661774
+            ]
+          },
+          {
+            "id": 1024,
+            "source": [
+              -0.790154218673706,
+              0.6113280057907104,
+              -0.03580554574728012
+            ],
+            "target": [
+              -0.19261623919010162,
+              -0.0696738064289093,
+              -0.574658215045929
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              -0.10850410908460617,
+              0.13700613379478455
+            ]
+          },
+          {
+            "id": 4096,
+            "source": [
+              0.4153594374656677,
+              0.22109201550483704,
+              0.8820101618766785
+            ],
+            "target": [
+              -1.0743062496185303,
+              0.5003600716590881,
+              0.001644047675654292
+            ],
+            "sourceScale": 1.150390625,
+            "targetScale": 1.150390625,
+            "activation": [
+              0,
+              0.97998046875,
+              -0.19925057888031006,
+              -0.09073790162801743
+            ]
+          },
+          {
+            "id": 8191,
+            "source": [
+              -0.25955820083618164,
+              -0.585597574710846,
+              0.000039095626561902463
+            ],
+            "target": [
+              1.2602026462554932,
+              0.8961176872253418,
+              0.08947198837995529
+            ],
+            "sourceScale": 0.25,
+            "targetScale": 1.150390625,
+            "activation": [
+              0.2298583984375,
+              0.7373046875,
+              -0.03400794416666031,
+              -0.3653395473957062
+            ]
+          }
+        ],
+        "activationNonZero": true,
+        "activationHits": 16384,
+        "generation": 1,
+        "bankId": 1,
+        "allSamplerUuidsMatchActiveBank": true
+      },
+      "samplers": {
+        "materialUuid": "06431619-3097-4278-a45b-d6dee4c7d60d",
+        "programCount": 1,
+        "activeBankId": 1,
+        "generation": 1,
+        "uniforms": [
+          {
+            "uniformName": "uSource",
+            "logicalSlot": "source",
+            "boundTextureUuid": "c1e3da9b-a0c4-4af0-b943-4b74a9792f33",
+            "bankTextureUuid": "c1e3da9b-a0c4-4af0-b943-4b74a9792f33",
+            "match": true
+          },
+          {
+            "uniformName": "uTarget",
+            "logicalSlot": "target",
+            "boundTextureUuid": "2c110834-8893-4610-a129-0f061ce8c521",
+            "bankTextureUuid": "2c110834-8893-4610-a129-0f061ce8c521",
+            "match": true
+          },
+          {
+            "uniformName": "uSourceNormal",
+            "logicalSlot": "sourceNormal",
+            "boundTextureUuid": "a96c9a5e-f95e-4ee9-b065-fab9c63d4587",
+            "bankTextureUuid": "a96c9a5e-f95e-4ee9-b065-fab9c63d4587",
+            "match": true
+          },
+          {
+            "uniformName": "uTargetNormal",
+            "logicalSlot": "targetNormal",
+            "boundTextureUuid": "0259b064-2c30-440f-bbdd-712c016ad02e",
+            "bankTextureUuid": "0259b064-2c30-440f-bbdd-712c016ad02e",
+            "match": true
+          },
+          {
+            "uniformName": "uSourceQuat",
+            "logicalSlot": "sourceQuat",
+            "boundTextureUuid": "6114f6b9-9b58-4529-ade1-b702aa802b8f",
+            "bankTextureUuid": "6114f6b9-9b58-4529-ade1-b702aa802b8f",
+            "match": true
+          },
+          {
+            "uniformName": "uTargetQuat",
+            "logicalSlot": "targetQuat",
+            "boundTextureUuid": "c07c4a92-f927-45ff-8056-9e0db3607d0b",
+            "bankTextureUuid": "c07c4a92-f927-45ff-8056-9e0db3607d0b",
+            "match": true
+          },
+          {
+            "uniformName": "uSourceMeta",
+            "logicalSlot": "sourceMeta",
+            "boundTextureUuid": "b36bf4e2-487f-4fb6-83ed-88eccb369389",
+            "bankTextureUuid": "b36bf4e2-487f-4fb6-83ed-88eccb369389",
+            "match": true
+          },
+          {
+            "uniformName": "uTargetMeta",
+            "logicalSlot": "targetMeta",
+            "boundTextureUuid": "a4257126-13dc-4ae8-b2ee-66cc779a65e1",
+            "bankTextureUuid": "a4257126-13dc-4ae8-b2ee-66cc779a65e1",
+            "match": true
+          },
+          {
+            "uniformName": "uResidual",
+            "logicalSlot": "residual",
+            "boundTextureUuid": "f228ccef-9ae2-4187-b235-e11df2b6a103",
+            "bankTextureUuid": "f228ccef-9ae2-4187-b235-e11df2b6a103",
+            "match": true
+          },
+          {
+            "uniformName": "uLanes",
+            "logicalSlot": "lanes",
+            "boundTextureUuid": "1bd89955-95bb-4ce4-a60e-d798eb6ccd19",
+            "bankTextureUuid": "1bd89955-95bb-4ce4-a60e-d798eb6ccd19",
+            "match": true
+          },
+          {
+            "uniformName": "uVelocity",
+            "logicalSlot": "velocity",
+            "boundTextureUuid": "b5fb1b72-3d8c-4360-a4f4-1b13d7cc55d0",
+            "bankTextureUuid": "b5fb1b72-3d8c-4360-a4f4-1b13d7cc55d0",
+            "match": true
+          },
+          {
+            "uniformName": "uActivation",
+            "logicalSlot": "activation",
+            "boundTextureUuid": "d1d91f47-4cf3-4ed1-82a4-4d8394ba6908",
+            "bankTextureUuid": "d1d91f47-4cf3-4ed1-82a4-4d8394ba6908",
+            "match": true
+          },
+          {
+            "uniformName": "uSourceTracks",
+            "logicalSlot": "sourceTracks",
+            "boundTextureUuid": "38d990b5-1cf7-4203-b052-f7a86b1a65b3",
+            "bankTextureUuid": "38d990b5-1cf7-4203-b052-f7a86b1a65b3",
+            "match": true
+          },
+          {
+            "uniformName": "uTargetTracks",
+            "logicalSlot": "targetTracks",
+            "boundTextureUuid": "4d1eb62b-e4e0-422c-bc15-f93730113579",
+            "bankTextureUuid": "4d1eb62b-e4e0-422c-bc15-f93730113579",
+            "match": true
+          },
+          {
+            "uniformName": "uTrackRoutes",
+            "logicalSlot": "routes",
+            "boundTextureUuid": "6853c079-25b6-4003-ad3a-5fbe73a6721b",
+            "bankTextureUuid": "6853c079-25b6-4003-ad3a-5fbe73a6721b",
+            "match": true
+          },
+          {
+            "uniformName": "uTrackWindows",
+            "logicalSlot": "windows",
+            "boundTextureUuid": "12ac4ae1-3ee4-4392-b731-1dc7a4314513",
+            "bankTextureUuid": "12ac4ae1-3ee4-4392-b731-1dc7a4314513",
+            "match": true
+          }
+        ],
+        "allSamplerUuidsMatchActiveBank": true
+      }
+    }
+  ]
+}

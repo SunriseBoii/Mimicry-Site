@@ -1,0 +1,47 @@
+{
+  "method": "Pillow RGB crop of actor region, luminance pstdev, unique RGB colors. Not a mask gate; presence vs contrast.",
+  "note": "Rejected board 03 is Content (05.1) Dark, actor on the left. Board 01/02/04 are Hero, actor on the right. R5 numbers in the R6 rejection brief used a tighter actor crop; this crop is the same box on each Hero pair.",
+  "rows": {
+    "01-r6-rejected-fresh-light.png": {
+      "box": [900, 280, 1260, 700],
+      "stdev": 0,
+      "colors": 1,
+      "mean": 0.949539,
+      "n": 151200
+    },
+    "02-r6r1-fresh-light-dpr1.png": {
+      "box": [900, 280, 1260, 700],
+      "stdev": 0.233122,
+      "colors": 13432,
+      "mean": 0.648471,
+      "n": 151200
+    },
+    "03-r6-rejected-fresh-dark.png": {
+      "box": [40, 280, 620, 720],
+      "stdev": 0.042824,
+      "colors": 26,
+      "mean": 0.044805,
+      "n": 255200,
+      "note": "Content Dark; leftover UI/graph in the left crop. Actor region itself is empty black. Mask gate on R6.R1 Content Dark is 117660 white pixels."
+    },
+    "04-r6r1-fresh-dark-dpr1.png": {
+      "box": [900, 280, 1260, 700],
+      "stdev": 0.243928,
+      "colors": 20662,
+      "mean": 0.345773,
+      "n": 151200
+    }
+  },
+  "r5Brief": {
+    "lightStdev": 0.2076,
+    "darkStdev": 0.1623,
+    "note": "From the R6 rejection brief, same actor region, thousands of colors."
+  },
+  "maskGate": {
+    "r6r1HeroLight": { "visiblePixelCount": 95646, "bbox": [352, 352] },
+    "r6r1HeroDark": { "visiblePixelCount": 95754 },
+    "r6r1ContentLight": { "visiblePixelCount": 114420, "bbox": [543, 348] },
+    "r6r1ContentDark": { "visiblePixelCount": 117660 },
+    "footer": { "visiblePixelCount": 0, "actorDraw": false, "draws": 0 }
+  }
+}

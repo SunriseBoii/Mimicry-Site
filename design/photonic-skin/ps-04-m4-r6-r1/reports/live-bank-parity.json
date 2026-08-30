@@ -1,0 +1,335 @@
+{
+  "node": "01",
+  "actorDraw": true,
+  "actorFramebufferReady": true,
+  "draws": 1,
+  "silhouette": {
+    "visiblePixelCount": 95914,
+    "bbox": {
+      "left": 903,
+      "top": 326,
+      "width": 352,
+      "height": 352,
+      "right": 1255,
+      "bottom": 678,
+      "pixelCount": 95914
+    },
+    "bboxWidth": 352,
+    "bboxHeight": 352,
+    "bboxArea": 123904,
+    "actorVisibleFraction": 1,
+    "centroid": {
+      "x": 1078.3062222407573,
+      "y": 502.4277477740476
+    },
+    "edgeClipping": false,
+    "drawingBuffer": [
+      1440,
+      900
+    ],
+    "dpr": 1,
+    "actorDraw": true,
+    "failDrawWithoutPixels": false,
+    "pass": true
+  },
+  "liveBank": {
+    "liveBankGpuParity": true,
+    "pass": true,
+    "samples": [
+      {
+        "id": 0,
+        "source": [
+          -0.5221105813980103,
+          0.808149516582489,
+          -0.2715802490711212
+        ],
+        "target": [
+          -0.5221105813980103,
+          0.808149516582489,
+          -0.2715802490711212
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          -0.07159323990345001
+        ]
+      },
+      {
+        "id": 1,
+        "source": [
+          0.9685426950454712,
+          0.13962112367153168,
+          -0.2049853503704071
+        ],
+        "target": [
+          0.9685426950454712,
+          0.13962112367153168,
+          -0.2049853503704071
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          0.07846086472272873
+        ]
+      },
+      {
+        "id": 7,
+        "source": [
+          -0.9122273921966553,
+          0.2919408977031708,
+          -0.2870738208293915
+        ],
+        "target": [
+          -0.9122273921966553,
+          0.2919408977031708,
+          -0.2870738208293915
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          -0.07674503326416016
+        ]
+      },
+      {
+        "id": 64,
+        "source": [
+          0.8850746750831604,
+          -0.42555269598960876,
+          -0.1861666738986969
+        ],
+        "target": [
+          0.8850746750831604,
+          -0.42555269598960876,
+          -0.1861666738986969
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          0.07812893390655518
+        ]
+      },
+      {
+        "id": 255,
+        "source": [
+          -0.8196595311164856,
+          0.5467743873596191,
+          0.168949693441391
+        ],
+        "target": [
+          -0.8196595311164856,
+          0.5467743873596191,
+          0.168949693441391
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          -0.0785910114645958
+        ]
+      },
+      {
+        "id": 1024,
+        "source": [
+          -0.790154218673706,
+          0.6113280057907104,
+          -0.03580554574728012
+        ],
+        "target": [
+          -0.790154218673706,
+          0.6113280057907104,
+          -0.03580554574728012
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          -0.07989954203367233
+        ]
+      },
+      {
+        "id": 4096,
+        "source": [
+          0.4153594374656677,
+          0.22109201550483704,
+          0.8820101618766785
+        ],
+        "target": [
+          0.4153594374656677,
+          0.22109201550483704,
+          0.8820101618766785
+        ],
+        "sourceScale": 1.150390625,
+        "targetScale": 1.150390625,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          0.034751929342746735
+        ]
+      },
+      {
+        "id": 8191,
+        "source": [
+          -0.25955820083618164,
+          -0.585597574710846,
+          0.000039095626561902463
+        ],
+        "target": [
+          -0.25955820083618164,
+          -0.585597574710846,
+          0.000039095626561902463
+        ],
+        "sourceScale": 0.25,
+        "targetScale": 0.25,
+        "activation": [
+          0.18000000715255737,
+          0.7200000286102295,
+          0,
+          -0.07999999821186066
+        ]
+      }
+    ],
+    "activationNonZero": true,
+    "activationHits": 16384,
+    "generation": 1,
+    "bankId": 0,
+    "allSamplerUuidsMatchActiveBank": true
+  },
+  "samplers": {
+    "materialUuid": "c87f0cac-a53e-4e29-92f2-f968923d99f2",
+    "programCount": 1,
+    "activeBankId": 0,
+    "generation": 1,
+    "uniforms": [
+      {
+        "uniformName": "uSource",
+        "logicalSlot": "source",
+        "boundTextureUuid": "12bd244a-b42c-402a-8823-36a7a6e5fd12",
+        "bankTextureUuid": "12bd244a-b42c-402a-8823-36a7a6e5fd12",
+        "match": true
+      },
+      {
+        "uniformName": "uTarget",
+        "logicalSlot": "target",
+        "boundTextureUuid": "c9b9b408-1c23-4a11-a5d8-0626946436a2",
+        "bankTextureUuid": "c9b9b408-1c23-4a11-a5d8-0626946436a2",
+        "match": true
+      },
+      {
+        "uniformName": "uSourceNormal",
+        "logicalSlot": "sourceNormal",
+        "boundTextureUuid": "9e277555-7412-41c0-81a2-031b9574a475",
+        "bankTextureUuid": "9e277555-7412-41c0-81a2-031b9574a475",
+        "match": true
+      },
+      {
+        "uniformName": "uTargetNormal",
+        "logicalSlot": "targetNormal",
+        "boundTextureUuid": "b8c8ebc0-07a1-48a7-8c0f-f539153d9b15",
+        "bankTextureUuid": "b8c8ebc0-07a1-48a7-8c0f-f539153d9b15",
+        "match": true
+      },
+      {
+        "uniformName": "uSourceQuat",
+        "logicalSlot": "sourceQuat",
+        "boundTextureUuid": "d3836717-3c41-4dd6-8a71-afb8b4672d49",
+        "bankTextureUuid": "d3836717-3c41-4dd6-8a71-afb8b4672d49",
+        "match": true
+      },
+      {
+        "uniformName": "uTargetQuat",
+        "logicalSlot": "targetQuat",
+        "boundTextureUuid": "f86fea9d-f58e-4f08-a66b-cd6782f065f4",
+        "bankTextureUuid": "f86fea9d-f58e-4f08-a66b-cd6782f065f4",
+        "match": true
+      },
+      {
+        "uniformName": "uSourceMeta",
+        "logicalSlot": "sourceMeta",
+        "boundTextureUuid": "c28cae8c-ba19-4ec4-8963-f9d611f275f8",
+        "bankTextureUuid": "c28cae8c-ba19-4ec4-8963-f9d611f275f8",
+        "match": true
+      },
+      {
+        "uniformName": "uTargetMeta",
+        "logicalSlot": "targetMeta",
+        "boundTextureUuid": "1961ede6-b2a1-455a-a6e4-3a0a14e414eb",
+        "bankTextureUuid": "1961ede6-b2a1-455a-a6e4-3a0a14e414eb",
+        "match": true
+      },
+      {
+        "uniformName": "uResidual",
+        "logicalSlot": "residual",
+        "boundTextureUuid": "2e656b6d-6526-4aee-9f6f-1aece01849b1",
+        "bankTextureUuid": "2e656b6d-6526-4aee-9f6f-1aece01849b1",
+        "match": true
+      },
+      {
+        "uniformName": "uLanes",
+        "logicalSlot": "lanes",
+        "boundTextureUuid": "7c751342-96d6-4d24-8259-c49c9ce8d9ae",
+        "bankTextureUuid": "7c751342-96d6-4d24-8259-c49c9ce8d9ae",
+        "match": true
+      },
+      {
+        "uniformName": "uVelocity",
+        "logicalSlot": "velocity",
+        "boundTextureUuid": "de70abb7-72f0-4175-a2fa-ff2de974c6fe",
+        "bankTextureUuid": "de70abb7-72f0-4175-a2fa-ff2de974c6fe",
+        "match": true
+      },
+      {
+        "uniformName": "uActivation",
+        "logicalSlot": "activation",
+        "boundTextureUuid": "9b70d77f-8dcd-4401-8303-842f4dd26766",
+        "bankTextureUuid": "9b70d77f-8dcd-4401-8303-842f4dd26766",
+        "match": true
+      },
+      {
+        "uniformName": "uSourceTracks",
+        "logicalSlot": "sourceTracks",
+        "boundTextureUuid": "f0305d98-42c4-4bef-853d-eddeaa522b11",
+        "bankTextureUuid": "f0305d98-42c4-4bef-853d-eddeaa522b11",
+        "match": true
+      },
+      {
+        "uniformName": "uTargetTracks",
+        "logicalSlot": "targetTracks",
+        "boundTextureUuid": "91441fe8-9da2-490d-8e44-69dce964ea3d",
+        "bankTextureUuid": "91441fe8-9da2-490d-8e44-69dce964ea3d",
+        "match": true
+      },
+      {
+        "uniformName": "uTrackRoutes",
+        "logicalSlot": "routes",
+        "boundTextureUuid": "2e8d7546-15e9-4a4c-971f-886d0dadffba",
+        "bankTextureUuid": "2e8d7546-15e9-4a4c-971f-886d0dadffba",
+        "match": true
+      },
+      {
+        "uniformName": "uTrackWindows",
+        "logicalSlot": "windows",
+        "boundTextureUuid": "82c79d42-767c-4f2a-8d4d-98a6214a85bd",
+        "bankTextureUuid": "82c79d42-767c-4f2a-8d4d-98a6214a85bd",
+        "match": true
+      }
+    ],
+    "allSamplerUuidsMatchActiveBank": true
+  }
+}

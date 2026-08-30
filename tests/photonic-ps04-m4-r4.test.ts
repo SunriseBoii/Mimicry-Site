@@ -533,7 +533,7 @@ test("R4 lab keeps one Canvas/session/material and does not remount on programId
   assert.equal((m4Scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.doesNotMatch(m4Scene, /key=\{`\$\{props\.source\.entry\.contentHash\}:\$\{props\.target\.entry\.contentHash\}:\$\{props\.program\.programId\}/);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r5"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r6-r1"/);
   assert.match(m4Lab, /commitDriverToMask/);
   assert.match(m4Lab, /paletteSnapshotRef/);
   assert.match(m4Lab, /startRoutePrewarm/);

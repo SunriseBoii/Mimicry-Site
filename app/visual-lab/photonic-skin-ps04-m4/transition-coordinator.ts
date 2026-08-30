@@ -28,6 +28,7 @@ import {
   type GeometryRenderAck,
   EMPTY_GEOMETRY_ACK,
 } from "./geometry-authority";
+import { SLOT_PREPARE_SECONDS, type ResourceState, type VisualLifecycle } from "./resource-lifecycle";
 
 export type ActorSlot = "left" | "right" | "none";
 export type SemanticPhase =
@@ -75,6 +76,10 @@ export interface ActorTransitionTransaction {
   kind: ActorChangeKind;
   status: TransactionStatus;
   programReady: boolean;
+  visualLifecycle: VisualLifecycle;
+  resourceState: ResourceState;
+  slotProgress: number;
+  fitProgress: number;
   sourcePaletteLutHash: string;
   targetPaletteLutHash: string;
   settledPaletteLutHash: string;
@@ -231,6 +236,10 @@ function emptyTransaction(): ActorTransitionTransaction {
     kind: "noop",
     status: "settled",
     programReady: true,
+    visualLifecycle: "settled",
+    resourceState: "bound",
+    slotProgress: 1,
+    fitProgress: 1,
     sourcePaletteLutHash: lutHash,
     targetPaletteLutHash: lutHash,
     settledPaletteLutHash: lutHash,
@@ -441,6 +450,10 @@ export class ActorTransitionCoordinator {
       kind,
       status: running ? "running" : "settled",
       programReady: ready,
+      visualLifecycle: running && kind === "geometry" ? "preparing" : running ? "morphing" : "settled",
+      resourceState: running && kind === "geometry" ? "cpu-preparing" : "bound",
+      slotProgress: reduced || sameSite || paletteOnly ? 1 : 0,
+      fitProgress: reduced || sameSite || paletteOnly || kind === "site-only" ? 1 : 0,
       sourcePaletteLutHash: sourceHash,
       targetPaletteLutHash: targetHash,
       settledPaletteLutHash: running ? this.current.settledPaletteLutHash : targetHash,
@@ -476,6 +489,7 @@ export class ActorTransitionCoordinator {
         tx.continuityEnabled = 0;
         tx.paletteOwnershipMode = 0;
         tx.semanticPhase = "settle";
+        tx.visualLifecycle = "settled";
       }
       return this.snapshot();
     }
@@ -489,9 +503,12 @@ export class ActorTransitionCoordinator {
         elapsedSeconds: tx.elapsedSeconds,
       });
       tx.siteProgress = 1;
+      tx.slotProgress = 1;
+      tx.fitProgress = 1;
       tx.semanticPhase = "settle";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
+      tx.visualLifecycle = tx.paletteProgress >= 1 ? "settled" : "morphing";
       if (tx.paletteProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
@@ -499,17 +516,21 @@ export class ActorTransitionCoordinator {
       const duration = reduced ? 0.001 : 0.38;
       tx.geometryProgress = 1;
       tx.siteProgress = Math.min(1, tx.elapsedSeconds / duration);
+      tx.slotProgress = tx.siteProgress;
+      tx.fitProgress = 1;
       tx.paletteProgress = 1;
       tx.semanticPhase = tx.siteProgress >= 1 ? "settle" : "regroup";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
+      tx.visualLifecycle = tx.siteProgress >= 1 ? "settled" : "morphing";
       if (tx.siteProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
     const waitingForProgram = tx.kind === "geometry"
       && tx.programReady === false
-      && args.sessionStatus === "transitioning"
-      && args.geometryPlaying !== true;
+      && !reduced
+      && (args.sessionStatus === "settled"
+        || (args.sessionStatus === "transitioning" && args.geometryPlaying !== true));
     const compileGap = waitingForProgram || (tx.kind === "geometry"
       && args.sessionStatus === "transitioning"
       && args.geometryPlaying !== true
@@ -522,9 +543,13 @@ export class ActorTransitionCoordinator {
       const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;
       tx.paletteProgress = sameMask ? 1 : 0;
       tx.siteProgress = sameSite ? 1 : 0;
+      tx.slotProgress = sameSite ? 1 : Math.min(1, tx.elapsedSeconds / SLOT_PREPARE_SECONDS);
+      tx.fitProgress = 0;
       tx.paletteOwnershipMode = !args.identity && !sameMask ? 1 : 0;
       tx.continuityEnabled = 0;
       tx.shaderBaseLutHash = tx.sourcePaletteLutHash;
+      tx.visualLifecycle = "preparing";
+      tx.resourceState = tx.programReady ? "cpu-ready" : "cpu-preparing";
       return this.snapshot();
     }
     tx.geometryProgress = this.reverse
@@ -540,6 +565,10 @@ export class ActorTransitionCoordinator {
     });
     const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;
     tx.siteProgress = sameSite ? 1 : siteProgressFromGeometry(tx.geometryProgress, reduced);
+    tx.slotProgress = Math.max(tx.slotProgress, sameSite ? 1 : siteProgressFromGeometry(tx.geometryProgress, reduced));
+    tx.fitProgress = sameSite ? 1 : siteProgressFromGeometry(tx.geometryProgress, reduced);
+    tx.visualLifecycle = tx.geometryProgress >= 1 ? "settling" : "morphing";
+    tx.resourceState = "bound";
     tx.paletteOwnershipMode = !args.identity && tx.kind === "geometry" && !sameMask && !reduced ? 1 : 0;
     tx.continuityEnabled = !args.identity && tx.kind === "geometry" && !reduced && tx.programReady ? 1 : 0;
     if (tx.geometryProgress >= 1 && tx.paletteProgress >= 1 && tx.siteProgress >= 1) {
@@ -555,6 +584,7 @@ export class ActorTransitionCoordinator {
   markProgramReady(revision: number, programId?: string | null, nowMs = 0) {
     if (revision !== this.revision) return false;
     this.current.programReady = true;
+    this.current.resourceState = "gpu-ready";
     if (programId) this.current.programId = programId;
     this.cacheReadyAtMs = nowMs || (typeof performance !== "undefined" ? performance.now() : 0);
     return true;
@@ -573,18 +603,23 @@ export class ActorTransitionCoordinator {
     if (this.displayedBind?.revision === args.revision && this.displayedBind.programId === args.programId) {
       return true;
     }
+    const settled = this.current.status === "settled";
     this.displayedBind = {
       revision: args.revision,
       programId: args.programId,
       sourceGeometryId: args.sourceGeometryId,
       targetGeometryId: args.targetGeometryId,
-      shaderProgress: 0,
+      shaderProgress: settled ? 1 : 0,
       bindFrameToken: args.frameToken,
       reverse: Boolean(args.reverse || this.reverse),
     };
     this.bindAtMs = args.nowMs;
     this.firstTransitionFrameAtMs = args.nowMs;
     this.firstWebglChangeAtMs = this.firstWebglChangeAtMs || args.nowMs;
+    if (!settled) {
+      this.current.visualLifecycle = "morphing";
+      this.current.resourceState = "bound";
+    }
     return true;
   }
 
@@ -691,6 +726,10 @@ export class ActorTransitionCoordinator {
       status: "settled",
       kind: "noop",
       programReady: true,
+      visualLifecycle: "settled",
+      resourceState: "bound",
+      slotProgress: 1,
+      fitProgress: 1,
       sourcePaletteLutHash: lutHash,
       targetPaletteLutHash: lutHash,
       settledPaletteLutHash: lutHash,
@@ -717,13 +756,12 @@ export class ActorTransitionCoordinator {
 
   displayedPlacement(): DisplayedPlacement {
     const tx = this.current;
-    const site = tx.siteProgress;
     const lut = this.displayedLut();
     const geo = this.geometrySnapshot();
     return {
-      slot: site >= 1 || tx.sourceSlot === tx.targetSlot ? tx.targetSlot : tx.sourceSlot,
-      fit: mixFit(tx.sourceFit, tx.targetFit, site),
-      fitProfile: site >= 1 ? tx.targetFitProfile : tx.sourceFitProfile,
+      slot: tx.slotProgress >= 1 || tx.sourceSlot === tx.targetSlot ? tx.targetSlot : tx.sourceSlot,
+      fit: mixFit(tx.sourceFit, tx.targetFit, tx.fitProgress),
+      fitProfile: tx.fitProgress >= 1 ? tx.targetFitProfile : tx.sourceFitProfile,
       paletteMask: tx.paletteProgress >= 1 ? tx.targetPaletteMask : tx.sourcePaletteMask,
       paletteProgress: tx.paletteProgress,
       geometryId: geo.shaderProgress >= 1
@@ -807,6 +845,10 @@ export class ActorTransitionCoordinator {
     tx.paletteCommitted = true;
     tx.programReady = true;
     tx.status = "settled";
+    tx.visualLifecycle = "settled";
+    tx.resourceState = "bound";
+    tx.slotProgress = 1;
+    tx.fitProgress = 1;
     this.reverse = false;
     if (this.displayedBind) {
       this.displayedBind.shaderProgress = 1;

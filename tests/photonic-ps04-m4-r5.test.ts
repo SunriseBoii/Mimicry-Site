@@ -297,7 +297,7 @@ test("stale revision cannot bind or settle; same semantic is a no-op", () => {
 
 test("prewarm is side-effect free in source and freezeProgram copies buffers", () => {
   assert.match(m4Prewarm, /function freezeProgram/);
-  assert.match(m4Prewarm, /this\.programs\.set\(key, frozen\)/);
+  assert.match(m4Prewarm, /this\.programs\.set\(key, \{/);
   assert.doesNotMatch(m4Prewarm, /session\.commitTransition/);
   assert.doesNotMatch(m4Prewarm, /uProgress/);
   assert.equal(frozenProgramKey("a", "b", false, "desktop"), "a|b|0|desktop");
@@ -454,7 +454,7 @@ test("R5 lab keeps one Canvas/session/material, geometry authority, and atomic b
   assert.equal((m4Lab.match(/new PhotonicMotionSession/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r5"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r6-r1"/);
   assert.match(m4Lab, /geometrySnapshotRef/);
   assert.match(m4Lab, /programBindRef/);
   assert.match(m4Lab, /NavigationDirector/);
