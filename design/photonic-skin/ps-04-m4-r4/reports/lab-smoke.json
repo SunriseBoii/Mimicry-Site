@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "capturedAt": "2026-08-30T10:19:29.829Z",
+  "log": [
+    {
+      "step": "ready",
+      "ms": 6422
+    },
+    {
+      "step": "idle",
+      "canvases": 1,
+      "node": "01",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 16,
+      "sessionId": "ps04-m4-r4",
+      "stage": "PS-04.M4.R4"
+    },
+    {
+      "step": "footer",
+      "node": "08",
+      "actorDraw": false,
+      "canvases": 1,
+      "sessionId": "ps04-m4-r4"
+    },
+    {
+      "step": "footer-return",
+      "node": "07",
+      "canvases": 1,
+      "sessionId": "ps04-m4-r4",
+      "actorDraw": true,
+      "draws": 1
+    }
+  ]
+}

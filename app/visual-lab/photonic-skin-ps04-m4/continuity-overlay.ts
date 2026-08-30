@@ -1,11 +1,12 @@
 /**
- * M4.R3 visual-mass overlay. Applied after the frozen evaluator writes
- * activation/scale, before clip-space composition. Identity / GPU parity
- * mode must keep the lift at 1 and must not change centers or correspondence.
+ * M4.R3 visual-mass overlay. R4 A/B showed the 0.38 radius lift creating a
+ * MASTER-like sphere on Content→Design without requesting master-neutral.
+ * Default is off. `?continuityLift=1` reproduces the R3 overlay only.
  */
 
 export const CONTINUITY_FLOOR = 0.38;
 export const DEFAULT_MINIMUM_GEOMETRIC_SCALE = 0.18;
+export const DEFAULT_CONTINUITY_LIFT_ENABLED = false;
 
 export function clamp01(value: number) {
   if (!Number.isFinite(value)) return 0;

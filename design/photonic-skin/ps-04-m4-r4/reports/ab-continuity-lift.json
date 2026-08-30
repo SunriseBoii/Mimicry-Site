@@ -1,0 +1,2081 @@
+{
+  "capturedAt": "2026-08-30T10:19:40.198Z",
+  "off": [
+    {
+      "name": "content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "liftOn": false,
+      "frames": [
+        {
+          "index": 0,
+          "file": "content-design-lift-off-t00.png",
+          "score": {
+            "area": 12965,
+            "circularity": 0.2836,
+            "bboxFill": 0.6107,
+            "aspectRatio": 1.5776,
+            "bbox": {
+              "width": 183,
+              "height": 116
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.26673206385021236,
+            "source": "single-content",
+            "target": "single-design",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "content-design-lift-off-t01.png",
+          "score": {
+            "area": 15671,
+            "circularity": 0.1878,
+            "bboxFill": 0.5876,
+            "aspectRatio": 1.2013,
+            "bbox": {
+              "width": 179,
+              "height": 149
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "content-design-lift-off-t02.png",
+          "score": {
+            "area": 15600,
+            "circularity": 0.1937,
+            "bboxFill": 0.5889,
+            "aspectRatio": 1.2095,
+            "bbox": {
+              "width": 179,
+              "height": 148
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "content-design-lift-off-t03.png",
+          "score": {
+            "area": 15712,
+            "circularity": 0.1913,
+            "bboxFill": 0.5898,
+            "aspectRatio": 1.2162,
+            "bbox": {
+              "width": 180,
+              "height": 148
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "content-design-lift-off-t04.png",
+          "score": {
+            "area": 15864,
+            "circularity": 0.1808,
+            "bboxFill": 0.5915,
+            "aspectRatio": 1.2081,
+            "bbox": {
+              "width": 180,
+              "height": 149
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "content-design-lift-off-t05.png",
+          "score": {
+            "area": 15906,
+            "circularity": 0.1899,
+            "bboxFill": 0.5891,
+            "aspectRatio": 1.2,
+            "bbox": {
+              "width": 180,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "content-design-lift-off-t06.png",
+          "score": {
+            "area": 15734,
+            "circularity": 0.19,
+            "bboxFill": 0.5893,
+            "aspectRatio": 1.1867,
+            "bbox": {
+              "width": 178,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "content-design-lift-off-t07.png",
+          "score": {
+            "area": 15517,
+            "circularity": 0.2006,
+            "bboxFill": 0.5878,
+            "aspectRatio": 1.1733,
+            "bbox": {
+              "width": 176,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "content-design-lift-off-t08.png",
+          "score": {
+            "area": 15461,
+            "circularity": 0.1882,
+            "bboxFill": 0.5851,
+            "aspectRatio": 1.1589,
+            "bbox": {
+              "width": 175,
+              "height": 151
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "content-design-lift-off-t09.png",
+          "score": {
+            "area": 15584,
+            "circularity": 0.2073,
+            "bboxFill": 0.5859,
+            "aspectRatio": 1.1513,
+            "bbox": {
+              "width": 175,
+              "height": 152
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "content-design-lift-off-t10.png",
+          "score": {
+            "area": 15702,
+            "circularity": 0.1824,
+            "bboxFill": 0.5826,
+            "aspectRatio": 1.1364,
+            "bbox": {
+              "width": 175,
+              "height": 154
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "content-design-lift-off-t11.png",
+          "score": {
+            "area": 15687,
+            "circularity": 0.1887,
+            "bboxFill": 0.5821,
+            "aspectRatio": 1.1364,
+            "bbox": {
+              "width": 175,
+              "height": 154
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    },
+    {
+      "name": "design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "liftOn": false,
+      "frames": [
+        {
+          "index": 0,
+          "file": "design-event-lift-off-t00.png",
+          "score": {
+            "area": 15932,
+            "circularity": 0.1894,
+            "bboxFill": 0.5856,
+            "aspectRatio": 1.1776,
+            "bbox": {
+              "width": 179,
+              "height": 152
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.32732030000818974,
+            "source": "single-design",
+            "target": "single-event",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "design-event-lift-off-t01.png",
+          "score": {
+            "area": 21370,
+            "circularity": 0.1469,
+            "bboxFill": 0.8462,
+            "aspectRatio": 1.3261,
+            "bbox": {
+              "width": 183,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "design-event-lift-off-t02.png",
+          "score": {
+            "area": 21529,
+            "circularity": 0.1446,
+            "bboxFill": 0.8525,
+            "aspectRatio": 1.3261,
+            "bbox": {
+              "width": 183,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "design-event-lift-off-t03.png",
+          "score": {
+            "area": 21780,
+            "circularity": 0.1274,
+            "bboxFill": 0.8531,
+            "aspectRatio": 1.3406,
+            "bbox": {
+              "width": 185,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "design-event-lift-off-t04.png",
+          "score": {
+            "area": 21828,
+            "circularity": 0.1368,
+            "bboxFill": 0.8612,
+            "aspectRatio": 1.3504,
+            "bbox": {
+              "width": 185,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "design-event-lift-off-t05.png",
+          "score": {
+            "area": 21589,
+            "circularity": 0.1429,
+            "bboxFill": 0.8564,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "design-event-lift-off-t06.png",
+          "score": {
+            "area": 21383,
+            "circularity": 0.1436,
+            "bboxFill": 0.8639,
+            "aspectRatio": 1.3382,
+            "bbox": {
+              "width": 182,
+              "height": 136
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "design-event-lift-off-t07.png",
+          "score": {
+            "area": 21477,
+            "circularity": 0.1413,
+            "bboxFill": 0.852,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "design-event-lift-off-t08.png",
+          "score": {
+            "area": 21721,
+            "circularity": 0.1339,
+            "bboxFill": 0.8617,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "design-event-lift-off-t09.png",
+          "score": {
+            "area": 21864,
+            "circularity": 0.1278,
+            "bboxFill": 0.8627,
+            "aspectRatio": 1.3504,
+            "bbox": {
+              "width": 185,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "design-event-lift-off-t10.png",
+          "score": {
+            "area": 21696,
+            "circularity": 0.1209,
+            "bboxFill": 0.8498,
+            "aspectRatio": 1.3406,
+            "bbox": {
+              "width": 185,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "design-event-lift-off-t11.png",
+          "score": {
+            "area": 21449,
+            "circularity": 0.1415,
+            "bboxFill": 0.8555,
+            "aspectRatio": 1.3358,
+            "bbox": {
+              "width": 183,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    },
+    {
+      "name": "games-video",
+      "from": "05.4",
+      "to": "05.5",
+      "liftOn": false,
+      "frames": [
+        {
+          "index": 0,
+          "file": "games-video-lift-off-t00.png",
+          "score": {
+            "area": 6863,
+            "circularity": 0.1065,
+            "bboxFill": 0.3314,
+            "aspectRatio": 1.3468,
+            "bbox": {
+              "width": 167,
+              "height": 124
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.3370749040711741,
+            "source": "single-games",
+            "target": "single-video",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "games-video-lift-off-t01.png",
+          "score": {
+            "area": 5166,
+            "circularity": 0.2457,
+            "bboxFill": 0.6154,
+            "aspectRatio": 0.6348,
+            "bbox": {
+              "width": 73,
+              "height": 115
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "games-video-lift-off-t02.png",
+          "score": {
+            "area": 5188,
+            "circularity": 0.2608,
+            "bboxFill": 0.618,
+            "aspectRatio": 0.6348,
+            "bbox": {
+              "width": 73,
+              "height": 115
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "games-video-lift-off-t03.png",
+          "score": {
+            "area": 5143,
+            "circularity": 0.2446,
+            "bboxFill": 0.6096,
+            "aspectRatio": 0.6491,
+            "bbox": {
+              "width": 74,
+              "height": 114
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "games-video-lift-off-t04.png",
+          "score": {
+            "area": 5099,
+            "circularity": 0.2584,
+            "bboxFill": 0.6017,
+            "aspectRatio": 0.6637,
+            "bbox": {
+              "width": 75,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "games-video-lift-off-t05.png",
+          "score": {
+            "area": 5111,
+            "circularity": 0.2236,
+            "bboxFill": 0.5799,
+            "aspectRatio": 0.6903,
+            "bbox": {
+              "width": 78,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "games-video-lift-off-t06.png",
+          "score": {
+            "area": 5186,
+            "circularity": 0.2373,
+            "bboxFill": 0.5529,
+            "aspectRatio": 0.7345,
+            "bbox": {
+              "width": 83,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "games-video-lift-off-t07.png",
+          "score": {
+            "area": 5261,
+            "circularity": 0.2408,
+            "bboxFill": 0.5366,
+            "aspectRatio": 0.7544,
+            "bbox": {
+              "width": 86,
+              "height": 114
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "games-video-lift-off-t08.png",
+          "score": {
+            "area": 5288,
+            "circularity": 0.2458,
+            "bboxFill": 0.5271,
+            "aspectRatio": 0.7719,
+            "bbox": {
+              "width": 88,
+              "height": 114
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "games-video-lift-off-t09.png",
+          "score": {
+            "area": 5234,
+            "circularity": 0.2432,
+            "bboxFill": 0.5204,
+            "aspectRatio": 0.7876,
+            "bbox": {
+              "width": 89,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "games-video-lift-off-t10.png",
+          "score": {
+            "area": 5185,
+            "circularity": 0.2565,
+            "bboxFill": 0.5202,
+            "aspectRatio": 0.7946,
+            "bbox": {
+              "width": 89,
+              "height": 112
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "games-video-lift-off-t11.png",
+          "score": {
+            "area": 5189,
+            "circularity": 0.243,
+            "bboxFill": 0.5312,
+            "aspectRatio": 0.7928,
+            "bbox": {
+              "width": 88,
+              "height": 111
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": false,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    }
+  ],
+  "on": [
+    {
+      "name": "content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "liftOn": true,
+      "frames": [
+        {
+          "index": 0,
+          "file": "content-design-lift-on-t00.png",
+          "score": {
+            "area": 13000,
+            "circularity": 0.2713,
+            "bboxFill": 0.6072,
+            "aspectRatio": 1.5641,
+            "bbox": {
+              "width": 183,
+              "height": 117
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.27764341331675474,
+            "source": "single-content",
+            "target": "single-design",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "content-design-lift-on-t01.png",
+          "score": {
+            "area": 15705,
+            "circularity": 0.1846,
+            "bboxFill": 0.5888,
+            "aspectRatio": 1.2013,
+            "bbox": {
+              "width": 179,
+              "height": 149
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "content-design-lift-on-t02.png",
+          "score": {
+            "area": 15615,
+            "circularity": 0.2068,
+            "bboxFill": 0.5934,
+            "aspectRatio": 1.2177,
+            "bbox": {
+              "width": 179,
+              "height": 147
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "content-design-lift-on-t03.png",
+          "score": {
+            "area": 15636,
+            "circularity": 0.1859,
+            "bboxFill": 0.5869,
+            "aspectRatio": 1.2162,
+            "bbox": {
+              "width": 180,
+              "height": 148
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "content-design-lift-on-t04.png",
+          "score": {
+            "area": 15789,
+            "circularity": 0.2,
+            "bboxFill": 0.5927,
+            "aspectRatio": 1.2162,
+            "bbox": {
+              "width": 180,
+              "height": 148
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "content-design-lift-on-t05.png",
+          "score": {
+            "area": 15894,
+            "circularity": 0.1912,
+            "bboxFill": 0.5926,
+            "aspectRatio": 1.2081,
+            "bbox": {
+              "width": 180,
+              "height": 149
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "content-design-lift-on-t06.png",
+          "score": {
+            "area": 15862,
+            "circularity": 0.2017,
+            "bboxFill": 0.5875,
+            "aspectRatio": 1.2,
+            "bbox": {
+              "width": 180,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "content-design-lift-on-t07.png",
+          "score": {
+            "area": 15669,
+            "circularity": 0.1849,
+            "bboxFill": 0.5869,
+            "aspectRatio": 1.1867,
+            "bbox": {
+              "width": 178,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "content-design-lift-on-t08.png",
+          "score": {
+            "area": 15486,
+            "circularity": 0.1978,
+            "bboxFill": 0.5899,
+            "aspectRatio": 1.1667,
+            "bbox": {
+              "width": 175,
+              "height": 150
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "content-design-lift-on-t09.png",
+          "score": {
+            "area": 15463,
+            "circularity": 0.1991,
+            "bboxFill": 0.5852,
+            "aspectRatio": 1.1589,
+            "bbox": {
+              "width": 175,
+              "height": 151
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "content-design-lift-on-t10.png",
+          "score": {
+            "area": 15611,
+            "circularity": 0.2174,
+            "bboxFill": 0.5869,
+            "aspectRatio": 1.1513,
+            "bbox": {
+              "width": 175,
+              "height": 152
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "content-design-lift-on-t11.png",
+          "score": {
+            "area": 15706,
+            "circularity": 0.1839,
+            "bboxFill": 0.5828,
+            "aspectRatio": 1.1364,
+            "bbox": {
+              "width": 175,
+              "height": 154
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-design",
+            "target": "single-design",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    },
+    {
+      "name": "design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "liftOn": true,
+      "frames": [
+        {
+          "index": 0,
+          "file": "design-event-lift-on-t00.png",
+          "score": {
+            "area": 15901,
+            "circularity": 0.1876,
+            "bboxFill": 0.5844,
+            "aspectRatio": 1.1776,
+            "bbox": {
+              "width": 179,
+              "height": 152
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.30534634979784975,
+            "source": "single-design",
+            "target": "single-event",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "design-event-lift-on-t01.png",
+          "score": {
+            "area": 21455,
+            "circularity": 0.1341,
+            "bboxFill": 0.8496,
+            "aspectRatio": 1.3261,
+            "bbox": {
+              "width": 183,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "design-event-lift-on-t02.png",
+          "score": {
+            "area": 21313,
+            "circularity": 0.1321,
+            "bboxFill": 0.8439,
+            "aspectRatio": 1.3261,
+            "bbox": {
+              "width": 183,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "design-event-lift-on-t03.png",
+          "score": {
+            "area": 21472,
+            "circularity": 0.1467,
+            "bboxFill": 0.8564,
+            "aspectRatio": 1.3358,
+            "bbox": {
+              "width": 183,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "design-event-lift-on-t04.png",
+          "score": {
+            "area": 21710,
+            "circularity": 0.1232,
+            "bboxFill": 0.8504,
+            "aspectRatio": 1.3406,
+            "bbox": {
+              "width": 185,
+              "height": 138
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "design-event-lift-on-t05.png",
+          "score": {
+            "area": 21849,
+            "circularity": 0.1302,
+            "bboxFill": 0.8621,
+            "aspectRatio": 1.3504,
+            "bbox": {
+              "width": 185,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "design-event-lift-on-t06.png",
+          "score": {
+            "area": 21733,
+            "circularity": 0.1397,
+            "bboxFill": 0.8621,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "design-event-lift-on-t07.png",
+          "score": {
+            "area": 21472,
+            "circularity": 0.1369,
+            "bboxFill": 0.8518,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "design-event-lift-on-t08.png",
+          "score": {
+            "area": 21373,
+            "circularity": 0.1406,
+            "bboxFill": 0.8635,
+            "aspectRatio": 1.3382,
+            "bbox": {
+              "width": 182,
+              "height": 136
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "design-event-lift-on-t09.png",
+          "score": {
+            "area": 21500,
+            "circularity": 0.1375,
+            "bboxFill": 0.8529,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "design-event-lift-on-t10.png",
+          "score": {
+            "area": 21766,
+            "circularity": 0.1404,
+            "bboxFill": 0.8635,
+            "aspectRatio": 1.3431,
+            "bbox": {
+              "width": 184,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "design-event-lift-on-t11.png",
+          "score": {
+            "area": 21851,
+            "circularity": 0.1317,
+            "bboxFill": 0.8621,
+            "aspectRatio": 1.3504,
+            "bbox": {
+              "width": 185,
+              "height": 137
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-event",
+            "target": "single-event",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    },
+    {
+      "name": "games-video",
+      "from": "05.4",
+      "to": "05.5",
+      "liftOn": true,
+      "frames": [
+        {
+          "index": 0,
+          "file": "games-video-lift-on-t00.png",
+          "score": {
+            "area": 6837,
+            "circularity": 0.1146,
+            "bboxFill": 0.3322,
+            "aspectRatio": 1.3387,
+            "bbox": {
+              "width": 166,
+              "height": 124
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "running",
+            "phase": "regroup",
+            "g": 0.34858526287960867,
+            "source": "single-games",
+            "target": "single-video",
+            "continuity": 1
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 1,
+          "file": "games-video-lift-on-t01.png",
+          "score": {
+            "area": 5089,
+            "circularity": 0.2498,
+            "bboxFill": 0.6005,
+            "aspectRatio": 0.6637,
+            "bbox": {
+              "width": 75,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 2,
+          "file": "games-video-lift-on-t02.png",
+          "score": {
+            "area": 5119,
+            "circularity": 0.2397,
+            "bboxFill": 0.6068,
+            "aspectRatio": 0.6491,
+            "bbox": {
+              "width": 74,
+              "height": 114
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 3,
+          "file": "games-video-lift-on-t03.png",
+          "score": {
+            "area": 5170,
+            "circularity": 0.2558,
+            "bboxFill": 0.6158,
+            "aspectRatio": 0.6348,
+            "bbox": {
+              "width": 73,
+              "height": 115
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 4,
+          "file": "games-video-lift-on-t04.png",
+          "score": {
+            "area": 5187,
+            "circularity": 0.2546,
+            "bboxFill": 0.6179,
+            "aspectRatio": 0.6348,
+            "bbox": {
+              "width": 73,
+              "height": 115
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 5,
+          "file": "games-video-lift-on-t05.png",
+          "score": {
+            "area": 5151,
+            "circularity": 0.2431,
+            "bboxFill": 0.6053,
+            "aspectRatio": 0.6435,
+            "bbox": {
+              "width": 74,
+              "height": 115
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 6,
+          "file": "games-video-lift-on-t06.png",
+          "score": {
+            "area": 5098,
+            "circularity": 0.2583,
+            "bboxFill": 0.6015,
+            "aspectRatio": 0.6637,
+            "bbox": {
+              "width": 75,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 7,
+          "file": "games-video-lift-on-t07.png",
+          "score": {
+            "area": 5103,
+            "circularity": 0.2372,
+            "bboxFill": 0.579,
+            "aspectRatio": 0.6903,
+            "bbox": {
+              "width": 78,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 8,
+          "file": "games-video-lift-on-t08.png",
+          "score": {
+            "area": 5158,
+            "circularity": 0.2325,
+            "bboxFill": 0.5635,
+            "aspectRatio": 0.7168,
+            "bbox": {
+              "width": 81,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 9,
+          "file": "games-video-lift-on-t09.png",
+          "score": {
+            "area": 5238,
+            "circularity": 0.2308,
+            "bboxFill": 0.5453,
+            "aspectRatio": 0.7522,
+            "bbox": {
+              "width": 85,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 10,
+          "file": "games-video-lift-on-t10.png",
+          "score": {
+            "area": 5283,
+            "circularity": 0.2474,
+            "bboxFill": 0.5313,
+            "aspectRatio": 0.7788,
+            "bbox": {
+              "width": 88,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        },
+        {
+          "index": 11,
+          "file": "games-video-lift-on-t11.png",
+          "score": {
+            "area": 5249,
+            "circularity": 0.2313,
+            "bboxFill": 0.5219,
+            "aspectRatio": 0.7876,
+            "bbox": {
+              "width": 89,
+              "height": 113
+            },
+            "spherical": false,
+            "masterLike": false
+          },
+          "tx": {
+            "status": "settled",
+            "phase": "settle",
+            "g": 1,
+            "source": "single-video",
+            "target": "single-video",
+            "continuity": 0
+          },
+          "actorDraw": true,
+          "continuityLift": true,
+          "forbidden": false,
+          "zeroMask": false
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "conclusion": "CONFIRMED: no MASTER-like sphere with lift off. Lift stays disabled.",
+  "summary": {
+    "offForbidden": 0,
+    "onForbidden": 0,
+    "offZero": 0,
+    "onZero": 0,
+    "offMaxCircularity": 0.2836,
+    "onMaxCircularity": 0.2713
+  }
+}

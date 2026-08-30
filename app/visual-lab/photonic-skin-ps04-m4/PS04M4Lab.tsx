@@ -5,7 +5,7 @@ import type { CompetenceId } from "../../_brand/color-system";
 import type { M3Manifest } from "../photonic-skin-m4-1/m41-data";
 import { loadRuntimeManifests, type M41Manifest } from "../photonic-skin-m4-1/m41-data";
 import { MATERIAL_THEME_PRESETS, defaultM2MaterialController, type MaterialTheme } from "../photonic-skin-ps04-m3/material-foundation";
-import { compileFrozenPair, compileLiveRetarget, loadEntry, viewportForFrame } from "../photonic-skin-ps04-m3/runtime";
+import { compileLiveRetarget, viewportForFrame } from "../photonic-skin-ps04-m3/runtime";
 import { PhotonicMotionSession, type SessionSnapshot } from "../photonic-skin-ps04-m3/session";
 import { PS04M4Scene, type SceneEnvironment, type SceneStats } from "./PS04M4Scene";
 import { indexStates, requestFromContract, type ActorRequest } from "./actor-resolver";
@@ -52,7 +52,9 @@ import { SCREEN_NODE_BY_ID, type ScreenNodeId } from "./topology";
 import { ActorTransitionCoordinator, interceptGeometryLinkedProgress, semanticActorKey, type DisplayedPlacement, type ActorTransitionTransaction } from "./transition-coordinator";
 import { GeometryIdTrace, traceFromTransaction } from "./geometry-id-trace";
 import { NaturalRafRecorder } from "./natural-raf-recorder";
-import { CONTINUITY_FLOOR } from "./continuity-overlay";
+import { CONTINUITY_FLOOR, DEFAULT_CONTINUITY_LIFT_ENABLED } from "./continuity-overlay";
+import { commitDriverToMask, type PaletteMaterialSnapshot } from "./palette-authority";
+import { TransitionProgramCache } from "./transition-prewarm";
 import type { TransitionUniforms } from "./PS04M4Scene";
 import styles from "./ps04m4.module.css";
 
@@ -60,6 +62,7 @@ const EMPTY_STATS: SceneStats = {
   fps: 0, medianMs: 0, p95Ms: 0, drawCalls: 0, triangles: 0, textureMiB: 0,
   programs: 0, geometries: 0, textures: 0, dpr: 0, drawingBuffer: [0, 0],
   lastActorDrawCalls: 0, lastActorTriangles: 0, newFrame: false,
+  materialUuid: "", compileCount: 0,
 };
 
 function labQuery() {
@@ -83,6 +86,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const identity = query.get("identity") === "1";
   const actorMask = query.get("actorMask") === "1";
   const hideUi = actorMask || query.get("ui") === "0";
+  const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
   const [theme, setTheme] = useState<MaterialTheme>(query.get("theme") === "dark" ? "dark" : "light");
   const [dpr, setDpr] = useState(() => parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(query.get("reduced") === "1");
@@ -113,7 +117,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   }, [session]);
   const controller = useMemo(() => new ScrollCompositionController(), []);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m4-r3";
+  const sessionId = "ps04-m4-r4";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -140,7 +144,11 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     continuityFloor: CONTINUITY_FLOOR,
     identity,
   });
+  const paletteSnapshotRef = useRef<PaletteMaterialSnapshot | null>(null);
+  const programCacheRef = useRef(new TransitionProgramCache());
+  const lastSettledRevisionRef = useRef(0);
   const lastFrameTokenRef = useRef(-1);
+  const continuityLiftRef = useRef(continuityLift);
 
   const startClock = useCallback(() => {
     const clock = clockRef.current;
@@ -176,9 +184,14 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         geometryPlaying: sessionSnap.status === "transitioning" && sessionSnap.geometryProgress < 1,
       });
       const tx = coordinator.snapshot();
-      if ((tx.status === "running" || tx.status === "settled") && (tx.kind === "geometry" || tx.kind === "palette-only")) {
+      if (tx.status === "running" && (tx.kind === "geometry" || tx.kind === "palette-only")) {
         applyLinkedPaletteRef.current(tx.paletteProgress);
       }
+      if (tx.status === "settled" && tx.paletteCommitted && tx.revision !== lastSettledRevisionRef.current) {
+        commitDriverToMask(session.palette, tx.targetPaletteMask);
+        lastSettledRevisionRef.current = tx.revision;
+      }
+      paletteSnapshotRef.current = coordinator.materialSnapshot(session.palette.snapshot().phase);
       const progress = controller.getProgress();
       progressRef.current = progress;
       const host = canvasHostRef.current;
@@ -261,7 +274,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       });
       transitionRef.current = {
         paletteOwnershipMode: tx.paletteOwnershipMode,
-        continuityEnabled: tx.continuityEnabled,
+        continuityEnabled: continuityLiftRef.current ? tx.continuityEnabled : 0,
         continuityFloor: CONTINUITY_FLOOR,
         identity: liveIdentity,
       };
@@ -337,14 +350,20 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
 
   useEffect(() => {
     const controllerAbort = new AbortController();
+    const cache = programCacheRef.current;
     loadRuntimeManifests(controllerAbort.signal).then(async ({ m3, m4 }) => {
       setManifest(m3);
       setMotionManifest(m4);
       stateIndexRef.current = indexStates(m3.states);
       const entry = m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
-      const state = await loadEntry(entry);
-      const program = await compileFrozenPair(state, state, m3, m4, {
-        reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"), signal: controllerAbort.signal,
+      const state = await cache.loadState(entry);
+      const program = await cache.getFrozen({
+        source: state,
+        target: state,
+        manifest: m3,
+        motion: m4,
+        reducedMotion,
+        signal: controllerAbort.signal,
       });
       session.bootstrapSettled(state, program);
       const bootContract = stateIndexRef.current
@@ -368,6 +387,15 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       }
       setLoading(false);
       startClock();
+      cache.startRoutePrewarm({
+        current: controller.committedActorNodeId(),
+        manifest: m3,
+        motion: m4,
+        reducedMotion,
+        hidden: () => session.snapshot().offscreen
+          || document.visibilityState === "hidden"
+          || coordinatorRef.current.snapshot().status === "running",
+      });
       const node = labQuery().get("node");
       if (node && SCREEN_NODE_BY_ID[node as ScreenNodeId]) {
         controller.scrollToNode(node as ScreenNodeId, "auto", "restore");
@@ -376,25 +404,31 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       if (reason.name !== "AbortError") setError(reason.message);
       setLoading(false);
     });
-    return () => controllerAbort.abort();
+    return () => {
+      controllerAbort.abort();
+      cache.cancel();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
     const coordinator = coordinatorRef.current;
     const live = coordinator.displayedPlacement();
+    const displayedLut = coordinator.displayedLut();
     const displayed: DisplayedPlacement = {
       slot: live.slot,
       fit: visualRef.current.siteFit,
       fitProfile: live.fitProfile,
-      paletteMask: session.palette.snapshot().palette.mask,
-      paletteProgress: session.palette.snapshot().paletteProgress,
+      paletteMask: live.paletteMask,
+      paletteProgress: live.paletteProgress,
       geometryId: live.geometryId ?? session.snapshot().settledStateId,
       nodeId: live.nodeId,
+      lutHash: live.lutHash,
     };
     const { decision, transaction } = coordinator.begin({
       next,
       displayed,
+      displayedLut,
       nowSeconds: session.snapshot().sessionTime,
       reducedMotion,
       identity,
@@ -426,22 +460,29 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     try {
       const entry = manifest.states.find((item) => item.stateId === request.stateId);
       if (!entry) return;
-      const nextState = await loadEntry(entry);
+      const cache = programCacheRef.current;
+      const nextState = await cache.loadState(entry);
       if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
       const currentTarget = session.getTarget();
       const currentSource = session.getSource();
       const settled = captured.geometryProgress >= 1 && currentTarget && !currentTarget.entry.stateId.startsWith("runtime-snapshot-");
       if (settled && currentTarget) {
-        const program = await compileFrozenPair(currentTarget, nextState, manifest, motionManifest, {
-          reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"),
+        const program = await cache.getFrozen({
+          source: currentTarget,
+          target: nextState,
+          manifest,
+          motion: motionManifest,
+          reducedMotion,
         });
         if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
+        coordinator.markProgramReady(transaction.revision, program.programId);
         session.commitTransition({ revision, source: currentTarget, target: nextState, program, captured, play: true });
       } else if (currentSource && currentTarget) {
         const { liveSource, program } = compileLiveRetarget(captured, currentSource, nextState, manifest, {
           reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"),
         });
         if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
+        coordinator.markProgramReady(transaction.revision, program.programId);
         session.commitTransition({ revision, source: liveSource, target: nextState, program, captured, play: true });
       }
       const after = session.palette.snapshot();
@@ -457,6 +498,8 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         programId: session.getProgram()?.programId ?? null,
         reducedMotion,
         identity,
+        sessionStatus: session.snapshot().status,
+        geometryPlaying: session.snapshot().status === "transitioning" && session.snapshot().geometryProgress < 1,
       });
       startClock();
     } catch (reason) {
@@ -472,9 +515,10 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     dprRef.current = dpr;
     identityRef.current = identity;
     reducedRef.current = reducedMotion;
+    continuityLiftRef.current = continuityLift;
     requestActorRef.current = (next) => { void requestActor(next); };
     startClock();
-  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex]);
+  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex, continuityLift]);
 
   const navigate = useCallback((id: ScreenNodeId) => controller.scrollToNode(id), [controller]);
 
@@ -578,13 +622,23 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       revision: controller.getProgress().revision,
       transaction: coordinatorRef.current.snapshot(),
       committedNodeId: controller.committedActorNodeId(),
+      palette: coordinatorRef.current.materialSnapshot(session.palette.snapshot().phase),
+      driverPalette: {
+        mask: session.palette.snapshot().palette.mask,
+        progress: session.palette.snapshot().paletteProgress,
+        phase: session.palette.snapshot().phase,
+        transient: session.palette.snapshot().transient,
+      },
+      programCache: programCacheRef.current.stats,
+      continuityLift: continuityLiftRef.current,
+      material: window.__PS04M4_MATERIAL_UNIFORMS__ ?? null,
     };
-  }, [controller]);
+  }, [controller, session, sessionId]);
 
   useEffect(() => {
     window.__PS04M4_LAB__ = {
       runId: "ps04-m4",
-      stage: "PS-04.M4.R3",
+      stage: "PS-04.M4.R4",
       mode,
       get ready() {
         return Boolean(target && !loading && (stats.lastActorDrawCalls > 0 || window.__PS04M4_SCENE_READY__ || compositionRef.current.actorDraw === false));
@@ -609,6 +663,8 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       reducedMotion,
       sessionId,
       transaction: () => coordinatorRef.current.snapshot(),
+      paletteSnapshot: () => coordinatorRef.current.materialSnapshot(session.palette.snapshot().phase),
+      programCache: () => programCacheRef.current.stats,
       startTrace: () => { traceRef.current.start(); },
       stopTrace: () => traceRef.current.stop(),
       trace: () => traceRef.current.snapshot(),
@@ -726,6 +782,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
             sessionShouldAnimate={!snapshot.pauseAll && document.visibilityState !== "hidden"}
             compositionRef={compositionRef}
             transitionRef={transitionRef}
+            paletteSnapshotRef={paletteSnapshotRef}
             actorMask={actorMask}
             diagnosticId="motion"
             onStats={setStats}
@@ -801,13 +858,15 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       ) : null}
       {hud ? (
         <aside className={styles.hud} data-qa="m4-hud">
-          <div>PS-04.M4.R3 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
+          <div>PS-04.M4.R4 · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
           <div>
             {contract ? <>{contract.requestedFamily} → {contract.resolvedGeometryId ?? "none"}<span className={styles.badge}>{contract.resolution}</span></> : "boot"}
           </div>
           <div>rev {txUi?.revision ?? ui?.requestRevision ?? 0} · {txUi?.semanticPhase ?? ui?.phaseAdapter.motionPhase ?? "idle"} · g {(txUi?.geometryProgress ?? ui?.geometryProgress ?? 1).toFixed(2)} · p {(txUi?.paletteProgress ?? ui?.palette.paletteProgress ?? 1).toFixed(2)} · s {(txUi?.siteProgress ?? 1).toFixed(2)}</div>
-          <div>{txUi?.sourceGeometryId ?? "—"} → {txUi?.targetGeometryId ?? "—"} · own {txUi?.paletteOwnershipMode ?? 0} · cont {txUi?.continuityEnabled ?? 0}</div>
-          <div>mask {contract?.paletteMask ?? 0} · slot {contract?.slot ?? "none"} · fit {contract?.fitProfile ?? "none"}</div>
+          <div>{txUi?.sourceGeometryId ?? "—"} → {txUi?.targetGeometryId ?? "—"} · own {txUi?.paletteOwnershipMode ?? 0} · cont {continuityLift ? txUi?.continuityEnabled ?? 0 : 0}</div>
+          <div>mask {contract?.paletteMask ?? 0} · committed {txUi?.paletteCommitted ? txUi.targetPaletteMask : "—"} · shader {txUi?.targetPaletteMask ?? "—"} · base {txUi?.shaderBaseLutHash ?? "—"} · own {txUi?.paletteOwnershipMode ?? 0}</div>
+          <div>lut settled {txUi?.settledPaletteLutHash ?? "—"} · src {txUi?.sourcePaletteLutHash ?? "—"} · dst {txUi?.targetPaletteLutHash ?? "—"}</div>
+          <div>driver {ui?.palette.palette.mask ?? 0}/{ (ui?.palette.paletteProgress ?? 1).toFixed(2) } · ready {txUi?.programReady ? 1 : 0} · slot {contract?.slot ?? "none"} · fit {contract?.fitProfile ?? "none"}</div>
           <div>
             {stats.lastActorDrawCalls} draw / {stats.lastActorTriangles} tri · dpr {stats.dpr}
           </div>

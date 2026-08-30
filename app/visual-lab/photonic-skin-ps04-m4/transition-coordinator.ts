@@ -6,11 +6,19 @@
 
 import { c2Window } from "../photonic-skin-ps04-m3/idle-motion";
 import { FROZEN_PHASE_WINDOWS, type PhaseAdapterSample } from "../photonic-skin-ps04-m3/phase-adapter";
-import { FIELD_PARAMETERS } from "../photonic-skin-ps04-m2/photonic-field";
+import { FIELD_PARAMETERS, type LutSample } from "../photonic-skin-ps04-m2/photonic-field";
 import type { CompetenceMask } from "../photonic-skin-ps04-m2/photonic-palette";
 import type { ScreenActorContract } from "./screen-actor-contract";
 import { SITE_FIT_PROFILES, siteFitScaleFor, type FitProfile } from "./site-fit";
 import type { ScreenNodeId } from "./topology";
+import {
+  cloneLut,
+  hashLut,
+  lutForMask,
+  mixLuts,
+  type PaletteMaterialSnapshot,
+  type SettledActorState,
+} from "./palette-authority";
 
 export type ActorSlot = "left" | "right" | "none";
 export type SemanticPhase =
@@ -57,6 +65,12 @@ export interface ActorTransitionTransaction {
   continuityEnabled: 0 | 1;
   kind: ActorChangeKind;
   status: TransactionStatus;
+  programReady: boolean;
+  sourcePaletteLutHash: string;
+  targetPaletteLutHash: string;
+  settledPaletteLutHash: string;
+  shaderBaseLutHash: string;
+  paletteCommitted: boolean;
 }
 
 export interface DisplayedPlacement {
@@ -67,6 +81,7 @@ export interface DisplayedPlacement {
   paletteProgress: number;
   geometryId: string | null;
   nodeId: ScreenNodeId | "none";
+  lutHash?: string;
 }
 
 export interface GateDecision {
@@ -153,21 +168,33 @@ export function mixFit(from: number, to: number, progress: number) {
   return from + (to - from) * progress;
 }
 
+const NATIVE_LINKED_PROGRESS = Symbol.for("ps04m4.nativeSetGeometryLinkedProgress");
+
 /**
  * PhotonicMotionSession.tick writes the frozen M3 regroup→reveal palette
  * curve into the driver. That settles sourceLut onto the target while the
  * silhouette is still source-like. R3 keeps the native writer and ignores
  * session-tick updates; the lab clock applies transaction.paletteProgress.
+ *
+ * The native method is stored on a symbol so React Strict Mode remounts
+ * cannot wrap a no-op and leave driver progress stuck at 0 (R3 rollback).
  */
 export function interceptGeometryLinkedProgress(driver: {
   setGeometryLinkedProgress: (progress: number) => void;
 }) {
+  const existing = (driver as Record<symbol, unknown>)[NATIVE_LINKED_PROGRESS];
+  if (typeof existing === "function") {
+    driver.setGeometryLinkedProgress = () => undefined;
+    return existing as (progress: number) => void;
+  }
   const native = driver.setGeometryLinkedProgress.bind(driver);
+  (driver as Record<symbol, unknown>)[NATIVE_LINKED_PROGRESS] = native;
   driver.setGeometryLinkedProgress = () => undefined;
   return native;
 }
 
 function emptyTransaction(): ActorTransitionTransaction {
+  const lutHash = hashLut(lutForMask(127));
   return {
     revision: 0,
     sourceNodeId: "01",
@@ -194,6 +221,12 @@ function emptyTransaction(): ActorTransitionTransaction {
     continuityEnabled: 0,
     kind: "noop",
     status: "settled",
+    programReady: true,
+    sourcePaletteLutHash: lutHash,
+    targetPaletteLutHash: lutHash,
+    settledPaletteLutHash: lutHash,
+    shaderBaseLutHash: lutHash,
+    paletteCommitted: true,
   };
 }
 
@@ -209,6 +242,9 @@ export class ActorTransitionCoordinator {
   private committedAtMs = 0;
   private requestAtMs = 0;
   private firstWebglChangeAtMs = 0;
+  private sourceLut = lutForMask(127);
+  private targetLut = lutForMask(127);
+  private settledLut = lutForMask(127);
 
   snapshot(): ActorTransitionTransaction {
     return { ...this.current };
@@ -287,6 +323,7 @@ export class ActorTransitionCoordinator {
     durationSeconds?: number;
     programId?: string | null;
     nowMs?: number;
+    displayedLut?: LutSample[];
   }): { decision: GateDecision; transaction: ActorTransitionTransaction } {
     const decision = this.gate(args.next);
     if (decision.kind === "noop") {
@@ -316,6 +353,14 @@ export class ActorTransitionCoordinator {
     const targetFit = siteFitScaleFor(args.next.fitProfile, Boolean(args.identity));
     const sourceFit = args.displayed.fit;
     const sameSite = args.next.slot === args.displayed.slot && Math.abs(targetFit - sourceFit) < 1e-6;
+    const sourceLut = cloneLut(args.displayedLut ?? this.displayedLut());
+    const targetLut = lutForMask(nextKey.paletteMask);
+    this.sourceLut = sourceLut;
+    this.targetLut = targetLut;
+    if (!running) this.settledLut = cloneLut(targetLut);
+    const sourceHash = hashLut(sourceLut);
+    const targetHash = hashLut(targetLut);
+    const ready = kind !== "geometry" || !running;
     this.current = {
       revision: this.revision,
       sourceNodeId: args.displayed.nodeId,
@@ -342,13 +387,21 @@ export class ActorTransitionCoordinator {
       continuityEnabled: !args.identity && kind === "geometry" && !reduced ? 1 : 0,
       kind,
       status: running ? "running" : "settled",
+      programReady: ready,
+      sourcePaletteLutHash: sourceHash,
+      targetPaletteLutHash: targetHash,
+      settledPaletteLutHash: running ? this.current.settledPaletteLutHash : targetHash,
+      shaderBaseLutHash: running ? sourceHash : targetHash,
+      paletteCommitted: !running,
     };
     if (kind === "exit") {
       this.current.status = "settled";
       this.current.siteProgress = reduced ? 1 : this.current.siteProgress;
       this.current.continuityEnabled = 0;
       this.current.paletteOwnershipMode = 0;
+      this.commitTargetAsSettled();
     }
+    if (!running) this.commitTargetAsSettled();
     this.lastSemantic = nextKey;
     return { decision: { ...decision, revision: this.revision }, transaction: this.snapshot() };
   }
@@ -386,7 +439,7 @@ export class ActorTransitionCoordinator {
       tx.semanticPhase = "settle";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
-      if (tx.paletteProgress >= 1) tx.status = "settled";
+      if (tx.paletteProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
     if (tx.kind === "site-only") {
@@ -397,14 +450,18 @@ export class ActorTransitionCoordinator {
       tx.semanticPhase = tx.siteProgress >= 1 ? "settle" : "regroup";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
-      if (tx.siteProgress >= 1) tx.status = "settled";
+      if (tx.siteProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
-    const compileGap = tx.kind === "geometry"
+    const waitingForProgram = tx.kind === "geometry"
+      && tx.programReady === false
+      && args.sessionStatus === "transitioning"
+      && args.geometryPlaying !== true;
+    const compileGap = waitingForProgram || (tx.kind === "geometry"
       && args.sessionStatus === "transitioning"
       && args.geometryPlaying !== true
       && clamp01(args.geometryProgress) >= 1
-      && !reduced;
+      && !reduced);
     if (compileGap) {
       tx.geometryProgress = 0;
       tx.semanticPhase = "anticipation";
@@ -413,7 +470,8 @@ export class ActorTransitionCoordinator {
       tx.paletteProgress = sameMask ? 1 : 0;
       tx.siteProgress = sameSite ? 1 : 0;
       tx.paletteOwnershipMode = !args.identity && !sameMask ? 1 : 0;
-      tx.continuityEnabled = !args.identity ? 1 : 0;
+      tx.continuityEnabled = 0;
+      tx.shaderBaseLutHash = tx.sourcePaletteLutHash;
       return this.snapshot();
     }
     tx.geometryProgress = reduced ? 1 : clamp01(args.geometryProgress);
@@ -428,21 +486,23 @@ export class ActorTransitionCoordinator {
     const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;
     tx.siteProgress = sameSite ? 1 : siteProgressFromGeometry(tx.geometryProgress, reduced);
     tx.paletteOwnershipMode = !args.identity && tx.kind === "geometry" && !sameMask && !reduced ? 1 : 0;
-    tx.continuityEnabled = !args.identity && tx.kind === "geometry" && !reduced ? 1 : 0;
+    tx.continuityEnabled = !args.identity && tx.kind === "geometry" && !reduced && tx.programReady ? 1 : 0;
     if (tx.geometryProgress >= 1 && tx.paletteProgress >= 1 && tx.siteProgress >= 1) {
-      tx.status = "settled";
-      tx.semanticPhase = "settle";
+      this.commitTargetAsSettled();
     }
     return this.snapshot();
   }
 
+  markProgramReady(revision: number, programId?: string | null) {
+    if (revision !== this.revision) return false;
+    this.current.programReady = true;
+    if (programId) this.current.programId = programId;
+    return true;
+  }
+
   settle(revision: number) {
     if (revision !== this.revision) return false;
-    this.current.status = "settled";
-    this.current.geometryProgress = 1;
-    this.current.paletteProgress = 1;
-    this.current.siteProgress = 1;
-    this.current.semanticPhase = "settle";
+    this.commitTargetAsSettled();
     return true;
   }
 
@@ -453,7 +513,12 @@ export class ActorTransitionCoordinator {
   adoptSettled(contract: ScreenActorContract, identity = false) {
     const key = semanticActorKey(contract);
     const fit = siteFitScaleFor(contract.fitProfile, identity);
+    const lut = lutForMask(key.paletteMask);
+    const lutHash = hashLut(lut);
     this.lastSemantic = key;
+    this.sourceLut = cloneLut(lut);
+    this.targetLut = cloneLut(lut);
+    this.settledLut = cloneLut(lut);
     this.current = {
       ...emptyTransaction(),
       revision: this.revision,
@@ -474,12 +539,25 @@ export class ActorTransitionCoordinator {
       siteProgress: 1,
       status: "settled",
       kind: "noop",
+      programReady: true,
+      sourcePaletteLutHash: lutHash,
+      targetPaletteLutHash: lutHash,
+      settledPaletteLutHash: lutHash,
+      shaderBaseLutHash: lutHash,
+      paletteCommitted: true,
     };
+  }
+
+  displayedLut() {
+    const tx = this.current;
+    if (tx.status === "settled" || tx.paletteProgress >= 1) return cloneLut(this.settledLut);
+    return mixLuts(this.sourceLut, this.targetLut, tx.paletteProgress);
   }
 
   displayedPlacement(): DisplayedPlacement {
     const tx = this.current;
     const site = tx.siteProgress;
+    const lut = this.displayedLut();
     return {
       slot: site >= 1 || tx.sourceSlot === tx.targetSlot ? tx.targetSlot : tx.sourceSlot,
       fit: mixFit(tx.sourceFit, tx.targetFit, site),
@@ -488,7 +566,84 @@ export class ActorTransitionCoordinator {
       paletteProgress: tx.paletteProgress,
       geometryId: tx.geometryProgress >= 1 ? tx.targetGeometryId : tx.sourceGeometryId,
       nodeId: tx.targetNodeId,
+      lutHash: hashLut(lut),
     };
+  }
+
+  materialSnapshot(colorPhase = 0): PaletteMaterialSnapshot {
+    const tx = this.current;
+    const settled = tx.status === "settled" || tx.paletteProgress >= 1 && tx.geometryProgress >= 1;
+    const shaderSourceLut = settled ? cloneLut(this.settledLut) : cloneLut(this.sourceLut);
+    const from: SettledActorState = {
+      geometryId: tx.sourceGeometryId ?? "none",
+      paletteMask: tx.sourcePaletteMask,
+      paletteLut: cloneLut(this.sourceLut),
+      paletteLutHash: tx.sourcePaletteLutHash,
+      slot: tx.sourceSlot,
+      fit: tx.sourceFit,
+      fitProfile: tx.sourceFitProfile,
+    };
+    const to: SettledActorState = {
+      geometryId: tx.targetGeometryId ?? "none",
+      paletteMask: tx.targetPaletteMask,
+      paletteLut: cloneLut(this.targetLut),
+      paletteLutHash: tx.targetPaletteLutHash,
+      slot: tx.targetSlot,
+      fit: tx.targetFit,
+      fitProfile: tx.targetFitProfile,
+    };
+    return {
+      revision: tx.revision,
+      settledGeometryId: settled ? tx.targetGeometryId : (tx.geometryProgress >= 1 ? tx.targetGeometryId : tx.sourceGeometryId),
+      settledMask: settled ? tx.targetPaletteMask : tx.sourcePaletteMask,
+      settledLutHash: tx.settledPaletteLutHash,
+      sourceGeometryId: tx.sourceGeometryId,
+      targetGeometryId: tx.targetGeometryId,
+      sourceMask: tx.sourcePaletteMask,
+      targetMask: tx.targetPaletteMask,
+      sourceLutHash: tx.sourcePaletteLutHash,
+      targetLutHash: tx.targetPaletteLutHash,
+      shaderBaseLutHash: settled ? tx.targetPaletteLutHash : tx.sourcePaletteLutHash,
+      shaderMask: settled ? tx.targetPaletteMask : tx.targetPaletteMask,
+      shaderProgress: settled ? 1 : tx.paletteProgress,
+      shaderSourceLut,
+      ownershipEnabled: !settled && tx.paletteOwnershipMode === 1,
+      paletteProgress: settled ? 1 : tx.paletteProgress,
+      geometryProgress: tx.geometryProgress,
+      siteProgress: tx.siteProgress,
+      phase: tx.semanticPhase,
+      programReady: tx.programReady,
+      activeTransition: settled ? null : {
+        revision: tx.revision,
+        from,
+        to,
+        geometryProgress: tx.geometryProgress,
+        paletteProgress: tx.paletteProgress,
+        siteProgress: tx.siteProgress,
+        programReady: tx.programReady,
+      },
+      colorPhase,
+    };
+  }
+
+  private commitTargetAsSettled() {
+    const tx = this.current;
+    tx.geometryProgress = 1;
+    tx.paletteProgress = 1;
+    tx.siteProgress = 1;
+    tx.semanticPhase = "settle";
+    this.settledLut = cloneLut(this.targetLut);
+    this.sourceLut = cloneLut(this.targetLut);
+    tx.settledPaletteLutHash = tx.targetPaletteLutHash;
+    tx.shaderBaseLutHash = tx.targetPaletteLutHash;
+    tx.sourcePaletteLutHash = tx.targetPaletteLutHash;
+    tx.sourcePaletteMask = tx.targetPaletteMask;
+    tx.sourceGeometryId = tx.targetGeometryId;
+    tx.paletteOwnershipMode = 0;
+    tx.continuityEnabled = 0;
+    tx.paletteCommitted = true;
+    tx.programReady = true;
+    tx.status = "settled";
   }
 }
 

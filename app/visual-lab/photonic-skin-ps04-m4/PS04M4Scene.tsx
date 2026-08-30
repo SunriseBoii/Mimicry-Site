@@ -48,6 +48,7 @@ import {
 } from "../photonic-skin-ps04-m2/photonic-palette";
 import type { OverlayUniforms, PhotonicMotionSession } from "../photonic-skin-ps04-m3/session";
 import { CONTINUITY_FLOOR } from "./continuity-overlay";
+import { hashLut, type PaletteMaterialSnapshot } from "./palette-authority";
 
 export const IDENTITY_OVERLAY: OverlayUniforms = {
   enabled: false,
@@ -109,6 +110,16 @@ declare global {
     __PS04M4_LAB__?: Record<string, unknown>;
     __PS04M4_PREVIEW__?: Record<string, unknown>;
     __PS04M4_MEASURE_ACTOR__?: () => ActorMaskMeasure | null;
+    __PS04M4_MATERIAL_UNIFORMS__?: {
+      mask: number;
+      progress: number;
+      ownership: number;
+      sourceLutHash: string;
+      shaderBaseLutHash: string;
+      materialUuid: string;
+      programs: number;
+      compileCount: number;
+    };
   }
 }
 
@@ -135,6 +146,8 @@ export interface SceneStats {
   lastActorDrawCalls: number;
   lastActorTriangles: number;
   newFrame: boolean;
+  materialUuid?: string;
+  compileCount?: number;
 }
 
 export interface SceneEnvironment {
@@ -185,6 +198,7 @@ export interface SceneProps {
   sessionShouldAnimate?: boolean;
   compositionRef?: { current: CompositionViewport };
   transitionRef?: { current: TransitionUniforms };
+  paletteSnapshotRef?: { current: PaletteMaterialSnapshot | null };
   actorMask?: boolean;
   onStats: (value: SceneStats) => void;
   onEnvironment?: (value: SceneEnvironment) => void;
@@ -1486,8 +1500,10 @@ function M41Content(props: SceneProps) {
   const { gl, get } = useThree();
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const progressRef = useRef(props.progress);
-  const lastSourceLut = useRef<unknown>(null);
+  const lastSourceLutHash = useRef<string | null>(null);
   const readyRef = useRef(false);
+  const compileCountRef = useRef(0);
+  const boundProgramId = useRef<string | null>(null);
   const frameStats = useRef({ elapsed: 0, frames: 0, samples: [] as number[] });
   const stateTextures = useMemo(() => ({
     source: stateTexture(props.source, "position"),
@@ -1656,16 +1672,72 @@ function M41Content(props: SceneProps) {
   }, [props.actorMask, props.material]);
 
   useEffect(() => {
-    if (props.actorMask) gl.setClearColor(0x140028, 1);
-    else gl.setClearColor(0x000000, 0);
-  }, [gl, props.actorMask]);
+    const uniforms = uniformsRef.current;
+    uniforms.uSource.value = stateTextures.source;
+    uniforms.uTarget.value = stateTextures.target;
+    uniforms.uSourceNormal.value = stateTextures.sourceNormal;
+    uniforms.uTargetNormal.value = stateTextures.targetNormal;
+    uniforms.uSourceQuat.value = stateTextures.sourceQuat;
+    uniforms.uTargetQuat.value = stateTextures.targetQuat;
+    uniforms.uSourceMeta.value = stateTextures.sourceMeta;
+    uniforms.uTargetMeta.value = stateTextures.targetMeta;
+    return () => {
+      Object.values(stateTextures).forEach((texture) => texture.dispose());
+    };
+  }, [stateTextures]);
+
+  useEffect(() => {
+    const uniforms = uniformsRef.current;
+    uniforms.uResidual.value = compiledTextures.residual;
+    uniforms.uLanes.value = compiledTextures.lanes;
+    uniforms.uVelocity.value = compiledTextures.velocity;
+    uniforms.uActivation.value = compiledTextures.activation;
+    uniforms.uSourceTracks.value = compiledTextures.sourceTracks;
+    uniforms.uTargetTracks.value = compiledTextures.targetTracks;
+    uniforms.uTrackRoutes.value = compiledTextures.routes;
+    uniforms.uTrackWindows.value = compiledTextures.windows;
+    uniforms.uDurationSeconds.value = props.program.durationMs / 1000;
+    uniforms.uLocalMorphWidth.value = props.program.compiled?.header.activationPolicy.localMorphWidthFraction ?? 0.12;
+    uniforms.uBridgePulseMaximum.value = props.program.compiled?.header.activationPolicy.bridgePulseMaximum ?? 0.035;
+    uniforms.uBridgeThickness.value = props.program.compiled?.header.activationPolicy.bridgeThickness ?? 1;
+    uniforms.uDepthRouteFraction.value = props.program.compiled?.header.activationPolicy.depthRouteFraction ?? 0.18;
+    uniforms.uMinimumGeometricScale.value = props.program.compiled?.header.activationPolicy.minimumGeometricScale ?? 0.18;
+    const settleWindow = props.program.compiled?.header.settlePolicy.window ?? [0.86, 1];
+    uniforms.uSettleWindow.value.set(settleWindow[0], settleWindow[1]);
+    uniforms.uSettleMaximum.value = props.program.compiled?.header.settlePolicy.maximumAmplitudeFraction ?? 0.018;
+    const actor = props.program.compiled?.header.actorTrack;
+    uniforms.uActorCenterStart.value.set(...(actor?.centerStart ?? [0, 0, 0]));
+    uniforms.uActorCenterEnd.value.set(...(actor?.centerEnd ?? [0, 0, 0]));
+    uniforms.uActorRotationAxis.value.set(...(actor?.rotationAxis ?? [0, 0, 1]));
+    uniforms.uActorRotationRadians.value = actor?.rotationRadians ?? 0;
+    uniforms.uActorTranslationAxis.value.set(...(actor?.translationAxis ?? [0, 0, 0]));
+    uniforms.uActorTranslationAmplitude.value = actor?.translationAmplitude ?? 0;
+    uniforms.uActorWindow.value.set(...(actor?.window ?? [0, 1]));
+    uniforms.uActorSourcePosition.value.set(...(actor?.sourcePose.position ?? [0, 0, 0]));
+    uniforms.uActorSourceOrientation.value.set(...(actor?.sourcePose.orientation ?? [0, 0, 0, 1]));
+    uniforms.uCompiled.value = props.program.compiled ? 1 : 0;
+    uniforms.uSourceFrameTranslate.value.set(...sourceFrame.translate);
+    uniforms.uTargetFrameTranslate.value.set(...targetFrame.translate);
+    uniforms.uSourceFrameScale.value = sourceFrame.scale;
+    uniforms.uTargetFrameScale.value = targetFrame.scale;
+    if (boundProgramId.current !== props.program.programId) {
+      compileCountRef.current += 1;
+      boundProgramId.current = props.program.programId;
+    }
+    return () => {
+      Object.values(compiledTextures).forEach((texture) => texture.dispose());
+    };
+  }, [compiledTextures, props.program, sourceFrame, targetFrame]);
 
   useEffect(() => () => {
     geometry.dispose();
     material.dispose();
-    Object.values(stateTextures).forEach((texture) => texture.dispose());
-    Object.values(compiledTextures).forEach((texture) => texture.dispose());
-  }, [compiledTextures, geometry, material, stateTextures]);
+  }, [geometry, material]);
+
+  useEffect(() => {
+    if (props.actorMask) gl.setClearColor(0x140028, 1);
+    else gl.setClearColor(0x000000, 0);
+  }, [gl, props.actorMask]);
 
   const lastActorDraw = useRef({ calls: 0, triangles: 0 });
   const restoreRef = useRef({
@@ -1685,20 +1757,35 @@ function M41Content(props: SceneProps) {
     uniformsRef.current.uIdleQuat.value.set(...overlay.quaternion);
     const color = sessionSnap?.palette ?? props.material.colorController.snapshot();
     uniformsRef.current.uGlobalColorPhase.value = color.phase;
-    uniformsRef.current.uPaletteMask.value = color.palette.mask;
-    uniformsRef.current.uPaletteProgress.value = color.paletteProgress;
     uniformsRef.current.uReducedMotion.value = color.reducedMotion ? 1 : 0;
+    const palette = props.paletteSnapshotRef?.current;
     const liveTransition = props.transitionRef?.current;
     const identityBypass = Boolean(liveTransition?.identity || props.reducedMotion);
+    const shaderMask = palette?.shaderMask ?? color.palette.mask;
+    const shaderProgress = palette ? palette.shaderProgress : color.paletteProgress;
+    const shaderLut = palette?.shaderSourceLut ?? color.sourceLut;
+    const shaderLutHash = palette?.shaderBaseLutHash ?? hashLut(color.sourceLut);
+    uniformsRef.current.uPaletteMask.value = shaderMask;
+    uniformsRef.current.uPaletteProgress.value = identityBypass ? 1 : shaderProgress;
     uniformsRef.current.uContinuityEnabled.value = identityBypass ? 0 : (liveTransition?.continuityEnabled ?? 0);
     uniformsRef.current.uContinuityFloor.value = liveTransition?.continuityFloor ?? CONTINUITY_FLOOR;
-    uniformsRef.current.uPaletteOwnershipMode.value = identityBypass ? 0 : (liveTransition?.paletteOwnershipMode ?? 0);
-    if (lastSourceLut.current !== color.sourceLut) {
-      color.sourceLut.forEach((sample, index) => {
+    uniformsRef.current.uPaletteOwnershipMode.value = identityBypass ? 0 : (palette ? (palette.ownershipEnabled ? 1 : 0) : (liveTransition?.paletteOwnershipMode ?? 0));
+    if (lastSourceLutHash.current !== shaderLutHash) {
+      shaderLut.forEach((sample, index) => {
         sourceLutUniforms[index].set(sample.color[0], sample.color[1], sample.color[2], sample.presence);
       });
-      lastSourceLut.current = color.sourceLut;
+      lastSourceLutHash.current = shaderLutHash;
     }
+    window.__PS04M4_MATERIAL_UNIFORMS__ = {
+      mask: uniformsRef.current.uPaletteMask.value,
+      progress: uniformsRef.current.uPaletteProgress.value,
+      ownership: uniformsRef.current.uPaletteOwnershipMode.value,
+      sourceLutHash: shaderLutHash,
+      shaderBaseLutHash: palette?.shaderBaseLutHash ?? shaderLutHash,
+      materialUuid: material.uuid,
+      programs: gl.info.programs?.length ?? 0,
+      compileCount: compileCountRef.current,
+    };
 
     const actorCalls = gl.info.render.calls;
     const actorTriangles = gl.info.render.triangles;
@@ -1732,6 +1819,8 @@ function M41Content(props: SceneProps) {
         lastActorDrawCalls: lastActorDraw.current.calls,
         lastActorTriangles: lastActorDraw.current.triangles,
         newFrame,
+        materialUuid: material.uuid,
+        compileCount: compileCountRef.current,
       });
       if (lastActorDraw.current.calls > 0) window.__PS04M4_SCENE_READY__ = true;
       readyRef.current = true;
@@ -2014,7 +2103,6 @@ export function PS04M4Scene(props: SceneProps) {
     >
       <DemandRenderInvalidator signature={`${canvasSize.width}:${canvasSize.height}:${props.source.entry.contentHash}:${props.target.entry.contentHash}:${props.program.programId}:${props.progress}:${props.overlay?.enabled ? 1 : 0}:${props.overlay?.scale ?? 1}:${props.overlay?.quaternion?.join(",") ?? ""}:${props.material.theme}:${props.material.themeMix}:${props.material.colorEnabled}:${props.material.colorLayer}:${props.material.diagnostic}:${props.material.colorController.snapshot().phase}:${props.material.colorController.snapshot().palette.mask}:${props.material.colorController.snapshot().paletteProgress}:${props.actorMask ? 1 : 0}`} />
       <M41Content
-        key={`${props.source.entry.contentHash}:${props.target.entry.contentHash}:${props.program.programId}:${props.evaluator}:${props.profile}`}
         {...props}
       />
       </Canvas>

@@ -1,0 +1,152 @@
+{
+  "capturedAt": "2026-08-30T10:44:09.350Z",
+  "tolerancesUnchanged": {
+    "vertex": "552/46",
+    "field": "32896+4369"
+  },
+  "note": "Identity/parity mode bypasses M4 site fit and R3 continuity/ownership overlays. Ordinary GPU vertex probe still samples frozen vEvalChannels; visual mass overlay does not write those varyings.",
+  "m3": {
+    "vertex": {
+      "measured": true,
+      "valid": true,
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "sampleCount": 552,
+      "timeSampleCount": 46,
+      "maxPositionError": 0.000001612881469714722,
+      "p95PositionError": 3.2256469728597637e-7,
+      "maxVelocityError": 0.019954273944904344,
+      "p95VelocityError": 0.001483144222091415,
+      "maxVelocityNormalizedError": 0.010749045357957747,
+      "p95VelocityNormalizedError": 0.0007957985732256349,
+      "maxOrientationError": 0.000005193958663940457,
+      "p95OrientationError": 2.2299499513600551e-7,
+      "maxNormalError": 0.000009805042648303175,
+      "p95NormalError": 4.5860648155079953e-7,
+      "maxScaleError": 6.100715637114007e-7,
+      "p95ScaleError": 2.500000007010783e-8,
+      "maxActivationError": 3.053740477154676e-7,
+      "p95ActivationError": 8.099601406241774e-9,
+      "maxBridgeError": 0,
+      "p95BridgeError": 0,
+      "maxGroupPhaseError": 7.680610656368714e-7,
+      "p95GroupPhaseError": 6.448287963312094e-8,
+      "maxActorPoseError": 4.7203392982558823e-7,
+      "p95ActorPoseError": 4.372955299914794e-8,
+      "worstVelocitySample": {
+        "t": 0.75,
+        "persistentId": 0,
+        "axis": 1,
+        "actual": -100.2188456260551,
+        "expected": -100.2387999,
+        "epsilon": 0.0010000000000000009
+      },
+      "maxIdleEvalPositionDelta": 0
+    },
+    "field": {
+      "measured": true,
+      "valid": true,
+      "semanticSamples": 32896,
+      "envelopeSamples": 4369,
+      "maxSemanticWeightError": 1.091303700739843e-7,
+      "maxSemanticSumError": 2.9802322387695312e-8,
+      "maxUnselectedWeight": 0,
+      "maxEnvelopeError": 7.898766840597204e-8
+    }
+  },
+  "m4Identity": {
+    "vertex": {
+      "measured": true,
+      "valid": true,
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "sampleCount": 552,
+      "timeSampleCount": 46,
+      "maxPositionError": 0.000001612881469714722,
+      "p95PositionError": 3.2256469728597637e-7,
+      "maxVelocityError": 0.019954273944904344,
+      "p95VelocityError": 0.001483144222091415,
+      "maxVelocityNormalizedError": 0.010749045357957747,
+      "p95VelocityNormalizedError": 0.0007957985732256349,
+      "maxOrientationError": 0.000005193958663940457,
+      "p95OrientationError": 2.2299499513600551e-7,
+      "maxNormalError": 0.000009805042648303175,
+      "p95NormalError": 4.5860648155079953e-7,
+      "maxScaleError": 6.100715637114007e-7,
+      "p95ScaleError": 2.500000007010783e-8,
+      "maxActivationError": 3.053740477154676e-7,
+      "p95ActivationError": 8.099601406241774e-9,
+      "maxBridgeError": 0,
+      "p95BridgeError": 0,
+      "maxGroupPhaseError": 7.680610656368714e-7,
+      "p95GroupPhaseError": 6.448287963312094e-8,
+      "maxActorPoseError": 4.7203392982558823e-7,
+      "p95ActorPoseError": 4.372955299914794e-8,
+      "worstVelocitySample": {
+        "t": 0.75,
+        "persistentId": 0,
+        "axis": 1,
+        "actual": -100.2188456260551,
+        "expected": -100.2387999,
+        "epsilon": 0.0010000000000000009
+      },
+      "maxIdleEvalPositionDelta": 0
+    },
+    "field": {
+      "measured": true,
+      "valid": true,
+      "semanticSamples": 32896,
+      "envelopeSamples": 4369,
+      "maxSemanticWeightError": 1.091303700739843e-7,
+      "maxSemanticSumError": 2.9802322387695312e-8,
+      "maxUnselectedWeight": 0,
+      "maxEnvelopeError": 7.898766840597204e-8
+    }
+  },
+  "m4": {
+    "vertex": {
+      "measured": true,
+      "valid": true,
+      "programId": "master-neutral-to-brand-wide-drive-content-design-digital-event-games-merch-video-qa-desktop-289348ed94b7",
+      "sampleCount": 552,
+      "timeSampleCount": 46,
+      "maxPositionError": 0.000001612881469714722,
+      "p95PositionError": 3.2256469728597637e-7,
+      "maxVelocityError": 0.019954273944904344,
+      "p95VelocityError": 0.001483144222091415,
+      "maxVelocityNormalizedError": 0.010749045357957747,
+      "p95VelocityNormalizedError": 0.0007957985732256349,
+      "maxOrientationError": 0.000005193958663940457,
+      "p95OrientationError": 2.2299499513600551e-7,
+      "maxNormalError": 0.000009805042648303175,
+      "p95NormalError": 4.5860648155079953e-7,
+      "maxScaleError": 6.100715637114007e-7,
+      "p95ScaleError": 2.500000007010783e-8,
+      "maxActivationError": 3.053740477154676e-7,
+      "p95ActivationError": 8.099601406241774e-9,
+      "maxBridgeError": 0,
+      "p95BridgeError": 0,
+      "maxGroupPhaseError": 7.680610656368714e-7,
+      "p95GroupPhaseError": 6.448287963312094e-8,
+      "maxActorPoseError": 4.7203392982558823e-7,
+      "p95ActorPoseError": 4.372955299914794e-8,
+      "worstVelocitySample": {
+        "t": 0.75,
+        "persistentId": 0,
+        "axis": 1,
+        "actual": -100.2188456260551,
+        "expected": -100.2387999,
+        "epsilon": 0.0010000000000000009
+      },
+      "maxIdleEvalPositionDelta": 0
+    },
+    "field": {
+      "measured": true,
+      "valid": true,
+      "semanticSamples": 32896,
+      "envelopeSamples": 4369,
+      "maxSemanticWeightError": 1.091303700739843e-7,
+      "maxSemanticSumError": 2.9802322387695312e-8,
+      "maxUnselectedWeight": 0,
+      "maxEnvelopeError": 7.898766840597204e-8
+    }
+  }
+}

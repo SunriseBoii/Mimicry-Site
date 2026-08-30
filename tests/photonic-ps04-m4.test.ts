@@ -757,7 +757,7 @@ test("one session owner, one Canvas, footer reverse does not remount the session
     /footer has no Mimic; session stays mounted/,
   );
   assert.doesNotMatch(m4Lab, /key=\{.*activeNode/);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r3"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r4"/);
 });
 
 test("direct-load contract is host-node equivalent for every node", () => {
@@ -1071,7 +1071,7 @@ test("M4.R2 full-canvas clip-space composition preserves square projection", () 
     900,
   );
   assert.equal(cutoff.cutoff, true);
-  assert.match(m4Lab, /sessionId = "ps04-m4-r3"/);
+  assert.match(m4Lab, /sessionId = "ps04-m4-r4"/);
   assert.equal((m4Scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.equal((m4Scene.match(/<instancedMesh/g) ?? []).length, 1);

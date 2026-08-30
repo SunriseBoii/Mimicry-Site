@@ -1,0 +1,1461 @@
+{
+  "capturedAt": "2026-08-30T10:19:39.377Z",
+  "singles": [
+    {
+      "node": "05.1",
+      "name": "content",
+      "mask": 1,
+      "hex": "#4C7AFF",
+      "theme": "light",
+      "sample": {
+        "node": "05.1",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 1,
+          "targetMask": 1,
+          "settledLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 2
+        },
+        "palette": {
+          "settledMask": 1,
+          "targetMask": 1,
+          "shaderMask": 1,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "ddc6fbc5",
+          "targetLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "sourceLutHash": "ddc6fbc5",
+          "colorPhase": 0.12812991071428595,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 1,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 2
+        },
+        "driver": {
+          "mask": 1,
+          "progress": 1,
+          "phase": 0.12812991071428595,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 1,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "master-neutral|single-merch|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 29158
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.12812991071428595
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.2",
+      "name": "design",
+      "mask": 2,
+      "hex": "#9E64EE",
+      "theme": "light",
+      "sample": {
+        "node": "05.2",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 2,
+          "targetMask": 2,
+          "settledLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 3
+        },
+        "palette": {
+          "settledMask": 2,
+          "targetMask": 2,
+          "shaderMask": 2,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "4d9cf685",
+          "targetLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "sourceLutHash": "4d9cf685",
+          "colorPhase": 0.22899419642857127,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 2,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 3
+        },
+        "driver": {
+          "mask": 2,
+          "progress": 1,
+          "phase": 0.22899419642857127,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 2,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-content|single-design|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 36007
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.22899419642857127
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.3",
+      "name": "event",
+      "mask": 4,
+      "hex": "#F86927",
+      "theme": "light",
+      "sample": {
+        "node": "05.3",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 4,
+          "targetMask": 4,
+          "settledLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 4
+        },
+        "palette": {
+          "settledMask": 4,
+          "targetMask": 4,
+          "shaderMask": 4,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "5b478505",
+          "targetLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "sourceLutHash": "5b478505",
+          "colorPhase": 0.33245133928571574,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 4,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 4
+        },
+        "driver": {
+          "mask": 4,
+          "progress": 1,
+          "phase": 0.33245133928571574,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 3,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-design|single-event|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 49669
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.33245133928571574
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.4",
+      "name": "games",
+      "mask": 8,
+      "hex": "#76A713",
+      "theme": "light",
+      "sample": {
+        "node": "05.4",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 8,
+          "targetMask": 8,
+          "settledLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 5
+        },
+        "palette": {
+          "settledMask": 8,
+          "targetMask": 8,
+          "shaderMask": 8,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "19442645",
+          "targetLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "sourceLutHash": "19442645",
+          "colorPhase": 0.43245848214286037,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 8,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 5
+        },
+        "driver": {
+          "mask": 8,
+          "progress": 1,
+          "phase": 0.43245848214286037,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 4,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-event|single-games|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 17175
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.43245848214286037
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.5",
+      "name": "video",
+      "mask": 16,
+      "hex": "#E34992",
+      "theme": "light",
+      "sample": {
+        "node": "05.5",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 16,
+          "targetMask": 16,
+          "settledLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 6
+        },
+        "palette": {
+          "settledMask": 16,
+          "targetMask": 16,
+          "shaderMask": 16,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "63ca6bc5",
+          "targetLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "sourceLutHash": "63ca6bc5",
+          "colorPhase": 0.5281227678571471,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 16,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 6
+        },
+        "driver": {
+          "mask": 16,
+          "progress": 1,
+          "phase": 0.5281227678571471,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 5,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-games|single-video|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 12025
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.5281227678571471
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.6",
+      "name": "digital",
+      "mask": 32,
+      "hex": "#009FAC",
+      "theme": "light",
+      "sample": {
+        "node": "05.6",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 32,
+          "targetMask": 32,
+          "settledLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 7
+        },
+        "palette": {
+          "settledMask": 32,
+          "targetMask": 32,
+          "shaderMask": 32,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "9d0b1cc5",
+          "targetLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "sourceLutHash": "9d0b1cc5",
+          "colorPhase": 0.6259513392857203,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 32,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 7
+        },
+        "driver": {
+          "mask": 32,
+          "progress": 1,
+          "phase": 0.6259513392857203,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 6,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-video|single-digital|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 24320
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.6259513392857203
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.7",
+      "name": "merch",
+      "mask": 64,
+      "hex": "#D5A200",
+      "theme": "light",
+      "sample": {
+        "node": "05.7",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 64,
+          "targetMask": 64,
+          "settledLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 8
+        },
+        "palette": {
+          "settledMask": 64,
+          "targetMask": 64,
+          "shaderMask": 64,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "5bc23705",
+          "targetLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "sourceLutHash": "5bc23705",
+          "colorPhase": 0.7272584821428648,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 64,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 8
+        },
+        "driver": {
+          "mask": 64,
+          "progress": 1,
+          "phase": 0.7272584821428648,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 7,
+          "misses": 19,
+          "compiles": 19,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 19,
+          "lastKey": "single-digital|single-merch|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 9892
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.7272584821428648
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    }
+  ],
+  "persistence": [
+    {
+      "delayMs": 250,
+      "sample": {
+        "node": "05.2",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 2,
+          "targetMask": 2,
+          "settledLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 9
+        },
+        "palette": {
+          "settledMask": 2,
+          "targetMask": 2,
+          "shaderMask": 2,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "4d9cf685",
+          "targetLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "sourceLutHash": "4d9cf685",
+          "colorPhase": 0.8421870535714376,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 2,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 9
+        },
+        "driver": {
+          "mask": 2,
+          "progress": 1,
+          "phase": 0.8421870535714376,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 7,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-merch|single-design|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 36065
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.8421870535714376
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "delayMs": 2000,
+      "sample": {
+        "node": "05.2",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 2,
+          "targetMask": 2,
+          "settledLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 9
+        },
+        "palette": {
+          "settledMask": 2,
+          "targetMask": 2,
+          "shaderMask": 2,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "4d9cf685",
+          "targetLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "sourceLutHash": "4d9cf685",
+          "colorPhase": 0.9668513392857253,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 2,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 9
+        },
+        "driver": {
+          "mask": 2,
+          "progress": 1,
+          "phase": 0.9668513392857253,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 7,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-merch|single-design|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 35783
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.9668513392857253
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "delayMs": 5000,
+      "sample": {
+        "node": "05.2",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 2,
+          "targetMask": 2,
+          "settledLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 9
+        },
+        "palette": {
+          "settledMask": 2,
+          "targetMask": 2,
+          "shaderMask": 2,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "4d9cf685",
+          "targetLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "sourceLutHash": "4d9cf685",
+          "colorPhase": 0.18070848214286858,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 2,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 9
+        },
+        "driver": {
+          "mask": 2,
+          "progress": 1,
+          "phase": 0.18070848214286858,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 7,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-merch|single-design|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 35693
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.18070848214286858
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    }
+  ],
+  "dark": [
+    {
+      "node": "05.1",
+      "name": "content",
+      "mask": 1,
+      "hex": "#4C7AFF",
+      "theme": "dark",
+      "sample": {
+        "node": "05.1",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 1,
+          "targetMask": 1,
+          "settledLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 10
+        },
+        "palette": {
+          "settledMask": 1,
+          "targetMask": 1,
+          "shaderMask": 1,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "ddc6fbc5",
+          "targetLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "sourceLutHash": "ddc6fbc5",
+          "colorPhase": 0.3071227678571556,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 1,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "ddc6fbc5",
+          "shaderBaseLutHash": "ddc6fbc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 10
+        },
+        "driver": {
+          "mask": 1,
+          "progress": 1,
+          "phase": 0.3071227678571556,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 8,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-design|single-content|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 29156
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.3071227678571556
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.2",
+      "name": "design",
+      "mask": 2,
+      "hex": "#9E64EE",
+      "theme": "dark",
+      "sample": {
+        "node": "05.2",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 2,
+          "targetMask": 2,
+          "settledLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 11
+        },
+        "palette": {
+          "settledMask": 2,
+          "targetMask": 2,
+          "shaderMask": 2,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "4d9cf685",
+          "targetLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "sourceLutHash": "4d9cf685",
+          "colorPhase": 0.41058705357144293,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 2,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "4d9cf685",
+          "shaderBaseLutHash": "4d9cf685",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 11
+        },
+        "driver": {
+          "mask": 2,
+          "progress": 1,
+          "phase": 0.41058705357144293,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 9,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-content|single-design|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0.0605,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 36005
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.41058705357144293
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0.0605,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.3",
+      "name": "event",
+      "mask": 4,
+      "hex": "#F86927",
+      "theme": "dark",
+      "sample": {
+        "node": "05.3",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 4,
+          "targetMask": 4,
+          "settledLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 12
+        },
+        "palette": {
+          "settledMask": 4,
+          "targetMask": 4,
+          "shaderMask": 4,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "5b478505",
+          "targetLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "sourceLutHash": "5b478505",
+          "colorPhase": 0.5149013392857307,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 4,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "5b478505",
+          "shaderBaseLutHash": "5b478505",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 12
+        },
+        "driver": {
+          "mask": 4,
+          "progress": 1,
+          "phase": 0.5149013392857307,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 10,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-design|single-event|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 49669
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.5149013392857307
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.4",
+      "name": "games",
+      "mask": 8,
+      "hex": "#76A713",
+      "theme": "dark",
+      "sample": {
+        "node": "05.4",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 8,
+          "targetMask": 8,
+          "settledLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 13
+        },
+        "palette": {
+          "settledMask": 8,
+          "targetMask": 8,
+          "shaderMask": 8,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "19442645",
+          "targetLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "sourceLutHash": "19442645",
+          "colorPhase": 0.6162370535714444,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 8,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "19442645",
+          "shaderBaseLutHash": "19442645",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 13
+        },
+        "driver": {
+          "mask": 8,
+          "progress": 1,
+          "phase": 0.6162370535714444,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 11,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-event|single-games|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 17172
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.6162370535714444
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.5",
+      "name": "video",
+      "mask": 16,
+      "hex": "#E34992",
+      "theme": "dark",
+      "sample": {
+        "node": "05.5",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 16,
+          "targetMask": 16,
+          "settledLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 14
+        },
+        "palette": {
+          "settledMask": 16,
+          "targetMask": 16,
+          "shaderMask": 16,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "63ca6bc5",
+          "targetLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "sourceLutHash": "63ca6bc5",
+          "colorPhase": 0.7162370535714436,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 16,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "63ca6bc5",
+          "shaderBaseLutHash": "63ca6bc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 14
+        },
+        "driver": {
+          "mask": 16,
+          "progress": 1,
+          "phase": 0.7162370535714436,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 12,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-games|single-video|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0.026,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 12029
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.7162370535714436
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0.026,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.6",
+      "name": "digital",
+      "mask": 32,
+      "hex": "#009FAC",
+      "theme": "dark",
+      "sample": {
+        "node": "05.6",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 32,
+          "targetMask": 32,
+          "settledLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 15
+        },
+        "palette": {
+          "settledMask": 32,
+          "targetMask": 32,
+          "shaderMask": 32,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "9d0b1cc5",
+          "targetLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "sourceLutHash": "9d0b1cc5",
+          "colorPhase": 0.8118870535714433,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 32,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "9d0b1cc5",
+          "shaderBaseLutHash": "9d0b1cc5",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 15
+        },
+        "driver": {
+          "mask": 32,
+          "progress": 1,
+          "phase": 0.8118870535714433,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 13,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-video|single-digital|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 24316
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.8118870535714433
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    },
+    {
+      "node": "05.7",
+      "name": "merch",
+      "mask": 64,
+      "hex": "#D5A200",
+      "theme": "dark",
+      "sample": {
+        "node": "05.7",
+        "sessionId": "ps04-m4-r4",
+        "tx": {
+          "status": "settled",
+          "sourceMask": 64,
+          "targetMask": 64,
+          "settledLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "paletteProgress": 1,
+          "ownership": 0,
+          "geometryProgress": 1,
+          "programReady": true,
+          "revision": 16
+        },
+        "palette": {
+          "settledMask": 64,
+          "targetMask": 64,
+          "shaderMask": 64,
+          "shaderProgress": 1,
+          "ownershipEnabled": false,
+          "settledLutHash": "5bc23705",
+          "targetLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "sourceLutHash": "5bc23705",
+          "colorPhase": 0.9123441964285863,
+          "activeTransition": null
+        },
+        "uniforms": {
+          "mask": 64,
+          "progress": 1,
+          "ownership": 0,
+          "sourceLutHash": "5bc23705",
+          "shaderBaseLutHash": "5bc23705",
+          "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+          "programs": 1,
+          "compileCount": 16
+        },
+        "driver": {
+          "mask": 64,
+          "progress": 1,
+          "phase": 0.9123441964285863,
+          "transient": false
+        },
+        "programCache": {
+          "hits": 14,
+          "misses": 20,
+          "compiles": 20,
+          "prewarms": 18,
+          "inflight": 0,
+          "cached": 20,
+          "lastKey": "single-digital|single-merch|0|desktop",
+          "lastStatus": "cached"
+        },
+        "programs": 1,
+        "draws": 1,
+        "materialUuid": "7a2063c5-362f-459a-9b44-348f1754a59b",
+        "occupancy": {
+          "content": 0,
+          "design": 0,
+          "event": 0,
+          "games": 0,
+          "video": 0,
+          "digital": 0,
+          "merch": 0,
+          "__actorPixels": 9891
+        },
+        "webgl": {
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        },
+        "diagnosticsPhase": 0.9123441964285863
+      },
+      "judged": {
+        "failures": [],
+        "selected": 0,
+        "unselected": []
+      }
+    }
+  ],
+  "lifecycle": {
+    "bootPhase": 0.041196875000000036,
+    "afterTheme": 0.923587053571443,
+    "afterResize": {
+      "mask": 64,
+      "lut": "5bc23705",
+      "phase": 0.9751013392857278
+    },
+    "afterRestore": {
+      "mask": 64,
+      "lut": "5bc23705",
+      "phase": 0.051294196428585445,
+      "contextState": "restored"
+    },
+    "materialUuidStable": true,
+    "programs": 1
+  },
+  "pass": true,
+  "failures": []
+}

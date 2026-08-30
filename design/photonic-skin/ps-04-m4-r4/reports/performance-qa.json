@@ -1,0 +1,1928 @@
+{
+  "capturedAt": "2026-08-30T10:39:29.906Z",
+  "note": "rAF quantiles come from an in-page natural-rAF recorder. Playwright waitForTimeout is only used to let that recorder collect frames; it is not the performance sample clock.",
+  "idleVsTransition": {
+    "idleP95": 6.2,
+    "contentToDesignP95": 18.2,
+    "coldContentDesignP95": 72.8,
+    "warmContentDesignP95": 24.2,
+    "rapid20P95": 4969.8
+  },
+  "cache": {
+    "cold": {
+      "hits": 1,
+      "misses": 19,
+      "compiles": 19,
+      "prewarms": 18,
+      "inflight": 0,
+      "cached": 19,
+      "lastKey": "master-neutral|single-merch|0|desktop",
+      "lastStatus": "cached"
+    },
+    "warm": {
+      "hits": 3,
+      "misses": 19,
+      "compiles": 19,
+      "prewarms": 18,
+      "inflight": 0,
+      "cached": 19,
+      "lastKey": "single-content|single-design|0|desktop",
+      "lastStatus": "cached"
+    }
+  },
+  "longTasksCold": 5,
+  "longTasksWarm": 0,
+  "gpuTimer": {
+    "available": true,
+    "extension": "EXT_disjoint_timer_query_webgl2",
+    "disjoint": false,
+    "gpuMs": null,
+    "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+  },
+  "longTasks": {
+    "idleMaster": 2,
+    "coldContentDesign": 5,
+    "coldCache": 0,
+    "warmContentDesign": 0,
+    "warmCache": 0,
+    "masterToBrandWide": 3,
+    "masterRightToSingleLeft": 5,
+    "contentToDesign": 0,
+    "designToEvent": 3,
+    "eventToGames": 2,
+    "gamesToVideo": 0,
+    "merchToMaster": 5,
+    "buildTasks": 13,
+    "paletteOnly": 0,
+    "sameMaskGeometry": 5,
+    "rapid20": 42,
+    "magneticScroll": 0,
+    "themeSwitch": 0,
+    "dpr1": 0,
+    "dpr15": 0,
+    "dpr2": 0,
+    "emulated390": 0,
+    "contextRestore": 2,
+    "fullDownUp": 4
+  },
+  "resourceContract": {
+    "canvases": 1,
+    "programs": 1,
+    "textures": 16,
+    "geometries": 1,
+    "draws": 1
+  },
+  "scenarios": {
+    "idleMaster": {
+      "scenario": "idle-master",
+      "estimatedRefreshMs": 10.17,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 6.2,
+        "p99": 6.8,
+        "max": 72.8,
+        "mean": 6.374,
+        "count": 393,
+        "over16_7": 2,
+        "over33_3": 2,
+        "over50": 2,
+        "consecutiveMissedMax": 1
+      },
+      "transitionRequestLatencyMs": null,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.008,
+        "count": 393,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 15,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 74,
+          "start": 5168.399999976158,
+          "name": "self"
+        },
+        {
+          "duration": 73,
+          "start": 5244.800000071526,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 83405337,
+          "jsHeapTotalBytes": 115639049
+        },
+        "after": {
+          "jsHeapUsedBytes": 81410157,
+          "jsHeapTotalBytes": 111268673
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "coldContentDesign": {
+      "scenario": "cold-content-design",
+      "estimatedRefreshMs": 99.023,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 72.8,
+        "p99": 1412.1,
+        "max": 1412.1,
+        "mean": 34.765,
+        "count": 98,
+        "over16_7": 10,
+        "over33_3": 5,
+        "over50": 5,
+        "consecutiveMissedMax": 8
+      },
+      "transitionRequestLatencyMs": 2.200000047683716,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.2,
+        "max": 0.2,
+        "mean": 0.018,
+        "count": 98,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 7,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 417,
+          "start": 1725.7999999523163,
+          "name": "self"
+        },
+        {
+          "duration": 691,
+          "start": 2143,
+          "name": "self"
+        },
+        {
+          "duration": 86,
+          "start": 2856.100000023842,
+          "name": "self"
+        },
+        {
+          "duration": 57,
+          "start": 2959,
+          "name": "self"
+        },
+        {
+          "duration": 1410,
+          "start": 3018.5,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 83375327,
+          "jsHeapTotalBytes": 150300311
+        },
+        "after": {
+          "jsHeapUsedBytes": 633057868,
+          "jsHeapTotalBytes": 676178560
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "coldCache": {
+      "hits": 1,
+      "misses": 19,
+      "compiles": 19,
+      "prewarms": 18,
+      "inflight": 0,
+      "cached": 19,
+      "lastKey": "master-neutral|single-merch|0|desktop",
+      "lastStatus": "cached"
+    },
+    "warmContentDesign": {
+      "scenario": "warm-content-design",
+      "estimatedRefreshMs": 15.467,
+      "rAF": {
+        "p50": 18.2,
+        "p95": 24.2,
+        "p99": 24.2,
+        "max": 24.2,
+        "mean": 15.467,
+        "count": 3,
+        "over16_7": 2,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 2
+      },
+      "transitionRequestLatencyMs": 23.5,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0,
+        "mean": 0,
+        "count": 3,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 1,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 654822403,
+          "jsHeapTotalBytes": 711001119
+        },
+        "after": {
+          "jsHeapUsedBytes": 112973915,
+          "jsHeapTotalBytes": 214040159
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "warmCache": {
+      "hits": 3,
+      "misses": 19,
+      "compiles": 19,
+      "prewarms": 18,
+      "inflight": 0,
+      "cached": 19,
+      "lastKey": "single-content|single-design|0|desktop",
+      "lastStatus": "cached"
+    },
+    "masterToBrandWide": {
+      "scenario": "master-to-brand-wide",
+      "estimatedRefreshMs": 168.81,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.3,
+        "p99": 915,
+        "max": 3727.2,
+        "mean": 42.858,
+        "count": 134,
+        "over16_7": 9,
+        "over33_3": 3,
+        "over50": 3,
+        "consecutiveMissedMax": 7
+      },
+      "transitionRequestLatencyMs": 7.899999976158142,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.006,
+        "count": 134,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 8,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 913,
+          "start": 17927,
+          "name": "self"
+        },
+        {
+          "duration": 199,
+          "start": 18882.100000023842,
+          "name": "self"
+        },
+        {
+          "duration": 3717,
+          "start": 19083.399999976158,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 637563713,
+          "jsHeapTotalBytes": 676212541
+        },
+        "after": {
+          "jsHeapUsedBytes": 1314756446,
+          "jsHeapTotalBytes": 1372027630
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "masterRightToSingleLeft": {
+      "scenario": "master-right-to-single-left",
+      "estimatedRefreshMs": 182.427,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 24.3,
+        "p99": 1969.7,
+        "max": 2884.8,
+        "mean": 44.114,
+        "count": 140,
+        "over16_7": 9,
+        "over33_3": 5,
+        "over50": 4,
+        "consecutiveMissedMax": 9
+      },
+      "transitionRequestLatencyMs": 2000.7999999523163,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.011,
+        "count": 140,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 9,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 163,
+          "start": 23762.5,
+          "name": "self"
+        },
+        {
+          "duration": 1997,
+          "start": 23928.600000023842,
+          "name": "self"
+        },
+        {
+          "duration": 884,
+          "start": 25926.199999928474,
+          "name": "self"
+        },
+        {
+          "duration": 161,
+          "start": 26851.5,
+          "name": "self"
+        },
+        {
+          "duration": 1964,
+          "start": 27016,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 1314756446,
+          "jsHeapTotalBytes": 1372027630
+        },
+        "after": {
+          "jsHeapUsedBytes": 2021463899,
+          "jsHeapTotalBytes": 2087167367
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "contentToDesign": {
+      "scenario": "content-to-design",
+      "estimatedRefreshMs": 10.65,
+      "rAF": {
+        "p50": 18,
+        "p95": 18.2,
+        "p99": 18.2,
+        "max": 18.2,
+        "mean": 10.65,
+        "count": 4,
+        "over16_7": 2,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 2
+      },
+      "transitionRequestLatencyMs": 20.100000023841858,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0,
+        "mean": 0,
+        "count": 4,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 0,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 2021463899,
+          "jsHeapTotalBytes": 2087167367
+        },
+        "after": {
+          "jsHeapUsedBytes": 148084910,
+          "jsHeapTotalBytes": 262578058
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "designToEvent": {
+      "scenario": "design-to-event",
+      "estimatedRefreshMs": 169.52,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.3,
+        "p99": 878.9,
+        "max": 3757.1,
+        "mean": 52.174,
+        "count": 107,
+        "over16_7": 11,
+        "over33_3": 3,
+        "over50": 3,
+        "consecutiveMissedMax": 7
+      },
+      "transitionRequestLatencyMs": 22,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.012,
+        "count": 107,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 8,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 859,
+          "start": 34109,
+          "name": "self"
+        },
+        {
+          "duration": 193,
+          "start": 35005.89999997616,
+          "name": "self"
+        },
+        {
+          "duration": 3751,
+          "start": 35201.5,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 219019906,
+          "jsHeapTotalBytes": 345745514
+        },
+        "after": {
+          "jsHeapUsedBytes": 559073281,
+          "jsHeapTotalBytes": 609073073
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "eventToGames": {
+      "scenario": "event-to-games",
+      "estimatedRefreshMs": 137.637,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.2,
+        "p99": 212.2,
+        "max": 3672.6,
+        "mean": 39.013,
+        "count": 122,
+        "over16_7": 11,
+        "over33_3": 2,
+        "over50": 2,
+        "consecutiveMissedMax": 6
+      },
+      "transitionRequestLatencyMs": 6.900000095367432,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.02,
+        "count": 122,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 7,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 192,
+          "start": 39716.299999952316,
+          "name": "self"
+        },
+        {
+          "duration": 3668,
+          "start": 39911.299999952316,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 559073281,
+          "jsHeapTotalBytes": 609073073
+        },
+        "after": {
+          "jsHeapUsedBytes": 1232837673,
+          "jsHeapTotalBytes": 1296966941
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "gamesToVideo": {
+      "scenario": "games-to-video",
+      "estimatedRefreshMs": 13.8,
+      "rAF": {
+        "p50": 18,
+        "p95": 30.3,
+        "p99": 30.3,
+        "max": 30.3,
+        "mean": 13.8,
+        "count": 4,
+        "over16_7": 2,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 2
+      },
+      "transitionRequestLatencyMs": 21.800000071525574,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0,
+        "mean": 0,
+        "count": 4,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 0,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 1232837673,
+          "jsHeapTotalBytes": 1296966941
+        },
+        "after": {
+          "jsHeapUsedBytes": 1367177854,
+          "jsHeapTotalBytes": 1422018682
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "merchToMaster": {
+      "scenario": "merch-to-master",
+      "estimatedRefreshMs": 177.987,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.2,
+        "p99": 848.6,
+        "max": 4042.3,
+        "mean": 36.689,
+        "count": 242,
+        "over16_7": 18,
+        "over33_3": 5,
+        "over50": 5,
+        "consecutiveMissedMax": 7
+      },
+      "transitionRequestLatencyMs": 11,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.016,
+        "count": 242,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 15,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 827,
+          "start": 49837.699999928474,
+          "name": "self"
+        },
+        {
+          "duration": 195,
+          "start": 50700.799999952316,
+          "name": "self"
+        },
+        {
+          "duration": 4035,
+          "start": 50898.5,
+          "name": "self"
+        },
+        {
+          "duration": 144,
+          "start": 55728.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 1932,
+          "start": 55875,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 743269865,
+          "jsHeapTotalBytes": 790098877
+        },
+        "after": {
+          "jsHeapUsedBytes": 979764866,
+          "jsHeapTotalBytes": 1031301918
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "buildTasks": {
+      "scenario": "focus-gather-drive-brand-wide",
+      "estimatedRefreshMs": 646.24,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 297,
+        "p99": 4139.4,
+        "max": 4436.3,
+        "mean": 135.566,
+        "count": 149,
+        "over16_7": 28,
+        "over33_3": 13,
+        "over50": 13,
+        "consecutiveMissedMax": 13
+      },
+      "transitionRequestLatencyMs": 13783.699999928474,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.016,
+        "count": 149,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 18,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 186,
+          "start": 58772.799999952316,
+          "name": "self"
+        },
+        {
+          "duration": 203,
+          "start": 59009.5,
+          "name": "self"
+        },
+        {
+          "duration": 2997,
+          "start": 59214.699999928474,
+          "name": "self"
+        },
+        {
+          "duration": 798,
+          "start": 62258.199999928474,
+          "name": "self"
+        },
+        {
+          "duration": 191,
+          "start": 63100,
+          "name": "self"
+        },
+        {
+          "duration": 3777,
+          "start": 63294.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 573,
+          "start": 67113.89999997616,
+          "name": "self"
+        },
+        {
+          "duration": 292,
+          "start": 67741.5,
+          "name": "self"
+        },
+        {
+          "duration": 223,
+          "start": 68073.60000002384,
+          "name": "self"
+        },
+        {
+          "duration": 4135,
+          "start": 68299.89999997616,
+          "name": "self"
+        },
+        {
+          "duration": 863,
+          "start": 72459.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 254,
+          "start": 73364,
+          "name": "self"
+        },
+        {
+          "duration": 4432,
+          "start": 73621.10000002384,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 979764866,
+          "jsHeapTotalBytes": 1031301918
+        },
+        "after": {
+          "jsHeapUsedBytes": 609050106,
+          "jsHeapTotalBytes": 732850526
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "paletteOnly": {
+      "scenario": "palette-only-mask",
+      "estimatedRefreshMs": 7.17,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 12.1,
+        "p99": 24.1,
+        "max": 24.3,
+        "mean": 6.765,
+        "count": 271,
+        "over16_7": 12,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 3
+      },
+      "transitionRequestLatencyMs": 980.1000000238419,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.2,
+        "mean": 0.018,
+        "count": 271,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 11,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 609050106,
+          "jsHeapTotalBytes": 732850526
+        },
+        "after": {
+          "jsHeapUsedBytes": 609803174,
+          "jsHeapTotalBytes": 732864226
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "sameMaskGeometry": {
+      "scenario": "same-mask-geometry",
+      "estimatedRefreshMs": 178.72,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 24.2,
+        "p99": 2042.4,
+        "max": 2787.9,
+        "mean": 54.526,
+        "count": 108,
+        "over16_7": 13,
+        "over33_3": 4,
+        "over50": 4,
+        "consecutiveMissedMax": 9
+      },
+      "transitionRequestLatencyMs": 1935.0999999046326,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.02,
+        "count": 108,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 8,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 118,
+          "start": 80864.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 1934,
+          "start": 80986.19999992847,
+          "name": "self"
+        },
+        {
+          "duration": 856,
+          "start": 82920.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 135,
+          "start": 83817.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 2040,
+          "start": 83956.5,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 609803174,
+          "jsHeapTotalBytes": 732864226
+        },
+        "after": {
+          "jsHeapUsedBytes": 1334265445,
+          "jsHeapTotalBytes": 1388390117
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 0,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "rapid20": {
+      "scenario": "rapid-20-retarget",
+      "estimatedRefreshMs": 1922.123,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 4969.8,
+        "p99": 5557.5,
+        "max": 5654.5,
+        "mean": 501.764,
+        "count": 136,
+        "over16_7": 37,
+        "over33_3": 33,
+        "over50": 33,
+        "consecutiveMissedMax": 36
+      },
+      "transitionRequestLatencyMs": 4.300000071525574,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.021,
+        "count": 136,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 37,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 183,
+          "start": 86709.5,
+          "name": "self"
+        },
+        {
+          "duration": 861,
+          "start": 86916.60000002384,
+          "name": "self"
+        },
+        {
+          "duration": 189,
+          "start": 87794.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 4337,
+          "start": 87991.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 898,
+          "start": 92328.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 833,
+          "start": 93245.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 191,
+          "start": 94100.19999992847,
+          "name": "self"
+        },
+        {
+          "duration": 3746,
+          "start": 94298.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 849,
+          "start": 98045,
+          "name": "self"
+        },
+        {
+          "duration": 836,
+          "start": 98917.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 212,
+          "start": 99773.5,
+          "name": "self"
+        },
+        {
+          "duration": 4622,
+          "start": 99993.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 844,
+          "start": 104615.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 835,
+          "start": 105478.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 212,
+          "start": 106332,
+          "name": "self"
+        },
+        {
+          "duration": 4120,
+          "start": 106551.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 840,
+          "start": 110671.60000002384,
+          "name": "self"
+        },
+        {
+          "duration": 848,
+          "start": 111534.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 247,
+          "start": 112399.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 4729,
+          "start": 112653.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 823,
+          "start": 117382.60000002384,
+          "name": "self"
+        },
+        {
+          "duration": 834,
+          "start": 118217.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 216,
+          "start": 119067.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 4345,
+          "start": 119291.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 861,
+          "start": 123637.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 856,
+          "start": 124518.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 208,
+          "start": 125392.5,
+          "name": "self"
+        },
+        {
+          "duration": 4316,
+          "start": 125607.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 846,
+          "start": 129923.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 828,
+          "start": 130788.5,
+          "name": "self"
+        },
+        {
+          "duration": 158,
+          "start": 131634.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 4079,
+          "start": 131797.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 830,
+          "start": 135876.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 850,
+          "start": 136725.19999992847,
+          "name": "self"
+        },
+        {
+          "duration": 252,
+          "start": 137592.5,
+          "name": "self"
+        },
+        {
+          "duration": 4836,
+          "start": 137852.29999995232,
+          "name": "self"
+        },
+        {
+          "duration": 813,
+          "start": 142688.79999995232,
+          "name": "self"
+        },
+        {
+          "duration": 836,
+          "start": 143520.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 210,
+          "start": 144373.39999997616,
+          "name": "self"
+        },
+        {
+          "duration": 4839,
+          "start": 144587.19999992847,
+          "name": "self"
+        },
+        {
+          "duration": 215,
+          "start": 149469.10000002384,
+          "name": "self"
+        },
+        {
+          "duration": 4572,
+          "start": 149687.5,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 1334265445,
+          "jsHeapTotalBytes": 1388390117
+        },
+        "after": {
+          "jsHeapUsedBytes": 679553295,
+          "jsHeapTotalBytes": 720967351
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "magneticScroll": {
+      "scenario": "magnetic-scroll-transition",
+      "estimatedRefreshMs": 6.2,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 6.2,
+        "p99": 12,
+        "max": 12.1,
+        "mean": 6.144,
+        "count": 122,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.005,
+        "count": 122,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 4,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 679553295,
+          "jsHeapTotalBytes": 720967351
+        },
+        "after": {
+          "jsHeapUsedBytes": 659885883,
+          "jsHeapTotalBytes": 728574939
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "themeSwitch": {
+      "scenario": "theme-switch",
+      "estimatedRefreshMs": 6.217,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 6.2,
+        "p99": 12.2,
+        "max": 18.3,
+        "mean": 6.375,
+        "count": 130,
+        "over16_7": 1,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 1
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0,
+        "max": 0,
+        "mean": 0,
+        "count": 130,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 5,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 659885883,
+          "jsHeapTotalBytes": 728574939
+        },
+        "after": {
+          "jsHeapUsedBytes": 672735363,
+          "jsHeapTotalBytes": 728578027
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "dpr1": {
+      "scenario": "dpr-1",
+      "estimatedRefreshMs": 5.963,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 6.3,
+        "p99": 12.2,
+        "max": 24.3,
+        "mean": 6.272,
+        "count": 129,
+        "over16_7": 1,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 1
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.002,
+        "count": 129,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 5,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 672735363,
+          "jsHeapTotalBytes": 728578027
+        },
+        "after": {
+          "jsHeapUsedBytes": 677999186,
+          "jsHeapTotalBytes": 728842238
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "dpr15": {
+      "scenario": "dpr-1.5",
+      "estimatedRefreshMs": 9.403,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 12.2,
+        "p99": 30.1,
+        "max": 66.7,
+        "mean": 7.161,
+        "count": 113,
+        "over16_7": 5,
+        "over33_3": 1,
+        "over50": 1,
+        "consecutiveMissedMax": 3
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.002,
+        "count": 113,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 5,
+      "shaderProgramCount": 0,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 677999186,
+          "jsHeapTotalBytes": 728842238
+        },
+        "after": {
+          "jsHeapUsedBytes": 691181430,
+          "jsHeapTotalBytes": 736748862
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 0,
+        "textures": 0,
+        "geometries": 0,
+        "draws": 0
+      }
+    },
+    "dpr2": {
+      "scenario": "dpr-2",
+      "estimatedRefreshMs": 10.33,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 12.2,
+        "p99": 24.4,
+        "max": 72.9,
+        "mean": 7.553,
+        "count": 106,
+        "over16_7": 5,
+        "over33_3": 1,
+        "over50": 1,
+        "consecutiveMissedMax": 4
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.008,
+        "count": 106,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 5,
+      "shaderProgramCount": 0,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 691181430,
+          "jsHeapTotalBytes": 736748862
+        },
+        "after": {
+          "jsHeapUsedBytes": 675076038,
+          "jsHeapTotalBytes": 742010882
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 0,
+        "textures": 0,
+        "geometries": 0,
+        "draws": 0
+      }
+    },
+    "emulated390": {
+      "scenario": "emulated-390",
+      "estimatedRefreshMs": 9.967,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.3,
+        "p99": 78.8,
+        "max": 78.8,
+        "mean": 7.861,
+        "count": 92,
+        "over16_7": 6,
+        "over33_3": 2,
+        "over50": 1,
+        "consecutiveMissedMax": 4
+      },
+      "transitionRequestLatencyMs": -11420.599999904633,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.005,
+        "count": 92,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 4,
+      "shaderProgramCount": 0,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 680111881,
+          "jsHeapTotalBytes": 742010985
+        },
+        "after": {
+          "jsHeapUsedBytes": 688888849,
+          "jsHeapTotalBytes": 746749837
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 0,
+        "textures": 0,
+        "geometries": 0,
+        "draws": 0
+      }
+    },
+    "contextRestore": {
+      "scenario": "context-restore-transition",
+      "estimatedRefreshMs": 75.967,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 24.2,
+        "p99": 145.6,
+        "max": 1842.2,
+        "mean": 22.38,
+        "count": 130,
+        "over16_7": 9,
+        "over33_3": 2,
+        "over50": 2,
+        "consecutiveMissedMax": 7
+      },
+      "transitionRequestLatencyMs": 5.099999904632568,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.012,
+        "count": 130,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 8,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 129,
+          "start": 159959.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 1837,
+          "start": 160091.39999997616,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 688888849,
+          "jsHeapTotalBytes": 746749837
+        },
+        "after": {
+          "jsHeapUsedBytes": 1056569522,
+          "jsHeapTotalBytes": 1104372678
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    },
+    "fullDownUp": {
+      "scenario": "full-down-up",
+      "estimatedRefreshMs": 114.98,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 18.3,
+        "p99": 254.7,
+        "max": 2969.5,
+        "mean": 32.642,
+        "count": 130,
+        "over16_7": 9,
+        "over33_3": 3,
+        "over50": 3,
+        "consecutiveMissedMax": 5
+      },
+      "transitionRequestLatencyMs": 4,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.1,
+        "mean": 0.011,
+        "count": 128,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 7,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 0,
+      "longTasks": [
+        {
+          "duration": 237,
+          "start": 162844.5,
+          "name": "self"
+        },
+        {
+          "duration": 2962,
+          "start": 163084.5,
+          "name": "self"
+        },
+        {
+          "duration": 106,
+          "start": 166935.69999992847,
+          "name": "self"
+        },
+        {
+          "duration": 1458,
+          "start": 167044.89999997616,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": null,
+        "note": "Extension present. GPU time is sampled separately from CPU/rAF; a single probe does not time the actor draw."
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 1056569522,
+          "jsHeapTotalBytes": 1104372678
+        },
+        "after": {
+          "jsHeapUsedBytes": 330977742,
+          "jsHeapTotalBytes": 367211686
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 16,
+        "geometries": 1,
+        "draws": 1
+      }
+    }
+  }
+}
