@@ -49,6 +49,14 @@ import {
 import type { OverlayUniforms, PhotonicMotionSession } from "../photonic-skin-ps04-m3/session";
 import { CONTINUITY_FLOOR } from "./continuity-overlay";
 import { hashLut, type PaletteMaterialSnapshot } from "./palette-authority";
+import {
+  canAtomicBind,
+  hashTextureIdentities,
+  monotonicProgress,
+  type GeometryMaterialSnapshot,
+  type GeometryProgramBind,
+  type GeometryRenderAck,
+} from "./geometry-authority";
 
 export const IDENTITY_OVERLAY: OverlayUniforms = {
   enabled: false,
@@ -119,6 +127,15 @@ declare global {
       materialUuid: string;
       programs: number;
       compileCount: number;
+      geometryProgress: number;
+      boundProgramId: string | null;
+      boundSourceId: string | null;
+      boundTargetId: string | null;
+      sourceTextureUuid: string | null;
+      targetTextureUuid: string | null;
+      textureIdentity: string;
+      geometryRevision: number;
+      bindFrameToken: number | null;
     };
   }
 }
@@ -199,6 +216,11 @@ export interface SceneProps {
   compositionRef?: { current: CompositionViewport };
   transitionRef?: { current: TransitionUniforms };
   paletteSnapshotRef?: { current: PaletteMaterialSnapshot | null };
+  geometrySnapshotRef?: { current: GeometryMaterialSnapshot | null };
+  programBindRef?: { current: GeometryProgramBind | null };
+  geometryAckRef?: { current: GeometryRenderAck };
+  onGeometryAck?: (ack: GeometryRenderAck) => void;
+  reproduceR4Geometry?: boolean;
   actorMask?: boolean;
   onStats: (value: SceneStats) => void;
   onEnvironment?: (value: SceneEnvironment) => void;
@@ -1504,6 +1526,17 @@ function M41Content(props: SceneProps) {
   const readyRef = useRef(false);
   const compileCountRef = useRef(0);
   const boundProgramId = useRef<string | null>(null);
+  const displayedGeometryRef = useRef<{
+    revision: number;
+    programId: string;
+    sourceId: string;
+    targetId: string;
+    progress: number;
+    sourceTextureUuid: string;
+    targetTextureUuid: string;
+    bindFrameToken: number;
+  } | null>(null);
+  const geometryFrameToken = useRef(0);
   const frameStats = useRef({ elapsed: 0, frames: 0, samples: [] as number[] });
   const stateTextures = useMemo(() => ({
     source: stateTexture(props.source, "position"),
@@ -1526,6 +1559,13 @@ function M41Content(props: SceneProps) {
     () => programTextures(props.program, props.source, props.target),
     [props.program, props.source, props.target],
   );
+  const packetTexturesRef = useRef<{
+    key: string;
+    state: typeof stateTextures;
+    compiled: typeof compiledTextures;
+    sourceFrame: ReturnType<typeof resolvePresentationFrame>;
+    targetFrame: ReturnType<typeof resolvePresentationFrame>;
+  } | null>(null);
   const textureCount = Object.keys(stateTextures).length + Object.keys(compiledTextures).length;
   const paletteTokens = useMemo(
     () => PHOTONIC_COLOR_TOKENS.map((token) => new THREE.Color().fromArray([...token.linear])),
@@ -1650,8 +1690,8 @@ function M41Content(props: SceneProps) {
   }, []);
 
   useEffect(() => {
-    progressRef.current = props.reducedMotion ? 1 : props.progress;
-  }, [props.progress, props.reducedMotion]);
+    if (props.reproduceR4Geometry) progressRef.current = props.reducedMotion ? 1 : props.progress;
+  }, [props.progress, props.reducedMotion, props.reproduceR4Geometry]);
 
   useEffect(() => {
     uniformsRef.current.uBudget.value = props.budget;
@@ -1671,64 +1711,6 @@ function M41Content(props: SceneProps) {
     uniformsRef.current.uActorMask.value = props.actorMask ? 1 : 0;
   }, [props.actorMask, props.material]);
 
-  useEffect(() => {
-    const uniforms = uniformsRef.current;
-    uniforms.uSource.value = stateTextures.source;
-    uniforms.uTarget.value = stateTextures.target;
-    uniforms.uSourceNormal.value = stateTextures.sourceNormal;
-    uniforms.uTargetNormal.value = stateTextures.targetNormal;
-    uniforms.uSourceQuat.value = stateTextures.sourceQuat;
-    uniforms.uTargetQuat.value = stateTextures.targetQuat;
-    uniforms.uSourceMeta.value = stateTextures.sourceMeta;
-    uniforms.uTargetMeta.value = stateTextures.targetMeta;
-    return () => {
-      Object.values(stateTextures).forEach((texture) => texture.dispose());
-    };
-  }, [stateTextures]);
-
-  useEffect(() => {
-    const uniforms = uniformsRef.current;
-    uniforms.uResidual.value = compiledTextures.residual;
-    uniforms.uLanes.value = compiledTextures.lanes;
-    uniforms.uVelocity.value = compiledTextures.velocity;
-    uniforms.uActivation.value = compiledTextures.activation;
-    uniforms.uSourceTracks.value = compiledTextures.sourceTracks;
-    uniforms.uTargetTracks.value = compiledTextures.targetTracks;
-    uniforms.uTrackRoutes.value = compiledTextures.routes;
-    uniforms.uTrackWindows.value = compiledTextures.windows;
-    uniforms.uDurationSeconds.value = props.program.durationMs / 1000;
-    uniforms.uLocalMorphWidth.value = props.program.compiled?.header.activationPolicy.localMorphWidthFraction ?? 0.12;
-    uniforms.uBridgePulseMaximum.value = props.program.compiled?.header.activationPolicy.bridgePulseMaximum ?? 0.035;
-    uniforms.uBridgeThickness.value = props.program.compiled?.header.activationPolicy.bridgeThickness ?? 1;
-    uniforms.uDepthRouteFraction.value = props.program.compiled?.header.activationPolicy.depthRouteFraction ?? 0.18;
-    uniforms.uMinimumGeometricScale.value = props.program.compiled?.header.activationPolicy.minimumGeometricScale ?? 0.18;
-    const settleWindow = props.program.compiled?.header.settlePolicy.window ?? [0.86, 1];
-    uniforms.uSettleWindow.value.set(settleWindow[0], settleWindow[1]);
-    uniforms.uSettleMaximum.value = props.program.compiled?.header.settlePolicy.maximumAmplitudeFraction ?? 0.018;
-    const actor = props.program.compiled?.header.actorTrack;
-    uniforms.uActorCenterStart.value.set(...(actor?.centerStart ?? [0, 0, 0]));
-    uniforms.uActorCenterEnd.value.set(...(actor?.centerEnd ?? [0, 0, 0]));
-    uniforms.uActorRotationAxis.value.set(...(actor?.rotationAxis ?? [0, 0, 1]));
-    uniforms.uActorRotationRadians.value = actor?.rotationRadians ?? 0;
-    uniforms.uActorTranslationAxis.value.set(...(actor?.translationAxis ?? [0, 0, 0]));
-    uniforms.uActorTranslationAmplitude.value = actor?.translationAmplitude ?? 0;
-    uniforms.uActorWindow.value.set(...(actor?.window ?? [0, 1]));
-    uniforms.uActorSourcePosition.value.set(...(actor?.sourcePose.position ?? [0, 0, 0]));
-    uniforms.uActorSourceOrientation.value.set(...(actor?.sourcePose.orientation ?? [0, 0, 0, 1]));
-    uniforms.uCompiled.value = props.program.compiled ? 1 : 0;
-    uniforms.uSourceFrameTranslate.value.set(...sourceFrame.translate);
-    uniforms.uTargetFrameTranslate.value.set(...targetFrame.translate);
-    uniforms.uSourceFrameScale.value = sourceFrame.scale;
-    uniforms.uTargetFrameScale.value = targetFrame.scale;
-    if (boundProgramId.current !== props.program.programId) {
-      compileCountRef.current += 1;
-      boundProgramId.current = props.program.programId;
-    }
-    return () => {
-      Object.values(compiledTextures).forEach((texture) => texture.dispose());
-    };
-  }, [compiledTextures, props.program, sourceFrame, targetFrame]);
-
   useEffect(() => () => {
     geometry.dispose();
     material.dispose();
@@ -1745,11 +1727,209 @@ function M41Content(props: SceneProps) {
     scissor: new THREE.Vector4(),
     scissorTest: false,
   });
+  const applyProgramBind = (
+    program: typeof props.program,
+    _source: typeof props.source,
+    _target: typeof props.target,
+    state: typeof stateTextures,
+    compiled: typeof compiledTextures,
+    srcFrame: typeof sourceFrame,
+    dstFrame: typeof targetFrame,
+    progress: number,
+  ) => {
+    const uniforms = uniformsRef.current;
+    uniforms.uSource.value = state.source;
+    uniforms.uTarget.value = state.target;
+    uniforms.uSourceNormal.value = state.sourceNormal;
+    uniforms.uTargetNormal.value = state.targetNormal;
+    uniforms.uSourceQuat.value = state.sourceQuat;
+    uniforms.uTargetQuat.value = state.targetQuat;
+    uniforms.uSourceMeta.value = state.sourceMeta;
+    uniforms.uTargetMeta.value = state.targetMeta;
+    uniforms.uResidual.value = compiled.residual;
+    uniforms.uLanes.value = compiled.lanes;
+    uniforms.uVelocity.value = compiled.velocity;
+    uniforms.uActivation.value = compiled.activation;
+    uniforms.uSourceTracks.value = compiled.sourceTracks;
+    uniforms.uTargetTracks.value = compiled.targetTracks;
+    uniforms.uTrackRoutes.value = compiled.routes;
+    uniforms.uTrackWindows.value = compiled.windows;
+    uniforms.uDurationSeconds.value = program.durationMs / 1000;
+    uniforms.uLocalMorphWidth.value = program.compiled?.header.activationPolicy.localMorphWidthFraction ?? 0.12;
+    uniforms.uBridgePulseMaximum.value = program.compiled?.header.activationPolicy.bridgePulseMaximum ?? 0.035;
+    uniforms.uBridgeThickness.value = program.compiled?.header.activationPolicy.bridgeThickness ?? 1;
+    uniforms.uDepthRouteFraction.value = program.compiled?.header.activationPolicy.depthRouteFraction ?? 0.18;
+    uniforms.uMinimumGeometricScale.value = program.compiled?.header.activationPolicy.minimumGeometricScale ?? 0.18;
+    const settleWindow = program.compiled?.header.settlePolicy.window ?? [0.86, 1];
+    uniforms.uSettleWindow.value.set(settleWindow[0], settleWindow[1]);
+    uniforms.uSettleMaximum.value = program.compiled?.header.settlePolicy.maximumAmplitudeFraction ?? 0.018;
+    const actor = program.compiled?.header.actorTrack;
+    uniforms.uActorCenterStart.value.set(...(actor?.centerStart ?? [0, 0, 0]));
+    uniforms.uActorCenterEnd.value.set(...(actor?.centerEnd ?? [0, 0, 0]));
+    uniforms.uActorRotationAxis.value.set(...(actor?.rotationAxis ?? [0, 0, 1]));
+    uniforms.uActorRotationRadians.value = actor?.rotationRadians ?? 0;
+    uniforms.uActorTranslationAxis.value.set(...(actor?.translationAxis ?? [0, 0, 0]));
+    uniforms.uActorTranslationAmplitude.value = actor?.translationAmplitude ?? 0;
+    uniforms.uActorWindow.value.set(...(actor?.window ?? [0, 1]));
+    uniforms.uActorSourcePosition.value.set(...(actor?.sourcePose.position ?? [0, 0, 0]));
+    uniforms.uActorSourceOrientation.value.set(...(actor?.sourcePose.orientation ?? [0, 0, 0, 1]));
+    uniforms.uCompiled.value = program.compiled ? 1 : 0;
+    uniforms.uSourceFrameTranslate.value.set(...srcFrame.translate);
+    uniforms.uTargetFrameTranslate.value.set(...dstFrame.translate);
+    uniforms.uSourceFrameScale.value = srcFrame.scale;
+    uniforms.uTargetFrameScale.value = dstFrame.scale;
+    uniforms.uProgress.value = progress;
+    progressRef.current = progress;
+  };
+
+  const geometrySnapshotSlot = props.geometrySnapshotRef;
+  const programBindSlot = props.programBindRef;
+  const onGeometryAck = props.onGeometryAck;
+
   useFrame((_, rawDelta) => {
     const delta = Math.min(rawDelta, 0.05);
     const sessionSnap = props.session?.snapshot();
-    progressRef.current = props.reducedMotion ? 1 : (sessionSnap?.geometryProgress ?? props.progress);
-    uniformsRef.current.uProgress.value = progressRef.current;
+    const geo = geometrySnapshotSlot?.current ?? null;
+    const packet = programBindSlot?.current ?? null;
+    const frameToken = ++geometryFrameToken.current;
+    const nowMs = performance.now();
+    const displayed = displayedGeometryRef.current;
+    const locallyBound = Boolean(displayed && packet
+      && displayed.revision === packet.revision
+      && displayed.programId === packet.program.programId);
+
+    if (props.reproduceR4Geometry) {
+      const sessionProgress = props.reducedMotion ? 1 : (sessionSnap ? sessionSnap.geometryProgress : props.progress);
+      if (!displayed) {
+        applyProgramBind(props.program, props.source, props.target, stateTextures, compiledTextures, sourceFrame, targetFrame, 1);
+        boundProgramId.current = props.program.programId;
+        compileCountRef.current += 1;
+        displayedGeometryRef.current = {
+          revision: geo?.revision ?? 0,
+          programId: props.program.programId,
+          sourceId: props.source.entry.stateId,
+          targetId: props.target.entry.stateId,
+          progress: 1,
+          sourceTextureUuid: stateTextures.source.uuid,
+          targetTextureUuid: stateTextures.target.uuid,
+          bindFrameToken: frameToken,
+        };
+      } else {
+        uniformsRef.current.uProgress.value = sessionProgress;
+        progressRef.current = sessionProgress;
+        displayed.progress = sessionProgress;
+        const programChanged = displayed.programId !== props.program.programId
+          || displayed.targetId !== props.target.entry.stateId;
+        if (programChanged && sessionProgress > 0.04) {
+          applyProgramBind(props.program, props.source, props.target, stateTextures, compiledTextures, sourceFrame, targetFrame, sessionProgress);
+          boundProgramId.current = props.program.programId;
+          compileCountRef.current += 1;
+          displayedGeometryRef.current = {
+            revision: geo?.revision ?? displayed.revision,
+            programId: props.program.programId,
+            sourceId: props.source.entry.stateId,
+            targetId: props.target.entry.stateId,
+            progress: sessionProgress,
+            sourceTextureUuid: stateTextures.source.uuid,
+            targetTextureUuid: stateTextures.target.uuid,
+            bindFrameToken: frameToken,
+          };
+        }
+      }
+    } else if (!displayed) {
+      applyProgramBind(props.program, props.source, props.target, stateTextures, compiledTextures, sourceFrame, targetFrame, 1);
+      boundProgramId.current = props.program.programId;
+      compileCountRef.current += 1;
+      displayedGeometryRef.current = {
+        revision: geo?.revision ?? 0,
+        programId: props.program.programId,
+        sourceId: props.source.entry.stateId,
+        targetId: props.target.entry.stateId,
+        progress: 1,
+        sourceTextureUuid: stateTextures.source.uuid,
+        targetTextureUuid: stateTextures.target.uuid,
+        bindFrameToken: frameToken,
+      };
+    }
+    if (!props.reproduceR4Geometry) {
+    const settledEndpointBind = Boolean(packet && !packet.bindCommitted && geo && packet.revision === geo.revision
+      && (geo.status === "settled" || props.reducedMotion));
+    const atomic = !locallyBound && canAtomicBind({
+      packet: packet ? { ...packet, bindCommitted: locallyBound } : null,
+      snapshot: geo,
+      displayed: displayed ? {
+        revision: displayed.revision,
+        programId: displayed.programId,
+        sourceGeometryId: displayed.sourceId,
+        targetGeometryId: displayed.targetId,
+        shaderProgress: displayed.progress,
+        bindFrameToken: displayed.bindFrameToken,
+        reverse: Boolean(geo?.reverse),
+      } : null,
+    });
+    if ((atomic || settledEndpointBind) && packet) {
+      const packetMatchesProps = packet.program.programId === props.program.programId
+        && packet.source.entry.stateId === props.source.entry.stateId
+        && packet.target.entry.stateId === props.target.entry.stateId;
+      let bindState = stateTextures;
+      let bindCompiled = compiledTextures;
+      let bindSourceFrame = sourceFrame;
+      let bindTargetFrame = targetFrame;
+      if (!packetMatchesProps) {
+        const key = `${packet.source.entry.stateId}|${packet.target.entry.stateId}|${packet.program.programId}`;
+        if (packetTexturesRef.current?.key !== key) {
+          packetTexturesRef.current = {
+            key,
+            state: {
+              source: stateTexture(packet.source, "position"),
+              target: stateTexture(packet.target, "position"),
+              sourceNormal: stateTexture(packet.source, "normal"),
+              targetNormal: stateTexture(packet.target, "normal"),
+              sourceQuat: stateTexture(packet.source, "orientation"),
+              targetQuat: stateTexture(packet.target, "orientation"),
+              sourceMeta: stateTexture(packet.source, "meta", props.profile),
+              targetMeta: stateTexture(packet.target, "meta", props.profile),
+            },
+            compiled: programTextures(packet.program, packet.source, packet.target),
+            sourceFrame: resolvePresentationFrame(packet.source.entry),
+            targetFrame: resolvePresentationFrame(packet.target.entry),
+          };
+        }
+        bindState = packetTexturesRef.current.state;
+        bindCompiled = packetTexturesRef.current.compiled;
+        bindSourceFrame = packetTexturesRef.current.sourceFrame;
+        bindTargetFrame = packetTexturesRef.current.targetFrame;
+      }
+      const bindProgress = atomic && !props.reducedMotion && geo?.status !== "settled" ? 0 : 1;
+      applyProgramBind(packet.program, packet.source, packet.target, bindState, bindCompiled, bindSourceFrame, bindTargetFrame, bindProgress);
+      boundProgramId.current = packet.program.programId;
+      compileCountRef.current += 1;
+      displayedGeometryRef.current = {
+        revision: packet.revision,
+        programId: packet.program.programId,
+        sourceId: packet.source.entry.stateId,
+        targetId: packet.target.entry.stateId,
+        progress: bindProgress,
+        sourceTextureUuid: bindState.source.uuid,
+        targetTextureUuid: bindState.target.uuid,
+        bindFrameToken: frameToken,
+      };
+    } else if (props.reducedMotion || geo?.status === "settled") {
+      uniformsRef.current.uProgress.value = 1;
+      progressRef.current = 1;
+      if (displayedGeometryRef.current) displayedGeometryRef.current.progress = 1;
+    } else if (displayed && locallyBound && geo?.status === "running" && geo.revision === displayed.revision) {
+      const next = monotonicProgress(displayed.progress, geo.shaderProgress, geo.reverse);
+      uniformsRef.current.uProgress.value = next;
+      progressRef.current = next;
+      displayed.progress = next;
+    } else {
+      const hold = locallyBound ? (displayed?.progress ?? 1) : 1;
+      uniformsRef.current.uProgress.value = hold;
+      progressRef.current = hold;
+    }
+    }
+
     const overlay = sessionSnap?.overlay ?? props.overlay ?? IDENTITY_OVERLAY;
     uniformsRef.current.uIdleEnabled.value = overlay.enabled ? 1 : 0;
     uniformsRef.current.uIdleScale.value = overlay.enabled ? overlay.scale : 1;
@@ -1785,7 +1965,32 @@ function M41Content(props: SceneProps) {
       materialUuid: material.uuid,
       programs: gl.info.programs?.length ?? 0,
       compileCount: compileCountRef.current,
+      geometryProgress: uniformsRef.current.uProgress.value,
+      boundProgramId: displayedGeometryRef.current?.programId ?? boundProgramId.current,
+      boundSourceId: displayedGeometryRef.current?.sourceId ?? null,
+      boundTargetId: displayedGeometryRef.current?.targetId ?? null,
+      sourceTextureUuid: displayedGeometryRef.current?.sourceTextureUuid ?? uniformsRef.current.uSource.value?.uuid ?? null,
+      targetTextureUuid: displayedGeometryRef.current?.targetTextureUuid ?? uniformsRef.current.uTarget.value?.uuid ?? null,
+      textureIdentity: hashTextureIdentities([
+        displayedGeometryRef.current?.sourceTextureUuid,
+        displayedGeometryRef.current?.targetTextureUuid,
+        displayedGeometryRef.current?.programId,
+      ]),
+      geometryRevision: displayedGeometryRef.current?.revision ?? 0,
+      bindFrameToken: displayedGeometryRef.current?.bindFrameToken ?? null,
     };
+    if (onGeometryAck) {
+      const drawn = displayedGeometryRef.current;
+      onGeometryAck({
+        drawnRevision: drawn?.revision ?? 0,
+        drawnProgramId: drawn?.programId ?? null,
+        drawnProgress: uniformsRef.current.uProgress.value,
+        drawnSourceId: drawn?.sourceId ?? null,
+        drawnTargetId: drawn?.targetId ?? null,
+        frameToken,
+        atMs: nowMs,
+      });
+    }
 
     const actorCalls = gl.info.render.calls;
     const actorTriangles = gl.info.render.triangles;

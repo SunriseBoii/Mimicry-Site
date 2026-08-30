@@ -1,0 +1,52 @@
+{
+  "method": "Natural-rAF geometry log from ?reproduceR4Geometry=1 lab route. Timestamps are performance.now() from the page clock.",
+  "case": "A",
+  "alsoObserved": ["C mixed bind: new pair textures arrive a few frames after progress reset"],
+  "exactFrame": {
+    "index": 537,
+    "atMs": 9456,
+    "frameToken": 766,
+    "previous": {
+      "atMs": 9426,
+      "frameToken": 765,
+      "committedNodeId": "05.4",
+      "shaderProgress": 1,
+      "sessionGeometryProgress": 1,
+      "coordinatorStatus": "settled",
+      "boundProgramId": "single-digital-to-single-video-qa-desktop-176abae90d85",
+      "boundSourceGeometryId": "single-digital",
+      "boundTargetGeometryId": "single-video",
+      "settledGeometryId": "single-video"
+    },
+    "rollback": {
+      "committedNodeId": "05.4",
+      "actorRequestRevision": 3,
+      "shaderProgress": 0,
+      "sessionGeometryProgress": 0.030165078256590105,
+      "coordinatorStatus": "running",
+      "sessionStatus": "transitioning",
+      "boundProgramId": "single-digital-to-single-video-qa-desktop-176abae90d85",
+      "boundSourceGeometryId": "single-digital",
+      "boundTargetGeometryId": "single-video",
+      "sameProgramAsPrevious": true
+    },
+    "nextProgramBind": {
+      "atMs": 9650,
+      "frameToken": 768,
+      "boundProgramId": "single-video-to-single-games-qa-desktop",
+      "boundSourceGeometryId": "single-video",
+      "boundTargetGeometryId": "single-games",
+      "shaderProgress": 0.0481,
+      "note": "New pair at t≈0 shows Video instantly, then morphs to Games. Matches the owner recording: target → source rollback → previous correct SINGLE returns → new morph."
+    }
+  },
+  "firstDropAlsoCaseA": {
+    "atMs": 4426,
+    "frameToken": 271,
+    "boundProgramId": "master-neutral-to-single-digital-qa-desktop-9d8c62e2c97d",
+    "shaderProgress": "1 → 0",
+    "sameProgram": true,
+    "committedNodeId": "05.5"
+  },
+  "rootCause": "Scene wrote uProgress from session.geometryProgress. After settle, coordinator is settled/progress=1/activeTransition=null, but session.commitTransition zeros geometryProgress before React rebinds textures. First paint: old pair textures + uProgress=0 = source endpoint. Later commit binds the new pair at t=0, so the previous correct SINGLE reappears, then morphs."
+}

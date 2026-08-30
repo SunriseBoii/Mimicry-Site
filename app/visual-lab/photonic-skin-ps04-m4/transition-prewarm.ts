@@ -98,6 +98,19 @@ function cancelIdle(handle: IdleHandle) {
   globalThis.clearTimeout(handle);
 }
 
+function freezeProgram(program: TransitionProgram): TransitionProgram {
+  return {
+    ...program,
+    trackIndex: Uint16Array.from(program.trackIndex),
+    residual: Float32Array.from(program.residual),
+    phaseDelay: Float32Array.from(program.phaseDelay),
+    bridgeWeight: Float32Array.from(program.bridgeWeight),
+    sourceVelocity: program.sourceVelocity ? Float32Array.from(program.sourceVelocity) : undefined,
+    sourceScaleVelocity: program.sourceScaleVelocity ? Float32Array.from(program.sourceScaleVelocity) : undefined,
+    tracks: program.tracks.map((track) => ({ ...track })),
+  };
+}
+
 export class TransitionProgramCache {
   private readonly programs = new Map<string, TransitionProgram>();
   private readonly inflight = new Map<string, Promise<TransitionProgram>>();
@@ -164,12 +177,13 @@ export class TransitionProgramCache {
       viewport: viewportForFrame(viewport),
       signal: args.signal,
     }).then((program) => {
-      this.programs.set(key, program);
+      const frozen = freezeProgram(program);
+      this.programs.set(key, frozen);
       this.stats.cached = this.programs.size;
       this.inflight.delete(key);
       this.stats.inflight = this.inflight.size;
       this.stats.lastStatus = "cached";
-      return program;
+      return frozen;
     }).catch((reason) => {
       this.inflight.delete(key);
       this.stats.inflight = this.inflight.size;

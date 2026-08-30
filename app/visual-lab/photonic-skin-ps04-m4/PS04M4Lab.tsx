@@ -47,13 +47,21 @@ import {
   HeroScreen,
   StudioChapter,
 } from "./components/ScreenFixtures";
-import { nextUnlocked, previousUnlocked, ScrollCompositionController, type MagnetismSnapshot, type ScrollProgress } from "./scroll-controller";
+import { nextUnlocked, previousUnlocked, ScrollCompositionController, SELECTED_MAGNETISM_VARIANT, type MagnetismSnapshot, type ScrollProgress } from "./scroll-controller";
 import { SCREEN_NODE_BY_ID, type ScreenNodeId } from "./topology";
 import { ActorTransitionCoordinator, interceptGeometryLinkedProgress, semanticActorKey, type DisplayedPlacement, type ActorTransitionTransaction } from "./transition-coordinator";
 import { GeometryIdTrace, traceFromTransaction } from "./geometry-id-trace";
 import { NaturalRafRecorder } from "./natural-raf-recorder";
 import { CONTINUITY_FLOOR, DEFAULT_CONTINUITY_LIFT_ENABLED } from "./continuity-overlay";
 import { commitDriverToMask, type PaletteMaterialSnapshot } from "./palette-authority";
+import {
+  EMPTY_GEOMETRY_ACK,
+  selectProgramSourceMode,
+  type GeometryMaterialSnapshot,
+  type GeometryProgramBind,
+  type GeometryRenderAck,
+} from "./geometry-authority";
+import { NavigationDirector } from "./navigation-token";
 import { TransitionProgramCache } from "./transition-prewarm";
 import type { TransitionUniforms } from "./PS04M4Scene";
 import styles from "./ps04m4.module.css";
@@ -87,6 +95,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   const actorMask = query.get("actorMask") === "1";
   const hideUi = actorMask || query.get("ui") === "0";
   const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
+  const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
   const [theme, setTheme] = useState<MaterialTheme>(query.get("theme") === "dark" ? "dark" : "light");
   const [dpr, setDpr] = useState(() => parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(query.get("reduced") === "1");
@@ -116,8 +125,16 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     applyLinkedPaletteRef.current = interceptGeometryLinkedProgress(session.palette);
   }, [session]);
   const controller = useMemo(() => new ScrollCompositionController(), []);
+  useEffect(() => {
+    const requested = labQuery().get("magnetism");
+    if (requested === "a" || requested === "b" || requested === "c") {
+      controller.setMagnetismVariant(requested);
+    } else {
+      controller.setMagnetismVariant(SELECTED_MAGNETISM_VARIANT);
+    }
+  }, [controller]);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m4-r4";
+  const sessionId = "ps04-m4-r5";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -145,10 +162,16 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     identity,
   });
   const paletteSnapshotRef = useRef<PaletteMaterialSnapshot | null>(null);
+  const geometrySnapshotRef = useRef<GeometryMaterialSnapshot | null>(null);
+  const programBindRef = useRef<GeometryProgramBind | null>(null);
+  const geometryAckRef = useRef<GeometryRenderAck>({ ...EMPTY_GEOMETRY_ACK });
+  const navigationRef = useRef(new NavigationDirector());
   const programCacheRef = useRef(new TransitionProgramCache());
   const lastSettledRevisionRef = useRef(0);
   const lastFrameTokenRef = useRef(-1);
   const continuityLiftRef = useRef(continuityLift);
+  const reproduceR4GeometryRef = useRef(reproduceR4Geometry);
+  const geometryLogRef = useRef<{ recording: boolean; frames: Array<Record<string, unknown>> }>({ recording: false, frames: [] });
 
   const startClock = useCallback(() => {
     const clock = clockRef.current;
@@ -192,6 +215,28 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         lastSettledRevisionRef.current = tx.revision;
       }
       paletteSnapshotRef.current = coordinator.materialSnapshot(session.palette.snapshot().phase);
+      const ack = geometryAckRef.current;
+      const packet = programBindRef.current;
+      const drawnCurrentPacket = Boolean(packet && ack.drawnRevision === packet.revision && ack.drawnProgramId === packet.program.programId);
+      if (packet && (packet.bindCommitted || drawnCurrentPacket)) {
+        packet.bindCommitted = true;
+        packet.bindFrameToken = packet.bindFrameToken ?? ack.frameToken;
+        coordinator.markDisplayedBind({
+          revision: packet.revision,
+          programId: packet.program.programId,
+          sourceGeometryId: packet.source.entry.stateId,
+          targetGeometryId: packet.target.entry.stateId,
+          frameToken: packet.bindFrameToken ?? ack.frameToken,
+          nowMs: now,
+        });
+        coordinator.acknowledgeRender(ack);
+        if (session.snapshot().status === "transitioning" && session.snapshot().geometryProgress < 1) {
+          session.playGeometry(true);
+        }
+      } else if (ack.frameToken) {
+        coordinator.acknowledgeRender(ack);
+      }
+      geometrySnapshotRef.current = coordinator.geometrySnapshot();
       const progress = controller.getProgress();
       progressRef.current = progress;
       const host = canvasHostRef.current;
@@ -199,27 +244,52 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       const committedNode = controller.committedActorNodeId();
       const index = stateIndexRef.current;
       const flowNow = flowRef.current;
-      const nextContract = index
+      const flowArgs = {
+        taskId: flowNow.taskId,
+        taskSelected: Boolean(flowNow.taskId),
+        competencies: flowNow.competencies,
+        competenciesConfirmed: flowNow.competenciesConfirmed,
+        settledStateId: sessionSnap.settledStateId,
+      };
+      const hudContract = index
         ? resolveScreenActorContract({
           nodeId: committedNode,
           overlay: flowNow.overlay,
           index,
-          flow: {
-            taskId: flowNow.taskId,
-            taskSelected: Boolean(flowNow.taskId),
-            competencies: flowNow.competencies,
-            competenciesConfirmed: flowNow.competenciesConfirmed,
-            settledStateId: sessionSnap.settledStateId,
-          },
+          flow: flowArgs,
         })
         : null;
-      if (nextContract) {
-        contractRef.current = nextContract;
-        const semantic = semanticActorKey(nextContract).serialized;
+      if (hudContract) contractRef.current = hudContract;
+      const modeSnap = controller.getModeSnapshot();
+      const displayedNode = (coordinator.snapshot().targetNodeId === "none"
+        ? progress.activeNodeId
+        : coordinator.snapshot().targetNodeId) as ScreenNodeId;
+      const observed = navigationRef.current.observe({
+        nowMs: now,
+        rawObservedNodeId: progress.activeNodeId,
+        committedNodeId: committedNode,
+        magneticCandidateId: modeSnap.magneticCandidateId,
+        mode: modeSnap.mode,
+        fastGesture: modeSnap.fastGesture,
+        displayedNodeId: displayedNode,
+        inputIdle: modeSnap.mode === "idle",
+      });
+      const reverseOfRunning = tx.status === "running"
+        && tx.kind === "geometry"
+        && observed.token.targetNodeId === tx.sourceNodeId;
+      if (index && observed.shouldRequestActor && !reverseOfRunning) {
+        const actorContract = resolveScreenActorContract({
+          nodeId: observed.token.targetNodeId,
+          overlay: flowNow.overlay,
+          index,
+          flow: flowArgs,
+        });
+        const semantic = semanticActorKey(actorContract).serialized;
         if (semantic !== requestKeyRef.current) {
           requestKeyRef.current = semantic;
-          requestActorRef.current(nextContract);
-          setContract(nextContract);
+          navigationRef.current.commitActorTarget(observed.token.targetNodeId, observed.token.origin);
+          requestActorRef.current(actorContract);
+          setContract(actorContract);
         }
       }
       const liveDpr = dprRef.current;
@@ -284,16 +354,51 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         coordinator.noteFirstWebglChange(now);
         lastFrameTokenRef.current = tx.revision;
       }
-      if (traceRef.current.recordingNow) {
-        traceRef.current.push(traceFromTransaction({
-          frameToken: clock.token,
-          timestamp: now,
-          transaction: tx,
-          activeNodeId: progress.activeNodeId,
-          committedNodeId: committedNode,
-          actorDraw: compositionRef.current.actorDraw,
-          frameDeltaMs: dt * 1000,
-        }));
+      if (traceRef.current.recordingNow || geometryLogRef.current.recording) {
+        const geoNow = coordinator.geometrySnapshot();
+        const uniforms = window.__PS04M4_MATERIAL_UNIFORMS__ ?? null;
+        const ack = geometryAckRef.current;
+        const packetNow = programBindRef.current;
+        const modeNow = controller.getModeSnapshot();
+        if (traceRef.current.recordingNow) {
+          traceRef.current.push(traceFromTransaction({
+            frameToken: clock.token,
+            timestamp: now,
+            transaction: tx,
+            activeNodeId: progress.activeNodeId,
+            committedNodeId: committedNode,
+            actorDraw: compositionRef.current.actorDraw,
+            frameDeltaMs: dt * 1000,
+          }));
+        }
+        if (geometryLogRef.current.recording) {
+          geometryLogRef.current.frames.push({
+            atMs: now,
+            frameToken: clock.token,
+            rawObservedNodeId: progress.activeNodeId,
+            magneticCandidateId: modeNow.magneticCandidateId,
+            committedNodeId: committedNode,
+            navigationToken: navigationRef.current.lastToken(),
+            actorRequestRevision: tx.revision,
+            coordinatorStatus: tx.status,
+            sessionStatus: sessionSnap.status,
+            coordinatorGeometryProgress: tx.geometryProgress,
+            sessionGeometryProgress: sessionSnap.geometryProgress,
+            shaderProgress: uniforms?.geometryProgress ?? geoNow.shaderProgress,
+            geometryStatus: geoNow.status,
+            boundProgramId: uniforms?.boundProgramId ?? geoNow.boundProgramId,
+            boundSourceGeometryId: uniforms?.boundSourceId ?? geoNow.boundSourceGeometryId,
+            boundTargetGeometryId: uniforms?.boundTargetId ?? geoNow.boundTargetGeometryId,
+            settledGeometryId: geoNow.settledGeometryId,
+            materialUuid: uniforms?.materialUuid ?? null,
+            textureIdentity: uniforms?.textureIdentity ?? null,
+            prewarm: programCacheRef.current.stats.lastStatus,
+            prewarmCount: programCacheRef.current.stats.prewarms,
+            bindCommitted: packetNow?.bindCommitted ?? false,
+            drawnProgress: ack.drawnProgress,
+            drawnProgramId: ack.drawnProgramId,
+          });
+        }
       }
       if (now - clock.lastUi > 160 || clock.lastUi === 0) {
         setUi(sessionSnap);
@@ -302,7 +407,8 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         perfRef.current.markReactCommit();
       }
       const siteMoving = siteU < 0.999 && visualRef.current.visible !== target.visible;
-      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running") {
+      const geoStatus = coordinator.geometrySnapshot().status;
+      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || geometryLogRef.current.recording) {
         clock.frame = requestAnimationFrame(loop);
       } else {
         clock.running = false;
@@ -381,6 +487,8 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         : null;
       if (bootContract) {
         coordinatorRef.current.adoptSettled(bootContract, identity);
+        geometrySnapshotRef.current = coordinatorRef.current.geometrySnapshot();
+        navigationRef.current.commitActorTarget("01", "restore");
         requestKeyRef.current = semanticActorKey(bootContract).serialized;
         contractRef.current = bootContract;
         setContract(bootContract);
@@ -433,6 +541,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       reducedMotion,
       identity,
       nowMs: performance.now(),
+      navigationToken: navigationRef.current.lastToken(),
     });
     if (decision.kind === "noop") return;
     setContract(next);
@@ -465,25 +574,67 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
       const currentTarget = session.getTarget();
       const currentSource = session.getSource();
-      const settled = captured.geometryProgress >= 1 && currentTarget && !currentTarget.entry.stateId.startsWith("runtime-snapshot-");
-      if (settled && currentTarget) {
+      const geo = coordinator.geometrySnapshot();
+      const sourceChoice = selectProgramSourceMode({
+        shaderProgress: geo.shaderProgress,
+        boundTargetGeometryId: geo.boundTargetGeometryId,
+        boundSourceGeometryId: geo.boundSourceGeometryId,
+        settledGeometryId: geo.settledGeometryId,
+        sessionSourceId: currentSource?.entry.stateId ?? null,
+        sessionTargetId: currentTarget?.entry.stateId ?? null,
+        sessionProgress: captured.geometryProgress,
+      });
+      const stateForId = async (id: string | null) => {
+        if (!id || id.startsWith("runtime-snapshot-")) return null;
+        if (currentTarget?.entry.stateId === id) return currentTarget;
+        if (currentSource?.entry.stateId === id) return currentSource;
+        const found = manifest.states.find((item) => item.stateId === id);
+        return found ? cache.loadState(found) : null;
+      };
+      const playImmediately = reproduceR4GeometryRef.current; // default play: false until Scene bind ack
+      if (sourceChoice.mode === "frozen") {
+        const sourceState = await stateForId(sourceChoice.sourceGeometryId);
+        if (!sourceState) {
+          startClock();
+          return;
+        }
         const program = await cache.getFrozen({
-          source: currentTarget,
+          source: sourceState,
           target: nextState,
           manifest,
           motion: motionManifest,
           reducedMotion,
         });
         if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
-        coordinator.markProgramReady(transaction.revision, program.programId);
-        session.commitTransition({ revision, source: currentTarget, target: nextState, program, captured, play: true });
+        coordinator.markProgramReady(transaction.revision, program.programId, performance.now());
+        programBindRef.current = {
+          revision: transaction.revision,
+          navigationToken: navigationRef.current.lastToken(),
+          program,
+          source: sourceState,
+          target: nextState,
+          bindCommitted: false,
+          bindFrameToken: null,
+          preparedAtMs: performance.now(),
+        };
+        session.commitTransition({ revision, source: sourceState, target: nextState, program, captured, play: playImmediately });
       } else if (currentSource && currentTarget) {
         const { liveSource, program } = compileLiveRetarget(captured, currentSource, nextState, manifest, {
           reducedMotion, trigger: "qa", viewport: viewportForFrame("desktop"),
         });
         if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
-        coordinator.markProgramReady(transaction.revision, program.programId);
-        session.commitTransition({ revision, source: liveSource, target: nextState, program, captured, play: true });
+        coordinator.markProgramReady(transaction.revision, program.programId, performance.now());
+        programBindRef.current = {
+          revision: transaction.revision,
+          navigationToken: navigationRef.current.lastToken(),
+          program,
+          source: liveSource,
+          target: nextState,
+          bindCommitted: false,
+          bindFrameToken: null,
+          preparedAtMs: performance.now(),
+        };
+        session.commitTransition({ revision, source: liveSource, target: nextState, program, captured, play: playImmediately });
       }
       const after = session.palette.snapshot();
       if (after.palette.mask !== request.paletteMask) {
@@ -516,9 +667,10 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
     identityRef.current = identity;
     reducedRef.current = reducedMotion;
     continuityLiftRef.current = continuityLift;
+    reproduceR4GeometryRef.current = reproduceR4Geometry;
     requestActorRef.current = (next) => { void requestActor(next); };
     startClock();
-  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex, continuityLift]);
+  }, [dpr, flow, identity, reducedMotion, requestActor, startClock, stateIndex, continuityLift, reproduceR4Geometry]);
 
   const navigate = useCallback((id: ScreenNodeId) => controller.scrollToNode(id), [controller]);
 
@@ -623,6 +775,9 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       transaction: coordinatorRef.current.snapshot(),
       committedNodeId: controller.committedActorNodeId(),
       palette: coordinatorRef.current.materialSnapshot(session.palette.snapshot().phase),
+      geometry: coordinatorRef.current.geometrySnapshot(),
+      renderAck: geometryAckRef.current,
+      navigation: controller.getModeSnapshot(),
       driverPalette: {
         mask: session.palette.snapshot().palette.mask,
         progress: session.palette.snapshot().paletteProgress,
@@ -638,7 +793,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
   useEffect(() => {
     window.__PS04M4_LAB__ = {
       runId: "ps04-m4",
-      stage: "PS-04.M4.R4",
+        stage: "PS-04.M4.R5",
       mode,
       get ready() {
         return Boolean(target && !loading && (stats.lastActorDrawCalls > 0 || window.__PS04M4_SCENE_READY__ || compositionRef.current.actorDraw === false));
@@ -664,10 +819,29 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       sessionId,
       transaction: () => coordinatorRef.current.snapshot(),
       paletteSnapshot: () => coordinatorRef.current.materialSnapshot(session.palette.snapshot().phase),
+      geometrySnapshot: () => coordinatorRef.current.geometrySnapshot(),
+      renderAck: () => geometryAckRef.current,
+      programBind: () => programBindRef.current ? {
+        revision: programBindRef.current.revision,
+        programId: programBindRef.current.program.programId,
+        sourceId: programBindRef.current.source.entry.stateId,
+        targetId: programBindRef.current.target.entry.stateId,
+        bindCommitted: programBindRef.current.bindCommitted,
+        bindFrameToken: programBindRef.current.bindFrameToken,
+      } : null,
+      navigation: () => controller.getModeSnapshot(),
+      lastActorTarget: () => navigationRef.current.lastIssuedTarget(),
       programCache: () => programCacheRef.current.stats,
       startTrace: () => { traceRef.current.start(); },
       stopTrace: () => traceRef.current.stop(),
       trace: () => traceRef.current.snapshot(),
+      startGeometryLog: () => { geometryLogRef.current = { recording: true, frames: [] }; startClock(); },
+      stopGeometryLog: () => {
+        geometryLogRef.current.recording = false;
+        return geometryLogRef.current.frames.slice();
+      },
+      geometryLog: () => geometryLogRef.current.frames.slice(),
+      latencies: () => coordinatorRef.current.latencies(),
       startPerf: (scenario: string) => { perfRef.current.start(scenario); },
       stopPerf: () => {
         perfRef.current.noteResources({
@@ -679,6 +853,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         });
         const latencies = coordinatorRef.current.latencies();
         if (latencies.requestDelayMs != null) perfRef.current.noteRequestLatency(latencies.requestDelayMs);
+        if (latencies.transitionDurationMs != null) perfRef.current.noteTransitionDuration(latencies.transitionDurationMs);
         return perfRef.current.stop();
       },
       sampleTransition: async (durationMs = 1400) => {
@@ -687,6 +862,8 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
         await new Promise<void>((resolve) => {
           const step = (now: number) => {
             const tx = coordinatorRef.current.snapshot();
+            const geo = coordinatorRef.current.geometrySnapshot();
+            const uniforms = window.__PS04M4_MATERIAL_UNIFORMS__ ?? null;
             const composition = compositionRef.current;
             const measured = new URLSearchParams(window.location.search).get("actorMask") === "1"
               ? window.__PS04M4_MEASURE_ACTOR__?.() ?? null
@@ -703,10 +880,20 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
               siteProgress: tx.siteProgress,
               sourceGeometryId: tx.sourceGeometryId,
               targetGeometryId: tx.targetGeometryId,
+              shaderProgress: geo.shaderProgress,
+              geometryStatus: geo.status,
+              boundProgramId: geo.boundProgramId,
+              boundSourceGeometryId: geo.boundSourceGeometryId,
+              boundTargetGeometryId: geo.boundTargetGeometryId,
+              settledGeometryId: geo.settledGeometryId,
+              uniformProgress: uniforms?.geometryProgress ?? null,
+              materialUuid: uniforms?.materialUuid ?? null,
+              textureIdentity: uniforms?.textureIdentity ?? null,
               actorDraw: composition.actorDraw,
               area: width * height,
               maxDim: Math.max(width, height),
               visibleFraction: measured?.actorVisibleFraction ?? null,
+              latencies: coordinatorRef.current.latencies(),
             });
             if (now - started < durationMs) requestAnimationFrame(step);
             else resolve();
@@ -752,7 +939,7 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
       canvasCount: () => document.querySelectorAll("canvas").length,
     };
     if (mode === "preview") window.__PS04M4_PREVIEW__ = window.__PS04M4_LAB__;
-  }, [activeNode, actorRequest, contextState, controller, diagnostics, environment, flow.overlay, flow.unlock, identity, loading, mode, navigate, reducedMotion, requestActor, session, sessionId, stats, target, theme]);
+  }, [activeNode, actorRequest, contextState, controller, diagnostics, environment, flow.overlay, flow.unlock, identity, loading, mode, navigate, reducedMotion, requestActor, session, sessionId, startClock, stats, target, theme]);
 
   const sceneReady = Boolean(source && target && program && manifest);
   const paper = MATERIAL_THEME_PRESETS[theme].background;
@@ -783,6 +970,11 @@ export function PS04M4Lab({ mode }: { mode: "lab" | "preview" }) {
             compositionRef={compositionRef}
             transitionRef={transitionRef}
             paletteSnapshotRef={paletteSnapshotRef}
+            geometrySnapshotRef={geometrySnapshotRef}
+            programBindRef={programBindRef}
+            geometryAckRef={geometryAckRef}
+            onGeometryAck={(ack) => { geometryAckRef.current = ack; }}
+            reproduceR4Geometry={reproduceR4Geometry}
             actorMask={actorMask}
             diagnosticId="motion"
             onStats={setStats}

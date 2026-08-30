@@ -226,6 +226,16 @@ export const MAGNETISM = Object.freeze({
   unlockSettleMs: 48,
 });
 
+export const MAGNETISM_VARIANTS = Object.freeze({
+  a: { inputIdleMs: 160, activationRadiusFactor: 0.25, snapDurationMs: 340 },
+  b: { inputIdleMs: 160, activationRadiusFactor: 0.28, snapDurationMs: 440 },
+  c: { inputIdleMs: 175, activationRadiusFactor: 0.3, snapDurationMs: 520 },
+} as const);
+
+export type MagnetismVariantId = keyof typeof MAGNETISM_VARIANTS;
+
+export const SELECTED_MAGNETISM_VARIANT: MagnetismVariantId = "a";
+
 export type ScrollMode = "idle" | "user" | "magnetic" | "programmatic" | "restore";
 export type ScrollOrigin = "programmatic" | "restore";
 export type UserInputKind = "wheel" | "touch" | "pointer" | "keyboard" | "scrollbar";
@@ -314,14 +324,21 @@ export function planMagneticSnap(args: {
   fullyStopped: boolean;
   lastConfidentDirection: 1 | -1;
   fastGesture?: boolean;
+  tokens?: {
+    inputIdleMs: number;
+    activationRadiusFactor: number;
+    noopDistancePx: number;
+    maxProjectionFactor: number;
+  };
 }): MagneticPlan | null {
+  const tokens = args.tokens ?? MAGNETISM;
   const vh = Math.max(1, args.viewportHeight);
   const layout = canonicalLayout(vh, args.unlock);
   if (layout.segments.length === 0) return null;
-  const maxProj = vh * MAGNETISM.maxProjectionFactor;
+  const maxProj = vh * tokens.maxProjectionFactor;
   const projection = args.fullyStopped
     ? 0
-    : clamp(args.velocityPxPerMs * MAGNETISM.inputIdleMs, -maxProj, maxProj);
+    : clamp(args.velocityPxPerMs * tokens.inputIdleMs, -maxProj, maxProj);
   const probeY = clamp(args.scrollY + projection, 0, Math.max(0, layout.documentHeight - 1));
   const rawIndex = rawIndexAt(probeY, layout);
   const raw = layout.segments[rawIndex];
@@ -338,15 +355,15 @@ export function planMagneticSnap(args: {
     const dir = args.lastConfidentDirection;
     candidates = candidates.filter((item) => (
       dir === 1
-        ? item.targetY >= args.scrollY - MAGNETISM.noopDistancePx
-        : item.targetY <= args.scrollY + MAGNETISM.noopDistancePx
+        ? item.targetY >= args.scrollY - tokens.noopDistancePx
+        : item.targetY <= args.scrollY + tokens.noopDistancePx
     ));
   }
   if (candidates.length === 0) return null;
   candidates.sort((left, right) => left.distance - right.distance);
   const best = candidates[0];
-  if (best.distance <= MAGNETISM.noopDistancePx) return null;
-  if (best.distance > vh * MAGNETISM.activationRadiusFactor) return null;
+  if (best.distance <= tokens.noopDistancePx) return null;
+  if (best.distance > vh * tokens.activationRadiusFactor) return null;
   return best;
 }
 
@@ -363,6 +380,7 @@ export class ScrollCompositionController {
 
   private unlock: UnlockFlags = { competencies: false, brief: false };
   private reducedMotion = false;
+  private magnetismVariant: MagnetismVariantId = SELECTED_MAGNETISM_VARIANT;
   private viewport = { width: 1440, height: 900 };
   private direction: 1 | -1 = 1;
   private lastY = 0;
@@ -446,6 +464,39 @@ export class ScrollCompositionController {
       suppressed: magnetismGuardsBlock(this.liveGuards()),
       lastInput: this.lastInput,
     };
+  }
+
+  getFastGesture() {
+    return this.fastGesture;
+  }
+
+  getModeSnapshot() {
+    return {
+      mode: this.mode,
+      fastGesture: this.fastGesture,
+      pendingTarget: this.pendingTarget,
+      rawObservedNodeId: this.snapshot.activeNodeId,
+      committedNodeId: this.committedActorNodeId(),
+      magneticCandidateId: this.candidate?.nodeId ?? this.pendingTarget,
+    };
+  }
+
+  magnetismTokens() {
+    const variant = MAGNETISM_VARIANTS[this.magnetismVariant];
+    return {
+      ...MAGNETISM,
+      inputIdleMs: variant.inputIdleMs,
+      activationRadiusFactor: variant.activationRadiusFactor,
+      snapDurationMs: variant.snapDurationMs,
+    };
+  }
+
+  setMagnetismVariant(id: MagnetismVariantId) {
+    this.magnetismVariant = id;
+  }
+
+  getMagnetismVariant() {
+    return this.magnetismVariant;
   }
 
   setMagnetismGuards(partial: Partial<MagnetismGuards>) {
@@ -631,7 +682,7 @@ export class ScrollCompositionController {
     this.clearIdle();
     const host = this.attached;
     if (!host) return;
-    this.idleTimer = host.setTimeout(() => this.onInputIdle(), MAGNETISM.inputIdleMs);
+    this.idleTimer = host.setTimeout(() => this.onInputIdle(), this.magnetismTokens().inputIdleMs);
   }
 
   private clearIdle() {
@@ -662,6 +713,7 @@ export class ScrollCompositionController {
       return;
     }
     const fullyStopped = Math.abs(this.velocity) < 0.04;
+    const tokens = this.magnetismTokens();
     const plan = planMagneticSnap({
       scrollY: this.lastY,
       viewportHeight: this.viewport.height,
@@ -671,6 +723,7 @@ export class ScrollCompositionController {
       fullyStopped,
       lastConfidentDirection: this.lastConfidentDirection,
       fastGesture: this.fastGesture,
+      tokens,
     });
     this.candidate = plan;
     if (!plan) {
@@ -696,7 +749,7 @@ export class ScrollCompositionController {
     }
     const from = this.lastY;
     const start = this.now();
-    const duration = MAGNETISM.snapDurationMs;
+    const duration = this.magnetismTokens().snapDurationMs;
     const tick = (stamp: number) => {
       if (token !== this.magnetToken || this.mode !== "magnetic") return;
       const t = Math.min(1, (stamp - start) / duration);

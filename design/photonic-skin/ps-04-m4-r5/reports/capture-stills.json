@@ -1,0 +1,142 @@
+{
+  "capturedAt": "2026-08-30T12:31:07.581Z",
+  "sessionId": "ps04-m4-r5",
+  "contextState": "restored",
+  "sheets": [
+    {
+      "name": "master-content",
+      "from": "04",
+      "to": "05.1",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ]
+    },
+    {
+      "name": "content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ]
+    },
+    {
+      "name": "design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ]
+    },
+    {
+      "name": "event-games",
+      "from": "05.3",
+      "to": "05.4",
+      "requestedFrozenIds": [
+        "single-event",
+        "single-games"
+      ]
+    },
+    {
+      "name": "games-video",
+      "from": "05.4",
+      "to": "05.5",
+      "requestedFrozenIds": [
+        "single-games",
+        "single-video"
+      ]
+    },
+    {
+      "name": "video-digital",
+      "from": "05.5",
+      "to": "05.6",
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ]
+    },
+    {
+      "name": "digital-merch",
+      "from": "05.6",
+      "to": "05.7",
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ]
+    },
+    {
+      "name": "merch-master",
+      "from": "05.7",
+      "to": "06.1",
+      "requestedFrozenIds": [
+        "single-merch",
+        "master-neutral"
+      ]
+    },
+    {
+      "name": "master-brand-wide",
+      "from": "01",
+      "to": "02",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ]
+    },
+    {
+      "name": "left-right-slot",
+      "from": "05.1",
+      "to": "06.1",
+      "requestedFrozenIds": [
+        "single-content",
+        "master-neutral"
+      ]
+    },
+    {
+      "name": "mask-master-content",
+      "from": "04",
+      "to": "05.1",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ]
+    },
+    {
+      "name": "mask-content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ]
+    },
+    {
+      "name": "mask-design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ]
+    },
+    {
+      "name": "mask-video-digital",
+      "from": "05.5",
+      "to": "05.6",
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ]
+    },
+    {
+      "name": "mask-digital-merch",
+      "from": "05.6",
+      "to": "05.7",
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ]
+    }
+  ]
+}

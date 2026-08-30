@@ -1,0 +1,212 @@
+[
+  {
+    "name": "master-content",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "single-content"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 15,
+    "runningSamples": 15,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "content-design",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "single-design"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "design-event",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-design",
+      "single-event"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "event-games",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-event",
+      "single-games"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "games-video",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-games",
+      "single-video"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "video-digital",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-video",
+      "single-digital"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "digital-merch",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-digital",
+      "single-merch"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "merch-master",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-merch",
+      "master-neutral"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "master-brand-wide",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "brand-wide-gather-content-design-digital-event-games-merch-video"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "left-right-slot",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "master-neutral"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": null,
+    "maxArea": null
+  },
+  {
+    "name": "mask-master-content",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "master-neutral",
+      "single-content"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": 119025,
+    "maxArea": 126736
+  },
+  {
+    "name": "mask-content-design",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-content",
+      "single-design"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": 185645,
+    "maxArea": 188268
+  },
+  {
+    "name": "mask-design-event",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-design",
+      "single-event"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": 238777,
+    "maxArea": 240394
+  },
+  {
+    "name": "mask-video-digital",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-video",
+      "single-digital"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": 83204,
+    "maxArea": 84968
+  },
+  {
+    "name": "mask-digital-merch",
+    "emptyActorFrames": 0,
+    "collapseFrames": [],
+    "requestedFrozenIds": [
+      "single-digital",
+      "single-merch"
+    ],
+    "thirdGeometry": false,
+    "sampledFrames": 5,
+    "runningSamples": 5,
+    "minArea": 181272,
+    "maxArea": 187726
+  }
+]

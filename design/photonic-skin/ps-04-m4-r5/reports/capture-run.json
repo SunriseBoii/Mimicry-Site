@@ -1,0 +1,3605 @@
+{
+  "capturedAt": "2026-08-30T12:35:13.232Z",
+  "sessionId": "ps04-m4-r5",
+  "contextState": "restored",
+  "videos": [
+    {
+      "name": "r4-rollback-reproduction",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/r4-rollback-reproduction.webm"
+    },
+    {
+      "name": "slow-forward-sequence",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/slow-forward-sequence.webm"
+    },
+    {
+      "name": "slow-reverse-sequence",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/slow-reverse-sequence.webm"
+    },
+    {
+      "name": "fast-skip-coalesced",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/fast-skip-coalesced.webm"
+    },
+    {
+      "name": "magnetism-baseline",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/magnetism-baseline.webm"
+    },
+    {
+      "name": "magnetism-selected",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/magnetism-selected.webm"
+    },
+    {
+      "name": "reverse-cancel",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/reverse-cancel.webm"
+    },
+    {
+      "name": "prewarm-invariance",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/prewarm-invariance.webm"
+    },
+    {
+      "name": "five-second-endpoint-hold",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/five-second-endpoint-hold.webm"
+    },
+    {
+      "name": "user-sequence",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/user-sequence.webm"
+    },
+    {
+      "name": "rapid-forward-reverse",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/rapid-forward-reverse.webm"
+    },
+    {
+      "name": "full-down-up",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/full-down-up.webm"
+    },
+    {
+      "name": "content-design",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/content-design.webm"
+    },
+    {
+      "name": "reverse-sequence",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/reverse-sequence.webm"
+    },
+    {
+      "name": "reduced-motion",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/reduced-motion.webm"
+    },
+    {
+      "name": "warmed-content-design",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/warmed-content-design.webm"
+    },
+    {
+      "name": "content-design-lift-on",
+      "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m4-r5/renders/browser/video/content-design-lift-on.webm"
+    }
+  ],
+  "sheets": [
+    {
+      "name": "master-content",
+      "from": "04",
+      "to": "05.1",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.19845359633704487,
+          "paletteProgress": 0,
+          "siteProgress": 0,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.33657729938762876,
+          "paletteProgress": 0,
+          "siteProgress": 0.10794177413652971,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 332,
+            "height": 332,
+            "area": 110224,
+            "maxDim": 332,
+            "centroid": [
+              1000,
+              505
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5713479038543521,
+          "paletteProgress": 0.9245501588967491,
+          "siteProgress": 0.9828369538822479,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 554,
+            "height": 419,
+            "area": 232126,
+            "maxDim": 554,
+            "centroid": [
+              356,
+              543.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7937151585500111,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 568,
+            "height": 364,
+            "area": 206752,
+            "maxDim": 568,
+            "centroid": [
+              326,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 543,
+            "height": 348,
+            "area": 188964,
+            "maxDim": 543,
+            "centroid": [
+              328.5,
+              526
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 543,
+            "height": 348,
+            "area": 188964,
+            "maxDim": 543,
+            "centroid": [
+              328.5,
+              526
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 543,
+            "height": 348,
+            "area": 188964,
+            "maxDim": 543,
+            "centroid": [
+              328.5,
+              526
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 541,
+            "height": 349,
+            "area": 188809,
+            "maxDim": 541,
+            "centroid": [
+              327.5,
+              526.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 538,
+            "height": 348,
+            "area": 187224,
+            "maxDim": 538,
+            "centroid": [
+              327,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 538,
+            "height": 348,
+            "area": 187224,
+            "maxDim": 538,
+            "centroid": [
+              327,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09169201232389547,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.28892153083259486,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 551,
+            "height": 351,
+            "area": 193401,
+            "maxDim": 551,
+            "centroid": [
+              327.5,
+              517.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5000882352145252,
+          "paletteProgress": 0.41598086945259627,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 576,
+            "height": 368,
+            "area": 211968,
+            "maxDim": 576,
+            "centroid": [
+              326,
+              491
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7056617268447001,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 575,
+            "height": 441,
+            "area": 253575,
+            "maxDim": 575,
+            "centroid": [
+              335.5,
+              493.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9280148567301473,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 548,
+            "height": 458,
+            "area": 250984,
+            "maxDim": 548,
+            "centroid": [
+              365,
+              488
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 533,
+            "height": 453,
+            "area": 241449,
+            "maxDim": 533,
+            "centroid": [
+              362.5,
+              486.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 535,
+            "height": 452,
+            "area": 241820,
+            "maxDim": 535,
+            "centroid": [
+              362.5,
+              486
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 536,
+            "height": 448,
+            "area": 240128,
+            "maxDim": 536,
+            "centroid": [
+              363,
+              485
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 540,
+            "height": 444,
+            "area": 239760,
+            "maxDim": 540,
+            "centroid": [
+              363,
+              484
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 541,
+            "height": 445,
+            "area": 240745,
+            "maxDim": 541,
+            "centroid": [
+              363.5,
+              483.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09155812587641673,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.38280452428929684,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 541,
+            "height": 459,
+            "area": 248319,
+            "maxDim": 541,
+            "centroid": [
+              365.5,
+              485.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.588077842504224,
+          "paletteProgress": 0.9757134590480989,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 549,
+            "height": 463,
+            "area": 254187,
+            "maxDim": 549,
+            "centroid": [
+              369.5,
+              484.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.8267698766640438,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 553,
+            "height": 414,
+            "area": 228942,
+            "maxDim": 553,
+            "centroid": [
+              362.5,
+              496
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 554,
+            "height": 415,
+            "area": 229910,
+            "maxDim": 554,
+            "centroid": [
+              363,
+              495.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 554,
+            "height": 415,
+            "area": 229910,
+            "maxDim": 554,
+            "centroid": [
+              363,
+              495.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 554,
+            "height": 414,
+            "area": 229356,
+            "maxDim": 554,
+            "centroid": [
+              365,
+              496
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 557,
+            "height": 415,
+            "area": 231155,
+            "maxDim": 557,
+            "centroid": [
+              367.5,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 557,
+            "height": 415,
+            "area": 231155,
+            "maxDim": 557,
+            "centroid": [
+              368.5,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 557,
+            "height": 415,
+            "area": 231155,
+            "maxDim": 557,
+            "centroid": [
+              368.5,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "event-games",
+      "from": "05.3",
+      "to": "05.4",
+      "requestedFrozenIds": [
+        "single-event",
+        "single-games"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09534214758619813,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.3468547329185881,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 505,
+            "height": 383,
+            "area": 193415,
+            "maxDim": 505,
+            "centroid": [
+              350.5,
+              499.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5663323566620169,
+          "paletteProgress": 0.9027683162463849,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 520,
+            "height": 354,
+            "area": 184080,
+            "maxDim": 520,
+            "centroid": [
+              287,
+              512
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7685530516923453,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 542,
+            "height": 405,
+            "area": 219510,
+            "maxDim": 542,
+            "centroid": [
+              328,
+              489.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9882213597309438,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 517,
+            "height": 386,
+            "area": 199562,
+            "maxDim": 517,
+            "centroid": [
+              325.5,
+              492
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 517,
+            "height": 386,
+            "area": 199562,
+            "maxDim": 517,
+            "centroid": [
+              325.5,
+              492
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 518,
+            "height": 386,
+            "area": 199948,
+            "maxDim": 518,
+            "centroid": [
+              325,
+              492
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 518,
+            "height": 386,
+            "area": 199948,
+            "maxDim": 518,
+            "centroid": [
+              325,
+              491
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 517,
+            "height": 385,
+            "area": 199045,
+            "maxDim": 517,
+            "centroid": [
+              324.5,
+              490.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 4,
+          "source": "single-event",
+          "target": "single-games",
+          "silhouette": {
+            "width": 517,
+            "height": 385,
+            "area": 199045,
+            "maxDim": 517,
+            "centroid": [
+              324.5,
+              490.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "games-video",
+      "from": "05.4",
+      "to": "05.5",
+      "requestedFrozenIds": [
+        "single-games",
+        "single-video"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.0992272311072055,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.31871786631634114,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 503,
+            "height": 376,
+            "area": 189128,
+            "maxDim": 503,
+            "centroid": [
+              328.5,
+              494
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5471389523251291,
+          "paletteProgress": 0.7932935575043056,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 476,
+            "height": 353,
+            "area": 168028,
+            "maxDim": 476,
+            "centroid": [
+              335,
+              498.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.78181135389367,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 248,
+            "height": 346,
+            "area": 85808,
+            "maxDim": 346,
+            "centroid": [
+              366,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9981267177073778,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 245,
+            "height": 342,
+            "area": 83790,
+            "maxDim": 342,
+            "centroid": [
+              366.5,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 245,
+            "height": 342,
+            "area": 83790,
+            "maxDim": 342,
+            "centroid": [
+              366.5,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 245,
+            "height": 342,
+            "area": 83790,
+            "maxDim": 342,
+            "centroid": [
+              366.5,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 241,
+            "height": 342,
+            "area": 82422,
+            "maxDim": 342,
+            "centroid": [
+              365.5,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 236,
+            "height": 341,
+            "area": 80476,
+            "maxDim": 341,
+            "centroid": [
+              365,
+              547.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-games",
+          "target": "single-video",
+          "silhouette": {
+            "width": 234,
+            "height": 341,
+            "area": 79794,
+            "maxDim": 341,
+            "centroid": [
+              365,
+              547.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "video-digital",
+      "from": "05.5",
+      "to": "05.6",
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09905040755397879,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.31210783420258587,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 255,
+            "height": 352,
+            "area": 89760,
+            "maxDim": 352,
+            "centroid": [
+              375.5,
+              551
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5102086493105438,
+          "paletteProgress": 0.5017782569040797,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 334,
+            "height": 372,
+            "area": 124248,
+            "maxDim": 372,
+            "centroid": [
+              423,
+              557
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7562498616746274,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 502,
+            "height": 367,
+            "area": 184234,
+            "maxDim": 502,
+            "centroid": [
+              384,
+              507.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9785189762257487,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 511,
+            "height": 372,
+            "area": 190092,
+            "maxDim": 511,
+            "centroid": [
+              388.5,
+              508
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 510,
+            "height": 373,
+            "area": 190230,
+            "maxDim": 510,
+            "centroid": [
+              389,
+              508.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 511,
+            "height": 374,
+            "area": 191114,
+            "maxDim": 511,
+            "centroid": [
+              389.5,
+              508
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 510,
+            "height": 378,
+            "area": 192780,
+            "maxDim": 510,
+            "centroid": [
+              390,
+              509
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 510,
+            "height": 381,
+            "area": 194310,
+            "maxDim": 510,
+            "centroid": [
+              391,
+              509.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 511,
+            "height": 382,
+            "area": 195202,
+            "maxDim": 511,
+            "centroid": [
+              391.5,
+              509
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "digital-merch",
+      "from": "05.6",
+      "to": "05.7",
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.1892083876589703,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.28655610310951185,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 481,
+            "height": 351,
+            "area": 168831,
+            "maxDim": 481,
+            "centroid": [
+              374.5,
+              502.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.515876668952185,
+          "paletteProgress": 0.5499900277508876,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 415,
+            "height": 299,
+            "area": 124085,
+            "maxDim": 415,
+            "centroid": [
+              342.5,
+              491.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7395209831650831,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 279,
+            "height": 257,
+            "area": 71703,
+            "maxDim": 279,
+            "centroid": [
+              361.5,
+              526.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9171876591768595,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 269,
+            "height": 251,
+            "area": 67519,
+            "maxDim": 269,
+            "centroid": [
+              353.5,
+              523.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 262,
+            "height": 243,
+            "area": 63666,
+            "maxDim": 262,
+            "centroid": [
+              353,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 262,
+            "height": 243,
+            "area": 63666,
+            "maxDim": 262,
+            "centroid": [
+              353,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 262,
+            "height": 243,
+            "area": 63666,
+            "maxDim": 262,
+            "centroid": [
+              353,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 262,
+            "height": 243,
+            "area": 63666,
+            "maxDim": 262,
+            "centroid": [
+              353,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 7,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 262,
+            "height": 244,
+            "area": 63928,
+            "maxDim": 262,
+            "centroid": [
+              353,
+              523
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "merch-master",
+      "from": "05.7",
+      "to": "06.1",
+      "requestedFrozenIds": [
+        "single-merch",
+        "master-neutral"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09182592884444857,
+          "paletteProgress": 0,
+          "siteProgress": 0,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.30614764676739287,
+          "paletteProgress": 0,
+          "siteProgress": 0.03993276629477625,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 369,
+            "height": 356,
+            "area": 131364,
+            "maxDim": 369,
+            "centroid": [
+              400.5,
+              548
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5064199975771337,
+          "paletteProgress": 0.46951015413706976,
+          "siteProgress": 0.8383791728077712,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 467,
+            "height": 460,
+            "area": 214820,
+            "maxDim": 467,
+            "centroid": [
+              1014.5,
+              587
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.6735431880740305,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 327,
+            "height": 301,
+            "area": 98427,
+            "maxDim": 327,
+            "centroid": [
+              1050.5,
+              488.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.8683059831531116,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 348,
+            "height": 349,
+            "area": 121452,
+            "maxDim": 349,
+            "centroid": [
+              1077,
+              500.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 353,
+            "height": 353,
+            "area": 124609,
+            "maxDim": 353,
+            "centroid": [
+              1078.5,
+              501.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 353,
+            "height": 353,
+            "area": 124609,
+            "maxDim": 353,
+            "centroid": [
+              1078.5,
+              501.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 353,
+            "height": 354,
+            "area": 124962,
+            "maxDim": 354,
+            "centroid": [
+              1078.5,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 354,
+            "height": 354,
+            "area": 125316,
+            "maxDim": 354,
+            "centroid": [
+              1079,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 8,
+          "source": "single-merch",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 355,
+            "height": 354,
+            "area": 125670,
+            "maxDim": 355,
+            "centroid": [
+              1078.5,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "master-brand-wide",
+      "from": "01",
+      "to": "02",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.08474576271186442,
+          "paletteProgress": 1,
+          "siteProgress": 0,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.29279661016949154,
+          "paletteProgress": 1,
+          "siteProgress": 0.02154156879869167,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 311,
+            "height": 310,
+            "area": 96410,
+            "maxDim": 311,
+            "centroid": [
+              1072.5,
+              501
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.4827966101694887,
+          "paletteProgress": 1,
+          "siteProgress": 0.7474099698540962,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 770,
+            "height": 376,
+            "area": 289520,
+            "maxDim": 770,
+            "centroid": [
+              803,
+              564
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.677966101694915,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 610,
+            "height": 345,
+            "area": 210450,
+            "maxDim": 610,
+            "centroid": [
+              943,
+              538.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "approach",
+          "geometryProgress": 0.8527966101694876,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 466,
+            "height": 229,
+            "area": 106714,
+            "maxDim": 466,
+            "centroid": [
+              1045,
+              518.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 426,
+            "height": 211,
+            "area": 89886,
+            "maxDim": 426,
+            "centroid": [
+              1049,
+              516.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 426,
+            "height": 211,
+            "area": 89886,
+            "maxDim": 426,
+            "centroid": [
+              1049,
+              516.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 425,
+            "height": 211,
+            "area": 89675,
+            "maxDim": 425,
+            "centroid": [
+              1049.5,
+              516.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 422,
+            "height": 212,
+            "area": 89464,
+            "maxDim": 422,
+            "centroid": [
+              1049,
+              516
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 9,
+          "source": "master-neutral",
+          "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+          "silhouette": {
+            "width": 421,
+            "height": 212,
+            "area": 89252,
+            "maxDim": 421,
+            "centroid": [
+              1048.5,
+              516
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "left-right-slot",
+      "from": "05.1",
+      "to": "06.1",
+      "requestedFrozenIds": [
+        "single-content",
+        "master-neutral"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09922679816852244,
+          "paletteProgress": 0,
+          "siteProgress": 0,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.3245708568092427,
+          "paletteProgress": 0,
+          "siteProgress": 0.07670957016197968,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 612,
+            "height": 390,
+            "area": 238680,
+            "maxDim": 612,
+            "centroid": [
+              379,
+              530
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5409845036147818,
+          "paletteProgress": 0.7504369063070206,
+          "siteProgress": 0.9358039981189953,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 580,
+            "height": 369,
+            "area": 214020,
+            "maxDim": 580,
+            "centroid": [
+              1005,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7455901614382869,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 337,
+            "height": 365,
+            "area": 123005,
+            "maxDim": 365,
+            "centroid": [
+              1078.5,
+              517.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9199316458203782,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 364,
+            "height": 358,
+            "area": 130312,
+            "maxDim": 364,
+            "centroid": [
+              1078,
+              504
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 353,
+            "height": 353,
+            "area": 124609,
+            "maxDim": 353,
+            "centroid": [
+              1078.5,
+              501.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 354,
+            "height": 353,
+            "area": 124962,
+            "maxDim": 354,
+            "centroid": [
+              1079,
+              501.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 354,
+            "height": 354,
+            "area": 125316,
+            "maxDim": 354,
+            "centroid": [
+              1079,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 356,
+            "height": 356,
+            "area": 126736,
+            "maxDim": 356,
+            "centroid": [
+              1079,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 15,
+          "source": "single-content",
+          "target": "master-neutral",
+          "silhouette": {
+            "width": 358,
+            "height": 358,
+            "area": 128164,
+            "maxDim": 358,
+            "centroid": [
+              1079,
+              502
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "mask-master-content",
+      "from": "04",
+      "to": "05.1",
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.19845359633704487,
+          "paletteProgress": 0,
+          "siteProgress": 0,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.30671003313890227,
+          "paletteProgress": 0,
+          "siteProgress": 0.04085666452209167,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 330,
+            "height": 330,
+            "area": 108900,
+            "maxDim": 330,
+            "centroid": [
+              1049,
+              504
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5171700720543386,
+          "paletteProgress": 0.5609356990534442,
+          "siteProgress": 0.8735706260324225,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 359,
+            "height": 405,
+            "area": 145395,
+            "maxDim": 405,
+            "centroid": [
+              444.5,
+              531.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7276301109697749,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 592,
+            "height": 378,
+            "area": 223776,
+            "maxDim": 592,
+            "centroid": [
+              324,
+              529
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9261829341049876,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 552,
+            "height": 352,
+            "area": 194304,
+            "maxDim": 552,
+            "centroid": [
+              330,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 541,
+            "height": 348,
+            "area": 188268,
+            "maxDim": 541,
+            "centroid": [
+              328.5,
+              526
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 540,
+            "height": 348,
+            "area": 187920,
+            "maxDim": 540,
+            "centroid": [
+              328,
+              526
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 539,
+            "height": 348,
+            "area": 187572,
+            "maxDim": 539,
+            "centroid": [
+              327.5,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 538,
+            "height": 348,
+            "area": 187224,
+            "maxDim": 538,
+            "centroid": [
+              327,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 1,
+          "source": "master-neutral",
+          "target": "single-content",
+          "silhouette": {
+            "width": 538,
+            "height": 348,
+            "area": 187224,
+            "maxDim": 538,
+            "centroid": [
+              327,
+              527
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "mask-content-design",
+      "from": "05.1",
+      "to": "05.2",
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09169201232389547,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.3057011690878671,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 553,
+            "height": 351,
+            "area": 194103,
+            "maxDim": 553,
+            "centroid": [
+              327.5,
+              516.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5112746607180395,
+          "paletteProgress": 0.5108626132128874,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 576,
+            "height": 372,
+            "area": 214272,
+            "maxDim": 576,
+            "centroid": [
+              326,
+              488
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.722441365099972,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 537,
+            "height": 445,
+            "area": 238965,
+            "maxDim": 537,
+            "centroid": [
+              354.5,
+              494.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.911235218474873,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 543,
+            "height": 455,
+            "area": 247065,
+            "maxDim": 543,
+            "centroid": [
+              364.5,
+              487.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 532,
+            "height": 452,
+            "area": 240464,
+            "maxDim": 532,
+            "centroid": [
+              362,
+              486
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 532,
+            "height": 452,
+            "area": 240464,
+            "maxDim": 532,
+            "centroid": [
+              362,
+              486
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 534,
+            "height": 449,
+            "area": 239766,
+            "maxDim": 534,
+            "centroid": [
+              363,
+              485.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 536,
+            "height": 445,
+            "area": 238520,
+            "maxDim": 536,
+            "centroid": [
+              363,
+              484.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 2,
+          "source": "single-content",
+          "target": "single-design",
+          "silhouette": {
+            "width": 538,
+            "height": 443,
+            "area": 238334,
+            "maxDim": 538,
+            "centroid": [
+              363,
+              483.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "mask-design-event",
+      "from": "05.2",
+      "to": "05.3",
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09155812587641673,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.2996697459935129,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 537,
+            "height": 453,
+            "area": 243261,
+            "maxDim": 537,
+            "centroid": [
+              364.5,
+              485.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.4993580185299778,
+          "paletteProgress": 0.40986564397646813,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 545,
+            "height": 461,
+            "area": 251245,
+            "maxDim": 545,
+            "centroid": [
+              367.5,
+              484.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.6880593159612715,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 547,
+            "height": 451,
+            "area": 246697,
+            "maxDim": 547,
+            "centroid": [
+              373.5,
+              489.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.8878391466236139,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 554,
+            "height": 415,
+            "area": 229910,
+            "maxDim": 554,
+            "centroid": [
+              361,
+              495.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 553,
+            "height": 413,
+            "area": 228389,
+            "maxDim": 553,
+            "centroid": [
+              363.5,
+              495.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 553,
+            "height": 413,
+            "area": 228389,
+            "maxDim": 553,
+            "centroid": [
+              363.5,
+              495.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 553,
+            "height": 413,
+            "area": 228389,
+            "maxDim": 553,
+            "centroid": [
+              365.5,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 553,
+            "height": 413,
+            "area": 228389,
+            "maxDim": 553,
+            "centroid": [
+              367.5,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 3,
+          "source": "single-design",
+          "target": "single-event",
+          "silhouette": {
+            "width": 554,
+            "height": 413,
+            "area": 228802,
+            "maxDim": 554,
+            "centroid": [
+              369,
+              496.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "mask-video-digital",
+      "from": "05.5",
+      "to": "05.6",
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09905040755397879,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.3119097333874772,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 254,
+            "height": 350,
+            "area": 88900,
+            "maxDim": 350,
+            "centroid": [
+              376,
+              551
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.5220946982170211,
+          "paletteProgress": 0.6022520454597062,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 340,
+            "height": 372,
+            "area": 126480,
+            "maxDim": 372,
+            "centroid": [
+              428,
+              558
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.7862621351634826,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 503,
+            "height": 367,
+            "area": 184601,
+            "maxDim": 503,
+            "centroid": [
+              385.5,
+              507.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9904050251322309,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 509,
+            "height": 372,
+            "area": 189348,
+            "maxDim": 509,
+            "centroid": [
+              389.5,
+              508
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 508,
+            "height": 372,
+            "area": 188976,
+            "maxDim": 508,
+            "centroid": [
+              389,
+              508
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 508,
+            "height": 371,
+            "area": 188468,
+            "maxDim": 508,
+            "centroid": [
+              389,
+              507.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 509,
+            "height": 370,
+            "area": 188330,
+            "maxDim": 509,
+            "centroid": [
+              388.5,
+              508
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 509,
+            "height": 369,
+            "area": 187821,
+            "maxDim": 509,
+            "centroid": [
+              388.5,
+              507.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 5,
+          "source": "single-video",
+          "target": "single-digital",
+          "silhouette": {
+            "width": 508,
+            "height": 369,
+            "area": 187452,
+            "maxDim": 508,
+            "centroid": [
+              389,
+              507.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    },
+    {
+      "name": "mask-digital-merch",
+      "from": "05.6",
+      "to": "05.7",
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "phase": "release",
+          "geometryProgress": 0.09460419382948515,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": null,
+          "actorDraw": true
+        },
+        {
+          "index": 1,
+          "phase": "regroup",
+          "geometryProgress": 0.2923269589331091,
+          "paletteProgress": 0,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 479,
+            "height": 349,
+            "area": 167171,
+            "maxDim": 479,
+            "centroid": [
+              373.5,
+              502.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 2,
+          "phase": "reveal",
+          "geometryProgress": 0.47585909496231027,
+          "paletteProgress": 0.2271728142528762,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 426,
+            "height": 308,
+            "area": 131208,
+            "maxDim": 426,
+            "centroid": [
+              348,
+              493
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 3,
+          "phase": "approach",
+          "geometryProgress": 0.6879616975280137,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 327,
+            "height": 270,
+            "area": 88290,
+            "maxDim": 327,
+            "centroid": [
+              344.5,
+              506
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 4,
+          "phase": "settle",
+          "geometryProgress": 0.9001589042875524,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 265,
+            "height": 247,
+            "area": 65455,
+            "maxDim": 265,
+            "centroid": [
+              353.5,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 5,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 261,
+            "height": 242,
+            "area": 63162,
+            "maxDim": 261,
+            "centroid": [
+              352.5,
+              522
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 6,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 261,
+            "height": 242,
+            "area": 63162,
+            "maxDim": 261,
+            "centroid": [
+              352.5,
+              522
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 7,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 260,
+            "height": 241,
+            "area": 62660,
+            "maxDim": 260,
+            "centroid": [
+              353,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 8,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 257,
+            "height": 241,
+            "area": 61937,
+            "maxDim": 257,
+            "centroid": [
+              352.5,
+              522.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        },
+        {
+          "index": 9,
+          "phase": "settle",
+          "geometryProgress": 1,
+          "paletteProgress": 1,
+          "siteProgress": 1,
+          "revision": 6,
+          "source": "single-digital",
+          "target": "single-merch",
+          "silhouette": {
+            "width": 255,
+            "height": 241,
+            "area": 61455,
+            "maxDim": 255,
+            "centroid": [
+              352.5,
+              523.5
+            ],
+            "finite": true
+          },
+          "actorDraw": true
+        }
+      ]
+    }
+  ],
+  "silhouette": [
+    {
+      "name": "master-content",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 15,
+      "runningSamples": 15,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "content-design",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "design-event",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "event-games",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-event",
+        "single-games"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "games-video",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-games",
+        "single-video"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "video-digital",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "digital-merch",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "merch-master",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-merch",
+        "master-neutral"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "master-brand-wide",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "master-neutral",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "left-right-slot",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-content",
+        "master-neutral"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": null,
+      "maxArea": null
+    },
+    {
+      "name": "mask-master-content",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "master-neutral",
+        "single-content"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": 119025,
+      "maxArea": 126736
+    },
+    {
+      "name": "mask-content-design",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-content",
+        "single-design"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": 185645,
+      "maxArea": 188268
+    },
+    {
+      "name": "mask-design-event",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-design",
+        "single-event"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": 238777,
+      "maxArea": 240394
+    },
+    {
+      "name": "mask-video-digital",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-video",
+        "single-digital"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": 83204,
+      "maxArea": 84968
+    },
+    {
+      "name": "mask-digital-merch",
+      "emptyActorFrames": 0,
+      "collapseFrames": [],
+      "requestedFrozenIds": [
+        "single-digital",
+        "single-merch"
+      ],
+      "thirdGeometry": false,
+      "sampledFrames": 5,
+      "runningSamples": 5,
+      "minArea": 181272,
+      "maxArea": 187726
+    }
+  ],
+  "productionHomepageCaptured": true
+}

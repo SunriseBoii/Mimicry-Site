@@ -19,6 +19,15 @@ import {
   type PaletteMaterialSnapshot,
   type SettledActorState,
 } from "./palette-authority";
+import {
+  displayedShaderProgress,
+  emptyGeometrySnapshot,
+  geometryAuthorityStatus,
+  type GeometryDisplayedBind,
+  type GeometryMaterialSnapshot,
+  type GeometryRenderAck,
+  EMPTY_GEOMETRY_ACK,
+} from "./geometry-authority";
 
 export type ActorSlot = "left" | "right" | "none";
 export type SemanticPhase =
@@ -245,6 +254,19 @@ export class ActorTransitionCoordinator {
   private sourceLut = lutForMask(127);
   private targetLut = lutForMask(127);
   private settledLut = lutForMask(127);
+  private displayedBind: GeometryDisplayedBind | null = null;
+  private renderAck: GeometryRenderAck = { ...EMPTY_GEOMETRY_ACK };
+  private navigationToken = 0;
+  private reverse = false;
+  private timeOriginMs = 0;
+  private intentAtMs = 0;
+  private programRequestAtMs = 0;
+  private cacheReadyAtMs = 0;
+  private bindAtMs = 0;
+  private firstTransitionFrameAtMs = 0;
+  private firstTargetEndpointAtMs = 0;
+  private ackAtMs = 0;
+  private settleAtMs = 0;
 
   snapshot(): ActorTransitionTransaction {
     return { ...this.current };
@@ -286,12 +308,29 @@ export class ActorTransitionCoordinator {
   }
 
   latencies() {
+    const delay = (from: number, to: number) => {
+      if (!from || !to) return null;
+      return Math.max(0, to - from);
+    };
     return {
+      timeOriginMs: this.timeOriginMs,
+      intentAtMs: this.intentAtMs,
+      programRequestAtMs: this.programRequestAtMs,
+      cacheReadyAtMs: this.cacheReadyAtMs,
+      bindAtMs: this.bindAtMs,
+      firstTransitionFrameAtMs: this.firstTransitionFrameAtMs,
+      firstTargetEndpointAtMs: this.firstTargetEndpointAtMs,
+      ackAtMs: this.ackAtMs,
+      settleAtMs: this.settleAtMs,
       committedAtMs: this.committedAtMs,
       requestAtMs: this.requestAtMs,
       firstWebglChangeAtMs: this.firstWebglChangeAtMs,
-      requestDelayMs: this.requestAtMs && this.committedAtMs ? this.requestAtMs - this.committedAtMs : null,
-      firstFrameDelayMs: this.firstWebglChangeAtMs && this.requestAtMs ? this.firstWebglChangeAtMs - this.requestAtMs : null,
+      requestDelayMs: delay(this.intentAtMs || this.committedAtMs, this.programRequestAtMs || this.requestAtMs),
+      programReadyDelayMs: delay(this.programRequestAtMs || this.requestAtMs, this.cacheReadyAtMs),
+      bindDelayMs: delay(this.cacheReadyAtMs || this.programRequestAtMs, this.bindAtMs),
+      firstFrameDelayMs: delay(this.bindAtMs || this.requestAtMs, this.firstTransitionFrameAtMs || this.firstWebglChangeAtMs),
+      firstVisibleTransitionMs: delay(this.intentAtMs || this.requestAtMs, this.firstTransitionFrameAtMs || this.bindAtMs),
+      transitionDurationMs: delay(this.firstTransitionFrameAtMs || this.bindAtMs, this.settleAtMs),
     };
   }
 
@@ -324,6 +363,8 @@ export class ActorTransitionCoordinator {
     programId?: string | null;
     nowMs?: number;
     displayedLut?: LutSample[];
+    navigationToken?: number;
+    reverse?: boolean;
   }): { decision: GateDecision; transaction: ActorTransitionTransaction } {
     const decision = this.gate(args.next);
     if (decision.kind === "noop") {
@@ -333,8 +374,20 @@ export class ActorTransitionCoordinator {
     const nextKey = semanticActorKey(args.next);
     const sameMask = args.displayed.paletteMask === nextKey.paletteMask && args.displayed.paletteProgress >= 1;
     this.revision += 1;
-    this.requestAtMs = args.nowMs ?? args.nowSeconds * 1000;
+    const nowMs = args.nowMs ?? args.nowSeconds * 1000;
+    if (!this.timeOriginMs) this.timeOriginMs = nowMs;
+    this.requestAtMs = nowMs;
+    this.intentAtMs = nowMs;
+    this.programRequestAtMs = nowMs;
+    this.cacheReadyAtMs = 0;
+    this.bindAtMs = 0;
+    this.firstTransitionFrameAtMs = 0;
+    this.firstTargetEndpointAtMs = 0;
+    this.ackAtMs = 0;
+    this.settleAtMs = 0;
     this.firstWebglChangeAtMs = 0;
+    this.navigationToken = args.navigationToken ?? this.revision;
+    this.reverse = Boolean(args.reverse);
     if (previous.status === "running") previous.status = "interrupted";
     const kind = decision.kind;
     const geometryId = args.next.resolvedGeometryId;
@@ -474,7 +527,9 @@ export class ActorTransitionCoordinator {
       tx.shaderBaseLutHash = tx.sourcePaletteLutHash;
       return this.snapshot();
     }
-    tx.geometryProgress = reduced ? 1 : clamp01(args.geometryProgress);
+    tx.geometryProgress = this.reverse
+      ? clamp01(args.geometryProgress)
+      : (reduced ? 1 : clamp01(args.geometryProgress));
     tx.semanticPhase = semanticPhaseFromAdapter(args.phase, reduced);
     tx.programId = args.programId ?? tx.programId;
     const sameMask = tx.sourcePaletteMask === tx.targetPaletteMask;
@@ -489,15 +544,111 @@ export class ActorTransitionCoordinator {
     tx.continuityEnabled = !args.identity && tx.kind === "geometry" && !reduced && tx.programReady ? 1 : 0;
     if (tx.geometryProgress >= 1 && tx.paletteProgress >= 1 && tx.siteProgress >= 1) {
       this.commitTargetAsSettled();
+    } else if (this.displayedBind?.revision === tx.revision) {
+      this.displayedBind.shaderProgress = this.reverse
+        ? clamp01(tx.geometryProgress)
+        : Math.max(this.displayedBind.shaderProgress, tx.geometryProgress);
     }
     return this.snapshot();
   }
 
-  markProgramReady(revision: number, programId?: string | null) {
+  markProgramReady(revision: number, programId?: string | null, nowMs = 0) {
     if (revision !== this.revision) return false;
     this.current.programReady = true;
     if (programId) this.current.programId = programId;
+    this.cacheReadyAtMs = nowMs || (typeof performance !== "undefined" ? performance.now() : 0);
     return true;
+  }
+
+  markDisplayedBind(args: {
+    revision: number;
+    programId: string | null;
+    sourceGeometryId: string | null;
+    targetGeometryId: string | null;
+    frameToken: number;
+    nowMs: number;
+    reverse?: boolean;
+  }) {
+    if (args.revision !== this.revision) return false;
+    if (this.displayedBind?.revision === args.revision && this.displayedBind.programId === args.programId) {
+      return true;
+    }
+    this.displayedBind = {
+      revision: args.revision,
+      programId: args.programId,
+      sourceGeometryId: args.sourceGeometryId,
+      targetGeometryId: args.targetGeometryId,
+      shaderProgress: 0,
+      bindFrameToken: args.frameToken,
+      reverse: Boolean(args.reverse || this.reverse),
+    };
+    this.bindAtMs = args.nowMs;
+    this.firstTransitionFrameAtMs = args.nowMs;
+    this.firstWebglChangeAtMs = this.firstWebglChangeAtMs || args.nowMs;
+    return true;
+  }
+
+  acknowledgeRender(ack: GeometryRenderAck) {
+    this.renderAck = { ...ack };
+    this.ackAtMs = ack.atMs;
+    if (ack.drawnProgress >= 1 && ack.drawnRevision === this.revision && !this.firstTargetEndpointAtMs) {
+      this.firstTargetEndpointAtMs = ack.atMs;
+    }
+  }
+
+  lastRenderAck() {
+    return this.renderAck;
+  }
+
+  geometrySnapshot(): GeometryMaterialSnapshot {
+    const tx = this.current;
+    const bind = this.displayedBind;
+    const status = geometryAuthorityStatus({
+      transactionStatus: tx.status,
+      transactionKind: tx.kind,
+      programReady: tx.programReady,
+      bind,
+      transactionRevision: tx.revision,
+    });
+    const shaderProgress = displayedShaderProgress({
+      transactionStatus: tx.status,
+      transactionRevision: tx.revision,
+      transactionProgress: tx.geometryProgress,
+      programReady: tx.programReady,
+      bind,
+    });
+    const settledId = status === "settled"
+      ? tx.targetGeometryId
+      : status === "waiting"
+        ? (bind?.targetGeometryId ?? bind?.sourceGeometryId ?? tx.sourceGeometryId)
+        : (shaderProgress >= 1 ? tx.targetGeometryId : (bind?.sourceGeometryId ?? tx.sourceGeometryId));
+    if (!bind && tx.status === "settled") {
+      return {
+        ...emptyGeometrySnapshot({
+          revision: tx.revision,
+          geometryId: tx.targetGeometryId,
+          programId: tx.programId,
+        }),
+        navigationToken: this.navigationToken,
+        boundSourceGeometryId: tx.sourceGeometryId,
+        boundTargetGeometryId: tx.targetGeometryId,
+      };
+    }
+    return {
+      revision: tx.revision,
+      navigationToken: this.navigationToken,
+      status,
+      boundProgramId: bind?.programId ?? tx.programId,
+      boundSourceGeometryId: bind?.sourceGeometryId ?? tx.sourceGeometryId,
+      boundTargetGeometryId: bind?.targetGeometryId ?? tx.targetGeometryId,
+      settledGeometryId: status === "settled" ? tx.targetGeometryId : settledId,
+      semanticTargetGeometryId: tx.targetGeometryId,
+      shaderProgress,
+      programReady: tx.programReady,
+      bindFrameToken: bind?.bindFrameToken ?? null,
+      reverse: bind?.reverse ?? this.reverse,
+      pendingProgramId: tx.programId,
+    };
   }
 
   settle(revision: number) {
@@ -546,6 +697,16 @@ export class ActorTransitionCoordinator {
       shaderBaseLutHash: lutHash,
       paletteCommitted: true,
     };
+    this.displayedBind = {
+      revision: this.revision,
+      programId: this.current.programId,
+      sourceGeometryId: key.geometryId,
+      targetGeometryId: key.geometryId,
+      shaderProgress: 1,
+      bindFrameToken: 0,
+      reverse: false,
+    };
+    this.reverse = false;
   }
 
   displayedLut() {
@@ -558,13 +719,16 @@ export class ActorTransitionCoordinator {
     const tx = this.current;
     const site = tx.siteProgress;
     const lut = this.displayedLut();
+    const geo = this.geometrySnapshot();
     return {
       slot: site >= 1 || tx.sourceSlot === tx.targetSlot ? tx.targetSlot : tx.sourceSlot,
       fit: mixFit(tx.sourceFit, tx.targetFit, site),
       fitProfile: site >= 1 ? tx.targetFitProfile : tx.sourceFitProfile,
       paletteMask: tx.paletteProgress >= 1 ? tx.targetPaletteMask : tx.sourcePaletteMask,
       paletteProgress: tx.paletteProgress,
-      geometryId: tx.geometryProgress >= 1 ? tx.targetGeometryId : tx.sourceGeometryId,
+      geometryId: geo.shaderProgress >= 1
+        ? (geo.settledGeometryId ?? tx.targetGeometryId)
+        : (geo.boundSourceGeometryId ?? tx.sourceGeometryId),
       nodeId: tx.targetNodeId,
       lutHash: hashLut(lut),
     };
@@ -638,12 +802,27 @@ export class ActorTransitionCoordinator {
     tx.shaderBaseLutHash = tx.targetPaletteLutHash;
     tx.sourcePaletteLutHash = tx.targetPaletteLutHash;
     tx.sourcePaletteMask = tx.targetPaletteMask;
-    tx.sourceGeometryId = tx.targetGeometryId;
     tx.paletteOwnershipMode = 0;
     tx.continuityEnabled = 0;
     tx.paletteCommitted = true;
     tx.programReady = true;
     tx.status = "settled";
+    this.reverse = false;
+    if (this.displayedBind) {
+      this.displayedBind.shaderProgress = 1;
+      this.displayedBind.reverse = false;
+    } else {
+      this.displayedBind = {
+        revision: tx.revision,
+        programId: tx.programId,
+        sourceGeometryId: tx.sourceGeometryId,
+        targetGeometryId: tx.targetGeometryId,
+        shaderProgress: 1,
+        bindFrameToken: 0,
+        reverse: false,
+      };
+    }
+    this.settleAtMs = typeof performance !== "undefined" ? performance.now() : 0;
   }
 }
 
