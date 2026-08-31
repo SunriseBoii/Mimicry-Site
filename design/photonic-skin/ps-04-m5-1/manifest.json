@@ -1,0 +1,38 @@
+{
+  "stage": "PS-04.M5.1",
+  "title": "Photonic Skin / Mimic Core — transition choreography",
+  "status": "MACHINE PASS / HUMAN REVIEW REQUIRED",
+  "labRoute": "/visual-lab/photonic-skin-ps04-m5",
+  "previewRoute": "/visual-lab/photonic-skin-ps04-m5/preview",
+  "baselineLabRoute": "/visual-lab/photonic-skin-ps04-m4",
+  "sessionId": "ps04-m5-1",
+  "hud": "PS-04.M5.1",
+  "sandboxBranch": "ps04-m5-sandbox",
+  "baselineHead": "ecd054ef9df4d2def76d34a18b2d0cbd507c0557",
+  "production": "/",
+  "notProductionApproval": true,
+  "notAestheticApproval": true,
+  "m51Committed": false,
+  "push": false,
+  "deploy": false,
+  "m52Started": false,
+  "m5Source": "8ee1cc11289be4b277eccf5a9b578029cfb1625d34eb6dbd0bbc010a768cc556",
+  "r6r1Source": "60546b434ed857a9c967a28dca9ee7d1f0fdb705ca8bbaed654384e677f13116",
+    "cases-to-content.webm",
+    "content-to-cases.webm",
+    "content-to-design.webm",
+    "seven-singles.webm",
+    "merch-to-team.webm",
+    "team-to-merch.webm",
+    "rapid-latest-target.webm",
+    "full-down-up.webm",
+    "reduced-motion.webm",
+    "context-restore.webm"
+  ],
+  "constants": {
+    "PALETTE_DELAY_FRACTION": 0.06,
+    "CENTER_DWELL_X_EPSILON": 0.004,
+    "CENTER_DWELL_FRAME_COUNT": 2,
+    "PALETTE_GEOMETRY_GATE_EPSILON": 0.02
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-08-31T13:04:12.030Z",
+  "log": [
+    {
+      "step": "ready",
+      "ms": 4630
+    },
+    {
+      "step": "idle",
+      "canvases": 1,
+      "node": "01",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "stage": "PS-04.M5.1",
+      "sessionId": "ps04-m5-1",
+      "actorDraw": true,
+      "pixels": null,
+      "failDrawWithoutPixels": true
+    },
+    {
+      "step": "footer",
+      "draws": 0,
+      "actorDraw": false,
+      "pixels": 0
+    },
+    {
+      "step": "footer-return",
+      "draws": 1
+    },
+    {
+      "step": "m4-baseline",
+      "status": 200,
+      "runId": "ps04-m4"
+    },
+    {
+      "step": "production-home",
+      "title": "Mimicry group — агентство корпоративных коммуникаций",
+      "hasLab": false
+    }
+  ]
+}
