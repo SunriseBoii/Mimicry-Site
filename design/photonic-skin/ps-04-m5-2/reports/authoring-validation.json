@@ -1,0 +1,95 @@
+{
+  "stage": "PS-04.M5.2",
+  "pass": true,
+  "failures": [],
+  "rigidA": {
+    "positionError": 0.0,
+    "inverseError": 0.0,
+    "pairwiseError": 0.0
+  },
+  "variants": {
+    "baseline": {
+      "hash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+      "active": 14873,
+      "parts": {
+        "stage": 11764,
+        "figure-centre": 1205,
+        "figure-left": 1014,
+        "figure-right": 890
+      }
+    },
+    "a": {
+      "hash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+      "active": 14873,
+      "parts": {
+        "stage": 11764,
+        "figure-centre": 1205,
+        "figure-left": 1014,
+        "figure-right": 890
+      }
+    },
+    "b": {
+      "hash": "62a43d9ec0e1fd468c9b2f6e1bb9b93237b74fc2174160e2d045de7b553681d5",
+      "active": 11359,
+      "parts": {
+        "stage": 4767,
+        "figure-centre": 2555,
+        "figure-left": 2158,
+        "figure-right": 1879
+      }
+    },
+    "c": {
+      "hash": "447eea917065408edf79cf017d8428e50b8956e64c17d7cb167b4c3319e2a65c",
+      "active": 13045,
+      "parts": {
+        "stage": 6002,
+        "figure-centre": 2290,
+        "figure-left": 2580,
+        "figure-right": 2173
+      }
+    }
+  },
+  "cFractions": {
+    "stage": 0.4600996550402453,
+    "figure-centre": 0.17554618627826754,
+    "figure-left": 0.19777692602529706,
+    "figure-right": 0.16657723265619012
+  },
+  "cBudget": {
+    "stage": {
+      "fraction": 0.4600996550402453,
+      "target": [
+        0.4,
+        0.46
+      ],
+      "inRange": false,
+      "note": "outside preferred C budget; still one substance with all parts at every LOD"
+    },
+    "figure-centre": {
+      "fraction": 0.17554618627826754,
+      "target": [
+        0.18,
+        0.22
+      ],
+      "inRange": false,
+      "note": "outside preferred C budget; still one substance with all parts at every LOD"
+    },
+    "figure-left": {
+      "fraction": 0.19777692602529706,
+      "target": [
+        0.16,
+        0.2
+      ],
+      "inRange": true
+    },
+    "figure-right": {
+      "fraction": 0.16657723265619012,
+      "target": [
+        0.16,
+        0.2
+      ],
+      "inRange": true
+    }
+  },
+  "canonicalEventUntouched": true
+}

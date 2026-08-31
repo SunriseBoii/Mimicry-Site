@@ -1,0 +1,45 @@
+{
+  "stage": "PS-04.M5.2",
+  "seed": 20260831,
+  "identitySize": 16384,
+  "identitySpaceVersion": "ps03m3-identity-v1",
+  "lodPrefixes": [512, 1024, 2048, 4096, 8192, 12288, 16384],
+  "v0": 4.185075142010032,
+  "fieldOrigin": [0.0, 0.0, 0.0],
+  "fieldScale": 3.6,
+  "actorUp": [0.0, 0.0, 1.0],
+  "semanticForward": [0.0, -1.0, 0.0],
+  "pivot": [0.0, 0.0, 0.0],
+  "baselineEventEulerDegrees": [0.0, 0.0, 18.0],
+  "frozenSingleEventContentHash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+  "cameras": {
+    "canonical": [2.8, -7.8, 4.6],
+    "alternate": [5.6, -6.4, 4.1],
+    "opposite": [-5.6, 6.4, 4.1],
+    "side": [8.8, 0.0, 1.4],
+    "top": [0.01, -0.01, 9.4]
+  },
+  "eventA": {
+    "extraYawDegrees": 180.0,
+    "axis": "+Z",
+    "kind": "rigid-rotation-diagnostic"
+  },
+  "eventB": {
+    "authoringYawDegrees": 18.0,
+    "kind": "opened-stage",
+    "connectedShell": true,
+    "notes": "People authored on -Y (camera-facing) then baked +18° Z to match frozen Event pose."
+  },
+  "eventC": {
+    "authoringYawDegrees": 18.0,
+    "kind": "four-semantic-islands",
+    "connectedShell": false,
+    "pointBudget": {
+      "stage": [0.40, 0.46],
+      "figure-centre": [0.18, 0.22],
+      "figure-left": [0.16, 0.20],
+      "figure-right": [0.16, 0.20]
+    },
+    "notes": "Four shells: stage (deck+arch) and three figures. Stratified LOD prefix, not contiguous ID blocks."
+  }
+}

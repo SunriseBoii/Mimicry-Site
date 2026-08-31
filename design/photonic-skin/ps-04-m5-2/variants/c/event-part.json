@@ -1,0 +1,59 @@
+{
+  "variant": "c",
+  "eventPartNames": [
+    "stage",
+    "figure-centre",
+    "figure-left",
+    "figure-right"
+  ],
+  "activeCounts": {
+    "stage": 6002,
+    "figure-centre": 2290,
+    "figure-left": 2580,
+    "figure-right": 2173
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 312,
+      "figure-centre": 64,
+      "figure-left": 78,
+      "figure-right": 58
+    },
+    "1024": {
+      "stage": 659,
+      "figure-centre": 123,
+      "figure-left": 132,
+      "figure-right": 110
+    },
+    "2048": {
+      "stage": 1271,
+      "figure-centre": 263,
+      "figure-left": 265,
+      "figure-right": 249
+    },
+    "4096": {
+      "stage": 2095,
+      "figure-centre": 674,
+      "figure-left": 703,
+      "figure-right": 624
+    },
+    "8192": {
+      "stage": 3959,
+      "figure-centre": 1380,
+      "figure-left": 1549,
+      "figure-right": 1304
+    },
+    "12288": {
+      "stage": 5589,
+      "figure-centre": 2186,
+      "figure-left": 2455,
+      "figure-right": 2058
+    },
+    "16384": {
+      "stage": 6002,
+      "figure-centre": 2290,
+      "figure-left": 2580,
+      "figure-right": 2173
+    }
+  }
+}

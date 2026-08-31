@@ -1,0 +1,129 @@
+{
+  "variant": "b",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/b/single-event.state.bin",
+  "n": 16384,
+  "activeCount": 11359,
+  "reserveCount": 2513,
+  "subsurfaceCount": 2512,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -1.6502869129180908,
+      -1.0015344619750977,
+      -1.3111045360565186
+    ],
+    "max": [
+      1.4893672466278076,
+      1.1006590127944946,
+      1.3102030754089355
+    ],
+    "size": [
+      3.1396541595458984,
+      2.1021934747695923,
+      2.621307611465454
+    ]
+  },
+  "centroid": [
+    -0.007310258208632588,
+    0.050507849717240004,
+    -0.14747580847358216
+  ],
+  "componentCounts": {
+    "0": 2696,
+    "1": 2071,
+    "2": 2158,
+    "3": 2555,
+    "4": 1879
+  },
+  "contentHash": "62a43d9ec0e1fd468c9b2f6e1bb9b93237b74fc2174160e2d045de7b553681d5",
+  "lodPriorityIsIdentity": true,
+  "kind": "opened-stage",
+  "authoringYawDegrees": 18.0,
+  "targetId": "event-open-stage",
+  "compileQa": {
+    "identityCount": 16384,
+    "activeCount": 11359,
+    "reserveCount": 5025,
+    "componentQuotas": {
+      "0": 2696,
+      "1": 2071,
+      "2": 2158,
+      "3": 2555,
+      "4": 1879
+    },
+    "positionsFinite": true,
+    "normalsFinite": true,
+    "normalLengthErrorMax": 2.4345496014266388e-05,
+    "scalesFiniteNonnegative": true,
+    "statusValid": true,
+    "lodStrictlyNested": true,
+    "lodIdsRenumbered": false,
+    "duplicateActiveDestinationSamples": 0,
+    "targetId": "event-open-stage",
+    "normalizeScale": 1.4005371085164091,
+    "meshVertexCount": 10794,
+    "meshFaceCount": 21584,
+    "shellCount": 1,
+    "surfaceArea": 23.04332868006525,
+    "masterArea": 12.566370614359172
+  },
+  "nearestNeighbourMeasured2048": {
+    "sampleCount": 2048,
+    "mean": 0.0511529304063439,
+    "p95": 0.11670798587523289,
+    "max": 0.26218373708669374
+  },
+  "normalizeScale": 1.4005371085164091,
+  "activePartCounts": {
+    "stage": 4767,
+    "figure-centre": 2555,
+    "figure-left": 2158,
+    "figure-right": 1879
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 254,
+      "figure-centre": 107,
+      "figure-left": 79,
+      "figure-right": 72
+    },
+    "1024": {
+      "stage": 523,
+      "figure-centre": 206,
+      "figure-left": 157,
+      "figure-right": 138
+    },
+    "2048": {
+      "stage": 985,
+      "figure-centre": 435,
+      "figure-left": 335,
+      "figure-right": 293
+    },
+    "4096": {
+      "stage": 1721,
+      "figure-centre": 938,
+      "figure-left": 772,
+      "figure-right": 665
+    },
+    "8192": {
+      "stage": 3427,
+      "figure-centre": 1877,
+      "figure-left": 1554,
+      "figure-right": 1334
+    },
+    "12288": {
+      "stage": 4767,
+      "figure-centre": 2555,
+      "figure-left": 2158,
+      "figure-right": 1879
+    },
+    "16384": {
+      "stage": 4767,
+      "figure-centre": 2555,
+      "figure-left": 2158,
+      "figure-right": 1879
+    }
+  }
+}

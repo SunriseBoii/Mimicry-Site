@@ -1,0 +1,583 @@
+{
+  "stage": "PS-04.M5.2",
+  "elapsedSeconds": 18.365,
+  "parameters": {
+    "stage": "PS-04.M5.2",
+    "seed": 20260831,
+    "identitySize": 16384,
+    "identitySpaceVersion": "ps03m3-identity-v1",
+    "lodPrefixes": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      12288,
+      16384
+    ],
+    "v0": 4.185075142010032,
+    "fieldOrigin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fieldScale": 3.6,
+    "actorUp": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "semanticForward": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "pivot": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baselineEventEulerDegrees": [
+      0.0,
+      0.0,
+      18.0
+    ],
+    "frozenSingleEventContentHash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+    "cameras": {
+      "canonical": [
+        2.8,
+        -7.8,
+        4.6
+      ],
+      "alternate": [
+        5.6,
+        -6.4,
+        4.1
+      ],
+      "opposite": [
+        -5.6,
+        6.4,
+        4.1
+      ],
+      "side": [
+        8.8,
+        0.0,
+        1.4
+      ],
+      "top": [
+        0.01,
+        -0.01,
+        9.4
+      ]
+    },
+    "eventA": {
+      "extraYawDegrees": 180.0,
+      "axis": "+Z",
+      "kind": "rigid-rotation-diagnostic"
+    },
+    "eventB": {
+      "authoringYawDegrees": 18.0,
+      "kind": "opened-stage",
+      "connectedShell": true,
+      "notes": "People authored on -Y (camera-facing) then baked +18° Z to match frozen Event pose."
+    },
+    "eventC": {
+      "authoringYawDegrees": 18.0,
+      "kind": "four-semantic-islands",
+      "connectedShell": false,
+      "pointBudget": {
+        "stage": [
+          0.4,
+          0.46
+        ],
+        "figure-centre": [
+          0.18,
+          0.22
+        ],
+        "figure-left": [
+          0.16,
+          0.2
+        ],
+        "figure-right": [
+          0.16,
+          0.2
+        ]
+      },
+      "notes": "Four shells: stage (deck+arch) and three figures. Stratified LOD prefix, not contiguous ID blocks."
+    }
+  },
+  "baseline": {
+    "variant": "baseline",
+    "identitySize": 16384,
+    "bufferBytes": 655360,
+    "bufferPath": "variants/baseline/single-event.state.bin",
+    "n": 16384,
+    "activeCount": 14873,
+    "reserveCount": 756,
+    "subsurfaceCount": 755,
+    "finite": true,
+    "bbox": {
+      "min": [
+        -1.6883031129837036,
+        -1.3524140119552612,
+        -1.135754942893982
+      ],
+      "max": [
+        1.6884148120880127,
+        1.2982484102249146,
+        1.135737657546997
+      ],
+      "size": [
+        3.3767179250717163,
+        2.650662422180176,
+        2.271492600440979
+      ]
+    },
+    "centroid": [
+      0.05631053342573302,
+      -0.18333344430456214,
+      -0.3789550459127838
+    ],
+    "componentCounts": {
+      "0": 7323,
+      "1": 4441,
+      "2": 1014,
+      "3": 1205,
+      "4": 890
+    },
+    "contentHash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+    "lodPriorityIsIdentity": true,
+    "kind": "frozen-import",
+    "source": "public/photonic-skin/ps-03-m3-1r/states/single-event.state.bin",
+    "yawDegrees": 18.0,
+    "importedHash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+    "normalized": false,
+    "improved": false,
+    "activePartCounts": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    },
+    "lodPrefixPresence": {
+      "512": {
+        "stage": 367,
+        "figure-centre": 53,
+        "figure-left": 50,
+        "figure-right": 42
+      },
+      "1024": {
+        "stage": 761,
+        "figure-centre": 101,
+        "figure-left": 84,
+        "figure-right": 78
+      },
+      "2048": {
+        "stage": 1506,
+        "figure-centre": 206,
+        "figure-left": 181,
+        "figure-right": 155
+      },
+      "4096": {
+        "stage": 2962,
+        "figure-centre": 438,
+        "figure-left": 371,
+        "figure-right": 325
+      },
+      "8192": {
+        "stage": 6204,
+        "figure-centre": 771,
+        "figure-left": 651,
+        "figure-right": 566
+      },
+      "12288": {
+        "stage": 9480,
+        "figure-centre": 1084,
+        "figure-left": 915,
+        "figure-right": 809
+      },
+      "16384": {
+        "stage": 11764,
+        "figure-centre": 1205,
+        "figure-left": 1014,
+        "figure-right": 890
+      }
+    }
+  },
+  "a": {
+    "variant": "a",
+    "identitySize": 16384,
+    "bufferBytes": 655360,
+    "bufferPath": "variants/a/single-event.state.bin",
+    "n": 16384,
+    "activeCount": 14873,
+    "reserveCount": 756,
+    "subsurfaceCount": 755,
+    "finite": true,
+    "bbox": {
+      "min": [
+        -1.6884148120880127,
+        -1.2982484102249146,
+        -1.135754942893982
+      ],
+      "max": [
+        1.6883031129837036,
+        1.3524140119552612,
+        1.135737657546997
+      ],
+      "size": [
+        3.3767179250717163,
+        2.650662422180176,
+        2.271492600440979
+      ]
+    },
+    "centroid": [
+      -0.05631053342573302,
+      0.18333344430456214,
+      -0.3789550459127838
+    ],
+    "componentCounts": {
+      "0": 7323,
+      "1": 4441,
+      "2": 1014,
+      "3": 1205,
+      "4": 890
+    },
+    "contentHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+    "lodPriorityIsIdentity": true,
+    "kind": "rigid-rotation-diagnostic",
+    "extraYawDegrees": 180.0,
+    "axis": "+Z",
+    "pivot": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "baselineYawDegrees": 18.0,
+    "rigidProof": {
+      "sampleCount": 2048,
+      "maxPairwiseDistanceError": 0.0,
+      "maxPositionErrorVsClosedForm": 2.220446049250313e-16,
+      "maxInversePositionError": 0.0,
+      "idsPreserved": true,
+      "pass": true
+    },
+    "activePartCounts": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    },
+    "lodPrefixPresence": {
+      "512": {
+        "stage": 367,
+        "figure-centre": 53,
+        "figure-left": 50,
+        "figure-right": 42
+      },
+      "1024": {
+        "stage": 761,
+        "figure-centre": 101,
+        "figure-left": 84,
+        "figure-right": 78
+      },
+      "2048": {
+        "stage": 1506,
+        "figure-centre": 206,
+        "figure-left": 181,
+        "figure-right": 155
+      },
+      "4096": {
+        "stage": 2962,
+        "figure-centre": 438,
+        "figure-left": 371,
+        "figure-right": 325
+      },
+      "8192": {
+        "stage": 6204,
+        "figure-centre": 771,
+        "figure-left": 651,
+        "figure-right": 566
+      },
+      "12288": {
+        "stage": 9480,
+        "figure-centre": 1084,
+        "figure-left": 915,
+        "figure-right": 809
+      },
+      "16384": {
+        "stage": 11764,
+        "figure-centre": 1205,
+        "figure-left": 1014,
+        "figure-right": 890
+      }
+    }
+  },
+  "b": {
+    "variant": "b",
+    "identitySize": 16384,
+    "bufferBytes": 655360,
+    "bufferPath": "variants/b/single-event.state.bin",
+    "n": 16384,
+    "activeCount": 11359,
+    "reserveCount": 2513,
+    "subsurfaceCount": 2512,
+    "finite": true,
+    "bbox": {
+      "min": [
+        -1.6502869129180908,
+        -1.0015344619750977,
+        -1.3111045360565186
+      ],
+      "max": [
+        1.4893672466278076,
+        1.1006590127944946,
+        1.3102030754089355
+      ],
+      "size": [
+        3.1396541595458984,
+        2.1021934747695923,
+        2.621307611465454
+      ]
+    },
+    "centroid": [
+      -0.007310258208632588,
+      0.050507849717240004,
+      -0.14747580847358216
+    ],
+    "componentCounts": {
+      "0": 2696,
+      "1": 2071,
+      "2": 2158,
+      "3": 2555,
+      "4": 1879
+    },
+    "contentHash": "62a43d9ec0e1fd468c9b2f6e1bb9b93237b74fc2174160e2d045de7b553681d5",
+    "lodPriorityIsIdentity": true,
+    "kind": "opened-stage",
+    "authoringYawDegrees": 18.0,
+    "targetId": "event-open-stage",
+    "compileQa": {
+      "identityCount": 16384,
+      "activeCount": 11359,
+      "reserveCount": 5025,
+      "componentQuotas": {
+        "0": 2696,
+        "1": 2071,
+        "2": 2158,
+        "3": 2555,
+        "4": 1879
+      },
+      "positionsFinite": true,
+      "normalsFinite": true,
+      "normalLengthErrorMax": 2.4345496014266388e-05,
+      "scalesFiniteNonnegative": true,
+      "statusValid": true,
+      "lodStrictlyNested": true,
+      "lodIdsRenumbered": false,
+      "duplicateActiveDestinationSamples": 0,
+      "targetId": "event-open-stage",
+      "normalizeScale": 1.4005371085164091,
+      "meshVertexCount": 10794,
+      "meshFaceCount": 21584,
+      "shellCount": 1,
+      "surfaceArea": 23.04332868006525,
+      "masterArea": 12.566370614359172
+    },
+    "nearestNeighbourMeasured2048": {
+      "sampleCount": 2048,
+      "mean": 0.0511529304063439,
+      "p95": 0.11670798587523289,
+      "max": 0.26218373708669374
+    },
+    "normalizeScale": 1.4005371085164091,
+    "activePartCounts": {
+      "stage": 4767,
+      "figure-centre": 2555,
+      "figure-left": 2158,
+      "figure-right": 1879
+    },
+    "lodPrefixPresence": {
+      "512": {
+        "stage": 254,
+        "figure-centre": 107,
+        "figure-left": 79,
+        "figure-right": 72
+      },
+      "1024": {
+        "stage": 523,
+        "figure-centre": 206,
+        "figure-left": 157,
+        "figure-right": 138
+      },
+      "2048": {
+        "stage": 985,
+        "figure-centre": 435,
+        "figure-left": 335,
+        "figure-right": 293
+      },
+      "4096": {
+        "stage": 1721,
+        "figure-centre": 938,
+        "figure-left": 772,
+        "figure-right": 665
+      },
+      "8192": {
+        "stage": 3427,
+        "figure-centre": 1877,
+        "figure-left": 1554,
+        "figure-right": 1334
+      },
+      "12288": {
+        "stage": 4767,
+        "figure-centre": 2555,
+        "figure-left": 2158,
+        "figure-right": 1879
+      },
+      "16384": {
+        "stage": 4767,
+        "figure-centre": 2555,
+        "figure-left": 2158,
+        "figure-right": 1879
+      }
+    }
+  },
+  "c": {
+    "variant": "c",
+    "identitySize": 16384,
+    "bufferBytes": 655360,
+    "bufferPath": "variants/c/single-event.state.bin",
+    "n": 16384,
+    "activeCount": 13045,
+    "reserveCount": 1670,
+    "subsurfaceCount": 1669,
+    "finite": true,
+    "bbox": {
+      "min": [
+        -1.6599788665771484,
+        -1.443369746208191,
+        -1.275149941444397
+      ],
+      "max": [
+        1.5738803148269653,
+        1.4659500122070312,
+        1.2753568887710571
+      ],
+      "size": [
+        3.2338591814041138,
+        2.909319758415222,
+        2.550506830215454
+      ]
+    },
+    "centroid": [
+      -0.0072545797395441305,
+      0.043990674452073227,
+      -0.1818825742786172
+    ],
+    "componentCounts": {
+      "0": 3860,
+      "1": 2142,
+      "2": 2580,
+      "3": 2290,
+      "4": 2173
+    },
+    "contentHash": "447eea917065408edf79cf017d8428e50b8956e64c17d7cb167b4c3319e2a65c",
+    "lodPriorityIsIdentity": true,
+    "kind": "four-semantic-islands",
+    "authoringYawDegrees": 18.0,
+    "targetId": "event-four-islands",
+    "compileQa": {
+      "identityCount": 16384,
+      "activeCount": 13045,
+      "reserveCount": 3339,
+      "componentQuotas": {
+        "0": 3860,
+        "1": 2142,
+        "2": 2580,
+        "3": 2290,
+        "4": 2173
+      },
+      "positionsFinite": true,
+      "normalsFinite": true,
+      "normalLengthErrorMax": 2.3302841593242363e-05,
+      "scalesFiniteNonnegative": true,
+      "statusValid": true,
+      "lodStrictlyNested": true,
+      "lodIdsRenumbered": false,
+      "duplicateActiveDestinationSamples": 0,
+      "targetId": "event-four-islands",
+      "normalizeScale": 1.3731048532169812,
+      "meshVertexCount": 12944,
+      "meshFaceCount": 25876,
+      "shellCount": 4,
+      "surfaceArea": 26.46349445541526,
+      "masterArea": 12.566370614359172
+    },
+    "nearestNeighbourMeasured2048": {
+      "sampleCount": 2048,
+      "mean": 0.05145376248716132,
+      "p95": 0.12451565628679755,
+      "max": 0.588369659116759
+    },
+    "normalizeScale": 1.3731048532169812,
+    "activePartCounts": {
+      "stage": 6002,
+      "figure-centre": 2290,
+      "figure-left": 2580,
+      "figure-right": 2173
+    },
+    "lodPrefixPresence": {
+      "512": {
+        "stage": 312,
+        "figure-centre": 64,
+        "figure-left": 78,
+        "figure-right": 58
+      },
+      "1024": {
+        "stage": 659,
+        "figure-centre": 123,
+        "figure-left": 132,
+        "figure-right": 110
+      },
+      "2048": {
+        "stage": 1271,
+        "figure-centre": 263,
+        "figure-left": 265,
+        "figure-right": 249
+      },
+      "4096": {
+        "stage": 2095,
+        "figure-centre": 674,
+        "figure-left": 703,
+        "figure-right": 624
+      },
+      "8192": {
+        "stage": 3959,
+        "figure-centre": 1380,
+        "figure-left": 1549,
+        "figure-right": 1304
+      },
+      "12288": {
+        "stage": 5589,
+        "figure-centre": 2186,
+        "figure-left": 2455,
+        "figure-right": 2058
+      },
+      "16384": {
+        "stage": 6002,
+        "figure-centre": 2290,
+        "figure-left": 2580,
+        "figure-right": 2173
+      }
+    }
+  },
+  "rigidProof": {
+    "sampleCount": 2048,
+    "maxPairwiseDistanceError": 0.0,
+    "maxPositionErrorVsClosedForm": 2.220446049250313e-16,
+    "maxInversePositionError": 0.0,
+    "idsPreserved": true,
+    "pass": true
+  },
+  "frozenSingleEventUntouched": true
+}

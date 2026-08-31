@@ -1,0 +1,871 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "event-open-stage",
+  "targetVersion": "1.0.0",
+  "competencyId": "event",
+  "displayName": "Opened stage with three figures",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": {
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotateDeg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": {
+    "mode": "uniformCompositeVolume",
+    "volumeTolerance": 0.01,
+    "masterVolumeRef": "sphere-master"
+  },
+  "validationPolicy": {
+    "expectedComponents": 1,
+    "requireWatertight": true,
+    "minThickness": 0.12,
+    "maxAspectRatio": 4.5
+  },
+  "coverageProfiles": [
+    8192,
+    4096,
+    2048,
+    1024,
+    512
+  ],
+  "provenance": {
+    "source": "PS-04.M5.2 Event associative object sandbox",
+    "approvalStatus": "sandbox-candidate",
+    "authored": "Versioned M5.2 SDF target; frozen M2 providers only.",
+    "notes": "Low shallow deck, open two-post lintel behind, three thick figures on the front edge. No closed cylinder, no eye-like holes."
+  },
+  "components": [
+    {
+      "componentId": "stage-deck",
+      "semanticRole": "structure",
+      "connectivityRole": "separate",
+      "canonicalTransform": {
+        "translate": [
+          0.02,
+          0.18,
+          -0.62
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.22,
+      "minimumMassWeight": 0.18,
+      "geometryProvider": {
+        "provider": "rounded_plate",
+        "params": {
+          "radii": [
+            1.02,
+            0.36
+          ],
+          "thickness": 0.15,
+          "edgeRadius": 0.07
+        }
+      },
+      "featureZones": [
+        {
+          "zoneId": "deck-lip",
+          "importance": 0.9,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_plate",
+            "params": {
+              "radii": [
+                1.06,
+                0.39999999999999997
+              ],
+              "thickness": 0.35,
+              "edgeRadius": 0.06
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "deck-edge",
+          "importance": 1.0,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_plate",
+            "params": {
+              "radii": [
+                1.08,
+                0.42
+              ],
+              "thickness": 0.35,
+              "edgeRadius": 0.06
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "edge-density",
+          "weight": 1.0,
+          "falloff": 0.08,
+          "region": {
+            "provider": "rounded_plate",
+            "params": {
+              "radii": [
+                1.02,
+                0.36
+              ],
+              "thickness": 0.27,
+              "edgeRadius": 0.06
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "apron-band",
+          "competencyId": "event",
+          "falloff": 0.05,
+          "region": {
+            "provider": "slab",
+            "params": {
+              "axis": "z",
+              "half": 0.08,
+              "center": [
+                0.0,
+                0.0,
+                -0.0375
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "portal-arch",
+      "semanticRole": "structure",
+      "connectivityRole": "attached",
+      "canonicalTransform": {
+        "translate": [
+          0.04,
+          0.46,
+          0.08
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.14,
+      "minimumMassWeight": 0.1,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.04
+        },
+        "children": [
+          {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.085,
+                0.085,
+                0.5
+              ],
+              "center": [
+                -0.66,
+                0.0,
+                0.04
+              ],
+              "radius": 0.055
+            }
+          },
+          {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.085,
+                0.085,
+                0.5
+              ],
+              "center": [
+                0.7,
+                0.0,
+                0.02
+              ],
+              "radius": 0.055
+            }
+          },
+          {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                -0.66,
+                0.0,
+                0.54
+              ],
+              "b": [
+                0.7,
+                0.04,
+                0.6000000000000001
+              ],
+              "radius": 0.085
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "arch-opening",
+          "importance": 1.6,
+          "falloff": 0.08,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.48,
+                0.22,
+                0.42
+              ],
+              "radius": 0.12,
+              "center": [
+                0.0,
+                0.0,
+                0.08
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "arch-crown",
+          "importance": 1.2,
+          "falloff": 0.07,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                -0.66,
+                0.0,
+                0.54
+              ],
+              "b": [
+                0.7,
+                0.0,
+                0.54
+              ],
+              "radius": 0.14
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "opening-density",
+          "weight": 1.2,
+          "falloff": 0.09,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.7,
+                0.16,
+                0.55
+              ],
+              "radius": 0.08,
+              "center": [
+                0.0,
+                0.0,
+                0.08
+              ]
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "lintel-band",
+          "competencyId": "event",
+          "falloff": 0.05,
+          "region": {
+            "provider": "slab",
+            "params": {
+              "axis": "z",
+              "half": 0.12,
+              "center": [
+                0.0,
+                0.0,
+                0.54
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.06
+    },
+    {
+      "componentId": "figure-left",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "canonicalTransform": {
+        "translate": [
+          -0.5,
+          -0.22,
+          -0.08
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          12.0
+        ],
+        "scale": 1.42
+      },
+      "massWeight": 0.2,
+      "minimumMassWeight": 0.08,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.045
+        },
+        "children": [
+          {
+            "provider": "tapered_capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.16
+              ],
+              "radiusA": 0.248,
+              "radiusB": 0.188
+            }
+          },
+          {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.198,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "head",
+          "importance": 1.5,
+          "falloff": 0.05,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.22,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "figure-profile",
+          "importance": 1.4,
+          "falloff": 0.06,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.42
+              ],
+              "radius": 0.26
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "figure-density",
+          "weight": 1.5,
+          "falloff": 0.07,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.32
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.44
+              ],
+              "radius": 0.28
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "figure-head-tint",
+          "competencyId": "event",
+          "falloff": 0.04,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.2,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.32
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "radius": 0.18
+        }
+      ],
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.05
+    },
+    {
+      "componentId": "figure-centre",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "canonicalTransform": {
+        "translate": [
+          0.05,
+          -0.14,
+          -0.02
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          -6.0
+        ],
+        "scale": 1.58
+      },
+      "massWeight": 0.24,
+      "minimumMassWeight": 0.08,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.045
+        },
+        "children": [
+          {
+            "provider": "tapered_capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.16
+              ],
+              "radiusA": 0.248,
+              "radiusB": 0.188
+            }
+          },
+          {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.198,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "head",
+          "importance": 1.5,
+          "falloff": 0.05,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.22,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "figure-profile",
+          "importance": 1.4,
+          "falloff": 0.06,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.42
+              ],
+              "radius": 0.26
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "figure-density",
+          "weight": 1.5,
+          "falloff": 0.07,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.32
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.44
+              ],
+              "radius": 0.28
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "figure-head-tint",
+          "competencyId": "event",
+          "falloff": 0.04,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.2,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.32
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "radius": 0.18
+        }
+      ],
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.05
+    },
+    {
+      "componentId": "figure-right",
+      "semanticRole": "figure",
+      "connectivityRole": "attached",
+      "canonicalTransform": {
+        "translate": [
+          0.54,
+          -0.26,
+          -0.1
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          -18.0
+        ],
+        "scale": 1.36
+      },
+      "massWeight": 0.2,
+      "minimumMassWeight": 0.08,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.045
+        },
+        "children": [
+          {
+            "provider": "tapered_capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.16
+              ],
+              "radiusA": 0.248,
+              "radiusB": 0.188
+            }
+          },
+          {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.198,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "head",
+          "importance": 1.5,
+          "falloff": 0.05,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.22,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "figure-profile",
+          "importance": 1.4,
+          "falloff": 0.06,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.34
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.42
+              ],
+              "radius": 0.26
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "figure-density",
+          "weight": 1.5,
+          "falloff": 0.07,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.0,
+                0.0,
+                -0.32
+              ],
+              "b": [
+                0.0,
+                0.0,
+                0.44
+              ],
+              "radius": 0.28
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "figure-head-tint",
+          "competencyId": "event",
+          "falloff": 0.04,
+          "region": {
+            "provider": "sphere",
+            "params": {
+              "radius": 0.2,
+              "center": [
+                0.0,
+                0.0,
+                0.4
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "anchorId": "foot-neck",
+          "kind": "splitNeck",
+          "point": [
+            0.0,
+            0.0,
+            -0.32
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "radius": 0.18
+        }
+      ],
+      "parentComponentId": "stage-deck",
+      "attachmentBlend": 0.05
+    }
+  ]
+}

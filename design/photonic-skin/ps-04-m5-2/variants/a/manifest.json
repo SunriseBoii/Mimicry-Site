@@ -1,0 +1,109 @@
+{
+  "variant": "a",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/a/single-event.state.bin",
+  "n": 16384,
+  "activeCount": 14873,
+  "reserveCount": 756,
+  "subsurfaceCount": 755,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -1.6884148120880127,
+      -1.2982484102249146,
+      -1.135754942893982
+    ],
+    "max": [
+      1.6883031129837036,
+      1.3524140119552612,
+      1.135737657546997
+    ],
+    "size": [
+      3.3767179250717163,
+      2.650662422180176,
+      2.271492600440979
+    ]
+  },
+  "centroid": [
+    -0.05631053342573302,
+    0.18333344430456214,
+    -0.3789550459127838
+  ],
+  "componentCounts": {
+    "0": 7323,
+    "1": 4441,
+    "2": 1014,
+    "3": 1205,
+    "4": 890
+  },
+  "contentHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+  "lodPriorityIsIdentity": true,
+  "kind": "rigid-rotation-diagnostic",
+  "extraYawDegrees": 180.0,
+  "axis": "+Z",
+  "pivot": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "baselineYawDegrees": 18.0,
+  "rigidProof": {
+    "sampleCount": 2048,
+    "maxPairwiseDistanceError": 0.0,
+    "maxPositionErrorVsClosedForm": 2.220446049250313e-16,
+    "maxInversePositionError": 0.0,
+    "idsPreserved": true,
+    "pass": true
+  },
+  "activePartCounts": {
+    "stage": 11764,
+    "figure-centre": 1205,
+    "figure-left": 1014,
+    "figure-right": 890
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 367,
+      "figure-centre": 53,
+      "figure-left": 50,
+      "figure-right": 42
+    },
+    "1024": {
+      "stage": 761,
+      "figure-centre": 101,
+      "figure-left": 84,
+      "figure-right": 78
+    },
+    "2048": {
+      "stage": 1506,
+      "figure-centre": 206,
+      "figure-left": 181,
+      "figure-right": 155
+    },
+    "4096": {
+      "stage": 2962,
+      "figure-centre": 438,
+      "figure-left": 371,
+      "figure-right": 325
+    },
+    "8192": {
+      "stage": 6204,
+      "figure-centre": 771,
+      "figure-left": 651,
+      "figure-right": 566
+    },
+    "12288": {
+      "stage": 9480,
+      "figure-centre": 1084,
+      "figure-left": 915,
+      "figure-right": 809
+    },
+    "16384": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    }
+  }
+}

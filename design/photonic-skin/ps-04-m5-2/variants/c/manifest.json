@@ -1,0 +1,129 @@
+{
+  "variant": "c",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/c/single-event.state.bin",
+  "n": 16384,
+  "activeCount": 13045,
+  "reserveCount": 1670,
+  "subsurfaceCount": 1669,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -1.6599788665771484,
+      -1.443369746208191,
+      -1.275149941444397
+    ],
+    "max": [
+      1.5738803148269653,
+      1.4659500122070312,
+      1.2753568887710571
+    ],
+    "size": [
+      3.2338591814041138,
+      2.909319758415222,
+      2.550506830215454
+    ]
+  },
+  "centroid": [
+    -0.0072545797395441305,
+    0.043990674452073227,
+    -0.1818825742786172
+  ],
+  "componentCounts": {
+    "0": 3860,
+    "1": 2142,
+    "2": 2580,
+    "3": 2290,
+    "4": 2173
+  },
+  "contentHash": "447eea917065408edf79cf017d8428e50b8956e64c17d7cb167b4c3319e2a65c",
+  "lodPriorityIsIdentity": true,
+  "kind": "four-semantic-islands",
+  "authoringYawDegrees": 18.0,
+  "targetId": "event-four-islands",
+  "compileQa": {
+    "identityCount": 16384,
+    "activeCount": 13045,
+    "reserveCount": 3339,
+    "componentQuotas": {
+      "0": 3860,
+      "1": 2142,
+      "2": 2580,
+      "3": 2290,
+      "4": 2173
+    },
+    "positionsFinite": true,
+    "normalsFinite": true,
+    "normalLengthErrorMax": 2.3302841593242363e-05,
+    "scalesFiniteNonnegative": true,
+    "statusValid": true,
+    "lodStrictlyNested": true,
+    "lodIdsRenumbered": false,
+    "duplicateActiveDestinationSamples": 0,
+    "targetId": "event-four-islands",
+    "normalizeScale": 1.3731048532169812,
+    "meshVertexCount": 12944,
+    "meshFaceCount": 25876,
+    "shellCount": 4,
+    "surfaceArea": 26.46349445541526,
+    "masterArea": 12.566370614359172
+  },
+  "nearestNeighbourMeasured2048": {
+    "sampleCount": 2048,
+    "mean": 0.05145376248716132,
+    "p95": 0.12451565628679755,
+    "max": 0.588369659116759
+  },
+  "normalizeScale": 1.3731048532169812,
+  "activePartCounts": {
+    "stage": 6002,
+    "figure-centre": 2290,
+    "figure-left": 2580,
+    "figure-right": 2173
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 312,
+      "figure-centre": 64,
+      "figure-left": 78,
+      "figure-right": 58
+    },
+    "1024": {
+      "stage": 659,
+      "figure-centre": 123,
+      "figure-left": 132,
+      "figure-right": 110
+    },
+    "2048": {
+      "stage": 1271,
+      "figure-centre": 263,
+      "figure-left": 265,
+      "figure-right": 249
+    },
+    "4096": {
+      "stage": 2095,
+      "figure-centre": 674,
+      "figure-left": 703,
+      "figure-right": 624
+    },
+    "8192": {
+      "stage": 3959,
+      "figure-centre": 1380,
+      "figure-left": 1549,
+      "figure-right": 1304
+    },
+    "12288": {
+      "stage": 5589,
+      "figure-centre": 2186,
+      "figure-left": 2455,
+      "figure-right": 2058
+    },
+    "16384": {
+      "stage": 6002,
+      "figure-centre": 2290,
+      "figure-left": 2580,
+      "figure-right": 2173
+    }
+  }
+}

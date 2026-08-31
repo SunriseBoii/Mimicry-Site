@@ -1,0 +1,56 @@
+{
+  "stage": "PS-04.M5.2",
+  "method": "Playwright cycle BASELINE→A→B→C × 20 on one page, then snapshot renderer stats, resource cache, and GPU bank pool. Heap from a later Edge smoke via performance.memory.",
+  "invariants": {
+    "canvas": 1,
+    "persistentActor": true,
+    "rawShaderMaterial": 1,
+    "settledPrograms": 1,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "instances": 16384,
+    "footerDraws": 0,
+    "footerTriangles": 0
+  },
+  "cycleCount": 20,
+  "order": ["baseline", "a", "b", "c"],
+  "snapshotAfterEachCycleVariant": "c",
+  "plateau": {
+    "programs": [1, 1],
+    "rendererTextures": [17, 17],
+    "canvases": [1, 1],
+    "draws": [1, 1],
+    "triangles": [131072, 131072],
+    "gpuTextures": [48, 48],
+    "gpuCreated": [48, 48],
+    "gpuDisposed": [0, 0],
+    "cacheBytes": [1884160, 1884160],
+    "cacheEntries": [1, 1],
+    "resourceState": "gpu-ready"
+  },
+  "leak": false,
+  "note": "Variant switch clears the overlay program cache, so cacheEntries stays at 1 for the current variant. GPU texture UUIDs rotate inside a fixed 48-slot bank pool; created stays 48 and disposed stays 0 across 20 cycles.",
+  "heap": {
+    "instrumented": true,
+    "engine": "Chromium performance.memory on msedge",
+    "usedJSHeapSizeBytes": 49268677,
+    "totalJSHeapSizeBytes": 62369429,
+    "jsHeapSizeLimitBytes": 4395630592,
+    "sample": "post-settled EVENT_C before context restore"
+  },
+  "framebuffer": {
+    "eventCVisiblePixelCount": 94062,
+    "afterContextRestoreVisiblePixelCount": 185586,
+    "contextRestoreButtonStatus": "restored",
+    "failDrawWithoutPixels": false
+  },
+  "rapidScrollResidual": {
+    "id": "PS04-M5-R001",
+    "reproducedOnEventRapidRetarget": true,
+    "paletteLeadsFrames": 45,
+    "traceFrames": 63,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "fixedOnM52": false
+  }
+}
