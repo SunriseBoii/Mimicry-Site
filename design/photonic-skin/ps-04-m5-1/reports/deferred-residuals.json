@@ -1,0 +1,28 @@
+{
+  "stage": "PS-04.M5.1",
+  "registryVersion": "1.0.0",
+  "freezeGate": "PS-04.M5 Freeze/QA",
+  "residuals": [
+    {
+      "id": "PS04-M5-R001",
+      "status": "deferred",
+      "resolved": false,
+      "ownerAcceptedForDeferral": true,
+      "severity": "low",
+      "blocksM52": false,
+      "title": "Rare transient palette mismatch under very rapid scroll/retarget",
+      "description": "During very fast scroll and frequent screen changes, a brief colour artefact can appear. It was not reproduced during normal-paced navigation. Geometry continuity and ordinary choreography remain accepted.",
+      "reproduction": {
+        "normalPacedNavigation": false,
+        "veryRapidScrollAndRetarget": true,
+        "frequency": "rare",
+        "duration": "transient"
+      },
+      "acceptedForContinuation": true,
+      "mustRevisitBeforeFinalFreeze": true,
+      "doNotFixIn": ["PS-04.M5.2"],
+      "doNotDeclareSolved": true,
+      "recordedAt": "2026-08-31"
+    }
+  ]
+}
