@@ -1,0 +1,91 @@
+{
+  "variant": "combo-30",
+  "componentIds": [
+    "camera-body",
+    "camera-lens",
+    "camera-top",
+    "camera-rear",
+    "slate-board",
+    "slate-fixed-rail",
+    "slate-hinged-bar"
+  ],
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 4,
+      "componentId": "slate-board",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 5,
+      "componentId": "slate-fixed-rail",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 6,
+      "componentId": "slate-hinged-bar",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

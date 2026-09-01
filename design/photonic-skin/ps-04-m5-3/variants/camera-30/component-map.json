@@ -1,0 +1,105 @@
+{
+  "variant": "camera-30",
+  "componentIds": [
+    "camera-body",
+    "camera-lens",
+    "camera-top",
+    "camera-rear"
+  ],
+  "activeCounts": {
+    "camera-body": 4421,
+    "camera-lens": 3483,
+    "camera-top": 587,
+    "camera-rear": 522
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera-body": 237,
+      "camera-lens": 215,
+      "camera-top": 32,
+      "camera-rear": 28
+    },
+    "1024": {
+      "camera-body": 514,
+      "camera-lens": 388,
+      "camera-top": 62,
+      "camera-rear": 60
+    },
+    "2048": {
+      "camera-body": 1064,
+      "camera-lens": 738,
+      "camera-top": 120,
+      "camera-rear": 126
+    },
+    "4096": {
+      "camera-body": 2077,
+      "camera-lens": 1525,
+      "camera-top": 249,
+      "camera-rear": 245
+    },
+    "8192": {
+      "camera-body": 4089,
+      "camera-lens": 3110,
+      "camera-top": 512,
+      "camera-rear": 481
+    },
+    "12288": {
+      "camera-body": 4421,
+      "camera-lens": 3483,
+      "camera-top": 587,
+      "camera-rear": 522
+    },
+    "16384": {
+      "camera-body": 4421,
+      "camera-lens": 3483,
+      "camera-top": 587,
+      "camera-rear": 522
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

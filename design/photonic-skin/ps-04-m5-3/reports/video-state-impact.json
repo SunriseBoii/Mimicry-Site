@@ -1,0 +1,3085 @@
+{
+  "stage": "PS-04.M5.3",
+  "canonicalLibrary": "PS-03.M3.1R",
+  "stateCount": 154,
+  "videoContainingStateCount": 65,
+  "canonicalAggregateUntouched": true,
+  "variantsNotPromoted": true,
+  "frozenSingleVideoUntouched": true,
+  "membershipKinds": {
+    "SINGLE": 1,
+    "MASTER": 0,
+    "BRAND_WIDE": 2,
+    "COMPLEX": 62
+  },
+  "states": [
+    {
+      "stateId": "brand-wide-drive-content-design-digital-event-games-merch-video",
+      "stateKind": "DRIVE",
+      "stateRole": "brand_wide",
+      "compositionMode": "DRIVE",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": true,
+        "asComplexComponent": false,
+        "focusCompetencyId": null,
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          17,
+          18
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2709
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [
+        "complex-focus-content-games-focus-content",
+        "master-neutral",
+        "single-games"
+      ],
+      "futureUpdatePath": "Recompile brand-wide Video-owned IDs via the existing M3.1R Video rigid group; keep non-Video components byte-identical.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "stateKind": "GATHER",
+      "stateRole": "brand_wide",
+      "compositionMode": "GATHER",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": true,
+        "asComplexComponent": false,
+        "focusCompetencyId": null,
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          17,
+          18
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2561
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [
+        "master-neutral"
+      ],
+      "futureUpdatePath": "Recompile brand-wide Video-owned IDs via the existing M3.1R Video rigid group; keep non-Video components byte-identical.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-event-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          14,
+          15
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2564
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-event-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          15,
+          16
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2505
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-event-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          12,
+          13
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2934
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          12,
+          13
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2581
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3035
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          10,
+          11
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2954
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-digital-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          7,
+          8
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3561
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-event-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          14,
+          15
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2490
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-event-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2911
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-event-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          12,
+          13
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2836
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-event-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3394
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2932
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3527
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          7,
+          8
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3419
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-design-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          4,
+          5
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4256
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-event-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          14,
+          15
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2575
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-event-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3029
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-event-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          12,
+          13
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2948
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-event-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3555
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3050
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3701
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          7,
+          8
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3583
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-digital-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          4,
+          5
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4512
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-event-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2925
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-event-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3521
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-event-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3414
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-event-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4251
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-games-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3549
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-games-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          3,
+          4
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4455
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-merch-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          4,
+          5
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4287
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-content-video-focus-content",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "content",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          1,
+          2
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 5159
+      },
+      "activeCount": 14872,
+      "reserveCount": 1512,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-event-games-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          16,
+          17
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2434
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [
+        "master-neutral",
+        "single-content"
+      ],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-event-games-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          13,
+          14
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2988
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-event-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          14,
+          15
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2780
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-event-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3311
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-games-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2873
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-games-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3447
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          9,
+          10
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3343
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-digital-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4431
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-event-games-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          13,
+          14
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2759
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-event-games-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          10,
+          11
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3287
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-event-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3189
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-event-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4004
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-games-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3321
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-games-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          5,
+          6
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4376
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-merch-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4213
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-design-video-focus-design",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "design",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          3,
+          4
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 5280
+      },
+      "activeCount": 15565,
+      "reserveCount": 819,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-event-games-merch-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          13,
+          14
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 2986
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-event-games-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          10,
+          11
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3604
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-event-merch-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          11,
+          12
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3484
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-event-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4530
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-games-merch-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3631
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-games-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          5,
+          6
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4773
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-merch-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          6,
+          7
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4572
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-digital-video-focus-digital",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "digital",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          3,
+          4
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 6547
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-event-games-merch-video-focus-event",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "event",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          10,
+          11
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 3497
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-event-games-video-focus-event",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "event",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          7,
+          8
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4385
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-event-merch-video-focus-event",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "event",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          8,
+          9
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4220
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-event-video-focus-event",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "event",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          5,
+          6
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 5576
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-games-merch-video-focus-games",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "games",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          5,
+          6
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 4621
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-games-video-focus-games",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "games",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          2,
+          3
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 5631
+      },
+      "activeCount": 14671,
+      "reserveCount": 1713,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "complex-focus-merch-video-focus-merch",
+      "stateKind": "FOCUS",
+      "stateRole": "complex",
+      "compositionMode": "FOCUS",
+      "videoMembership": {
+        "present": true,
+        "asSingle": false,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": true,
+        "focusCompetencyId": "merch",
+        "shellOrReserve": true
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          3,
+          4
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 5667
+      },
+      "activeCount": 16384,
+      "reserveCount": 0,
+      "subsurfaceCount": null,
+      "transitionDependencies": [],
+      "futureUpdatePath": "Recompile Video-owned components in this COMPLEX/task-family state via the M3.1R builder; preserve non-Video IDs; then regenerate only dependent M4.1 transition programs.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "medium"
+    },
+    {
+      "stateId": "single-video",
+      "stateKind": "SINGLE",
+      "stateRole": "single",
+      "compositionMode": "SINGLE",
+      "videoMembership": {
+        "present": true,
+        "asSingle": true,
+        "asMasterComponent": false,
+        "asBrandWideComponent": false,
+        "asComplexComponent": false,
+        "focusCompetencyId": "video",
+        "shellOrReserve": false
+      },
+      "videoOwnedIds": {
+        "resolution": "componentMap competencyId=video plus machineQa.componentQuotas by componentIndex",
+        "componentIndices": [
+          0,
+          1
+        ],
+        "componentIds": [
+          "camera",
+          "clapperboard"
+        ],
+        "visibleProfiles": {
+          "camera": [
+            "desktop",
+            "mobile390",
+            "silhouette180",
+            "silhouette96"
+          ],
+          "clapperboard": [
+            "desktop",
+            "mobile390"
+          ]
+        },
+        "activeOwnedCount": 11895
+      },
+      "activeCount": 11895,
+      "reserveCount": 4489,
+      "subsurfaceCount": null,
+      "transitionDependencies": [
+        "master-neutral"
+      ],
+      "futureUpdatePath": "Replace SINGLE Video endpoint buffer after human variant choice, then recompile M4.1 programs that use single-video.",
+      "m53Action": "inventory-only; do not regenerate this canonical state on M5.3",
+      "riskLevel": "high"
+    }
+  ],
+  "videoStateIds": [
+    "brand-wide-drive-content-design-digital-event-games-merch-video",
+    "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "complex-focus-content-design-digital-event-games-video-focus-content",
+    "complex-focus-content-design-digital-event-merch-video-focus-content",
+    "complex-focus-content-design-digital-event-video-focus-content",
+    "complex-focus-content-design-digital-games-merch-video-focus-content",
+    "complex-focus-content-design-digital-games-video-focus-content",
+    "complex-focus-content-design-digital-merch-video-focus-content",
+    "complex-focus-content-design-digital-video-focus-content",
+    "complex-focus-content-design-event-games-merch-video-focus-content",
+    "complex-focus-content-design-event-games-video-focus-content",
+    "complex-focus-content-design-event-merch-video-focus-content",
+    "complex-focus-content-design-event-video-focus-content",
+    "complex-focus-content-design-games-merch-video-focus-content",
+    "complex-focus-content-design-games-video-focus-content",
+    "complex-focus-content-design-merch-video-focus-content",
+    "complex-focus-content-design-video-focus-content",
+    "complex-focus-content-digital-event-games-merch-video-focus-content",
+    "complex-focus-content-digital-event-games-video-focus-content",
+    "complex-focus-content-digital-event-merch-video-focus-content",
+    "complex-focus-content-digital-event-video-focus-content",
+    "complex-focus-content-digital-games-merch-video-focus-content",
+    "complex-focus-content-digital-games-video-focus-content",
+    "complex-focus-content-digital-merch-video-focus-content",
+    "complex-focus-content-digital-video-focus-content",
+    "complex-focus-content-event-games-merch-video-focus-content",
+    "complex-focus-content-event-games-video-focus-content",
+    "complex-focus-content-event-merch-video-focus-content",
+    "complex-focus-content-event-video-focus-content",
+    "complex-focus-content-games-merch-video-focus-content",
+    "complex-focus-content-games-video-focus-content",
+    "complex-focus-content-merch-video-focus-content",
+    "complex-focus-content-video-focus-content",
+    "complex-focus-design-digital-event-games-merch-video-focus-design",
+    "complex-focus-design-digital-event-games-video-focus-design",
+    "complex-focus-design-digital-event-merch-video-focus-design",
+    "complex-focus-design-digital-event-video-focus-design",
+    "complex-focus-design-digital-games-merch-video-focus-design",
+    "complex-focus-design-digital-games-video-focus-design",
+    "complex-focus-design-digital-merch-video-focus-design",
+    "complex-focus-design-digital-video-focus-design",
+    "complex-focus-design-event-games-merch-video-focus-design",
+    "complex-focus-design-event-games-video-focus-design",
+    "complex-focus-design-event-merch-video-focus-design",
+    "complex-focus-design-event-video-focus-design",
+    "complex-focus-design-games-merch-video-focus-design",
+    "complex-focus-design-games-video-focus-design",
+    "complex-focus-design-merch-video-focus-design",
+    "complex-focus-design-video-focus-design",
+    "complex-focus-digital-event-games-merch-video-focus-digital",
+    "complex-focus-digital-event-games-video-focus-digital",
+    "complex-focus-digital-event-merch-video-focus-digital",
+    "complex-focus-digital-event-video-focus-digital",
+    "complex-focus-digital-games-merch-video-focus-digital",
+    "complex-focus-digital-games-video-focus-digital",
+    "complex-focus-digital-merch-video-focus-digital",
+    "complex-focus-digital-video-focus-digital",
+    "complex-focus-event-games-merch-video-focus-event",
+    "complex-focus-event-games-video-focus-event",
+    "complex-focus-event-merch-video-focus-event",
+    "complex-focus-event-video-focus-event",
+    "complex-focus-games-merch-video-focus-games",
+    "complex-focus-games-video-focus-games",
+    "complex-focus-merch-video-focus-merch",
+    "single-video"
+  ]
+}

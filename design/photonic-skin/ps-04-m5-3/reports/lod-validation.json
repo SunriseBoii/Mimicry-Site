@@ -1,0 +1,462 @@
+{
+  "stage": "PS-04.M5.3",
+  "prefixes": [
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    12288,
+    16384
+  ],
+  "variants": {
+    "baseline": {
+      "presence": {
+        "512": {
+          "camera": 267,
+          "clapperboard": 245
+        },
+        "1024": {
+          "camera": 592,
+          "clapperboard": 432
+        },
+        "2048": {
+          "camera": 1251,
+          "clapperboard": 797
+        },
+        "4096": {
+          "camera": 2407,
+          "clapperboard": 1689
+        },
+        "8192": {
+          "camera": 4625,
+          "clapperboard": 3567
+        },
+        "12288": {
+          "camera": 6401,
+          "clapperboard": 5494
+        },
+        "16384": {
+          "camera": 6401,
+          "clapperboard": 5494
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "combo-20": {
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "combo-30": {
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "combo-40": {
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "camera-20": {
+      "presence": {
+        "512": {
+          "camera-body": 237,
+          "camera-lens": 215,
+          "camera-top": 32,
+          "camera-rear": 28
+        },
+        "1024": {
+          "camera-body": 514,
+          "camera-lens": 388,
+          "camera-top": 62,
+          "camera-rear": 60
+        },
+        "2048": {
+          "camera-body": 1064,
+          "camera-lens": 738,
+          "camera-top": 120,
+          "camera-rear": 126
+        },
+        "4096": {
+          "camera-body": 2077,
+          "camera-lens": 1525,
+          "camera-top": 249,
+          "camera-rear": 245
+        },
+        "8192": {
+          "camera-body": 4089,
+          "camera-lens": 3110,
+          "camera-top": 512,
+          "camera-rear": 481
+        },
+        "12288": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        },
+        "16384": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "camera-30": {
+      "presence": {
+        "512": {
+          "camera-body": 237,
+          "camera-lens": 215,
+          "camera-top": 32,
+          "camera-rear": 28
+        },
+        "1024": {
+          "camera-body": 514,
+          "camera-lens": 388,
+          "camera-top": 62,
+          "camera-rear": 60
+        },
+        "2048": {
+          "camera-body": 1064,
+          "camera-lens": 738,
+          "camera-top": 120,
+          "camera-rear": 126
+        },
+        "4096": {
+          "camera-body": 2077,
+          "camera-lens": 1525,
+          "camera-top": 249,
+          "camera-rear": 245
+        },
+        "8192": {
+          "camera-body": 4089,
+          "camera-lens": 3110,
+          "camera-top": 512,
+          "camera-rear": 481
+        },
+        "12288": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        },
+        "16384": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    },
+    "camera-40": {
+      "presence": {
+        "512": {
+          "camera-body": 237,
+          "camera-lens": 215,
+          "camera-top": 32,
+          "camera-rear": 28
+        },
+        "1024": {
+          "camera-body": 514,
+          "camera-lens": 388,
+          "camera-top": 62,
+          "camera-rear": 60
+        },
+        "2048": {
+          "camera-body": 1064,
+          "camera-lens": 738,
+          "camera-top": 120,
+          "camera-rear": 126
+        },
+        "4096": {
+          "camera-body": 2077,
+          "camera-lens": 1525,
+          "camera-top": 249,
+          "camera-rear": 245
+        },
+        "8192": {
+          "camera-body": 4089,
+          "camera-lens": 3110,
+          "camera-top": 512,
+          "camera-rear": 481
+        },
+        "12288": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        },
+        "16384": {
+          "camera-body": 4421,
+          "camera-lens": 3483,
+          "camera-top": 587,
+          "camera-rear": 522
+        }
+      },
+      "missingPartsAtPrefix": {
+        "512": [],
+        "1024": [],
+        "2048": [],
+        "4096": [],
+        "8192": [],
+        "12288": [],
+        "16384": []
+      },
+      "strictPrefix": true,
+      "pass": true
+    }
+  }
+}

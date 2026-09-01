@@ -1,0 +1,65 @@
+{
+  "variant": "baseline",
+  "componentIds": [
+    "camera",
+    "clapperboard"
+  ],
+  "activeCounts": {
+    "camera": 6401,
+    "clapperboard": 5494
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera": 267,
+      "clapperboard": 245
+    },
+    "1024": {
+      "camera": 592,
+      "clapperboard": 432
+    },
+    "2048": {
+      "camera": 1251,
+      "clapperboard": 797
+    },
+    "4096": {
+      "camera": 2407,
+      "clapperboard": 1689
+    },
+    "8192": {
+      "camera": 4625,
+      "clapperboard": 3567
+    },
+    "12288": {
+      "camera": 6401,
+      "clapperboard": 5494
+    },
+    "16384": {
+      "camera": 6401,
+      "clapperboard": 5494
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "clapperboard",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

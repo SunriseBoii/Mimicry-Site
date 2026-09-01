@@ -1,0 +1,55 @@
+{
+  "variant": "camera-20",
+  "componentIds": [
+    "camera-body",
+    "camera-lens",
+    "camera-top",
+    "camera-rear"
+  ],
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

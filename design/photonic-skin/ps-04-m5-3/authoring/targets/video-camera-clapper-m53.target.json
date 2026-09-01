@@ -1,0 +1,1103 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetId": "video-camera-clapper-m53",
+  "targetVersion": "1.0.0",
+  "competencyId": "video",
+  "displayName": "Camera + open clapperboard",
+  "targetRole": "competency",
+  "canonicalCoordinateSystem": {
+    "handedness": "right",
+    "upAxis": "+Z",
+    "forwardAxis": "+X",
+    "rightAxis": "-Y",
+    "units": "photonic-skin authoring units (V0 sphere radius = 1.0)",
+    "originPolicy": "canonicalBoundsCenter"
+  },
+  "canonicalTransform": {
+    "translate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotateDeg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0
+  },
+  "geometryRepresentation": "procedural-sdf",
+  "normalizationPolicy": {
+    "mode": "uniformCompositeVolume",
+    "volumeTolerance": 0.01,
+    "masterVolumeRef": "sphere-master"
+  },
+  "validationPolicy": {
+    "expectedComponents": 7,
+    "requireWatertight": true,
+    "minThickness": 0.1,
+    "maxAspectRatio": 5.5
+  },
+  "coverageProfiles": [
+    8192,
+    4096,
+    2048,
+    1024,
+    512
+  ],
+  "provenance": {
+    "source": "PS-04.M5.3 Video associative object sandbox",
+    "approvalStatus": "sandbox-candidate",
+    "authored": "Versioned M5.3 SDF target; frozen M2 providers only.",
+    "notes": "Compact cine-camera with distinct lens; landscape slate with narrow raised hinged bar. No book spine, no equal pages, no required stripes."
+  },
+  "components": [
+    {
+      "componentId": "camera-body",
+      "semanticRole": "primary",
+      "connectivityRole": "separate",
+      "canonicalTransform": {
+        "translate": [
+          0.06,
+          0.18,
+          0.02
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.42,
+      "minimumMassWeight": 0.28,
+      "geometryProvider": {
+        "provider": "rounded_box",
+        "params": {
+          "half": [
+            0.36,
+            0.24,
+            0.2
+          ],
+          "radius": 0.07
+        }
+      },
+      "featureZones": [
+        {
+          "zoneId": "body-mass",
+          "importance": 1.1,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.38,
+                0.26,
+                0.22
+              ],
+              "radius": 0.07
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "body-profile",
+          "importance": 1.2,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.4,
+                0.26,
+                0.22
+              ],
+              "radius": 0.07
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "body-density",
+          "weight": 1.0,
+          "falloff": 0.08,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.36,
+                0.24,
+                0.2
+              ],
+              "radius": 0.07
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "body-tint",
+          "competencyId": "video",
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.36,
+                0.24,
+                0.2
+              ],
+              "radius": 0.07
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "primary-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "camera-lens",
+      "semanticRole": "primary",
+      "connectivityRole": "attached",
+      "parentComponentId": "camera-body",
+      "attachmentBlend": 0.04,
+      "canonicalTransform": {
+        "translate": [
+          0.06,
+          0.18,
+          0.02
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.16,
+      "minimumMassWeight": 0.1,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.03
+        },
+        "children": [
+          {
+            "provider": "tapered_capsule",
+            "params": {
+              "a": [
+                0.3,
+                0.0,
+                0.02
+              ],
+              "b": [
+                0.92,
+                0.0,
+                0.02
+              ],
+              "radiusA": 0.155,
+              "radiusB": 0.168
+            }
+          },
+          {
+            "provider": "torus",
+            "params": {
+              "majorRadius": 0.175,
+              "minorRadius": 0.048,
+              "axis": "x",
+              "center": [
+                0.94,
+                0.0,
+                0.02
+              ]
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "lens-front",
+          "importance": 1.8,
+          "falloff": 0.05,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.62,
+                0.0,
+                0.02
+              ],
+              "b": [
+                0.96,
+                0.0,
+                0.02
+              ],
+              "radius": 0.22
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "lens-barrel",
+          "importance": 1.7,
+          "falloff": 0.06,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.32,
+                0.0,
+                0.02
+              ],
+              "b": [
+                0.96,
+                0.0,
+                0.02
+              ],
+              "radius": 0.2
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "lens-density",
+          "weight": 1.6,
+          "falloff": 0.07,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.4,
+                0.0,
+                0.02
+              ],
+              "b": [
+                0.94,
+                0.0,
+                0.02
+              ],
+              "radius": 0.22
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "lens-ring",
+          "competencyId": "video",
+          "falloff": 0.04,
+          "region": {
+            "provider": "torus",
+            "params": {
+              "majorRadius": 0.175,
+              "minorRadius": 0.06,
+              "axis": "x",
+              "center": [
+                0.94,
+                0.0,
+                0.02
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "lens-protected",
+          "kind": "protectedZone",
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                0.46,
+                0.0,
+                0.02
+              ],
+              "b": [
+                0.92,
+                0.0,
+                0.02
+              ],
+              "radius": 0.22
+            }
+          }
+        }
+      ]
+    },
+    {
+      "componentId": "camera-top",
+      "semanticRole": "structure",
+      "connectivityRole": "attached",
+      "parentComponentId": "camera-body",
+      "attachmentBlend": 0.04,
+      "canonicalTransform": {
+        "translate": [
+          0.06,
+          0.18,
+          0.02
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.07,
+      "minimumMassWeight": 0.05,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.03
+        },
+        "children": [
+          {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.2,
+                0.055,
+                0.055
+              ],
+              "radius": 0.035,
+              "center": [
+                -0.02,
+                0.02,
+                0.3
+              ]
+            }
+          },
+          {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.07,
+                0.1,
+                0.07
+              ],
+              "radius": 0.035,
+              "center": [
+                0.1,
+                0.16,
+                0.18
+              ]
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "handle",
+          "importance": 1.3,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.22,
+                0.08,
+                0.08
+              ],
+              "radius": 0.04,
+              "center": [
+                -0.02,
+                0.02,
+                0.3
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "top-asymmetry",
+          "importance": 1.3,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.22,
+                0.16,
+                0.16
+              ],
+              "radius": 0.04,
+              "center": [
+                0.04,
+                0.08,
+                0.24
+              ]
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "top-density",
+          "weight": 1.1,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.22,
+                0.12,
+                0.14
+              ],
+              "radius": 0.04,
+              "center": [
+                0.04,
+                0.08,
+                0.24
+              ]
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "top-tint",
+          "competencyId": "video",
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.2,
+                0.08,
+                0.08
+              ],
+              "radius": 0.04,
+              "center": [
+                -0.02,
+                0.02,
+                0.3
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "top-handle",
+          "kind": "splitNeck",
+          "point": [
+            -0.02,
+            0.02,
+            0.3
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "radius": 0.1
+        }
+      ]
+    },
+    {
+      "componentId": "camera-rear",
+      "semanticRole": "structure",
+      "connectivityRole": "attached",
+      "parentComponentId": "camera-body",
+      "attachmentBlend": 0.04,
+      "canonicalTransform": {
+        "translate": [
+          0.06,
+          0.18,
+          0.02
+        ],
+        "rotateDeg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.05,
+      "minimumMassWeight": 0.04,
+      "geometryProvider": {
+        "provider": "rounded_box",
+        "params": {
+          "half": [
+            0.09,
+            0.16,
+            0.14
+          ],
+          "radius": 0.045,
+          "center": [
+            -0.42,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "featureZones": [
+        {
+          "zoneId": "battery",
+          "importance": 1.0,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.11,
+                0.18,
+                0.16
+              ],
+              "radius": 0.05,
+              "center": [
+                -0.42,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "rear-block",
+          "importance": 1.1,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.12,
+                0.18,
+                0.16
+              ],
+              "radius": 0.05,
+              "center": [
+                -0.42,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "rear-density",
+          "weight": 1.0,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.1,
+                0.16,
+                0.14
+              ],
+              "radius": 0.05,
+              "center": [
+                -0.42,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "rear-tint",
+          "competencyId": "video",
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.09,
+                0.16,
+                0.14
+              ],
+              "radius": 0.05,
+              "center": [
+                -0.42,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "rear-block",
+          "kind": "splitNeck",
+          "point": [
+            -0.42,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.12
+        }
+      ]
+    },
+    {
+      "componentId": "slate-board",
+      "semanticRole": "secondary",
+      "connectivityRole": "separate",
+      "canonicalTransform": {
+        "translate": [
+          0.1,
+          -0.78,
+          0.04
+        ],
+        "rotateDeg": [
+          8.0,
+          0.0,
+          12.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.18,
+      "minimumMassWeight": 0.1,
+      "geometryProvider": {
+        "provider": "rounded_box",
+        "params": {
+          "half": [
+            0.5,
+            0.055,
+            0.32
+          ],
+          "radius": 0.04
+        }
+      },
+      "featureZones": [
+        {
+          "zoneId": "board-face",
+          "importance": 1.2,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.52,
+                0.07,
+                0.34
+              ],
+              "radius": 0.04
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "board-rect",
+          "importance": 1.3,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.54,
+                0.08,
+                0.34
+              ],
+              "radius": 0.04
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "board-density",
+          "weight": 1.1,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.055,
+                0.32
+              ],
+              "radius": 0.04
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "board-tint",
+          "competencyId": "video",
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.055,
+                0.32
+              ],
+              "radius": 0.04
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "board-axis",
+          "kind": "primaryAxis",
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "slate-fixed-rail",
+      "semanticRole": "secondary",
+      "connectivityRole": "attached",
+      "parentComponentId": "slate-board",
+      "attachmentBlend": 0.03,
+      "canonicalTransform": {
+        "translate": [
+          0.1,
+          -0.78,
+          0.04
+        ],
+        "rotateDeg": [
+          8.0,
+          0.0,
+          12.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.06,
+      "minimumMassWeight": 0.03,
+      "geometryProvider": {
+        "provider": "smooth_union",
+        "params": {
+          "k": 0.02
+        },
+        "children": [
+          {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.045,
+                0.055
+              ],
+              "radius": 0.03,
+              "center": [
+                0.0,
+                -0.02,
+                0.355
+              ]
+            }
+          },
+          {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                -0.48,
+                -0.02,
+                0.355
+              ],
+              "b": [
+                -0.48,
+                -0.02,
+                0.46
+              ],
+              "radius": 0.045
+            }
+          }
+        ]
+      },
+      "featureZones": [
+        {
+          "zoneId": "hinge-knuckle",
+          "importance": 1.4,
+          "falloff": 0.05,
+          "region": {
+            "provider": "capsule",
+            "params": {
+              "a": [
+                -0.48,
+                -0.02,
+                0.34
+              ],
+              "b": [
+                -0.48,
+                -0.02,
+                0.48
+              ],
+              "radius": 0.07
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "top-rail",
+          "importance": 1.2,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.52,
+                0.06,
+                0.08
+              ],
+              "radius": 0.03,
+              "center": [
+                0.0,
+                -0.02,
+                0.36
+              ]
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "rail-density",
+          "weight": 1.2,
+          "falloff": 0.07,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.045,
+                0.055
+              ],
+              "radius": 0.03,
+              "center": [
+                0.0,
+                -0.02,
+                0.355
+              ]
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "rail-tint",
+          "competencyId": "video",
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.045,
+                0.055
+              ],
+              "radius": 0.03,
+              "center": [
+                0.0,
+                -0.02,
+                0.355
+              ]
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "hinge",
+          "kind": "splitNeck",
+          "point": [
+            -0.48,
+            -0.02,
+            0.36
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.08
+        }
+      ]
+    },
+    {
+      "componentId": "slate-hinged-bar",
+      "semanticRole": "secondary",
+      "connectivityRole": "attached",
+      "parentComponentId": "slate-board",
+      "attachmentBlend": 0.02,
+      "canonicalTransform": {
+        "translate": [
+          0.1,
+          -0.78,
+          0.04
+        ],
+        "rotateDeg": [
+          8.0,
+          0.0,
+          12.0
+        ],
+        "scale": 1.0
+      },
+      "massWeight": 0.06,
+      "minimumMassWeight": 0.03,
+      "geometryProvider": {
+        "provider": "rounded_box",
+        "params": {
+          "half": [
+            0.48,
+            0.04,
+            0.048
+          ],
+          "radius": 0.028
+        },
+        "transform": {
+          "translate": [
+            0.02,
+            -0.22,
+            0.52
+          ],
+          "rotateDeg": [
+            -34.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "featureZones": [
+        {
+          "zoneId": "open-bar",
+          "importance": 1.8,
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.08,
+                0.08
+              ],
+              "radius": 0.03,
+              "center": [
+                0.02,
+                -0.22,
+                0.52
+              ]
+            }
+          }
+        }
+      ],
+      "silhouetteZones": [
+        {
+          "zoneId": "raised-bar",
+          "importance": 1.8,
+          "falloff": 0.05,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.52,
+                0.1,
+                0.1
+              ],
+              "radius": 0.03,
+              "center": [
+                0.02,
+                -0.22,
+                0.52
+              ]
+            }
+          }
+        }
+      ],
+      "densityZones": [
+        {
+          "zoneId": "bar-density",
+          "weight": 1.5,
+          "falloff": 0.06,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.5,
+                0.08,
+                0.08
+              ],
+              "radius": 0.03,
+              "center": [
+                0.02,
+                -0.22,
+                0.52
+              ]
+            }
+          }
+        }
+      ],
+      "colorZones": [
+        {
+          "zoneId": "bar-tint",
+          "competencyId": "video",
+          "falloff": 0.04,
+          "region": {
+            "provider": "rounded_box",
+            "params": {
+              "half": [
+                0.48,
+                0.04,
+                0.048
+              ],
+              "radius": 0.03
+            }
+          }
+        }
+      ],
+      "transitionAnchors": [
+        {
+          "anchorId": "clapper-bar",
+          "kind": "splitNeck",
+          "point": [
+            0.02,
+            -0.22,
+            0.52
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "radius": 0.1
+        }
+      ]
+    }
+  ]
+}

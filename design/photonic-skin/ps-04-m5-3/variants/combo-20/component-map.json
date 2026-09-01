@@ -1,0 +1,165 @@
+{
+  "variant": "combo-20",
+  "componentIds": [
+    "camera-body",
+    "camera-lens",
+    "camera-top",
+    "camera-rear",
+    "slate-board",
+    "slate-fixed-rail",
+    "slate-hinged-bar"
+  ],
+  "activeCounts": {
+    "camera-body": 3767,
+    "camera-lens": 2988,
+    "camera-top": 479,
+    "camera-rear": 440,
+    "slate-board": 3810,
+    "slate-fixed-rail": 593,
+    "slate-hinged-bar": 929
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera-body": 140,
+      "camera-lens": 138,
+      "camera-top": 18,
+      "camera-rear": 17,
+      "slate-board": 127,
+      "slate-fixed-rail": 13,
+      "slate-hinged-bar": 59
+    },
+    "1024": {
+      "camera-body": 303,
+      "camera-lens": 238,
+      "camera-top": 33,
+      "camera-rear": 35,
+      "slate-board": 294,
+      "slate-fixed-rail": 23,
+      "slate-hinged-bar": 98
+    },
+    "2048": {
+      "camera-body": 629,
+      "camera-lens": 442,
+      "camera-top": 72,
+      "camera-rear": 74,
+      "slate-board": 618,
+      "slate-fixed-rail": 33,
+      "slate-hinged-bar": 180
+    },
+    "4096": {
+      "camera-body": 1248,
+      "camera-lens": 890,
+      "camera-top": 142,
+      "camera-rear": 147,
+      "slate-board": 1244,
+      "slate-fixed-rail": 90,
+      "slate-hinged-bar": 335
+    },
+    "8192": {
+      "camera-body": 2438,
+      "camera-lens": 1832,
+      "camera-top": 293,
+      "camera-rear": 286,
+      "slate-board": 2450,
+      "slate-fixed-rail": 264,
+      "slate-hinged-bar": 629
+    },
+    "12288": {
+      "camera-body": 3623,
+      "camera-lens": 2772,
+      "camera-top": 436,
+      "camera-rear": 424,
+      "slate-board": 3652,
+      "slate-fixed-rail": 461,
+      "slate-hinged-bar": 920
+    },
+    "16384": {
+      "camera-body": 3767,
+      "camera-lens": 2988,
+      "camera-top": 479,
+      "camera-rear": 440,
+      "slate-board": 3810,
+      "slate-fixed-rail": 593,
+      "slate-hinged-bar": 929
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 4,
+      "componentId": "slate-board",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 5,
+      "componentId": "slate-fixed-rail",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 6,
+      "componentId": "slate-hinged-bar",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

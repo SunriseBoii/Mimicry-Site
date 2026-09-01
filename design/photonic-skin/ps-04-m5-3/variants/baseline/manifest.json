@@ -1,0 +1,103 @@
+{
+  "variant": "baseline",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/baseline/single-video.state.bin",
+  "n": 16384,
+  "activeCount": 11895,
+  "reserveCount": 2245,
+  "subsurfaceCount": 2244,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -2.023386240005493,
+      -2.836864709854126,
+      -0.6927109956741333
+    ],
+    "max": [
+      2.034226655960083,
+      2.8341660499572754,
+      0.6927109956741333
+    ],
+    "size": [
+      4.057612895965576,
+      5.671030759811401,
+      1.3854219913482666
+    ]
+  },
+  "centroid": [
+    0.15402803142259272,
+    -0.15968147952136197,
+    -0.14138965493171884
+  ],
+  "componentCounts": {
+    "camera": 6401,
+    "clapperboard": 5494
+  },
+  "contentHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "lodPriorityIsIdentity": true,
+  "kind": "frozen-import",
+  "hudName": "VIDEO_BASELINE",
+  "source": "public/photonic-skin/ps-03-m3-1r/states/single-video.state.bin",
+  "signedYawDegrees": null,
+  "importedHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "normalized": false,
+  "activePartCounts": {
+    "camera": 6401,
+    "clapperboard": 5494
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera": 267,
+      "clapperboard": 245
+    },
+    "1024": {
+      "camera": 592,
+      "clapperboard": 432
+    },
+    "2048": {
+      "camera": 1251,
+      "clapperboard": 797
+    },
+    "4096": {
+      "camera": 2407,
+      "clapperboard": 1689
+    },
+    "8192": {
+      "camera": 4625,
+      "clapperboard": 3567
+    },
+    "12288": {
+      "camera": 6401,
+      "clapperboard": 5494
+    },
+    "16384": {
+      "camera": 6401,
+      "clapperboard": 5494
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "clapperboard",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

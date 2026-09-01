@@ -1,0 +1,231 @@
+{
+  "variant": "combo-30",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/combo-30/single-video.state.bin",
+  "n": 16384,
+  "activeCount": 13006,
+  "reserveCount": 1689,
+  "subsurfaceCount": 1689,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -2.293813705444336,
+      -1.6642260551452637,
+      -1.0367538928985596
+    ],
+    "max": [
+      2.4104459285736084,
+      2.4325475692749023,
+      1.0372943878173828
+    ],
+    "size": [
+      4.704259634017944,
+      4.096773624420166,
+      2.0740482807159424
+    ]
+  },
+  "centroid": [
+    -0.05638611717552383,
+    0.4313080094938629,
+    -0.1439549422809973
+  ],
+  "componentCounts": {
+    "camera-body": 3767,
+    "camera-lens": 2988,
+    "camera-top": 479,
+    "camera-rear": 440,
+    "slate-board": 3810,
+    "slate-fixed-rail": 593,
+    "slate-hinged-bar": 929
+  },
+  "contentHash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+  "lodPriorityIsIdentity": true,
+  "kind": "camera-plus-clapper",
+  "hudName": "VIDEO_COMBO_30",
+  "signedYawDegrees": -30.0,
+  "yawAxis": "+Z",
+  "clapperOpenDegrees": 34.0,
+  "targetId": "video-camera-clapper-m53",
+  "compileQa": {
+    "identityCount": 16384,
+    "activeCount": 13006,
+    "reserveCount": 3378,
+    "componentQuotas": {
+      "0": 3767,
+      "1": 2988,
+      "2": 479,
+      "3": 440,
+      "4": 3810,
+      "5": 593,
+      "6": 929
+    },
+    "positionsFinite": true,
+    "normalsFinite": true,
+    "normalLengthErrorMax": 2.3422055373867323e-05,
+    "scalesFiniteNonnegative": true,
+    "statusValid": true,
+    "lodStrictlyNested": true,
+    "lodIdsRenumbered": false,
+    "duplicateActiveDestinationSamples": 0,
+    "targetId": "video-camera-clapper-m53",
+    "normalizeScale": 2.430156414653064,
+    "meshVertexCount": 3976,
+    "meshFaceCount": 7940,
+    "shellCount": 2,
+    "surfaceArea": 26.3839822865907
+  },
+  "activePartCounts": {
+    "camera-body": 3767,
+    "camera-lens": 2988,
+    "camera-top": 479,
+    "camera-rear": 440,
+    "slate-board": 3810,
+    "slate-fixed-rail": 593,
+    "slate-hinged-bar": 929
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera-body": 140,
+      "camera-lens": 138,
+      "camera-top": 18,
+      "camera-rear": 17,
+      "slate-board": 127,
+      "slate-fixed-rail": 13,
+      "slate-hinged-bar": 59
+    },
+    "1024": {
+      "camera-body": 303,
+      "camera-lens": 238,
+      "camera-top": 33,
+      "camera-rear": 35,
+      "slate-board": 294,
+      "slate-fixed-rail": 23,
+      "slate-hinged-bar": 98
+    },
+    "2048": {
+      "camera-body": 629,
+      "camera-lens": 442,
+      "camera-top": 72,
+      "camera-rear": 74,
+      "slate-board": 618,
+      "slate-fixed-rail": 33,
+      "slate-hinged-bar": 180
+    },
+    "4096": {
+      "camera-body": 1248,
+      "camera-lens": 890,
+      "camera-top": 142,
+      "camera-rear": 147,
+      "slate-board": 1244,
+      "slate-fixed-rail": 90,
+      "slate-hinged-bar": 335
+    },
+    "8192": {
+      "camera-body": 2438,
+      "camera-lens": 1832,
+      "camera-top": 293,
+      "camera-rear": 286,
+      "slate-board": 2450,
+      "slate-fixed-rail": 264,
+      "slate-hinged-bar": 629
+    },
+    "12288": {
+      "camera-body": 3623,
+      "camera-lens": 2772,
+      "camera-top": 436,
+      "camera-rear": 424,
+      "slate-board": 3652,
+      "slate-fixed-rail": 461,
+      "slate-hinged-bar": 920
+    },
+    "16384": {
+      "camera-body": 3767,
+      "camera-lens": 2988,
+      "camera-top": 479,
+      "camera-rear": 440,
+      "slate-board": 3810,
+      "slate-fixed-rail": 593,
+      "slate-hinged-bar": 929
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 4,
+      "componentId": "slate-board",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 5,
+      "componentId": "slate-fixed-rail",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 6,
+      "componentId": "slate-hinged-bar",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "capturedAt": "2026-09-01T12:43:22.406Z",
+  "base": "http://localhost:3000",
+  "defaultRoute": {
+    "runId": "ps04-m5-3",
+    "stage": "PS-04.M5.3",
+    "requested": "combo-30",
+    "displayed": "combo-30",
+    "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "view": "canonical",
+    "labels": false,
+    "playMode": "settled",
+    "theme": "light",
+    "yaw": "-30° around +Z",
+    "query": "?variant=combo-30&view=canonical&theme=light&labels=0&mode=settled",
+    "hudHasCombo30": true,
+    "hudDecision": true,
+    "notCanonicalClaim": true,
+    "draws": 1,
+    "triangles": 131072,
+    "canvases": 1,
+    "programs": 1
+  },
+  "liveSwitchToBaseline": {
+    "documentReloads": 0,
+    "displayed": "baseline",
+    "hash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b"
+  },
+  "combo30": {
+    "runId": "ps04-m5-3",
+    "displayed": "combo-30",
+    "overlayHash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "node": "05.5",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "textures": 17,
+    "canvases": 1,
+    "actorDraw": true,
+    "visiblePixelCount": 27567,
+    "cameraActive": 7674,
+    "clapperActive": 5332,
+    "hingedBarActive": 929
+  },
+  "contextRestore": {
+    "buttonStatus": "restored",
+    "overlayHash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "displayed": "combo-30",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "visiblePixelCount": 27567
+  },
+  "eventSandbox": {
+    "runId": "ps04-m5-2",
+    "stage": "PS-04.M5.2.R2",
+    "displayed": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "m51": {
+    "runId": "ps04-m5",
+    "sandboxHandle": false
+  },
+  "production": {
+    "title": "Mimicry group — агентство корпоративных коммуникаций",
+    "hasSandbox": false,
+    "hasM51": false,
+    "siteShell": true
+  },
+  "preview": {
+    "displayed": "combo-30",
+    "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb"
+  }
+}

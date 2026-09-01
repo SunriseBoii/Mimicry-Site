@@ -1,0 +1,81 @@
+{
+  "stage": "PS-04.M5.3",
+  "method": "Playwright cycle baseline→combo-20→combo-30→combo-40→camera-20→camera-30→camera-40→baseline × 20 on one page, plus Edge smoke framebuffer/context restore.",
+  "invariants": {
+    "canvas": 1,
+    "persistentActor": true,
+    "rawShaderMaterial": 1,
+    "settledPrograms": 1,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "instances": 16384,
+    "footerDraws": 0,
+    "footerTriangles": 0
+  },
+  "cycleCount": 20,
+  "order": [
+    "baseline",
+    "combo-20",
+    "combo-30",
+    "combo-40",
+    "camera-20",
+    "camera-30",
+    "camera-40"
+  ],
+  "plateau": {
+    "programs": [
+      1,
+      1
+    ],
+    "rendererTextures": [
+      17,
+      17
+    ],
+    "canvases": [
+      1,
+      1
+    ],
+    "draws": [
+      1,
+      1
+    ],
+    "triangles": [
+      131072,
+      131072
+    ],
+    "cacheBytes": [
+      10388608,
+      10388608
+    ],
+    "cacheEntries": [
+      4,
+      4
+    ],
+    "gpuTextures": [
+      48,
+      48
+    ],
+    "resourceState": "gpu-ready"
+  },
+  "leak": false,
+  "liveSwitching": {
+    "documentReloadsDuringClicks": 0,
+    "clickBaselineUpdatesHashWithoutReload": true,
+    "combo30Hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "baselineHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b"
+  },
+  "rapidScrollResidual": {
+    "id": "PS04-M5-R001",
+    "reproducedOnVideoRapidRetarget": false,
+    "paletteLeadsFrames": 0,
+    "traceFrames": 239,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "fixedOnM53": false
+  },
+  "framebuffer": {
+    "combo30VisiblePixelCount": 27567,
+    "afterContextRestoreVisiblePixelCount": 27567,
+    "contextRestoreButtonStatus": "restored"
+  }
+}

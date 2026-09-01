@@ -1,0 +1,140 @@
+{
+  "stage": "PS-04.M5.3",
+  "variants": {
+    "combo-20": {
+      "hash": "ed88723a879416d4302d0146770c46956019c6941229a0fb28db0d843f67032f",
+      "signedYawDegrees": -20.0,
+      "activeCount": 13006,
+      "componentCounts": {
+        "camera-body": 3767,
+        "camera-lens": 2988,
+        "camera-top": 479,
+        "camera-rear": 440,
+        "slate-board": 3810,
+        "slate-fixed-rail": 593,
+        "slate-hinged-bar": 929
+      },
+      "visibleProfilesNonEmpty": true,
+      "boardSize": [
+        2.4419186115264893,
+        0.7706434726715088,
+        1.5672935843467712
+      ],
+      "barSize": [
+        2.304362639784813,
+        0.5009360313415527,
+        0.24640870094299316
+      ],
+      "boardWiderThanTall": true,
+      "barNarrowerThanBoard": true,
+      "barRaised": true,
+      "notEqualPages": true
+    },
+    "combo-30": {
+      "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+      "signedYawDegrees": -30.0,
+      "activeCount": 13006,
+      "componentCounts": {
+        "camera-body": 3767,
+        "camera-lens": 2988,
+        "camera-top": 479,
+        "camera-rear": 440,
+        "slate-board": 3810,
+        "slate-fixed-rail": 593,
+        "slate-hinged-bar": 929
+      },
+      "visibleProfilesNonEmpty": true,
+      "boardSize": [
+        2.398885950446129,
+        1.1273559648543596,
+        1.5672935843467712
+      ],
+      "barSize": [
+        2.226466730237007,
+        0.8560061454772949,
+        0.24640870094299316
+      ],
+      "boardWiderThanTall": true,
+      "barNarrowerThanBoard": true,
+      "barRaised": true,
+      "notEqualPages": true
+    },
+    "combo-40": {
+      "hash": "5efc8dbf7e65928c05727185dd6ef8ee13ccf7f080320bf4bde675c03befe726",
+      "signedYawDegrees": -40.0,
+      "activeCount": 13006,
+      "componentCounts": {
+        "camera-body": 3767,
+        "camera-lens": 2988,
+        "camera-top": 479,
+        "camera-rear": 440,
+        "slate-board": 3810,
+        "slate-fixed-rail": 593,
+        "slate-hinged-bar": 929
+      },
+      "visibleProfilesNonEmpty": true,
+      "boardSize": [
+        2.2968447878956795,
+        1.4585953056812286,
+        1.5672935843467712
+      ],
+      "barSize": [
+        2.080920696258545,
+        1.201056331396103,
+        0.24640870094299316
+      ],
+      "boardWiderThanTall": true,
+      "barNarrowerThanBoard": true,
+      "barRaised": true,
+      "notEqualPages": true
+    },
+    "camera-20": {
+      "hash": "db4a0e7f05ab591b22e11413a7dd3aad29d2fba1acf3da081ca87132cc8b6b64",
+      "signedYawDegrees": -20.0,
+      "activeCount": 9013,
+      "componentCounts": {
+        "camera-body": 4421,
+        "camera-lens": 3483,
+        "camera-top": 587,
+        "camera-rear": 522
+      },
+      "visibleProfilesNonEmpty": true
+    },
+    "camera-30": {
+      "hash": "a04c36a24b9f61f536fbc2fea9d74b7aaa1393d61b2e4494b023164ef84ded83",
+      "signedYawDegrees": -30.0,
+      "activeCount": 9013,
+      "componentCounts": {
+        "camera-body": 4421,
+        "camera-lens": 3483,
+        "camera-top": 587,
+        "camera-rear": 522
+      },
+      "visibleProfilesNonEmpty": true
+    },
+    "camera-40": {
+      "hash": "0d08273d1c485b82ae994d32a240fd3c7994f8046d92feeace28c1d13f259d6c",
+      "signedYawDegrees": -40.0,
+      "activeCount": 9013,
+      "componentCounts": {
+        "camera-body": 4421,
+        "camera-lens": 3483,
+        "camera-top": 587,
+        "camera-rear": 522
+      },
+      "visibleProfilesNonEmpty": true
+    },
+    "baseline": {
+      "hash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+      "signedYawDegrees": null,
+      "activeCount": 11895,
+      "componentCounts": {
+        "camera": 6401,
+        "clapperboard": 5494
+      },
+      "visibleProfilesNonEmpty": true
+    }
+  },
+  "pass": true,
+  "failures": []
+}

@@ -1,0 +1,31 @@
+{
+  "stage": "PS-04.M5.3",
+  "identitySize": 16384,
+  "recordStride": 40,
+  "deterministicSeed": "0x5030334D33",
+  "yawAxis": "+Z",
+  "yawSign": -1,
+  "yawMagnitudesDegrees": [20, 30, 40],
+  "signedYawDegrees": [-20, -30, -40],
+  "yawSignReason": "Canonical camera sits at (2.8, -7.8, 4.6) looking from -Y. Negative yaw around +Z turns a +X lens barrel toward the viewer, giving a 3/4 reading of body, barrel and open clapper wedge. The same sign is used for 20/30/40.",
+  "clapperOpenDegrees": 34,
+  "hingeEdge": "-X",
+  "defaultReviewVariant": "combo-30",
+  "notRecommendation": true,
+  "notWinner": true,
+  "frozenVideoHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "hashes": {
+    "VIDEO_BASELINE": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+    "VIDEO_COMBO_20": "ed88723a879416d4302d0146770c46956019c6941229a0fb28db0d843f67032f",
+    "VIDEO_COMBO_30": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "VIDEO_COMBO_40": "5efc8dbf7e65928c05727185dd6ef8ee13ccf7f080320bf4bde675c03befe726",
+    "VIDEO_CAMERA_20": "db4a0e7f05ab591b22e11413a7dd3aad29d2fba1acf3da081ca87132cc8b6b64",
+    "VIDEO_CAMERA_30": "a04c36a24b9f61f536fbc2fea9d74b7aaa1393d61b2e4494b023164ef84ded83",
+    "VIDEO_CAMERA_40": "0d08273d1c485b82ae994d32a240fd3c7994f8046d92feeace28c1d13f259d6c"
+  },
+  "componentIds": {
+    "combo": ["camera-body", "camera-lens", "camera-top", "camera-rear", "slate-board", "slate-fixed-rail", "slate-hinged-bar"],
+    "camera": ["camera-body", "camera-lens", "camera-top", "camera-rear"],
+    "baseline": ["camera", "clapperboard"]
+  }
+}

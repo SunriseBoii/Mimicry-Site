@@ -1,0 +1,31 @@
+{
+  "variant": "baseline",
+  "componentIds": [
+    "camera",
+    "clapperboard"
+  ],
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "clapperboard",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

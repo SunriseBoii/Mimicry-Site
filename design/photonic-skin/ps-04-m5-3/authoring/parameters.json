@@ -1,0 +1,19 @@
+{
+  "stage": "PS-04.M5.3",
+  "identitySize": 16384,
+  "recordStride": 40,
+  "deterministicSeed": "0x5030334D33",
+  "seedNote": "Frozen PS-03.M3 contracts.SEED; no extra RNG in M5.3 authoring.",
+  "yawAxis": "+Z",
+  "yawSign": -1,
+  "yawMagnitudesDegrees": [20, 30, 40],
+  "signedYawDegrees": [-20.0, -30.0, -40.0],
+  "yawSignReason": "Canonical camera sits at (2.8, -7.8, 4.6) looking from -Y. Negative yaw around +Z turns a +X lens barrel toward the viewer, giving a 3/4 reading of body, barrel and open clapper wedge. The same sign is used for 20/30/40.",
+  "clapperOpenDegrees": 34.0,
+  "hingeEdge": "-X",
+  "defaultReviewVariant": "combo-30",
+  "notRecommendation": true,
+  "notWinner": true,
+  "frozenVideoHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "frozenVideoPath": "public/photonic-skin/ps-03-m3-1r/states/single-video.state.bin"
+}

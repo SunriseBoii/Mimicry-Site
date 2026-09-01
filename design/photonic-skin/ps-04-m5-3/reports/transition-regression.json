@@ -1,0 +1,684 @@
+{
+  "stage": "PS-04.M5.3",
+  "method": "Playwright M5 traces on Video sandbox at playbackRate=1, Video→Digital, Digital→Video, reverse, idle, reduced motion, context restore, rapid retarget, live variant switching, Back/Forward",
+  "pacedByVariant": {
+    "baseline": {
+      "videoDigital": {
+        "video": "baseline-video-digital.webm",
+        "frames": 216,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "baseline",
+          "displayed": "baseline",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "frozen (no extra yaw)",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7319,
+          "clapperActive": 6263,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "baseline-digital-video.webm",
+        "frames": 219,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "baseline",
+          "displayed": "baseline",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "frozen (no extra yaw)",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 6401,
+          "clapperActive": 5494,
+          "hingedBarActive": 0
+        }
+      }
+    },
+    "combo-20": {
+      "videoDigital": {
+        "video": "combo-20-video-digital.webm",
+        "frames": 210,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-20",
+          "displayed": "combo-20",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-20-digital-video.webm",
+        "frames": 218,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-20",
+          "displayed": "combo-20",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    },
+    "combo-30": {
+      "videoDigital": {
+        "video": "combo-30-video-digital.webm",
+        "frames": 221,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-30",
+          "displayed": "combo-30",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-30-digital-video.webm",
+        "frames": 236,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-30",
+          "displayed": "combo-30",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    },
+    "combo-40": {
+      "videoDigital": {
+        "video": "combo-40-video-digital.webm",
+        "frames": 219,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-40",
+          "displayed": "combo-40",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-40-digital-video.webm",
+        "frames": 220,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "combo-40",
+          "displayed": "combo-40",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    },
+    "camera-20": {
+      "videoDigital": {
+        "video": "camera-20-video-digital.webm",
+        "frames": 205,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-20",
+          "displayed": "camera-20",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "camera-20-digital-video.webm",
+        "frames": 217,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-20",
+          "displayed": "camera-20",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 9013,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      }
+    },
+    "camera-30": {
+      "videoDigital": {
+        "video": "camera-30-video-digital.webm",
+        "frames": 214,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-30",
+          "displayed": "camera-30",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "camera-30-digital-video.webm",
+        "frames": 217,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-30",
+          "displayed": "camera-30",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 9013,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      }
+    },
+    "camera-40": {
+      "videoDigital": {
+        "video": "camera-40-video-digital.webm",
+        "frames": 208,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-40",
+          "displayed": "camera-40",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "camera-40-digital-video.webm",
+        "frames": 214,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3",
+          "requested": "camera-40",
+          "displayed": "camera-40",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 9013,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      }
+    }
+  },
+  "pacedVideoDigital": {
+    "video": "combo-30-video-digital.webm",
+    "frames": 221,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": [
+      "single-video",
+      "master-neutral",
+      "single-digital"
+    ],
+    "screens": [
+      "05.5",
+      "05.6"
+    ],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "final": {
+      "runId": "ps04-m5-3",
+      "requested": "combo-30",
+      "displayed": "combo-30",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "view": "canonical",
+      "labels": false,
+      "playMode": "transition",
+      "isolate": "full",
+      "yaw": "-30° around +Z",
+      "node": "05.6",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 33,
+      "canvases": 1,
+      "loadStatus": "ready",
+      "cameraActive": 16176,
+      "clapperActive": 0,
+      "hingedBarActive": 0
+    }
+  },
+  "pacedDigitalVideo": {
+    "video": "combo-30-digital-video.webm",
+    "frames": 236,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": [
+      "single-digital",
+      "master-neutral",
+      "single-video"
+    ],
+    "screens": [
+      "05.6",
+      "05.5"
+    ],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "final": {
+      "runId": "ps04-m5-3",
+      "requested": "combo-30",
+      "displayed": "combo-30",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "view": "canonical",
+      "labels": false,
+      "playMode": "transition",
+      "isolate": "full",
+      "yaw": "-30° around +Z",
+      "node": "05.5",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 49,
+      "canvases": 1,
+      "loadStatus": "ready",
+      "cameraActive": 7674,
+      "clapperActive": 5332,
+      "hingedBarActive": 929
+    }
+  },
+  "idle5s": {
+    "video": "combo-30-idle.webm",
+    "displayed": "combo-30",
+    "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "draws": 1,
+    "triangles": 131072
+  },
+  "reducedMotion": {
+    "video": "combo-30-reduced-motion.webm",
+    "displayed": "combo-30",
+    "pass": true
+  },
+  "contextRestore": {
+    "video": "combo-30-context-restore.webm",
+    "displayed": "combo-30",
+    "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "buttonStatus": "restored",
+    "visiblePixelCount": 27567
+  },
+  "liveSwitch": {
+    "documentReloadsDuringClicks": 0,
+    "combo30Hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "baselineHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+    "backLandsOnPreviousHistoryEntry": false,
+    "forwardRestoresCombo30": false
+  },
+  "rapidResidual": {
+    "id": "PS04-M5-R001",
+    "video": "combo-30-rapid-residual.webm",
+    "frames": 239,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "m52Reference": {
+      "frames": 63,
+      "paletteLeads": 45
+    },
+    "r2Reference": {
+      "frames": 75,
+      "paletteLeads": 59
+    },
+    "fixedOnM53": false,
+    "assertionsWeakened": false,
+    "note": "Paced Video↔Digital: paletteLeads=0, centerDeclaredAsTarget=0. Video↔Digital rapid in this session also had paletteLeads=0 (239 frames). The open residual PS04-M5-R001 remains the Event Design↔Event↔Games rapid fingerprint recorded on R2 (59/75). Not fixed. Assertions not weakened."
+  },
+  "m51Contracts": {
+    "targetColorDoesNotLeadNormalPacedMorph": true,
+    "centerDwell": false,
+    "latestTargetWins": true,
+    "oneTransactionClock": true,
+    "oneCanvas": true,
+    "oneActor": true
+  },
+  "pacedPass": true,
+  "rapidDeferred": true,
+  "pass": true
+}
