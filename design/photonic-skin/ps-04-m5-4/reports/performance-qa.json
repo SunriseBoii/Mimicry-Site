@@ -1,0 +1,21 @@
+{
+  "stage": "PS-04.M5.4",
+  "framingIsNumericRecord": true,
+  "newGeometryBuffers": 0,
+  "newActors": 0,
+  "newMaterials": 0,
+  "newCanvas": 0,
+  "invariants": {
+    "canvas": 1,
+    "actor": 1,
+    "instancedMesh": 1,
+    "rawShaderMaterial": 1,
+    "programSettled": 1,
+    "draw": 1,
+    "instances": 16384,
+    "triangles": 131072,
+    "footerActor": 0,
+    "footerDraw": 0
+  },
+  "note": "Browser capture fills programs/textures/heap/longTasks when the sandbox run completes."
+}

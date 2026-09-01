@@ -1,0 +1,32 @@
+{
+  "stage": "PS-04.M5.4",
+  "version": 1,
+  "notWinner": true,
+  "balancedReview": {
+    "aboutZoom": 118,
+    "merchZoom": 108,
+    "videoZoom": 108
+  },
+  "candidates": {
+    "about": [100, 112, 118, 124],
+    "merch": [100, 105, 108, 111],
+    "video": [100, 105, 108, 111]
+  },
+  "selectedVideo": {
+    "id": "VIDEO_COMBO_40_R1",
+    "variant": "combo-40-r1",
+    "hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+    "compositionYawDegrees": -40,
+    "clapperOpenAngleDegrees": 30
+  },
+  "selectedEvent": {
+    "id": "EVENT_A_R2",
+    "variant": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "targets": {
+    "about": { "nodeId": "02", "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video" },
+    "merch": { "nodeId": "05.7", "geometryId": "single-merch" },
+    "video": { "nodeId": "05.5", "geometryId": "single-video" }
+  }
+}

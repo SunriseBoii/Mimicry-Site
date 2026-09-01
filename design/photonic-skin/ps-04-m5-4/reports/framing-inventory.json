@@ -1,0 +1,350 @@
+{
+  "camera": {
+    "type": "PerspectiveCamera",
+    "fovDegrees": 33,
+    "zoomOperator": "THREE.PerspectiveCamera.zoom divides the projection frustum; same operator as OrthographicCamera.zoom",
+    "poseFrozen": true,
+    "nearFarUnchanged": true
+  },
+  "siteFitUnchanged": {
+    "master": 1,
+    "brandWide": 1.16,
+    "complex": 1.14,
+    "single": 1.36,
+    "none": 1
+  },
+  "screens": {
+    "about": {
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "slot": "right",
+      "family": "BRAND_WIDE",
+      "slots": {
+        "1920x1080": {
+          "size": 691.1999999999999,
+          "centerX": 1459.2,
+          "centerY": 596.16,
+          "left": 1113.6000000000001,
+          "top": 250.56,
+          "right": 1804.8,
+          "bottom": 941.76
+        },
+        "1440x900": {
+          "size": 518.4,
+          "centerX": 1078.8,
+          "centerY": 502.56,
+          "left": 819.5999999999999,
+          "top": 243.36,
+          "right": 1338,
+          "bottom": 761.76
+        },
+        "1280x720": {
+          "size": 448,
+          "centerX": 954,
+          "centerY": 408.96000000000004,
+          "left": 730,
+          "top": 184.96000000000004,
+          "right": 1178,
+          "bottom": 632.96
+        },
+        "390x844": {
+          "size": 265.20000000000005,
+          "centerX": 191.39999999999998,
+          "centerY": 519.76,
+          "left": 58.799999999999955,
+          "top": 387.15999999999997,
+          "right": 324,
+          "bottom": 652.36
+        }
+      }
+    },
+    "merch": {
+      "nodeId": "05.7",
+      "geometryId": "single-merch",
+      "slot": "left",
+      "family": "SINGLE",
+      "slots": {
+        "1920x1080": {
+          "size": 691.1999999999999,
+          "centerX": 470.4,
+          "centerY": 596.16,
+          "left": 124.80000000000001,
+          "top": 250.56,
+          "right": 816,
+          "bottom": 941.76
+        },
+        "1440x900": {
+          "size": 518.4,
+          "centerX": 352.8,
+          "centerY": 502.56,
+          "left": 93.60000000000002,
+          "top": 243.36,
+          "right": 612,
+          "bottom": 761.76
+        },
+        "1280x720": {
+          "size": 448,
+          "centerX": 313.6,
+          "centerY": 408.96000000000004,
+          "left": 89.60000000000002,
+          "top": 184.96000000000004,
+          "right": 537.6,
+          "bottom": 632.96
+        },
+        "390x844": {
+          "size": 265.20000000000005,
+          "centerX": 179.4,
+          "centerY": 519.76,
+          "left": 46.79999999999998,
+          "top": 387.15999999999997,
+          "right": 312,
+          "bottom": 652.36
+        }
+      }
+    },
+    "video": {
+      "nodeId": "05.5",
+      "geometryId": "single-video",
+      "slot": "left",
+      "family": "SINGLE",
+      "slots": {
+        "1920x1080": {
+          "size": 691.1999999999999,
+          "centerX": 470.4,
+          "centerY": 596.16,
+          "left": 124.80000000000001,
+          "top": 250.56,
+          "right": 816,
+          "bottom": 941.76
+        },
+        "1440x900": {
+          "size": 518.4,
+          "centerX": 352.8,
+          "centerY": 502.56,
+          "left": 93.60000000000002,
+          "top": 243.36,
+          "right": 612,
+          "bottom": 761.76
+        },
+        "1280x720": {
+          "size": 448,
+          "centerX": 313.6,
+          "centerY": 408.96000000000004,
+          "left": 89.60000000000002,
+          "top": 184.96000000000004,
+          "right": 537.6,
+          "bottom": 632.96
+        },
+        "390x844": {
+          "size": 265.20000000000005,
+          "centerX": 179.4,
+          "centerY": 519.76,
+          "left": 46.79999999999998,
+          "top": 387.15999999999997,
+          "right": 312,
+          "bottom": 652.36
+        }
+      }
+    }
+  },
+  "mapping": [
+    {
+      "nodeId": "01",
+      "title": "Hero",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "02",
+      "title": "О нас",
+      "family": "BRAND_WIDE",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "slot": "right",
+      "framingScreen": "about",
+      "requestedZoom": 1.18,
+      "effectiveZoom": 1.18,
+      "framed": true
+    },
+    {
+      "nodeId": "03.1",
+      "title": "Задача",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "03.2",
+      "title": "Компетенции",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "03.3",
+      "title": "Бриф",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "04",
+      "title": "Кейсы",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.1",
+      "title": "Контент",
+      "family": "SINGLE",
+      "geometryId": "single-content",
+      "slot": "left",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.2",
+      "title": "Дизайн",
+      "family": "SINGLE",
+      "geometryId": "single-design",
+      "slot": "left",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.3",
+      "title": "Event",
+      "family": "SINGLE",
+      "geometryId": "single-event",
+      "slot": "left",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.4",
+      "title": "Игры",
+      "family": "SINGLE",
+      "geometryId": "single-games",
+      "slot": "left",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.5",
+      "title": "Видео",
+      "family": "SINGLE",
+      "geometryId": "single-video",
+      "slot": "left",
+      "framingScreen": "video",
+      "requestedZoom": 1.08,
+      "effectiveZoom": 1.08,
+      "framed": true
+    },
+    {
+      "nodeId": "05.6",
+      "title": "Digital",
+      "family": "SINGLE",
+      "geometryId": "single-digital",
+      "slot": "left",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "05.7",
+      "title": "Мерч",
+      "family": "SINGLE",
+      "geometryId": "single-merch",
+      "slot": "left",
+      "framingScreen": "merch",
+      "requestedZoom": 1.08,
+      "effectiveZoom": 1.08,
+      "framed": true
+    },
+    {
+      "nodeId": "06.1",
+      "title": "Команда",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "06.2",
+      "title": "Партнёры",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "06.3",
+      "title": "Клиенты",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "07",
+      "title": "Контакт",
+      "family": "MASTER",
+      "geometryId": "master-neutral",
+      "slot": "right",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    },
+    {
+      "nodeId": "08",
+      "title": "Футер",
+      "family": "none",
+      "geometryId": null,
+      "slot": "none",
+      "framingScreen": null,
+      "requestedZoom": 1,
+      "effectiveZoom": 1,
+      "framed": false
+    }
+  ]
+}

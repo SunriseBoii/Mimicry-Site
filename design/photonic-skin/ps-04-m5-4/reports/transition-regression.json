@@ -1,0 +1,19 @@
+{
+  "stage": "PS-04.M5.4",
+  "paletteLeads": 0,
+  "centerDwell": 0,
+  "thirdGeometryId": 0,
+  "framingPop": 0,
+  "baselineZoomFlash": 0,
+  "slotPathUnchanged": true,
+  "sharedClock": true,
+  "independentFramingTimer": false,
+  "casesToContent": "unaffected zoom 1",
+  "contentToDesign": "unaffected zoom 1",
+  "eventToGames": "unaffected zoom 1",
+  "digitalToVideo": "sourceZoom 1 → targetZoom video profile via C2",
+  "videoToDigital": "sourceZoom video profile → targetZoom 1 via C2",
+  "merchToTeam": "sourceZoom merch profile → targetZoom 1 via C2",
+  "aboutEntryExit": "source/target mix on shared geometry progress",
+  "residual": "PS04-M5-R001 not fixed in M5.4"
+}

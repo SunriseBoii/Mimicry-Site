@@ -72,6 +72,8 @@ export interface CompositionViewport {
   actorDraw: boolean;
   identity: boolean;
   siteFitScale: number;
+  /** Presentation frustum zoom. 1 = frozen photonic projection. Does not change actor mesh scale. */
+  visualZoomMultiplier: number;
   slot: Placement;
 }
 
@@ -117,6 +119,7 @@ export const IDENTITY_COMPOSITION: CompositionViewport = {
   actorDraw: true,
   identity: true,
   siteFitScale: 1,
+  visualZoomMultiplier: 1,
   slot: "right",
 };
 
@@ -308,6 +311,7 @@ export function assembleViewport(args: {
   visible: boolean;
   identity?: boolean;
   siteFitScale?: number;
+  visualZoomMultiplier?: number;
   slot: Placement;
 }): CompositionViewport {
   const dpr = args.rendererDpr || 1;
@@ -356,6 +360,7 @@ export function assembleViewport(args: {
       siteClipOffset: [0, 0],
       siteCompositionEnabled: 0,
       siteFitScale: 1,
+      visualZoomMultiplier: 1,
       slot: args.slot,
     };
   }
@@ -399,6 +404,7 @@ export function assembleViewport(args: {
     actorDraw: args.visible,
     identity: false,
     siteFitScale: args.siteFitScale ?? 1,
+    visualZoomMultiplier: args.identity ? 1 : (args.visualZoomMultiplier ?? 1),
     slot: args.slot,
   };
 }
@@ -414,6 +420,7 @@ export function sampleComposition(args: {
   reducedMotion: boolean;
   identity?: boolean;
   fitProfile?: FitProfile;
+  visualZoomMultiplier?: number;
 }): CompositionViewport {
   const size = actorSquareCss(args.width, args.height);
   const mix = clamp(args.mix ?? 1, 0, 1);
@@ -434,6 +441,7 @@ export function sampleComposition(args: {
     visible: !hidden,
     identity: args.identity,
     siteFitScale: siteFitScaleFor(args.fitProfile ?? "master", Boolean(args.identity)),
+    visualZoomMultiplier: args.visualZoomMultiplier ?? 1,
     slot: args.placement,
   });
 }
@@ -448,6 +456,7 @@ export function viewportFromCenter(args: {
   visible: boolean;
   identity?: boolean;
   siteFitScale?: number;
+  visualZoomMultiplier?: number;
   slot?: Placement;
 }): CompositionViewport {
   return assembleViewport({
@@ -460,6 +469,7 @@ export function viewportFromCenter(args: {
     visible: args.visible,
     identity: args.identity,
     siteFitScale: args.identity ? 1 : (args.siteFitScale ?? 1),
+    visualZoomMultiplier: args.identity ? 1 : (args.visualZoomMultiplier ?? 1),
     slot: args.slot ?? "right",
   });
 }

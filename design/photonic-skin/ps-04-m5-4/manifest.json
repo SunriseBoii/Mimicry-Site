@@ -1,0 +1,60 @@
+{
+  "stage": "PS-04.M5.4",
+  "title": "Photonic Skin / Mimic Core — responsive presentation framing sandbox",
+  "status": "HUMAN PASS / SELECTED M5 FRAMING PROFILE",
+  "labRoute": "/visual-lab/photonic-skin-ps04-m5/framing-sandbox",
+  "previewRoute": "/visual-lab/photonic-skin-ps04-m5/framing-sandbox/preview",
+  "m51LabRoute": "/visual-lab/photonic-skin-ps04-m5",
+  "videoSandboxRoute": "/visual-lab/photonic-skin-ps04-m5/video-sandbox",
+  "eventSandboxRoute": "/visual-lab/photonic-skin-ps04-m5/event-sandbox",
+  "production": "/",
+  "sessionId": "ps04-m5-4-framing-sandbox",
+  "sandboxBranch": "ps04-m5-sandbox",
+  "m54BaselineHead": "af13e9df27be788f8295900d1d7a021bca699998",
+  "defaultReviewProfile": "OWNER_SELECTED_124_111_111",
+  "selectedProfile": "OWNER_SELECTED_124_111_111",
+  "balancedReview": {
+    "aboutZoom": 118,
+    "merchZoom": 108,
+    "videoZoom": 108,
+    "role": "evidence-only-not-selected"
+  },
+  "selectedFraming": {
+    "id": "OWNER_SELECTED_124_111_111",
+    "aboutRequestedZoom": 1.24,
+    "aboutMobileCap": 1.18,
+    "merchRequestedZoom": 1.11,
+    "merchMobileCap": 1.08,
+    "videoRequestedZoom": 1.11,
+    "videoMobileCap": 1.08
+  },
+  "notRecommendation": true,
+  "notWinner": true,
+  "canonicalSelectionPendingHumanReview": false,
+  "notCanonicalYet": true,
+  "notProductionApproval": true,
+  "productionApproval": false,
+  "promotionTarget": "PS-04.M5.5",
+  "m54Started": true,
+  "m55Started": false,
+  "push": false,
+  "deploy": false,
+  "m54Committed": false,
+  "selectedVideo": {
+    "id": "VIDEO_COMBO_40_R1",
+    "variant": "combo-40-r1",
+    "hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+    "compositionYawDegrees": -40,
+    "clapperOpenAngleDegrees": 30
+  },
+  "selectedEvent": {
+    "id": "EVENT_A_R2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "frozenVideoHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "targets": {
+    "about": { "nodeId": "02", "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video", "slot": "right" },
+    "merch": { "nodeId": "05.7", "geometryId": "single-merch", "slot": "left" },
+    "video": { "nodeId": "05.5", "geometryId": "single-video", "slot": "left" }
+  }
+}

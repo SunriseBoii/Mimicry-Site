@@ -1,0 +1,25 @@
+{
+  "fillAssumption": 0.82,
+  "note": "Estimated visible mask = slot * 0.82 * zoom. Browser visible-pixel mask remains the human-review source of truth.",
+  "threshold": {
+    "minSlotEdgePx": 8,
+    "viewportEdgePx": 4,
+    "textGapPx": 12,
+    "navigationGapPx": 8
+  },
+  "failing": [],
+  "passing1440": [
+    "ABOUT_100",
+    "ABOUT_112",
+    "ABOUT_118",
+    "ABOUT_124",
+    "MERCH_100",
+    "MERCH_105",
+    "MERCH_108",
+    "MERCH_111",
+    "VIDEO_100",
+    "VIDEO_105",
+    "VIDEO_108",
+    "VIDEO_111"
+  ]
+}

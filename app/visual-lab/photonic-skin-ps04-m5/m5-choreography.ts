@@ -50,6 +50,11 @@ export function positionProgressFromGeometryM5(progress: number, reducedMotion =
   return c2Window(progress, 0, 1);
 }
 
+/** Framing shares the M5.1 C2 window. No independent elapsed/duration clock. */
+export function framingProgressFromGeometryM5(progress: number, reducedMotion = false) {
+  return positionProgressFromGeometryM5(progress, reducedMotion);
+}
+
 export function siteOnlyPositionProgress(elapsedSeconds: number, durationSeconds: number, reducedMotion = false) {
   if (reducedMotion) return 1;
   const duration = Math.max(durationSeconds, 0.001);

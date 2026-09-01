@@ -49,6 +49,10 @@ export interface M5TraceFrame {
   visualPublished: boolean;
   paletteLeads: boolean;
   chapterBoundary: ChapterBoundaryId | null;
+  framingProgress: number;
+  sourceZoom: number;
+  targetZoom: number;
+  displayedZoom: number;
 }
 
 const MAX_FRAMES = 2400;
@@ -104,9 +108,13 @@ export function m5FrameFromTransaction(args: {
   cancellationReason: string | null;
   intermediateActorRequest: boolean;
   currentGeometryId: string | null;
+  displayedZoom?: number;
 }): M5TraceFrame {
   const tx = args.transaction;
   const positionProgress = tx.positionProgress ?? tx.slotProgress;
+  const sourceZoom = tx.sourceZoom ?? 1;
+  const targetZoom = tx.targetZoom ?? 1;
+  const framingProgress = tx.framingProgress ?? 1;
   return {
     frameToken: args.frameToken,
     timestamp: args.timestamp,
@@ -147,5 +155,9 @@ export function m5FrameFromTransaction(args: {
     visualPublished: tx.visualPublished === true,
     paletteLeads: paletteLeadsGeometry(tx.geometryProgress, tx.paletteProgress),
     chapterBoundary: chapterBoundary(String(tx.sourceNodeId), String(tx.targetNodeId)),
+    framingProgress,
+    sourceZoom,
+    targetZoom,
+    displayedZoom: args.displayedZoom ?? (sourceZoom + (targetZoom - sourceZoom) * framingProgress),
   };
 }

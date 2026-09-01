@@ -193,7 +193,7 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
     width: 1440, height: 900, dpr, centerX: 1100, centerY: 480, size: 460, visible: true, identity,
   }));
-  const visualRef = useRef({ x: 1100, y: 480, size: 460, visible: true, exitHold: 0, siteFit: 1 });
+  const visualRef = useRef({ x: 1100, y: 480, size: 460, visible: true, exitHold: 0, siteFit: 1, zoom: 1 });
   const clockRef = useRef({ running: false, frame: 0, previous: 0, token: 0, lastUi: 0 });
   const sendButtonRef = useRef<HTMLElement | null>(null);
   const flowRef = useRef(flow);
@@ -408,6 +408,8 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       visualRef.current.y = mixedY;
       visualRef.current.size = mixedSize;
       visualRef.current.siteFit = mixedFit;
+      const framingU = liveReduced || liveIdentity ? 1 : (tx.framingProgress ?? 1);
+      visualRef.current.zoom = (tx.sourceZoom ?? 1) + ((tx.targetZoom ?? 1) - (tx.sourceZoom ?? 1)) * framingU;
       if (!target.visible) visualRef.current.exitHold = (visualRef.current.exitHold ?? 0) + dt;
       else visualRef.current.exitHold = 0;
       const distance = Math.hypot(targetSample.cssCenterX - visualRef.current.x, targetSample.cssCenterY - visualRef.current.y);
@@ -423,6 +425,7 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
         visible: visualRef.current.visible,
         identity: liveIdentity,
         siteFitScale: liveIdentity ? 1 : visualRef.current.siteFit,
+        visualZoomMultiplier: liveIdentity ? 1 : visualRef.current.zoom,
         slot: siteU >= 1 ? targetSample.slot : tx.sourceSlot,
       });
       transitionRef.current = {
@@ -725,6 +728,7 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       geometryId: live.geometryId ?? session.snapshot().settledStateId,
       nodeId: live.nodeId,
       lutHash: live.lutHash,
+      zoom: visualRef.current.zoom,
     };
     const { decision, transaction } = coordinator.begin({
       next,
@@ -748,7 +752,7 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       startClock();
       return;
     }
-    if (decision.kind === "site-only") {
+    if (decision.kind === "site-only" || decision.kind === "framing-only") {
       startClock();
       return;
     }

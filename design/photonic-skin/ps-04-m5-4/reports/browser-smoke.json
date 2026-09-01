@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "stage": "PS-04.M5.4",
+  "route": "/visual-lab/photonic-skin-ps04-m5/framing-sandbox",
+  "previewRoute": "/visual-lab/photonic-skin-ps04-m5/framing-sandbox/preview",
+  "production": "/",
+  "selectedVideoHash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+  "boards": {
+    "aboutLightDark": true,
+    "merchLightDark": true,
+    "videoLightDark": true,
+    "responsive": true,
+    "safeArea": true,
+    "walkthrough": true,
+    "unaffected": true,
+    "footer": true,
+    "productionHomepage": true
+  },
+  "webm": [
+    "digital-video-digital.webm",
+    "merch-team.webm",
+    "about-entry-exit.webm",
+    "rapid-residual.webm"
+  ],
+  "invariantsObserved": {
+    "aboutNode": "02",
+    "merchNode": "05.7",
+    "videoNode": "05.5",
+    "videoHashPrefix": "2d695781",
+    "yaw": -40,
+    "clapperOpen": 30
+  }
+}

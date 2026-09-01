@@ -1,0 +1,10 @@
+{
+  "stage": "PS-04.M5.4",
+  "layout": ["frame", "revision", "sourceNode", "targetNode", "geometryProgress", "paletteProgress", "positionProgress", "framingProgress", "sourceZoom", "targetZoom", "displayedZoom", "bbox"],
+  "interpolation": "mix(sourceZoom, targetZoom, c2Window(g, 0, 1))",
+  "sharedClock": "ActorTransitionCoordinator revision + M5.1 C2",
+  "independentTimer": false,
+  "compileGapKeepsSourceZoom": true,
+  "interruptStartsFromVisualSnapshot": true,
+  "reducedMotionAtomic": true
+}

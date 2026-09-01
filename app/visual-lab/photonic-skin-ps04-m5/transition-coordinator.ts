@@ -33,6 +33,7 @@ import { type ResourceState, type VisualLifecycle } from "./resource-lifecycle";
 import {
   paletteProgressFromGeometryM5,
   positionProgressFromGeometryM5,
+  framingProgressFromGeometryM5,
   siteOnlyPositionProgress,
 } from "./m5-choreography";
 
@@ -45,7 +46,7 @@ export type SemanticPhase =
   | "approach"
   | "settle";
 export type TransactionStatus = "running" | "settled" | "interrupted" | "cancelled";
-export type ActorChangeKind = "noop" | "geometry" | "palette-only" | "site-only" | "exit";
+export type ActorChangeKind = "noop" | "geometry" | "palette-only" | "site-only" | "exit" | "framing-only";
 
 export interface SemanticActorKey {
   geometryId: string | null;
@@ -88,6 +89,9 @@ export interface ActorTransitionTransaction {
   positionProgress: number;
   visualPublished: boolean;
   fitProgress: number;
+  sourceZoom: number;
+  targetZoom: number;
+  framingProgress: number;
   sourcePaletteLutHash: string;
   targetPaletteLutHash: string;
   settledPaletteLutHash: string;
@@ -104,6 +108,7 @@ export interface DisplayedPlacement {
   geometryId: string | null;
   nodeId: ScreenNodeId | "none";
   lutHash?: string;
+  zoom?: number;
 }
 
 export interface GateDecision {
@@ -250,6 +255,9 @@ function emptyTransaction(): ActorTransitionTransaction {
     positionProgress: 1,
     visualPublished: true,
     fitProgress: 1,
+    sourceZoom: 1,
+    targetZoom: 1,
+    framingProgress: 1,
     sourcePaletteLutHash: lutHash,
     targetPaletteLutHash: lutHash,
     settledPaletteLutHash: lutHash,
@@ -384,10 +392,18 @@ export class ActorTransitionCoordinator {
     displayedLut?: LutSample[];
     navigationToken?: number;
     reverse?: boolean;
+    targetZoom?: number;
   }): { decision: GateDecision; transaction: ActorTransitionTransaction } {
+    const sourceZoom = Number.isFinite(args.displayed.zoom) ? args.displayed.zoom as number : 1;
+    const targetZoom = args.identity ? 1 : (Number.isFinite(args.targetZoom) ? args.targetZoom as number : 1);
+    const zoomChanged = Math.abs(sourceZoom - targetZoom) > 1e-8;
     const decision = this.gate(args.next);
-    if (decision.kind === "noop") {
+    if (decision.kind === "noop" && !zoomChanged) {
       return { decision, transaction: this.snapshot() };
+    }
+    if (decision.kind === "noop" && zoomChanged) {
+      decision.kind = "framing-only";
+      decision.reason = "framing zoom only";
     }
     const previous = this.current;
     const nextKey = semanticActorKey(args.next);
@@ -414,17 +430,21 @@ export class ActorTransitionCoordinator {
     const reduced = args.reducedMotion || args.identity === true;
     const paletteOnly = kind === "palette-only";
     const siteOnly = kind === "site-only";
+    const framingOnly = kind === "framing-only";
     const duration = reduced || kind === "exit"
       ? 0
       : paletteOnly
         ? FIELD_PARAMETERS.transitionSeconds
         : siteOnly
           ? 0.38
-          : (args.durationSeconds ?? 0.98);
-    const running = !reduced && (kind === "geometry" || paletteOnly || siteOnly);
+          : framingOnly
+            ? (args.durationSeconds ?? 0.98)
+            : (args.durationSeconds ?? 0.98);
+    const running = !reduced && (kind === "geometry" || paletteOnly || siteOnly || framingOnly);
     const targetFit = siteFitScaleFor(args.next.fitProfile, Boolean(args.identity));
     const sourceFit = args.displayed.fit;
     const sameSite = args.next.slot === args.displayed.slot && Math.abs(targetFit - sourceFit) < 1e-6;
+    const sameZoom = Math.abs(sourceZoom - targetZoom) < 1e-8;
     const sourceLut = cloneLut(args.displayedLut ?? this.displayedLut());
     const targetLut = lutForMask(nextKey.paletteMask);
     this.sourceLut = sourceLut;
@@ -452,9 +472,9 @@ export class ActorTransitionCoordinator {
       elapsedSeconds: 0,
       durationSeconds: duration,
       geometryProgress: kind === "geometry" && running ? 0 : 1,
-      semanticPhase: kind === "geometry" && running ? "anticipation" : "settle",
-      paletteProgress: reduced || sameMask || kind === "exit" || kind === "site-only" ? 1 : 0,
-      siteProgress: reduced || sameSite || paletteOnly ? 1 : 0,
+      semanticPhase: kind === "geometry" && running ? "anticipation" : framingOnly && running ? "regroup" : "settle",
+      paletteProgress: reduced || sameMask || kind === "exit" || kind === "site-only" || framingOnly ? 1 : 0,
+      siteProgress: reduced || sameSite || paletteOnly || framingOnly ? 1 : 0,
       paletteOwnershipMode: 0,
       continuityEnabled: !args.identity && kind === "geometry" && !reduced ? 1 : 0,
       kind,
@@ -462,10 +482,13 @@ export class ActorTransitionCoordinator {
       programReady: ready,
       visualLifecycle: running && kind === "geometry" ? "preparing" : running ? "morphing" : "settled",
       resourceState: running && kind === "geometry" ? "cpu-preparing" : "bound",
-      slotProgress: reduced || sameSite || paletteOnly ? 1 : 0,
-      positionProgress: reduced || sameSite || paletteOnly ? 1 : 0,
-      visualPublished: !running,
-      fitProgress: reduced || sameSite || paletteOnly || kind === "site-only" ? 1 : 0,
+      slotProgress: reduced || sameSite || paletteOnly || framingOnly ? 1 : 0,
+      positionProgress: reduced || sameSite || paletteOnly || framingOnly ? 1 : 0,
+      visualPublished: !running || framingOnly || paletteOnly || siteOnly,
+      fitProgress: reduced || sameSite || paletteOnly || kind === "site-only" || framingOnly ? 1 : 0,
+      sourceZoom,
+      targetZoom,
+      framingProgress: reduced || sameZoom ? 1 : 0,
       sourcePaletteLutHash: sourceHash,
       targetPaletteLutHash: targetHash,
       settledPaletteLutHash: running ? this.current.settledPaletteLutHash : targetHash,
@@ -518,11 +541,29 @@ export class ActorTransitionCoordinator {
       tx.positionProgress = 1;
       tx.visualPublished = true;
       tx.fitProgress = 1;
+      tx.framingProgress = 1;
       tx.semanticPhase = "settle";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
       tx.visualLifecycle = tx.paletteProgress >= 1 ? "settled" : "morphing";
       if (tx.paletteProgress >= 1) this.commitTargetAsSettled();
+      return this.snapshot();
+    }
+    if (tx.kind === "framing-only") {
+      const duration = Math.max(tx.durationSeconds, 0.001);
+      tx.geometryProgress = 1;
+      tx.paletteProgress = 1;
+      tx.siteProgress = 1;
+      tx.slotProgress = 1;
+      tx.positionProgress = 1;
+      tx.fitProgress = 1;
+      tx.visualPublished = true;
+      tx.framingProgress = framingProgressFromGeometryM5(clamp01(tx.elapsedSeconds / duration), reduced);
+      tx.semanticPhase = tx.framingProgress >= 1 ? "settle" : "regroup";
+      tx.paletteOwnershipMode = 0;
+      tx.continuityEnabled = 0;
+      tx.visualLifecycle = tx.framingProgress >= 1 ? "settled" : "morphing";
+      if (tx.framingProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
     if (tx.kind === "site-only") {
@@ -533,12 +574,14 @@ export class ActorTransitionCoordinator {
       tx.positionProgress = tx.siteProgress;
       tx.visualPublished = true;
       tx.fitProgress = 1;
-      tx.paletteProgress = 1;
-      tx.semanticPhase = tx.siteProgress >= 1 ? "settle" : "regroup";
+      tx.framingProgress = Math.abs(tx.sourceZoom - tx.targetZoom) < 1e-8
+        ? 1
+        : framingProgressFromGeometryM5(tx.siteProgress, reduced);
+      tx.semanticPhase = tx.siteProgress >= 1 && tx.framingProgress >= 1 ? "settle" : "regroup";
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
-      tx.visualLifecycle = tx.siteProgress >= 1 ? "settled" : "morphing";
-      if (tx.siteProgress >= 1) this.commitTargetAsSettled();
+      tx.visualLifecycle = tx.siteProgress >= 1 && tx.framingProgress >= 1 ? "settled" : "morphing";
+      if (tx.siteProgress >= 1 && tx.framingProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
     const waitingForProgram = tx.kind === "geometry"
@@ -562,6 +605,7 @@ export class ActorTransitionCoordinator {
       tx.positionProgress = sameSite ? 1 : 0;
       tx.visualPublished = false;
       tx.fitProgress = sameSite ? 1 : 0;
+      tx.framingProgress = Math.abs(tx.sourceZoom - tx.targetZoom) < 1e-8 ? 1 : 0;
       tx.paletteOwnershipMode = 0;
       tx.continuityEnabled = 0;
       tx.shaderBaseLutHash = tx.sourcePaletteLutHash;
@@ -585,12 +629,15 @@ export class ActorTransitionCoordinator {
     tx.slotProgress = position;
     tx.positionProgress = position;
     tx.fitProgress = sameSite ? 1 : position;
+    tx.framingProgress = Math.abs(tx.sourceZoom - tx.targetZoom) < 1e-8
+      ? 1
+      : framingProgressFromGeometryM5(tx.geometryProgress, reduced);
     tx.visualPublished = true;
     tx.visualLifecycle = tx.geometryProgress >= 1 ? "settling" : "morphing";
     tx.resourceState = "bound";
     tx.paletteOwnershipMode = 0;
     tx.continuityEnabled = !args.identity && tx.kind === "geometry" && !reduced && tx.programReady ? 1 : 0;
-    if (tx.geometryProgress >= 1 && tx.paletteProgress >= 1 && tx.positionProgress >= 1) {
+    if (tx.geometryProgress >= 1 && tx.paletteProgress >= 1 && tx.positionProgress >= 1 && tx.framingProgress >= 1) {
       this.commitTargetAsSettled();
     } else if (this.displayedBind?.revision === tx.revision) {
       this.displayedBind.shaderProgress = this.reverse
@@ -716,11 +763,12 @@ export class ActorTransitionCoordinator {
     return revision === this.revision;
   }
 
-  adoptSettled(contract: ScreenActorContract, identity = false) {
+  adoptSettled(contract: ScreenActorContract, identity = false, zoom = 1) {
     const key = semanticActorKey(contract);
     const fit = siteFitScaleFor(contract.fitProfile, identity);
     const lut = lutForMask(key.paletteMask);
     const lutHash = hashLut(lut);
+    const settledZoom = identity ? 1 : zoom;
     this.lastSemantic = key;
     this.sourceLut = cloneLut(lut);
     this.targetLut = cloneLut(lut);
@@ -752,6 +800,9 @@ export class ActorTransitionCoordinator {
       positionProgress: 1,
       visualPublished: true,
       fitProgress: 1,
+      sourceZoom: settledZoom,
+      targetZoom: settledZoom,
+      framingProgress: 1,
       sourcePaletteLutHash: lutHash,
       targetPaletteLutHash: lutHash,
       settledPaletteLutHash: lutHash,
@@ -791,6 +842,7 @@ export class ActorTransitionCoordinator {
         : (geo.boundSourceGeometryId ?? tx.sourceGeometryId),
       nodeId: tx.targetNodeId,
       lutHash: hashLut(lut),
+      zoom: mixFit(tx.sourceZoom, tx.targetZoom, tx.framingProgress),
     };
   }
 
@@ -873,6 +925,8 @@ export class ActorTransitionCoordinator {
     tx.positionProgress = 1;
     tx.visualPublished = true;
     tx.fitProgress = 1;
+    tx.framingProgress = 1;
+    tx.sourceZoom = tx.targetZoom;
     this.reverse = false;
     if (this.displayedBind) {
       this.displayedBind.shaderProgress = 1;

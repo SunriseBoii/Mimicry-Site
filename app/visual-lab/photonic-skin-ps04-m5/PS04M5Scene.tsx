@@ -2147,11 +2147,6 @@ function M41Content(props: SceneProps) {
     gl.getViewport(restoreRef.current.viewport);
     gl.getScissor(restoreRef.current.scissor);
     restoreRef.current.scissorTest = gl.getScissorTest();
-    const liveCamera = get().camera;
-    if (liveCamera instanceof THREE.PerspectiveCamera && Math.abs(liveCamera.aspect - 1) > 1e-6) {
-      liveCamera.aspect = 1;
-      liveCamera.updateProjectionMatrix();
-    }
     const requested = props.compositionRef?.current;
     const viewport: CompositionViewport = requested ?? {
       ...IDENTITY_COMPOSITION,
@@ -2160,6 +2155,17 @@ function M41Content(props: SceneProps) {
       canvasCssWidth: cssW,
       canvasCssHeight: cssH,
     };
+    const liveCamera = get().camera;
+    if (liveCamera instanceof THREE.PerspectiveCamera) {
+      const zoom = viewport.identity ? 1 : (viewport.visualZoomMultiplier ?? 1);
+      const needAspect = Math.abs(liveCamera.aspect - 1) > 1e-6;
+      const needZoom = Math.abs(liveCamera.zoom - zoom) > 1e-8;
+      if (needAspect || needZoom) {
+        liveCamera.aspect = 1;
+        liveCamera.zoom = zoom;
+        liveCamera.updateProjectionMatrix();
+      }
+    }
     if (meshRef.current) {
       const ready = !staging || boundGpuReadyRef.current;
       meshRef.current.visible = ready && viewport.actorDraw && viewport.visible;
