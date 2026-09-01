@@ -1,0 +1,102 @@
+{
+  "variant": "a-r1",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/a-r1/single-event.state.bin",
+  "n": 16384,
+  "activeCount": 14873,
+  "reserveCount": 756,
+  "subsurfaceCount": 755,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -1.6884148120880127,
+      -1.2982484102249146,
+      -1.135754942893982
+    ],
+    "max": [
+      1.6883031129837036,
+      1.3524140119552612,
+      1.135737657546997
+    ]
+  },
+  "centroid": [
+    -0.056211523711681366,
+    0.18320636451244354,
+    -0.37514254450798035
+  ],
+  "componentCounts": {
+    "0": 7323,
+    "1": 4441,
+    "2": 1014,
+    "3": 1205,
+    "4": 890
+  },
+  "contentHash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+  "lodPriorityIsIdentity": true,
+  "kind": "selective-figure-right-refinement",
+  "displayName": "EVENT_A_R1 — selected A direction, refined right figure",
+  "derivedFrom": "EVENT_A",
+  "ownerDirectionSelected": true,
+  "canonicalSelectionPendingHumanReview": true,
+  "modifiedPart": "figure-right",
+  "eventPart": 3,
+  "component": 4,
+  "transformChain": [
+    "frozen BASELINE",
+    "EVENT_A rigid +180° Z",
+    "selective figure-right refinement",
+    "EVENT_A_R1"
+  ],
+  "rigidProofInheritedFromEventA": true,
+  "activePartCounts": {
+    "stage": 11764,
+    "figure-centre": 1205,
+    "figure-left": 1014,
+    "figure-right": 890
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 367,
+      "figure-centre": 53,
+      "figure-left": 50,
+      "figure-right": 42
+    },
+    "1024": {
+      "stage": 761,
+      "figure-centre": 101,
+      "figure-left": 84,
+      "figure-right": 78
+    },
+    "2048": {
+      "stage": 1506,
+      "figure-centre": 206,
+      "figure-left": 181,
+      "figure-right": 155
+    },
+    "4096": {
+      "stage": 2962,
+      "figure-centre": 438,
+      "figure-left": 371,
+      "figure-right": 325
+    },
+    "8192": {
+      "stage": 6204,
+      "figure-centre": 771,
+      "figure-left": 651,
+      "figure-right": 566
+    },
+    "12288": {
+      "stage": 9480,
+      "figure-centre": 1084,
+      "figure-left": 915,
+      "figure-right": 809
+    },
+    "16384": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    }
+  }
+}

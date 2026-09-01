@@ -1,0 +1,63 @@
+{
+  "stage": "PS-04.M5.2.R1",
+  "method": "Playwright M5 traces on EVENT_A_R1 at playbackRate=1, Design→Event→Games, reverse, idle, reduced motion, context restore, rapid retarget",
+  "pacedDesignEventGames": {
+    "video": "a-r1-design-event-games.webm",
+    "frames": 463,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": ["master-neutral", "single-design", "single-event", "single-games"],
+    "screens": ["05.2", "05.3", "05.4"],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "note": "master-neutral is the mode=transition boot node; morph IDs are design/event/games only"
+  },
+  "pacedReverse": {
+    "video": "a-r1-reverse.webm",
+    "frames": 448,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": ["master-neutral", "single-games", "single-event", "single-design"],
+    "screens": ["05.4", "05.3", "05.2"],
+    "pass": true
+  },
+  "idle5s": {
+    "video": "a-r1-idle.webm",
+    "displayed": "a-r1",
+    "hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "draws": 1,
+    "triangles": 131072
+  },
+  "reducedMotion": {
+    "video": "a-r1-reduced-motion.webm",
+    "displayed": "a-r1",
+    "pass": true
+  },
+  "contextRestore": {
+    "video": "a-r1-context-restore.webm",
+    "buttonStatus": "restored",
+    "visiblePixelCount": 99313,
+    "hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc"
+  },
+  "rapidResidual": {
+    "id": "PS04-M5-R001",
+    "video": "a-r1-rapid-residual.webm",
+    "frames": 466,
+    "paletteLeads": 8,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "m52Reference": { "frames": 63, "paletteLeads": 45 },
+    "fingerprintWorse": false,
+    "fixedOnR1": false,
+    "note": "Paced transitions have paletteLeads=0. Rapid retarget still reproduces PS04-M5-R001 at a smaller frame count than M5.2. Not fixed on R1."
+  },
+  "m51Contracts": {
+    "targetColorDoesNotLeadNormalPacedMorph": true,
+    "centerDwell": false,
+    "latestTargetWins": true,
+    "oneTransactionClock": true,
+    "oneCanvas": true,
+    "oneActor": true
+  },
+  "pass": true
+}

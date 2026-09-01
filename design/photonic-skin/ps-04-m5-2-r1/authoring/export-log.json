@@ -1,0 +1,56 @@
+{
+  "stage": "PS-04.M5.2.R1",
+  "seed": 20260901,
+  "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+  "eventAR1Hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+  "grammar": {
+    "kind": "smooth-union sphere/ellipsoid head + tapered-capsule torso + short neck",
+    "seed": 20260901,
+    "derivedFrom": "EVENT_A figure-right pose; proportions from left/centre range",
+    "targetHeight": 1.481136372089386,
+    "targetWidth": 0.5567713448101166,
+    "headRadius": 0.23049377162693319,
+    "shoulderRadius": 0.22127402076185584,
+    "baseRadius": 0.25667786408375276,
+    "torsoBase": 0.25667786408375276,
+    "torsoTop": 1.084687084891061,
+    "headCenterZ": 1.2045438461370663,
+    "neckA": 1.0669134484259883,
+    "neckB": 1.153835216379141,
+    "neckRadius": 0.16816825577901046,
+    "smoothK": 0.07109454586029053,
+    "translate": [
+      -0.7455527274461274,
+      -0.6989454402682487,
+      -0.7266569137573242
+    ],
+    "rotateDeg": [
+      0.0,
+      0.0,
+      161.30410918305816
+    ],
+    "keptRightCentroidXY": [
+      -0.7455527274461274,
+      -0.6989454402682487
+    ],
+    "deckZ": -0.7540427017211914,
+    "baseZ": -0.7266569137573242,
+    "transformChain": [
+      "frozen BASELINE",
+      "EVENT_A rigid +180° Z",
+      "selective figure-right refinement",
+      "EVENT_A_R1"
+    ]
+  },
+  "changedFields": [
+    "position",
+    "normal",
+    "orientation"
+  ],
+  "rightActiveMapped": 890,
+  "mesh": {
+    "vertices": 4052,
+    "faces": 8100
+  },
+  "deterministic": true
+}

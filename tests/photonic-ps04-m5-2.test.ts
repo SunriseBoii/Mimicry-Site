@@ -259,10 +259,10 @@ test("M5.2 does not mutate canonical aggregate, M5.1 source, frozen hashes, Even
 test("M5.2 sandbox route is isolated and validates variant query params", () => {
   assert.match(sandboxLab, /ps04-m5-2-event-sandbox/);
   assert.match(sandboxLab, /runId: "ps04-m5-2"/);
-  assert.equal(parseSandboxQuery("").variant, "baseline");
+  assert.equal(parseSandboxQuery("").variant, "a-r1");
   assert.equal(parseSandboxQuery("?variant=a&view=opposite&theme=dark&labels=0&mode=transition").variant, "a");
   assert.equal(parseSandboxQuery("?variant=a").view, "canonical");
-  assert.equal(parseSandboxQuery("?variant=nope").variant, "baseline");
+  assert.equal(parseSandboxQuery("?variant=nope").variant, "a-r1");
   assert.equal(parseSandboxQuery("?variant=nope").invalidVariant, true);
   assert.equal(parseSandboxQuery("?view=orbit").view, "canonical");
   assert.equal(parseSandboxQuery("?theme=neon").theme, "light");

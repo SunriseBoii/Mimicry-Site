@@ -1,0 +1,61 @@
+{
+  "stage": "PS-04.M5.2.R1",
+  "method": "Playwright cycle A_R1→A→BASELINE→B→C→A_R1 × 20 on one page, then snapshot renderer stats, resource cache, and GPU bank pool. Heap from Edge smoke via performance.memory.",
+  "invariants": {
+    "canvas": 1,
+    "persistentActor": true,
+    "rawShaderMaterial": 1,
+    "settledPrograms": 1,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "instances": 16384,
+    "footerDraws": 0,
+    "footerTriangles": 0
+  },
+  "cycleCount": 20,
+  "order": ["a-r1", "a", "baseline", "b", "c", "a-r1"],
+  "snapshotAfterEachCycleVariant": "a-r1",
+  "plateau": {
+    "programs": [1, 1],
+    "rendererTextures": [17, 17],
+    "canvases": [1, 1],
+    "draws": [1, 1],
+    "triangles": [131072, 131072],
+    "gpuTextures": [48, 48],
+    "gpuCreated": [48, 48],
+    "cacheBytes": [1884160, 12211840],
+    "cacheEntries": [1, 5],
+    "resourceState": "gpu-ready"
+  },
+  "leak": false,
+  "note": "Variant switch clears overlay caches then prewarms adjacent SINGLE pairs. After every variant has been visited, cacheEntries plateaus at 5 and GPU bank textures stay 48. Programs stay 1.",
+  "heap": {
+    "instrumented": true,
+    "engine": "Chromium performance.memory on msedge",
+    "usedJSHeapSizeBytes": 59585840,
+    "totalJSHeapSizeBytes": 88382040,
+    "jsHeapSizeLimitBytes": 4395630592,
+    "sample": "post-settled EVENT_A_R1 before context restore (browser-smoke)"
+  },
+  "framebuffer": {
+    "eventAR1VisiblePixelCount": 99313,
+    "afterContextRestoreVisiblePixelCount": 99313,
+    "contextRestoreButtonStatus": "restored",
+    "failDrawWithoutPixels": false
+  },
+  "liveSwitching": {
+    "documentReloadsDuringClicks": 0,
+    "clickAUpdatesHashWithoutReload": true,
+    "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+    "eventAR1Hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc"
+  },
+  "rapidScrollResidual": {
+    "id": "PS04-M5-R001",
+    "reproducedOnEventRapidRetarget": true,
+    "paletteLeadsFrames": 8,
+    "traceFrames": 466,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "fixedOnR1": false
+  }
+}

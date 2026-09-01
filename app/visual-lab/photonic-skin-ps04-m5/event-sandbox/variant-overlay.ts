@@ -3,12 +3,18 @@ import type { PresentationStateEntry } from "../../photonic-skin-m4-1r/photonic-
 import { EVENT_VARIANTS, VARIANT_BUFFER_PATH, type EventVariantId } from "./sandbox-query";
 
 const ALL_PROFILES = ["desktop", "mobile390", "silhouette180", "silhouette96"] as const;
+const FIGURE_RIGHT_COMPONENT = 4;
 
 export function isEventStateId(stateId: string) {
   return stateId === "single-event";
 }
 
-export function cloneEventEntry(entry: StateEntry, variant: EventVariantId, bufferBytes: number): StateEntry {
+export async function sha256Hex(payload: ArrayBuffer | Uint8Array): Promise<string> {
+  const digest = await crypto.subtle.digest("SHA-256", payload as BufferSource);
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+export function cloneEventEntry(entry: StateEntry, variant: EventVariantId, bufferBytes: number, contentHash: string): StateEntry {
   const presented = entry as PresentationStateEntry;
   const componentMap = presented.componentMap?.map((component) => ({
     ...component,
@@ -19,7 +25,7 @@ export function cloneEventEntry(entry: StateEntry, variant: EventVariantId, buff
   return {
     ...entry,
     bufferBytes,
-    contentHash: `ps04-m5-2-${variant}`,
+    contentHash,
     ...(componentMap ? { componentMap } : {}),
   } as StateEntry;
 }
@@ -27,13 +33,14 @@ export function cloneEventEntry(entry: StateEntry, variant: EventVariantId, buff
 export async function loadEventVariantBuffer(variant: EventVariantId, signal?: AbortSignal) {
   const response = await fetch(VARIANT_BUFFER_PATH[variant], { signal });
   if (!response.ok) throw new Error(`Event variant buffer missing: ${variant}`);
-  return response.arrayBuffer();
+  const payload = await response.arrayBuffer();
+  return { payload, hash: await sha256Hex(payload) };
 }
 
 export async function overlayEventState(state: DecodedState, variant: EventVariantId, signal?: AbortSignal) {
   if (!isEventStateId(state.entry.stateId)) return state;
-  const payload = await loadEventVariantBuffer(variant, signal);
-  return decodeState(cloneEventEntry(state.entry, variant, payload.byteLength), payload);
+  const { payload, hash } = await loadEventVariantBuffer(variant, signal);
+  return decodeState(cloneEventEntry(state.entry, variant, payload.byteLength, hash), payload);
 }
 
 export function bboxOf(state: DecodedState) {
@@ -68,6 +75,14 @@ export function componentCounts(state: DecodedState) {
     counts[state.component[id]] += 1;
   }
   return counts;
+}
+
+export function figureRightActiveCount(state: DecodedState) {
+  let count = 0;
+  for (let id = 0; id < state.recordCount; id += 1) {
+    if (state.status[id] === 0 && state.component[id] === FIGURE_RIGHT_COMPONENT) count += 1;
+  }
+  return count;
 }
 
 export { EVENT_VARIANTS };

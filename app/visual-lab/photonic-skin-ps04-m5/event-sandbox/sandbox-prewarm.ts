@@ -59,7 +59,7 @@ export function defaultGeometryForNode(nodeId: string): string | null {
   return DEFAULT_GEOMETRY[nodeId] ?? null;
 }
 
-export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "baseline") {
+export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "a-r1") {
   return `${variant}|${sourceId}|${targetId}|${reducedMotion ? 1 : 0}|${viewport}`;
 }
 
@@ -144,7 +144,7 @@ export class EventSandboxProgramCache {
   private idleHandle: IdleHandle | null = null;
   private cancelled = false;
   private clock = 0;
-  variant: EventVariantId = "baseline";
+  variant: EventVariantId = "a-r1";
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;
   budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
@@ -217,12 +217,13 @@ export class EventSandboxProgramCache {
     this.states.set(`${this.variant}:${state.entry.stateId}`, state);
   }
 
-  async loadState(entry: StateEntry) {
+  async loadState(entry: StateEntry, signal?: AbortSignal) {
     const cacheKey = `${this.variant}:${entry.stateId}`;
     const hit = this.states.get(cacheKey);
     if (hit) return hit;
     const loaded = await loadEntry(entry);
-    const state = await overlayEventState(loaded, this.variant);
+    if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
+    const state = await overlayEventState(loaded, this.variant, signal);
     this.states.set(cacheKey, state);
     return state;
   }

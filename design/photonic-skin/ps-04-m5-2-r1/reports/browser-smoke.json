@@ -1,0 +1,73 @@
+{
+  "capturedAt": "2026-09-01T10:29:54.170Z",
+  "base": "http://127.0.0.1:3000",
+  "defaultRoute": {
+    "runId": "ps04-m5-2",
+    "stage": "PS-04.M5.2.R1",
+    "requested": "a-r1",
+    "displayed": "a-r1",
+    "hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "view": "canonical",
+    "labels": false,
+    "playMode": "settled",
+    "theme": "light",
+    "query": "?variant=a-r1&view=canonical&theme=light&labels=0&mode=settled",
+    "hudHasAR1": true,
+    "hudHasGamesTitle": false
+  },
+  "liveSwitchToA": {
+    "documentReloads": 0,
+    "displayed": "a",
+    "hash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+    "query": "?variant=a&view=canonical&theme=light&labels=0&mode=settled",
+    "hud": "PS‑04.M5.2.R1 EVENT SANDBOXDisplayed: EVENT_AStatus: readyDecision: A selected · original candidateView: canonicalTheme: lightMaterial: finalMode: settledRequested: EVENT_AHash: 76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938dN 16384 · active 14873 · figure-right 890 · LOD 512…16384Source candidate: a · owner: A selected, canonical pending"
+  },
+  "event": {
+    "runId": "ps04-m5-2",
+    "displayed": "a-r1",
+    "overlayHash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "node": "05.3",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "textures": 17,
+    "canvases": 1,
+    "actorDraw": true,
+    "visiblePixelCount": 99313,
+    "actorDrawWithoutPixels": false,
+    "figureRightActive": 890,
+    "memory": {
+      "usedJSHeapSize": 59585840,
+      "totalJSHeapSize": 88382040,
+      "jsHeapSizeLimit": 4395630592
+    }
+  },
+  "contextRestore": {
+    "buttonStatus": "restored",
+    "overlayHash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "displayed": "a-r1",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "actorDraw": true,
+    "visiblePixelCount": 99313,
+    "settledGeometryId": "single-event"
+  },
+  "m51": {
+    "runId": "ps04-m5",
+    "sandboxHandle": false,
+    "node": "01"
+  },
+  "production": {
+    "title": "Mimicry group — агентство корпоративных коммуникаций",
+    "hasSandbox": false,
+    "hasM51": false,
+    "hasM4": false,
+    "siteShell": true
+  },
+  "preview": {
+    "displayed": "a-r1",
+    "hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "badge": ""
+  }
+}

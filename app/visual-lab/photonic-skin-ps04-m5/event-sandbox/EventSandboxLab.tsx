@@ -70,15 +70,17 @@ import { ActorResourcePipeline } from "../resource-lifecycle";
 import { DisjointGpuTimer, R6Instrumentation, r6GpuTimerEnabled, r6StagingEnabled } from "../r6-instrumentation";
 import { EventSandboxProgramCache, frozenProgramKey, reachableFrozenPairs, defaultGeometryForNode } from "./sandbox-prewarm";
 import {
-  EVENT_VARIANTS,
   FROZEN_CAMERAS,
   parseSandboxQuery,
   sandboxSearch,
   type EventVariantId,
   type SandboxPlayMode,
+  type SandboxThemeId,
   type SandboxViewId,
 } from "./sandbox-query";
-import { bboxOf, componentCounts } from "./variant-overlay";
+import { bboxOf, componentCounts, figureRightActiveCount } from "./variant-overlay";
+import { createLoadGate, type SandboxLoadStatus } from "./sandbox-load-gate";
+import { SandboxReviewPanel } from "./SandboxReviewPanel";
 
 declare global {
   interface Window {
@@ -119,13 +121,24 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
   const r6Staging = r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
   const [theme, setTheme] = useState<MaterialTheme>(sandbox.theme);
-  const [variant, setVariant] = useState<EventVariantId>(sandbox.variant);
+  const [requestedVariant, setRequestedVariant] = useState<EventVariantId>(sandbox.variant);
+  const [displayedVariant, setDisplayedVariant] = useState<EventVariantId | null>(null);
+  const [loadStatus, setLoadStatus] = useState<SandboxLoadStatus>("loading");
+  const [bufferHash, setBufferHash] = useState<string | null>(null);
   const [view, setView] = useState<SandboxViewId>(sandbox.view);
   const [labels, setLabels] = useState(sandbox.labels);
   const [playMode, setPlayMode] = useState<SandboxPlayMode>(sandbox.mode);
+  const loadGateRef = useRef(createLoadGate());
+  const applySandboxRef = useRef<(patch: {
+    variant?: EventVariantId;
+    view?: SandboxViewId;
+    theme?: MaterialTheme;
+    labels?: boolean;
+    mode?: SandboxPlayMode;
+  }, history?: "push" | "replace" | "none") => void>(() => undefined);
   const [dpr, setDpr] = useState(() => parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(query.get("reduced") === "1");
-  const [hud, setHud] = useState(mode === "lab" && query.get("hud") !== "0");
+  const [hud, setHud] = useState(query.get("hud") !== "0");
   const [stats, setStats] = useState<SceneStats>(EMPTY_STATS);
   const [environment, setEnvironment] = useState<SceneEnvironment | null>(null);
   const [contextState, setContextState] = useState<"ready" | "lost" | "restored">("ready");
@@ -199,8 +212,8 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const programCache = useMemo(() => new EventSandboxProgramCache(), []);
   const programCacheRef = useRef(programCache);
   useEffect(() => {
-    programCacheRef.current.variant = variant;
-  }, [variant]);
+    programCacheRef.current.variant = requestedVariant;
+  }, [requestedVariant]);
   const gpuPool = useMemo(() => new GpuTexturePool(), []);
   const r6 = useMemo(() => new R6Instrumentation(), []);
   const gpuTimer = useMemo(() => {
@@ -530,7 +543,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
         const viewport = window.innerWidth <= 430 ? "mobile" : "desktop";
         programCacheRef.current.setBudget(viewport === "mobile");
         lookaheadPinsRef.current = programCacheRef.current.replacePins(
-          pairs.map(([from, to]) => frozenProgramKey(from, to, reducedRef.current, viewport, variant)),
+          pairs.map(([from, to]) => frozenProgramKey(from, to, reducedRef.current, viewport, programCacheRef.current.variant)),
           lookaheadPinsRef.current,
           pipelineRef.current.pinnedIntentKey ? [pipelineRef.current.pinnedIntentKey] : [],
         );
@@ -559,7 +572,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       detach();
       html.style.scrollBehavior = previousScrollBehavior;
     };
-  }, [controller, session, startClock, variant]);
+  }, [controller, session, startClock]);
 
   useEffect(() => { session.setReducedMotion(reducedMotion); controller.setReducedMotion(reducedMotion); }, [controller, reducedMotion, session]);
   useLayoutEffect(() => { controller.setUnlock(flow.unlock); }, [controller, flow.unlock]);
@@ -569,86 +582,118 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
 
   useEffect(() => {
     const controllerAbort = new AbortController();
-    const cache = programCacheRef.current;
-    loadRuntimeManifests(controllerAbort.signal).then(async ({ m3, m4 }) => {
+    loadRuntimeManifests(controllerAbort.signal).then(({ m3, m4 }) => {
       setManifest(m3);
       setMotionManifest(m4);
       manifestsRef.current = { m3, m4 };
       stateIndexRef.current = indexStates(m3.states);
-      const queryNode = labQuery().get("node");
-      const bootNode = (queryNode && SCREEN_NODE_BY_ID[queryNode as ScreenNodeId]
-        ? queryNode
-        : playMode === "settled" ? "05.3" : "01") as ScreenNodeId;
-      const bootGeometry = defaultGeometryForNode(bootNode) ?? "master-neutral";
-      const entry = m3.states.find((item) => item.stateId === bootGeometry) ?? m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
-      const state = await cache.loadState(entry);
-      const program = await cache.getFrozen({
-        source: state,
-        target: state,
-        manifest: m3,
-        motion: m4,
-        reducedMotion,
-        signal: controllerAbort.signal,
-      });
-      session.bootstrapSettled(state, program);
-      const bootContract = stateIndexRef.current
-        ? resolveScreenActorContract({
-          nodeId: bootNode,
-          index: indexStates(m3.states),
-          flow: {
-            taskId: null,
-            taskSelected: false,
-            competencies: [],
-            competenciesConfirmed: false,
-            settledStateId: state.entry.stateId,
-          },
-        })
-        : null;
-      if (bootContract) {
-        coordinatorRef.current.adoptSettled(bootContract, identity);
-        geometrySnapshotRef.current = coordinatorRef.current.geometrySnapshot();
-        navigationRef.current.commitActorTarget(bootNode, "restore");
-        requestKeyRef.current = semanticActorKey(bootContract).serialized;
-        contractRef.current = bootContract;
-        setContract(bootContract);
-        setActiveNode(bootNode);
-        if (r6StagingRef.current) {
-          pipelineRef.current.hydrateResident({
-            revision: coordinatorRef.current.snapshot().revision,
-            navigationToken: navigationRef.current.lastToken(),
-            source: state,
-            target: state,
-            program,
-            viewport: typeof window !== "undefined" && window.innerWidth <= 430 ? "mobile" : "desktop",
-          });
-        }
-      }
-      setLoading(false);
-      startClock();
-      cache.startRoutePrewarm({
-        current: bootNode,
-        manifest: m3,
-        motion: m4,
-        reducedMotion,
-        direction: controller.getProgress().direction,
-        hidden: () => session.snapshot().offscreen
-          || document.visibilityState === "hidden"
-          || coordinatorRef.current.snapshot().visualLifecycle === "morphing"
-          || coordinatorRef.current.snapshot().visualLifecycle === "preparing"
-          || pipelineRef.current.state === "gpu-staging"
-          || pipelineRef.current.state === "cpu-preparing",
-      });
-      controller.scrollToNode(bootNode, "auto", "restore");
     }).catch((reason: Error) => {
       if (reason.name !== "AbortError") setError(reason.message);
-      setLoading(false);
     });
+    return () => controllerAbort.abort();
+  }, []);
+
+  useEffect(() => {
+    if (!manifest) return;
+    const generation = loadGateRef.current.next();
+    const abort = new AbortController();
+    const cache = programCacheRef.current;
+    cache.variant = requestedVariant;
+    cache.clearVariantCaches();
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled || abort.signal.aborted) return;
+      setLoadStatus("loading");
+      setLoading(true);
+    });
+    const m3 = manifest;
+    const m4 = motionManifest;
+    const queryNode = labQuery().get("node");
+    const bootNode = (queryNode && SCREEN_NODE_BY_ID[queryNode as ScreenNodeId]
+      ? queryNode
+      : playMode === "settled" ? "05.3" : "01") as ScreenNodeId;
+    const bootGeometry = defaultGeometryForNode(bootNode) ?? "master-neutral";
+    const entry = m3.states.find((item) => item.stateId === bootGeometry) ?? m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
+    void (async () => {
+      try {
+        const state = await cache.loadState(entry, abort.signal);
+        if (abort.signal.aborted || !loadGateRef.current.isCurrent(generation)) return;
+        const program = await cache.getFrozen({
+          source: state,
+          target: state,
+          manifest: m3,
+          motion: m4,
+          reducedMotion,
+          signal: abort.signal,
+        });
+        if (abort.signal.aborted || !loadGateRef.current.isCurrent(generation)) return;
+        session.bootstrapSettled(state, program);
+        const bootContract = stateIndexRef.current
+          ? resolveScreenActorContract({
+            nodeId: bootNode,
+            index: indexStates(m3.states),
+            flow: {
+              taskId: null,
+              taskSelected: false,
+              competencies: [],
+              competenciesConfirmed: false,
+              settledStateId: state.entry.stateId,
+            },
+          })
+          : null;
+        if (bootContract) {
+          coordinatorRef.current.adoptSettled(bootContract, identity);
+          geometrySnapshotRef.current = coordinatorRef.current.geometrySnapshot();
+          navigationRef.current.commitActorTarget(bootNode, "restore");
+          requestKeyRef.current = semanticActorKey(bootContract).serialized;
+          contractRef.current = bootContract;
+          setContract(bootContract);
+          setActiveNode(bootNode);
+          if (r6StagingRef.current) {
+            pipelineRef.current.hydrateResident({
+              revision: coordinatorRef.current.snapshot().revision,
+              navigationToken: navigationRef.current.lastToken(),
+              source: state,
+              target: state,
+              program,
+              viewport: typeof window !== "undefined" && window.innerWidth <= 430 ? "mobile" : "desktop",
+            });
+          }
+        }
+        if (abort.signal.aborted || !loadGateRef.current.isCurrent(generation)) return;
+        setDisplayedVariant(requestedVariant);
+        setBufferHash(state.entry.contentHash);
+        setLoadStatus("ready");
+        setLoading(false);
+        setError(null);
+        startClock();
+        cache.startRoutePrewarm({
+          current: bootNode,
+          manifest: m3,
+          motion: m4,
+          reducedMotion,
+          direction: controller.getProgress().direction,
+          hidden: () => session.snapshot().offscreen
+            || document.visibilityState === "hidden"
+            || coordinatorRef.current.snapshot().visualLifecycle === "morphing"
+            || coordinatorRef.current.snapshot().visualLifecycle === "preparing"
+            || pipelineRef.current.state === "gpu-staging"
+            || pipelineRef.current.state === "cpu-preparing",
+        });
+        if (playMode === "settled") controller.scrollToNode(bootNode, "auto", "restore");
+      } catch (reason) {
+        const error = reason as Error;
+        if (error?.name === "AbortError" || !loadGateRef.current.isCurrent(generation)) return;
+        setError(error.message);
+        setLoadStatus("error");
+        setLoading(false);
+      }
+    })();
     return () => {
-      controllerAbort.abort();
-      cache.cancel();
+      cancelled = true;
+      abort.abort();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, variant]);
+  }, [controller, identity, manifest, motionManifest, playMode, reducedMotion, requestedVariant, session, startClock]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
     const coordinator = coordinatorRef.current;
@@ -989,19 +1034,29 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   useEffect(() => {
     window.__PS04M52_LAB__ = {
       runId: "ps04-m5-2",
-      stage: "PS-04.M5.2",
-      variant,
-      overlayHash: () => session.getTarget()?.entry.contentHash ?? session.getSource()?.entry.contentHash ?? null,
+      stage: "PS-04.M5.2.R1",
+      variant: displayedVariant,
+      requestedVariant,
+      displayedVariant,
+      loadStatus,
+      bufferHash,
+      overlayHash: () => bufferHash ?? session.getTarget()?.entry.contentHash ?? session.getSource()?.entry.contentHash ?? null,
       componentCounts: () => {
         const state = session.getTarget() ?? session.getSource();
         return state ? componentCounts(state) : null;
       },
+      figureRightActive: () => {
+        const state = session.getTarget() ?? session.getSource();
+        return state ? figureRightActiveCount(state) : 0;
+      },
+      selectVariant: (id: EventVariantId) => applySandboxRef.current({ variant: id }),
+      applySandbox: (patch: { variant?: EventVariantId; view?: SandboxViewId; theme?: MaterialTheme; labels?: boolean; mode?: SandboxPlayMode }) => applySandboxRef.current(patch),
       view,
       labels,
       playMode,
       mode,
       get ready() {
-        return Boolean(target && !loading);
+        return Boolean(target && loadStatus === "ready" && displayedVariant === requestedVariant && !loading);
       },
       get labReady() {
         return Boolean(target && !loading);
@@ -1216,7 +1271,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
     };
     window.__PS04M5_LAB__ = window.__PS04M52_LAB__;
     if (mode === "preview") window.__PS04M5_PREVIEW__ = window.__PS04M52_LAB__;
-  }, [activeNode, actorRequest, contextState, controller, diagnostics, environment, flow.overlay, flow.unlock, identity, labels, loading, mode, navigate, playMode, reducedMotion, requestActor, session, sessionId, startClock, stats, target, theme, variant, view]);
+  }, [activeNode, actorRequest, bufferHash, contextState, controller, diagnostics, displayedVariant, environment, flow.overlay, flow.unlock, identity, labels, loading, loadStatus, mode, navigate, playMode, reducedMotion, requestActor, requestedVariant, session, sessionId, startClock, stats, target, theme, view]);
 
   const sceneReady = Boolean(source && target && program && manifest);
   const paper = MATERIAL_THEME_PRESETS[theme].background;
@@ -1226,18 +1281,18 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
     theme?: MaterialTheme;
     labels?: boolean;
     mode?: SandboxPlayMode;
-  }) => {
+  }, history: "push" | "replace" | "none" = "push") => {
     const next = {
-      variant: patch.variant ?? variant,
+      variant: patch.variant ?? requestedVariant,
       view: patch.view ?? view,
-      theme: (patch.theme ?? theme) === "dark" ? "dark" as const : "light" as const,
+      theme: ((patch.theme ?? theme) === "dark" ? "dark" : "light") as SandboxThemeId,
       labels: patch.labels ?? labels,
       mode: patch.mode ?? playMode,
     };
-    if (patch.variant && patch.variant !== variant) {
+    if (patch.variant && patch.variant !== requestedVariant) {
       programCacheRef.current.variant = patch.variant;
-      programCacheRef.current.clearVariantCaches();
-      setVariant(patch.variant);
+      setRequestedVariant(patch.variant);
+      setLoadStatus("loading");
     }
     if (patch.view) setView(patch.view);
     if (patch.theme) setTheme(patch.theme);
@@ -1246,13 +1301,43 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       setPlayMode(patch.mode);
       if (patch.mode === "settled") controller.scrollToNode("05.3", "auto", "restore");
     }
-    window.history.replaceState(null, "", `${window.location.pathname}${sandboxSearch(next)}`);
-  }, [controller, labels, playMode, theme, variant, view]);
+    const url = `${window.location.pathname}${sandboxSearch(next)}`;
+    if (history === "push") window.history.pushState({ sandbox: next }, "", url);
+    else if (history === "replace") window.history.replaceState({ sandbox: next }, "", url);
+  }, [controller, labels, playMode, requestedVariant, theme, view]);
+  useLayoutEffect(() => {
+    applySandboxRef.current = applySandbox;
+  }, [applySandbox]);
+
+  useEffect(() => {
+    const canonical = sandboxSearch({
+      variant: requestedVariant,
+      view,
+      theme: theme === "dark" ? "dark" : "light",
+      labels,
+      mode: playMode,
+    });
+    if (window.location.search !== canonical && window.location.search === "") {
+      window.history.replaceState({ sandbox: { variant: requestedVariant, view, theme, labels, mode: playMode } }, "", `${window.location.pathname}${canonical}`);
+    }
+    const onPop = () => {
+      const parsed = parseSandboxQuery(window.location.search);
+      applySandbox({
+        variant: parsed.variant,
+        view: parsed.view,
+        theme: parsed.theme,
+        labels: parsed.labels,
+        mode: parsed.mode,
+      }, "none");
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [applySandbox, labels, playMode, requestedVariant, theme, view]);
 
   return (
     <main className={styles.lab} data-theme={theme} data-mode={mode} data-actor-mask={actorMask ? "true" : "false"} data-ui={hideUi ? "off" : "on"} style={{ background: actorMask ? "#140028" : paper, colorScheme: theme }}>
       <a className={styles.skip} href="#m4-main">К содержанию</a>
-      <div ref={canvasHostRef} className={styles.canvasHost} data-identity={identity ? "true" : "false"} data-qa="m4-canvas">
+      <div ref={canvasHostRef} className={styles.canvasHost} data-identity={identity ? "true" : "false"} data-qa="m4-canvas" data-displayed-variant={displayedVariant ?? ""} data-requested-variant={requestedVariant} data-load-status={loadStatus} data-buffer-hash={bufferHash ?? ""}>
         {sceneReady && source && target && program && manifest ? (
           <PS04M5Scene
             source={source}
@@ -1383,41 +1468,43 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       {flow.overlay === "success" ? (
         <SuccessStatus onClose={() => { setFlow(closeOverlay); sendButtonRef.current?.focus(); }} />
       ) : null}
-      {hud ? (
-        <aside className={styles.hud} data-qa="m52-hud">
-          <div>PS-04.M5.2 EVENT SANDBOX · {variant.toUpperCase()} · {view} · {theme} · {labels ? "labelled" : "unlabelled"} · {playMode}</div>
-          <div>PS-04.M5.1 choreography · {activeNode} · {SCREEN_NODE_BY_ID[activeNode].title}</div>
-          <div>
-            {contract ? <>{contract.requestedFamily} → {contract.resolvedGeometryId ?? "none"}<span className={styles.badge}>{contract.resolution}</span></> : "boot"}
-          </div>
-          <div>N 16384 · LOD prefix 512…16384 · variant {variant} · hash {displayedState?.entry.contentHash ?? "—"}</div>
-          <div>bbox {displayedState ? bboxOf(displayedState).min.map((value) => value.toFixed(2)).join(",") : "—"} → {displayedState ? bboxOf(displayedState).max.map((value) => value.toFixed(2)).join(",") : "—"}</div>
-          <div>centroid {displayedState ? bboxOf(displayedState).centroid.map((value) => value.toFixed(3)).join(",") : "—"} · active {displayedState ? bboxOf(displayedState).activeCount : 0}</div>
-          <div>components {displayedState ? componentCounts(displayedState).join("/") : "—"}</div>
-          <div>rev {txUi?.revision ?? ui?.requestRevision ?? 0} · {txUi?.semanticPhase ?? ui?.phaseAdapter.motionPhase ?? "idle"} · g {(txUi?.geometryProgress ?? ui?.geometryProgress ?? 1).toFixed(2)} · p {(txUi?.paletteProgress ?? ui?.palette.paletteProgress ?? 1).toFixed(2)}</div>
-          <div>{txUi?.sourceGeometryId ?? "—"} → {txUi?.targetGeometryId ?? "—"}</div>
-          <div>
-            {stats.lastActorDrawCalls} draw / {stats.lastActorTriangles} tri · {stats.programs}P {stats.textures}T · {stats.fps} fps
-          </div>
-          <div>WebGL {contextState} · {loading ? "loading" : "ready"}{error ? ` · ${error}` : ""}</div>
-          <div>
-            {EVENT_VARIANTS.map((id) => (
-              <button key={id} type="button" data-active={variant === id} onClick={() => applySandbox({ variant: id })}>{id === "baseline" ? "BASELINE" : id.toUpperCase()}</button>
-            ))}
-          </div>
-          <div>
-            {(["canonical", "alternate", "opposite", "side", "top"] as const).map((id) => (
-              <button key={id} type="button" data-active={view === id} onClick={() => applySandbox({ view: id })}>{id}</button>
-            ))}
-          </div>
-          <div>
-            <button type="button" onClick={() => applySandbox({ theme: theme === "light" ? "dark" : "light" })}>{theme === "light" ? "Light" : "Dark"}</button>
-            <button type="button" onClick={() => applySandbox({ labels: !labels })}>{labels ? "Labelled" : "Unlabelled"}</button>
-            <button type="button" onClick={() => applySandbox({ mode: playMode === "settled" ? "transition" : "settled" })}>{playMode}</button>
-            <button type="button" onClick={() => setManualReduced(!manualReduced)}>Reduced</button>
-            <button type="button" onClick={() => setHud(false)}>Hide HUD</button>
-          </div>
-        </aside>
+      {hud && !hideUi ? (
+        <SandboxReviewPanel
+          mode={mode}
+          requestedVariant={requestedVariant}
+          displayedVariant={displayedVariant}
+          loadStatus={loadStatus}
+          bufferHash={bufferHash}
+          view={view}
+          theme={theme === "dark" ? "dark" : "light"}
+          labels={labels}
+          playMode={playMode}
+          n={16384}
+          activeCount={displayedState ? bboxOf(displayedState).activeCount : 0}
+          figureRightActive={displayedState ? figureRightActiveCount(displayedState) : 0}
+          lodPrefix="512…16384"
+          onVariant={(id) => applySandbox({ variant: id })}
+          onView={(id) => applySandbox({ view: id })}
+          onTheme={(id) => applySandbox({ theme: id })}
+          onLabels={(value) => applySandbox({ labels: value })}
+          onMode={(value) => applySandbox({ mode: value })}
+          onOpenLab={mode === "preview" ? () => {
+            window.history.pushState(null, "", `/visual-lab/photonic-skin-ps04-m5/event-sandbox${sandboxSearch({
+              variant: requestedVariant,
+              view,
+              theme: theme === "dark" ? "dark" : "light",
+              labels,
+              mode: playMode,
+            })}`);
+            window.location.assign(`/visual-lab/photonic-skin-ps04-m5/event-sandbox${sandboxSearch({
+              variant: requestedVariant,
+              view,
+              theme: theme === "dark" ? "dark" : "light",
+              labels,
+              mode: playMode,
+            })}`);
+          } : undefined}
+        />
       ) : null}
     </main>
   );
