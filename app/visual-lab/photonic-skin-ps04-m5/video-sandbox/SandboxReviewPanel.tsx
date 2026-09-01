@@ -3,6 +3,7 @@
 import type { KeyboardEvent } from "react";
 import {
   CAMERA_VIDEO_VARIANTS,
+  COMBO_BEFORE_VIDEO_VARIANTS,
   COMBO_VIDEO_VARIANTS,
   HISTORICAL_VIDEO_VARIANTS,
   ISOLATE_LABELS,
@@ -11,7 +12,9 @@ import {
   SANDBOX_VIEWS,
   VARIANT_META,
   VIEW_LABELS,
-  yawLabel,
+  clapperOpenLabel,
+  compositionYawLabel,
+  hingeStatusLabel,
   type SandboxIsolateId,
   type SandboxPlayMode,
   type SandboxThemeId,
@@ -64,7 +67,10 @@ export function SandboxReviewPanel(props: {
     : props.loadStatus === "error"
       ? "Ошибка загрузки"
       : "ready";
-  const yaw = displayed ? yawLabel(displayed) : yawLabel(props.requestedVariant);
+  const yawSource = displayed ?? props.requestedVariant;
+  const yaw = compositionYawLabel(yawSource);
+  const openAngle = clapperOpenLabel(yawSource);
+  const hinge = hingeStatusLabel(yawSource);
 
   if (props.mode === "preview") {
     return (
@@ -96,7 +102,7 @@ export function SandboxReviewPanel(props: {
   return (
     <aside className={styles.sandboxPanel} data-qa="m53-review-panel">
       <div className={styles.sandboxHud} data-qa="m53-hud">
-        <div className={styles.sandboxKicker}>PS‑04.M5.3 VIDEO SANDBOX</div>
+        <div className={styles.sandboxKicker}>PS‑04.M5.3.R1 VIDEO SANDBOX</div>
         <div><strong>Displayed:</strong> {displayedMeta?.hudName ?? "—"}</div>
         <div><strong>Status:</strong> <span aria-live="polite">{statusText}</span></div>
         <div><strong>Decision:</strong> {displayedMeta?.decision ?? requestedMeta.decision}</div>
@@ -104,7 +110,9 @@ export function SandboxReviewPanel(props: {
         <div><strong>Theme:</strong> {props.theme}</div>
         <div><strong>Material:</strong> {props.labels ? "component diagnostic" : "final"}</div>
         <div><strong>Mode:</strong> {props.playMode}</div>
-        <div><strong>Yaw:</strong> {yaw}</div>
+        <div><strong>Composition yaw:</strong> {yaw}</div>
+        <div><strong>Clapper open angle:</strong> {openAngle}</div>
+        <div><strong>Hinge:</strong> {hinge}</div>
         <div className={styles.sandboxMuted}>Requested: {requestedMeta.hudName}</div>
         <div className={styles.sandboxMuted}>Hash: {props.bufferHash ?? "—"}</div>
         <div className={styles.sandboxMuted}>N {props.n} · active {props.activeCount} · camera {props.cameraActive} · clapper {props.clapperActive} · bar {props.hingedBarActive} · LOD {props.lodPrefix}</div>
@@ -112,9 +120,18 @@ export function SandboxReviewPanel(props: {
       </div>
 
       <section className={styles.sandboxSection}>
-        <h2>Камера + хлопушка</h2>
-        <div className={styles.sandboxGroup} role="group" aria-label="Камера + хлопушка" onKeyDown={(event) => onVariantKey(event, COMBO_VIDEO_VARIANTS)}>
+        <h2>R1 — соединённый шарнир</h2>
+        <div className={styles.sandboxGroup} role="group" aria-label="R1 — соединённый шарнир" onKeyDown={(event) => onVariantKey(event, COMBO_VIDEO_VARIANTS)}>
           {COMBO_VIDEO_VARIANTS.map((id) => (
+            <VariantButton key={id} id={id} requested={props.requestedVariant} displayed={displayed} onSelect={props.onVariant} />
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.sandboxSection}>
+        <h2>M5.3 — брусок отделён</h2>
+        <div className={styles.sandboxGroup} role="group" aria-label="M5.3 — брусок отделён" onKeyDown={(event) => onVariantKey(event, COMBO_BEFORE_VIDEO_VARIANTS)}>
+          {COMBO_BEFORE_VIDEO_VARIANTS.map((id) => (
             <VariantButton key={id} id={id} requested={props.requestedVariant} displayed={displayed} onSelect={props.onVariant} />
           ))}
         </div>

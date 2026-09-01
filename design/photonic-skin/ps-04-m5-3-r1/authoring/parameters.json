@@ -1,0 +1,30 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "identitySize": 16384,
+  "recordStride": 40,
+  "seed": "0x4d35335231",
+  "openAngleDegrees": 30.0,
+  "overlapFraction": 0.05,
+  "yawAxis": "+Z",
+  "signedYawDegrees": [
+    -20.0,
+    -30.0,
+    -40.0
+  ],
+  "clapperOpenDegrees": 30.0,
+  "defaultReviewVariant": "combo-30-r1",
+  "notWinner": true,
+  "ownerSpecHash": "4f7d67fb8ee37a0fb1fb024a8e68b6bf39486db414b6016edbc7fbcb41ba018e",
+  "frozenVideoHash": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+  "eventAR2Hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+  "sourceHashes": {
+    "baseline": "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b",
+    "combo-20": "ed88723a879416d4302d0146770c46956019c6941229a0fb28db0d843f67032f",
+    "combo-30": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "combo-40": "5efc8dbf7e65928c05727185dd6ef8ee13ccf7f080320bf4bde675c03befe726",
+    "camera-20": "db4a0e7f05ab591b22e11413a7dd3aad29d2fba1acf3da081ca87132cc8b6b64",
+    "camera-30": "a04c36a24b9f61f536fbc2fea9d74b7aaa1393d61b2e4494b023164ef84ded83",
+    "camera-40": "0d08273d1c485b82ae994d32a240fd3c7994f8046d92feeace28c1d13f259d6c"
+  },
+  "boardFitMedianAbsSdf": 0.00026787990052540636
+}

@@ -1,0 +1,71 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "method": "Playwright cycle combo-30 ↔ combo-30-r1 × 20 on one page, plus Edge smoke framebuffer/context restore.",
+  "invariants": {
+    "canvas": 1,
+    "persistentActor": true,
+    "rawShaderMaterial": 1,
+    "settledPrograms": 1,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "instances": 16384,
+    "footerDraws": 0,
+    "footerTriangles": 0
+  },
+  "cycleCount": 20,
+  "order": [
+    "combo-30",
+    "combo-30-r1"
+  ],
+  "plateau": {
+    "programs": [
+      1,
+      1
+    ],
+    "rendererTextures": [
+      17,
+      17
+    ],
+    "canvases": [
+      1,
+      1
+    ],
+    "draws": [
+      1,
+      1
+    ],
+    "triangles": [
+      131072,
+      131072
+    ],
+    "cacheBytes": [
+      12216192,
+      12216192
+    ],
+    "cacheEntries": [
+      5,
+      5
+    ]
+  },
+  "leak": false,
+  "liveSwitching": {
+    "documentReloadsDuringClicks": 0,
+    "clickOriginalUpdatesHashWithoutReload": true,
+    "combo30r1Hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "combo30Hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb"
+  },
+  "rapidScrollResidual": {
+    "id": "PS04-M5-R001",
+    "reproducedOnVideoRapidRetarget": false,
+    "paletteLeadsFrames": 0,
+    "traceFrames": 234,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "fixedOnM53R1": false
+  },
+  "framebuffer": {
+    "combo30r1VisiblePixelCount": 29386,
+    "afterContextRestoreVisiblePixelCount": 53387,
+    "contextRestoreButtonStatus": "restored"
+  }
+}

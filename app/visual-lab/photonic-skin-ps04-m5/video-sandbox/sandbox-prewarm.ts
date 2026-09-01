@@ -59,7 +59,7 @@ export function defaultGeometryForNode(nodeId: string): string | null {
   return DEFAULT_GEOMETRY[nodeId] ?? null;
 }
 
-export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "combo-30") {
+export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "combo-30-r1") {
   return `${variant}|${sourceId}|${targetId}|${reducedMotion ? 1 : 0}|${viewport}`;
 }
 
@@ -144,7 +144,7 @@ export class VideoSandboxProgramCache {
   private idleHandle: IdleHandle | null = null;
   private cancelled = false;
   private clock = 0;
-  variant: VideoVariantId = "combo-30";
+  variant: VideoVariantId = "combo-30-r1";
   isolate: SandboxIsolateId = "full";
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;

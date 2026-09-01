@@ -1,0 +1,83 @@
+{
+  "capturedAt": "2026-09-01T14:26:50.068Z",
+  "base": "http://localhost:3000",
+  "defaultRoute": {
+    "runId": "ps04-m5-3-r1",
+    "stage": "PS-04.M5.3.R1",
+    "requested": "combo-30-r1",
+    "displayed": "combo-30-r1",
+    "hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "view": "canonical",
+    "labels": false,
+    "playMode": "settled",
+    "theme": "light",
+    "yaw": "-30° around +Z",
+    "compositionYaw": "-30° around +Z",
+    "clapperOpenAngle": "30°",
+    "hingeStatus": "connected / pending human review",
+    "query": "?variant=combo-30-r1&view=canonical&theme=light&labels=0&mode=settled",
+    "hudHasCombo30R1": true,
+    "hudHasCompositionYaw": true,
+    "hudHasClapperOpen": true,
+    "hudHasHinge": true,
+    "notCanonicalClaim": true,
+    "draws": 1,
+    "triangles": 131072,
+    "canvases": 1,
+    "programs": 1
+  },
+  "liveSwitchToOriginal": {
+    "documentReloads": 0,
+    "displayed": "combo-30",
+    "hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb"
+  },
+  "combo30r1": {
+    "runId": "ps04-m5-3-r1",
+    "displayed": "combo-30-r1",
+    "overlayHash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "node": "05.5",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "textures": 17,
+    "canvases": 1,
+    "actorDraw": true,
+    "visiblePixelCount": 29386,
+    "cameraActive": 7674,
+    "clapperActive": 5332,
+    "hingedBarActive": 929,
+    "compositionYaw": "-30° around +Z",
+    "clapperOpenAngle": "30°",
+    "hingeStatus": "connected / pending human review"
+  },
+  "contextRestore": {
+    "buttonStatus": "restored",
+    "overlayHash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "displayed": "combo-30-r1",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "visiblePixelCount": 53387
+  },
+  "eventSandbox": {
+    "runId": "ps04-m5-2",
+    "stage": "PS-04.M5.2.R2",
+    "displayed": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "m51": {
+    "runId": "ps04-m5",
+    "sandboxHandle": false
+  },
+  "production": {
+    "title": "Mimicry group — агентство корпоративных коммуникаций",
+    "hasSandbox": false,
+    "hasM51": false,
+    "siteShell": true
+  },
+  "preview": {
+    "displayed": "combo-30-r1",
+    "hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "runId": "ps04-m5-3-r1"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "ownerSpec": {
+    "path": "design/photonic-skin/ps-04-m5-3-r1/references/clapperboard-anatomy-spec.md",
+    "hash": "4f7d67fb8ee37a0fb1fb024a8e68b6bf39486db414b6016edbc7fbcb41ba018e",
+    "bytes": 19426,
+    "ownerSpecRead": true,
+    "ownerSpecHash": "4f7d67fb8ee37a0fb1fb024a8e68b6bf39486db414b6016edbc7fbcb41ba018e",
+    "ownerSpecIsSourceOfTruth": true,
+    "readFully": true,
+    "markersFound": [
+      "documentId: PS04-M53R1-CLAPPERBOARD-ANATOMY",
+      "Pivot-aware construction",
+      "slate-hinged-bar",
+      "openAngleDegrees: 30",
+      "Human-review target"
+    ]
+  },
+  "variants": {
+    "combo-20-r1": {
+      "variant": "combo-20-r1",
+      "sourceVariant": "combo-20",
+      "sourceHash": "ed88723a879416d4302d0146770c46956019c6941229a0fb28db0d843f67032f",
+      "r1Hash": "f3b6aa2e5b8e91f9f033a6b839f21d9fa7f5cd29722794b86966964e8bf629b5",
+      "derivedFromMatchingM53Combo": true,
+      "targetComponentIds": [
+        "slate-fixed-rail",
+        "slate-hinged-bar"
+      ],
+      "allowedFields": [
+        "position",
+        "normal",
+        "orientation"
+      ],
+      "forbiddenFieldsChanged": [],
+      "nonClapperByteIdentity": true,
+      "cameraBodyUnchanged": true,
+      "cameraLensUnchanged": true,
+      "cameraTopUnchanged": true,
+      "cameraRearUnchanged": true,
+      "slateBoardUnchanged": true,
+      "changedRecordCount": 2486,
+      "railChanged": 1075,
+      "barChanged": 1411,
+      "scaleChanged": false,
+      "densityChanged": false,
+      "statusChanged": false,
+      "n": 16384,
+      "lodPriorityIdentity": true,
+      "oneActor": true,
+      "extraRuntimeMesh": false
+    },
+    "combo-30-r1": {
+      "variant": "combo-30-r1",
+      "sourceVariant": "combo-30",
+      "sourceHash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+      "r1Hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+      "derivedFromMatchingM53Combo": true,
+      "targetComponentIds": [
+        "slate-fixed-rail",
+        "slate-hinged-bar"
+      ],
+      "allowedFields": [
+        "position",
+        "normal",
+        "orientation"
+      ],
+      "forbiddenFieldsChanged": [],
+      "nonClapperByteIdentity": true,
+      "cameraBodyUnchanged": true,
+      "cameraLensUnchanged": true,
+      "cameraTopUnchanged": true,
+      "cameraRearUnchanged": true,
+      "slateBoardUnchanged": true,
+      "changedRecordCount": 2486,
+      "railChanged": 1075,
+      "barChanged": 1411,
+      "scaleChanged": false,
+      "densityChanged": false,
+      "statusChanged": false,
+      "n": 16384,
+      "lodPriorityIdentity": true,
+      "oneActor": true,
+      "extraRuntimeMesh": false
+    },
+    "combo-40-r1": {
+      "variant": "combo-40-r1",
+      "sourceVariant": "combo-40",
+      "sourceHash": "5efc8dbf7e65928c05727185dd6ef8ee13ccf7f080320bf4bde675c03befe726",
+      "r1Hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+      "derivedFromMatchingM53Combo": true,
+      "targetComponentIds": [
+        "slate-fixed-rail",
+        "slate-hinged-bar"
+      ],
+      "allowedFields": [
+        "position",
+        "normal",
+        "orientation"
+      ],
+      "forbiddenFieldsChanged": [],
+      "nonClapperByteIdentity": true,
+      "cameraBodyUnchanged": true,
+      "cameraLensUnchanged": true,
+      "cameraTopUnchanged": true,
+      "cameraRearUnchanged": true,
+      "slateBoardUnchanged": true,
+      "changedRecordCount": 2486,
+      "railChanged": 1075,
+      "barChanged": 1411,
+      "scaleChanged": false,
+      "densityChanged": false,
+      "statusChanged": false,
+      "n": 16384,
+      "lodPriorityIdentity": true,
+      "oneActor": true,
+      "extraRuntimeMesh": false
+    }
+  },
+  "nonClapperByteIdentity": true,
+  "slateBoardUnchanged": true,
+  "cameraUnchanged": true,
+  "originalM53HashesUnchanged": {
+    "baseline": true,
+    "combo-20": true,
+    "combo-30": true,
+    "combo-40": true,
+    "camera-20": true,
+    "camera-30": true,
+    "camera-40": true
+  },
+  "publicOriginalUnchanged": {
+    "baseline": true,
+    "combo-20": true,
+    "combo-30": true,
+    "combo-40": true,
+    "camera-20": true,
+    "camera-30": true,
+    "camera-40": true
+  }
+}

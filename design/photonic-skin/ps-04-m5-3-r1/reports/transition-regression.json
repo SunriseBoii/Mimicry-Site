@@ -1,0 +1,442 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "method": "Playwright M5 traces on Video sandbox at playbackRate=1, Video→Digital, Digital→Video, reverse, idle, reduced motion, context restore, rapid retarget, live variant switching, Back/Forward",
+  "pacedByVariant": {
+    "combo-20-r1": {
+      "videoDigital": {
+        "video": "combo-20-r1-video-digital.webm",
+        "frames": 222,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-20-r1",
+          "displayed": "combo-20-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "compositionYaw": "-20° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-20-r1-digital-video.webm",
+        "frames": 223,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-20-r1",
+          "displayed": "combo-20-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-20° around +Z",
+          "compositionYaw": "-20° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    },
+    "combo-30-r1": {
+      "videoDigital": {
+        "video": "combo-30-r1-video-digital.webm",
+        "frames": 209,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-30-r1",
+          "displayed": "combo-30-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "compositionYaw": "-30° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-30-r1-digital-video.webm",
+        "frames": 211,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-30-r1",
+          "displayed": "combo-30-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-30° around +Z",
+          "compositionYaw": "-30° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    },
+    "combo-40-r1": {
+      "videoDigital": {
+        "video": "combo-40-r1-video-digital.webm",
+        "frames": 221,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-video",
+          "master-neutral",
+          "single-digital"
+        ],
+        "screens": [
+          "05.5",
+          "05.6"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-40-r1",
+          "displayed": "combo-40-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "compositionYaw": "-40° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.6",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 33,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 16176,
+          "clapperActive": 0,
+          "hingedBarActive": 0
+        }
+      },
+      "digitalVideo": {
+        "video": "combo-40-r1-digital-video.webm",
+        "frames": 225,
+        "paletteLeads": 0,
+        "centerDeclaredAsTarget": 0,
+        "geometryIds": [
+          "single-digital",
+          "master-neutral",
+          "single-video"
+        ],
+        "screens": [
+          "05.6",
+          "05.5"
+        ],
+        "thirdGeometryDuringMorph": false,
+        "pass": true,
+        "final": {
+          "runId": "ps04-m5-3-r1",
+          "requested": "combo-40-r1",
+          "displayed": "combo-40-r1",
+          "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+          "view": "canonical",
+          "labels": false,
+          "playMode": "transition",
+          "isolate": "full",
+          "yaw": "-40° around +Z",
+          "compositionYaw": "-40° around +Z",
+          "clapperOpenAngle": "30°",
+          "hingeStatus": "connected / pending human review",
+          "node": "05.5",
+          "draws": 1,
+          "triangles": 131072,
+          "programs": 1,
+          "textures": 49,
+          "canvases": 1,
+          "loadStatus": "ready",
+          "cameraActive": 7674,
+          "clapperActive": 5332,
+          "hingedBarActive": 929
+        }
+      }
+    }
+  },
+  "pacedVideoDigital": {
+    "video": "combo-30-r1-video-digital.webm",
+    "frames": 209,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": [
+      "single-video",
+      "master-neutral",
+      "single-digital"
+    ],
+    "screens": [
+      "05.5",
+      "05.6"
+    ],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "final": {
+      "runId": "ps04-m5-3-r1",
+      "requested": "combo-30-r1",
+      "displayed": "combo-30-r1",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "view": "canonical",
+      "labels": false,
+      "playMode": "transition",
+      "isolate": "full",
+      "yaw": "-30° around +Z",
+      "compositionYaw": "-30° around +Z",
+      "clapperOpenAngle": "30°",
+      "hingeStatus": "connected / pending human review",
+      "node": "05.6",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 33,
+      "canvases": 1,
+      "loadStatus": "ready",
+      "cameraActive": 16176,
+      "clapperActive": 0,
+      "hingedBarActive": 0
+    }
+  },
+  "pacedDigitalVideo": {
+    "video": "combo-30-r1-digital-video.webm",
+    "frames": 211,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": [
+      "single-digital",
+      "master-neutral",
+      "single-video"
+    ],
+    "screens": [
+      "05.6",
+      "05.5"
+    ],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "final": {
+      "runId": "ps04-m5-3-r1",
+      "requested": "combo-30-r1",
+      "displayed": "combo-30-r1",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "view": "canonical",
+      "labels": false,
+      "playMode": "transition",
+      "isolate": "full",
+      "yaw": "-30° around +Z",
+      "compositionYaw": "-30° around +Z",
+      "clapperOpenAngle": "30°",
+      "hingeStatus": "connected / pending human review",
+      "node": "05.5",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 49,
+      "canvases": 1,
+      "loadStatus": "ready",
+      "cameraActive": 7674,
+      "clapperActive": 5332,
+      "hingedBarActive": 929
+    }
+  },
+  "reverse": {
+    "video": "combo-30-r1-reverse.webm",
+    "frames": 219,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": [
+      "single-digital",
+      "master-neutral",
+      "single-video"
+    ],
+    "screens": [
+      "05.6",
+      "05.5"
+    ],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "final": {
+      "runId": "ps04-m5-3-r1",
+      "requested": "combo-30-r1",
+      "displayed": "combo-30-r1",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "view": "canonical",
+      "labels": false,
+      "playMode": "transition",
+      "isolate": "full",
+      "yaw": "-30° around +Z",
+      "compositionYaw": "-30° around +Z",
+      "clapperOpenAngle": "30°",
+      "hingeStatus": "connected / pending human review",
+      "node": "05.5",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "textures": 49,
+      "canvases": 1,
+      "loadStatus": "ready",
+      "cameraActive": 7674,
+      "clapperActive": 5332,
+      "hingedBarActive": 929
+    }
+  },
+  "idle5s": {
+    "video": "combo-30-r1-idle.webm",
+    "displayed": "combo-30-r1",
+    "hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "draws": 1,
+    "triangles": 131072
+  },
+  "reducedMotion": {
+    "video": "combo-30-r1-reduced-motion.webm",
+    "displayed": "combo-30-r1",
+    "pass": true
+  },
+  "contextRestore": {
+    "video": "combo-30-r1-context-restore.webm",
+    "displayed": "combo-30-r1",
+    "hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "buttonStatus": "restored",
+    "visiblePixelCount": 53387
+  },
+  "liveSwitch": {
+    "documentReloadsDuringClicks": 0,
+    "combo30r1Hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+    "combo30Hash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+    "backLandsOnPreviousHistoryEntry": true,
+    "forwardRestoresLatestHistoryEntry": true,
+    "dedicatedBackForwardRestoresCombo30R1": true
+  },
+  "rapidResidual": {
+    "id": "PS04-M5-R001",
+    "video": "combo-30-r1-rapid-residual.webm",
+    "frames": 234,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "m52Reference": {
+      "frames": 63,
+      "paletteLeads": 45
+    },
+    "r2Reference": {
+      "frames": 75,
+      "paletteLeads": 59
+    },
+    "m53Reference": {
+      "frames": 239,
+      "paletteLeads": 0
+    },
+    "fixedOnM53R1": false,
+    "assertionsWeakened": false,
+    "note": "Paced Video↔Digital must keep paletteLeads=0 and centerDeclaredAsTarget=0. Rapid retarget fingerprint is recorded as residual PS04-M5-R001 and is not fixed on this revision."
+  },
+  "m51Contracts": {
+    "targetColorDoesNotLeadNormalPacedMorph": true,
+    "centerDwell": false,
+    "latestTargetWins": true,
+    "oneTransactionClock": true,
+    "oneCanvas": true,
+    "oneActor": true
+  },
+  "pacedPass": true,
+  "rapidDeferred": true,
+  "pass": true
+}

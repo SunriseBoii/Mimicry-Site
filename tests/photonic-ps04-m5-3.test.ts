@@ -12,6 +12,7 @@ import {
 } from "../app/visual-lab/photonic-skin-ps04-m5/m5-choreography";
 import {
   FROZEN_CAMERAS,
+  ORIGINAL_M53_VIDEO_VARIANTS,
   parseSandboxQuery,
   SANDBOX_DEFAULTS,
   sandboxSearch,
@@ -145,9 +146,11 @@ test("original SINGLE Video hash is frozen and published as VIDEO_BASELINE", () 
   assert.equal(m41.aggregateContentHash, AGGREGATE);
 });
 
-test("seven Video variants exist with deterministic published hashes", () => {
-  assert.deepEqual([...VIDEO_VARIANTS].sort(), ["baseline", "camera-20", "camera-30", "camera-40", "combo-20", "combo-30", "combo-40"]);
-  for (const name of VIDEO_VARIANTS) {
+test("seven original M5.3 Video variants remain published with frozen hashes", () => {
+  assert.ok(VIDEO_VARIANTS.includes("combo-30"));
+  assert.ok(VIDEO_VARIANTS.includes("combo-30-r1"));
+  assert.deepEqual([...ORIGINAL_M53_VIDEO_VARIANTS].sort(), ["baseline", "camera-20", "camera-30", "camera-40", "combo-20", "combo-30", "combo-40"]);
+  for (const name of ORIGINAL_M53_VIDEO_VARIANTS) {
     const design = loadBin(`design/photonic-skin/ps-04-m5-3/variants/${name}/single-video.state.bin`);
     const published = loadBin(`public/photonic-skin/ps-04-m5-3/variants/${name}/single-video.state.bin`);
     assert.equal(design.hash, HASHES[name]);
@@ -234,22 +237,23 @@ test("overlay packed activation keeps Video parts visible; isolation is not a se
   assert.match(sandboxLab, /one actor|InstancedMesh|PS04M5Scene/);
 });
 
-test("Video sandbox defaults, URL contract, requested/displayed and latest-selection-wins", () => {
-  assert.equal(SANDBOX_DEFAULTS.variant, "combo-30");
+test("Video sandbox still exposes original M5.3 variants and R1 URL contract", () => {
+  assert.equal(SANDBOX_DEFAULTS.variant, "combo-30-r1");
   assert.equal(SANDBOX_DEFAULTS.view, "canonical");
   assert.equal(SANDBOX_DEFAULTS.theme, "light");
   assert.equal(SANDBOX_DEFAULTS.labels, false);
   assert.equal(SANDBOX_DEFAULTS.mode, "settled");
-  assert.equal(parseSandboxQuery("").variant, "combo-30");
-  assert.equal(parseSandboxQuery("?variant=nope").variant, "combo-30");
+  assert.equal(parseSandboxQuery("").variant, "combo-30-r1");
+  assert.equal(parseSandboxQuery("?variant=nope").variant, "combo-30-r1");
   assert.equal(parseSandboxQuery("?variant=nope").invalidVariant, true);
   assert.equal(parseSandboxQuery("?variant=baseline").variant, "baseline");
+  assert.equal(parseSandboxQuery("?variant=combo-30").variant, "combo-30");
   assert.equal(parseSandboxQuery("?variant=combo-20&view=alternate&theme=dark&labels=1&mode=transition").mode, "transition");
   assert.match(sandboxSearch({ variant: "combo-30", view: "canonical", theme: "light", labels: false, mode: "settled" }), /variant=combo-30/);
   assert.doesNotMatch(sandboxSearch({ variant: "combo-30", view: "canonical", theme: "light", labels: false, mode: "settled" }), /isolate=/);
   assert.equal(VARIANT_META["combo-30"].hudName, "VIDEO_COMBO_30");
   assert.equal(VARIANT_META["combo-30"].signedYawDegrees, -30);
-  assert.match(VARIANT_META["combo-30"].decision, /no Video candidate selected/);
+  assert.match(VARIANT_META["combo-30"].decision, /detached|rejected/);
   assert.match(sandboxLab, /loadGateRef/);
   assert.match(sandboxLab, /pushState/);
   assert.match(sandboxLab, /popstate/);

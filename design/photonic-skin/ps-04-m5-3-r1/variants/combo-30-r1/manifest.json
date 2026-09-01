@@ -1,0 +1,205 @@
+{
+  "variant": "combo-30-r1",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/combo-30-r1/single-video.state.bin",
+  "n": 16384,
+  "activeCount": 13006,
+  "reserveCount": 1689,
+  "subsurfaceCount": 1689,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -2.4077799320220947,
+      -1.1702700853347778,
+      -1.0367538928985596
+    ],
+    "max": [
+      2.4104459285736084,
+      2.4325475692749023,
+      1.7744264602661133
+    ],
+    "size": [
+      4.818225860595703,
+      3.60281765460968,
+      2.811180353164673
+    ]
+  },
+  "centroid": [
+    -0.07574112711802201,
+    0.47238443725956675,
+    -0.13188988524131484
+  ],
+  "componentCounts": {
+    "camera-body": 3767,
+    "camera-lens": 2988,
+    "camera-top": 479,
+    "camera-rear": 440,
+    "slate-board": 3810,
+    "slate-fixed-rail": 593,
+    "slate-hinged-bar": 929
+  },
+  "contentHash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+  "lodPriorityIsIdentity": true,
+  "kind": "camera-plus-clapper-r1",
+  "hudName": "VIDEO_COMBO_30_R1",
+  "signedYawDegrees": -30.0,
+  "yawAxis": "+Z",
+  "clapperOpenDegrees": 30.0,
+  "hingeStatus": "connected / pending human review",
+  "sourceVariant": "combo-30",
+  "sourceHash": "4e9f22ae50cb581951decedf2d479ef3670f504ffdc93abb909befda2c7d7cdb",
+  "activePartCounts": {
+    "camera-body": 3767,
+    "camera-lens": 2988,
+    "camera-top": 479,
+    "camera-rear": 440,
+    "slate-board": 3810,
+    "slate-fixed-rail": 593,
+    "slate-hinged-bar": 929
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "camera-body": 140,
+      "camera-lens": 138,
+      "camera-top": 18,
+      "camera-rear": 17,
+      "slate-board": 127,
+      "slate-fixed-rail": 13,
+      "slate-hinged-bar": 59
+    },
+    "1024": {
+      "camera-body": 303,
+      "camera-lens": 238,
+      "camera-top": 33,
+      "camera-rear": 35,
+      "slate-board": 294,
+      "slate-fixed-rail": 23,
+      "slate-hinged-bar": 98
+    },
+    "2048": {
+      "camera-body": 629,
+      "camera-lens": 442,
+      "camera-top": 72,
+      "camera-rear": 74,
+      "slate-board": 618,
+      "slate-fixed-rail": 33,
+      "slate-hinged-bar": 180
+    },
+    "4096": {
+      "camera-body": 1248,
+      "camera-lens": 890,
+      "camera-top": 142,
+      "camera-rear": 147,
+      "slate-board": 1244,
+      "slate-fixed-rail": 90,
+      "slate-hinged-bar": 335
+    },
+    "8192": {
+      "camera-body": 2438,
+      "camera-lens": 1832,
+      "camera-top": 293,
+      "camera-rear": 286,
+      "slate-board": 2450,
+      "slate-fixed-rail": 264,
+      "slate-hinged-bar": 629
+    },
+    "12288": {
+      "camera-body": 3623,
+      "camera-lens": 2772,
+      "camera-top": 436,
+      "camera-rear": 424,
+      "slate-board": 3652,
+      "slate-fixed-rail": 461,
+      "slate-hinged-bar": 920
+    },
+    "16384": {
+      "camera-body": 3767,
+      "camera-lens": 2988,
+      "camera-top": 479,
+      "camera-rear": 440,
+      "slate-board": 3810,
+      "slate-fixed-rail": 593,
+      "slate-hinged-bar": 929
+    }
+  },
+  "componentMap": [
+    {
+      "componentIndex": 0,
+      "componentId": "camera-body",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 1,
+      "componentId": "camera-lens",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 2,
+      "componentId": "camera-top",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 3,
+      "componentId": "camera-rear",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 4,
+      "componentId": "slate-board",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 5,
+      "componentId": "slate-fixed-rail",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "componentIndex": 6,
+      "componentId": "slate-hinged-bar",
+      "competencyId": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    }
+  ]
+}

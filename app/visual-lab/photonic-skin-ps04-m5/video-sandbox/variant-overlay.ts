@@ -12,18 +12,21 @@ const ALL_PROFILES = ["desktop", "mobile390", "silhouette180", "silhouette96"] a
 const COMBO_GROUPS: Record<Exclude<SandboxIsolateId, "full">, number[]> = {
   camera: [0, 1, 2, 3],
   clapperboard: [4, 5, 6],
+  hinge: [5, 6],
   "hinged-bar": [6],
 };
 
 const CAMERA_GROUPS: Record<Exclude<SandboxIsolateId, "full">, number[]> = {
   camera: [0, 1, 2, 3],
   clapperboard: [],
+  hinge: [],
   "hinged-bar": [],
 };
 
 const BASELINE_GROUPS: Record<Exclude<SandboxIsolateId, "full">, number[]> = {
   camera: [0],
   clapperboard: [1],
+  hinge: [1],
   "hinged-bar": [1],
 };
 

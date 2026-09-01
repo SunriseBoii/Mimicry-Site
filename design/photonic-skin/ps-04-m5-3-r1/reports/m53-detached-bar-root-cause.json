@@ -1,0 +1,114 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "confirmed": true,
+  "original": {
+    "oldHingePointLocal": [
+      -0.48,
+      -0.02,
+      0.355
+    ],
+    "oldBarTranslate": [
+      0.02,
+      -0.22,
+      0.52
+    ],
+    "oldBarRotateDeg": [
+      -34.0,
+      0.0,
+      0.0
+    ],
+    "barCentroidWorld": [
+      -0.40475382905539575,
+      -1.6569965151233468,
+      0.9151817390171909
+    ],
+    "barLongAxisWorld": [
+      0.978344598188569,
+      0.20698264384441017,
+      -0.00017983999868356786
+    ],
+    "dotLongAxisWithU": 0.9999995328606494,
+    "minDistanceBarToHinge": 0.5524865670389568,
+    "minDistanceBarToRail": 0.3485951849285856,
+    "barBBoxSize": [
+      2.290730513420532,
+      0.6527644851388785,
+      0.24640870094299316
+    ],
+    "boardBBoxSize": [
+      2.427433958129673,
+      0.9069375111969864,
+      1.5672935843467712
+    ],
+    "rotationAroundLongAxis": true,
+    "rotationAroundBarCenter": true,
+    "rootNotAtHinge": true,
+    "metadataAttachedDoesNotBind": true,
+    "problems": [
+      "long axis of the bar is approximately local X",
+      "rotateDeg X twists the bar around its long axis instead of lifting the free end",
+      "transform is applied around the bar centre, not the hinge",
+      "centre is pre-offset away from the board",
+      "bar root does not coincide with the hinge",
+      "connectivityRole attached does not create visual contact",
+      "canonical/alternate silhouette treats the bar as a separate island"
+    ]
+  },
+  "oldTransform": {
+    "hingePoint": [
+      -0.48,
+      -0.02,
+      0.355
+    ],
+    "hingedBar": {
+      "translate": [
+        0.02,
+        -0.22,
+        0.52
+      ],
+      "rotateDeg": [
+        -34.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "pivotAwareTransform": {
+    "d0": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "d": [
+      0.8660254037844387,
+      0.0,
+      0.49999999999999994
+    ],
+    "axis": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "pivot": [
+      -0.48,
+      -0.02,
+      0.355
+    ],
+    "angle": -30.0,
+    "barCenter": [
+      -0.10587702556512246,
+      -0.02,
+      0.571
+    ],
+    "barRoot": [
+      -0.521569219381653,
+      -0.02,
+      0.33099999999999996
+    ],
+    "barTip": [
+      0.3098151682514081,
+      -0.02,
+      0.8109999999999999
+    ]
+  }
+}

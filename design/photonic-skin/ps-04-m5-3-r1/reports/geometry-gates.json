@@ -1,0 +1,709 @@
+{
+  "stage": "PS-04.M5.3.R1",
+  "ownerSpec": {
+    "path": "design/photonic-skin/ps-04-m5-3-r1/references/clapperboard-anatomy-spec.md",
+    "hash": "4f7d67fb8ee37a0fb1fb024a8e68b6bf39486db414b6016edbc7fbcb41ba018e",
+    "bytes": 19426,
+    "ownerSpecRead": true,
+    "ownerSpecHash": "4f7d67fb8ee37a0fb1fb024a8e68b6bf39486db414b6016edbc7fbcb41ba018e",
+    "ownerSpecIsSourceOfTruth": true,
+    "readFully": true,
+    "markersFound": [
+      "documentId: PS04-M53R1-CLAPPERBOARD-ANATOMY",
+      "Pivot-aware construction",
+      "slate-hinged-bar",
+      "openAngleDegrees: 30",
+      "Human-review target"
+    ]
+  },
+  "variants": {
+    "combo-20-r1": {
+      "hash": "f3b6aa2e5b8e91f9f033a6b839f21d9fa7f5cd29722794b86966964e8bf629b5",
+      "pivot": {
+        "boardLocalAxes": {
+          "u": [
+            0.9902680687415704,
+            -0.1391731009600654,
+            0.0
+          ],
+          "v": [
+            -0.01936915203084056,
+            -0.13781867790849958,
+            0.9902680687415704
+          ],
+          "n": [
+            0.13781867790849958,
+            0.9806308479691596,
+            0.13917310096006544
+          ]
+        },
+        "hingePoint": [
+          -2.0809888919504225,
+          -0.7182905908403113,
+          0.5962881501283349
+        ],
+        "rotationAxis": [
+          0.13781867790849958,
+          0.9806308479691596,
+          0.13917310096006544
+        ],
+        "signedOpenAngle": -30.0,
+        "barLength": 2.3329501580669416,
+        "overlap": 0.11664750790334708,
+        "barRoot": [
+          -2.179895798599472,
+          -0.6961932625586773,
+          0.5385319989408527
+        ],
+        "barCenter": [
+          -1.1908267321089763,
+          -0.9171665453750175,
+          1.1160935108156758
+        ],
+        "barTip": [
+          -0.20175766561848082,
+          -1.1381398281913582,
+          1.6936550226904985
+        ],
+        "rootToHingeDistance": 0.11664750790334703,
+        "tipRise": 1.1664750790334713,
+        "expectedTipRise": 1.1664750790334706,
+        "pivotError": 1.1102230246251565e-16,
+        "openAngleAbs": 30.0,
+        "barTipAboveBarRoot": true,
+        "dotOpenBarDirectionV": 0.49999999999999994
+      },
+      "contact": {
+        "rootToHinge": 0.028427247570944555,
+        "hingeNN": 0.05214244095471652,
+        "pass": true,
+        "railBoard": 0.0061388842649460875
+      },
+      "connectivity": {
+        "components": 2,
+        "largest": 5331,
+        "sizes": [
+          5331,
+          1
+        ],
+        "orphanCount": 1,
+        "remoteIsland": false,
+        "linkRadius": 0.08136208898643725,
+        "medianNN": 0.03129311114862971,
+        "mainShare": 0.9998124531132783,
+        "morphologicalClosingUsed": false,
+        "pass": true
+      },
+      "wedge": [
+        {
+          "frac": 0.05,
+          "gap": 0.10126321955778847
+        },
+        {
+          "frac": 0.25,
+          "gap": 0.11747812414170308
+        },
+        {
+          "frac": 0.5,
+          "gap": 0.399754558506274
+        },
+        {
+          "frac": 0.75,
+          "gap": 0.690880471313165
+        },
+        {
+          "frac": 0.95,
+          "gap": 0.9263417945352407
+        }
+      ],
+      "lod": {
+        "512": {
+          "board": 127,
+          "rail": 13,
+          "hinge": 5,
+          "bar": 59
+        },
+        "1024": {
+          "board": 294,
+          "rail": 23,
+          "hinge": 9,
+          "bar": 98
+        },
+        "2048": {
+          "board": 618,
+          "rail": 33,
+          "hinge": 12,
+          "bar": 180
+        },
+        "4096": {
+          "board": 1244,
+          "rail": 90,
+          "hinge": 26,
+          "bar": 335
+        },
+        "8192": {
+          "board": 2450,
+          "rail": 264,
+          "hinge": 80,
+          "bar": 629
+        },
+        "12288": {
+          "board": 3652,
+          "rail": 461,
+          "hinge": 139,
+          "bar": 920
+        },
+        "16384": {
+          "board": 3810,
+          "rail": 593,
+          "hinge": 180,
+          "bar": 929
+        }
+      },
+      "silhouette": {
+        "silhouette180": {
+          "occupied": 2313,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        },
+        "silhouette96": {
+          "occupied": 730,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        }
+      },
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      }
+    },
+    "combo-30-r1": {
+      "hash": "f54ed82e28cf82f55ca41c45d6c97dd315fb9fcd6c4945d90a70373af25b92f5",
+      "pivot": {
+        "boardLocalAxes": {
+          "u": [
+            0.9510565162951536,
+            -0.3090169943749474,
+            0.0
+          ],
+          "v": [
+            -0.04300685335652051,
+            -0.13236148456107352,
+            0.9902680687415704
+          ],
+          "n": [
+            0.30600966222800385,
+            0.9418008996556877,
+            0.13917310096006544
+          ]
+        },
+        "hingePoint": [
+          -2.174103846859783,
+          -0.34601821394294296,
+          0.5962881501283349
+        ],
+        "rotationAxis": [
+          0.30600966222800385,
+          0.9418008996556877,
+          0.13917310096006544
+        ],
+        "signedOpenAngle": -30.0,
+        "barLength": 2.3329501580669416,
+        "overlap": 0.11664750790334708,
+        "barRoot": [
+          -2.267670974566808,
+          -0.30708158963205323,
+          0.5385319989408527
+        ],
+        "barCenter": [
+          -1.3319996974965573,
+          -0.6964478327409508,
+          1.1160935108156758
+        ],
+        "barTip": [
+          -0.396328420426307,
+          -1.085814075849849,
+          1.6936550226904985
+        ],
+        "rootToHingeDistance": 0.1166475079033471,
+        "tipRise": 1.1664750790334713,
+        "expectedTipRise": 1.1664750790334706,
+        "pivotError": 1.2412670766236366e-16,
+        "openAngleAbs": 30.0,
+        "barTipAboveBarRoot": true,
+        "dotOpenBarDirectionV": 0.49999999999999994
+      },
+      "contact": {
+        "rootToHinge": 0.014872392312365292,
+        "hingeNN": 0.05270800198145785,
+        "pass": true,
+        "railBoard": 0.008344863111685124
+      },
+      "connectivity": {
+        "components": 2,
+        "largest": 5331,
+        "sizes": [
+          5331,
+          1
+        ],
+        "orphanCount": 1,
+        "remoteIsland": false,
+        "linkRadius": 0.08060718850461429,
+        "medianNN": 0.031002764809467034,
+        "mainShare": 0.9998124531132783,
+        "morphologicalClosingUsed": false,
+        "pass": true
+      },
+      "wedge": [
+        {
+          "frac": 0.05,
+          "gap": 0.10172555838998573
+        },
+        {
+          "frac": 0.25,
+          "gap": 0.12244325905631274
+        },
+        {
+          "frac": 0.5,
+          "gap": 0.39833187987700847
+        },
+        {
+          "frac": 0.75,
+          "gap": 0.6752260915842455
+        },
+        {
+          "frac": 0.95,
+          "gap": 0.919195958547037
+        }
+      ],
+      "lod": {
+        "512": {
+          "board": 127,
+          "rail": 13,
+          "hinge": 5,
+          "bar": 59
+        },
+        "1024": {
+          "board": 294,
+          "rail": 23,
+          "hinge": 9,
+          "bar": 98
+        },
+        "2048": {
+          "board": 618,
+          "rail": 33,
+          "hinge": 11,
+          "bar": 180
+        },
+        "4096": {
+          "board": 1244,
+          "rail": 90,
+          "hinge": 27,
+          "bar": 335
+        },
+        "8192": {
+          "board": 2450,
+          "rail": 264,
+          "hinge": 76,
+          "bar": 629
+        },
+        "12288": {
+          "board": 3652,
+          "rail": 461,
+          "hinge": 142,
+          "bar": 920
+        },
+        "16384": {
+          "board": 3810,
+          "rail": 593,
+          "hinge": 185,
+          "bar": 929
+        }
+      },
+      "silhouette": {
+        "silhouette180": {
+          "occupied": 2010,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        },
+        "silhouette96": {
+          "occupied": 636,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        }
+      },
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      }
+    },
+    "combo-40-r1": {
+      "hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+      "pivot": {
+        "boardLocalAxes": {
+          "u": [
+            0.882947592858927,
+            -0.46947156278589075,
+            0.0
+          ],
+          "v": [
+            -0.06533781320548047,
+            -0.12288255448340218,
+            0.9902680687415704
+          ],
+          "n": [
+            0.46490269780907095,
+            0.874354807580428,
+            0.13917310096006544
+          ]
+        },
+        "hingePoint": [
+          -2.2011597565319385,
+          0.03676775129141719,
+          0.5962881501283349
+        ],
+        "rotationAxis": [
+          0.46490269780907095,
+          0.874354807580428,
+          0.13917310096006544
+        ],
+        "signedOpenAngle": -30.0,
+        "barLength": 2.3329501580669416,
+        "overlap": 0.11664750790334708,
+        "barRoot": [
+          -2.286544115468812,
+          0.09136060200475894,
+          0.5385319989408527
+        ],
+        "barCenter": [
+          -1.4327005261000745,
+          -0.45456790512865825,
+          1.1160935108156758
+        ],
+        "barTip": [
+          -0.5788569367313375,
+          -1.0004964122620756,
+          1.6936550226904985
+        ],
+        "rootToHingeDistance": 0.11664750790334685,
+        "tipRise": 1.1664750790334713,
+        "expectedTipRise": 1.1664750790334706,
+        "pivotError": 4.579669976578771e-16,
+        "openAngleAbs": 30.0,
+        "barTipAboveBarRoot": true,
+        "dotOpenBarDirectionV": 0.49999999999999994
+      },
+      "contact": {
+        "rootToHinge": 0.027825194213882732,
+        "hingeNN": 0.0523781357300217,
+        "pass": true,
+        "railBoard": 0.010762328110403738
+      },
+      "connectivity": {
+        "components": 1,
+        "largest": 5332,
+        "sizes": [
+          5332
+        ],
+        "orphanCount": 0,
+        "remoteIsland": false,
+        "linkRadius": 0.08062350193527273,
+        "medianNN": 0.031009039205874125,
+        "mainShare": 1.0,
+        "morphologicalClosingUsed": false,
+        "pass": true
+      },
+      "wedge": [
+        {
+          "frac": 0.05,
+          "gap": 0.09950758524143201
+        },
+        {
+          "frac": 0.25,
+          "gap": 0.11683006700324787
+        },
+        {
+          "frac": 0.5,
+          "gap": 0.39842969945813284
+        },
+        {
+          "frac": 0.75,
+          "gap": 0.6862848187678369
+        },
+        {
+          "frac": 0.95,
+          "gap": 0.9252898076589522
+        }
+      ],
+      "lod": {
+        "512": {
+          "board": 127,
+          "rail": 13,
+          "hinge": 5,
+          "bar": 59
+        },
+        "1024": {
+          "board": 294,
+          "rail": 23,
+          "hinge": 9,
+          "bar": 98
+        },
+        "2048": {
+          "board": 618,
+          "rail": 33,
+          "hinge": 11,
+          "bar": 180
+        },
+        "4096": {
+          "board": 1244,
+          "rail": 90,
+          "hinge": 28,
+          "bar": 335
+        },
+        "8192": {
+          "board": 2450,
+          "rail": 264,
+          "hinge": 80,
+          "bar": 629
+        },
+        "12288": {
+          "board": 3652,
+          "rail": 461,
+          "hinge": 142,
+          "bar": 920
+        },
+        "16384": {
+          "board": 3810,
+          "rail": 593,
+          "hinge": 177,
+          "bar": 929
+        }
+      },
+      "silhouette": {
+        "silhouette180": {
+          "occupied": 1677,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        },
+        "silhouette96": {
+          "occupied": 540,
+          "rawComponents": 1,
+          "mainShare": 1.0,
+          "closedComponents": 1,
+          "morphologicalClosingUsedForPass": false,
+          "connected": true,
+          "detachedBarIsland": false
+        }
+      },
+      "presence": {
+        "512": {
+          "camera-body": 140,
+          "camera-lens": 138,
+          "camera-top": 18,
+          "camera-rear": 17,
+          "slate-board": 127,
+          "slate-fixed-rail": 13,
+          "slate-hinged-bar": 59
+        },
+        "1024": {
+          "camera-body": 303,
+          "camera-lens": 238,
+          "camera-top": 33,
+          "camera-rear": 35,
+          "slate-board": 294,
+          "slate-fixed-rail": 23,
+          "slate-hinged-bar": 98
+        },
+        "2048": {
+          "camera-body": 629,
+          "camera-lens": 442,
+          "camera-top": 72,
+          "camera-rear": 74,
+          "slate-board": 618,
+          "slate-fixed-rail": 33,
+          "slate-hinged-bar": 180
+        },
+        "4096": {
+          "camera-body": 1248,
+          "camera-lens": 890,
+          "camera-top": 142,
+          "camera-rear": 147,
+          "slate-board": 1244,
+          "slate-fixed-rail": 90,
+          "slate-hinged-bar": 335
+        },
+        "8192": {
+          "camera-body": 2438,
+          "camera-lens": 1832,
+          "camera-top": 293,
+          "camera-rear": 286,
+          "slate-board": 2450,
+          "slate-fixed-rail": 264,
+          "slate-hinged-bar": 629
+        },
+        "12288": {
+          "camera-body": 3623,
+          "camera-lens": 2772,
+          "camera-top": 436,
+          "camera-rear": 424,
+          "slate-board": 3652,
+          "slate-fixed-rail": 461,
+          "slate-hinged-bar": 920
+        },
+        "16384": {
+          "camera-body": 3767,
+          "camera-lens": 2988,
+          "camera-top": 479,
+          "camera-rear": 440,
+          "slate-board": 3810,
+          "slate-fixed-rail": 593,
+          "slate-hinged-bar": 929
+        }
+      }
+    }
+  },
+  "failures": [],
+  "pass": true
+}

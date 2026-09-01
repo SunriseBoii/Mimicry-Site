@@ -71,6 +71,10 @@ import { DisjointGpuTimer, R6Instrumentation, r6GpuTimerEnabled, r6StagingEnable
 import { VideoSandboxProgramCache, frozenProgramKey, reachableFrozenPairs, defaultGeometryForNode } from "./sandbox-prewarm";
 import {
   FROZEN_CAMERAS,
+  SANDBOX_ISOLATES,
+  clapperOpenLabel,
+  compositionYawLabel,
+  hingeStatusLabel,
   parseSandboxQuery,
   sandboxSearch,
   type SandboxIsolateId,
@@ -123,7 +127,9 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const debugOverride: DebugMode | null = debugQuery === "orientation" || debugQuery === "identity" || debugQuery === "features"
     ? debugQuery
     : null;
-  const isolateQuery = (query.get("isolate") === "camera" || query.get("isolate") === "clapperboard" || query.get("isolate") === "hinged-bar") ? query.get("isolate") as SandboxIsolateId : sandbox.isolate;
+  const isolateQuery = (SANDBOX_ISOLATES as readonly string[]).includes(query.get("isolate") ?? "")
+    ? query.get("isolate") as SandboxIsolateId
+    : sandbox.isolate;
   const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
   const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
   const r6Staging = r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
@@ -181,7 +187,7 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
     }
   }, [controller]);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m5-3-video-sandbox";
+  const sessionId = "ps04-m5-3-r1-video-sandbox";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -1044,8 +1050,8 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
 
   useEffect(() => {
     window.__PS04M53_LAB__ = {
-      runId: "ps04-m5-3",
-      stage: "PS-04.M5.3",
+      runId: "ps04-m5-3-r1",
+      stage: "PS-04.M5.3.R1",
       variant: displayedVariant,
       requestedVariant,
       displayedVariant,
@@ -1069,6 +1075,9 @@ export function VideoSandboxLab({ mode }: { mode: "lab" | "preview" }) {
         return state && displayedVariant ? hingedBarActiveCount(state, displayedVariant) : 0;
       },
       yaw: displayedVariant ? yawLabel(displayedVariant) : null,
+      compositionYaw: displayedVariant ? compositionYawLabel(displayedVariant) : null,
+      clapperOpenAngle: displayedVariant ? clapperOpenLabel(displayedVariant) : null,
+      hingeStatus: displayedVariant ? hingeStatusLabel(displayedVariant) : null,
       isolate,
       selectVariant: (id: VideoVariantId) => applySandboxRef.current({ variant: id }),
       applySandbox: (patch: { variant?: VideoVariantId; view?: SandboxViewId; theme?: MaterialTheme; labels?: boolean; mode?: SandboxPlayMode; isolate?: SandboxIsolateId }) => applySandboxRef.current(patch),
