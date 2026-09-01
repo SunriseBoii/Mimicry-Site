@@ -1,0 +1,76 @@
+{
+  "stage": "PS-04.M5.2.R2",
+  "method": "Playwright M5 traces on EVENT_A_R2 at playbackRate=1, Design→Event→Games, reverse, idle, reduced motion, context restore, rapid retarget, live A↔A-R2 and A-R1↔A-R2, Back/Forward",
+  "pacedDesignEventGames": {
+    "video": "a-r2-design-event-games.webm",
+    "frames": 455,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": ["master-neutral", "single-design", "single-event", "single-games"],
+    "screens": ["01", "05.2", "05.3", "05.4"],
+    "thirdGeometryDuringMorph": false,
+    "pass": true,
+    "note": "master-neutral is the mode=transition boot node; morph IDs are design/event/games only"
+  },
+  "pacedReverse": {
+    "video": "a-r2-reverse.webm",
+    "frames": 466,
+    "paletteLeads": 0,
+    "centerDeclaredAsTarget": 0,
+    "geometryIds": ["master-neutral", "single-games", "single-event", "single-design"],
+    "screens": ["01", "05.4", "05.3", "05.2"],
+    "thirdGeometryDuringMorph": false,
+    "pass": true
+  },
+  "idle5s": {
+    "video": "a-r2-idle.webm",
+    "displayed": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "draws": 1,
+    "triangles": 131072
+  },
+  "reducedMotion": {
+    "video": "a-r2-reduced-motion.webm",
+    "displayed": "a-r2",
+    "pass": true
+  },
+  "contextRestore": {
+    "video": "a-r2-context-restore.webm",
+    "buttonStatus": "restored",
+    "visiblePixelCount": 98913,
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "liveSwitch": {
+    "documentReloadsDuringClicks": 0,
+    "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+    "eventAR1Hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+    "eventAR2Hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "backLandsOnPreviousHistoryEntry": true,
+    "forwardRestoresAR2": true
+  },
+  "rapidResidual": {
+    "id": "PS04-M5-R001",
+    "video": "a-r2-rapid-residual.webm",
+    "frames": 75,
+    "paletteLeads": 59,
+    "centerDeclaredAsTarget": 0,
+    "thirdGeometryId": false,
+    "m52Reference": { "frames": 63, "paletteLeads": 45 },
+    "r1Reference": { "frames": 466, "paletteLeads": 8 },
+    "fingerprintWorseThanM52LeadCount": true,
+    "fixedOnR2": false,
+    "assertionsWeakened": false,
+    "note": "Paced Design→Event→Games keeps paletteLeads=0 and centerDeclaredAsTarget=0. Rapid retarget still reproduces PS04-M5-R001 (59/75 frames). Recorded only; not fixed in R2."
+  },
+  "m51Contracts": {
+    "targetColorDoesNotLeadNormalPacedMorph": true,
+    "centerDwell": false,
+    "latestTargetWins": true,
+    "oneTransactionClock": true,
+    "oneCanvas": true,
+    "oneActor": true
+  },
+  "pacedPass": true,
+  "rapidDeferred": true,
+  "pass": true
+}

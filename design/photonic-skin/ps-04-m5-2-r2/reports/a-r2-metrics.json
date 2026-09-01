@@ -1,0 +1,568 @@
+{
+  "n": 16384,
+  "activeCount": 14873,
+  "viewerRightActive": 1014,
+  "VIEWER_RIGHT_COMPONENT": 2,
+  "VIEWER_RIGHT_EVENT_PART": 2,
+  "SEMANTIC_FIGURE_LEFT_COMPONENT": 2,
+  "finite": true,
+  "noNaNInf": true,
+  "collapsedVolume": false,
+  "bbox": {
+    "min": [
+      0.7135272026062012,
+      -0.3016320765018463,
+      -0.729715883731842
+    ],
+    "max": [
+      1.2074081897735596,
+      0.19392751157283783,
+      0.6640419363975525
+    ],
+    "size": [
+      0.4938809871673584,
+      0.49555958807468414,
+      1.3937578201293945
+    ]
+  },
+  "centroid": [
+    0.9627654648861707,
+    -0.05589700930783317,
+    -0.05431827089446585
+  ],
+  "before": {
+    "count": 1014,
+    "bbox": {
+      "min": [
+        0.689409077167511,
+        -0.32609808444976807,
+        -0.7297695279121399
+      ],
+      "max": [
+        1.232535481452942,
+        0.21775361895561218,
+        0.6832678318023682
+      ],
+      "size": [
+        0.5431264042854309,
+        0.5438517034053802,
+        1.413037359714508
+      ]
+    },
+    "centroid": [
+      0.9602108508995064,
+      -0.05400422245255845,
+      -0.0490951340947956
+    ],
+    "height": 1.413037359714508,
+    "width": 0.5353372078863983,
+    "baseZ": -0.7297695279121399,
+    "topZ": 0.6832678318023682,
+    "yawDegrees": 92.6918343078013,
+    "headWidth": 0.44201437983654596,
+    "torsoWidth": 0.5404710484315294,
+    "widthProfile": [
+      {
+        "z": -0.6708929712573688,
+        "width": 0.5618933219117218,
+        "count": 89
+      },
+      {
+        "z": -0.5531398579478264,
+        "width": 0.5519633930310754,
+        "count": 105
+      },
+      {
+        "z": -0.43538674463828403,
+        "width": 0.5278959774768671,
+        "count": 85
+      },
+      {
+        "z": -0.3176336313287417,
+        "width": 0.5105562237413197,
+        "count": 101
+      },
+      {
+        "z": -0.19988051801919934,
+        "width": 0.5002191122985399,
+        "count": 86
+      },
+      {
+        "z": -0.08212740470965701,
+        "width": 0.4758691421132528,
+        "count": 80
+      },
+      {
+        "z": 0.03562570859988534,
+        "width": 0.4578859142112673,
+        "count": 73
+      },
+      {
+        "z": 0.1533788219094277,
+        "width": 0.40842366594025364,
+        "count": 78
+      },
+      {
+        "z": 0.27113193521897,
+        "width": 0.37266144824812525,
+        "count": 71
+      },
+      {
+        "z": 0.38888504852851236,
+        "width": 0.44943503615080305,
+        "count": 80
+      },
+      {
+        "z": 0.5066381618380548,
+        "width": 0.4618603319127417,
+        "count": 79
+      },
+      {
+        "z": 0.6243912751475971,
+        "width": 0.37625104478835486,
+        "count": 87
+      }
+    ]
+  },
+  "after": {
+    "count": 1014,
+    "bbox": {
+      "min": [
+        0.7135272026062012,
+        -0.3016320765018463,
+        -0.729715883731842
+      ],
+      "max": [
+        1.2074081897735596,
+        0.19392751157283783,
+        0.6640419363975525
+      ],
+      "size": [
+        0.4938809871673584,
+        0.49555958807468414,
+        1.3937578201293945
+      ]
+    },
+    "centroid": [
+      0.9627654648861707,
+      -0.05589700930783317,
+      -0.05431827089446585
+    ],
+    "height": 1.3937578201293945,
+    "width": 0.48846733812495147,
+    "baseZ": -0.729715883731842,
+    "topZ": 0.6640419363975525,
+    "yawDegrees": 75.02231094946859,
+    "headWidth": 0.4525992049483421,
+    "torsoWidth": 0.49193098205445573,
+    "widthProfile": [
+      {
+        "z": -0.6716426412264507,
+        "width": 0.3986214569956628,
+        "count": 91
+      },
+      {
+        "z": -0.5554961562156677,
+        "width": 0.4960605765574291,
+        "count": 94
+      },
+      {
+        "z": -0.43934967120488483,
+        "width": 0.5242980893289194,
+        "count": 85
+      },
+      {
+        "z": -0.32320318619410193,
+        "width": 0.5089293369733678,
+        "count": 86
+      },
+      {
+        "z": -0.20705670118331906,
+        "width": 0.48211072174330205,
+        "count": 90
+      },
+      {
+        "z": -0.0909102161725362,
+        "width": 0.4738323139921814,
+        "count": 92
+      },
+      {
+        "z": 0.0252362688382467,
+        "width": 0.45786922744971503,
+        "count": 74
+      },
+      {
+        "z": 0.1413827538490296,
+        "width": 0.4763867694889133,
+        "count": 79
+      },
+      {
+        "z": 0.25752923885981244,
+        "width": 0.45660491922479773,
+        "count": 81
+      },
+      {
+        "z": 0.37367572387059533,
+        "width": 0.466241703842788,
+        "count": 87
+      },
+      {
+        "z": 0.4898222088813783,
+        "width": 0.444785563137602,
+        "count": 84
+      },
+      {
+        "z": 0.6059686938921611,
+        "width": 0.35114221572603704,
+        "count": 71
+      }
+    ]
+  },
+  "viewerLeft": {
+    "count": 890,
+    "bbox": {
+      "min": [
+        -1.001605749130249,
+        -0.9530872702598572,
+        -0.7266569137573242
+      ],
+      "max": [
+        -0.4904193580150604,
+        -0.44269147515296936,
+        0.5879419445991516
+      ],
+      "size": [
+        0.5111863911151886,
+        0.5103957951068878,
+        1.3145988583564758
+      ]
+    },
+    "centroid": [
+      -0.7455527274461274,
+      -0.6989454402682487,
+      -0.09906373457182617
+    ],
+    "height": 1.3145988583564758,
+    "width": 0.5040178769226877,
+    "baseZ": -0.7266569137573242,
+    "topZ": 0.5879419445991516,
+    "yawDegrees": 161.30410918305816,
+    "headWidth": 0.41480352375962365,
+    "torsoWidth": 0.5077669835720464,
+    "widthProfile": [
+      {
+        "z": -0.6718819613258045,
+        "width": 0.5172658141081986,
+        "count": 74
+      },
+      {
+        "z": -0.5623320564627647,
+        "width": 0.5181731439214596,
+        "count": 92
+      },
+      {
+        "z": -0.45278215159972507,
+        "width": 0.49821395909643357,
+        "count": 85
+      },
+      {
+        "z": -0.3432322467366854,
+        "width": 0.48048125043364875,
+        "count": 84
+      },
+      {
+        "z": -0.23368234187364575,
+        "width": 0.44816401970607483,
+        "count": 74
+      },
+      {
+        "z": -0.12413243701060611,
+        "width": 0.4278180504713918,
+        "count": 77
+      },
+      {
+        "z": -0.01458253214756644,
+        "width": 0.4019570125307054,
+        "count": 63
+      },
+      {
+        "z": 0.09496737271547323,
+        "width": 0.38371599897619985,
+        "count": 63
+      },
+      {
+        "z": 0.20451727757851285,
+        "width": 0.3422116409965963,
+        "count": 68
+      },
+      {
+        "z": 0.3140671824415525,
+        "width": 0.43274382857641386,
+        "count": 70
+      },
+      {
+        "z": 0.42361708730459224,
+        "width": 0.4224606917127253,
+        "count": 71
+      },
+      {
+        "z": 0.5331669921676319,
+        "width": 0.3567708696130916,
+        "count": 69
+      }
+    ]
+  },
+  "centre": {
+    "count": 1205,
+    "bbox": {
+      "min": [
+        -0.2795141041278839,
+        -0.4430185556411743,
+        -0.7339246273040771
+      ],
+      "max": [
+        0.31311628222465515,
+        0.14805740118026733,
+        0.8209856748580933
+      ],
+      "size": [
+        0.5926303863525391,
+        0.5910759568214417,
+        1.5549103021621704
+      ]
+    },
+    "centroid": [
+      0.017452774506982,
+      -0.146469615966858,
+      0.011027801385742546
+    ],
+    "height": 1.5549103021621704,
+    "width": 0.5819331577205684,
+    "baseZ": -0.7339246273040771,
+    "topZ": 0.8209856748580933,
+    "yawDegrees": 175.96091683481632,
+    "headWidth": 0.48154180362263016,
+    "torsoWidth": 0.5885234693727449,
+    "widthProfile": [
+      {
+        "z": -0.6691366980473201,
+        "width": 0.611737270523405,
+        "count": 97
+      },
+      {
+        "z": -0.5395608395338058,
+        "width": 0.6073720700178898,
+        "count": 123
+      },
+      {
+        "z": -0.4099849810202917,
+        "width": 0.5748273965260579,
+        "count": 111
+      },
+      {
+        "z": -0.28040912250677746,
+        "width": 0.5469017451674326,
+        "count": 120
+      },
+      {
+        "z": -0.1508332639932633,
+        "width": 0.5561601206420651,
+        "count": 99
+      },
+      {
+        "z": -0.02125740547974908,
+        "width": 0.5063358125673767,
+        "count": 103
+      },
+      {
+        "z": 0.10831845303376514,
+        "width": 0.48098014568095776,
+        "count": 95
+      },
+      {
+        "z": 0.2378943115472793,
+        "width": 0.45109085411462846,
+        "count": 86
+      },
+      {
+        "z": 0.3674701700607935,
+        "width": 0.40335628826600856,
+        "count": 83
+      },
+      {
+        "z": 0.4970460285743077,
+        "width": 0.5006228466362939,
+        "count": 98
+      },
+      {
+        "z": 0.6266218870878218,
+        "width": 0.504550727823781,
+        "count": 92
+      },
+      {
+        "z": 0.7561977456013361,
+        "width": 0.41505129030185695,
+        "count": 98
+      }
+    ]
+  },
+  "deckZ": -0.7547072434425354,
+  "baseClearance": 0.02499135971069333,
+  "minDistanceToCentre": 0.41113699710585727,
+  "minDistanceToArch": 0.8107571052194056,
+  "minDistanceToViewerLeft": 1.3291077643765625,
+  "connectivity3d": {
+    "components": 1,
+    "largest": 1014,
+    "orphanCount": 0,
+    "remoteIsland": false,
+    "linkRadius": 0.09357693853591027,
+    "pass": true
+  },
+  "silhouette180": {
+    "occupied": 1239,
+    "bboxRows": [
+      52,
+      109
+    ],
+    "bboxCols": [
+      116,
+      141
+    ],
+    "bboxOccupancyRatio": 0.8216180371352785,
+    "maxInternalRowGap": 0,
+    "componentsRawClosed": 1,
+    "mainShare": 1.0,
+    "connected": true
+  },
+  "silhouette96": {
+    "occupied": 365,
+    "bboxRows": [
+      27,
+      58
+    ],
+    "bboxCols": [
+      61,
+      75
+    ],
+    "bboxOccupancyRatio": 0.7604166666666666,
+    "maxInternalRowGap": 0,
+    "componentsRawClosed": 1,
+    "mainShare": 1.0,
+    "connected": true
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 367,
+      "figure-centre": 53,
+      "figure-left": 50,
+      "figure-right": 42
+    },
+    "1024": {
+      "stage": 761,
+      "figure-centre": 101,
+      "figure-left": 84,
+      "figure-right": 78
+    },
+    "2048": {
+      "stage": 1506,
+      "figure-centre": 206,
+      "figure-left": 181,
+      "figure-right": 155
+    },
+    "4096": {
+      "stage": 2962,
+      "figure-centre": 438,
+      "figure-left": 371,
+      "figure-right": 325
+    },
+    "8192": {
+      "stage": 6204,
+      "figure-centre": 771,
+      "figure-left": 651,
+      "figure-right": 566
+    },
+    "12288": {
+      "stage": 9480,
+      "figure-centre": 1084,
+      "figure-left": 915,
+      "figure-right": 809
+    },
+    "16384": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    }
+  },
+  "lodMatchesEventA": true,
+  "lodCountsOk": true,
+  "contentHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+  "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+  "eventAR1Hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+  "sourceUnchanged": true,
+  "derivedFromEventANotR1": true,
+  "coveragePackedA": {
+    "visibleInstanceCount": 1014,
+    "medianProjectedInstanceFootprint": 0.008950514778760554,
+    "nearestNeighbourGapPresented": 0.03228531715301398,
+    "nearestNeighbourGapScreenPx": 1.4700548386371213,
+    "coverageRatio": 0.27723174396398903,
+    "packedVisible": false
+  },
+  "coverageOverlayR2": {
+    "visibleInstanceCount": 1014,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.044448551788302273,
+    "nearestNeighbourGapScreenPx": 1.4187893858036764,
+    "coverageRatio": 1.1187109614066588,
+    "packedVisible": true
+  },
+  "coverageViewerLeft": {
+    "visibleInstanceCount": 890,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.03324631720732986,
+    "nearestNeighbourGapScreenPx": 1.4261934970198773,
+    "coverageRatio": 1.4956568510770976,
+    "packedVisible": true
+  },
+  "coverageViewerCentre": {
+    "visibleInstanceCount": 1205,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.03190552073747443,
+    "nearestNeighbourGapScreenPx": 1.3646682840461204,
+    "coverageRatio": 1.558510281445462,
+    "packedVisible": true
+  },
+  "centreRemainsLargest": true,
+  "gates": {
+    "finite": true,
+    "notCollapsed": true,
+    "noOrphans": true,
+    "sameIds": true,
+    "sameStatus": true,
+    "active1014": true,
+    "lodCounts": true,
+    "silhouetteConnected180": true,
+    "silhouetteConnected96": true,
+    "headReadable": true,
+    "torsoReadable": true,
+    "noInternalGap": true,
+    "baseNotFloating": true,
+    "baseNotSunk": true,
+    "noCentreIntersect": true,
+    "noArchIntersect": true,
+    "noViewerLeftIntersect": true,
+    "nonTargetIdentity": true,
+    "viewerLeftRestoredToA": true,
+    "r1GeometryNotInherited": true,
+    "forbiddenUnchanged": true,
+    "centreRemainsLargest": true,
+    "flakeFootprintVsLeft": true,
+    "notPointCloudWhenVisible": true,
+    "packedAWasSparse": true,
+    "noGlobalScaleHack": true
+  },
+  "machinePass": true,
+  "visualMachineFailSparse": false
+}

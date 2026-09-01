@@ -1,0 +1,106 @@
+{
+  "variant": "a-r2",
+  "identitySize": 16384,
+  "bufferBytes": 655360,
+  "bufferPath": "variants/a-r2/single-event.state.bin",
+  "n": 16384,
+  "activeCount": 14873,
+  "reserveCount": 756,
+  "subsurfaceCount": 755,
+  "finite": true,
+  "bbox": {
+    "min": [
+      -1.6884148120880127,
+      -1.2982484102249146,
+      -1.135754942893982
+    ],
+    "max": [
+      1.6883031129837036,
+      1.3524140119552612,
+      1.135737657546997
+    ]
+  },
+  "centroid": [
+    -0.05613631010055542,
+    0.18320466578006744,
+    -0.37931305170059204
+  ],
+  "componentCounts": {
+    "0": 7323,
+    "1": 4441,
+    "2": 1014,
+    "3": 1205,
+    "4": 890
+  },
+  "contentHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+  "lodPriorityIsIdentity": true,
+  "kind": "selective-viewer-right-refinement",
+  "displayName": "EVENT_A_R2 — selected A direction, viewer-right figure refined",
+  "derivedFrom": "EVENT_A",
+  "notDerivedFrom": "EVENT_A_R1",
+  "ownerDirectionSelected": true,
+  "canonicalSelectionPendingHumanReview": true,
+  "modifiedPart": "viewer-right",
+  "semanticName": "figure-left",
+  "eventPart": 2,
+  "component": 2,
+  "transformChain": [
+    "frozen BASELINE",
+    "EVENT_A rigid +180° Z",
+    "selective VIEWER-RIGHT figure refinement",
+    "EVENT_A_R2"
+  ],
+  "rigidProofInheritedFromEventA": true,
+  "visibilityOverlayRequired": true,
+  "visibilityOverlayNote": "Sandbox a-r2 must add desktop/mobile/silhouette visibleProfiles for component 2. Frozen aggregate componentMap stays untouched.",
+  "activePartCounts": {
+    "stage": 11764,
+    "figure-centre": 1205,
+    "figure-left": 1014,
+    "figure-right": 890
+  },
+  "lodPrefixPresence": {
+    "512": {
+      "stage": 367,
+      "figure-centre": 53,
+      "figure-left": 50,
+      "figure-right": 42
+    },
+    "1024": {
+      "stage": 761,
+      "figure-centre": 101,
+      "figure-left": 84,
+      "figure-right": 78
+    },
+    "2048": {
+      "stage": 1506,
+      "figure-centre": 206,
+      "figure-left": 181,
+      "figure-right": 155
+    },
+    "4096": {
+      "stage": 2962,
+      "figure-centre": 438,
+      "figure-left": 371,
+      "figure-right": 325
+    },
+    "8192": {
+      "stage": 6204,
+      "figure-centre": 771,
+      "figure-left": 651,
+      "figure-right": 566
+    },
+    "12288": {
+      "stage": 9480,
+      "figure-centre": 1084,
+      "figure-left": 915,
+      "figure-right": 809
+    },
+    "16384": {
+      "stage": 11764,
+      "figure-centre": 1205,
+      "figure-left": 1014,
+      "figure-right": 890
+    }
+  }
+}

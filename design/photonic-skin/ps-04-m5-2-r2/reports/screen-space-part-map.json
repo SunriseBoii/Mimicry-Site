@@ -1,0 +1,820 @@
+{
+  "stage": "PS-04.M5.2.R2",
+  "source": "original EVENT_A",
+  "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+  "eventAR1Hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc",
+  "baselineHash": "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933",
+  "eventAUnchanged": true,
+  "eventAR1Unchanged": true,
+  "rule": "viewer-right = figure with the largest canonical screen-space X",
+  "semanticNamesAreNotSourceOfTruth": true,
+  "canonicalCamera": {
+    "viewName": "canonical",
+    "eye": [
+      2.8,
+      -7.8,
+      4.6
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fovDegrees": 33.0,
+    "aspect": 1.0,
+    "near": 0.01,
+    "far": 100.0,
+    "viewMatrix": [
+      0.9411946707617073,
+      0.3378647536067667,
+      -0.0,
+      -0.0,
+      -0.1639705480160119,
+      0.4567750980446046,
+      0.8743398476505976,
+      8.881784197001252e-16,
+      0.2954086171950472,
+      -0.8229240050433457,
+      0.48531415682043466,
+      -9.478396488858227,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "projectionMatrix": [
+      3.3759434225912455,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.3759434225912455,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0002000200020003,
+      -0.020002000200020003,
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "viewProjectionMatrix": [
+      3.1774199581359186,
+      1.140612292664176,
+      0.0,
+      0.0,
+      -0.5535552930733374,
+      1.542046887847154,
+      2.9517218577854667,
+      2.9984400940741245e-15,
+      -0.29546770482724943,
+      0.8230886063044806,
+      -0.4854112293590526,
+      9.460290357542869,
+      -0.2954086171950472,
+      0.8229240050433457,
+      -0.48531415682043466,
+      9.478396488858227
+    ],
+    "viewMatrix4x4": [
+      [
+        0.9411946707617073,
+        0.3378647536067667,
+        -0.0,
+        -0.0
+      ],
+      [
+        -0.1639705480160119,
+        0.4567750980446046,
+        0.8743398476505976,
+        8.881784197001252e-16
+      ],
+      [
+        0.2954086171950472,
+        -0.8229240050433457,
+        0.48531415682043466,
+        -9.478396488858227
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "projectionMatrix4x4": [
+      [
+        3.3759434225912455,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.3759434225912455,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0002000200020003,
+        -0.020002000200020003
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "viewProjectionMatrix4x4": [
+      [
+        3.1774199581359186,
+        1.140612292664176,
+        0.0,
+        0.0
+      ],
+      [
+        -0.5535552930733374,
+        1.542046887847154,
+        2.9517218577854667,
+        2.9984400940741245e-15
+      ],
+      [
+        -0.29546770482724943,
+        0.8230886063044806,
+        -0.4854112293590526,
+        9.460290357542869
+      ],
+      [
+        -0.2954086171950472,
+        0.8229240050433457,
+        -0.48531415682043466,
+        9.478396488858227
+      ]
+    ]
+  },
+  "alternateCamera": {
+    "viewName": "alternate",
+    "eye": [
+      5.6,
+      -6.4,
+      4.1
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fovDegrees": 33.0,
+    "aspect": 1.0,
+    "near": 0.01,
+    "far": 100.0,
+    "viewMatrix": [
+      0.7525766947068779,
+      0.658504607868518,
+      -0.0,
+      -8.881784197001252e-16,
+      -0.28597674700044207,
+      0.32683056800050525,
+      0.9007769313184659,
+      -4.440892098500626e-16,
+      0.5931657599348733,
+      -0.6779037256398553,
+      0.4342820742380322,
+      -9.440868604106297,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "projectionMatrix": [
+      3.3759434225912455,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.3759434225912455,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0002000200020003,
+      -0.020002000200020003,
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "viewProjectionMatrix": [
+      2.540656342491144,
+      2.223074299679751,
+      0.0,
+      -2.9984400940741245e-15,
+      -0.9654413180501831,
+      1.1033615063430664,
+      3.040971956506501,
+      -1.4992200470370622e-15,
+      -0.5932844049513619,
+      0.6780393199444138,
+      -0.43436893933938997,
+      9.422754966463355,
+      -0.5931657599348733,
+      0.6779037256398553,
+      -0.4342820742380322,
+      9.440868604106297
+    ],
+    "viewMatrix4x4": [
+      [
+        0.7525766947068779,
+        0.658504607868518,
+        -0.0,
+        -8.881784197001252e-16
+      ],
+      [
+        -0.28597674700044207,
+        0.32683056800050525,
+        0.9007769313184659,
+        -4.440892098500626e-16
+      ],
+      [
+        0.5931657599348733,
+        -0.6779037256398553,
+        0.4342820742380322,
+        -9.440868604106297
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "projectionMatrix4x4": [
+      [
+        3.3759434225912455,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.3759434225912455,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0002000200020003,
+        -0.020002000200020003
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "viewProjectionMatrix4x4": [
+      [
+        2.540656342491144,
+        2.223074299679751,
+        0.0,
+        -2.9984400940741245e-15
+      ],
+      [
+        -0.9654413180501831,
+        1.1033615063430664,
+        3.040971956506501,
+        -1.4992200470370622e-15
+      ],
+      [
+        -0.5932844049513619,
+        0.6780393199444138,
+        -0.43436893933938997,
+        9.422754966463355
+      ],
+      [
+        -0.5931657599348733,
+        0.6779037256398553,
+        -0.4342820742380322,
+        9.440868604106297
+      ]
+    ]
+  },
+  "presentationFrame": {
+    "translate": [
+      0.003098650195004353,
+      0.19176137880275873,
+      0.3789550459127838
+    ],
+    "scale": 1.234986273944378,
+    "anchor": [
+      -0.003098650195004353,
+      -0.19176137880275873,
+      -0.3789550459127838
+    ]
+  },
+  "desktopProfilePx": 512,
+  "figures": [
+    {
+      "semanticName": "figure-right",
+      "componentId": 4,
+      "eventPart": 3,
+      "activeCount": 890,
+      "totalRecords": 1192,
+      "worldCentroid": [
+        -0.7455527274461274,
+        -0.6989454402682487,
+        -0.09906373457182617
+      ],
+      "worldBBox": {
+        "min": [
+          -1.001605749130249,
+          -0.9530872702598572,
+          -0.7266569137573242
+        ],
+        "max": [
+          -0.4904193580150604,
+          -0.44269147515296936,
+          0.5879419445991516
+        ],
+        "size": [
+          0.5111863911151886,
+          0.5103957951068878,
+          1.3145988583564758
+        ]
+      },
+      "canonicalProjectedCentroid": {
+        "ndc": [
+          -0.4001609311809512,
+          0.061987186853328095,
+          0.997993768689644
+        ],
+        "screenX": 153.25888208326697,
+        "screenY": 239.6622737589747,
+        "presented": [
+          -0.916920594439176,
+          -0.6263653542732417,
+          0.3456619277023751
+        ],
+        "inFront": true
+      },
+      "alternateProjectedCentroid": {
+        "ndc": [
+          -0.39553955642476146,
+          0.13233481580700143,
+          0.9980744144220601
+        ],
+        "screenX": 154.43964333347344,
+        "screenY": 221.68845456131112,
+        "presented": [
+          -0.916920594439176,
+          -0.6263653542732417,
+          0.3456619277023751
+        ],
+        "inFront": true
+      },
+      "canonicalScreenX": 153.25888208326697,
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ],
+      "visibleOnDesktopProfile": true,
+      "gpuSettledActivation": 1.0,
+      "gpuFiniteActivationScale": 1.0,
+      "scale": {
+        "min": 1.150390625,
+        "max": 1.150390625,
+        "mean": 1.150390625,
+        "median": 1.150390625,
+        "unique": 1
+      },
+      "density": {
+        "min": 116.0,
+        "max": 221.0,
+        "mean": 143.14606741573033,
+        "median": 134.0,
+        "unique": 103
+      },
+      "flags": {
+        "6": 602,
+        "7": 288
+      },
+      "reserveDepth": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "unique": 1
+      },
+      "statusActive": 890,
+      "statusReserve": 151,
+      "statusSubsurface": 151,
+      "worldNearestNeighbour": {
+        "min": 0.004462057883310104,
+        "median": 0.026920394103770635,
+        "mean": 0.02666980351399533,
+        "p95": 0.041897751709687424,
+        "max": 0.06417649031817324
+      },
+      "presentedNearestNeighbour": {
+        "min": 0.005510580239433304,
+        "median": 0.03324631720732986,
+        "mean": 0.03293684126857777,
+        "p95": 0.05174314827059353,
+        "max": 0.07925708465286828
+      },
+      "screenNearestNeighbourPx": {
+        "min": 0.12742891718416857,
+        "median": 1.4261934970198773,
+        "mean": 1.562238215294535,
+        "p95": 3.187689358105557,
+        "max": 5.6592926234989855
+      },
+      "medianWorldSplatRadiusVisible": 0.0497250821042253,
+      "medianWorldSplatRadiusAsPacked": 0.0497250821042253,
+      "medianInstanceFootprintWorld": 0.0497250821042253,
+      "splatCoverageRatioVisible": 1.4956568510770958,
+      "splatCoverageRatioAsPacked": 1.4956568510770976,
+      "normalVsCanonicalView": {
+        "medianFacing": -0.10562897161955667,
+        "meanFacing": -0.05534696478699106,
+        "backfacingShare": 0.5382022471910113
+      },
+      "lodPrefixPresence": {
+        "512": 42,
+        "1024": 78,
+        "2048": 155,
+        "4096": 325,
+        "8192": 566,
+        "12288": 809,
+        "16384": 890
+      },
+      "shaderScaleFormula": "radius = mix(sourceScale, targetScale, t) * mix(minimumGeometricScale, 1, activation) * OctahedronGeometry(0.035) * presentationFrame.scale",
+      "octahedronRadius": 0.035,
+      "minimumGeometricScale": 0.18,
+      "presentationFrameScale": 1.234986273944378,
+      "viewerSpaceRole": "viewer-left"
+    },
+    {
+      "semanticName": "figure-centre",
+      "componentId": 3,
+      "eventPart": 1,
+      "activeCount": 1205,
+      "totalRecords": 1507,
+      "worldCentroid": [
+        0.017452774506982,
+        -0.146469615966858,
+        0.011027801385742546
+      ],
+      "worldBBox": {
+        "min": [
+          -0.2795141041278839,
+          -0.4430185556411743,
+          -0.7339246273040771
+        ],
+        "max": [
+          0.31311628222465515,
+          0.14805740118026733,
+          0.8209856748580933
+        ],
+        "size": [
+          0.5926303863525391,
+          0.5910759568214417,
+          1.5549103021621704
+        ]
+      },
+      "canonicalProjectedCentroid": {
+        "ndc": [
+          0.01555984962264079,
+          0.16091696775571532,
+          0.9980453727395898
+        ],
+        "screenX": 259.47554157858474,
+        "screenY": 214.38571473841475,
+        "presented": [
+          0.025380727416954574,
+          0.055934705425081485,
+          0.48162346348742635
+        ],
+        "inFront": true
+      },
+      "alternateProjectedCentroid": {
+        "ndc": [
+          0.020404046960303124,
+          0.16227829007845065,
+          0.998038709764537
+        ],
+        "screenX": 260.71323399835745,
+        "screenY": 214.03789688495587,
+        "presented": [
+          0.025380727416954574,
+          0.055934705425081485,
+          0.48162346348742635
+        ],
+        "inFront": true
+      },
+      "canonicalScreenX": 259.47554157858474,
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ],
+      "visibleOnDesktopProfile": true,
+      "gpuSettledActivation": 1.0,
+      "gpuFiniteActivationScale": 1.0,
+      "scale": {
+        "min": 1.150390625,
+        "max": 1.150390625,
+        "mean": 1.150390625,
+        "median": 1.150390625,
+        "unique": 1
+      },
+      "density": {
+        "min": 114.0,
+        "max": 231.0,
+        "mean": 145.02240663900415,
+        "median": 130.0,
+        "unique": 108
+      },
+      "flags": {
+        "2": 34,
+        "6": 796,
+        "7": 375
+      },
+      "reserveDepth": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "unique": 1
+      },
+      "statusActive": 1205,
+      "statusReserve": 151,
+      "statusSubsurface": 151,
+      "worldNearestNeighbour": {
+        "min": 0.004438518342143576,
+        "median": 0.025834716879542755,
+        "mean": 0.026341210399206134,
+        "p95": 0.0426980117615664,
+        "max": 0.06685858651119989
+      },
+      "presentedNearestNeighbour": {
+        "min": 0.00548150922919767,
+        "median": 0.03190552073747443,
+        "mean": 0.032531033282100476,
+        "p95": 0.05273145845025013,
+        "max": 0.08256943663665461
+      },
+      "screenNearestNeighbourPx": {
+        "min": 0.10784783431109908,
+        "median": 1.3646682840461204,
+        "mean": 1.4748177203053454,
+        "p95": 2.9652689575764035,
+        "max": 4.669119581617015
+      },
+      "medianWorldSplatRadiusVisible": 0.0497250821042253,
+      "medianWorldSplatRadiusAsPacked": 0.0497250821042253,
+      "medianInstanceFootprintWorld": 0.0497250821042253,
+      "splatCoverageRatioVisible": 1.5585102814454619,
+      "splatCoverageRatioAsPacked": 1.558510281445462,
+      "normalVsCanonicalView": {
+        "medianFacing": -0.09273980355964563,
+        "meanFacing": -0.048511657887407876,
+        "backfacingShare": 0.5253112033195021
+      },
+      "lodPrefixPresence": {
+        "512": 53,
+        "1024": 101,
+        "2048": 206,
+        "4096": 438,
+        "8192": 771,
+        "12288": 1084,
+        "16384": 1205
+      },
+      "shaderScaleFormula": "radius = mix(sourceScale, targetScale, t) * mix(minimumGeometricScale, 1, activation) * OctahedronGeometry(0.035) * presentationFrame.scale",
+      "octahedronRadius": 0.035,
+      "minimumGeometricScale": 0.18,
+      "presentationFrameScale": 1.234986273944378,
+      "viewerSpaceRole": "viewer-centre"
+    },
+    {
+      "semanticName": "figure-left",
+      "componentId": 2,
+      "eventPart": 2,
+      "activeCount": 1014,
+      "totalRecords": 1316,
+      "worldCentroid": [
+        0.9602108508995064,
+        -0.05400422245255845,
+        -0.0490951340947956
+      ],
+      "worldBBox": {
+        "min": [
+          0.689409077167511,
+          -0.32609808444976807,
+          -0.7297695279121399
+        ],
+        "max": [
+          1.232535481452942,
+          0.21775361895561218,
+          0.6832678318023682
+        ],
+        "size": [
+          0.5431264042854309,
+          0.5438517034053802,
+          1.413037359714508
+        ]
+      },
+      "canonicalProjectedCentroid": {
+        "ndc": [
+          0.4381996147149759,
+          0.08889875432675255,
+          0.9979945467714442
+        ],
+        "screenX": 367.4600015596763,
+        "screenY": 232.78636826951472,
+        "presented": [
+          1.1896740114119275,
+          0.17012819723010694,
+          0.40737246341971833
+        ],
+        "inFront": true
+      },
+      "alternateProjectedCentroid": {
+        "ndc": [
+          0.39208128712893586,
+          0.03204671101963791,
+          0.9978939446082024
+        ],
+        "screenX": 355.6767688614431,
+        "screenY": 247.31206533448253,
+        "presented": [
+          1.1896740114119275,
+          0.17012819723010694,
+          0.40737246341971833
+        ],
+        "inFront": true
+      },
+      "canonicalScreenX": 367.4600015596763,
+      "visibleProfiles": [],
+      "visibleOnDesktopProfile": false,
+      "gpuSettledActivation": 0.0,
+      "gpuFiniteActivationScale": 0.18,
+      "scale": {
+        "min": 1.150390625,
+        "max": 1.150390625,
+        "mean": 1.150390625,
+        "median": 1.150390625,
+        "unique": 1
+      },
+      "density": {
+        "min": 115.0,
+        "max": 233.0,
+        "mean": 144.7465483234714,
+        "median": 131.0,
+        "unique": 115
+      },
+      "flags": {
+        "6": 694,
+        "7": 320
+      },
+      "reserveDepth": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "unique": 1
+      },
+      "statusActive": 1014,
+      "statusReserve": 151,
+      "statusSubsurface": 151,
+      "worldNearestNeighbour": {
+        "min": 0.0032843137359033023,
+        "median": 0.02614224775948244,
+        "mean": 0.02665482312804162,
+        "p95": 0.044184362909381526,
+        "max": 0.06906133351141894
+      },
+      "presentedNearestNeighbour": {
+        "min": 0.004056082383167573,
+        "median": 0.03228531715301398,
+        "mean": 0.032918340697546546,
+        "p95": 0.054567081716063386,
+        "max": 0.08528979894689721
+      },
+      "screenNearestNeighbourPx": {
+        "min": 0.06290926695099366,
+        "median": 1.4700548386371213,
+        "mean": 1.5606158529326237,
+        "p95": 3.125301482515081,
+        "max": 5.289859886817746
+      },
+      "medianWorldSplatRadiusVisible": 0.0497250821042253,
+      "medianWorldSplatRadiusAsPacked": 0.008950514778760554,
+      "medianInstanceFootprintWorld": 0.008950514778760554,
+      "splatCoverageRatioVisible": 1.5401763553554944,
+      "splatCoverageRatioAsPacked": 0.27723174396398903,
+      "normalVsCanonicalView": {
+        "medianFacing": -0.0797105743444784,
+        "meanFacing": -0.056546348593523706,
+        "backfacingShare": 0.5315581854043393
+      },
+      "lodPrefixPresence": {
+        "512": 50,
+        "1024": 84,
+        "2048": 181,
+        "4096": 371,
+        "8192": 651,
+        "12288": 915,
+        "16384": 1014
+      },
+      "shaderScaleFormula": "radius = mix(sourceScale, targetScale, t) * mix(minimumGeometricScale, 1, activation) * OctahedronGeometry(0.035) * presentationFrame.scale",
+      "octahedronRadius": 0.035,
+      "minimumGeometricScale": 0.18,
+      "presentationFrameScale": 1.234986273944378,
+      "viewerSpaceRole": "viewer-right"
+    }
+  ],
+  "viewerLeft": {
+    "semanticName": "figure-right",
+    "componentId": 4,
+    "eventPart": 3,
+    "activeCount": 890,
+    "canonicalScreenX": 153.25888208326697
+  },
+  "viewerCentre": {
+    "semanticName": "figure-centre",
+    "componentId": 3,
+    "eventPart": 1,
+    "activeCount": 1205,
+    "canonicalScreenX": 259.47554157858474
+  },
+  "viewerRight": {
+    "semanticName": "figure-left",
+    "componentId": 2,
+    "eventPart": 2,
+    "activeCount": 1014,
+    "canonicalScreenX": 367.4600015596763,
+    "VIEWER_RIGHT_COMPONENT": 2,
+    "VIEWER_RIGHT_EVENT_PART": 2,
+    "SEMANTIC_FIGURE_LEFT_COMPONENT": 2
+  },
+  "expectedViewerRight": {
+    "componentId": 2,
+    "eventPart": 2,
+    "semanticName": "figure-left",
+    "activeCount": 1014
+  },
+  "mappingMatchesOwnerHypothesis": true,
+  "r1ActualTarget": {
+    "semanticName": "figure-right",
+    "componentId": 4,
+    "eventPart": 3,
+    "activeCount": 890,
+    "viewerSpaceRoleAfter180": true,
+    "changedRecords": 1192
+  },
+  "r1DidNotTouchViewerRight": true,
+  "r1WrongTarget": true,
+  "authoringMayProceed": true,
+  "partBytes": {
+    "0": 12369,
+    "1": 1507,
+    "2": 1316,
+    "3": 1192
+  },
+  "expectedViewerRightLod": {
+    "512": 50,
+    "1024": 84,
+    "2048": 181,
+    "4096": 371,
+    "8192": 651,
+    "12288": 915,
+    "16384": 1014
+  },
+  "actualViewerRightLod": {
+    "512": 50,
+    "1024": 84,
+    "2048": 181,
+    "4096": 371,
+    "8192": 651,
+    "12288": 915,
+    "16384": 1014
+  },
+  "lodMatchesExpected": true
+}

@@ -4,6 +4,7 @@ import { EVENT_VARIANTS, VARIANT_BUFFER_PATH, type EventVariantId } from "./sand
 
 const ALL_PROFILES = ["desktop", "mobile390", "silhouette180", "silhouette96"] as const;
 const FIGURE_RIGHT_COMPONENT = 4;
+const VIEWER_RIGHT_COMPONENT = 2;
 
 export function isEventStateId(stateId: string) {
   return stateId === "single-event";
@@ -14,14 +15,27 @@ export async function sha256Hex(payload: ArrayBuffer | Uint8Array): Promise<stri
   return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
-export function cloneEventEntry(entry: StateEntry, variant: EventVariantId, bufferBytes: number, contentHash: string): StateEntry {
+export type SandboxIsolateId = "viewer-right" | null;
+
+export function cloneEventEntry(
+  entry: StateEntry,
+  variant: EventVariantId,
+  bufferBytes: number,
+  contentHash: string,
+  isolate: SandboxIsolateId = null,
+): StateEntry {
   const presented = entry as PresentationStateEntry;
-  const componentMap = presented.componentMap?.map((component) => ({
-    ...component,
-    visibleProfiles: variant === "b" || variant === "c"
-      ? [...ALL_PROFILES]
-      : component.visibleProfiles,
-  }));
+  const componentMap = presented.componentMap?.map((component) => {
+    const forceAll = variant === "b" || variant === "c";
+    const forceViewerRight = variant === "a-r2" && component.componentIndex === VIEWER_RIGHT_COMPONENT;
+    const hideOthers = isolate === "viewer-right" && component.componentIndex !== VIEWER_RIGHT_COMPONENT;
+    return {
+      ...component,
+      visibleProfiles: hideOthers
+        ? []
+        : forceAll || forceViewerRight ? [...ALL_PROFILES] : component.visibleProfiles,
+    };
+  });
   return {
     ...entry,
     bufferBytes,
@@ -37,10 +51,15 @@ export async function loadEventVariantBuffer(variant: EventVariantId, signal?: A
   return { payload, hash: await sha256Hex(payload) };
 }
 
-export async function overlayEventState(state: DecodedState, variant: EventVariantId, signal?: AbortSignal) {
+export async function overlayEventState(
+  state: DecodedState,
+  variant: EventVariantId,
+  signal?: AbortSignal,
+  isolate: SandboxIsolateId = null,
+) {
   if (!isEventStateId(state.entry.stateId)) return state;
   const { payload, hash } = await loadEventVariantBuffer(variant, signal);
-  return decodeState(cloneEventEntry(state.entry, variant, payload.byteLength, hash), payload);
+  return decodeState(cloneEventEntry(state.entry, variant, payload.byteLength, hash, isolate), payload);
 }
 
 export function bboxOf(state: DecodedState) {
@@ -85,4 +104,12 @@ export function figureRightActiveCount(state: DecodedState) {
   return count;
 }
 
-export { EVENT_VARIANTS };
+export function figureViewerRightActiveCount(state: DecodedState) {
+  let count = 0;
+  for (let id = 0; id < state.recordCount; id += 1) {
+    if (state.status[id] === 0 && state.component[id] === VIEWER_RIGHT_COMPONENT) count += 1;
+  }
+  return count;
+}
+
+export { EVENT_VARIANTS, VIEWER_RIGHT_COMPONENT, FIGURE_RIGHT_COMPONENT };

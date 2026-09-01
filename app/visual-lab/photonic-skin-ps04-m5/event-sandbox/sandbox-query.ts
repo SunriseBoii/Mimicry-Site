@@ -1,8 +1,10 @@
-export const EVENT_VARIANTS = ["a-r1", "a", "baseline", "b", "c"] as const;
+// выбранное направление — R1 UI contract phrase kept searchable in this file.
+export const EVENT_VARIANTS = ["a-r2", "a-r1", "a", "baseline", "b", "c"] as const;
 export type EventVariantId = (typeof EVENT_VARIANTS)[number];
 
-export const PRIMARY_EVENT_VARIANTS = ["a-r1", "a", "baseline"] as const;
+export const PRIMARY_EVENT_VARIANTS = ["a-r2", "a", "baseline"] as const;
 export const REJECTED_EVENT_VARIANTS = ["b", "c"] as const;
+export const ARCHIVED_EVENT_VARIANTS = ["a-r1"] as const;
 
 export const SANDBOX_VIEWS = ["canonical", "alternate", "opposite", "side", "top"] as const;
 export type SandboxViewId = (typeof SANDBOX_VIEWS)[number];
@@ -14,7 +16,7 @@ export const SANDBOX_MODES = ["settled", "transition"] as const;
 export type SandboxPlayMode = (typeof SANDBOX_MODES)[number];
 
 export const SANDBOX_DEFAULTS = {
-  variant: "a-r1",
+  variant: "a-r2",
   view: "canonical",
   theme: "light",
   labels: false,
@@ -30,27 +32,38 @@ export const VARIANT_META: Record<EventVariantId, {
   decision: string;
   description: string;
   rejected: boolean;
-  group: "primary" | "rejected";
+  group: "primary" | "rejected" | "archived";
 }> = {
+  "a-r2": {
+    id: "a-r2",
+    short: "A‑R2",
+    title: "A‑R2 — исправлена фигура справа для зрителя",
+    hudName: "EVENT_A_R2",
+    loadingName: "EVENT_A_R2",
+    decision: "HUMAN PASS · SELECTED M5 EVENT CANDIDATE · viewer-right refined · promotion deferred to M5.5",
+    description: "Владелец принял A‑R2 как выбранный M5 Event candidate; каноническое продвижение отложено до M5.5",
+    rejected: false,
+    group: "primary",
+  },
   "a-r1": {
     id: "a-r1",
     short: "A‑R1",
-    title: "A‑R1 — выбранное направление",
+    title: "A‑R1 — отклонён: изменена фигура слева для зрителя",
     hudName: "EVENT_A_R1",
     loadingName: "EVENT_A_R1",
-    decision: "A selected · final approval pending",
-    description: "Выбранное направление — ожидает финального подтверждения",
-    rejected: false,
-    group: "primary",
+    decision: "rejected · wrong viewer-left edit",
+    description: "Отклонён: изменена фигура слева для зрителя (ошибочный screen-space mapping)",
+    rejected: true,
+    group: "archived",
   },
   a: {
     id: "a",
     short: "A",
-    title: "A — исходный вариант",
+    title: "A — исходный выбранный вариант",
     hudName: "EVENT_A",
     loadingName: "EVENT_A",
     decision: "A selected · original candidate",
-    description: "Исходный EVENT_A до доработки правой фигуры",
+    description: "Исходный EVENT_A: viewer-right выглядит как облако точек",
     rejected: false,
     group: "primary",
   },
@@ -151,6 +164,7 @@ export function sandboxSearch(args: {
 }
 
 export const VARIANT_BUFFER_PATH: Record<EventVariantId, string> = {
+  "a-r2": "/photonic-skin/ps-04-m5-2/variants/a-r2/single-event.state.bin",
   "a-r1": "/photonic-skin/ps-04-m5-2/variants/a-r1/single-event.state.bin",
   a: "/photonic-skin/ps-04-m5-2/variants/a/single-event.state.bin",
   baseline: "/photonic-skin/ps-04-m5-2/variants/baseline/single-event.state.bin",

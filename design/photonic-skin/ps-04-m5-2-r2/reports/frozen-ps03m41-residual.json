@@ -1,0 +1,7 @@
+{
+  "test": "design/photonic-skin/ps-03-m4-1/tests/test_ps03m41.py",
+  "result": "KeyError: transitionRecordLayout",
+  "fixedOnR2": false,
+  "preExistingFrozenResidual": true,
+  "note": "Running the frozen M4.1 python script still raises KeyError: transitionRecordLayout. Not repaired in PS-04.M5.2.R2."
+}

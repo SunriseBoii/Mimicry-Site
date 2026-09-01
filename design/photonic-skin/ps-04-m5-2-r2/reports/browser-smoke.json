@@ -1,0 +1,66 @@
+{
+  "capturedAt": "2026-09-01T11:43:29.640Z",
+  "base": "http://127.0.0.1:3000",
+  "defaultRoute": {
+    "runId": "ps04-m5-2",
+    "stage": "PS-04.M5.2.R2",
+    "requested": "a-r2",
+    "displayed": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "view": "canonical",
+    "labels": false,
+    "playMode": "settled",
+    "theme": "light",
+    "query": "?variant=a-r2&view=canonical&theme=light&labels=0&mode=settled",
+    "hudHasAR2": true,
+    "hudDecision": true,
+    "notCanonicalClaim": true
+  },
+  "liveSwitchToA": {
+    "documentReloads": 0,
+    "displayed": "a",
+    "hash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d"
+  },
+  "liveSwitchToAR1": {
+    "documentReloads": 0,
+    "hash": "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc"
+  },
+  "event": {
+    "runId": "ps04-m5-2",
+    "displayed": "a-r2",
+    "overlayHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "node": "05.3",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "textures": 17,
+    "canvases": 1,
+    "actorDraw": true,
+    "visiblePixelCount": 98913,
+    "viewerRightActive": 1014,
+    "figureRightActive": 890
+  },
+  "contextRestore": {
+    "buttonStatus": "restored",
+    "overlayHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "displayed": "a-r2",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "visiblePixelCount": 98913
+  },
+  "m51": {
+    "runId": "ps04-m5",
+    "sandboxHandle": false
+  },
+  "production": {
+    "title": "Mimicry group — агентство корпоративных коммуникаций",
+    "hasSandbox": false,
+    "hasM51": false,
+    "siteShell": true
+  },
+  "preview": {
+    "displayed": "a-r2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  }
+}

@@ -177,14 +177,12 @@ test("R1 does not mutate stage/left/centre, Event palette, M5.1, canonical aggre
   assert.doesNotMatch(home, /ps-04-m5-2-r1/);
 });
 
-test("R1 sandbox query defaults to A-R1 settled unlabelled and rejects invalid params", () => {
-  assert.equal(SANDBOX_DEFAULTS.variant, "a-r1");
+test("R1 sandbox still accepts A-R1; default variant is now A-R2 from R2 review flow", () => {
+  assert.equal(parseSandboxQuery("?variant=a-r1").variant, "a-r1");
   assert.equal(SANDBOX_DEFAULTS.labels, false);
   assert.equal(SANDBOX_DEFAULTS.mode, "settled");
-  assert.equal(parseSandboxQuery("").variant, "a-r1");
   assert.equal(parseSandboxQuery("").labels, false);
   assert.equal(parseSandboxQuery("").mode, "settled");
-  assert.equal(parseSandboxQuery("?variant=nope").variant, "a-r1");
   assert.equal(parseSandboxQuery("?variant=nope").invalidVariant, true);
   assert.equal(parseSandboxQuery("?view=orbit").view, "canonical");
   assert.equal(parseSandboxQuery("?view=orbit").invalidView, true);

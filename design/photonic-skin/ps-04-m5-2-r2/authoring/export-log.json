@@ -1,0 +1,57 @@
+{
+  "stage": "PS-04.M5.2.R2",
+  "seed": 20260902,
+  "eventAHash": "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d",
+  "eventAR2Hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+  "grammar": {
+    "kind": "smooth-union ellipsoid head + tapered-capsule torso + short neck",
+    "seed": 20260902,
+    "derivedFrom": "EVENT_A viewer-right pose; proportions from viewer-left/centre range",
+    "targetHeight": 1.4251421225070955,
+    "targetWidth": 0.5367422948577976,
+    "headRadius": 0.22275156624830333,
+    "shoulderRadius": 0.2138415035983712,
+    "baseRadius": 0.24805614417411057,
+    "torsoBase": 0.24805614417411057,
+    "torsoTop": 1.0420094285600139,
+    "headCenterZ": 1.1578402430091317,
+    "neckA": 1.0249077230899288,
+    "neckB": 1.108834898434505,
+    "neckRadius": 0.16251954273476213,
+    "smoothK": 0.06840682188034058,
+    "translate": [
+      0.9602108508995064,
+      -0.05400422245255845,
+      -0.7297695279121399
+    ],
+    "rotateDeg": [
+      0.0,
+      0.0,
+      92.6918343078013
+    ],
+    "keptTargetCentroidXY": [
+      0.9602108508995064,
+      -0.05400422245255845
+    ],
+    "deckZ": -0.7547072434425354,
+    "baseZ": -0.7297695279121399,
+    "transformChain": [
+      "frozen BASELINE",
+      "EVENT_A rigid +180° Z",
+      "selective VIEWER-RIGHT figure refinement",
+      "EVENT_A_R2"
+    ]
+  },
+  "changedFields": [
+    "position",
+    "normal",
+    "orientation"
+  ],
+  "viewerRightActiveMapped": 1014,
+  "mesh": {
+    "vertices": 4020,
+    "faces": 8036
+  },
+  "deterministic": true,
+  "source": "original EVENT_A"
+}

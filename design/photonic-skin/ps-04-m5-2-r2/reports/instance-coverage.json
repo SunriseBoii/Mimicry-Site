@@ -1,0 +1,72 @@
+{
+  "formula": "radius = scale * mix(0.18,1,activation) * 0.035 * presentationFrame.scale",
+  "minimumGeometricScale": 0.18,
+  "originalAPacked": {
+    "visibleInstanceCount": 1014,
+    "medianProjectedInstanceFootprint": 0.008950514778760554,
+    "nearestNeighbourGapPresented": 0.03228531715301398,
+    "nearestNeighbourGapScreenPx": 1.4700548386371213,
+    "coverageRatio": 0.27723174396398903,
+    "packedVisible": false
+  },
+  "aR2OverlayVisible": {
+    "visibleInstanceCount": 1014,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.044448551788302273,
+    "nearestNeighbourGapScreenPx": 1.4187893858036764,
+    "coverageRatio": 1.1187109614066588,
+    "packedVisible": true
+  },
+  "viewerLeft": {
+    "visibleInstanceCount": 890,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.03324631720732986,
+    "nearestNeighbourGapScreenPx": 1.4261934970198773,
+    "coverageRatio": 1.4956568510770976,
+    "packedVisible": true
+  },
+  "viewerCentre": {
+    "visibleInstanceCount": 1205,
+    "medianProjectedInstanceFootprint": 0.0497250821042253,
+    "nearestNeighbourGapPresented": 0.03190552073747443,
+    "nearestNeighbourGapScreenPx": 1.3646682840461204,
+    "coverageRatio": 1.558510281445462,
+    "packedVisible": true
+  },
+  "flakeFootprintRatioVsLeft": 1.0,
+  "pointCloudOnOriginalA": true,
+  "flakeLikeOnAR2WhenVisible": true,
+  "silhouette180": {
+    "occupied": 1239,
+    "bboxRows": [
+      52,
+      109
+    ],
+    "bboxCols": [
+      116,
+      141
+    ],
+    "bboxOccupancyRatio": 0.8216180371352785,
+    "maxInternalRowGap": 0,
+    "componentsRawClosed": 1,
+    "mainShare": 1.0,
+    "connected": true
+  },
+  "silhouette96": {
+    "occupied": 365,
+    "bboxRows": [
+      27,
+      58
+    ],
+    "bboxCols": [
+      61,
+      75
+    ],
+    "bboxOccupancyRatio": 0.7604166666666666,
+    "maxInternalRowGap": 0,
+    "componentsRawClosed": 1,
+    "mainShare": 1.0,
+    "connected": true
+  },
+  "pass": true
+}

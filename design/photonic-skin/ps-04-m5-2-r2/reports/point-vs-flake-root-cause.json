@@ -1,0 +1,64 @@
+{
+  "causeId": "empty-visibleProfiles-forces-minimumGeometricScale",
+  "summary": "Frozen single-event componentMap leaves semantic figure-left (component 2) with empty visibleProfiles. After EVENT_A's rigid +180° Z that component is viewer-right. GPU packing therefore omits the +256 visibility bit, settled activation is 0, and instance radius collapses to minimumGeometricScale (0.18) × OctahedronGeometry(0.035). Viewer-left/centre stay on desktop visibleProfiles and render at full flake size. This is not a global particle-size, camera, exposure, or DPR issue.",
+  "notTheCause": [
+    "canonical vs alternate camera choice",
+    "global shader/material rewrite",
+    "global particle size / DPR / exposure",
+    "status/LOD dropping the IDs",
+    "binary silhouette connectivity of a force-visible mask"
+  ],
+  "displayPath": {
+    "position": "packed into uSource.xyz; finite",
+    "normal": "packed into uSourceNormal; used for lighting",
+    "orientation": "packed into uSourceQuat; rotates OctahedronGeometry(0.035)",
+    "scale": "packed into uSource.w; active records use SKIN_SCALE_CAP 1.15 on all three figures",
+    "density": "meta/flags only; does not change settled radius",
+    "status": "active=0 for all 1014 viewer-right IDs",
+    "flags": "feature/silhouette/density bits; visibility bit is NOT stored here",
+    "reserveDepth": "unused on active records",
+    "visibleProfiles": "EMPTY for component 2 on the frozen single-event entry",
+    "shader": "radius = geometricScale * mix(0.18, 1, activation) * 0.035 * presentationFrame.scale",
+    "activation": "sourceVisible = step(255.5, meta.w); meta.w += 256 only if component is in visibleComponents(profile)"
+  },
+  "viewerRightAsPacked": {
+    "visibleOnDesktopProfile": false,
+    "gpuFiniteActivationScale": 0.18,
+    "medianInstanceFootprintWorld": 0.008950514778760554,
+    "presentedNnMedian": 0.03228531715301398,
+    "coverageRatio": 0.27723174396398903
+  },
+  "viewerRightIfForcedVisible": {
+    "medianInstanceFootprintWorld": 0.0497250821042253,
+    "coverageRatio": 1.5401763553554944
+  },
+  "viewerLeftAsPacked": {
+    "visibleOnDesktopProfile": true,
+    "medianInstanceFootprintWorld": 0.0497250821042253,
+    "presentedNnMedian": 0.03324631720732986,
+    "coverageRatio": 1.4956568510770976
+  },
+  "viewerCentreAsPacked": {
+    "visibleOnDesktopProfile": true,
+    "medianInstanceFootprintWorld": 0.0497250821042253,
+    "presentedNnMedian": 0.03190552073747443,
+    "coverageRatio": 1.558510281445462
+  },
+  "footprintRatioVsViewerLeft": 0.18,
+  "interpretation": {
+    "actorMaskWouldBeSparse": true,
+    "reason": "actor-mask still uses the same activation/radius path; hidden IDs render at 0.18 scale",
+    "geometryIsPresent": true,
+    "scaleFieldIsNotAnomalous": true,
+    "fix": [
+      "A-R2 overlay must put VIEWER_RIGHT_COMPONENT on desktop/mobile/silhouette visibleProfiles",
+      "rebuild the same 1014 IDs as a compact pawn-like octahedral surface so the unhidden figure is readable",
+      "do not change global particle size, camera, exposure, or shader"
+    ],
+    "doNotChangeScaleFieldUnlessNecessary": true,
+    "scaleFieldChangeRequired": false
+  },
+  "r1MissedThis": "R1 silhouette pass force-visible'd component 4 (viewer-left) and never measured settled GPU activation of component 2.",
+  "mappingMatchesOwnerHypothesis": true,
+  "authoringMayProceed": true
+}

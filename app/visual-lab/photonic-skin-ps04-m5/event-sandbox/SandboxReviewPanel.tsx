@@ -2,6 +2,7 @@
 
 import type { KeyboardEvent } from "react";
 import {
+  ARCHIVED_EVENT_VARIANTS,
   PRIMARY_EVENT_VARIANTS,
   REJECTED_EVENT_VARIANTS,
   SANDBOX_THEMES,
@@ -37,6 +38,7 @@ export function SandboxReviewPanel(props: {
   n: number;
   activeCount: number;
   figureRightActive: number;
+  viewerRightActive: number;
   lodPrefix: string;
   onVariant: (id: EventVariantId) => void;
   onView: (id: SandboxViewId) => void;
@@ -84,7 +86,7 @@ export function SandboxReviewPanel(props: {
   return (
     <aside className={styles.sandboxPanel} data-qa="m52-review-panel">
       <div className={styles.sandboxHud} data-qa="m52-hud">
-        <div className={styles.sandboxKicker}>PS‑04.M5.2.R1 EVENT SANDBOX</div>
+        <div className={styles.sandboxKicker}>PS‑04.M5.2.R2 EVENT SANDBOX · EVENT_A_R2</div>
         <div><strong>Displayed:</strong> {displayedMeta?.hudName ?? "—"}</div>
         <div><strong>Status:</strong> <span aria-live="polite">{statusText}</span></div>
         <div><strong>Decision:</strong> {displayedMeta?.decision ?? requestedMeta.decision}</div>
@@ -94,8 +96,8 @@ export function SandboxReviewPanel(props: {
         <div><strong>Mode:</strong> {props.playMode}</div>
         <div className={styles.sandboxMuted}>Requested: {requestedMeta.hudName}</div>
         <div className={styles.sandboxMuted}>Hash: {props.bufferHash ?? "—"}</div>
-        <div className={styles.sandboxMuted}>N {props.n} · active {props.activeCount} · figure-right {props.figureRightActive} · LOD {props.lodPrefix}</div>
-        <div className={styles.sandboxMuted}>Source candidate: {displayed ?? "pending"} · owner: A selected, canonical pending</div>
+        <div className={styles.sandboxMuted}>N {props.n} · active {props.activeCount} · viewer-right {props.viewerRightActive} · semantic figure-right {props.figureRightActive} · LOD {props.lodPrefix}</div>
+        <div className={styles.sandboxMuted}>Source candidate: {displayed ?? "pending"} · owner: HUMAN PASS, EVENT_A_R2 selected, promotion deferred to M5.5</div>
       </div>
 
       <section className={styles.sandboxSection}>
@@ -116,6 +118,25 @@ export function SandboxReviewPanel(props: {
             />
           ))}
         </div>
+        <details className={styles.sandboxRejected} data-qa="m52-archived-r1">
+          <summary>A‑R1 — отклонён: изменена фигура слева для зрителя</summary>
+          <div
+            className={styles.sandboxGroup}
+            role="group"
+            aria-label="Отклонённый геометрический эксперимент R1"
+            onKeyDown={(event) => onVariantKey(event, ARCHIVED_EVENT_VARIANTS)}
+          >
+            {ARCHIVED_EVENT_VARIANTS.map((id) => (
+              <VariantButton
+                key={id}
+                id={id}
+                requested={props.requestedVariant}
+                displayed={displayed}
+                onSelect={props.onVariant}
+              />
+            ))}
+          </div>
+        </details>
         <details className={styles.sandboxRejected} data-qa="m52-rejected-variants">
           <summary>Отклонённые варианты (frozen evidence)</summary>
           <div

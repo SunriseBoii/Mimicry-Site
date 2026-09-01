@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { CompetenceId } from "../../../_brand/color-system";
-import type { M3Manifest } from "../../photonic-skin-m4-1/m41-data";
+import type { DebugMode, M3Manifest } from "../../photonic-skin-m4-1/m41-data";
 import { loadRuntimeManifests, type M41Manifest } from "../../photonic-skin-m4-1/m41-data";
 import { MATERIAL_THEME_PRESETS, defaultM2MaterialController, type MaterialTheme } from "../../photonic-skin-ps04-m3/material-foundation";
 import { compileLiveRetarget, viewportForFrame } from "../../photonic-skin-ps04-m3/runtime";
@@ -78,7 +78,7 @@ import {
   type SandboxThemeId,
   type SandboxViewId,
 } from "./sandbox-query";
-import { bboxOf, componentCounts, figureRightActiveCount } from "./variant-overlay";
+import { bboxOf, componentCounts, figureRightActiveCount, figureViewerRightActiveCount } from "./variant-overlay";
 import { createLoadGate, type SandboxLoadStatus } from "./sandbox-load-gate";
 import { SandboxReviewPanel } from "./SandboxReviewPanel";
 
@@ -117,6 +117,11 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const identity = query.get("identity") === "1";
   const actorMask = query.get("actorMask") === "1";
   const hideUi = actorMask || query.get("ui") === "0";
+  const debugQuery = query.get("debug");
+  const debugOverride: DebugMode | null = debugQuery === "orientation" || debugQuery === "identity" || debugQuery === "features"
+    ? debugQuery
+    : null;
+  const isolateViewerRight = query.get("isolate") === "viewer-right";
   const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
   const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
   const r6Staging = r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
@@ -213,7 +218,8 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   const programCacheRef = useRef(programCache);
   useEffect(() => {
     programCacheRef.current.variant = requestedVariant;
-  }, [requestedVariant]);
+    programCacheRef.current.isolate = isolateViewerRight ? "viewer-right" : null;
+  }, [isolateViewerRight, requestedVariant]);
   const gpuPool = useMemo(() => new GpuTexturePool(), []);
   const r6 = useMemo(() => new R6Instrumentation(), []);
   const gpuTimer = useMemo(() => {
@@ -599,6 +605,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
     const abort = new AbortController();
     const cache = programCacheRef.current;
     cache.variant = requestedVariant;
+    cache.isolate = isolateViewerRight ? "viewer-right" : null;
     cache.clearVariantCaches();
     let cancelled = false;
     queueMicrotask(() => {
@@ -693,7 +700,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       cancelled = true;
       abort.abort();
     };
-  }, [controller, identity, manifest, motionManifest, playMode, reducedMotion, requestedVariant, session, startClock]);
+  }, [controller, identity, isolateViewerRight, manifest, motionManifest, playMode, reducedMotion, requestedVariant, session, startClock]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
     const coordinator = coordinatorRef.current;
@@ -1034,7 +1041,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
   useEffect(() => {
     window.__PS04M52_LAB__ = {
       runId: "ps04-m5-2",
-      stage: "PS-04.M5.2.R1",
+      stage: "PS-04.M5.2.R2",
       variant: displayedVariant,
       requestedVariant,
       displayedVariant,
@@ -1048,6 +1055,10 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
       figureRightActive: () => {
         const state = session.getTarget() ?? session.getSource();
         return state ? figureRightActiveCount(state) : 0;
+      },
+      viewerRightActive: () => {
+        const state = session.getTarget() ?? session.getSource();
+        return state ? figureViewerRightActiveCount(state) : 0;
       },
       selectVariant: (id: EventVariantId) => applySandboxRef.current({ variant: id }),
       applySandbox: (patch: { variant?: EventVariantId; view?: SandboxViewId; theme?: MaterialTheme; labels?: boolean; mode?: SandboxPlayMode }) => applySandboxRef.current(patch),
@@ -1346,7 +1357,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
             budget={16384}
             progress={snapshot.geometryProgress}
             reducedMotion={reducedMotion}
-            debugMode={labels ? "components" : "neutral"}
+            debugMode={labels ? "components" : debugOverride ?? "neutral"}
             cameraPreset={view === "opposite" ? "canonical" : view}
             presentationContract={{
               ...manifest.presentationContract,
@@ -1482,6 +1493,7 @@ export function EventSandboxLab({ mode }: { mode: "lab" | "preview" }) {
           n={16384}
           activeCount={displayedState ? bboxOf(displayedState).activeCount : 0}
           figureRightActive={displayedState ? figureRightActiveCount(displayedState) : 0}
+          viewerRightActive={displayedState ? figureViewerRightActiveCount(displayedState) : 0}
           lodPrefix="512…16384"
           onVariant={(id) => applySandbox({ variant: id })}
           onView={(id) => applySandbox({ view: id })}

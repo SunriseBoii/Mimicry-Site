@@ -14,7 +14,7 @@ import {
 } from "../screen-actor-contract";
 import { topologyNeighbors, type ScreenNodeId } from "../topology";
 import { decodedStateBytes, programCpuBytes } from "../texture-pack";
-import { overlayEventState } from "./variant-overlay";
+import { overlayEventState, type SandboxIsolateId } from "./variant-overlay";
 import type { EventVariantId } from "./sandbox-query";
 
 export const CPU_CACHE_BUDGET_DESKTOP = 96 * 1024 * 1024;
@@ -59,7 +59,7 @@ export function defaultGeometryForNode(nodeId: string): string | null {
   return DEFAULT_GEOMETRY[nodeId] ?? null;
 }
 
-export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "a-r1") {
+export function frozenProgramKey(sourceId: string, targetId: string, reducedMotion: boolean, viewport: string, variant = "a-r2") {
   return `${variant}|${sourceId}|${targetId}|${reducedMotion ? 1 : 0}|${viewport}`;
 }
 
@@ -144,7 +144,8 @@ export class EventSandboxProgramCache {
   private idleHandle: IdleHandle | null = null;
   private cancelled = false;
   private clock = 0;
-  variant: EventVariantId = "a-r1";
+  variant: EventVariantId = "a-r2";
+  isolate: SandboxIsolateId = null;
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;
   budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
@@ -218,12 +219,12 @@ export class EventSandboxProgramCache {
   }
 
   async loadState(entry: StateEntry, signal?: AbortSignal) {
-    const cacheKey = `${this.variant}:${entry.stateId}`;
+    const cacheKey = `${this.variant}:${this.isolate ?? "full"}:${entry.stateId}`;
     const hit = this.states.get(cacheKey);
     if (hit) return hit;
     const loaded = await loadEntry(entry);
     if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
-    const state = await overlayEventState(loaded, this.variant, signal);
+    const state = await overlayEventState(loaded, this.variant, signal, this.isolate);
     this.states.set(cacheKey, state);
     return state;
   }
