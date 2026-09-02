@@ -1,0 +1,637 @@
+[
+  {
+    "name": "03-1-before-task",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-1-before-task.png",
+    "note": "03.1 potential before task",
+    "runId": "ps04-m6-1",
+    "node": "03.1",
+    "builder": {
+      "taskId": null,
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "potential"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral"
+  },
+  {
+    "name": "03-1-after-task",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-1-after-task.png",
+    "note": "03.1 still MASTER after task",
+    "runId": "ps04-m6-1",
+    "node": "03.1",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "potential"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral"
+  },
+  {
+    "name": "03-2-empty",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-empty.png",
+    "note": "03.2 empty set stays MASTER",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "potential"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral"
+  },
+  {
+    "name": "03-2-single-event",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-single-event.png",
+    "note": "03.2 one competency = SINGLE",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "event"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "single-event",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "single"
+    },
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m5-5",
+    "resolved": "single-event"
+  },
+  {
+    "name": "03-2-gather-event-video",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-gather-event-video.png",
+    "note": "Event+Video GATHER",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "event",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-event-video"
+  },
+  {
+    "name": "03-2-gather-games-merch-video",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-gather-games-merch-video.png",
+    "note": "Games+Merch+Video GATHER",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "games",
+        "merch",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-games-merch-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "740b683d1a1295e6f80c243d093732948b3f27532468706351135c94db8c8cab",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-games-merch-video"
+  },
+  {
+    "name": "03-2-gather-four-no-content-design",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-gather-four-no-content-design.png",
+    "note": "four competencies without Content/Design",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "digital",
+        "event",
+        "games",
+        "merch"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-digital-event-games-merch",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "59caf9f6f6bdea00bce62041dfaf2b92d44d1bba7a9545925c9d485b26ed9392",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-digital-event-games-merch"
+  },
+  {
+    "name": "03-2-gather-all-seven",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-2-gather-all-seven.png",
+    "note": "all seven GATHER",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "design",
+        "digital",
+        "event",
+        "games",
+        "merch",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-content-design-digital-event-games-merch-video"
+  },
+  {
+    "name": "03-3-drive-all-seven",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-3-drive-all-seven.png",
+    "note": "all seven DRIVE",
+    "runId": "ps04-m6-1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "design",
+        "digital",
+        "event",
+        "games",
+        "merch",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "design",
+          "digital",
+          "event",
+          "games",
+          "merch",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-design-digital-event-games-merch-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "6159509ff23ba79b2c8d26f507d0b6a13116be6d0e057ff7f1ca61be290a2fb4",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-content-design-digital-event-games-merch-video"
+  },
+  {
+    "name": "same-set-gather",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/same-set-gather.png",
+    "note": "same set GATHER",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "event",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-event-video"
+  },
+  {
+    "name": "same-set-drive",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/same-set-drive.png",
+    "note": "same set DRIVE",
+    "runId": "ps04-m6-1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "event",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "engage_and_unite",
+        "competencies": [
+          "event",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-event-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-event-video"
+  },
+  {
+    "name": "03-3-brief-edit",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-3-brief-edit.png",
+    "note": "brief text edit keeps confirmed DRIVE",
+    "runId": "ps04-m6-1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "event",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "engage_and_unite",
+        "competencies": [
+          "event",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-event-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-event-video"
+  },
+  {
+    "name": "edit-after-confirm-draft",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/edit-after-confirm-draft.png",
+    "note": "draft after confirm is SINGLE games",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "games"
+      ],
+      "confirmed": {
+        "taskId": "engage_and_unite",
+        "competencies": [
+          "event",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-event-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": true,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "single-games",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "single"
+    },
+    "hash": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m5-5",
+    "resolved": "single-games"
+  },
+  {
+    "name": "edit-after-confirm-confirmed",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/edit-after-confirm-confirmed.png",
+    "note": "confirmed Mimic stays Event+Video DRIVE",
+    "runId": "ps04-m6-1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "games"
+      ],
+      "confirmed": {
+        "taskId": "engage_and_unite",
+        "competencies": [
+          "event",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-event-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": true,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-event-video"
+  },
+  {
+    "name": "03-3-dark",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/03-3-dark.png",
+    "note": "Dark theme, same confirmed set",
+    "runId": "ps04-m6-1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "engage_and_unite",
+      "draft": [
+        "games"
+      ],
+      "confirmed": {
+        "taskId": "engage_and_unite",
+        "competencies": [
+          "event",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-event-video",
+        "stateHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+        "revision": 1
+      },
+      "briefStale": true,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-event-video"
+  },
+  {
+    "name": "clean-03-2-gather-event-video",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-1/renders/boards/clean-03-2-gather-event-video.png",
+    "note": "clean route, no HUD",
+    "runId": "ps04-m6-1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "learn_and_practice",
+      "draft": [
+        "event",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-event-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+    "draws": 1,
+    "canvases": 1,
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-event-video"
+  }
+]

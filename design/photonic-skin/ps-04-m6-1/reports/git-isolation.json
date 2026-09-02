@@ -1,0 +1,32 @@
+{
+  "stage": "PS-04.M6.1",
+  "branch": "ps04-m6-sandbox",
+  "sourceHead": "0ea9e67184c1a8a5be9833d6ccd2e41f919f6a9a",
+  "m60Checkpoint": "0ea9e67184c1a8a5be9833d6ccd2e41f919f6a9a",
+  "m60CheckpointMessage": "feat(photonic-skin): approve M5 production integration as M6 baseline",
+  "checkpointMessage": "feat(photonic-skin): approve project builder Mimic semantics",
+  "baselinePointer": "ps04-m6-baseline",
+  "m61HumanPass": true,
+  "m61Committed": true,
+  "m61Uncommitted": false,
+  "approvedFor": "PS-04.M6.2",
+  "productionDeployApproval": false,
+  "push": false,
+  "deploy": false,
+  "ps04Closed": false,
+  "m62Started": false,
+  "destructiveCommands": false,
+  "reset": false,
+  "revert": false,
+  "rebase": false,
+  "amend": false,
+  "productionFilesChanged": false,
+  "isolatedPaths": [
+    "app/visual-lab/photonic-skin-ps04-m6/",
+    "design/photonic-skin/ps-04-m6-1/",
+    "docs/PS-04-M6-1-MIMIC-SEMANTICS-PROJECT-BUILDER.md",
+    "public/photonic-skin/ps-04-m6-1/",
+    "tests/photonic-ps04-m6-1.test.ts"
+  ],
+  "note": "HUMAN PASS M6.1 is checkpointed once as the named commit. The new HEAD is the M6.2 baseline. M6.2 itself is not started in this packet."
+}

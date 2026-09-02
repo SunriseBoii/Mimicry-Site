@@ -1,0 +1,90 @@
+{
+  "componentMap": [
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "laptop-base",
+      "componentIndex": 0,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "laptop-screen",
+      "componentIndex": 1,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "smartphone",
+      "componentIndex": 2,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "gamepad",
+      "componentIndex": 3,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "queen",
+      "componentIndex": 4,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "camera",
+      "componentIndex": 5,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "clapperboard",
+      "componentIndex": 6,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ],
+  "stateId": "complex-drive-digital-games-video"
+}

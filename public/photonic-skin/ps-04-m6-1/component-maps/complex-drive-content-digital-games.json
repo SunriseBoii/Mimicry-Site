@@ -1,0 +1,79 @@
+{
+  "componentMap": [
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "content",
+      "componentId": "book-body",
+      "componentIndex": 0,
+      "semanticOwner": "content",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "laptop-base",
+      "componentIndex": 1,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "laptop-screen",
+      "componentIndex": 2,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "digital",
+      "componentId": "smartphone",
+      "componentIndex": 3,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "gamepad",
+      "componentIndex": 4,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "queen",
+      "componentIndex": 5,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ],
+  "stateId": "complex-drive-content-digital-games"
+}

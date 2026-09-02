@@ -1,0 +1,101 @@
+{
+  "componentMap": [
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "content",
+      "componentId": "book-body",
+      "componentIndex": 0,
+      "semanticOwner": "content",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "design",
+      "componentId": "palette-board",
+      "componentIndex": 1,
+      "semanticOwner": "design",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "design",
+      "componentId": "brush-upper",
+      "componentIndex": 2,
+      "semanticOwner": "design",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "design",
+      "componentId": "brush-lower",
+      "componentIndex": 3,
+      "semanticOwner": "design",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "gamepad",
+      "componentIndex": 4,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "games",
+      "componentId": "queen",
+      "componentIndex": 5,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "camera",
+      "componentIndex": 6,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "clapperboard",
+      "componentIndex": 7,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ],
+  "stateId": "complex-gather-content-design-games-video"
+}

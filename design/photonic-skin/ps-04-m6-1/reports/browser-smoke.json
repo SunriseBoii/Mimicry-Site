@@ -1,0 +1,127 @@
+{
+  "ok": true,
+  "runId": "ps04-m6-1",
+  "productionRunId": "ps04-m5-6",
+  "productionAssetNamespace": "ps-04-m5-5",
+  "productionRequestsM61": false,
+  "productionHasM61Handle": false,
+  "cleanHudCount": 0,
+  "reviewUsedDelta": true,
+  "eventOverlay": "none",
+  "videoOverlay": "none",
+  "runtimeRotationOverride": "none",
+  "boards": [
+    {
+      "name": "03-1-before-task",
+      "resolved": "master-neutral",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-1-after-task",
+      "resolved": "master-neutral",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-empty",
+      "resolved": "master-neutral",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-single-event",
+      "resolved": "single-event",
+      "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-gather-event-video",
+      "resolved": "complex-gather-event-video",
+      "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-gather-games-merch-video",
+      "resolved": "complex-gather-games-merch-video",
+      "hash": "740b683d1a1295e6f80c243d093732948b3f27532468706351135c94db8c8cab",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-gather-four-no-content-design",
+      "resolved": "complex-gather-digital-event-games-merch",
+      "hash": "59caf9f6f6bdea00bce62041dfaf2b92d44d1bba7a9545925c9d485b26ed9392",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-2-gather-all-seven",
+      "resolved": "complex-gather-content-design-digital-event-games-merch-video",
+      "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-3-drive-all-seven",
+      "resolved": "complex-drive-content-design-digital-event-games-merch-video",
+      "hash": "6159509ff23ba79b2c8d26f507d0b6a13116be6d0e057ff7f1ca61be290a2fb4",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "same-set-gather",
+      "resolved": "complex-gather-event-video",
+      "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "same-set-drive",
+      "resolved": "complex-drive-event-video",
+      "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-3-brief-edit",
+      "resolved": "complex-drive-event-video",
+      "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "edit-after-confirm-draft",
+      "resolved": "single-games",
+      "hash": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "edit-after-confirm-confirmed",
+      "resolved": "complex-drive-event-video",
+      "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "03-3-dark",
+      "resolved": "complex-drive-event-video",
+      "hash": "5ff20d4da9bbf6ff0e5654b1059a00654fce49277efdff0a19d0c8ea6ad43dd1",
+      "draws": 1,
+      "canvases": 1
+    },
+    {
+      "name": "clean-03-2-gather-event-video",
+      "resolved": "complex-gather-event-video",
+      "hash": "1908f69ae7b838fe5159514b616dc1d6cde40d3b0e0e2643f71abaccf80b164d",
+      "draws": 1,
+      "canvases": 1
+    }
+  ]
+}
