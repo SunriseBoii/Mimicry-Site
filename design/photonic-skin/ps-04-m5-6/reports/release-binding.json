@@ -1,0 +1,41 @@
+{
+  "stage": "PS-04.M5.6",
+  "releaseStatus": "LOCAL_PRODUCTION_INTEGRATION_CANDIDATE",
+  "sourceCheckpoint": "184c696eb5455da762ac47e2dcd9035ad8236a78",
+  "payloadNamespace": "ps-04-m5-5",
+  "stateCount": 154,
+  "selectionLockHash": "14cb2c37d5fac29b2f69a7a8ee1c342be13c67ac9007cd1b256b668663eb9392",
+  "event": {
+    "id": "EVENT_A_R2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "video": {
+    "id": "VIDEO_COMBO_40_R1",
+    "hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+    "compositionYawDegrees": -40,
+    "clapperOpenAngleDegrees": 30
+  },
+  "framing": {
+    "id": "OWNER_SELECTED_124_111_111",
+    "aboutRequestedZoom": 1.24,
+    "aboutMobileCap": 1.18,
+    "merchRequestedZoom": 1.11,
+    "merchMobileCap": 1.08,
+    "videoRequestedZoom": 1.11,
+    "videoMobileCap": 1.08
+  },
+  "hashes": {
+    "promotedManifest": "69c3e5aa26b99a7d6564f1e4a58d67e5b928294c7f9f617b69cb142c662cc46a",
+    "stateHashMap": "149015e5e5303e57f308a89c34cd410fa4a58d0192c1853e8f10566935457817",
+    "componentMapInventory": "ac56e587b91c3c404126330d66fc4b15abfa7c380c89a46f953c5bd01bb4b328",
+    "productionRuntimeConfig": "12f7fbac83b8f2a3384092a7f59fc715ff55655360c0f375bad8fd524530a2b3",
+    "cameraFramingContract": "4c35b05318b9bbb561bb3c6d0ea225b9e8b20374daeaa061775cda16ceac5e02",
+    "m51ChoreographyConstants": "c27b13ea810187f64249d408ac349e77edbf4c782b4853908371b9adc598fc0a"
+  },
+  "deployApproved": false,
+  "ps04Closed": false,
+  "productionRoute": "/",
+  "labPreview": "/visual-lab/photonic-skin-ps04-m5/promotion-preview",
+  "labReview": "/visual-lab/photonic-skin-ps04-m5/promotion-preview/review",
+  "descriptor": "/photonic-skin/release/ps-04-m5-6.json"
+}

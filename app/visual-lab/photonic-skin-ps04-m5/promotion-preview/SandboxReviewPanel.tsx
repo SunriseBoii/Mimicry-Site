@@ -75,7 +75,7 @@ function Group<T extends string | number>(props: {
 }
 
 export function FramingReviewPanel(props: {
-  mode: "lab" | "preview";
+  mode: "lab" | "preview" | "production";
   screen: FramingScreenQuery;
   aboutZoom: AboutZoomPercent;
   merchZoom: MerchZoomPercent;

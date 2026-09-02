@@ -4,7 +4,8 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import type { CompetenceId } from "../../../_brand/color-system";
 import type { DebugMode, M3Manifest } from "../../photonic-skin-m4-1/m41-data";
 import { loadRuntimeManifests, type M41Manifest } from "../../photonic-skin-m4-1/m41-data";
-import { loadPromotedRuntime } from "./promoted-runtime";
+import { loadPromotedRuntime } from "../../../_photonic-skin/runtime";
+import { M56_RUN_ID, M56_SESSION_ID, M56_STAGE, PAYLOAD_NAMESPACE, RELEASE_FRAMING } from "../../../_photonic-skin/release";
 import { MATERIAL_THEME_PRESETS, defaultM2MaterialController, type MaterialTheme } from "../../photonic-skin-ps04-m3/material-foundation";
 import { compileLiveRetarget, viewportForFrame } from "../../photonic-skin-ps04-m3/runtime";
 import { PhotonicMotionSession, type SessionSnapshot } from "../../photonic-skin-ps04-m3/session";
@@ -83,13 +84,14 @@ import { parsePromotionQuery, promotionSearch } from "./promotion-query";
 import { OWNER_SELECTED_PROFILE_ID, SELECTED_EVENT_HASH, SELECTED_VIDEO_HASH, SELECTED_VIDEO_VARIANT, framingProfileFor, type AboutZoomPercent, type FramingSelection, type MerchZoomPercent, type VideoZoomPercent } from "../framing";
 import { createLoadGate, type SandboxLoadStatus } from "../framing-sandbox/sandbox-load-gate";
 import { FramingReviewPanel } from "./SandboxReviewPanel";
-import { PROMOTED_ASSET_NAMESPACE, type PromotionNamespaceId } from "./promoted-runtime";
+import { PROMOTED_ASSET_NAMESPACE, type PromotionNamespaceId } from "../../../_photonic-skin/runtime";
 
 declare global {
   interface Window {
     __PS04M55_LAB__?: Record<string, unknown>;
     __PS04M5_LAB__?: Record<string, unknown>;
     __PS04M5_PREVIEW__?: Record<string, unknown>;
+    __PS04M56_PRODUCTION__?: Record<string, unknown>;
   }
 }
 
@@ -112,23 +114,36 @@ function parseLabDpr(query: URLSearchParams) {
 }
 
 function bootstrapReducedMotion() {
-  return (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-    || labQuery().get("reduced") === "1";
+  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
-  const query = labQuery();
-  const sandbox = parsePromotionQuery(typeof window === "undefined" ? "" : window.location.search);
-  const identity = query.get("identity") === "1";
-  const actorMask = query.get("actorMask") === "1" || sandbox.diagnostic === "mask";
-  const hideUi = actorMask || query.get("ui") === "0";
-  const debugQuery = query.get("debug");
+export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" | "production" }) {
+  const production = mode === "production";
+  const query = production ? new URLSearchParams() : labQuery();
+  const sandbox = production
+    ? {
+      screen: "about" as FramingScreenQuery,
+      aboutZoom: RELEASE_FRAMING.aboutZoomPercent,
+      merchZoom: RELEASE_FRAMING.merchZoomPercent,
+      videoZoom: RELEASE_FRAMING.videoZoomPercent,
+      viewport: "current" as FramingViewportId,
+      diagnostic: "final" as FramingDiagnosticId,
+      theme: (typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light") as FramingThemeId,
+      mode: "settled" as FramingPlayMode,
+      namespace: "candidate" as PromotionNamespaceId,
+    }
+    : parsePromotionQuery(typeof window === "undefined" ? "" : window.location.search);
+  const identity = production ? false : query.get("identity") === "1";
+  const [maskHarness, setMaskHarness] = useState(false);
+  const actorMask = maskHarness || (!production && (query.get("actorMask") === "1" || sandbox.diagnostic === "mask"));
+  const hideUi = actorMask || (!production && query.get("ui") === "0");
+  const debugQuery = production ? null : query.get("debug");
   const debugOverride: DebugMode | null = debugQuery === "orientation" || debugQuery === "identity" || debugQuery === "features"
     ? debugQuery
     : null;
-  const continuityLift = query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED;
-  const reproduceR4Geometry = query.get("reproduceR4Geometry") === "1";
-  const r6Staging = r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
+  const continuityLift = production ? DEFAULT_CONTINUITY_LIFT_ENABLED : (query.get("continuityLift") === "1" || DEFAULT_CONTINUITY_LIFT_ENABLED);
+  const reproduceR4Geometry = production ? false : query.get("reproduceR4Geometry") === "1";
+  const r6Staging = production ? false : r6StagingEnabled(typeof window === "undefined" ? "" : window.location.search);
   const [theme, setTheme] = useState<MaterialTheme>(sandbox.theme);
   const [screen, setScreen] = useState<FramingScreenQuery>(sandbox.screen);
   const [aboutZoom, setAboutZoom] = useState(sandbox.aboutZoom);
@@ -154,9 +169,9 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
     namespace?: PromotionNamespaceId;
   }, history?: "push" | "replace" | "none") => void>(() => undefined);
   const [dpr, setDpr] = useState(() => parseLabDpr(query));
-  const [manualReduced, setManualReduced] = useState(query.get("reduced") === "1");
+  const [manualReduced, setManualReduced] = useState(!production && query.get("reduced") === "1");
   const [hud] = useState(mode === "lab" && query.get("hud") !== "0");
-  const [namespace, setNamespace] = useState<PromotionNamespaceId>(sandbox.namespace);
+  const [namespace, setNamespace] = useState<PromotionNamespaceId>(production ? "candidate" : sandbox.namespace);
   const [stats, setStats] = useState<SceneStats>(EMPTY_STATS);
   const [environment, setEnvironment] = useState<SceneEnvironment | null>(null);
   const [contextState, setContextState] = useState<"ready" | "lost" | "restored">("ready");
@@ -169,7 +184,9 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
   const [motionManifest, setMotionManifest] = useState<M41Manifest | null>(null);
   const manifest = (namespace === "frozen" ? frozenManifest : promotedManifest);
   const [flow, setFlow] = useState<BuildFlowState>(INITIAL_BUILD_FLOW);
-  const [activeNode, setActiveNode] = useState<ScreenNodeId>(sandbox.screen === "walkthrough" ? "02" : SCREEN_NODE[sandbox.screen]);
+  const [activeNode, setActiveNode] = useState<ScreenNodeId>(
+    production ? "01" : (sandbox.screen === "walkthrough" ? "02" : SCREEN_NODE[sandbox.screen]),
+  );
   const [ui, setUi] = useState<SessionSnapshot | null>(null);
   const [txUi, setTxUi] = useState<ActorTransitionTransaction | null>(null);
   const systemReduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -184,15 +201,19 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
   }, [session]);
   const controller = useMemo(() => new ScrollCompositionController(), []);
   useEffect(() => {
+    if (production) {
+      controller.setMagnetismVariant(SELECTED_MAGNETISM_VARIANT);
+      return;
+    }
     const requested = labQuery().get("magnetism");
     if (requested === "a" || requested === "b" || requested === "c") {
       controller.setMagnetismVariant(requested);
     } else {
       controller.setMagnetismVariant(SELECTED_MAGNETISM_VARIANT);
     }
-  }, [controller]);
+  }, [controller, production]);
   const [contract, setContract] = useState<ScreenActorContract | null>(null);
-  const sessionId = "ps04-m5-5-promotion-preview";
+  const sessionId = production ? M56_SESSION_ID : "ps04-m5-5-promotion-preview";
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
   const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
@@ -293,6 +314,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
         identity: identityRef.current,
         sessionStatus: sessionSnap.status,
         geometryPlaying: sessionSnap.status === "transitioning" && sessionSnap.geometryProgress < 1,
+        sessionTargetId: session.getTarget()?.entry.stateId ?? null,
       });
       const tx = coordinator.snapshot();
       if (tx.status === "settled" && tx.paletteCommitted && tx.revision !== lastSettledRevisionRef.current) {
@@ -608,18 +630,18 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
 
   useEffect(() => {
     const controllerAbort = new AbortController();
-    Promise.all([
-      loadPromotedRuntime(controllerAbort.signal),
-      loadRuntimeManifests(controllerAbort.signal),
-    ]).then(([promoted, frozen]) => {
+    const tasks = [loadPromotedRuntime(controllerAbort.signal)];
+    if (!production) tasks.push(loadRuntimeManifests(controllerAbort.signal));
+    Promise.all(tasks).then((results) => {
+      const promoted = results[0];
       setPromotedManifest(promoted.m3);
-      setFrozenManifest(frozen.m3);
       setMotionManifest(promoted.m4);
+      if (results[1]) setFrozenManifest(results[1].m3);
     }).catch((reason: Error) => {
       if (reason.name !== "AbortError") setError(reason.message);
     });
     return () => controllerAbort.abort();
-  }, []);
+  }, [production]);
 
   useEffect(() => {
     const m3 = namespace === "frozen" ? frozenManifest : promotedManifest;
@@ -642,12 +664,14 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
     });
     const m3 = manifest;
     const m4 = motionManifest;
-    const queryNode = labQuery().get("node");
+    const queryNode = production ? null : labQuery().get("node");
     const initialScreen = bootScreenRef.current;
     const screenNode = initialScreen === "walkthrough" ? "02" : SCREEN_NODE[initialScreen];
-    const bootNode = (queryNode && SCREEN_NODE_BY_ID[queryNode as ScreenNodeId]
-      ? queryNode
-      : bootPlayModeRef.current === "settled" ? screenNode : "01") as ScreenNodeId;
+    const bootNode = (production
+      ? "01"
+      : (queryNode && SCREEN_NODE_BY_ID[queryNode as ScreenNodeId]
+        ? queryNode
+        : bootPlayModeRef.current === "settled" ? screenNode : "01")) as ScreenNodeId;
     const bootGeometry = defaultGeometryForNode(bootNode) ?? "master-neutral";
     const entry = m3.states.find((item) => item.stateId === bootGeometry) ?? m3.states.find((item) => item.stateId === "master-neutral") ?? m3.states[0];
     void (async () => {
@@ -737,7 +761,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
       cancelled = true;
       abort.abort();
     };
-  }, [controller, identity, manifest, motionManifest, reducedMotion, session, startClock]);
+  }, [controller, identity, manifest, motionManifest, production, reducedMotion, session, startClock]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
     const coordinator = coordinatorRef.current;
@@ -1122,9 +1146,9 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
   }, [controller, session, sessionId]);
 
   useEffect(() => {
-    window.__PS04M55_LAB__ = {
-      runId: "ps04-m5-5",
-      stage: "PS-04.M5.5",
+    const handle = {
+      runId: production ? M56_RUN_ID : "ps04-m5-5",
+      stage: production ? M56_STAGE : "PS-04.M5.5",
       assetNamespace: namespace === "candidate" ? PROMOTED_ASSET_NAMESPACE : "ps-03-m3-1r",
       stateHash: bufferHash,
       eventOverlay: "none",
@@ -1351,9 +1375,25 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
         return result.state;
       }),
       setCompetencies: (ids: CompetenceId[]) => setFlow((current) => setCompetencies(current, ids)),
+      resetFlow: () => {
+        setFlowError(null);
+        setFlow(INITIAL_BUILD_FLOW);
+      },
       openContact: () => setFlow(openContact),
       closeOverlay: () => setFlow(closeOverlay),
-      loseContext: () => document.getElementById("ps04m5-context-restore-run-motion")?.dispatchEvent(new MouseEvent("click", { bubbles: true })),
+      loseContext: () => {
+        const button = document.getElementById("ps04m5-context-restore-run-motion");
+        if (button) {
+          button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+          return;
+        }
+        const canvas = document.querySelector("canvas");
+        const gl = canvas && (canvas.getContext("webgl2") || canvas.getContext("webgl"));
+        const extension = gl && gl.getExtension("WEBGL_lose_context");
+        if (!gl || !extension) return;
+        extension.loseContext();
+        window.setTimeout(() => extension.restoreContext(), 80);
+      },
       framing: () => {
         const tx = coordinatorRef.current.snapshot();
         const host = canvasHostRef.current;
@@ -1413,10 +1453,14 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
       textureInventory: () => window.__PS04M5_GPU_DIAG__?.textureInventory?.() ?? null,
       liveBankGpuParity: () => window.__PS04M5_GPU_DIAG__?.liveBankGpuParity?.() ?? null,
       framebufferSilhouette: () => window.__PS04M5_GPU_DIAG__?.framebufferSilhouette?.() ?? null,
+      setActorMask: (value: boolean) => setMaskHarness(Boolean(value)),
     };
-    window.__PS04M5_LAB__ = window.__PS04M55_LAB__;
-    if (mode === "preview") window.__PS04M5_PREVIEW__ = window.__PS04M55_LAB__;
-  }, [aboutZoom, activeNode, actorRequest, bufferHash, contextState, controller, diagnostic, diagnostics, environment, flow.overlay, flow.unlock, identity, loading, loadStatus, merchZoom, mode, namespace, navigate, playMode, reducedMotion, requestActor, screen, session, sessionId, startClock, stats, target, theme, videoZoom, viewportId]);
+    window.__PS04M55_LAB__ = handle;
+    window.__PS04M5_LAB__ = handle;
+    if (mode === "preview") window.__PS04M5_PREVIEW__ = handle;
+    if (production) window.__PS04M56_PRODUCTION__ = handle;
+    else delete window.__PS04M56_PRODUCTION__;
+  }, [aboutZoom, activeNode, actorRequest, bufferHash, contextState, controller, diagnostic, diagnostics, environment, flow.overlay, flow.unlock, identity, loading, loadStatus, merchZoom, mode, namespace, navigate, playMode, production, reducedMotion, requestActor, screen, session, sessionId, startClock, stats, target, theme, videoZoom, viewportId]);
 
   const sceneReady = Boolean(source && target && program && manifest);
   const paper = MATERIAL_THEME_PRESETS[theme].background;
@@ -1431,6 +1475,17 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
     mode?: FramingPlayMode;
     namespace?: PromotionNamespaceId;
   }, history: "push" | "replace" | "none" = "push") => {
+    if (production) {
+      if (patch.theme) {
+        const nextTheme = patch.theme === "dark" ? "dark" : "light";
+        setTheme(nextTheme);
+        document.documentElement.dataset.theme = nextTheme;
+        document.documentElement.dataset.themePreference = nextTheme;
+        document.documentElement.style.colorScheme = nextTheme;
+        try { localStorage.setItem("mimicry-theme", nextTheme); } catch { /* ignore */ }
+      }
+      return;
+    }
     const next = {
       screen: patch.screen ?? screen,
       aboutZoom: patch.aboutZoom ?? aboutZoom,
@@ -1460,12 +1515,13 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
     const url = `${window.location.pathname}${promotionSearch(next)}`;
     if (history === "push") window.history.pushState({ sandbox: next }, "", url);
     else if (history === "replace") window.history.replaceState({ sandbox: next }, "", url);
-  }, [aboutZoom, controller, diagnostic, merchZoom, namespace, playMode, screen, theme, videoZoom, viewportId]);
+  }, [aboutZoom, controller, diagnostic, merchZoom, namespace, playMode, production, screen, theme, videoZoom, viewportId]);
   useLayoutEffect(() => {
     applySandboxRef.current = applySandbox;
   }, [applySandbox]);
 
   useEffect(() => {
+    if (production) return;
     const canonical = promotionSearch({
       screen,
       aboutZoom,
@@ -1496,7 +1552,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
-  }, [aboutZoom, applySandbox, diagnostic, merchZoom, namespace, playMode, screen, theme, videoZoom, viewportId]);
+  }, [aboutZoom, applySandbox, diagnostic, merchZoom, namespace, playMode, production, screen, theme, videoZoom, viewportId]);
 
   const frame = viewportId === "current" ? null : VIEWPORT_PIXELS[viewportId];
   const liveProfile = framingProfileFor({
@@ -1509,7 +1565,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
   const displayedZoom = txUi
     ? (txUi.sourceZoom ?? 1) + ((txUi.targetZoom ?? 1) - (txUi.sourceZoom ?? 1)) * (txUi.framingProgress ?? 1)
     : liveProfile.effectiveZoom;
-  const showDiag = actorMask || diagnostic !== "final" || query.get("diag") === "1";
+  const showDiag = !production && (actorMask || diagnostic !== "final" || query.get("diag") === "1");
 
   return (
     <main
@@ -1537,7 +1593,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
         data-qa="m4-canvas"
         data-load-status={loadStatus}
         data-buffer-hash={bufferHash ?? ""}
-        data-asset-namespace={namespace === "candidate" ? "ps-04-m5-5" : "ps-03-m3-1r"}
+        data-asset-namespace={production || namespace === "candidate" ? PAYLOAD_NAMESPACE : "ps-03-m3-1r"}
         data-framing-profile={OWNER_SELECTED_PROFILE_ID}
         data-screen={screen}
         data-about-zoom={aboutZoom}
@@ -1577,6 +1633,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" }) {
             instrumentation={r6}
             actorMask={actorMask || diagnostic === "mask"}
             diagnosticId="motion"
+            qaControls={!production}
             onStats={setStats}
             onEnvironment={setEnvironment}
             onRenderer={(renderer) => pipelineRef.current.attachRenderer(renderer)}

@@ -1,0 +1,24 @@
+{
+  "stage": "PS-04.M5.6",
+  "ranFrozenValidator": true,
+  "reproduced": {
+    "exitCode": 1,
+    "stdout": "\nfrozen M3 provenance and non-mutation guards\n",
+    "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-m4-1\\tests\\test_ps03m41.py\", line 387, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\design\\photonic-skin\\ps-03-m4-1\\tests\\test_ps03m41.py\", line 113, in main\n    check(manifest_m3[\"transitionRecordLayout\"][\"stride\"] == 22, \"M3 v1 transition stride remains 22 bytes\")\n          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'transitionRecordLayout'\n"
+  },
+  "keyErrorTransitionRecordLayout": true,
+  "homepageHashIncompatibility": true,
+  "layout": {
+    "frozenM3HasTransitionRecordLayout": false,
+    "frozenM3Stride": null,
+    "promotedHasTransitionRecordLayout": false,
+    "promotedStateRecordStride": 40,
+    "m4ProgramLayout": null,
+    "productionUsesM4Programs": true,
+    "historicalResidual": "KeyError: transitionRecordLayout and/or homepage hash drift after production swap",
+    "rewroteFrozenEvidence": false
+  },
+  "compatible": false,
+  "residualOpen": true,
+  "note": "Frozen PS-03 validator is historical. M5.6 does not rewrite frozen reports. Production payload uses M4 transition programs over immutable M5.5 state buffers."
+}

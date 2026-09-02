@@ -156,7 +156,7 @@ test("PS-04.M4 frozen hashes and old routes remain exact", () => {
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m1/page.tsx"), "utf8").length > 0);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m2/page.tsx"), "utf8").length > 0);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m3/page.tsx"), "utf8").length > 0);
-  assert.ok(readFileSync(path.join(ROOT, "app/page.tsx"), "utf8").includes("SiteShell"));
+  assert.ok(readFileSync(path.join(ROOT, "app/page.tsx"), "utf8").includes("ProductionPhotonicSiteClient"));
   assert.doesNotMatch(m3Lab, /photonic-skin-ps04-m4/);
   assert.match(m4Lab, /PhotonicMotionSession/);
 });

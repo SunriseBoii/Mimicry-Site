@@ -1,0 +1,36 @@
+{
+  "stage": "PS-04.M5.6",
+  "wroteFrozenReports": false,
+  "wroteM55Reports": false,
+  "payloadNamespace": "ps-04-m5-5",
+  "probeCount": 512,
+  "endpointChecks": {
+    "passed": 154,
+    "expected": 154,
+    "pass": true
+  },
+  "selfTransitions": {
+    "passed": 154,
+    "expected": 154,
+    "pass": true,
+    "note": "self is no-op: identical endpoint buffer"
+  },
+  "directedNonSelfExpected": 23562,
+  "compileError": null,
+  "fullOrderedPairProbe": {
+    "expected": 23562,
+    "probed": 23562,
+    "failed": 0,
+    "failures": [],
+    "ran": true,
+    "pass": true,
+    "finite": true,
+    "t0Exact": true,
+    "t1Exact": true,
+    "thirdGeometry": false,
+    "persistentIdsPreserved": true,
+    "elapsedSec": 42.9,
+    "workers": 8
+  },
+  "pass": true
+}

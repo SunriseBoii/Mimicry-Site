@@ -407,7 +407,6 @@ export class ActorTransitionCoordinator {
     }
     const previous = this.current;
     const nextKey = semanticActorKey(args.next);
-    const sameMask = args.displayed.paletteMask === nextKey.paletteMask && args.displayed.paletteProgress >= 1;
     this.revision += 1;
     const nowMs = args.nowMs ?? args.nowSeconds * 1000;
     if (!this.timeOriginMs) this.timeOriginMs = nowMs;
@@ -473,7 +472,7 @@ export class ActorTransitionCoordinator {
       durationSeconds: duration,
       geometryProgress: kind === "geometry" && running ? 0 : 1,
       semanticPhase: kind === "geometry" && running ? "anticipation" : framingOnly && running ? "regroup" : "settle",
-      paletteProgress: reduced || sameMask || kind === "exit" || kind === "site-only" || framingOnly ? 1 : 0,
+      paletteProgress: reduced || kind === "exit" || kind === "site-only" || framingOnly ? 1 : 0,
       siteProgress: reduced || sameSite || paletteOnly || framingOnly ? 1 : 0,
       paletteOwnershipMode: 0,
       continuityEnabled: !args.identity && kind === "geometry" && !reduced ? 1 : 0,
@@ -516,6 +515,7 @@ export class ActorTransitionCoordinator {
     identity?: boolean;
     sessionStatus?: string;
     geometryPlaying?: boolean;
+    sessionTargetId?: string | null;
   }) {
     const tx = this.current;
     if (tx.status !== "running") {
@@ -584,11 +584,30 @@ export class ActorTransitionCoordinator {
       if (tx.siteProgress >= 1 && tx.framingProgress >= 1) this.commitTargetAsSettled();
       return this.snapshot();
     }
+    if (tx.kind === "geometry" && !reduced && args.sessionTargetId && args.sessionTargetId !== tx.targetGeometryId) {
+      tx.geometryProgress = 0;
+      tx.semanticPhase = "anticipation";
+      const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;
+      tx.paletteProgress = 0;
+      tx.siteProgress = sameSite ? 1 : 0;
+      tx.slotProgress = sameSite ? 1 : 0;
+      tx.positionProgress = sameSite ? 1 : 0;
+      tx.visualPublished = false;
+      tx.fitProgress = sameSite ? 1 : 0;
+      tx.framingProgress = Math.abs(tx.sourceZoom - tx.targetZoom) < 1e-8 ? 1 : 0;
+      tx.paletteOwnershipMode = 0;
+      tx.continuityEnabled = 0;
+      tx.shaderBaseLutHash = tx.sourcePaletteLutHash;
+      tx.visualLifecycle = "preparing";
+      tx.resourceState = tx.programReady ? "cpu-ready" : "cpu-preparing";
+      return this.snapshot();
+    }
     const waitingForProgram = tx.kind === "geometry"
       && tx.programReady === false
       && !reduced
       && (args.sessionStatus === "settled"
-        || (args.sessionStatus === "transitioning" && args.geometryPlaying !== true));
+        || (args.sessionStatus === "transitioning" && args.geometryPlaying !== true)
+        || Boolean(args.sessionTargetId && args.sessionTargetId !== tx.targetGeometryId));
     const compileGap = waitingForProgram || (tx.kind === "geometry"
       && args.sessionStatus === "transitioning"
       && args.geometryPlaying !== true
@@ -597,9 +616,8 @@ export class ActorTransitionCoordinator {
     if (compileGap) {
       tx.geometryProgress = 0;
       tx.semanticPhase = "anticipation";
-      const sameMask = tx.sourcePaletteMask === tx.targetPaletteMask;
       const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;
-      tx.paletteProgress = sameMask ? 1 : 0;
+      tx.paletteProgress = 0;
       tx.siteProgress = sameSite ? 1 : 0;
       tx.slotProgress = sameSite ? 1 : 0;
       tx.positionProgress = sameSite ? 1 : 0;
@@ -618,9 +636,7 @@ export class ActorTransitionCoordinator {
       : (reduced ? 1 : clamp01(args.geometryProgress));
     tx.semanticPhase = semanticPhaseFromAdapter(args.phase, reduced);
     tx.programId = args.programId ?? tx.programId;
-    const sameMask = tx.sourcePaletteMask === tx.targetPaletteMask;
     tx.paletteProgress = paletteProgressFromGeometryM5(tx.geometryProgress, {
-      sameMask,
       reducedMotion: reduced,
     });
     const sameSite = tx.sourceSlot === tx.targetSlot && tx.sourceFit === tx.targetFit;

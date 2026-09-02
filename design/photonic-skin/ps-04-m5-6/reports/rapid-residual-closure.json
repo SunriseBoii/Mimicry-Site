@@ -1,0 +1,68 @@
+{
+  "stage": "PS-04.M5.6",
+  "id": "PS04-M5-R001",
+  "status": "CLOSED",
+  "historicalFingerprint": {
+    "frames": 75,
+    "paletteLeads": 59,
+    "source": "ps-04-m5-2-r2 Event sandbox rapid"
+  },
+  "rootCause": "Running geometry used sameMask to publish paletteProgress=1 while geometryProgress=0 during compile-gap/prepare, and rapid retarget inherited a stale session clock. M5.6 holds palette to the M5.1 delayed curve and holds a new transaction at 0 until the session target matches.",
+  "paletteLeads": 0,
+  "centerDwell": 0,
+  "thirdGeometry": false,
+  "forward": {
+    "frames": 189,
+    "paletteLeads": 0,
+    "centerDwell": 0,
+    "thirdGeometry": false,
+    "thirdGeometryFrames": 0,
+    "geometries": [
+      "master-neutral",
+      "single-design",
+      "single-event",
+      "single-games"
+    ]
+  },
+  "reverse": {
+    "frames": 182,
+    "paletteLeads": 0,
+    "centerDwell": 0,
+    "thirdGeometry": false,
+    "thirdGeometryFrames": 0,
+    "geometries": [
+      "single-design",
+      "single-games",
+      "single-event"
+    ]
+  },
+  "digitalVideo": {
+    "frames": 332,
+    "paletteLeads": 0,
+    "centerDwell": 0,
+    "thirdGeometry": false,
+    "thirdGeometryFrames": 0,
+    "geometries": [
+      "single-event",
+      "single-digital",
+      "single-video"
+    ]
+  },
+  "videoMerch": {
+    "frames": 339,
+    "paletteLeads": 0,
+    "centerDwell": 0,
+    "thirdGeometry": false,
+    "thirdGeometryFrames": 0,
+    "geometries": [
+      "single-digital",
+      "single-video",
+      "single-merch"
+    ]
+  },
+  "afterComplexDesignHash": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f",
+  "afterComplexDesignId": "single-design",
+  "designBeforeRapidHash": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f",
+  "designBeforeRapidId": "single-design",
+  "sampleCountNotWeakened": true
+}

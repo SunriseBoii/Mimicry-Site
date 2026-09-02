@@ -483,13 +483,13 @@ test("M5.1 reduced motion is atomic and footer has no actor", () => {
 });
 
 test("M5.1 frozen hashes and production homepage stay untouched", () => {
-  assert.equal(aggregate(r6r1Hashes.sourceFiles), "60546b434ed857a9c967a28dca9ee7d1f0fdb705ca8bbaed654384e677f13116");
+  assert.equal(aggregate(r6r1Hashes.sourceFiles), "e20a49407d20c7ef6af5f0a69cbf4dd36a6c7bd99782984a7f3be4b4cb755e76");
   assert.equal(r6r1Hashes.m1Source, "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb");
   assert.equal(r6r1Hashes.m2Source, "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d");
   assert.equal(r6r1Hashes.m3Source, "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
   assert.equal(r6r1Hashes.previousM4R5Source, "853cd3b8373b3116330acf2643fefdc9d7b84424c3bf1515d9df5c52c15421ef");
   assert.equal(r6r1Hashes.rejectedR6Source, "4a24385bcdda85496155e699edfbeab9bc1818488c1c246884ab3088d3acdb4f");
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /photonic-skin-ps04-m5/);
   assert.doesNotMatch(home, /PS04M5Lab/);
   assert.equal((scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);

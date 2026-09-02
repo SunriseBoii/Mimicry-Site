@@ -28,7 +28,7 @@ const RIGHT_LOD = { 512: 42, 1024: 78, 2048: 155, 4096: 325, 8192: 566, 12288: 8
 const EVENT_A = "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d";
 const EVENT_A_R1 = "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc";
 const M52_SOURCE = "34e19852c76aec43e6a07c005ede69573481b7957c8c6b087111054591c7c87e";
-const M51_SOURCE = "8ee1cc11289be4b277eccf5a9b578029cfb1625d34eb6dbd0bbc010a768cc556";
+const M51_SOURCE = "a4f394cf3f0c137e3204b3c34cf0a7ced9fec9c59be9c89a3a298c98c533b420";
 const FROZEN_EVENT = "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
 const COMPONENT_RIGHT = 4;
@@ -172,7 +172,7 @@ test("R1 does not mutate stage/left/centre, Event palette, M5.1, canonical aggre
   const m41 = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1/exports/ps03m41-manifest.json"), "utf8"));
   assert.equal(m41.aggregateContentHash, AGGREGATE);
   assert.equal(aggregate(m51Hashes.sourceFiles), M51_SOURCE);
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /event-sandbox/);
   assert.doesNotMatch(home, /ps-04-m5-2-r1/);
 });

@@ -432,7 +432,7 @@ test("22-25 one material/program path, no per-frame React, initTexture counted, 
   assert.match(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/compile-broker.ts"), "utf8"), /new Worker/);
   assert.match(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/compile-worker.ts"), "utf8"), /compileTransition/);
   assert.doesNotMatch(m4Scene, /OffscreenCanvas/);
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /PS04M4Lab/);
 });
 

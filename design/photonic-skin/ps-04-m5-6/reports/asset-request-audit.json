@@ -1,0 +1,41 @@
+{
+  "stage": "PS-04.M5.6",
+  "server": "next-start",
+  "base": "http://localhost:3001",
+  "m55Manifest": true,
+  "m55States": true,
+  "sandboxOverlays": false,
+  "oldVideoCombo": false,
+  "frozenEventAsTarget": false,
+  "visualLabModules": false,
+  "webpackChunksNamedVisualLab": 0,
+  "notFound": 0,
+  "frozenMotionManifest": true,
+  "frozenActorStates": false,
+  "sample": [
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json",
+    "http://localhost:3001/photonic-skin/ps-03-m4-1/manifest.json",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/master-neutral.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/brand-wide-gather-content-design-digital-event-games-merch-video.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-merch.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-digital.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-video.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-event.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-games.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-games.state.bin"
+  ],
+  "stateRequests": [
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/master-neutral.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/brand-wide-gather-content-design-digital-event-games-merch-video.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-merch.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-digital.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-video.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-event.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-games.state.bin",
+    "http://localhost:3001/photonic-skin/ps-04-m5-5/states/single-games.state.bin"
+  ],
+  "duplicateStateDownloadAfterWarm": 0,
+  "duplicateAfterWarmUrls": [],
+  "stateRequestCount": 8,
+  "pass": true
+}

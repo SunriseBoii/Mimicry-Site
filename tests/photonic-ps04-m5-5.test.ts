@@ -251,18 +251,17 @@ test("promotion query defaults to owner 124/111/111 without BALANCED_REVIEW", ()
   assert.ok(videoMobile <= 1.08);
 });
 
-test("production /, frozen assets, and M5.6 isolation", () => {
+test("production /, frozen assets, and M5.5 payload isolation", () => {
   const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /promotion-preview/);
-  assert.doesNotMatch(home, /ps-04-m5-5/);
+  assert.doesNotMatch(home, /visual-lab/);
   assert.doesNotMatch(home, /PS04M5Lab/);
   assert.equal(shaFile("public/photonic-skin/ps-03-m3-1r/states/single-video.state.bin"), FROZEN_VIDEO);
   assert.equal(shaFile("public/photonic-skin/ps-04-m5-3-r1/variants/combo-40-r1/single-video.state.bin"), SELECTED_VIDEO_HASH);
   assert.equal(shaFile("public/photonic-skin/ps-04-m5-2/variants/a-r2/single-event.state.bin"), SELECTED_EVENT_HASH);
   const aggregate = readJson("design/photonic-skin/ps-03-m4-1/exports/ps03m41-manifest.json");
   assert.equal(aggregate.aggregateContentHash, AGGREGATE);
-  assert.equal(existsSync(path.join(ROOT, "design/photonic-skin/ps-04-m5-6")), false);
   const m55 = readJson("design/photonic-skin/ps-04-m5-5/manifest.json");
   assert.equal(m55.m56Started, false);
   assert.equal(m55.productionApproval, false);

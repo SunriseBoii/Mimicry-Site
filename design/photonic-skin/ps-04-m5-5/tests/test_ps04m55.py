@@ -111,7 +111,7 @@ class Ps04M55(unittest.TestCase):
         self.assertTrue((ROOT / "public" / "photonic-skin" / "ps-03-m3-1r").is_dir())
         self.assertTrue((ROOT / "public" / "photonic-skin" / "ps-04-m5-2").is_dir())
         self.assertTrue((ROOT / "public" / "photonic-skin" / "ps-04-m5-3-r1").is_dir())
-        self.assertFalse((ROOT / "design" / "photonic-skin" / "ps-04-m5-6").exists())
+        self.assertEqual(sha(PUBLIC / "states" / "single-event.state.bin"), EVENT_A_R2)
         bins = list((PUBLIC / "states").glob("*.state.bin"))
         self.assertEqual(len(bins), 154)
 

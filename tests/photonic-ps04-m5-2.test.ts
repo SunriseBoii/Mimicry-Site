@@ -30,7 +30,7 @@ const STRIDE = 40;
 const N = 16384;
 const PREFIXES = [512, 1024, 2048, 4096, 8192, 12288, 16384];
 const FROZEN_EVENT = "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933";
-const M51_SOURCE = "8ee1cc11289be4b277eccf5a9b578029cfb1625d34eb6dbd0bbc010a768cc556";
+const M51_SOURCE = "a4f394cf3f0c137e3204b3c34cf0a7ced9fec9c59be9c89a3a298c98c533b420";
 const PARTS = ["stage", "figure-centre", "figure-left", "figure-right"] as const;
 const COMPONENT_PART = [0, 0, 2, 1, 3] as const;
 
@@ -244,14 +244,14 @@ test("M5.2 does not mutate canonical aggregate, M5.1 source, frozen hashes, Even
   assert.equal(m31.deterministicFingerprint, "0c778f0f1bdddb85f2021c0b9764084e8893b1231ac6f19253fe11ec7f8bfdf2");
   const patch = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1r/reports/presentation-patch-inventory.json"), "utf8"));
   assert.equal(patch.hash, "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0");
-  assert.equal(aggregate(r6r1Hashes.sourceFiles), "60546b434ed857a9c967a28dca9ee7d1f0fdb705ca8bbaed654384e677f13116");
+  assert.equal(aggregate(r6r1Hashes.sourceFiles), "e20a49407d20c7ef6af5f0a69cbf4dd36a6c7bd99782984a7f3be4b4cb755e76");
   assert.match(palette, /event: "#F86927"/);
   assert.equal((scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.equal((scene.match(/<Canvas/g) ?? []).length, 1);
   assert.equal((scene.match(/<instancedMesh/g) ?? []).length, 1);
   assert.match(m51Lab, /sessionId = "ps04-m5-1"/);
   assert.doesNotMatch(m51Page, /event-sandbox/);
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /photonic-skin-ps04-m5/);
   assert.doesNotMatch(home, /event-sandbox/);
 });

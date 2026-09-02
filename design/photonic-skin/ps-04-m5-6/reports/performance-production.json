@@ -1,0 +1,2440 @@
+{
+  "stage": "PS-04.M5.6",
+  "mode": "dev-capture",
+  "stats": {
+    "fps": 133,
+    "medianMs": 6,
+    "p95Ms": 14.5,
+    "drawCalls": 1,
+    "triangles": 131072,
+    "textureMiB": 4,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 288,
+    "dpr": 1,
+    "drawingBuffer": [
+      1440,
+      900
+    ],
+    "lastActorDrawCalls": 0,
+    "lastActorTriangles": 0,
+    "newFrame": false,
+    "materialUuid": "4ff4ee45-7884-475d-86ca-843fbb6fb426",
+    "compileCount": 18
+  },
+  "cache": {
+    "hits": 150,
+    "misses": 24,
+    "compiles": 24,
+    "prewarms": 147,
+    "inflight": 0,
+    "cached": 24,
+    "lastKey": "OWNER_SELECTED_124_111_111|candidate|single-games|single-video|0|desktop",
+    "lastStatus": "cached",
+    "bytes": 53014464,
+    "evictions": 0
+  },
+  "resource": {
+    "state": "absent",
+    "visual": "settled",
+    "revision": null,
+    "pendingRevision": null,
+    "cacheBytes": 53014464,
+    "cacheBudget": 100663296,
+    "cacheEntries": 24,
+    "gpuTextures": 48,
+    "gpuBudget": 48,
+    "gpuReady": false,
+    "pinnedKeys": []
+  },
+  "r6": {
+    "marks": [
+      {
+        "name": "r6:slow-clock",
+        "atMs": 522.2000000476837,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 62.90000002384187,
+          "visual": "settled",
+          "node": "01",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 796.3999999761581,
+        "detail": {
+          "durationMs": 0.19999992847442627,
+          "rafSkewMs": 227.80000004768374,
+          "visual": "settled",
+          "node": "01",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.19999992847442627,
+            "ui": 0.19999992847442627
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 888.8999999761581,
+        "detail": {
+          "durationMs": 0.19999992847442627,
+          "rafSkewMs": 59.80000004768374,
+          "visual": "settled",
+          "node": "01",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.19999992847442627,
+            "nav": 0.19999992847442627,
+            "compose": 0.19999992847442627,
+            "ui": 0.19999992847442627
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 1118.8999999761581,
+        "detail": {
+          "durationMs": 0.19999992847442627,
+          "rafSkewMs": 186.70000004768372,
+          "visual": "settled",
+          "node": "01",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0,
+            "compose": 0.19999992847442627,
+            "ui": 0.19999992847442627
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 1206.2000000476837,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 1207.3999999761581,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 1
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 1367,
+        "detail": {
+          "durationMs": 0.19999992847442627,
+          "rafSkewMs": 137.80000007152557,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0.09999990463256836,
+            "sync": 0.19999992847442627,
+            "nav": 0.19999992847442627,
+            "compose": 0.19999992847442627,
+            "ui": 0.19999992847442627
+          }
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 1367.3000000715256,
+        "detail": {
+          "key": "master-neutral|single-design|master-neutral-to-single-design-qa-desktop-4831de8f3f04"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 1371
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 1371,
+        "detail": {
+          "revision": 1,
+          "count": 1
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 1371,
+        "detail": {
+          "revision": 1,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 1382.2000000476837,
+        "detail": {
+          "gapMs": 11.200000047683716
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 2598.399999976158,
+        "detail": {
+          "durationMs": 0.09999990463256836,
+          "rafSkewMs": 127.00000007152539,
+          "visual": "settled",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0.09999990463256836,
+            "nav": 0.09999990463256836,
+            "compose": 0.09999990463256836,
+            "ui": 0.09999990463256836
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 2747.2000000476837,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 124.20000002384177,
+          "visual": "settled",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 2758.2000000476837,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 2759,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 2
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 2780.399999976158,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 2781.100000023842,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 3
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 2801.7000000476837,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 2822.899999976158,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 2823.5,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 4
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 2876.399999976158,
+        "detail": {
+          "key": "single-design|single-design|single-design-to-single-design-qa-desktop-35d9aa5d39dc"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 2884
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 2884,
+        "detail": {
+          "revision": 4,
+          "count": 2
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 2884.100000023842,
+        "detail": {
+          "revision": 4,
+          "progress": 1
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 3022.5,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 138.99999997615805,
+          "visual": "settled",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 3022.8000000715256,
+        "detail": {
+          "gapMs": 138.70000004768372
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 3025.3000000715256,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 3139.399999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 5
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 3139.600000023842,
+        "detail": {
+          "durationMs": 0.3999999761581421,
+          "rafSkewMs": 116.30000004768362,
+          "visual": "settled",
+          "node": "05.3",
+          "split": {
+            "tick": 0,
+            "sync": 0.10000002384185791,
+            "nav": 0.19999992847442627,
+            "compose": 0.3999999761581421,
+            "ui": 0.3999999761581421
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 3153.5,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 3154,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 6
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 3381.899999976158,
+        "detail": {
+          "durationMs": 228.09999990463257,
+          "rafSkewMs": 15.800000071525574,
+          "visual": "morphing",
+          "node": "05.4",
+          "split": {
+            "tick": 0.09999990463256836,
+            "sync": 0.09999990463256836,
+            "nav": 227.89999997615814,
+            "compose": 228.09999990463257,
+            "ui": 228.09999990463257
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 3537.8000000715256,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 3538.600000023842,
+        "detail": {
+          "key": "single-design|single-games|single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 3544.100000023842
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 3544.100000023842,
+        "detail": {
+          "revision": 6,
+          "count": 3
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 3544.2000000476837,
+        "detail": {
+          "revision": 6,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 3563.3000000715256,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 3564,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 7
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 3778,
+        "detail": {
+          "durationMs": 214.19999992847443,
+          "rafSkewMs": 19.700000071525665,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 214.09999990463257,
+            "compose": 214.19999992847443,
+            "ui": 214.19999992847443
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 3923.399999976158,
+        "detail": {
+          "gapMs": 379.1999999284744
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 3941,
+        "detail": {
+          "key": "single-games|single-design|single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 3947.8000000715256
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 3947.8000000715256,
+        "detail": {
+          "revision": 7,
+          "count": 4
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 3947.899999976158,
+        "detail": {
+          "revision": 7,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 3966.7000000476837,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 3967.399999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 8
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 4190.5,
+        "detail": {
+          "durationMs": 223.39999997615814,
+          "rafSkewMs": 23.100000023841858,
+          "visual": "morphing",
+          "node": "05.3",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 223.39999997615814,
+            "compose": 223.39999997615814,
+            "ui": 223.39999997615814
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 4191.300000071526,
+        "detail": {
+          "gapMs": 243.40000009536743
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 4209.600000023842,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 4210.5,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 9
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 4430.5,
+        "detail": {
+          "durationMs": 220.10000002384186,
+          "rafSkewMs": 17.899999976158142,
+          "visual": "morphing",
+          "node": "05.4",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 220,
+            "compose": 220.10000002384186,
+            "ui": 220.10000002384186
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 4445.200000047684,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 4446.100000023842,
+        "detail": {
+          "key": "single-design|single-games|single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 4449.200000047684
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 4449.300000071526,
+        "detail": {
+          "revision": 9,
+          "count": 5
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 4449.300000071526,
+        "detail": {
+          "revision": 9,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 4460.300000071526,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 4460.700000047684,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 10
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 4618.600000023842,
+        "detail": {
+          "durationMs": 158,
+          "rafSkewMs": 13.600000023841858,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 157.89999997615814,
+            "compose": 158,
+            "ui": 158
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 4618.899999976158,
+        "detail": {
+          "gapMs": 169.59999990463257
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 4628.100000023842,
+        "detail": {
+          "key": "single-games|single-design|single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 4632.300000071526
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 4632.399999976158,
+        "detail": {
+          "revision": 10,
+          "count": 6
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 4632.399999976158,
+        "detail": {
+          "revision": 10,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 4651.100000023842,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 4651.700000047684,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 11
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 4866.899999976158,
+        "detail": {
+          "durationMs": 215.39999997615814,
+          "rafSkewMs": 22.600000000000364,
+          "visual": "morphing",
+          "node": "05.3",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 215.30000007152557,
+            "compose": 215.39999997615814,
+            "ui": 215.39999997615814
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 4867.700000047684,
+        "detail": {
+          "gapMs": 235.30000007152557
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 4885.300000071526,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 4886.300000071526,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 12
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 5061.200000047684,
+        "detail": {
+          "durationMs": 175.10000002384186,
+          "rafSkewMs": 20.90000002384204,
+          "visual": "morphing",
+          "node": "05.4",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 175,
+            "compose": 175.10000002384186,
+            "ui": 175.10000002384186
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 5079.899999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 5081.399999976158,
+        "detail": {
+          "key": "single-design|single-games|single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 5088.100000023842
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 5088.100000023842,
+        "detail": {
+          "revision": 12,
+          "count": 7
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 5088.200000047684,
+        "detail": {
+          "revision": 12,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 5107.300000071526,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 5107.800000071526,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 13
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 5297.800000071526,
+        "detail": {
+          "durationMs": 190.10000002384186,
+          "rafSkewMs": 18.100000047683352,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 190,
+            "compose": 190.10000002384186,
+            "ui": 190.10000002384186
+          }
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 5298.200000047684,
+        "detail": {
+          "gapMs": 210
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 5312.5,
+        "detail": {
+          "key": "single-games|single-design|single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 5319.399999976158
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 5319.399999976158,
+        "detail": {
+          "revision": 13,
+          "count": 8
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 5319.399999976158,
+        "detail": {
+          "revision": 13,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 5335.800000071526,
+        "detail": {
+          "gapMs": 16.300000071525574
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 6552.700000047684,
+        "detail": {
+          "durationMs": 0,
+          "rafSkewMs": 178.40000004768353,
+          "visual": "settled",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0,
+            "compose": 0,
+            "ui": 0
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 6774.600000023842,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 169.89999999999964,
+          "visual": "settled",
+          "node": "05.2",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 6793.700000047684,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 6794.300000071526,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 14
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 6813,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 6813.5,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 15
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 7010.899999976158,
+        "detail": {
+          "durationMs": 197.59999990463257,
+          "rafSkewMs": 20.800000071525574,
+          "visual": "morphing",
+          "node": "05.3",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 197.5,
+            "compose": 197.59999990463257,
+            "ui": 197.59999990463257
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7024.600000023842,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 7025,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 16
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 7223.899999976158,
+        "detail": {
+          "durationMs": 199,
+          "rafSkewMs": 14.299999976157778,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0.10000002384185791,
+            "nav": 199,
+            "compose": 199,
+            "ui": 199
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7242.300000071526,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 7242.899999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 17
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7256.5,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 7256.899999976158,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 18
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 7444.100000023842,
+        "detail": {
+          "durationMs": 187.39999997615814,
+          "rafSkewMs": 15.80000004768408,
+          "visual": "morphing",
+          "node": "05.4",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 187.19999992847443,
+            "compose": 187.39999997615814,
+            "ui": 187.39999997615814
+          }
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 7461.899999976158,
+        "detail": {
+          "key": "single-design|single-games|single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 7469
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 7469.100000023842,
+        "detail": {
+          "revision": 18,
+          "count": 9
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 7469.100000023842,
+        "detail": {
+          "revision": 18,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7486.800000071526,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 7487.700000047684,
+        "detail": {
+          "gapMs": 18.600000023841858
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7505.300000071526,
+        "detail": {
+          "nodeId": "05.2",
+          "scrollY": 4502
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 7505.899999976158,
+        "detail": {
+          "nodeId": "05.2",
+          "revision": 19
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 7937.200000047684,
+        "detail": {
+          "durationMs": 431.5,
+          "rafSkewMs": 16.30000004768408,
+          "visual": "morphing",
+          "node": "05.2",
+          "split": {
+            "tick": 0,
+            "sync": 0.10000002384185791,
+            "nav": 431.39999997615814,
+            "compose": 431.5,
+            "ui": 431.5
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 7954.899999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 7955.399999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 20
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 8149.200000047684,
+        "detail": {
+          "durationMs": 194,
+          "rafSkewMs": 17.200000047683716,
+          "visual": "morphing",
+          "node": "05.3",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 193.89999997615814,
+            "compose": 194,
+            "ui": 194
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 8168.300000071526,
+        "detail": {
+          "nodeId": "05.4",
+          "scrollY": 6302
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 8168.899999976158,
+        "detail": {
+          "nodeId": "05.4",
+          "revision": 21
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 8384.800000071526,
+        "detail": {
+          "durationMs": 216.10000002384186,
+          "rafSkewMs": 18.600000047683352,
+          "visual": "morphing",
+          "node": "05.4",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 216,
+            "compose": 216.10000002384186,
+            "ui": 216.10000002384186
+          }
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 8444.200000047684,
+        "detail": {
+          "key": "single-games|single-games|single-games-to-single-games-qa-desktop-87470cdfd745"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 8451.300000071526
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 8451.300000071526,
+        "detail": {
+          "revision": 21,
+          "count": 10
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 8451.399999976158,
+        "detail": {
+          "revision": 21,
+          "progress": 1
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 8469,
+        "detail": {
+          "nodeId": "05.3",
+          "scrollY": 5402
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 8469.399999976158,
+        "detail": {
+          "nodeId": "05.3",
+          "revision": 22
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 8470.100000023842,
+        "detail": {
+          "gapMs": 18.700000047683716
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 8486.600000023842,
+        "detail": {
+          "key": "single-games|single-event|single-games-to-single-event-qa-desktop-c0532daf7dec"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 8492.800000071526
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 8492.800000071526,
+        "detail": {
+          "revision": 22,
+          "count": 11
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 8492.800000071526,
+        "detail": {
+          "revision": 22,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 8510,
+        "detail": {
+          "gapMs": 17.199999928474426
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 9742.100000023842,
+        "detail": {
+          "durationMs": 0.20000004768371582,
+          "rafSkewMs": 167.59999997615887,
+          "visual": "settled",
+          "node": "05.3",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.20000004768371582,
+            "nav": 0.20000004768371582,
+            "compose": 0.20000004768371582,
+            "ui": 0.20000004768371582
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 9754.300000071526,
+        "detail": {
+          "nodeId": "05.6",
+          "scrollY": 8102
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 9754.899999976158,
+        "detail": {
+          "nodeId": "05.6",
+          "revision": 23
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 9871.5,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 97.19999997615741,
+          "visual": "morphing",
+          "node": "05.6",
+          "split": {
+            "tick": 0,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 9871.899999976158,
+        "detail": {
+          "key": "single-event|single-digital|single-event-to-single-digital-qa-desktop-17e406b1e73a"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 9875.600000023842
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 9875.600000023842,
+        "detail": {
+          "revision": 23,
+          "count": 12
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 9875.600000023842,
+        "detail": {
+          "revision": 23,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 9890.800000071526,
+        "detail": {
+          "gapMs": 15.200000047683716
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 11023.200000047684,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 85.20000002384222,
+          "visual": "settled",
+          "node": "05.6",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 11128.700000047684,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 99.90000002384113,
+          "visual": "settled",
+          "node": "05.6",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 11131.800000071526,
+        "detail": {
+          "nodeId": "05.5",
+          "scrollY": 7202
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 11132.5,
+        "detail": {
+          "nodeId": "05.5",
+          "revision": 24
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 11146.899999976158,
+        "detail": {
+          "nodeId": "05.6",
+          "scrollY": 8102
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 11147.800000071526,
+        "detail": {
+          "key": "single-digital|single-video|single-digital-to-single-video-qa-desktop-176abae90d85"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 11152.800000071526
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 11152.800000071526,
+        "detail": {
+          "revision": 24,
+          "count": 13
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 11152.899999976158,
+        "detail": {
+          "revision": 24,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 11163.899999976158,
+        "detail": {
+          "nodeId": "05.5",
+          "scrollY": 7202
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 11164.700000047684,
+        "detail": {
+          "gapMs": 11.800000071525574
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 11175.700000047684,
+        "detail": {
+          "nodeId": "05.6",
+          "scrollY": 8102
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 12162.800000071526,
+        "detail": {
+          "nodeId": "05.6",
+          "revision": 25
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 12329.200000047684,
+        "detail": {
+          "key": "single-video|single-digital|single-video-to-single-digital-qa-desktop-4f449f35cb37"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 12333
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 12333.100000023842,
+        "detail": {
+          "revision": 25,
+          "count": 14
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 12333.200000047684,
+        "detail": {
+          "revision": 25,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 12349.399999976158,
+        "detail": {
+          "gapMs": 16.100000023841858
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 13626.700000047684,
+        "detail": {
+          "durationMs": 0,
+          "rafSkewMs": 197.80000004768408,
+          "visual": "settled",
+          "node": "05.6",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0,
+            "compose": 0,
+            "ui": 0
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 13629.899999976158,
+        "detail": {
+          "nodeId": "05.5",
+          "scrollY": 7202
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 13630.5,
+        "detail": {
+          "nodeId": "05.5",
+          "revision": 26
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 13642.800000071526,
+        "detail": {
+          "key": "single-digital|single-video|single-digital-to-single-video-qa-desktop-176abae90d85"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 13646.300000071526
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 13646.300000071526,
+        "detail": {
+          "revision": 26,
+          "count": 15
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 13646.399999976158,
+        "detail": {
+          "revision": 26,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 13648.700000047684,
+        "detail": {
+          "gapMs": 2.3000000715255737
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 14768.800000071526,
+        "detail": {
+          "durationMs": 0.10000002384185791,
+          "rafSkewMs": 103.70000004768372,
+          "visual": "settled",
+          "node": "05.5",
+          "split": {
+            "tick": 0.10000002384185791,
+            "sync": 0.10000002384185791,
+            "nav": 0.10000002384185791,
+            "compose": 0.10000002384185791,
+            "ui": 0.10000002384185791
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 14793,
+        "detail": {
+          "nodeId": "05.7",
+          "scrollY": 9002
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 14793.700000047684,
+        "detail": {
+          "nodeId": "05.7",
+          "revision": 27
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 14960.800000071526,
+        "detail": {
+          "nodeId": "05.5",
+          "scrollY": 7202
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 14961.700000047684,
+        "detail": {
+          "key": "single-video|single-merch|single-video-to-single-merch-qa-desktop-35455299fe0a"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 14968.200000047684
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 14968.200000047684,
+        "detail": {
+          "revision": 27,
+          "count": 16
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 14968.300000071526,
+        "detail": {
+          "revision": 27,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 14987.300000071526,
+        "detail": {
+          "nodeId": "05.7",
+          "scrollY": 9002
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 14988.300000071526,
+        "detail": {
+          "gapMs": 20
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 15005.5,
+        "detail": {
+          "nodeId": "05.5",
+          "scrollY": 7202
+        }
+      },
+      {
+        "name": "r6:navigation-intent",
+        "atMs": 16023.100000023842,
+        "detail": {
+          "nodeId": "05.5",
+          "revision": 28
+        }
+      },
+      {
+        "name": "r6:data-texture-create",
+        "atMs": 16175.700000047684,
+        "detail": {
+          "key": "single-merch|single-video|single-merch-to-single-video-qa-desktop-a2554ad21fe0"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 16182.5
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "atMs": 16182.5,
+        "detail": {
+          "revision": 28,
+          "count": 17
+        }
+      },
+      {
+        "name": "r6:first-render-after-bind",
+        "atMs": 16182.600000023842,
+        "detail": {
+          "revision": 28,
+          "progress": 0
+        }
+      },
+      {
+        "name": "r6:frame-after-bind",
+        "atMs": 16199.700000047684,
+        "detail": {
+          "gapMs": 17.100000023841858
+        }
+      },
+      {
+        "name": "r6:slow-clock",
+        "atMs": 17431.399999976158,
+        "detail": {
+          "durationMs": 0,
+          "rafSkewMs": 135.9999999761567,
+          "visual": "settled",
+          "node": "05.5",
+          "split": {
+            "tick": 0,
+            "sync": 0,
+            "nav": 0,
+            "compose": 0,
+            "ui": 0
+          }
+        }
+      },
+      {
+        "name": "r6:semantic-node-commit",
+        "atMs": 17436.100000023842,
+        "detail": {
+          "nodeId": "08",
+          "scrollY": 13500
+        }
+      },
+      {
+        "name": "r6:dispose-eviction",
+        "atMs": 17436.899999976158,
+        "detail": {
+          "reason": "exit",
+          "revision": null
+        }
+      }
+    ],
+    "measures": [
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 1371,
+        "endMs": 1371,
+        "detail": {
+          "revision": 1,
+          "programId": "master-neutral-to-single-design-qa-desktop-4831de8f3f04"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 2884,
+        "endMs": 2884.100000023842,
+        "detail": {
+          "revision": 4,
+          "programId": "single-design-to-single-design-qa-desktop-35d9aa5d39dc"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 3544.100000023842,
+        "endMs": 3544.100000023842,
+        "detail": {
+          "revision": 6,
+          "programId": "single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.09999990463256836,
+        "startMs": 3947.8000000715256,
+        "endMs": 3947.899999976158,
+        "detail": {
+          "revision": 7,
+          "programId": "single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 4449.200000047684,
+        "endMs": 4449.300000071526,
+        "detail": {
+          "revision": 9,
+          "programId": "single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.09999990463256836,
+        "startMs": 4632.300000071526,
+        "endMs": 4632.399999976158,
+        "detail": {
+          "revision": 10,
+          "programId": "single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 5088.100000023842,
+        "endMs": 5088.200000047684,
+        "detail": {
+          "revision": 12,
+          "programId": "single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 5319.399999976158,
+        "endMs": 5319.399999976158,
+        "detail": {
+          "revision": 13,
+          "programId": "single-games-to-single-design-qa-desktop-f0d90fe1ac7e"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 7469,
+        "endMs": 7469.100000023842,
+        "detail": {
+          "revision": 18,
+          "programId": "single-design-to-single-games-qa-desktop-3ab5e1a52334"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.09999990463256836,
+        "startMs": 8451.300000071526,
+        "endMs": 8451.399999976158,
+        "detail": {
+          "revision": 21,
+          "programId": "single-games-to-single-games-qa-desktop-87470cdfd745"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 8492.800000071526,
+        "endMs": 8492.800000071526,
+        "detail": {
+          "revision": 22,
+          "programId": "single-games-to-single-event-qa-desktop-c0532daf7dec"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 9875.600000023842,
+        "endMs": 9875.600000023842,
+        "detail": {
+          "revision": 23,
+          "programId": "single-event-to-single-digital-qa-desktop-17e406b1e73a"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.09999990463256836,
+        "startMs": 11152.800000071526,
+        "endMs": 11152.899999976158,
+        "detail": {
+          "revision": 24,
+          "programId": "single-digital-to-single-video-qa-desktop-176abae90d85"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 12333,
+        "endMs": 12333.100000023842,
+        "detail": {
+          "revision": 25,
+          "programId": "single-video-to-single-digital-qa-desktop-4f449f35cb37"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.09999990463256836,
+        "startMs": 13646.300000071526,
+        "endMs": 13646.399999976158,
+        "detail": {
+          "revision": 26,
+          "programId": "single-digital-to-single-video-qa-desktop-176abae90d85"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0.10000002384185791,
+        "startMs": 14968.200000047684,
+        "endMs": 14968.300000071526,
+        "detail": {
+          "revision": 27,
+          "programId": "single-video-to-single-merch-qa-desktop-35455299fe0a"
+        }
+      },
+      {
+        "name": "r6:atomic-uniform-bind",
+        "durationMs": 0,
+        "startMs": 16182.5,
+        "endMs": 16182.5,
+        "detail": {
+          "revision": 28,
+          "programId": "single-merch-to-single-video-qa-desktop-a2554ad21fe0"
+        }
+      }
+    ],
+    "longTasks": [
+      {
+        "duration": 61,
+        "start": 460.39999997615814,
+        "name": "self"
+      },
+      {
+        "duration": 61,
+        "start": 460.39999997615814,
+        "name": "self"
+      },
+      {
+        "duration": 61,
+        "start": 460.39999997615814,
+        "name": "self"
+      },
+      {
+        "duration": 229,
+        "start": 567.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 229,
+        "start": 567.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 229,
+        "start": 567.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 954.6000000238419,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 954.6000000238419,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 954.6000000238419,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 1226.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 1226.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 1226.2000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 127,
+        "start": 2470.3000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 127,
+        "start": 2470.3000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 127,
+        "start": 2470.3000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 125,
+        "start": 2621.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 125,
+        "start": 2621.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 125,
+        "start": 2621.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 132,
+        "start": 2889.8000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 132,
+        "start": 2889.8000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 132,
+        "start": 2889.8000000715256,
+        "name": "self"
+      },
+      {
+        "duration": 113,
+        "start": 3025.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 113,
+        "start": 3025.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 113,
+        "start": 3025.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 369,
+        "start": 3153.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 369,
+        "start": 3153.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 369,
+        "start": 3153.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 361,
+        "start": 3563.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 361,
+        "start": 3563.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 361,
+        "start": 3563.7000000476837,
+        "name": "self"
+      },
+      {
+        "duration": 226,
+        "start": 3967,
+        "name": "self"
+      },
+      {
+        "duration": 226,
+        "start": 3967,
+        "name": "self"
+      },
+      {
+        "duration": 226,
+        "start": 3967,
+        "name": "self"
+      },
+      {
+        "duration": 223,
+        "start": 4210.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 223,
+        "start": 4210.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 223,
+        "start": 4210.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 4460.5,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 4460.5,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 4460.5,
+        "name": "self"
+      },
+      {
+        "duration": 218,
+        "start": 4651.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 218,
+        "start": 4651.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 218,
+        "start": 4651.300000071526,
+        "name": "self"
+      },
+      {
+        "duration": 178,
+        "start": 4886,
+        "name": "self"
+      },
+      {
+        "duration": 178,
+        "start": 4886,
+        "name": "self"
+      },
+      {
+        "duration": 178,
+        "start": 4886,
+        "name": "self"
+      },
+      {
+        "duration": 192,
+        "start": 5107.5,
+        "name": "self"
+      },
+      {
+        "duration": 192,
+        "start": 5107.5,
+        "name": "self"
+      },
+      {
+        "duration": 192,
+        "start": 5107.5,
+        "name": "self"
+      },
+      {
+        "duration": 182,
+        "start": 6370.5,
+        "name": "self"
+      },
+      {
+        "duration": 182,
+        "start": 6370.5,
+        "name": "self"
+      },
+      {
+        "duration": 182,
+        "start": 6370.5,
+        "name": "self"
+      },
+      {
+        "duration": 170,
+        "start": 6603.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 170,
+        "start": 6603.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 170,
+        "start": 6603.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 6813.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 6813.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 6813.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 201,
+        "start": 7024.899999976158,
+        "name": "self"
+      },
+      {
+        "duration": 201,
+        "start": 7024.899999976158,
+        "name": "self"
+      },
+      {
+        "duration": 201,
+        "start": 7024.899999976158,
+        "name": "self"
+      },
+      {
+        "duration": 190,
+        "start": 7256.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 190,
+        "start": 7256.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 190,
+        "start": 7256.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 434,
+        "start": 7505.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 434,
+        "start": 7505.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 434,
+        "start": 7505.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 197,
+        "start": 7955.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 259,
+        "start": 8168.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 197,
+        "start": 7955.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 259,
+        "start": 8168.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 197,
+        "start": 7955.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 259,
+        "start": 8168.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 9577.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 9577.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 164,
+        "start": 9577.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 100,
+        "start": 9771.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 100,
+        "start": 9771.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 100,
+        "start": 9771.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 88,
+        "start": 10933.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 88,
+        "start": 10933.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 88,
+        "start": 10933.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 102,
+        "start": 11026.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 102,
+        "start": 11026.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 102,
+        "start": 11026.100000023842,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 12162.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 12162.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 159,
+        "start": 12162.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 13426.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 13426.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 199,
+        "start": 13426.700000047684,
+        "name": "self"
+      },
+      {
+        "duration": 107,
+        "start": 14661.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 107,
+        "start": 14661.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 107,
+        "start": 14661.600000023842,
+        "name": "self"
+      },
+      {
+        "duration": 152,
+        "start": 14793.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 152,
+        "start": 14793.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 152,
+        "start": 14793.399999976158,
+        "name": "self"
+      },
+      {
+        "duration": 138,
+        "start": 16022.800000071526,
+        "name": "self"
+      },
+      {
+        "duration": 138,
+        "start": 16022.800000071526,
+        "name": "self"
+      },
+      {
+        "duration": 138,
+        "start": 16022.800000071526,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 17290.5,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 17290.5,
+        "name": "self"
+      },
+      {
+        "duration": 140,
+        "start": 17290.5,
+        "name": "self"
+      }
+    ],
+    "textureUploadCount": 0,
+    "initTextureCount": 0,
+    "dataTextureCreateCount": 0,
+    "typedArrayCopyCount": 0,
+    "typedArrayBytes": 0,
+    "atomicBindCount": 17,
+    "staleBindRejected": 0,
+    "gpuTimer": {
+      "available": true,
+      "extension": "EXT_disjoint_timer_query_webgl2",
+      "disjoint": false,
+      "gpuMs": 2.409218,
+      "count": 240,
+      "p50": 1.736927,
+      "p95": 2.840104,
+      "max": 4.360677
+    },
+    "stagingEnabled": false,
+    "compileWorker": false,
+    "compileWorkerError": null,
+    "compileReceiveMs": 0,
+    "phases": {
+      "breath": 0.5613500000000008,
+      "rotation": 0.5174921367521423,
+      "color": 0.9738089285714432
+    },
+    "overlayEnabled": true,
+    "visualLifecycle": "settled",
+    "resource": {
+      "state": "absent",
+      "visual": "settled",
+      "revision": null,
+      "pendingRevision": null,
+      "cacheBytes": 53014464,
+      "cacheBudget": 100663296,
+      "cacheEntries": 24,
+      "gpuTextures": 48,
+      "gpuBudget": 48,
+      "gpuReady": false,
+      "pinnedKeys": []
+    },
+    "scrollY": 13500
+  },
+  "heap": 140100785,
+  "note": "Dev-server capture. Production-build numbers are in production-build.json."
+}

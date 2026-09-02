@@ -387,7 +387,7 @@ test("geometry transitions keep palette from leading and do not invent a third g
 
 test("production homepage remains SiteShell and M5.5 is not started", () => {
   const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /framing-sandbox/);
   assert.doesNotMatch(home, /PS04M5Lab/);
   const aggregate = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1/exports/ps03m41-manifest.json"), "utf8"));

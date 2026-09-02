@@ -1,0 +1,108 @@
+{
+  "stage": "PS-04.M5.6",
+  "ok": true,
+  "firstSnap": {
+    "runId": "ps04-m5-6",
+    "assetNamespace": "ps-04-m5-5",
+    "eventOverlay": "none",
+    "videoOverlay": "none",
+    "runtimeRotationOverride": "none",
+    "framingProfile": "OWNER_SELECTED_124_111_111",
+    "node": "01",
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "triangles": 131072,
+    "programs": 1,
+    "canvases": 1,
+    "geometries": 1,
+    "textures": 16,
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 0,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "01",
+      "geometryId": "master-neutral"
+    },
+    "camera": {
+      "position": [
+        2.8,
+        -7.8,
+        4.6
+      ],
+      "quaternion": [
+        0.4997763039342373,
+        0.08698601965612429,
+        0.14777041992066833,
+        0.849011767531338
+      ],
+      "fov": 33,
+      "near": 0.01,
+      "far": 100,
+      "zoom": 1,
+      "siteFitScale": 1
+    },
+    "contract": {
+      "nodeId": "01",
+      "hostNodeId": "01",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "01 MASTER sphere, all seven"
+    },
+    "cache": {
+      "hits": 0,
+      "misses": 3,
+      "compiles": 3,
+      "prewarms": 2,
+      "inflight": 0,
+      "cached": 3,
+      "lastKey": "OWNER_SELECTED_124_111_111|candidate|brand-wide-gather-content-design-digital-event-games-merch-video|master-neutral|0|desktop",
+      "lastStatus": "cached",
+      "bytes": 7047552,
+      "evictions": 0
+    },
+    "resource": {
+      "state": "absent",
+      "visual": "settled",
+      "revision": null,
+      "pendingRevision": null,
+      "cacheBytes": 7047552,
+      "cacheBudget": 100663296,
+      "cacheEntries": 3,
+      "gpuTextures": 48,
+      "gpuBudget": 48,
+      "gpuReady": false,
+      "pinnedKeys": []
+    },
+    "heap": 61040879,
+    "instances": 16384
+  },
+  "hudPresent": false,
+  "videos": [],
+  "shots": [
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/baseline/preview-siteshell.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/production/home-hero.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/baseline/production-siteshell.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/production/about.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/safe-area/about-1440.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/safe-area/merch-1440.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/safe-area/video-1440.png",
+    "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m5-6/renders/production/footer.png"
+  ]
+}

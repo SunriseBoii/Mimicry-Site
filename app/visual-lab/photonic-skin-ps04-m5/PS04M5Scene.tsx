@@ -258,6 +258,7 @@ export interface SceneProps {
   onEnvironment?: (value: SceneEnvironment) => void;
   onRenderer?: (renderer: THREE.WebGLRenderer) => void;
   onContextState?: (state: "ready" | "lost" | "restored") => void;
+  qaControls?: boolean;
 }
 
 const LIGHT_MATERIAL = MATERIAL_THEME_PRESETS.light;
@@ -2385,7 +2386,7 @@ export function PS04M5SceneView(props: SceneProps) {
       data-canvas-height={canvasSize.height}
       style={{ width: "100%", height: "100%", minWidth: 0, minHeight: 0, overflow: "hidden", position: "relative" }}
     >
-      {props.evaluator === "m4" && props.program.compiled ? (
+      {props.evaluator === "m4" && props.program.compiled && props.qaControls !== false ? (
         <button
           id={gpuParityButtonId}
           type="button"
@@ -2416,7 +2417,7 @@ export function PS04M5SceneView(props: SceneProps) {
           }}
         />
       ) : null}
-      {props.evaluator === "m4" ? (
+      {props.evaluator === "m4" && props.qaControls !== false ? (
         <button
           id={contextRestoreButtonId}
           type="button"

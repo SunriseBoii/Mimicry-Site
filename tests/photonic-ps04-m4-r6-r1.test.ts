@@ -269,7 +269,7 @@ test("24-25 R6 navigation/idle/performance invariants and R5 rollback stay encod
   assert.match(scene, /memo\(PS04M4SceneView/);
   assert.equal((scene.match(/new THREE\.RawShaderMaterial/g) ?? []).length, 1);
   assert.equal((scene.match(/<Canvas/g) ?? []).length, 1);
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /PS04M4Lab/);
   assert.match(lab, /lastUi > 160/);
   const cache = new TransitionProgramCache();

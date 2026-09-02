@@ -233,7 +233,7 @@ test("R1 sandbox defaults, HUD contract and isolates", () => {
 test("cameras, production, Event A-R2 and aggregate Video states stay frozen", () => {
   assert.deepEqual([...FROZEN_CAMERAS.canonical], orientation.cameraRolePromotion.canonical);
   assert.deepEqual(FROZEN_CAMERAS.canonical, EVENT_CAMERAS.canonical);
-  assert.match(home, /SiteShell/);
+  assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /video-sandbox/);
   assert.doesNotMatch(home, /ps-04-m5-3-r1/);
   assert.match(eventLab, /PS-04.M5.2.R2/);

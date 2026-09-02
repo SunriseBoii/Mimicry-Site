@@ -612,6 +612,7 @@ export class ScrollCompositionController {
   }
 
   scrollToNode(id: ScreenNodeId, behavior?: ScrollBehavior, origin: ScrollOrigin = "programmatic") {
+    if (!isNodeUnlocked(id, this.unlock)) return false;
     const layout = this.layout();
     const top = restoreScrollY(layout, id, 0);
     if (
@@ -619,7 +620,7 @@ export class ScrollCompositionController {
       && (this.mode === "programmatic" || this.mode === "restore")
       && Math.abs(this.lastY - top) <= MAGNETISM.noopDistancePx
     ) {
-      return;
+      return true;
     }
     if (
       this.snapshot.activeNodeId === id
@@ -627,7 +628,7 @@ export class ScrollCompositionController {
       && this.mode !== "magnetic"
       && this.mode !== "user"
     ) {
-      return;
+      return true;
     }
     this.cancelMagnetism(origin);
     this.clearIdle();
@@ -660,6 +661,7 @@ export class ScrollCompositionController {
       this.mode = "idle";
       this.pendingTarget = null;
     }
+    return true;
   }
 
   private liveGuards(): MagnetismGuards {
