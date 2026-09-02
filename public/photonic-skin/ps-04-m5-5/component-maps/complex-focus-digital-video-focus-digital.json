@@ -1,0 +1,66 @@
+{
+  "stateId": "complex-focus-digital-video-focus-digital",
+  "componentMap": [
+    {
+      "assemblyRole": "lead",
+      "competencyId": "digital",
+      "componentId": "laptop-base",
+      "componentIndex": 0,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "competencyId": "digital",
+      "componentId": "laptop-screen",
+      "componentIndex": 1,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "lead",
+      "competencyId": "digital",
+      "componentId": "smartphone",
+      "componentIndex": 2,
+      "semanticOwner": "digital",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "camera",
+      "componentIndex": 3,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "emblem",
+      "competencyId": "video",
+      "componentId": "clapperboard",
+      "componentIndex": 4,
+      "semanticOwner": "video",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ]
+}

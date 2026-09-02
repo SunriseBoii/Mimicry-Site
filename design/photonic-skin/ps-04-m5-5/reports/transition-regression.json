@@ -1,0 +1,177 @@
+{
+  "stage": "PS-04.M5.5",
+  "endpointPass": true,
+  "selfNoOpPass": true,
+  "siteEdges": [
+    {
+      "sourceStateId": "single-design",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-games",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-games",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-design",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-digital",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-digital",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-merch",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-merch",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-merch",
+      "targetStateId": "master-neutral",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-content",
+      "targetStateId": "single-design",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "complex-focus-event-video-focus-event",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    }
+  ],
+  "criticalEventVideoPairs": [
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "targetStateId": "single-merch",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "complex-focus-event-video-focus-event",
+      "targetStateId": "complex-focus-event-games-video-focus-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    }
+  ],
+  "paletteLeadsRequired": 0,
+  "centerDwellRequired": 0,
+  "rapidResidual": "PS04-M5-R001",
+  "reducedMotion": "target framing/geometry settle immediately",
+  "choreographyFrozen": {
+    "PALETTE_DELAY_FRACTION": 0.06,
+    "notChangedInM55": true
+  }
+}

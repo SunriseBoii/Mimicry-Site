@@ -1,0 +1,40 @@
+{
+  "stateId": "single-merch",
+  "componentMap": [
+    {
+      "assemblyRole": "primary",
+      "competencyId": "merch",
+      "componentId": "tee",
+      "componentIndex": 0,
+      "semanticOwner": "merch",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "competencyId": "merch",
+      "componentId": "thermos",
+      "componentIndex": 1,
+      "semanticOwner": "merch",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "competencyId": "merch",
+      "componentId": "open-box",
+      "componentIndex": 2,
+      "semanticOwner": "merch",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ]
+}

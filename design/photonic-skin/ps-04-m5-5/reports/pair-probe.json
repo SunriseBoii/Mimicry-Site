@@ -1,0 +1,193 @@
+{
+  "stage": "PS-04.M5.5",
+  "wroteFrozenReports": false,
+  "endpointChecks": {
+    "passed": 154,
+    "expected": 154,
+    "pass": true
+  },
+  "selfTransitions": {
+    "passed": 154,
+    "expected": 154,
+    "pass": true,
+    "note": "self is no-op: identical endpoint buffer"
+  },
+  "directedNonSelfExpected": 23562,
+  "compileError": null,
+  "siteEdges": [
+    {
+      "sourceStateId": "single-design",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-games",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-games",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-design",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-digital",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-digital",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-merch",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-merch",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-merch",
+      "targetStateId": "master-neutral",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-content",
+      "targetStateId": "single-design",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "complex-focus-event-video-focus-event",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    }
+  ],
+  "criticalEventVideoPairs": [
+    {
+      "sourceStateId": "single-event",
+      "targetStateId": "single-video",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "single-video",
+      "targetStateId": "single-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "targetStateId": "single-merch",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    },
+    {
+      "sourceStateId": "complex-focus-event-video-focus-event",
+      "targetStateId": "complex-focus-event-games-video-focus-event",
+      "t0Exact": true,
+      "t1Exact": true,
+      "t0Error": 0.0,
+      "t1Error": 0.0,
+      "finite": true,
+      "thirdGeometry": false
+    }
+  ],
+  "allSiteEdgesPass": true,
+  "fullOrderedPairProbe": {
+    "expected": 23562,
+    "probed": 0,
+    "failed": 0,
+    "failures": [],
+    "ran": false,
+    "note": "Set PS04M55_FULL_PAIRS=1 to compile all 23,562 directed non-self pairs into this versioned report only."
+  },
+  "rapidResidual": "PS04-M5-R001 deferred, not fixed in M5.5",
+  "paletteLeadsRequired": 0,
+  "centerDwellRequired": 0
+}

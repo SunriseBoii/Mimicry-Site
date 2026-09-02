@@ -1,0 +1,769 @@
+{
+  "comparedTo": "M5.4/M5.1 qualitative",
+  "twentyPasses": {
+    "elapsedMs": 2378,
+    "passes": 20,
+    "snap": {
+      "runId": "ps04-m5-5",
+      "assetNamespace": "ps-04-m5-5",
+      "eventOverlay": "none",
+      "videoOverlay": "none",
+      "runtimeRotationOverride": "none",
+      "framingProfile": "OWNER_SELECTED_124_111_111",
+      "node": "01",
+      "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "canvases": 1,
+      "framing": {
+        "requestedZoom": 1,
+        "displayedZoom": 1.24,
+        "sourceZoom": 1.24,
+        "targetZoom": 1,
+        "currentZoom": 1.24,
+        "effectiveZoom": 1,
+        "responsiveCap": 1,
+        "capped": false,
+        "revision": 99,
+        "framingProgress": 0,
+        "frustumScale": 1,
+        "siteFitScale": 1.16,
+        "visualZoomMultiplier": 1.24,
+        "slot": "right",
+        "nodeId": "01",
+        "geometryId": "master-neutral"
+      },
+      "camera": {
+        "position": [
+          2.8,
+          -7.8,
+          4.6
+        ],
+        "quaternion": [
+          0.4997763039342373,
+          0.08698601965612429,
+          0.14777041992066833,
+          0.849011767531338
+        ],
+        "fov": 33,
+        "near": 0.01,
+        "far": 100,
+        "zoom": 1.24,
+        "siteFitScale": 1.16
+      }
+    },
+    "perf": {
+      "scenario": "m55-warm",
+      "estimatedRefreshMs": 21.837,
+      "rAF": {
+        "p50": 6.1,
+        "p95": 12.2,
+        "p99": 139.4,
+        "max": 151.4,
+        "mean": 9.65,
+        "count": 245,
+        "over16_7": 11,
+        "over33_3": 5,
+        "over50": 5,
+        "consecutiveMissedMax": 1
+      },
+      "transitionRequestLatencyMs": 0,
+      "transitionDurationMs": null,
+      "scrollHandlerMs": null,
+      "sessionTickMs": {
+        "p50": 0,
+        "p95": 0.1,
+        "p99": 0.1,
+        "max": 0.2,
+        "mean": 0.013,
+        "count": 245,
+        "over16_7": 0,
+        "over33_3": 0,
+        "over50": 0,
+        "consecutiveMissedMax": 0
+      },
+      "uniformUpdateMs": null,
+      "reactCommitCount": 14,
+      "shaderProgramCount": 1,
+      "geometryRecreationCount": 0,
+      "materialRecreationCount": 0,
+      "textureUploadCount": 16,
+      "longTasks": [
+        {
+          "duration": 146,
+          "start": 1365,
+          "name": "self"
+        },
+        {
+          "duration": 149,
+          "start": 1643,
+          "name": "self"
+        },
+        {
+          "duration": 107,
+          "start": 1815.3000000715256,
+          "name": "self"
+        },
+        {
+          "duration": 119,
+          "start": 2019.7000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 137,
+          "start": 3348.2000000476837,
+          "name": "self"
+        }
+      ],
+      "gpuTimer": {
+        "available": true,
+        "extension": "EXT_disjoint_timer_query_webgl2",
+        "disjoint": false,
+        "gpuMs": {
+          "p50": 0.965,
+          "p95": 3.761,
+          "p99": 4.79,
+          "max": 4.79,
+          "mean": 0.965,
+          "count": 240,
+          "over16_7": 0,
+          "over33_3": 0,
+          "over50": 0,
+          "consecutiveMissedMax": 0
+        },
+        "note": "EXT_disjoint_timer_query_webgl2 sampled 240 actor draws"
+      },
+      "memory": {
+        "before": {
+          "jsHeapUsedBytes": 64924167,
+          "jsHeapTotalBytes": 75561703
+        },
+        "after": {
+          "jsHeapUsedBytes": 117241006,
+          "jsHeapTotalBytes": 142846066
+        }
+      },
+      "resources": {
+        "canvases": 1,
+        "programs": 1,
+        "textures": 17,
+        "geometries": 1,
+        "draws": 1
+      },
+      "initTextureCount": 16,
+      "r6LongTasks": [
+        {
+          "duration": 51,
+          "start": 557.1000000238419,
+          "name": "self"
+        },
+        {
+          "duration": 51,
+          "start": 557.1000000238419,
+          "name": "self"
+        },
+        {
+          "duration": 51,
+          "start": 557.1000000238419,
+          "name": "self"
+        },
+        {
+          "duration": 162,
+          "start": 1018.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 162,
+          "start": 1018.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 162,
+          "start": 1018.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 117,
+          "start": 1211.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 117,
+          "start": 1211.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 117,
+          "start": 1211.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 146,
+          "start": 1365,
+          "name": "self"
+        },
+        {
+          "duration": 146,
+          "start": 1365,
+          "name": "self"
+        },
+        {
+          "duration": 146,
+          "start": 1365,
+          "name": "self"
+        },
+        {
+          "duration": 149,
+          "start": 1643,
+          "name": "self"
+        },
+        {
+          "duration": 149,
+          "start": 1643,
+          "name": "self"
+        },
+        {
+          "duration": 149,
+          "start": 1643,
+          "name": "self"
+        },
+        {
+          "duration": 107,
+          "start": 1815.3000000715256,
+          "name": "self"
+        },
+        {
+          "duration": 107,
+          "start": 1815.3000000715256,
+          "name": "self"
+        },
+        {
+          "duration": 107,
+          "start": 1815.3000000715256,
+          "name": "self"
+        },
+        {
+          "duration": 119,
+          "start": 2019.7000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 119,
+          "start": 2019.7000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 119,
+          "start": 2019.7000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 137,
+          "start": 3348.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 137,
+          "start": 3348.2000000476837,
+          "name": "self"
+        },
+        {
+          "duration": 137,
+          "start": 3348.2000000476837,
+          "name": "self"
+        }
+      ],
+      "r6Measures": [
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3189.4000000953674,
+          "endMs": 3189.4000000953674
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3189.4000000953674,
+          "endMs": 3189.4000000953674,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:atomic-uniform-bind",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3195.5,
+          "endMs": 3195.600000023842,
+          "detail": {
+            "revision": 80,
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3208.100000023842,
+          "endMs": 3208.100000023842
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3208.100000023842,
+          "endMs": 3208.100000023842,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-event-qa-desktop-64bfc88e077a"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3233.8000000715256,
+          "endMs": 3233.8000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3233.8000000715256,
+          "endMs": 3233.8000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-video-qa-desktop-1cd0f399a305"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3249.9000000953674,
+          "endMs": 3249.9000000953674
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0.09999990463256836,
+          "startMs": 3249.9000000953674,
+          "endMs": 3250,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-merch-qa-desktop-31d1d18db099"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3276.3000000715256,
+          "endMs": 3276.3000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3276.4000000953674,
+          "endMs": 3276.4000000953674,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-master-neutral-qa-desktop-cc97455d90fd"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3299.3000000715256,
+          "endMs": 3299.3000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3299.3000000715256,
+          "endMs": 3299.3000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:atomic-uniform-bind",
+          "durationMs": 0,
+          "startMs": 3310.9000000953674,
+          "endMs": 3310.9000000953674,
+          "detail": {
+            "revision": 85,
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3327,
+          "endMs": 3327.100000023842
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3327.100000023842,
+          "endMs": 3327.100000023842,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-event-qa-desktop-64bfc88e077a"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3346,
+          "endMs": 3346
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3346,
+          "endMs": 3346,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-video-qa-desktop-1cd0f399a305"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3511.8000000715256,
+          "endMs": 3511.8000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3511.9000000953674,
+          "endMs": 3511.9000000953674,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-merch-qa-desktop-31d1d18db099"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3530.3000000715256,
+          "endMs": 3530.3000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3530.3000000715256,
+          "endMs": 3530.3000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-master-neutral-qa-desktop-cc97455d90fd"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3561.2000000476837,
+          "endMs": 3561.2000000476837
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3561.3000000715256,
+          "endMs": 3561.3000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:atomic-uniform-bind",
+          "durationMs": 0,
+          "startMs": 3572.600000023842,
+          "endMs": 3572.600000023842,
+          "detail": {
+            "revision": 90,
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3586.4000000953674,
+          "endMs": 3586.4000000953674
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3586.4000000953674,
+          "endMs": 3586.4000000953674,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-event-qa-desktop-64bfc88e077a"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3601.7000000476837,
+          "endMs": 3601.8000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3601.8000000715256,
+          "endMs": 3601.8000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-video-qa-desktop-1cd0f399a305"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3614.4000000953674,
+          "endMs": 3614.4000000953674
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3614.5,
+          "endMs": 3614.5,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-merch-qa-desktop-31d1d18db099"
+          }
+        },
+        {
+          "name": "r6:gpu-staging-slice",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3623.600000023842,
+          "endMs": 3623.7000000476837,
+          "detail": {
+            "kind": "pack",
+            "bank": 1,
+            "packed": 1
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3626.7000000476837,
+          "endMs": 3626.8000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3626.8000000715256,
+          "endMs": 3626.8000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-master-neutral-qa-desktop-cc97455d90fd"
+          }
+        },
+        {
+          "name": "r6:gpu-staging-slice",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3635,
+          "endMs": 3635.100000023842,
+          "detail": {
+            "kind": "pack",
+            "bank": 2,
+            "packed": 1
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3639.8000000715256,
+          "endMs": 3639.8000000715256
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3639.8000000715256,
+          "endMs": 3639.8000000715256,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:atomic-uniform-bind",
+          "durationMs": 0,
+          "startMs": 3644.5,
+          "endMs": 3644.5,
+          "detail": {
+            "revision": 95,
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-brand-wide-gather-content-design-digital-event-games-merch-video-qa-desktop-cbb99162a9ad"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3656.600000023842,
+          "endMs": 3656.7000000476837
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3656.7000000476837,
+          "endMs": 3656.7000000476837,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-event-qa-desktop-64bfc88e077a"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3670,
+          "endMs": 3670
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3670,
+          "endMs": 3670,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-video-qa-desktop-1cd0f399a305"
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0,
+          "startMs": 3681.600000023842,
+          "endMs": 3681.600000023842
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3681.600000023842,
+          "endMs": 3681.600000023842,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-single-merch-qa-desktop-31d1d18db099"
+          }
+        },
+        {
+          "name": "r6:gpu-staging-slice",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3689.3000000715256,
+          "endMs": 3689.4000000953674,
+          "detail": {
+            "kind": "pack",
+            "bank": 1,
+            "packed": 1
+          }
+        },
+        {
+          "name": "r6:cache-lookup",
+          "durationMs": 0.10000002384185791,
+          "startMs": 3692,
+          "endMs": 3692.100000023842
+        },
+        {
+          "name": "r6:compile-frozen-pair",
+          "durationMs": 0,
+          "startMs": 3692.100000023842,
+          "endMs": 3692.100000023842,
+          "detail": {
+            "programId": "brand-wide-gather-content-design-digital-event-games-merch-video-to-master-neutral-qa-desktop-cc97455d90fd"
+          }
+        },
+        {
+          "name": "r6:gpu-staging-slice",
+          "durationMs": 0.20000004768371582,
+          "startMs": 3701.2000000476837,
+          "endMs": 3701.4000000953674,
+          "detail": {
+            "kind": "pack",
+            "bank": 2,
+            "packed": 1
+          }
+        }
+      ]
+    }
+  },
+  "restore": {
+    "before": {
+      "runId": "ps04-m5-5",
+      "assetNamespace": "ps-04-m5-5",
+      "eventOverlay": "none",
+      "videoOverlay": "none",
+      "runtimeRotationOverride": "none",
+      "framingProfile": "OWNER_SELECTED_124_111_111",
+      "node": "02",
+      "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "canvases": 1,
+      "framing": {
+        "requestedZoom": 1.24,
+        "displayedZoom": 1.24,
+        "sourceZoom": 1.24,
+        "targetZoom": 1.24,
+        "currentZoom": 1.24,
+        "effectiveZoom": 1.24,
+        "responsiveCap": 1.24,
+        "capped": false,
+        "revision": 0,
+        "framingProgress": 1,
+        "frustumScale": 0.8064516129032259,
+        "siteFitScale": 1.16,
+        "visualZoomMultiplier": 1.24,
+        "slot": "right",
+        "nodeId": "02",
+        "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+      },
+      "camera": {
+        "position": [
+          2.8,
+          -7.8,
+          4.6
+        ],
+        "quaternion": [
+          0.4997763039342373,
+          0.08698601965612429,
+          0.14777041992066833,
+          0.849011767531338
+        ],
+        "fov": 33,
+        "near": 0.01,
+        "far": 100,
+        "zoom": 1.24,
+        "siteFitScale": 1.16
+      }
+    },
+    "after": {
+      "runId": "ps04-m5-5",
+      "assetNamespace": "ps-04-m5-5",
+      "eventOverlay": "none",
+      "videoOverlay": "none",
+      "runtimeRotationOverride": "none",
+      "framingProfile": "OWNER_SELECTED_124_111_111",
+      "node": "02",
+      "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "draws": 1,
+      "triangles": 131072,
+      "programs": 1,
+      "canvases": 1,
+      "framing": {
+        "requestedZoom": 1.24,
+        "displayedZoom": 1.24,
+        "sourceZoom": 1.24,
+        "targetZoom": 1.24,
+        "currentZoom": 1.24,
+        "effectiveZoom": 1.24,
+        "responsiveCap": 1.24,
+        "capped": false,
+        "revision": 0,
+        "framingProgress": 1,
+        "frustumScale": 0.8064516129032259,
+        "siteFitScale": 1.16,
+        "visualZoomMultiplier": 1.24,
+        "slot": "right",
+        "nodeId": "02",
+        "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+      },
+      "camera": {
+        "position": [
+          2.8,
+          -7.8,
+          4.6
+        ],
+        "quaternion": [
+          0.4997763039342373,
+          0.08698601965612429,
+          0.14777041992066833,
+          0.849011767531338
+        ],
+        "fov": 33,
+        "near": 0.01,
+        "far": 100,
+        "zoom": 1.24,
+        "siteFitScale": 1.16
+      }
+    },
+    "namespacePreserved": true
+  },
+  "oneActor": true
+}

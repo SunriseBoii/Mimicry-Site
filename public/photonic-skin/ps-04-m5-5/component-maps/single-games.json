@@ -1,0 +1,29 @@
+{
+  "stateId": "single-games",
+  "componentMap": [
+    {
+      "assemblyRole": "primary",
+      "competencyId": "games",
+      "componentId": "gamepad",
+      "componentIndex": 0,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390",
+        "silhouette180",
+        "silhouette96"
+      ]
+    },
+    {
+      "assemblyRole": "primary",
+      "competencyId": "games",
+      "componentId": "queen",
+      "componentIndex": 1,
+      "semanticOwner": "games",
+      "visibleProfiles": [
+        "desktop",
+        "mobile390"
+      ]
+    }
+  ]
+}

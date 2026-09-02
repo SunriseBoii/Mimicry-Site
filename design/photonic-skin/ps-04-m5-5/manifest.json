@@ -1,0 +1,56 @@
+{
+  "stage": "PS-04.M5.5",
+  "title": "Photonic Skin / Mimic Core — selected candidates promotion",
+  "status": "PS-04.M5.5 — HUMAN PASS / INTEGRATED PROMOTION APPROVED",
+  "approvedCandidate": "PS-04.M5.5",
+  "approvedAssetNamespace": "ps-04-m5-5",
+  "integratedPromotionApproved": true,
+  "approvedFor": "PS-04.M5.6",
+  "productionDeployApproval": false,
+  "deployApproval": false,
+  "ps04CloseApproval": false,
+  "labRoute": "/visual-lab/photonic-skin-ps04-m5/promotion-preview/review",
+  "previewRoute": "/visual-lab/photonic-skin-ps04-m5/promotion-preview",
+  "production": "/",
+  "assetNamespace": "ps-04-m5-5",
+  "sessionId": "ps04-m5-5-promotion",
+  "sandboxBranch": "ps04-m5-sandbox",
+  "m54Checkpoint": "f43e8b9b59d881bc908f7f78ddcb45f9cb27eb41",
+  "m54BaselineHead": "af13e9df27be788f8295900d1d7a021bca699998",
+  "selectionLockHash": "14cb2c37d5fac29b2f69a7a8ee1c342be13c67ac9007cd1b256b668663eb9392",
+  "selectedEvent": {
+    "id": "EVENT_A_R2",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+  },
+  "selectedVideo": {
+    "id": "VIDEO_COMBO_40_R1",
+    "hash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+    "compositionYawDegrees": -40,
+    "clapperOpenAngleDegrees": 30
+  },
+  "framing": {
+    "id": "OWNER_SELECTED_124_111_111",
+    "aboutRequestedZoom": 1.24,
+    "aboutMobileCap": 1.18,
+    "merchRequestedZoom": 1.11,
+    "merchMobileCap": 1.08,
+    "videoRequestedZoom": 1.11,
+    "videoMobileCap": 1.08
+  },
+  "balancedReview": {
+    "role": "evidence-only-not-selected"
+  },
+  "eventOverlay": "none",
+  "videoOverlay": "none",
+  "runtimeRotationOverride": "none",
+  "notProductionApproval": true,
+  "productionApproval": false,
+  "notCanonicalYet": true,
+  "commitCreated": false,
+  "push": false,
+  "deploy": false,
+  "m55Started": true,
+  "m56Started": false,
+  "ps04Closed": false,
+  "rapidResidual": "PS04-M5-R001 deferred"
+}
