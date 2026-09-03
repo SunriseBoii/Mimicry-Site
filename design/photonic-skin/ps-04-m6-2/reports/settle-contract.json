@@ -1,0 +1,20 @@
+{
+  "stage": "PS-04.M6.2",
+  "version": "ps-04-m6-2.v1",
+  "MAGNETISM_DURATION_MS": 340,
+  "SETTLE_STABLE_MS": 96,
+  "INPUT_QUIET_MS": 80,
+  "SETTLE_VELOCITY_EPSILON": 0.02,
+  "SETTLE_POSITION_EPSILON_PX": "clamp(viewportHeight * 0.002, 1.5, 3), floored at MAGNETISM.noopDistancePx (2)",
+  "ACTOR_START_BUDGET_MS": 150,
+  "ACTOR_QUEUE_CAPACITY": 1,
+  "fields": [
+    "observedNodeId",
+    "snapCandidateNodeId",
+    "magneticDestinationNodeId",
+    "magnetizedSettledNodeId",
+    "actorCommittedNodeId",
+    "queuedActorNodeId"
+  ],
+  "predicate": "candidate === destination && candidateStable && position && velocity && !gesture && inputQuiet && layoutStable && !snapPending"
+}

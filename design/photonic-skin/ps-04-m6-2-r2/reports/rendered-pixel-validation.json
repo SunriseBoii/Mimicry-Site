@@ -1,0 +1,236 @@
+{
+  "ok": true,
+  "steps": [
+    {
+      "name": "03.2-0-MASTER",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": false,
+      "renderedActorPixelsChanged": false,
+      "beforeHash": null,
+      "afterHash": "ddc3dcca48d11a2d1b970ecc7b6fecd27c260c1f4f973d190db3c2202e0b47e4",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "03.2-content-SINGLE",
+      "expected": "single-content",
+      "resolved": "single-content",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "516850bef7f30d1bae1a3727dc0a664778bccfe78d2b76908467f36d470ca2c7",
+      "afterHash": "8838c781e3ca8c9db33d901da39aa785db330fdbac601a0aea7452979ad21467",
+      "stateHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+      "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638"
+    },
+    {
+      "name": "03.2-content-event-GATHER",
+      "expected": "complex-gather-content-event",
+      "resolved": "complex-gather-content-event",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "6f7ab81253a79c432e141c71d5517541ae396e1b348157c693a5e7360ae910e4",
+      "afterHash": "bfef79b98a7053946e09bc7f21559d3a1f5389c859c8830e40ce620c2ed703c1",
+      "stateHash": "b58a60c190594538a13180ba800b4183dbf0025d384c7b7a840837fa494f37df",
+      "expectedHash": "b58a60c190594538a13180ba800b4183dbf0025d384c7b7a840837fa494f37df"
+    },
+    {
+      "name": "03.2-content-event-video-GATHER",
+      "expected": "complex-gather-content-event-video",
+      "resolved": "complex-gather-content-event-video",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "972d560f3f0c4bb1036d92ba7c7487d25c2272e320b085196f5f1387a062749c",
+      "afterHash": "95b3d6148db6ea705906750c59a47e5d958a2d51cedb4893a3811356dfaee337",
+      "stateHash": "23f5de281cbc338100a149e07dfd78ac12372750b8a604a7c773ea3fdf4792c6",
+      "expectedHash": "23f5de281cbc338100a149e07dfd78ac12372750b8a604a7c773ea3fdf4792c6"
+    },
+    {
+      "name": "03.2-content-video-GATHER",
+      "expected": "complex-gather-content-video",
+      "resolved": "complex-gather-content-video",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "94234e7fdac553723ae7fa7253170f1f6156d1495c3f379b0f209dc49d4cdb96",
+      "afterHash": "e662c4d7c0af0e6f8999a7676876a2e8573073fcbf744239df66a5b4622f784d",
+      "stateHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+      "expectedHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226"
+    },
+    {
+      "name": "03.2-video-SINGLE",
+      "expected": "single-video",
+      "resolved": "single-video",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "1cfbbf44e5e7f35ad15802961a8dd62caf60ae07a89a3aa1191375ec20318b88",
+      "afterHash": "ad15bfaaa459b01b26efc3199afc0dcfa56583e16ae90522c5434658246932ed",
+      "stateHash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873",
+      "expectedHash": "2d6957815b6f58f87f1709e0378313cba271530b8fb0e02282b556780448a873"
+    },
+    {
+      "name": "03.2-empty-MASTER",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "42db0b43801e766cdc45bcbbd82244dd3af4a3ef1b72b765fc4dc28e299a3e41",
+      "afterHash": "fb2618e48e311f2e87a06287d3e541d8b23e371cac8d540ac4ba0bc2178565a9",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "single-event",
+      "expected": "single-event",
+      "resolved": "single-event",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "cb35d137e908b0b9b58fb70b1b24ee43aaae8b689c20c2e42b522739f3271110",
+      "afterHash": "6f34e597544e1d34bd296fcfa372a1e36d290964f1e27a2266bceea2c5fe6af9",
+      "stateHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+      "expectedHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b"
+    },
+    {
+      "name": "clear-event",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "ac237caeb7764dfccd01531681278d7d0ccf96954ea4d7da2b26833fcf96b5e0",
+      "afterHash": "b1829226f3c6e5bcc7563f7223d2429e5e1748b6fb9e46ab0082060a06c96cf8",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "single-design",
+      "expected": "single-design",
+      "resolved": "single-design",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "146b466866ad5629f6f68605b54c4ebe8a549582dc901617eb2e180f18087e69",
+      "afterHash": "8c663bf6718ef3a64886834f065c51fcc0dc7923471e9e8ecc4600a2ee61cf45",
+      "stateHash": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f",
+      "expectedHash": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f"
+    },
+    {
+      "name": "clear-design",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "4de9f6df4d1165495fab363115ab3c7a7f062960fb74c78b5ea0216ad230c982",
+      "afterHash": "fa9ce2f8f96e17e3b3d5aecf8beca5a6b985724c20907ab561e4876661300bfe",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "single-digital",
+      "expected": "single-digital",
+      "resolved": "single-digital",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "a4e84d4fc2373ea8c84fa7df5b339bb6cc504af9e5f9c8814e0bf9d0b3f04e4a",
+      "afterHash": "af7a726b0d220c96f2e0bab6e344e97be74ef3d631cedd3766139550e7fb188c",
+      "stateHash": "22492a97afb03cfb26ce2a6151ae2bc418b8ec33b5958ad1e777b81ec3af8f79",
+      "expectedHash": "22492a97afb03cfb26ce2a6151ae2bc418b8ec33b5958ad1e777b81ec3af8f79"
+    },
+    {
+      "name": "clear-digital",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "4415e24bc9c4d365686761dfdb674fafb7d1872ba285acba392ad119bb37b911",
+      "afterHash": "c9d0100f28d7c5b8447be5b67ffef87779571c3076703a7cd41ba08829e0562e",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "single-games",
+      "expected": "single-games",
+      "resolved": "single-games",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "832a017f9457327bfd0828828282c2a24d6f94971129fae620eb8f5aa2b30dd5",
+      "afterHash": "b2ae707e42c36f70260084bb05fb88f70a154f1d13c54f170b33a7465615f709",
+      "stateHash": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9",
+      "expectedHash": "521ecf29757f844ef02b442c90d4b666b65449386cca665dc6e06de6170157e9"
+    },
+    {
+      "name": "clear-games",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "f84dc72cb83ab1a0e508b77db87bdd8ed5214621ae103829a1a6e4587f6da3f9",
+      "afterHash": "5c271d15e6d823f5b0532e5c3125653da5739e0884d050dbcd6925736bb46566",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "single-merch",
+      "expected": "single-merch",
+      "resolved": "single-merch",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "c8ad41acb1300e525892c1faea3471856ac977ec36495f2cc6ef9a673500dd0f",
+      "afterHash": "fba021667e16376f4ac438284fd0540f32133b116280fa230bf0d5b2fee0ff43",
+      "stateHash": "de23b15eecf3ecb9e5a885bd67c2035375fca80060c675806bffe2d9f1deca53",
+      "expectedHash": "de23b15eecf3ecb9e5a885bd67c2035375fca80060c675806bffe2d9f1deca53"
+    },
+    {
+      "name": "clear-merch",
+      "expected": "master-neutral",
+      "resolved": "master-neutral",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "a8e4de671a40c313f2c3c1017bf540d40d828cd181a0d54373e15c13b6500b0d",
+      "afterHash": "b851793934837e9076d89e3bea573615279cf1987e1210a916c123413d8ea46e",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+    },
+    {
+      "name": "confirm-prep-content",
+      "expected": "single-content",
+      "resolved": "single-content",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "306df22eddab875b5da2953a648dbbe99b5181350947d035938b40284b144674",
+      "afterHash": "cbd2cff6a42907b63b708ace7af62aadabf2bee36711e4a5adeb3ec376cd0582",
+      "stateHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+      "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638"
+    },
+    {
+      "name": "confirm-prep-video",
+      "expected": "complex-gather-content-video",
+      "resolved": "complex-gather-content-video",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": "2b262e18eea41e802d3b1443325f62ad19fb5b79ccbb1b783803a48471f45203",
+      "afterHash": "46bc26264430e271b25d0e9174ddc9dccb1b793bbfaadaf6757e3f46037cfaf2",
+      "stateHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+      "expectedHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226"
+    },
+    {
+      "name": "confirm-stays-on-03.2",
+      "expected": "complex-gather-content-video",
+      "resolved": "complex-gather-content-video",
+      "expectPixelChange": false,
+      "renderedActorPixelsChanged": false,
+      "beforeHash": null,
+      "afterHash": null,
+      "stateHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+      "expectedHash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226"
+    },
+    {
+      "name": "03.3-DRIVE-content-video",
+      "expected": "complex-drive-content-video",
+      "resolved": "complex-drive-content-video",
+      "expectPixelChange": true,
+      "renderedActorPixelsChanged": true,
+      "beforeHash": null,
+      "afterHash": "c7b16f7e2539d7809588095c040e9713ced7474f82cc82da8b31743bbf688c44",
+      "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+      "expectedHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde"
+    }
+  ]
+}

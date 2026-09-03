@@ -1,0 +1,154 @@
+{
+  "liveSteps": [
+    {
+      "name": "03.2-0-MASTER",
+      "node": "03.2",
+      "resolved": "master-neutral",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "family": "MASTER",
+      "paletteMask": 127,
+      "requestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.1",
+        "magneticSettleRevision": 4
+      },
+      "interactionRevision": 0,
+      "magneticSettleRevision": 5,
+      "geometryId": "master-neutral",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "03.2-content-SINGLE",
+      "node": "03.2",
+      "resolved": "single-content",
+      "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+      "family": "SINGLE",
+      "paletteMask": 1,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "interactionRevision": 1,
+      "magneticSettleRevision": 5,
+      "geometryId": "single-content",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "03.2-content-event-GATHER",
+      "node": "03.2",
+      "resolved": "complex-gather-content-event",
+      "hash": "b58a60c190594538a13180ba800b4183dbf0025d384c7b7a840837fa494f37df",
+      "family": "GATHER",
+      "paletteMask": 5,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 2
+      },
+      "interactionRevision": 2,
+      "magneticSettleRevision": 5,
+      "geometryId": "complex-gather-content-event",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "03.2-content-event-video-GATHER",
+      "node": "03.2",
+      "resolved": "complex-gather-content-event-video",
+      "hash": "23f5de281cbc338100a149e07dfd78ac12372750b8a604a7c773ea3fdf4792c6",
+      "family": "GATHER",
+      "paletteMask": 21,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 3
+      },
+      "interactionRevision": 3,
+      "magneticSettleRevision": 5,
+      "geometryId": "complex-gather-content-event-video",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "03.2-content-video-GATHER",
+      "node": "03.2",
+      "resolved": "complex-gather-content-video",
+      "hash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+      "family": "GATHER",
+      "paletteMask": 17,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 4
+      },
+      "interactionRevision": 4,
+      "magneticSettleRevision": 5,
+      "geometryId": "complex-gather-content-video",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "confirm-stays-on-03.2",
+      "node": "03.2",
+      "resolved": "complex-gather-content-video",
+      "hash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+      "family": "GATHER",
+      "paletteMask": 17,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 4
+      },
+      "interactionRevision": 4,
+      "magneticSettleRevision": 5,
+      "geometryId": "complex-gather-content-video",
+      "overlay": false,
+      "zoom": 1
+    },
+    {
+      "name": "03.3-DRIVE-content-video",
+      "node": "03.3",
+      "resolved": "complex-drive-content-video",
+      "hash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+      "family": "DRIVE",
+      "paletteMask": 17,
+      "requestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.3",
+        "magneticSettleRevision": 6
+      },
+      "interactionRevision": 4,
+      "magneticSettleRevision": 6,
+      "geometryId": "complex-drive-content-video",
+      "overlay": false,
+      "zoom": 1
+    }
+  ],
+  "gates": {
+    "requestsToCrossedNodes": 0,
+    "maxActorQueueDepth": 0,
+    "routeCompileLiveRetargetCount": 0,
+    "staleQueuedTransitionStarts": 0,
+    "runningMorphInterruptedByScroll": 0,
+    "actorRequestCount": 24,
+    "cancelledBeforeVisualStartCount": 0,
+    "ignoredCandidateCount": 6,
+    "actorRequestSource": {
+      "kind": "route-settle",
+      "nodeId": "02",
+      "magneticSettleRevision": 22
+    },
+    "interactionRevision": 4,
+    "placementActorRequestCount": 0,
+    "placementCompileCount": 0,
+    "placementQueueDepth": 0,
+    "postSettlePlacementDeltaPx": 0,
+    "magneticStrengthMonotonic": true,
+    "magneticCancelOnFreshInput": false,
+    "magneticOvershoot": false,
+    "magnetismProfile": "R1_STRONG_BALANCED"
+  }
+}

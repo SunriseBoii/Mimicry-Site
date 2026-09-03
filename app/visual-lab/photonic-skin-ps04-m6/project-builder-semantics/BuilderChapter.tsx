@@ -89,6 +89,7 @@ export function BuilderChapter({
                           key={id}
                           type="button"
                           data-qa={`competence-${id}`}
+                          data-competency-id={id}
                           data-selected={competencies.includes(id)}
                           aria-pressed={competencies.includes(id)}
                           onClick={() => onToggle(id)}

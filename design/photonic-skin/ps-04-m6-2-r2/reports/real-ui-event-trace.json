@@ -1,0 +1,1018 @@
+{
+  "realDomClicksUsed": true,
+  "qaSetCompetenciesUsedForAcceptance": false,
+  "actions": [
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 9912
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 3,
+      "selected": [
+        "content",
+        "event"
+      ],
+      "confirmed": null,
+      "interactionRevision": 2,
+      "lastAppliedInteractionRevision": 2,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 11915.5
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "video",
+      "hostNodeId": "03.2",
+      "draftRevision": 4,
+      "selected": [
+        "content",
+        "event",
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 3,
+      "lastAppliedInteractionRevision": 3,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 14347.199999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 5,
+      "selected": [
+        "content",
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 4,
+      "lastAppliedInteractionRevision": 4,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 16678.599999904633
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 6,
+      "selected": [
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 5,
+      "lastAppliedInteractionRevision": 5,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 19234.199999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "video",
+      "hostNodeId": "03.2",
+      "draftRevision": 7,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 6,
+      "lastAppliedInteractionRevision": 6,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 21861.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 9912
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 3,
+      "selected": [
+        "content",
+        "event"
+      ],
+      "confirmed": null,
+      "interactionRevision": 2,
+      "lastAppliedInteractionRevision": 2,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 11915.5
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "video",
+      "hostNodeId": "03.2",
+      "draftRevision": 4,
+      "selected": [
+        "content",
+        "event",
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 3,
+      "lastAppliedInteractionRevision": 3,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 14347.199999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 5,
+      "selected": [
+        "content",
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 4,
+      "lastAppliedInteractionRevision": 4,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 16678.599999904633
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 6,
+      "selected": [
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 5,
+      "lastAppliedInteractionRevision": 5,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 19234.199999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "video",
+      "hostNodeId": "03.2",
+      "draftRevision": 7,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 6,
+      "lastAppliedInteractionRevision": 6,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 21861.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 8,
+      "selected": [
+        "event"
+      ],
+      "confirmed": null,
+      "interactionRevision": 7,
+      "lastAppliedInteractionRevision": 7,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 24328.699999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 9,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 8,
+      "lastAppliedInteractionRevision": 8,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 26946.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "design",
+      "hostNodeId": "03.2",
+      "draftRevision": 10,
+      "selected": [
+        "design"
+      ],
+      "confirmed": null,
+      "interactionRevision": 9,
+      "lastAppliedInteractionRevision": 9,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 29694.299999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "design",
+      "hostNodeId": "03.2",
+      "draftRevision": 11,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 10,
+      "lastAppliedInteractionRevision": 10,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 32031.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "digital",
+      "hostNodeId": "03.2",
+      "draftRevision": 12,
+      "selected": [
+        "digital"
+      ],
+      "confirmed": null,
+      "interactionRevision": 11,
+      "lastAppliedInteractionRevision": 11,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 34359.5
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "digital",
+      "hostNodeId": "03.2",
+      "draftRevision": 13,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 12,
+      "lastAppliedInteractionRevision": 12,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 36573.09999990463
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "games",
+      "hostNodeId": "03.2",
+      "draftRevision": 14,
+      "selected": [
+        "games"
+      ],
+      "confirmed": null,
+      "interactionRevision": 13,
+      "lastAppliedInteractionRevision": 13,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 38973.39999997616
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "games",
+      "hostNodeId": "03.2",
+      "draftRevision": 15,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 14,
+      "lastAppliedInteractionRevision": 14,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 41608.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "merch",
+      "hostNodeId": "03.2",
+      "draftRevision": 16,
+      "selected": [
+        "merch"
+      ],
+      "confirmed": null,
+      "interactionRevision": 15,
+      "lastAppliedInteractionRevision": 15,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 43830
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "merch",
+      "hostNodeId": "03.2",
+      "draftRevision": 17,
+      "selected": [],
+      "confirmed": null,
+      "interactionRevision": 16,
+      "lastAppliedInteractionRevision": 16,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 46482.699999928474
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 18,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 17,
+      "lastAppliedInteractionRevision": 17,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 49013.799999952316
+    },
+    {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "video",
+      "hostNodeId": "03.2",
+      "draftRevision": 19,
+      "selected": [
+        "content",
+        "video"
+      ],
+      "confirmed": null,
+      "interactionRevision": 18,
+      "lastAppliedInteractionRevision": 18,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 51019.89999997616
+    }
+  ],
+  "keyboard": {
+    "enter": {
+      "name": "single-content",
+      "id": "content",
+      "expected": "single-content",
+      "selected": [
+        "content"
+      ],
+      "beforeRev": 0,
+      "afterRev": 1,
+      "interactionDelta": 1,
+      "magneticBefore": 5,
+      "magneticAfter": 5,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "resolved": "single-content",
+      "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+      "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "paletteMask": 1,
+      "family": "SINGLE",
+      "programBind": {
+        "revision": 5,
+        "programId": "master-neutral-to-single-content-qa-desktop-6833b65edc9b",
+        "sourceId": "master-neutral",
+        "targetId": "single-content",
+        "bindCommitted": true,
+        "bindFrameToken": 851,
+        "gpuReady": true,
+        "bankId": 0,
+        "bankGeneration": 3
+      },
+      "visualLifecycle": "settled",
+      "lifecycle": [
+        "settled",
+        "preparing",
+        "morphing",
+        "settled"
+      ],
+      "ariaPressed": "true",
+      "draft": [
+        "content"
+      ],
+      "confirmed": null,
+      "lastAction": {
+        "type": "toggle-competency",
+        "source": "user-ui",
+        "competencyId": "content",
+        "hostNodeId": "03.2",
+        "draftRevision": 2,
+        "selected": [
+          "content"
+        ],
+        "confirmed": null,
+        "interactionRevision": 1,
+        "lastAppliedInteractionRevision": 1,
+        "magneticSettleRevision": 5,
+        "requestSourceKind": "in-screen-action",
+        "published": true,
+        "atMs": 6208.599999904633
+      },
+      "pixels": {
+        "before": {
+          "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/keyboard-enter-before-content-0.png",
+          "hash": "a1096c59bd09a14d9c68c0e556ece693aa36225c6f78d936c5149ca6d1a35272"
+        },
+        "after": {
+          "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/keyboard-enter-after-single-content.png",
+          "hash": "479e934f8c8322e37fb8252f8d8585477790b8e2fb0dfbfd74b0a9b7836d3fa8"
+        },
+        "renderedActorPixelsChanged": true
+      },
+      "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+      "hashExact": true,
+      "bufferExact": true,
+      "node": "03.2",
+      "hardGates": {
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "routeCompileLiveRetargetCount": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "actorRequestCount": 5,
+        "cancelledBeforeVisualStartCount": 1,
+        "ignoredCandidateCount": 2,
+        "actorRequestSource": {
+          "kind": "in-screen-action",
+          "hostNodeId": "03.2",
+          "interactionRevision": 1
+        },
+        "interactionRevision": 1,
+        "lastAppliedInteractionRevision": 1,
+        "placementActorRequestCount": 0,
+        "placementCompileCount": 0,
+        "placementQueueDepth": 0,
+        "postSettlePlacementDeltaPx": 0,
+        "magneticStrengthMonotonic": true,
+        "magneticCancelOnFreshInput": false,
+        "magneticOvershoot": false,
+        "magnetismProfile": "R1_STRONG_BALANCED"
+      }
+    },
+    "space": {
+      "name": "master-neutral",
+      "id": "content",
+      "expected": "master-neutral",
+      "selected": [],
+      "beforeRev": 1,
+      "afterRev": 2,
+      "interactionDelta": 1,
+      "magneticBefore": 5,
+      "magneticAfter": 5,
+      "requestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 2
+      },
+      "resolved": "master-neutral",
+      "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+      "paletteMask": 127,
+      "family": "MASTER",
+      "programBind": {
+        "revision": 6,
+        "programId": "single-content-to-master-neutral-qa-desktop-336223e70382",
+        "sourceId": "single-content",
+        "targetId": "master-neutral",
+        "bindCommitted": true,
+        "bindFrameToken": 1150,
+        "gpuReady": true,
+        "bankId": 1,
+        "bankGeneration": 2
+      },
+      "visualLifecycle": "settled",
+      "lifecycle": [
+        "settled",
+        "preparing",
+        "morphing"
+      ],
+      "ariaPressed": "false",
+      "draft": [],
+      "confirmed": null,
+      "lastAction": {
+        "type": "toggle-competency",
+        "source": "user-ui",
+        "competencyId": "content",
+        "hostNodeId": "03.2",
+        "draftRevision": 3,
+        "selected": [],
+        "confirmed": null,
+        "interactionRevision": 2,
+        "lastAppliedInteractionRevision": 2,
+        "magneticSettleRevision": 5,
+        "requestSourceKind": "in-screen-action",
+        "published": true,
+        "atMs": 7998.799999952316
+      },
+      "pixels": {
+        "before": {
+          "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/keyboard-space-before-content-1.png",
+          "hash": "f31491079be935d71340c4a921379cc9a970824fe8986600ddff49188885032e"
+        },
+        "after": {
+          "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/keyboard-space-after-master-neutral.png",
+          "hash": "e68d287b2e402d8a60745ba4d2f891cb62be3be5a0c21ebb4da7a5e7f6290ae0"
+        },
+        "renderedActorPixelsChanged": true
+      },
+      "expectedHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "hashExact": true,
+      "bufferExact": true,
+      "node": "03.2",
+      "hardGates": {
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "routeCompileLiveRetargetCount": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "actorRequestCount": 6,
+        "cancelledBeforeVisualStartCount": 1,
+        "ignoredCandidateCount": 2,
+        "actorRequestSource": {
+          "kind": "in-screen-action",
+          "hostNodeId": "03.2",
+          "interactionRevision": 2
+        },
+        "interactionRevision": 2,
+        "lastAppliedInteractionRevision": 2,
+        "placementActorRequestCount": 0,
+        "placementCompileCount": 0,
+        "placementQueueDepth": 0,
+        "postSettlePlacementDeltaPx": 0,
+        "magneticStrengthMonotonic": true,
+        "magneticCancelOnFreshInput": false,
+        "magneticOvershoot": false,
+        "magnetismProfile": "R1_STRONG_BALANCED"
+      }
+    }
+  },
+  "touch": {
+    "name": "single-event",
+    "id": "event",
+    "expected": "single-event",
+    "selected": [
+      "event"
+    ],
+    "beforeRev": 0,
+    "afterRev": 1,
+    "interactionDelta": 1,
+    "magneticBefore": 5,
+    "magneticAfter": 5,
+    "requestSource": {
+      "kind": "in-screen-action",
+      "hostNodeId": "03.2",
+      "interactionRevision": 1
+    },
+    "resolved": "single-event",
+    "hash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "paletteMask": 4,
+    "family": "SINGLE",
+    "programBind": {
+      "revision": 5,
+      "programId": "master-neutral-to-single-event-qa-mobile-34910f9b3b20",
+      "sourceId": "master-neutral",
+      "targetId": "single-event",
+      "bindCommitted": true,
+      "bindFrameToken": 708,
+      "gpuReady": true,
+      "bankId": 0,
+      "bankGeneration": 3
+    },
+    "visualLifecycle": "settled",
+    "lifecycle": [
+      "settled",
+      "preparing",
+      "morphing",
+      "settled"
+    ],
+    "ariaPressed": "true",
+    "draft": [
+      "event"
+    ],
+    "confirmed": null,
+    "lastAction": {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "event",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "event"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 6542.299999952316
+    },
+    "pixels": {
+      "before": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/touch-event-before-event-0.png",
+        "hash": "20a90adbd10045e4504d6a8641f70121844cb5f89e983728b1f60087975e9292"
+      },
+      "after": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/touch-event-after-single-event.png",
+        "hash": "dccfbe5ba8bfc51d3a1383297ababc1fd75537bfbb577508448ae29a7c3eb995"
+      },
+      "renderedActorPixelsChanged": true
+    },
+    "expectedHash": "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b",
+    "hashExact": true,
+    "bufferExact": true,
+    "node": "03.2",
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 5,
+      "cancelledBeforeVisualStartCount": 1,
+      "ignoredCandidateCount": 2,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    }
+  },
+  "dark": {
+    "name": "single-content",
+    "id": "content",
+    "expected": "single-content",
+    "selected": [
+      "content"
+    ],
+    "beforeRev": 0,
+    "afterRev": 1,
+    "interactionDelta": 1,
+    "magneticBefore": 5,
+    "magneticAfter": 5,
+    "requestSource": {
+      "kind": "in-screen-action",
+      "hostNodeId": "03.2",
+      "interactionRevision": 1
+    },
+    "resolved": "single-content",
+    "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "paletteMask": 1,
+    "family": "SINGLE",
+    "programBind": {
+      "revision": 4,
+      "programId": "master-neutral-to-single-content-qa-desktop-6833b65edc9b",
+      "sourceId": "master-neutral",
+      "targetId": "single-content",
+      "bindCommitted": true,
+      "bindFrameToken": 756,
+      "gpuReady": true,
+      "bankId": 0,
+      "bankGeneration": 3
+    },
+    "visualLifecycle": "settled",
+    "lifecycle": [
+      "settled",
+      "preparing",
+      "morphing"
+    ],
+    "ariaPressed": "true",
+    "draft": [
+      "content"
+    ],
+    "confirmed": null,
+    "lastAction": {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 8201.600000023842
+    },
+    "pixels": {
+      "before": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/dark-content-before-content-0.png",
+        "hash": "8da30b197f00bfe3e977b1e80f94b9033cdfcc1897f66bf753f03db7c166c0ff"
+      },
+      "after": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/dark-content-after-single-content.png",
+        "hash": "a32646e56801156ed2e77659f803997aeed9ec9ea8ebfbfcb1f0ae4be32c177c"
+      },
+      "renderedActorPixelsChanged": true
+    },
+    "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "hashExact": true,
+    "bufferExact": true,
+    "node": "03.2",
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 5,
+      "cancelledBeforeVisualStartCount": 1,
+      "ignoredCandidateCount": 2,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    }
+  },
+  "reduced": {
+    "name": "single-content",
+    "id": "content",
+    "expected": "single-content",
+    "selected": [
+      "content"
+    ],
+    "beforeRev": 0,
+    "afterRev": 1,
+    "interactionDelta": 1,
+    "magneticBefore": 5,
+    "magneticAfter": 5,
+    "requestSource": {
+      "kind": "in-screen-action",
+      "hostNodeId": "03.2",
+      "interactionRevision": 1
+    },
+    "resolved": "single-content",
+    "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "paletteMask": 1,
+    "family": "SINGLE",
+    "programBind": {
+      "revision": 4,
+      "programId": "master-neutral-to-single-content-qa-desktop-0ef7ecea8e9f",
+      "sourceId": "master-neutral",
+      "targetId": "single-content",
+      "bindCommitted": true,
+      "bindFrameToken": 437,
+      "gpuReady": true,
+      "bankId": 0,
+      "bankGeneration": 2
+    },
+    "visualLifecycle": "settled",
+    "lifecycle": [
+      "settled"
+    ],
+    "ariaPressed": "true",
+    "draft": [
+      "content"
+    ],
+    "confirmed": null,
+    "lastAction": {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 5194.600000023842
+    },
+    "pixels": {
+      "before": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/reduced-content-before-content-0.png",
+        "hash": "5ffb16c665cb24384f75ba0610be27fc96edf4608a1622175a8a54b5ee26584a"
+      },
+      "after": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/reduced-content-after-single-content.png",
+        "hash": "53f9ce0124c3a7852ad26c24438b29fbf9f75b257a57fb3e3a000853ff9833fd"
+      },
+      "renderedActorPixelsChanged": true
+    },
+    "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "hashExact": true,
+    "bufferExact": true,
+    "node": "03.2",
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 5,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 2,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    }
+  },
+  "mobile": {
+    "name": "single-content",
+    "id": "content",
+    "expected": "single-content",
+    "selected": [
+      "content"
+    ],
+    "beforeRev": 0,
+    "afterRev": 1,
+    "interactionDelta": 1,
+    "magneticBefore": 5,
+    "magneticAfter": 5,
+    "requestSource": {
+      "kind": "in-screen-action",
+      "hostNodeId": "03.2",
+      "interactionRevision": 1
+    },
+    "resolved": "single-content",
+    "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "bufferHash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "paletteMask": 1,
+    "family": "SINGLE",
+    "programBind": {
+      "revision": 4,
+      "programId": "master-neutral-to-single-content-qa-mobile-4a2b9e1982cc",
+      "sourceId": "master-neutral",
+      "targetId": "single-content",
+      "bindCommitted": true,
+      "bindFrameToken": 613,
+      "gpuReady": true,
+      "bankId": 0,
+      "bankGeneration": 3
+    },
+    "visualLifecycle": "settled",
+    "lifecycle": [
+      "settled",
+      "preparing",
+      "morphing",
+      "settled"
+    ],
+    "ariaPressed": "true",
+    "draft": [
+      "content"
+    ],
+    "confirmed": null,
+    "lastAction": {
+      "type": "toggle-competency",
+      "source": "user-ui",
+      "competencyId": "content",
+      "hostNodeId": "03.2",
+      "draftRevision": 2,
+      "selected": [
+        "content"
+      ],
+      "confirmed": null,
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "magneticSettleRevision": 5,
+      "requestSourceKind": "in-screen-action",
+      "published": true,
+      "atMs": 8295.100000023842
+    },
+    "pixels": {
+      "before": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/mobile-content-before-content-0.png",
+        "hash": "3617f6c2fd2c080dcd05544b49097bd21f4960567cd1b6f0144535c42432feb1"
+      },
+      "after": {
+        "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r2/renders/boards/mobile-content-after-single-content.png",
+        "hash": "a852d9c22d1d2482fc03e6f1719898c1edf5322ff57395bf2759fc16b7ff972a"
+      },
+      "renderedActorPixelsChanged": true
+    },
+    "expectedHash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "hashExact": true,
+    "bufferExact": true,
+    "node": "03.2",
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 5,
+      "cancelledBeforeVisualStartCount": 1,
+      "ignoredCandidateCount": 4,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 1
+      },
+      "interactionRevision": 1,
+      "lastAppliedInteractionRevision": 1,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    }
+  }
+}

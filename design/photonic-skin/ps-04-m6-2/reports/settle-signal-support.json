@@ -1,0 +1,12 @@
+{
+  "stage": "PS-04.M6.2",
+  "authority": "project controller predicate + rAF fallback",
+  "hints": {
+    "scrollend": "strong gesture-complete hint; still requires distance/velocity/candidate/layout",
+    "scrollsnapchanging": "candidate/prewarm hint only",
+    "scrollsnapchange": "browser snap target hint; not an actor request",
+    "IntersectionObserver": "not used as settle authority"
+  },
+  "fallback": "existing lab/scroll rAF samples scrollTop, time-based velocity, input quiet, and distance to magnetic anchor",
+  "noSetTimeoutDebounce": true
+}

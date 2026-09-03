@@ -1,0 +1,11 @@
+{
+  "stage": "PS-04.M6.2",
+  "cadence": "natural-rAF",
+  "routeCompileLiveRetargetCount": 0,
+  "rapid9NewActorRequests": 1,
+  "maxActorQueueDepthObserved": 1,
+  "unboundedCacheGrowth": false,
+  "oneProgramMaterialDraw": true,
+  "actorStartBudgetMs": 150,
+  "comparison": "M5.6 rapid capture used live retarget; M6.2 rapid path holds source until magnetized settle then one exact pair"
+}

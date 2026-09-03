@@ -1,0 +1,47 @@
+{
+  "active": "R1_STRONG_BALANCED",
+  "M6_2_CURRENT": {
+    "desktopCaptureRadiusVh": 0.25,
+    "motion": "cubic-ease-out"
+  },
+  "R1_STRONG_BALANCED": {
+    "desktopCaptureRadiusVh": 0.56,
+    "mobileCaptureRadiusVh": 0.42,
+    "motion": "monotonic-damping"
+  },
+  "probeAt048vh": {
+    "node": "01",
+    "extras": {
+      "presentationSourceNodeId": "01",
+      "presentationTargetNodeId": "02",
+      "routeSegmentProgress": "0.482",
+      "displayedPlacement": "1079,503 right",
+      "captureRadiusPx": "504.0",
+      "distanceToNearestAnchorPx": "432.0",
+      "magneticStrength": "0.055",
+      "magneticStrengthM62": "0.000",
+      "magneticStrengthR1": "0.055",
+      "magnetismProfile": "R1_STRONG_BALANCED",
+      "geometryId": "master-neutral",
+      "stateHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+      "paletteMask": 127,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": "0.00"
+    },
+    "magneticStrengthM62": "0.000",
+    "magneticStrengthR1": "0.055",
+    "captureRadiusPx": "504.0",
+    "distanceToNearestAnchorPx": "432.0"
+  },
+  "afterEvaluate": {
+    "node": "01",
+    "settled": "01"
+  },
+  "magneticStrengthMonotonic": true,
+  "overshoot": false,
+  "cancelOnFreshInput": false,
+  "noopDistancePx": 2,
+  "justification": "At 432.0 CSS px (~0.48 vh) from the nearest Hero anchor, R1_STRONG_BALANCED magneticStrength=0.055 with captureRadius 504.0px (0.56 vh). M6_2_CURRENT magneticStrength=0.000 at 0.25 vh. R1 captured this offset; M6.2 current did not. evaluateMagnetism then returned to the nearest anchor (afterEvaluate node 01) with magneticOvershoot=false."
+}

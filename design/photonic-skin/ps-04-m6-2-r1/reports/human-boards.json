@@ -1,0 +1,3576 @@
+[
+  {
+    "name": "hero-settled",
+    "runId": "ps04-m6-2-r1",
+    "node": "01",
+    "builder": {
+      "taskId": null,
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "01",
+      "snapCandidateNodeId": "01",
+      "magneticDestinationNodeId": "01",
+      "magnetizedSettledNodeId": "01",
+      "magneticSettleRevision": 2,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 6113.0999999523165,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "01",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 2
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 2,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 8075.7,
+      "lastRequestAtMs": 2063.7,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 2,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 2
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "01",
+      "hostNodeId": "01",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "01 MASTER sphere, all seven"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 1,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "01",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "01"
+      ],
+      [
+        "presentationTargetNodeId",
+        "02"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/hero-settled.png"
+  },
+  {
+    "name": "about-brand-wide",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": null,
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 3,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 1852.6999999761574,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 3
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 3,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 10148.4,
+      "lastRequestAtMs": 8421.2,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 3,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 3
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.24,
+      "sourceZoom": 1.24,
+      "targetZoom": 1.24,
+      "currentZoom": 1.24,
+      "effectiveZoom": 1.24,
+      "responsiveCap": 1.24,
+      "capped": false,
+      "revision": 2,
+      "framingProgress": 1,
+      "frustumScale": 0.8064516129032259,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.24,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/about-brand-wide.png"
+  },
+  {
+    "name": "builder-03-2-master",
+    "runId": "ps04-m6-2-r1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "potential"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "03.2",
+      "snapCandidateNodeId": "03.2",
+      "magneticDestinationNodeId": "03.2",
+      "magnetizedSettledNodeId": "03.2",
+      "magneticSettleRevision": 5,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 162.2999999046333,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "03.1",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.1",
+        "magneticSettleRevision": 4
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 4,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 11778.7,
+      "lastRequestAtMs": 10378.7,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 4,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.1",
+        "magneticSettleRevision": 4
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "03.2",
+      "hostNodeId": "03.2",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "03.2 exact master-neutral ns=ps-04-m5-5"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 3,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "03.2",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "03.2"
+      ],
+      [
+        "presentationTargetNodeId",
+        "04"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/builder-03-2-master.png"
+  },
+  {
+    "name": "builder-03-2-content-video",
+    "runId": "ps04-m6-2-r1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-gather-content-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "gather"
+    },
+    "hash": "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "03.2",
+      "snapCandidateNodeId": "03.2",
+      "magneticDestinationNodeId": "03.2",
+      "magnetizedSettledNodeId": "03.2",
+      "magneticSettleRevision": 5,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 7871.999999952317,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "03.2",
+      "actorEndpointKey": "complex-gather-content-video|17|right|complex",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 4
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 8,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 19493.7,
+      "lastRequestAtMs": 17706.599999904633,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 8,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "in-screen-action",
+        "hostNodeId": "03.2",
+        "interactionRevision": 4
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "03.2",
+      "hostNodeId": "03.2",
+      "family": "GATHER",
+      "requestedFamily": "GATHER",
+      "resolvedGeometryId": "complex-gather-content-video",
+      "paletteMask": 17,
+      "slot": "right",
+      "fitProfile": "complex",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "03.2 exact complex-gather-content-video ns=ps-04-m6-1"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 7,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1.14,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "03.2",
+      "geometryId": "complex-gather-content-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "03.2"
+      ],
+      [
+        "presentationTargetNodeId",
+        "04"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "complex-gather-content-video"
+      ],
+      [
+        "stateHash",
+        "f71e6d1f19ad596c8717249af2129a72e218581d9dfde05335af039ef6b77226"
+      ],
+      [
+        "paletteMask",
+        17
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-gather-content-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/builder-03-2-content-video.png"
+  },
+  {
+    "name": "builder-03-3-drive",
+    "runId": "ps04-m6-2-r1",
+    "node": "03.3",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "complex-drive-content-video",
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "drive"
+    },
+    "hash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "03.3",
+      "snapCandidateNodeId": "03.3",
+      "magneticDestinationNodeId": "03.3",
+      "magnetizedSettledNodeId": "03.3",
+      "magneticSettleRevision": 6,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 1941.5999999284759,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "03.3",
+      "actorEndpointKey": "complex-drive-content-video|17|right|complex",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.3",
+        "magneticSettleRevision": 6
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 9,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 21663.3,
+      "lastRequestAtMs": 19827,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 9,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.3",
+        "magneticSettleRevision": 6
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "03.3",
+      "hostNodeId": "03.3",
+      "family": "DRIVE",
+      "requestedFamily": "DRIVE",
+      "resolvedGeometryId": "complex-drive-content-video",
+      "paletteMask": 17,
+      "slot": "right",
+      "fitProfile": "complex",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "03.3 exact complex-drive-content-video ns=ps-04-m6-1"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 8,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1.14,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "03.3",
+      "geometryId": "complex-drive-content-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "03.3"
+      ],
+      [
+        "presentationTargetNodeId",
+        "04"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "complex-drive-content-video"
+      ],
+      [
+        "stateHash",
+        "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde"
+      ],
+      [
+        "paletteMask",
+        17
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m6-1",
+    "resolved": "complex-drive-content-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/builder-03-3-drive.png"
+  },
+  {
+    "name": "about-after-builder",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 7,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 2023.8999999761581,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 7
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 10,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 23796.7,
+      "lastRequestAtMs": 21875.5,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 10,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 7
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.24,
+      "sourceZoom": 1.24,
+      "targetZoom": 1.24,
+      "currentZoom": 1.24,
+      "effectiveZoom": 1.24,
+      "responsiveCap": 1.24,
+      "capped": false,
+      "revision": 9,
+      "framingProgress": 1,
+      "frustumScale": 0.8064516129032259,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.24,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/about-after-builder.png"
+  },
+  {
+    "name": "cases-content",
+    "runId": "ps04-m6-2-r1",
+    "node": "05.1",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "single-content",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "05.1",
+      "snapCandidateNodeId": "05.1",
+      "magneticDestinationNodeId": "05.1",
+      "magnetizedSettledNodeId": "05.1",
+      "magneticSettleRevision": 9,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 1992,
+      "candidateStableForMs": 1918.3999999284752,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "05.1",
+      "actorEndpointKey": "single-content|1|left|single",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "05.1",
+        "magneticSettleRevision": 9
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 12,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 27754.1,
+      "lastRequestAtMs": 26172.4,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 12,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "05.1",
+        "magneticSettleRevision": 9
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "05.1",
+      "hostNodeId": "05.1",
+      "family": "SINGLE",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-content",
+      "paletteMask": 1,
+      "slot": "left",
+      "fitProfile": "single",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "frozen SINGLE single-content"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 11,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1.36,
+      "visualZoomMultiplier": 1,
+      "slot": "left",
+      "nodeId": "05.1",
+      "geometryId": "single-content"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "05.1"
+      ],
+      [
+        "presentationTargetNodeId",
+        "05.2"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "353,503 left"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "single-content"
+      ],
+      [
+        "stateHash",
+        "ea5d20c633cee044261fe86173e3258b1080b29733a35185c3f92348f9a57638"
+      ],
+      [
+        "paletteMask",
+        1
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 352.8,
+      "y": 502.56,
+      "slot": "left",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "single-content",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/cases-content.png"
+  },
+  {
+    "name": "content-design",
+    "runId": "ps04-m6-2-r1",
+    "node": "05.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "single-design",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "05.2",
+      "snapCandidateNodeId": "05.2",
+      "magneticDestinationNodeId": "05.2",
+      "magnetizedSettledNodeId": "05.2",
+      "magneticSettleRevision": 10,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 4013,
+      "candidateStableForMs": 1909.0999999284759,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "05.2",
+      "actorEndpointKey": "single-design|2|left|single",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "05.2",
+        "magneticSettleRevision": 10
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 13,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 29887.6,
+      "lastRequestAtMs": 28087.6,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 13,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "05.2",
+        "magneticSettleRevision": 10
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "05.2",
+      "hostNodeId": "05.2",
+      "family": "SINGLE",
+      "requestedFamily": "SINGLE",
+      "resolvedGeometryId": "single-design",
+      "paletteMask": 2,
+      "slot": "left",
+      "fitProfile": "single",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "frozen SINGLE single-design"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 12,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1.36,
+      "visualZoomMultiplier": 1,
+      "slot": "left",
+      "nodeId": "05.2",
+      "geometryId": "single-design"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "05.2"
+      ],
+      [
+        "presentationTargetNodeId",
+        "05.3"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "353,503 left"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "single-design"
+      ],
+      [
+        "stateHash",
+        "3ecb1fba604e8bf544d6f329766791640ffc8c035ac4aa86a156ded57f466b0f"
+      ],
+      [
+        "paletteMask",
+        2
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 352.8,
+      "y": 502.56,
+      "slot": "left",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "single-design",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/content-design.png"
+  },
+  {
+    "name": "merch-team",
+    "runId": "ps04-m6-2-r1",
+    "node": "06.1",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "06.1",
+      "snapCandidateNodeId": "06.1",
+      "magneticDestinationNodeId": "06.1",
+      "magnetizedSettledNodeId": "06.1",
+      "magneticSettleRevision": 15,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 2024.6999999284744,
+      "candidateStableForMs": 1867.0999999046326,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "06.1",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "06.1",
+        "magneticSettleRevision": 15
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 18,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 40602.5,
+      "lastRequestAtMs": 38917.7,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 18,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "06.1",
+        "magneticSettleRevision": 15
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "06.1",
+      "hostNodeId": "06.1",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "06.1 MASTER sphere, all seven"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 17,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "06.1",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "06.1"
+      ],
+      [
+        "presentationTargetNodeId",
+        "06.2"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/merch-team.png"
+  },
+  {
+    "name": "rapid-final-cases",
+    "runId": "ps04-m6-2-r1",
+    "node": "04",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "04",
+      "snapCandidateNodeId": "04",
+      "magneticDestinationNodeId": "04",
+      "magnetizedSettledNodeId": "04",
+      "magneticSettleRevision": 17,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 1240.6999999284744,
+      "candidateStableForMs": 1228.5999999284759,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "04",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "04",
+        "magneticSettleRevision": 17
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 20,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 43887.2,
+      "lastRequestAtMs": 42766.1,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 20,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "04",
+        "magneticSettleRevision": 17
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0.0000794054487869289,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "04",
+      "hostNodeId": "04",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "04 MASTER sphere, all seven"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 19,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "04",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "04"
+      ],
+      [
+        "presentationTargetNodeId",
+        "05.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.7999205945512,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/rapid-final-cases.png"
+  },
+  {
+    "name": "strong-magnetism-desktop",
+    "runId": "ps04-m6-2-r1",
+    "node": "01",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Verifying",
+      "observedNodeId": "01",
+      "snapCandidateNodeId": "01",
+      "magneticDestinationNodeId": "01",
+      "magnetizedSettledNodeId": "01",
+      "magneticSettleRevision": 18,
+      "distanceToAnchorPx": 432,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 12329.899999976158,
+      "candidateStableForMs": 12329.899999976158,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "04",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "04",
+        "magneticSettleRevision": 17
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 20,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 44293.4,
+      "lastRequestAtMs": 42766.1,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 20,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "04",
+        "magneticSettleRevision": 17
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "01",
+      "hostNodeId": "01",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "01 MASTER sphere, all seven"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 19,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "01",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "01"
+      ],
+      [
+        "presentationTargetNodeId",
+        "02"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.482"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "432.0"
+      ],
+      [
+        "magneticStrength",
+        "0.055"
+      ],
+      [
+        "magneticStrengthM62",
+        "0.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "0.055"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/strong-magnetism-desktop.png"
+  },
+  {
+    "name": "graph-click-about",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 19,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 2392.8000000715256,
+      "candidateStableForMs": 2391,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 19
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 21,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 59159.8,
+      "lastRequestAtMs": 57293.2,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 21,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 19
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.24,
+      "sourceZoom": 1.24,
+      "targetZoom": 1.24,
+      "currentZoom": 1.24,
+      "effectiveZoom": 1.24,
+      "responsiveCap": 1.24,
+      "capped": false,
+      "revision": 20,
+      "framingProgress": 1,
+      "frustumScale": 0.8064516129032259,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.24,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/graph-click-about.png"
+  },
+  {
+    "name": "footer-settled",
+    "runId": "ps04-m6-2-r1",
+    "node": "08",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": null,
+      "sourceNamespace": "ps-04-m6-1",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 0,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "08",
+      "snapCandidateNodeId": "08",
+      "magneticDestinationNodeId": "08",
+      "magnetizedSettledNodeId": "08",
+      "magneticSettleRevision": 20,
+      "distanceToAnchorPx": 2,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 2652.8000000715256,
+      "candidateStableForMs": 135.90000000000146,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "08",
+      "actorEndpointKey": "none|0|none|none",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "08",
+        "magneticSettleRevision": 20
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 22,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 59408.3,
+      "lastRequestAtMs": 59390,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 22,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "08",
+        "magneticSettleRevision": 20
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "08",
+      "hostNodeId": "08",
+      "family": "none",
+      "requestedFamily": "none",
+      "resolvedGeometryId": null,
+      "paletteMask": 0,
+      "slot": "none",
+      "fitProfile": "none",
+      "resolution": "none",
+      "applyPaletteOverride": false,
+      "reason": "footer has no Mimic; session stays mounted"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 21,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "08",
+      "geometryId": null
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "08"
+      ],
+      [
+        "presentationTargetNodeId",
+        "08"
+      ],
+      [
+        "routeSegmentProgress",
+        "1.000"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "2.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        null
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        0
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": false
+    },
+    "hud": true,
+    "namespace": "ps-04-m6-1",
+    "resolved": "",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/footer-settled.png"
+  },
+  {
+    "name": "keyboard-pagedown",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [
+        "content",
+        "video"
+      ],
+      "confirmed": {
+        "taskId": "explain_changes",
+        "competencies": [
+          "content",
+          "video"
+        ],
+        "resolvedStateId": "complex-drive-content-video",
+        "stateHash": "7b116e75f84105bccaa61ffcfaa1ce2277459b31ff105fe75ac266bf319c1cde",
+        "revision": 1
+      },
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 22,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 1722,
+      "candidateStableForMs": 1731.5,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 22
+      },
+      "interactionRevision": 4,
+      "actorRequestCount": 24,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 63208.2,
+      "lastRequestAtMs": 61984,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 24,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 6,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "02",
+        "magneticSettleRevision": 22
+      },
+      "interactionRevision": 4,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.24,
+      "sourceZoom": 1.24,
+      "targetZoom": 1.24,
+      "currentZoom": 1.24,
+      "effectiveZoom": 1.24,
+      "responsiveCap": 1.24,
+      "capped": false,
+      "revision": 23,
+      "framingProgress": 1,
+      "frustumScale": 0.8064516129032259,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.24,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "9b91c3eb-5239-46d0-8f0e-f1b29f3b7f10",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/keyboard-pagedown.png"
+  },
+  {
+    "name": "clean-about",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": null,
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 0,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 1,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 735.5040000715255,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 1
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 1,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 1258.6,
+      "lastRequestAtMs": 646.5,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 1,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 1
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.24,
+      "sourceZoom": 1.24,
+      "targetZoom": 1.24,
+      "currentZoom": 1.24,
+      "effectiveZoom": 1.24,
+      "responsiveCap": 1.24,
+      "capped": false,
+      "revision": 1,
+      "framingProgress": 1,
+      "frustumScale": 0.8064516129032259,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.24,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "1079,503 right"
+      ],
+      [
+        "captureRadiusPx",
+        "504.0"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 1078.8,
+      "y": 502.56,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": false,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 0,
+    "geometries": 0,
+    "materialUuid": "37f91c38-b303-4f34-a2e0-e8d8ec518c7a",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/clean-about.png"
+  },
+  {
+    "name": "about-mobile",
+    "runId": "ps04-m6-2-r1",
+    "node": "02",
+    "builder": {
+      "taskId": null,
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "n/a"
+    },
+    "hash": "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f",
+    "draws": 0,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "02",
+      "snapCandidateNodeId": "02",
+      "magneticDestinationNodeId": "02",
+      "magnetizedSettledNodeId": "02",
+      "magneticSettleRevision": 1,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 764.1,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "02",
+      "actorEndpointKey": "brand-wide-gather-content-design-digital-event-games-merch-video|127|right|brandWide",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 1
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 1,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 1220,
+      "lastRequestAtMs": 571.6,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 1,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "01",
+        "magneticSettleRevision": 1
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "02",
+      "hostNodeId": "02",
+      "family": "BRAND_WIDE",
+      "requestedFamily": "BRAND_WIDE",
+      "resolvedGeometryId": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "brandWide",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "About canonical BRAND_WIDE all seven"
+    },
+    "framing": {
+      "requestedZoom": 1.24,
+      "displayedZoom": 1.18,
+      "sourceZoom": 1.18,
+      "targetZoom": 1.18,
+      "currentZoom": 1.18,
+      "effectiveZoom": 1.18,
+      "responsiveCap": 1.18,
+      "capped": true,
+      "revision": 0,
+      "framingProgress": 1,
+      "frustumScale": 0.8474576271186441,
+      "siteFitScale": 1.16,
+      "visualZoomMultiplier": 1.18,
+      "slot": "right",
+      "nodeId": "02",
+      "geometryId": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "02"
+      ],
+      [
+        "presentationTargetNodeId",
+        "03.1"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "191,520 right"
+      ],
+      [
+        "captureRadiusPx",
+        "472.6"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "brand-wide-gather-content-design-digital-event-games-merch-video"
+      ],
+      [
+        "stateHash",
+        "8a4fc88736c660bf008fe52e11032199bb6a98696138e2dc93cc9d3c43fb912f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 191.39999999999998,
+      "y": 519.76,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "brand-wide-gather-content-design-digital-event-games-merch-video",
+    "programs": 0,
+    "geometries": 0,
+    "materialUuid": "41d70fca-cbc0-4257-987f-e4ec39145677",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/about-mobile.png"
+  },
+  {
+    "name": "mobile-03-2",
+    "runId": "ps04-m6-2-r1",
+    "node": "03.2",
+    "builder": {
+      "taskId": "explain_changes",
+      "draft": [],
+      "confirmed": null,
+      "briefStale": false,
+      "hover": {
+        "competency": null,
+        "targetStateId": null,
+        "geometryInfluence": 0,
+        "paletteIntensity": 0,
+        "rotationBiasDeg": 0,
+        "active": false
+      },
+      "resolvedStateId": "master-neutral",
+      "sourceNamespace": "ps-04-m5-5",
+      "phase": "potential"
+    },
+    "hash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+    "draws": 1,
+    "canvases": 1,
+    "settle": {
+      "scrollPhase": "Settled",
+      "observedNodeId": "03.2",
+      "snapCandidateNodeId": "03.2",
+      "magneticDestinationNodeId": "03.2",
+      "magnetizedSettledNodeId": "03.2",
+      "magneticSettleRevision": 3,
+      "distanceToAnchorPx": 0,
+      "scrollVelocityVhPerSecond": 0,
+      "gestureActive": false,
+      "inputQuietForMs": 80,
+      "candidateStableForMs": 375.70000007152566,
+      "layoutRevision": 1,
+      "layoutRevisionStable": true,
+      "actorStatus": "settled",
+      "actorVisualStarted": false,
+      "actorCommittedNodeId": "03.1",
+      "actorEndpointKey": "master-neutral|127|right|master",
+      "queuedActorNodeId": null,
+      "queuedSettleRevision": null,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.1",
+        "magneticSettleRevision": 2
+      },
+      "interactionRevision": 0,
+      "actorRequestCount": 2,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "compileLiveRetargetCount": 0,
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "lastSettleAtMs": 3432.1,
+      "lastRequestAtMs": 1450.3,
+      "lastHint": "scrollend"
+    },
+    "hardGates": {
+      "requestsToCrossedNodes": 0,
+      "maxActorQueueDepth": 0,
+      "routeCompileLiveRetargetCount": 0,
+      "staleQueuedTransitionStarts": 0,
+      "runningMorphInterruptedByScroll": 0,
+      "actorRequestCount": 2,
+      "cancelledBeforeVisualStartCount": 0,
+      "ignoredCandidateCount": 0,
+      "actorRequestSource": {
+        "kind": "route-settle",
+        "nodeId": "03.1",
+        "magneticSettleRevision": 2
+      },
+      "interactionRevision": 0,
+      "placementActorRequestCount": 0,
+      "placementCompileCount": 0,
+      "placementQueueDepth": 0,
+      "postSettlePlacementDeltaPx": 0,
+      "magneticStrengthMonotonic": true,
+      "magneticCancelOnFreshInput": false,
+      "magneticOvershoot": false,
+      "magnetismProfile": "R1_STRONG_BALANCED"
+    },
+    "visualLifecycle": "settled",
+    "contract": {
+      "nodeId": "03.2",
+      "hostNodeId": "03.2",
+      "family": "MASTER",
+      "requestedFamily": "MASTER",
+      "resolvedGeometryId": "master-neutral",
+      "paletteMask": 127,
+      "slot": "right",
+      "fitProfile": "master",
+      "resolution": "exact",
+      "applyPaletteOverride": false,
+      "reason": "03.2 exact master-neutral ns=ps-04-m5-5"
+    },
+    "framing": {
+      "requestedZoom": 1,
+      "displayedZoom": 1,
+      "sourceZoom": 1,
+      "targetZoom": 1,
+      "currentZoom": 1,
+      "effectiveZoom": 1,
+      "responsiveCap": 1,
+      "capped": false,
+      "revision": 1,
+      "framingProgress": 1,
+      "frustumScale": 1,
+      "siteFitScale": 1,
+      "visualZoomMultiplier": 1,
+      "slot": "right",
+      "nodeId": "03.2",
+      "geometryId": "master-neutral"
+    },
+    "presentation": [
+      [
+        "presentationSourceNodeId",
+        "03.2"
+      ],
+      [
+        "presentationTargetNodeId",
+        "04"
+      ],
+      [
+        "routeSegmentProgress",
+        "0.002"
+      ],
+      [
+        "displayedPlacement",
+        "191,520 right"
+      ],
+      [
+        "captureRadiusPx",
+        "472.6"
+      ],
+      [
+        "distanceToNearestAnchorPx",
+        "0.0"
+      ],
+      [
+        "magneticStrength",
+        "1.000"
+      ],
+      [
+        "magneticStrengthM62",
+        "1.000"
+      ],
+      [
+        "magneticStrengthR1",
+        "1.000"
+      ],
+      [
+        "magnetismProfile",
+        "R1_STRONG_BALANCED"
+      ],
+      [
+        "geometryId",
+        "master-neutral"
+      ],
+      [
+        "stateHash",
+        "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f"
+      ],
+      [
+        "paletteMask",
+        127
+      ],
+      [
+        "placementActorRequestCount",
+        0
+      ],
+      [
+        "placementCompileCount",
+        0
+      ],
+      [
+        "placementQueueDepth",
+        0
+      ],
+      [
+        "postSettlePlacementDeltaPx",
+        "0.00"
+      ]
+    ],
+    "magnetismProfile": "R1_STRONG_BALANCED",
+    "composition": {
+      "x": 191.39999999999998,
+      "y": 519.76,
+      "slot": "right",
+      "actorDraw": true
+    },
+    "hud": true,
+    "namespace": "ps-04-m5-5",
+    "resolved": "master-neutral",
+    "programs": 1,
+    "geometries": 1,
+    "materialUuid": "41d70fca-cbc0-4257-987f-e4ec39145677",
+    "file": "C:/Users/MSI_NB/Documents/Mimicry-site/design/photonic-skin/ps-04-m6-2-r1/renders/boards/mobile-03-2.png"
+  }
+]

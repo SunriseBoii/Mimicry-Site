@@ -1,0 +1,64 @@
+{
+  "traces": [
+    {
+      "name": "rapid-9",
+      "start": {
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "routeCompileLiveRetargetCount": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "actorRequestCount": 3,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 0
+      },
+      "end": {
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "routeCompileLiveRetargetCount": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "actorRequestCount": 4,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 6
+      },
+      "settle": {
+        "scrollPhase": "Settled",
+        "observedNodeId": "05.5",
+        "snapCandidateNodeId": "05.5",
+        "magneticDestinationNodeId": "05.5",
+        "magnetizedSettledNodeId": "05.5",
+        "magneticSettleRevision": 4,
+        "distanceToAnchorPx": 0,
+        "scrollVelocityVhPerSecond": 0,
+        "gestureActive": false,
+        "inputQuietForMs": 2145.5,
+        "candidateStableForMs": 2138.8999999523166,
+        "layoutRevision": 1,
+        "layoutRevisionStable": true,
+        "actorStatus": "settled",
+        "actorVisualStarted": false,
+        "actorCommittedNodeId": "05.5",
+        "actorEndpointKey": "single-video|16|left|single",
+        "queuedActorNodeId": null,
+        "queuedSettleRevision": null,
+        "actorRequestCount": 4,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 6,
+        "compileLiveRetargetCount": 0,
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "lastSettleAtMs": 8264.7,
+        "lastRequestAtMs": 6228.3,
+        "lastHint": "scrollend"
+      },
+      "requests": 1
+    }
+  ],
+  "requestsToCrossedNodes": 0,
+  "routeCompileLiveRetargetCount": 0,
+  "maxActorQueueDepth": 1,
+  "latestSettledWins": true
+}
