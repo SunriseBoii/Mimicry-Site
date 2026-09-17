@@ -99,3 +99,244 @@
  GET /visual-lab/photonic-skin-ps04-m6/final-r2 200 in 151ms (next.js: 68ms, application-code: 84ms)
 [browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
 [browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+ GET / 200 in 56ms (next.js: 5ms, application-code: 51ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET /labNonLeakyMimic 200 in 2.1s (next.js: 2.1s, application-code: 59ms)
+ GET /labNonLeakyMimic 200 in 27ms (next.js: 3ms, application-code: 24ms)
+✓ Compiled in 234ms
+✓ Compiled in 222ms
+ GET /labNonLeakyMimic?state=master-neutral 200 in 35ms (next.js: 3ms, application-code: 32ms)
+✓ Compiled in 303ms
+✓ Compiled in 222ms
+✓ Compiled in 180ms
+✓ Compiled in 310ms
+✓ Compiled in 194ms
+✓ Compiled in 237ms
+✓ Compiled in 1704ms
+ GET /labNonLeakyMimic 200 in 1455ms (next.js: 1347ms, application-code: 109ms)
+ GET /labNonLeakyMimic 200 in 31ms (next.js: 3ms, application-code: 28ms)
+ GET / 200 in 30ms (next.js: 8ms, application-code: 23ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 243ms
+✓ Compiled in 250ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 261ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+✓ Compiled in 401ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 254ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 226ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 275ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+✓ Compiled in 1984ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 286ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 178ms (next.js: 99ms, application-code: 79ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 244ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 247ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 245ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 271ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 234ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 33ms (next.js: 3ms, application-code: 30ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 231ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 228ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 29ms (next.js: 4ms, application-code: 25ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 225ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 246ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+✓ Compiled in 240ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 225ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 262ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] Uncaught RangeError: offset is out of bounds
+    at Float32Array.set (<anonymous>)
+    at contactStateTexture (app/_photonic-skin/contact-rendering.ts:14:10)
+    at M41Content.useMemo[stateTextures] (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:1537:56)
+    at M41Content (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:1534:32)
+    at PS04M5SceneView (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:2698:7)
+    at MagnetizedSettleLab (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:2339:11)
+    at PhotonicSiteRuntime (app/_photonic-skin/contact-rendering.ts:10:50)
+    at ProductionPhotonicSiteClient (app/_photonic-skin/ProductionPhotonicSiteClient.tsx:18:10)
+    at Home (app\page.tsx:11:10)
+  12 |   for (let id = 0; id < state.recordCount; id++) {
+  13 |     const x = id % 128, y = Math.floor(id / 128);
+> 14 |     data.set(base.subarray(id * 4, id * 4 + 4), (x + y * width) * 4);
+     |          ^
+  15 |     for (let corner = 0; corner < stride; corner++) {
+  16 |       const page = corner + 1;
+  17 |       const index = (x + (page % 4) * 128 + (y + Math.floor(page / 4) * 128) * width) * 4;
+[browser] Uncaught RangeError: offset is out of bounds
+    at Float32Array.set (<anonymous>)
+    at contactStateTexture (app/_photonic-skin/contact-rendering.ts:14:10)
+    at M41Content.useMemo[stateTextures] (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:1537:56)
+    at M41Content (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:1534:32)
+    at PS04M5SceneView (app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx:2633:7)
+    at MagnetizedSettleLab (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:2339:11)
+    at PhotonicSiteRuntime (app/_photonic-skin/contact-rendering.ts:10:50)
+    at ProductionPhotonicSiteClient (app/_photonic-skin/ProductionPhotonicSiteClient.tsx:18:10)
+    at Home (app\page.tsx:11:10)
+  12 |   for (let id = 0; id < state.recordCount; id++) {
+  13 |     const x = id % 128, y = Math.floor(id / 128);
+> 14 |     data.set(base.subarray(id * 4, id * 4 + 4), (x + y * width) * 4);
+     |          ^
+  15 |     for (let corner = 0; corner < stride; corner++) {
+  16 |       const page = corner + 1;
+  17 |       const index = (x + (page % 4) * 128 + (y + Math.floor(page / 4) * 128) * width) * 4;
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 351ms
+ GET / 200 in 55ms (next.js: 5ms, application-code: 51ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+ GET / 200 in 30ms (next.js: 4ms, application-code: 26ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 258ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] Unexpected import of module [project]/app/_photonic-skin/contact-surface.worker.ts [app-client] (ecmascript, worker loader) from module [project]/app/_photonic-skin/contact-surface-client.ts [app-client] (ecmascript), which was deleted by an HMR update (.next\dev\static\chunks\app_085l9lz._.js:671:46)
+[browser] Unexpected import of module [project]/app/_photonic-skin/contact-surface.worker.ts [app-client] (ecmascript, worker loader) from module [project]/app/_photonic-skin/contact-surface-client.ts [app-client] (ecmascript), which was deleted by an HMR update (.next\dev\static\chunks\app_085l9lz._.js:671:46)
+✓ Compiled in 296ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 313ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+ GET / 200 in 31ms (next.js: 4ms, application-code: 27ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 241ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 227ms
+[browser] The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [final-r2]
+Incoming: [final-r2, true] 
+    at MagnetizedSettleLab (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:1025:12)
+    at Set.forEach (<anonymous>)
+  1023 |   }, [controller, flow.overlay]);
+  1024 |
+> 1025 |   useEffect(() => {
+       |            ^
+  1026 |     const controllerAbort = new AbortController();
+  1027 |     const tasks = [
+  1028 |       loadBuilderRuntime(controllerAbort.signal, { releaseGeometry: stage === "final-r2"... (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:1025:12)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 212ms
+[browser] The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [candidate, final-r2]
+Incoming: [candidate, final-r2, true] 
+    at MagnetizedSettleLab (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:414:12)
+    at Set.forEach (<anonymous>)
+  412 |   const programCacheRef = useRef(programCache);
+  413 |   const builderPrewarmSourceRef = useRef<string | null>(null);
+> 414 |   useEffect(() => {
+      |            ^
+  415 |     programCacheRef.current.releaseGeometry = stage === "final-r2" ? "r2" : finalRuntime(...
+  416 |     programCacheRef.current.contactSurface = refinedScales;
+  417 |     programCacheRef.current.namespace = namespace; (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:414:12)
+[browser] The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [final-r2, true]
+Incoming: [final-r2] 
+    at MagnetizedSettleLab (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:1025:12)
+    at Set.forEach (<anonymous>)
+  1023 |   }, [controller, flow.overlay]);
+  1024 |
+> 1025 |   useEffect(() => {
+       |            ^
+  1026 |     const controllerAbort = new AbortController();
+  1027 |     const tasks = [
+  1028 |       loadBuilderRuntime(controllerAbort.signal, { releaseGeometry: stage === "final-r2"... (app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx:1025:12)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 251ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+✓ Compiled in 247ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 231ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 244ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] Unexpected import of module [project]/app/_photonic-skin/contact-surface.worker.ts [app-client] (ecmascript, worker loader) from module [project]/app/_photonic-skin/contact-surface-client.ts [app-client] (ecmascript), which was deleted by an HMR update (app/_photonic-skin/contact-surface-client.ts:8:87)
+✓ Compiled in 217ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 28ms (next.js: 3ms, application-code: 24ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 230ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 272ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 305ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 241ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 235ms
+✓ Compiled in 269ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 142ms (next.js: 62ms, application-code: 80ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 35ms (next.js: 2ms, application-code: 33ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 36ms (next.js: 3ms, application-code: 32ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 36ms (next.js: 3ms, application-code: 33ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.WebGLProgram: Program Info Log: internal warning: optimization did not converge
+
+
+ 
+ GET / 200 in 31ms (next.js: 3ms, application-code: 29ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 280ms
+[browser] Unexpected import of module [project]/app/_photonic-skin/contact-surface.worker.ts [app-client] (ecmascript, worker loader) from module [project]/app/_photonic-skin/contact-surface-client.ts [app-client] (ecmascript), which was deleted by an HMR update (app/_photonic-skin/ps04-motion-release.ts:23:1)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] Unexpected import of module [project]/app/_photonic-skin/contact-surface.worker.ts [app-client] (ecmascript, worker loader) from module [project]/app/_photonic-skin/contact-surface-client.ts [app-client] (ecmascript), which was deleted by an HMR update (app/_photonic-skin/ps04-motion-release.ts:23:1)
+ GET / 200 in 58ms (next.js: 7ms, application-code: 51ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 325ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 551ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 330ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 483ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 449ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 465ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 301ms
+ GET / 200 in 253ms (next.js: 169ms, application-code: 85ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 30ms (next.js: 2ms, application-code: 28ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 362ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+✓ Compiled in 288ms
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 146ms (next.js: 63ms, application-code: 82ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 45ms (next.js: 6ms, application-code: 39ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+ GET / 200 in 22ms (next.js: 2ms, application-code: 20ms)
+[browser] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.

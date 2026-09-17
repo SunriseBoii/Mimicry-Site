@@ -1,0 +1,92 @@
+
+> mimicry-website@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.2.6 (webpack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.7s
+  Running TypeScript ...
+  Finished TypeScript in 9.7s ...
+  Collecting page data using 19 workers ...
+  Generating static pages using 19 workers (0/62) ...
+  Generating static pages using 19 workers (15/62) 
+  Generating static pages using 19 workers (30/62) 
+  Generating static pages using 19 workers (46/62) 
+✓ Generating static pages using 19 workers (62/62) in 846ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_brand/color-lab
+├ ○ /_not-found
+├ ○ /about
+├ ● /capabilities/[slug]
+│ ├ /capabilities/content
+│ ├ /capabilities/design
+│ ├ /capabilities/event
+│ └ [+4 more paths]
+├ ○ /capabilities/merch
+├ ○ /cases
+├ ○ /cases/change-project
+├ ○ /contact
+├ ○ /labNonLeakyMimic
+├ ○ /procurement
+├ ○ /products/welcome-pack
+├ ● /solutions/[slug]
+│ ├ /solutions/change
+│ ├ /solutions/event
+│ ├ /solutions/learning
+│ └ /solutions/hr-brand
+├ ○ /ui-kit
+├ ○ /visual-lab
+├ ƒ /visual-lab/matter-skin
+├ ƒ /visual-lab/photonic-skin
+├ ○ /visual-lab/photonic-skin-m3
+├ ○ /visual-lab/photonic-skin-m3-1
+├ ○ /visual-lab/photonic-skin-m3-1r
+├ ○ /visual-lab/photonic-skin-m4
+├ ○ /visual-lab/photonic-skin-m4-1
+├ ○ /visual-lab/photonic-skin-m4-1r
+├ ○ /visual-lab/photonic-skin-ps04-m1
+├ ○ /visual-lab/photonic-skin-ps04-m1/preview
+├ ○ /visual-lab/photonic-skin-ps04-m2
+├ ○ /visual-lab/photonic-skin-ps04-m2/preview
+├ ○ /visual-lab/photonic-skin-ps04-m3
+├ ○ /visual-lab/photonic-skin-ps04-m3/preview
+├ ○ /visual-lab/photonic-skin-ps04-m4
+├ ○ /visual-lab/photonic-skin-ps04-m4/preview
+├ ○ /visual-lab/photonic-skin-ps04-m5
+├ ○ /visual-lab/photonic-skin-ps04-m5/event-sandbox
+├ ○ /visual-lab/photonic-skin-ps04-m5/event-sandbox/preview
+├ ○ /visual-lab/photonic-skin-ps04-m5/framing-sandbox
+├ ○ /visual-lab/photonic-skin-ps04-m5/framing-sandbox/preview
+├ ○ /visual-lab/photonic-skin-ps04-m5/preview
+├ ○ /visual-lab/photonic-skin-ps04-m5/promotion-preview
+├ ○ /visual-lab/photonic-skin-ps04-m5/promotion-preview/review
+├ ○ /visual-lab/photonic-skin-ps04-m5/video-sandbox
+├ ○ /visual-lab/photonic-skin-ps04-m5/video-sandbox/preview
+├ ○ /visual-lab/photonic-skin-ps04-m6/final-r1
+├ ○ /visual-lab/photonic-skin-ps04-m6/final-r1/review
+├ ○ /visual-lab/photonic-skin-ps04-m6/final-r2
+├ ○ /visual-lab/photonic-skin-ps04-m6/final-r2/review
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle-r1
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle-r1/review
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle-r2
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle-r2/review
+├ ○ /visual-lab/photonic-skin-ps04-m6/magnetized-settle/review
+├ ○ /visual-lab/photonic-skin-ps04-m6/project-builder-semantics
+└ ○ /visual-lab/photonic-skin-ps04-m6/project-builder-semantics/review
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+npm notice
+npm notice New major version of npm available! 11.13.0 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice

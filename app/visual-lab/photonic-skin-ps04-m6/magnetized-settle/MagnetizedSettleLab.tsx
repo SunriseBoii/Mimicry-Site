@@ -6,6 +6,8 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import type { CompetenceId } from "../../../_brand/color-system";
 import type { DebugMode, M3Manifest, M41Manifest } from "../../photonic-skin-m4-1/m41-data";
 import { RELEASE_FRAMING } from "../../../_photonic-skin/release";
+import { captureMasterPaletteWeight } from "../../../_photonic-skin/contact-surface";
+import { withoutActorAnticipation } from "../../../_photonic-skin/playback-program";
 import { loadPS04MotionManifest, PS04_ROUTE_DURATION_MS } from "../../../_photonic-skin/ps04-motion-release";
 import { loadBuilderRuntime } from "../project-builder-semantics/delta-runtime";
 import { M61_NAMESPACE, namespaceForStateId } from "../project-builder-semantics/builder-ids";
@@ -209,6 +211,7 @@ function releasePlaybackProgram(
   stage: MagnetizedSettleStage,
   route: boolean,
 ): TransitionProgram {
+  if (stage === "final-r2") program = withoutActorAnticipation(program);
   if (!finalRuntime(stage) || !route || program.selfTransition || program.durationMs <= 0) return program;
   // Geometry is normalized in the shader; playback time is a runtime choice.
   const durationMs = window.innerWidth <= 430 ? PS04_ROUTE_DURATION_MS.mobile : PS04_ROUTE_DURATION_MS.desktop;
@@ -231,7 +234,7 @@ function bootstrapReducedMotion() {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "preview"; stage?: MagnetizedSettleStage }) {
+export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false }: { mode: "lab" | "preview"; stage?: MagnetizedSettleStage; refinedScales?: boolean }) {
   const production = finalRuntime(stage) && mode === "preview";
   const query = production ? new URLSearchParams() : labQuery();
   const sandbox = production
@@ -413,9 +416,10 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   const builderPrewarmSourceRef = useRef<string | null>(null);
   useEffect(() => {
     programCacheRef.current.releaseGeometry = stage === "final-r2" ? "r2" : finalRuntime(stage);
+    programCacheRef.current.contactSurface = refinedScales;
     programCacheRef.current.namespace = namespace;
-    programCacheRef.current.variant = `${OWNER_SELECTED_PROFILE_ID}|${namespace}|${stage === "final-r2" ? "release-r2" : finalRuntime(stage) ? "release-r1" : "baseline"}`;
-  }, [namespace, stage]);
+    programCacheRef.current.variant = `${OWNER_SELECTED_PROFILE_ID}|${namespace}|${stage === "final-r2" ? "release-r2" : finalRuntime(stage) ? "release-r1" : "baseline"}${refinedScales ? "|contact-v1" : ""}`;
+  }, [namespace, stage, refinedScales]);
   const selectionRef = useRef<FramingSelection>({ aboutZoom, merchZoom, videoZoom });
   const gpuPool = useMemo(() => new GpuTexturePool(), []);
   const r6 = useMemo(() => new R6Instrumentation(), []);
@@ -1277,7 +1281,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       const entry = manifest.states.find((item) => item.stateId === request.stateId);
       if (!entry) return;
       const cache = programCacheRef.current;
-      const nextState = await cache.loadState(entry);
+      const nextState = await cache.loadState(entry, prepareAbort.signal);
       if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
       const currentTarget = rendered?.target ?? session.getTarget();
       const currentSource = rendered?.source ?? session.getSource();
@@ -1342,6 +1346,10 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         );
         if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
         settleRef.current.noteCompileLiveRetarget();
+        if (refinedScales) liveSource.refinedMasterWeight = captureMasterPaletteWeight(
+          rendered?.source ?? currentSource, rendered?.target ?? currentTarget ?? currentSource,
+          rendered?.progress ?? captured.geometryProgress,
+        );
         const program = releasePlaybackProgram(compiled, stageRef.current, route);
         coordinator.markProgramReady(transaction.revision, program.programId, performance.now());
         programBindRef.current = {
@@ -1371,7 +1379,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     } catch (reason) {
       if (session.isCurrent(revision)) setError(reason instanceof Error ? reason.message : String(reason));
     }
-  }, [identity, manifest, motionManifest, reducedMotion, session, startClock, controller, setBufferHash, setContract, setError]);
+  }, [identity, manifest, motionManifest, reducedMotion, session, startClock, controller, setBufferHash, setContract, setError, refinedScales]);
 
   const publishInScreenFromState = (next: BuilderFlowState) => {
     const settle = settleRef.current;
@@ -2304,6 +2312,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         data-frame-p95-ms={stats.p95Ms}
         data-first-visible-ms={firstVisibleMs ?? ""}
         data-overlay-quaternion={snapshot.overlay.quaternion.join(",")}
+        data-actor-rotation-radians={program?.compiled?.header.actorTrack.rotationRadians ?? 0}
+        data-actor-translation-amplitude={program?.compiled?.header.actorTrack.translationAmplitude ?? 0}
         data-asset-namespace={contract?.resolvedGeometryId ? namespaceForStateId(contract.resolvedGeometryId) : M61_NAMESPACE}
         data-hover-preview={hoverPreview.active ? "true" : "false"}
         style={hoverPreview.active && hoverPreview.rotationBiasDeg ? { transform: `rotateY(${hoverPreview.rotationBiasDeg}deg)` } : undefined}
@@ -2336,6 +2346,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         ) : null}
         {sceneReady && source && target && program && manifest ? (
           <PS04M5Scene
+            refinedScales={refinedScales}
             source={source}
             target={target}
             program={program}

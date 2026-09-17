@@ -1,0 +1,19 @@
+✔ master-neutral: every primal edge is covered by coincident scale seams (1160.8249ms)
+✔ single-content: every primal edge is covered by coincident scale seams (3638.0666ms)
+✔ single-video: every primal edge is covered by coincident scale seams (4398.5416ms)
+✔ complex-focus-content-video-focus-content: every primal edge is covered by coincident scale seams (3669.6809ms)
+✔ contact atlas preserves every original motion texel and uses the same sampler (815.6078ms)
+✔ an interrupted master palette continues from its visible mixture (11.3924ms)
+✔ contact assets reject stale, truncated and invalid identity data (731.0809ms)
+✔ a foreground click joins an in-flight prewarm without duplicating it (1.1217ms)
+✔ cancelling one consumer does not cancel another consumer's geometry (1.0052ms)
+✔ obsolete work is aborted when its final consumer leaves; a new request can retry immediately (0.939ms)
+✔ failure and already-aborted callers do not poison future loads (0.5948ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14944.7437

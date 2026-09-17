@@ -385,6 +385,7 @@ export function decodedStateBytes(state: {
   transitionGroup?: ArrayBufferView;
   velocity?: ArrayBufferView;
   rawRecords?: ArrayBufferView;
+  contactSurface?: { corners: ArrayBufferView; cornerCounts: ArrayBufferView; triangles: ArrayBufferView };
 }) {
   return typedArrayBytes(state.position)
     + typedArrayBytes(state.normal)
@@ -397,7 +398,10 @@ export function decodedStateBytes(state: {
     + typedArrayBytes(state.flags)
     + typedArrayBytes(state.transitionGroup)
     + typedArrayBytes(state.velocity)
-    + typedArrayBytes(state.rawRecords);
+    + typedArrayBytes(state.rawRecords)
+    + typedArrayBytes(state.contactSurface?.corners)
+    + typedArrayBytes(state.contactSurface?.cornerCounts)
+    + typedArrayBytes(state.contactSurface?.triangles);
 }
 
 export function programCpuBytes(program: TransitionProgram) {

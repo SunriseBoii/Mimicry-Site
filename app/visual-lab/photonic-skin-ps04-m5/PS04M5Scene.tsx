@@ -10,6 +10,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { createR2ScaleGeometry } from "../photonic-skin-ps04-m6/final-r2/scale-geometry";
+import { contactStateTexture, createContactGeometry } from "../../_photonic-skin/contact-rendering";
+import { masterPaletteWeight } from "../../_photonic-skin/contact-surface";
 import type { CameraPreset, DebugMode, DecodedState, LabFrame, M3Manifest } from "../photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../photonic-skin-m4-1/m41-evaluator";
 import {
@@ -233,6 +235,7 @@ export interface RenderedGeometryFrame {
 }
 
 export interface SceneProps {
+  refinedScales?: boolean;
   releaseRevision?: "r2";
   onRenderedFrame?: (frame: RenderedGeometryFrame) => void;
   source: DecodedState;
@@ -283,6 +286,13 @@ const DARK_MATERIAL = MATERIAL_THEME_PRESETS.dark;
 const R2_DARK_MATERIAL = { ...DARK_MATERIAL, albedo: "#49535D", roughness: 0.36,
   metalness: 0.25, specular: 0.60, clearcoat: 0.16, clearcoatRoughness: 0.30 };
 
+const REFINED_LIGHT_MATERIAL = { ...R2_LIGHT_MATERIAL, albedo: "#DDE3E5", roughness: 0.3,
+  metalness: 0.24, specular: 0.72, clearcoat: 0.3, clearcoatRoughness: 0.22,
+  ambientStrength: 0.2, keyStrength: 2.2, fillStrength: 0.4, rimStrength: 0.08 };
+const REFINED_DARK_MATERIAL = { ...R2_DARK_MATERIAL, albedo: "#18232E", roughness: 0.28,
+  metalness: 0.62, specular: 0.78, clearcoat: 0.32, clearcoatRoughness: 0.22,
+  ambientStrength: 0.19, keyStrength: 3.0, fillStrength: 0.6, rimStrength: 0.095, exposure: 1.15 };
+
 const vertexShader = `
 precision highp float;
 uniform float uReleaseR2;
@@ -290,6 +300,11 @@ precision highp int;
 precision highp sampler2D;
 in vec3 position;
 in vec3 aSurfaceNormal;
+in float aContactCorner;
+in float aContactInset;
+uniform float uRefinedScales;
+uniform vec2 uContactSurface;
+uniform float uContactSegments;
 uniform mat4 modelViewMatrix;
 uniform mat4 projectionMatrix;
 uniform sampler2D uSource;
@@ -357,6 +372,7 @@ out vec4 vEvalChannels;
 out vec3 vEvalActorPosition;
 out vec4 vEvalActorOrientation;
 out vec3 vSurfaceNormalView;
+out float vScaleEdge;
 out vec3 vViewPosition;
 flat out float vPersistentSeed;
 flat out float vPaletteOwnership;
@@ -558,13 +574,41 @@ void main() {
   float presence = uReleaseR2 > 0.5 ? clamp(activation, 0.0, 1.0) : 1.0;
   float radius = max(geometricScale, 0.0) * finiteActivationScale * presence * lodVisible * selected;
   vec3 local;
+  vec3 tilePosition = position;
+  float contactFit = max(step(0.5, uContactSurface.x) * (1.0 - smoothstep(0.0, 0.14, t)), step(0.5, uContactSurface.y) * smoothstep(0.86, 1.0, t));
+  vScaleEdge = 0.0;
+  if (uRefinedScales > 0.5 && aContactCorner >= 0.0) {
+    float at = fract(aContactCorner / uContactSegments) * 4.0;
+    vec2 diamond[4] = vec2[4](vec2(1.18, 0.0), vec2(0.0, 0.86), vec2(-1.18, 0.0), vec2(0.0, -0.86));
+    vec3 original = vec3(mix(diamond[int(at)], diamond[(int(at) + 1) % 4], fract(at)), 0.025) * 0.035;
+    tilePosition = original;
+    if (uContactSurface.x > 0.5) {
+      int page = aContactCorner < uContactSurface.x ? int(aContactCorner) + 1 : 1;
+      ivec2 contactUv = uv + ivec2((page % 4) * 128, (page / 4) * 128);
+      vec4 corner = texelFetch(uSource, contactUv, 0);
+      tilePosition += (corner.xyz - original) * corner.w * (1.0 - smoothstep(0.0, 0.14, t));
+    }
+    if (uContactSurface.y > 0.5) {
+      int page = aContactCorner < uContactSurface.y ? int(aContactCorner) + 1 : 1;
+      ivec2 contactUv = uv + ivec2((page % 4) * 128, (page / 4) * 128);
+      vec4 corner = texelFetch(uTarget, contactUv, 0);
+      tilePosition += (corner.xyz - original) * corner.w * smoothstep(0.86, 1.0, t);
+    }
+    if (aContactInset > 0.5) {
+      vec3 motionInset = mix(vec3(0.0, 0.0, 0.28 * 0.035), original, 0.84);
+      vec3 contactInset = vec3(tilePosition.xy * 0.84, 0.28 * 0.035 * 0.4);
+      tilePosition = mix(motionInset, contactInset, contactFit);
+    } else vScaleEdge = contactFit;
+  } else if (uRefinedScales > 0.5) {
+    tilePosition.z *= mix(1.0, 0.4, contactFit);
+  }
   if (uEvaluator == 0) {
     vec3 up = abs(normal.z) < 0.9 ? vec3(0.0, 0.0, 1.0) : vec3(0.0, 1.0, 0.0);
     vec3 tangent = normalize(cross(up, normal));
     vec3 bitangent = cross(normal, tangent);
     local = (tangent * position.x + bitangent * position.y + normal * position.z) * radius;
   } else {
-    local = quatRotate(orientation, position) * radius;
+    local = quatRotate(orientation, tilePosition) * radius;
   }
   float presentationT = smooth5(t);
   vec3 frameTranslate = mix(uSourceFrameTranslate, uTargetFrameTranslate, presentationT);
@@ -711,6 +755,9 @@ vec2 m2BandEnvelope(float scalar, float phase) {
 const fragmentShader = `
 precision highp float;
 uniform float uReleaseR2;
+uniform float uRefinedScales;
+uniform vec2 uMasterPalette;
+uniform float uProgress;
 precision highp int;
 in vec3 vColor;
 in float vShade;
@@ -721,6 +768,7 @@ in vec4 vEvalChannels;
 in vec3 vEvalActorPosition;
 in vec4 vEvalActorOrientation;
 in vec3 vSurfaceNormalView;
+in float vScaleEdge;
 in vec3 vViewPosition;
 flat in float vPersistentSeed;
 flat in float vPaletteOwnership;
@@ -873,6 +921,19 @@ void main() {
   }
 
   if (uColorEnabled == 1 && uColorLayer > 0) {
+    // The master uses a restrained blue / violet / cyan family. Competence
+    // palettes keep their semantic pigments and the original palette clock.
+    float master = mix(uMasterPalette.x, uMasterPalette.y, smoothstep(0.0, 1.0, uProgress)) * uRefinedScales;
+    float coolPhase = fract(vFieldScalar * 0.8 - phase);
+    vec3 coolA = vec3(0.025, 0.10, 0.72);
+    vec3 coolB = vec3(0.23, 0.045, 0.50);
+    vec3 coolC = vec3(0.0, 0.40, 0.52);
+    vec3 cool = coolPhase < 0.333333
+      ? mix(coolA, coolB, smoothstep(0.0, 0.333333, coolPhase))
+      : coolPhase < 0.666667
+        ? mix(coolB, coolC, smoothstep(0.333333, 0.666667, coolPhase))
+        : mix(coolC, coolA, smoothstep(0.666667, 1.0, coolPhase));
+    field.rgb = mix(field.rgb, cool, master);
     float undertone = mix(
       ${FIELD_PARAMETERS.undertoneStrength.light.toFixed(3)},
       ${FIELD_PARAMETERS.undertoneStrength.dark.toFixed(3)},
@@ -885,11 +946,11 @@ void main() {
     ) : 0.0;
     float layerStrength = saturate((undertone + activeStrength) * field.a);
     vec3 lightAccent = field.rgb * mix(0.88, 1.0, uReleaseR2);
-    vec3 darkAccent = mix(field.rgb, vec3(0.72), 0.16);
+    vec3 darkAccent = mix(mix(field.rgb, vec3(0.72), 0.16), field.rgb * 0.9, uRefinedScales);
     baseColor = mix(baseColor, mix(lightAccent, darkAccent, theme), layerStrength);
   }
   float roughness = clamp(
-    mix(uLightRoughness, uDarkRoughness, theme) + stableOffset * 0.05,
+    mix(uLightRoughness, uDarkRoughness, theme) + stableOffset * 0.05 + uRefinedScales * vScaleEdge * 0.12,
     0.18,
     0.86
   );
@@ -904,6 +965,7 @@ void main() {
   float exposure = mix(uLightExposure, uDarkExposure, theme);
 
   vec3 n = normalize(vSurfaceNormalView);
+  if (uRefinedScales > 0.5) n = normalize(cross(dFdx(vViewPosition), dFdy(vViewPosition)));
   vec3 v = normalize(-vViewPosition);
   vec3 f0 = mix(vec3(0.04 * specularLevel), baseColor, metalness);
   // Restrained angle-dependent pearl reflection; semantic pigment stays intact.
@@ -932,6 +994,15 @@ void main() {
     * 0.025;
   color += vec3(clearcoatLobe);
 
+  // Broad reflected studio strips articulate real facets without sparkle noise.
+  vec3 reflected = reflect(-v, n);
+  float strip = exp(-pow((reflected.x + 0.28) / 0.22, 2.0))
+    * smoothstep(-0.3, 0.5, reflected.y);
+  float shoulder = exp(-pow((reflected.x - 0.62) / 0.34, 2.0));
+  color += uRefinedScales * fresnelSchlick(max(dot(n, v), 0.0), f0)
+    * (strip * 1.1 + shoulder * 0.2) * mix(0.45, 1.0, theme);
+
+  color *= mix(1.0, 0.72, uRefinedScales * smoothstep(0.0, 1.0, vScaleEdge));
   outColor = vec4(linearToSrgb(acesToneMap(color * exposure)), 1.0);
 }
 `;
@@ -1484,8 +1555,8 @@ function M41Content(props: SceneProps) {
   const stateTextures = useMemo(() => {
     if (staging && props.gpuPool) return props.gpuPool.active().textures;
     return {
-      source: stateTexture(props.source, "position"),
-      target: stateTexture(props.target, "position"),
+      source: props.refinedScales ? contactStateTexture(props.source) : stateTexture(props.source, "position"),
+      target: props.refinedScales ? contactStateTexture(props.target) : stateTexture(props.target, "position"),
       sourceNormal: stateTexture(props.source, "normal"),
       targetNormal: stateTexture(props.target, "normal"),
       sourceQuat: stateTexture(props.source, "orientation"),
@@ -1493,7 +1564,7 @@ function M41Content(props: SceneProps) {
       sourceMeta: stateTexture(props.source, "meta", props.profile),
       targetMeta: stateTexture(props.target, "meta", props.profile),
     };
-  }, [staging, props.gpuPool, props.profile, props.source, props.target]);
+  }, [staging, props.gpuPool, props.profile, props.source, props.target, props.refinedScales]);
   const sourceFrame = useMemo(() => resolvePresentationFrame(props.source.entry), [props.source.entry]);
   const targetFrame = useMemo(() => resolvePresentationFrame(props.target.entry), [props.target.entry]);
   const currentFrame = interpolatePresentationFrames(
@@ -1542,11 +1613,15 @@ function M41Content(props: SceneProps) {
     }),
     [initialColorSnapshot],
   );
-  const lightMaterial = props.releaseRevision === "r2" ? R2_LIGHT_MATERIAL : LIGHT_MATERIAL;
-  const darkMaterial = props.releaseRevision === "r2" ? R2_DARK_MATERIAL : DARK_MATERIAL;
+  const lightMaterial = props.refinedScales ? REFINED_LIGHT_MATERIAL : props.releaseRevision === "r2" ? R2_LIGHT_MATERIAL : LIGHT_MATERIAL;
+  const darkMaterial = props.refinedScales ? REFINED_DARK_MATERIAL : props.releaseRevision === "r2" ? R2_DARK_MATERIAL : DARK_MATERIAL;
   const boundPairRef = useRef({ source: props.source, target: props.target, program: props.program });
   const pendingAckRef = useRef<GeometryRenderAck | null>(null);
   const uniformsRef = useRef({
+    uRefinedScales: { value: props.refinedScales ? 1 : 0 },
+    uContactSurface: { value: new THREE.Vector2(props.source.contactSurface?.cornerStride ?? 0, props.target.contactSurface?.cornerStride ?? 0) },
+    uContactSegments: { value: Math.max(props.source.contactSurface?.cornerStride ?? 4, props.target.contactSurface?.cornerStride ?? 4) },
+    uMasterPalette: { value: new THREE.Vector2(masterPaletteWeight(props.source), masterPaletteWeight(props.target)) },
     uReleaseR2: { value: props.releaseRevision === "r2" ? 1 : 0 },
     uSource: { value: stateTextures.source },
     uTarget: { value: stateTextures.target },
@@ -1647,13 +1722,15 @@ function M41Content(props: SceneProps) {
     // eslint-disable-next-line react-hooks/refs
     uniforms: uniformsRef.current,
     toneMapped: false,
-  }), []);
+    side: props.refinedScales ? THREE.DoubleSide : THREE.FrontSide,
+  }), [props.refinedScales]);
   const geometry = useMemo(() => {
+    if (props.refinedScales) return createContactGeometry();
     if (props.releaseRevision === "r2") return createR2ScaleGeometry();
     const value = new THREE.OctahedronGeometry(0.035, 0);
     value.setAttribute("aSurfaceNormal", value.getAttribute("normal"));
     return value;
-  }, [props.releaseRevision]);
+  }, [props.releaseRevision, props.refinedScales]);
 
   useEffect(() => {
     if (props.reproduceR4Geometry) progressRef.current = props.reducedMotion ? 1 : props.progress;
@@ -1705,6 +1782,10 @@ function M41Content(props: SceneProps) {
     progress: number,
   ) => {
     const uniforms = uniformsRef.current;
+    uniforms.uMasterPalette.value.set(masterPaletteWeight(_source), masterPaletteWeight(_target));
+    uniforms.uContactSurface.value.set(_source.contactSurface?.cornerStride ?? 0, _target.contactSurface?.cornerStride ?? 0);
+    uniforms.uContactSegments.value = Math.max(4, uniforms.uContactSurface.value.x, uniforms.uContactSurface.value.y);
+    if (props.refinedScales) geometry.setDrawRange(0, uniforms.uContactSegments.value * 9);
     uniforms.uSource.value = state.source;
     uniforms.uTarget.value = state.target;
     uniforms.uSourceNormal.value = state.sourceNormal;
@@ -1949,8 +2030,8 @@ function M41Content(props: SceneProps) {
             packetTexturesRef.current = {
               key,
               state: {
-                source: stateTexture(packet.source, "position"),
-                target: stateTexture(packet.target, "position"),
+                source: props.refinedScales ? contactStateTexture(packet.source) : stateTexture(packet.source, "position"),
+                target: props.refinedScales ? contactStateTexture(packet.target) : stateTexture(packet.target, "position"),
                 sourceNormal: stateTexture(packet.source, "normal"),
                 targetNormal: stateTexture(packet.target, "normal"),
                 sourceQuat: stateTexture(packet.source, "orientation"),

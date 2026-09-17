@@ -1,4 +1,6 @@
 import { loadR2Manifest, loadR2Payload, reviseR2Entry } from "../final-r2/release-geometry";
+import { prepareContactSurface } from "../../../_photonic-skin/contact-surface-client";
+import { SharedRequests } from "../../../_photonic-skin/shared-requests";
 import { loadEventManifest } from "../final-r2/event-geometry";
 import {
   decodeState,
@@ -58,10 +60,12 @@ export interface ReleaseGeometryManifest {
 }
 
 export interface BuilderLoadOptions {
+  contactSurface?: boolean;
   releaseGeometry?: boolean | "r2";
 }
 
 const stateCache = new LruCache<string, DecodedState>(12);
+const pendingStates = new SharedRequests<DecodedState>();
 let releaseManifestPromise: Promise<ReleaseGeometryManifest> | null = null;
 
 export async function loadReleaseGeometryManifest(signal?: AbortSignal): Promise<ReleaseGeometryManifest> {
@@ -173,35 +177,40 @@ export async function loadBuilderRuntime(signal?: AbortSignal, options: BuilderL
 }
 
 export async function loadBuilderState(entry: StateEntry, signal?: AbortSignal, options: BuilderLoadOptions = {}): Promise<DecodedState> {
+  if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
   const namespace = namespaceForStateId(entry.stateId);
-  const release = options.releaseGeometry ? await loadReleaseGeometryManifest(signal) : null;
-  const revised = release?.states[entry.stateId];
-  const r2 = options.releaseGeometry === "r2" ? (await loadR2Manifest()).states[entry.stateId] : null;
-  const event = options.releaseGeometry === "r2" ? (await loadEventManifest()).states[entry.stateId] : null;
-  const expectedSourceHash = revised?.sourceHash ?? r2?.sourceHash ?? entry.contentHash;
-  if (revised && (revised.resultHash !== (r2?.sourceHash ?? event?.sourceHash ?? entry.contentHash) || revised.sourceNamespace !== namespace)) {
-    throw new Error(`PS-04 release state/manifest mismatch: ${entry.stateId}`);
-  }
-  const cacheKey = `${namespace}:${entry.stateId}:${entry.contentHash}:${options.releaseGeometry ? "r1" : "frozen"}`;
+  const cacheKey = `${namespace}:${entry.stateId}:${entry.contentHash}:${options.releaseGeometry || "frozen"}:${options.contactSurface ? "contact" : "original"}`;
   const hit = stateCache.get(cacheKey);
   if (hit) return hit;
-  const [response, patchResponse] = await Promise.all([
-    fetch(`${dataBaseFor(namespace)}/${entry.bufferPath}`, { signal }),
-    revised ? fetch(`${PS04_RELEASE_GEOMETRY_BASE}/${revised.patchPath}`, { signal }) : Promise.resolve(null),
-  ]);
-  if (!response.ok) throw new Error(`Builder state missing: ${namespace}/${entry.stateId}`);
-  if (patchResponse && !patchResponse.ok) throw new Error(`PS-04 release patch missing: ${entry.stateId}`);
-  let payload = await response.arrayBuffer();
-  const sourceHash = await sha256Hex(payload);
-  if (sourceHash !== expectedSourceHash.toLowerCase()) throw new Error(`${entry.stateId} frozen SHA-256 mismatch`);
-  if (revised && patchResponse) {
-    const patch = await patchResponse.arrayBuffer();
-    if (await sha256Hex(patch) !== revised.patchHash) throw new Error(`${entry.stateId} release patch SHA-256 mismatch`);
-    payload = applyReleasePatch(payload, patch, revised);
-    if (await sha256Hex(payload) !== revised.resultHash) throw new Error(`${entry.stateId} release result SHA-256 mismatch`);
-  }
-  if (options.releaseGeometry === "r2") payload = await loadR2Payload(payload, entry, signal);
-  const decoded = decodeState(entry, payload);
-  stateCache.set(cacheKey, decoded);
-  return decoded;
+  return pendingStates.run(cacheKey, async (signal) => {
+    const release = options.releaseGeometry ? await loadReleaseGeometryManifest(signal) : null;
+    const revised = release?.states[entry.stateId];
+    const r2 = options.releaseGeometry === "r2" ? (await loadR2Manifest()).states[entry.stateId] : null;
+    const event = options.releaseGeometry === "r2" ? (await loadEventManifest()).states[entry.stateId] : null;
+    const expectedSourceHash = revised?.sourceHash ?? r2?.sourceHash ?? entry.contentHash;
+    if (revised && (revised.resultHash !== (r2?.sourceHash ?? event?.sourceHash ?? entry.contentHash) || revised.sourceNamespace !== namespace)) {
+      throw new Error(`PS-04 release state/manifest mismatch: ${entry.stateId}`);
+    }
+    const [response, patchResponse] = await Promise.all([
+      fetch(`${dataBaseFor(namespace)}/${entry.bufferPath}`, { signal }),
+      revised ? fetch(`${PS04_RELEASE_GEOMETRY_BASE}/${revised.patchPath}`, { signal }) : Promise.resolve(null),
+    ]);
+    if (!response.ok) throw new Error(`Builder state missing: ${namespace}/${entry.stateId}`);
+    if (patchResponse && !patchResponse.ok) throw new Error(`PS-04 release patch missing: ${entry.stateId}`);
+    let payload = await response.arrayBuffer();
+    const sourceHash = await sha256Hex(payload);
+    if (sourceHash !== expectedSourceHash.toLowerCase()) throw new Error(`${entry.stateId} frozen SHA-256 mismatch`);
+    if (revised && patchResponse) {
+      const patch = await patchResponse.arrayBuffer();
+      if (await sha256Hex(patch) !== revised.patchHash) throw new Error(`${entry.stateId} release patch SHA-256 mismatch`);
+      payload = applyReleasePatch(payload, patch, revised);
+      if (await sha256Hex(payload) !== revised.resultHash) throw new Error(`${entry.stateId} release result SHA-256 mismatch`);
+    }
+    if (options.releaseGeometry === "r2") payload = await loadR2Payload(payload, entry, signal);
+    const decoded = decodeState(entry, payload);
+    if (options.contactSurface) decoded.contactSurface = await prepareContactSurface(decoded, signal);
+    if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+    stateCache.set(cacheKey, decoded);
+    return decoded;
+  }, signal);
 }

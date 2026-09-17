@@ -179,6 +179,7 @@ export class FramingSandboxProgramCache {
   variant = `${OWNER_SELECTED_PROFILE_ID}|candidate`;
   namespace: PromotionNamespaceId = "candidate";
   releaseGeometry: boolean | "r2" = false;
+  contactSurface = false;
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;
   budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
@@ -259,13 +260,14 @@ export class FramingSandboxProgramCache {
   }
 
   async loadState(entry: StateEntry, signal?: AbortSignal) {
+    if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
     const cacheKey = `${this.variant}:full:${entry.stateId}`;
     const hit = this.states.get(cacheKey);
     if (hit) {
       this.stateLastUsed.set(cacheKey, ++this.clock);
       return hit;
     }
-    const loaded = await loadBuilderState(entry, signal, { releaseGeometry: this.releaseGeometry });
+    const loaded = await loadBuilderState(entry, signal, { releaseGeometry: this.releaseGeometry, contactSurface: this.contactSurface });
     if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
     this.states.set(cacheKey, loaded);
     this.stateLastUsed.set(cacheKey, ++this.clock);
@@ -452,8 +454,7 @@ export class FramingSandboxProgramCache {
       }
       void (async () => {
         try {
-          const source = await this.loadState(sourceEntry);
-          const target = await this.loadState(targetEntry);
+          const [source, target] = await Promise.all([this.loadState(sourceEntry), this.loadState(targetEntry)]);
           if (!current()) return;
           // Compilation is synchronous on a cache miss. Run at most one pair
           // per idle callback, never in the state-load microtask.

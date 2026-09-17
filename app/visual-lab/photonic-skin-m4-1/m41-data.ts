@@ -109,6 +109,8 @@ export interface RuntimeManifests {
 
 /** Full little-endian decode of the frozen M3 40-byte state record. */
 export interface DecodedState {
+  contactSurface?: import("../../_photonic-skin/contact-surface").ContactSurface;
+  refinedMasterWeight?: number;
   entry: StateEntry;
   recordCount: number;
   position: Float32Array;

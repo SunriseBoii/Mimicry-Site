@@ -28,7 +28,16 @@ export function prepareGeometry(job: GeometryJob, signal?: AbortSignal): Promise
       else resolve(event.data);
     };
     worker.onerror = (event) => { cleanup(false); reject(new Error(event.message)); };
-    worker.postMessage(job);
+    // Contact polygons are render-only data. Keep multi-megabyte contour
+    // arrays out of motion compilation and live snapshot copies.
+    const motionState = (state: DecodedState) => {
+      if (!state.contactSurface) return state;
+      const value = { ...state };
+      delete value.contactSurface;
+      return value;
+    };
+    worker.postMessage({ ...job, source: motionState(job.source), target: motionState(job.target),
+      rendered: job.rendered ? { ...job.rendered, source: motionState(job.rendered.source), target: motionState(job.rendered.target) } : undefined });
   });
 }
 
