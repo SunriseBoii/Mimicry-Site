@@ -1,0 +1,567 @@
+{
+  "results": [
+    {
+      "id": "01",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 15,
+      "active": "01",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "02",
+      "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "passed": true,
+      "ms": 223,
+      "active": "02",
+      "gpu": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    {
+      "id": "03.1",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 714,
+      "active": "03.1",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "03.2",
+      "target": "complex-gather-content-event",
+      "passed": true,
+      "ms": 758,
+      "active": "03.2",
+      "gpu": "complex-gather-content-event"
+    },
+    {
+      "id": "03.3",
+      "target": "complex-drive-content-event",
+      "passed": true,
+      "ms": 785,
+      "active": "03.3",
+      "gpu": "complex-drive-content-event"
+    },
+    {
+      "id": "04",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 766,
+      "active": "04",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "05.1",
+      "target": "single-content",
+      "passed": true,
+      "ms": 767,
+      "active": "05.1",
+      "gpu": "single-content"
+    },
+    {
+      "id": "05.2",
+      "target": "single-design",
+      "passed": true,
+      "ms": 790,
+      "active": "05.2",
+      "gpu": "single-design"
+    },
+    {
+      "id": "05.3",
+      "target": "single-event",
+      "passed": true,
+      "ms": 731,
+      "active": "05.3",
+      "gpu": "single-event"
+    },
+    {
+      "id": "05.4",
+      "target": "single-games",
+      "passed": true,
+      "ms": 720,
+      "active": "05.4",
+      "gpu": "single-games"
+    },
+    {
+      "id": "05.5",
+      "target": "single-video",
+      "passed": true,
+      "ms": 768,
+      "active": "05.5",
+      "gpu": "single-video"
+    },
+    {
+      "id": "05.6",
+      "target": "single-digital",
+      "passed": true,
+      "ms": 790,
+      "active": "05.6",
+      "gpu": "single-digital"
+    },
+    {
+      "id": "05.7",
+      "target": "single-merch",
+      "passed": true,
+      "ms": 797,
+      "active": "05.7",
+      "gpu": "single-merch"
+    },
+    {
+      "id": "06.1",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 633,
+      "active": "06.1",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "06.2",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 14,
+      "active": "06.2",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "06.3",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 19,
+      "active": "06.3",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "07",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 12,
+      "active": "07",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "08",
+      "target": null,
+      "passed": true,
+      "ms": 15,
+      "active": "08",
+      "gpu": "master-neutral"
+    }
+  ],
+  "diagnostics": {
+    "04": {
+      "hash": "#screen-04",
+      "active": "04",
+      "contract": {
+        "nodeId": "04",
+        "hostNodeId": "04",
+        "family": "MASTER",
+        "requestedFamily": "MASTER",
+        "resolvedGeometryId": "master-neutral",
+        "paletteMask": 127,
+        "slot": "right",
+        "fitProfile": "master",
+        "resolution": "exact",
+        "applyPaletteOverride": false,
+        "reason": "04 MASTER sphere, all seven"
+      },
+      "session": {
+        "status": "transitioning",
+        "sourceStateId": "complex-drive-content-event",
+        "targetStateId": "master-neutral",
+        "geometryProgress": 0.14907692307692533,
+        "revision": 7,
+        "requestRevision": 5,
+        "reducedMotion": false
+      },
+      "transaction": {
+        "revision": 5,
+        "sourceNodeId": "03.3",
+        "targetNodeId": "04",
+        "sourceGeometryId": "complex-gather-content-event",
+        "targetGeometryId": "master-neutral",
+        "sourcePaletteMask": 127,
+        "targetPaletteMask": 127,
+        "sourceSlot": "right",
+        "targetSlot": "right",
+        "sourceFit": 1.0137041721216105,
+        "targetFit": 1,
+        "sourceFitProfile": "master",
+        "targetFitProfile": "master",
+        "programId": "complex-drive-content-event-to-master-neutral-qa-desktop-592618a8e917",
+        "startedAtSeconds": 1.9665000000000024,
+        "elapsedSeconds": 0.21509999999999896,
+        "durationSeconds": 0.65,
+        "geometryProgress": 0.14907692307692533,
+        "semanticPhase": "release",
+        "paletteProgress": 0.007345910040187162,
+        "siteProgress": 0.026163981487230425,
+        "paletteOwnershipMode": 0,
+        "continuityEnabled": 1,
+        "kind": "geometry",
+        "status": "running",
+        "programReady": true,
+        "visualLifecycle": "morphing",
+        "resourceState": "bound",
+        "slotProgress": 0.026163981487230425,
+        "positionProgress": 0.026163981487230425,
+        "visualPublished": true,
+        "fitProgress": 0.026163981487230425,
+        "sourceZoom": 1.0055498626941444,
+        "targetZoom": 1,
+        "framingProgress": 0.026163981487230425,
+        "sourcePaletteLutHash": "1d0c3701",
+        "targetPaletteLutHash": "1d7d8cb6",
+        "settledPaletteLutHash": "1d7d8cb6",
+        "shaderBaseLutHash": "1d0c3701",
+        "paletteCommitted": false
+      },
+      "settle": {
+        "scrollPhase": "Settled",
+        "observedNodeId": "04",
+        "snapCandidateNodeId": "04",
+        "magneticDestinationNodeId": "04",
+        "magnetizedSettledNodeId": "04",
+        "magneticSettleRevision": 6,
+        "distanceToAnchorPx": 2,
+        "scrollVelocityVhPerSecond": 0,
+        "gestureActive": false,
+        "inputQuietForMs": 3356.300000011921,
+        "candidateStableForMs": 759.0000000238415,
+        "layoutRevision": 1,
+        "layoutRevisionStable": true,
+        "actorStatus": "morphing",
+        "actorVisualStarted": true,
+        "actorCommittedNodeId": "04",
+        "actorEndpointKey": "master-neutral|127|right|master",
+        "queuedActorNodeId": null,
+        "queuedSettleRevision": null,
+        "actorRequestSource": {
+          "kind": "route-settle",
+          "nodeId": "04",
+          "magneticSettleRevision": 5
+        },
+        "interactionRevision": 0,
+        "lastAppliedInteractionRevision": 0,
+        "actorRequestCount": 5,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 2,
+        "compileLiveRetargetCount": 0,
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "lastSettleAtMs": 8947.2,
+        "lastRequestAtMs": 8185.5,
+        "lastHint": "scrollend"
+      },
+      "geometry": {
+        "revision": 5,
+        "navigationToken": 5,
+        "status": "running",
+        "boundProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-592618a8e917",
+        "boundSourceGeometryId": "complex-drive-content-event",
+        "boundTargetGeometryId": "master-neutral",
+        "settledGeometryId": "complex-drive-content-event",
+        "semanticTargetGeometryId": "master-neutral",
+        "shaderProgress": 0.14907692307692533,
+        "programReady": true,
+        "bindFrameToken": 116,
+        "reverse": false,
+        "pendingProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-592618a8e917"
+      },
+      "programBind": {
+        "revision": 5,
+        "programId": "complex-drive-content-event-to-master-neutral-qa-desktop-592618a8e917",
+        "sourceId": "complex-drive-content-event",
+        "targetId": "master-neutral",
+        "bindCommitted": true,
+        "bindFrameToken": 116,
+        "gpuReady": null,
+        "bankId": null,
+        "bankGeneration": null
+      },
+      "resource": {
+        "state": "absent",
+        "visual": "settled",
+        "revision": null,
+        "pendingRevision": null,
+        "cacheBytes": 17077632,
+        "cacheBudget": 100663296,
+        "cacheEntries": 6,
+        "gpuTextures": 48,
+        "gpuBudget": 48,
+        "gpuReady": false,
+        "pinnedKeys": []
+      },
+      "renderAck": {
+        "drawnRevision": 5,
+        "drawnProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-592618a8e917",
+        "drawnProgress": 0.14907692307692533,
+        "drawnSourceId": "complex-drive-content-event",
+        "drawnTargetId": "master-neutral",
+        "frameToken": 132,
+        "atMs": 8948.200000017881
+      },
+      "navigation": {
+        "mode": "idle",
+        "fastGesture": true,
+        "pendingTarget": null,
+        "rawObservedNodeId": "04",
+        "committedNodeId": "04",
+        "magneticCandidateId": null
+      },
+      "canvas": {
+        "identity": "false",
+        "qa": "m4-canvas",
+        "loadStatus": "ready",
+        "bufferHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+        "gpuSource": "complex-gather-content-event",
+        "gpuTarget": "complex-drive-content-event",
+        "gpuProgress": "1",
+        "frameP95Ms": "50",
+        "firstVisibleMs": "",
+        "overlayQuaternion": "0,0,0,1",
+        "assetNamespace": "ps-04-m5-5",
+        "hoverPreview": "false",
+        "framingProfile": "OWNER_SELECTED_124_111_111",
+        "screen": "about",
+        "resolvedState": "master-neutral",
+        "builderPhase": "",
+        "aboutZoom": "124",
+        "merchZoom": "111",
+        "videoZoom": "111"
+      },
+      "error": ""
+    },
+    "06.1": {
+      "hash": "#screen-06.1",
+      "active": "06.1",
+      "contract": {
+        "nodeId": "06.1",
+        "hostNodeId": "06.1",
+        "family": "MASTER",
+        "requestedFamily": "MASTER",
+        "resolvedGeometryId": "master-neutral",
+        "paletteMask": 127,
+        "slot": "right",
+        "fitProfile": "master",
+        "resolution": "exact",
+        "applyPaletteOverride": false,
+        "reason": "06.1 MASTER sphere, all seven"
+      },
+      "session": {
+        "status": "transitioning",
+        "sourceStateId": "single-merch",
+        "targetStateId": "master-neutral",
+        "geometryProgress": 0.1490769230769225,
+        "revision": 15,
+        "requestRevision": 13,
+        "reducedMotion": false
+      },
+      "transaction": {
+        "revision": 13,
+        "sourceNodeId": "05.7",
+        "targetNodeId": "06.1",
+        "sourceGeometryId": "single-digital",
+        "targetGeometryId": "master-neutral",
+        "sourcePaletteMask": 127,
+        "targetPaletteMask": 127,
+        "sourceSlot": "left",
+        "targetSlot": "right",
+        "sourceFit": 1.1055340093190382,
+        "targetFit": 1,
+        "sourceFitProfile": "master",
+        "targetFitProfile": "master",
+        "programId": "single-merch-to-master-neutral-qa-desktop-810f1ba76b55",
+        "startedAtSeconds": 4.542099999999989,
+        "elapsedSeconds": 0.20909999999999673,
+        "durationSeconds": 0.65,
+        "geometryProgress": 0.1490769230769225,
+        "semanticPhase": "release",
+        "paletteProgress": 0.007345910040186497,
+        "siteProgress": 0.026163981487229062,
+        "paletteOwnershipMode": 0,
+        "continuityEnabled": 1,
+        "kind": "geometry",
+        "status": "running",
+        "programReady": true,
+        "visualLifecycle": "morphing",
+        "resourceState": "bound",
+        "slotProgress": 0.026163981487229062,
+        "positionProgress": 0.026163981487229062,
+        "visualPublished": true,
+        "fitProgress": 0.026163981487229062,
+        "sourceZoom": 1.0134167422782847,
+        "targetZoom": 1,
+        "framingProgress": 0.026163981487229062,
+        "sourcePaletteLutHash": "67c11c06",
+        "targetPaletteLutHash": "1d7d8cb6",
+        "settledPaletteLutHash": "1d7d8cb6",
+        "shaderBaseLutHash": "67c11c06",
+        "paletteCommitted": false
+      },
+      "settle": {
+        "scrollPhase": "Settled",
+        "observedNodeId": "06.1",
+        "snapCandidateNodeId": "06.1",
+        "magneticDestinationNodeId": "06.1",
+        "magnetizedSettledNodeId": "06.1",
+        "magneticSettleRevision": 14,
+        "distanceToAnchorPx": 0,
+        "scrollVelocityVhPerSecond": 0,
+        "gestureActive": false,
+        "inputQuietForMs": 9433.90000000596,
+        "candidateStableForMs": 636.600000017881,
+        "layoutRevision": 1,
+        "layoutRevisionStable": true,
+        "actorStatus": "morphing",
+        "actorVisualStarted": true,
+        "actorCommittedNodeId": "06.1",
+        "actorEndpointKey": "master-neutral|127|right|master",
+        "queuedActorNodeId": null,
+        "queuedSettleRevision": null,
+        "actorRequestSource": {
+          "kind": "route-settle",
+          "nodeId": "06.1",
+          "magneticSettleRevision": 13
+        },
+        "interactionRevision": 0,
+        "lastAppliedInteractionRevision": 0,
+        "actorRequestCount": 13,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 2,
+        "compileLiveRetargetCount": 0,
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "lastSettleAtMs": 15019.8,
+        "lastRequestAtMs": 14399.200000017881,
+        "lastHint": "scrollend"
+      },
+      "geometry": {
+        "revision": 13,
+        "navigationToken": 13,
+        "status": "running",
+        "boundProgramId": "single-merch-to-master-neutral-qa-desktop-810f1ba76b55",
+        "boundSourceGeometryId": "single-merch",
+        "boundTargetGeometryId": "master-neutral",
+        "settledGeometryId": "single-merch",
+        "semanticTargetGeometryId": "master-neutral",
+        "shaderProgress": 0.1490769230769225,
+        "programReady": true,
+        "bindFrameToken": 302,
+        "reverse": false,
+        "pendingProgramId": "single-merch-to-master-neutral-qa-desktop-810f1ba76b55"
+      },
+      "programBind": {
+        "revision": 13,
+        "programId": "single-merch-to-master-neutral-qa-desktop-810f1ba76b55",
+        "sourceId": "single-merch",
+        "targetId": "master-neutral",
+        "bindCommitted": true,
+        "bindFrameToken": 302,
+        "gpuReady": null,
+        "bankId": null,
+        "bankGeneration": null
+      },
+      "resource": {
+        "state": "absent",
+        "visual": "settled",
+        "revision": null,
+        "pendingRevision": null,
+        "cacheBytes": 40777984,
+        "cacheBudget": 100663296,
+        "cacheEntries": 14,
+        "gpuTextures": 48,
+        "gpuBudget": 48,
+        "gpuReady": false,
+        "pinnedKeys": [
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-digital|single-merch|0|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-merch|single-digital|0|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-merch|master-neutral|0|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|master-neutral|single-merch|0|desktop"
+        ]
+      },
+      "renderAck": {
+        "drawnRevision": 13,
+        "drawnProgramId": "single-merch-to-master-neutral-qa-desktop-810f1ba76b55",
+        "drawnProgress": 0.1490769230769225,
+        "drawnSourceId": "single-merch",
+        "drawnTargetId": "master-neutral",
+        "frameToken": 319,
+        "atMs": 15023.800000011921
+      },
+      "navigation": {
+        "mode": "idle",
+        "fastGesture": true,
+        "pendingTarget": null,
+        "rawObservedNodeId": "06.1",
+        "committedNodeId": "06.1",
+        "magneticCandidateId": null
+      },
+      "canvas": {
+        "identity": "false",
+        "qa": "m4-canvas",
+        "loadStatus": "ready",
+        "bufferHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+        "gpuSource": "single-digital",
+        "gpuTarget": "single-merch",
+        "gpuProgress": "1",
+        "frameP95Ms": "50",
+        "firstVisibleMs": "",
+        "overlayQuaternion": "0,0,0,1",
+        "assetNamespace": "ps-04-m5-5",
+        "hoverPreview": "false",
+        "framingProfile": "OWNER_SELECTED_124_111_111",
+        "screen": "about",
+        "resolvedState": "master-neutral",
+        "builderPhase": "",
+        "aboutZoom": "124",
+        "merchZoom": "111",
+        "videoZoom": "111"
+      },
+      "error": ""
+    }
+  },
+  "errors": [],
+  "edge": {
+    "lockedBoot": {
+      "hash": "#screen-03.1",
+      "active": "03.1"
+    },
+    "deepEvent": {
+      "hash": "#screen-05.3",
+      "active": "05.3",
+      "semantic": "single-event",
+      "gpu": "single-event"
+    },
+    "lockedHash": {
+      "hash": "#screen-05.3",
+      "active": "05.3"
+    },
+    "reduced": false,
+    "ArrowDown": {
+      "hash": "#screen-05.2",
+      "active": "05.2"
+    },
+    "ArrowUp": {
+      "hash": "#screen-05.1",
+      "active": "05.1"
+    },
+    "End": {
+      "hash": "#screen-08",
+      "active": "08"
+    },
+    "Home": {
+      "hash": "#screen-01",
+      "active": "01"
+    },
+    "back": {
+      "hash": "#screen-02",
+      "active": "02"
+    },
+    "forward": {
+      "hash": "#screen-08",
+      "active": "08"
+    }
+  }
+}

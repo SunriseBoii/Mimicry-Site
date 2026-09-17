@@ -2,7 +2,7 @@
   --ink: #17191b;
   --muted: #5f6463;
   --line: color-mix(in srgb, var(--ink) 14%, transparent);
-  --paper: #f5f2eb;
+  --paper: #ebebe8;
   --header-h: 64px;
   --graph-w: 88px;
   --safe-top: max(12px, env(safe-area-inset-top));
@@ -48,6 +48,34 @@
   inset: 80px auto auto 80px;
   width: 512px;
   height: 512px;
+}
+
+.neutralPoster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  transform: translate(14vw, 6vh);
+  pointer-events: none;
+  opacity: 0.32;
+}
+
+.neutralPoster span {
+  width: 9px;
+  height: 9px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+  .neutralPoster {
+    align-items: flex-end;
+    padding-bottom: 16svh;
+    transform: none;
+  }
 }
 
 .header {
@@ -411,6 +439,7 @@
   }
   .copy h1,
   .copy h2 { font-size: clamp(28px, 9vw, 42px); }
+  .panel[data-node="05.5"] .lede { max-width: min(250px, calc(100vw - 128px)); }
   .hud { max-width: calc(100vw - var(--graph-w) - 24px); }
 }
 

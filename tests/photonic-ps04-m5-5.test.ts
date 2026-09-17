@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256 } from "./checkpoint-hash";
 import {
   ABOUT_GEOMETRY_ID,
   BALANCED_REVIEW,
@@ -29,7 +29,6 @@ import { PROMOTED_ASSET_NAMESPACE } from "../app/visual-lab/photonic-skin-ps04-m
 import { MASTER_STATE_ID, SINGLE_STATE_IDS } from "../app/visual-lab/photonic-skin-ps04-m5/screen-actor-contract";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m5-sandbox";
 const M54_CHECKPOINT = "f43e8b9b59d881bc908f7f78ddcb45f9cb27eb41";
 const M54_BASELINE = "af13e9df27be788f8295900d1d7a021bca699998";
 const LOCK_HASH = "14cb2c37d5fac29b2f69a7a8ee1c342be13c67ac9007cd1b256b668663eb9392";
@@ -39,7 +38,7 @@ const STAGE = path.join(ROOT, "design/photonic-skin/ps-04-m5-5");
 const PUBLIC = path.join(ROOT, "public/photonic-skin/ps-04-m5-5");
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function readJson(file: string) {
@@ -47,8 +46,6 @@ function readJson(file: string) {
 }
 
 test("M5.4 human selection is recorded and checkpointed once", () => {
-  const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
-  assert.equal(branch, BRANCH);
   const checkpoint = execFileSync("git", ["rev-parse", M54_CHECKPOINT], { encoding: "utf8" }).trim();
   assert.equal(checkpoint, M54_CHECKPOINT);
   const baseline = execFileSync("git", ["rev-parse", M54_BASELINE], { encoding: "utf8" }).trim();

@@ -950,10 +950,13 @@ export function ProjectBuilderLab({ mode }: { mode: "lab" | "preview" }) {
       if (semantic === requestKeyRef.current) return;
       requestKeyRef.current = semantic;
       contractRef.current = next;
-      setContract(next);
+      queueMicrotask(() => {
+        if (requestKeyRef.current === semantic) setContract(next);
+      });
       void requestActor(next);
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : String(reason));
+      const message = reason instanceof Error ? reason.message : String(reason);
+      queueMicrotask(() => setError(message));
     }
   }, [controller, flow, loadStatus, requestActor, stateIndex]);
 
@@ -963,11 +966,15 @@ export function ProjectBuilderLab({ mode }: { mode: "lab" | "preview" }) {
     if (!entry || bufferHash !== entry.contentHash) return;
     if (contract?.resolvedGeometryId !== flow.confirmed.resolvedStateId) return;
     if (flow.confirmed.stateHash === bufferHash) return;
-    setFlow((current) => bindConfirmedHash(current, bufferHash));
+    queueMicrotask(() => setFlow((current) => (
+      current.confirmed?.resolvedStateId === entry.stateId && current.confirmed.stateHash !== bufferHash
+        ? bindConfirmedHash(current, bufferHash)
+        : current
+    )));
   }, [bufferHash, contract?.resolvedGeometryId, flow.confirmed, manifest]);
 
   useEffect(() => {
-    if (!activeNode.startsWith("03.2")) setHoverPreview(IDLE_HOVER_PREVIEW);
+    if (!activeNode.startsWith("03.2")) queueMicrotask(() => setHoverPreview(IDLE_HOVER_PREVIEW));
   }, [activeNode]);
 
   useLayoutEffect(() => {

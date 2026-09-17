@@ -26,6 +26,34 @@ body {
   font-size: 17px;
   line-height: 1.55;
 }
+
+html[data-theme="light"] body { --paper: #ebebe8; }
+html[data-theme="dark"] body { --paper: #090b0d; }
+
+.photonic-loading {
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.photonic-loading span {
+  width: 9px;
+  height: 9px;
+  background: currentColor;
+  opacity: 0.32;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+  .photonic-loading {
+    align-items: flex-end;
+    padding-bottom: 16svh;
+  }
+}
 a { color: inherit; text-underline-offset: 0.22em; }
 button, input, textarea, select { font: inherit; }
 :focus-visible {

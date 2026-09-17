@@ -1,0 +1,11 @@
+{
+  "stage": "PS-04",
+  "releaseId": "ps-04-release-motion-r1",
+  "manifestPath": "/photonic-skin/ps-04-release-motion-r1/manifest.json",
+  "manifestSha256": "d0e9aa2fb9b08d285b416784cd7d1251c52fe671dc5a39bab32990031d7bf441",
+  "manifestHashMode": "UTF-8 text with canonical LF",
+  "sourceStage": "PS-03.M4.1",
+  "programArtifactBase": "/photonic-skin/ps-03-m4-1",
+  "routeDurationMs": { "desktop": 650, "mobile": 550 },
+  "note": "Copied frozen program index; PS-04 route playback duration is a runtime policy. Compiled program artifacts remain immutable."
+}

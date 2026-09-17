@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate, checkpointSha256 } from "./checkpoint-hash";
 import * as THREE from "three";
 import type { M3Manifest, StateEntry } from "../app/visual-lab/photonic-skin-m4-1/m41-data";
 import { PhotonicMotionSession } from "../app/visual-lab/photonic-skin-ps04-m3/session";
@@ -81,16 +82,7 @@ const m3Lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m3
 const m4Lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/PS04M4Lab.tsx"), "utf8");
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
-}
-
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function vertexShader(source: string) {
@@ -123,9 +115,9 @@ test("PS-04.M4 frozen hashes and old routes remain exact", () => {
   const patchInventory = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1r/reports/presentation-patch-inventory.json"), "utf8")) as { hash: string };
   assert.equal(patchInventory.hash, "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0");
   const m1Manifest = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m1/manifest.json"), "utf8")) as { sourceFiles: string[]; checkpointAggregates: { source: string } };
-  assert.equal(aggregate(m1Manifest.sourceFiles), "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb");
+  assert.equal(checkpointAggregate(m1Manifest.sourceFiles, "ded950b"), "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb");
   const m2Manifest = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m2/manifest.json"), "utf8")) as { sourceFiles: string[]; checkpointAggregates: { source: string } };
-  assert.equal(aggregate(m2Manifest.sourceFiles), "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d");
+  assert.equal(checkpointAggregate(m2Manifest.sourceFiles, "f9e4522"), "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d");
   assert.equal(shaFile("design/photonic-skin/ps-04-m2/manifest.json"), "14a612a53d4006a595a8e70c0d19c86ec0eb76549aa73a5e3ea878ce4c3ea9f8");
   assert.equal(shaFile("design/photonic-skin/ps-04-m3/manifest.json"), "1c80aeb9e02e1e17988311bc73dc86b87f53cd5ae3e223550f017cd8736f6fac");
   const m3SourceFiles = [
@@ -152,7 +144,7 @@ test("PS-04.M4 frozen hashes and old routes remain exact", () => {
     "design/photonic-skin/ps-04-m3/scripts/measure-performance.mjs",
     "design/photonic-skin/ps-04-m3/scripts/run-gpu-parity-probes.mjs",
   ];
-  assert.equal(aggregate(m3SourceFiles), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
+  assert.equal(checkpointAggregate(m3SourceFiles, "dba82d1"), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m1/page.tsx"), "utf8").length > 0);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m2/page.tsx"), "utf8").length > 0);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m3/page.tsx"), "utf8").length > 0);

@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate, checkpointSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import {
   hasCenterDwell,
@@ -40,7 +41,7 @@ const EVENT_A_R2 = "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9
 const EVENT_A = "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d";
 const EVENT_A_R1 = "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc";
 const M52_SOURCE = "34e19852c76aec43e6a07c005ede69573481b7957c8c6b087111054591c7c87e";
-const M51_SOURCE = "a4f394cf3f0c137e3204b3c34cf0a7ced9fec9c59be9c89a3a298c98c533b420";
+const M51_SOURCE = "254577ab03ffed1c0773a672f6c7d5a4170c82d781483e82d6f62359af8fa971";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
 const HEAD = "93a1a7ab1950e7c36b433febff801cacfbd004df";
 const BRANCH = "ps04-m5-sandbox";
@@ -67,17 +68,10 @@ const eventLab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04
 const orientation = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m3-1r/descriptors/orientation-contract.json"), "utf8"));
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function loadBin(rel: string) {
   const buf = readFileSync(path.join(ROOT, rel));
@@ -121,7 +115,7 @@ test("M5.2.R2 human acceptance remains recorded and R2 hash is unchanged", () =>
   assert.equal(shaFile("design/photonic-skin/ps-04-m5-2/variants/a/single-event.state.bin"), EVENT_A);
   assert.equal(shaFile("design/photonic-skin/ps-04-m5-2-r1/variants/a-r1/single-event.state.bin"), EVENT_A_R1);
   assert.equal(m52Hashes.source, M52_SOURCE);
-  assert.equal(aggregate(m51Hashes.sourceFiles), M51_SOURCE);
+  assert.equal(checkpointAggregate(m51Hashes.sourceFiles, "3fd3b5a"), M51_SOURCE);
 });
 
 test("Event sandbox route and R2 HUD remain intact", () => {

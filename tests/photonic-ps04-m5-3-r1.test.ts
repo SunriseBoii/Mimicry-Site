@@ -4,6 +4,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import {
   hasCenterDwell,
@@ -41,7 +42,6 @@ const FROZEN_VIDEO = "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a22
 const EVENT_A_R2 = "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
 const M53_CHECKPOINT = "72eb53b1a2a76a6851a23b45560ad55ba149cc65";
-const BRANCH = "ps04-m5-sandbox";
 const ORIGINAL = {
   baseline: FROZEN_VIDEO,
   "combo-20": "ed88723a879416d4302d0146770c46956019c6941229a0fb28db0d843f67032f",
@@ -74,7 +74,7 @@ const twoRun = existsSync(path.join(ROOT, "design/photonic-skin/ps-04-m5-3-r1/re
   : null;
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function loadBin(rel: string) {
@@ -106,13 +106,12 @@ test("owner specification is present, fully read, and hash-matches", () => {
   assert.equal(proof.ownerSpec.ownerSpecHash, OWNER_SPEC_HASH);
 });
 
-test("M5.3 checkpoint commit exists on ps04-m5-sandbox", () => {
-  const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
-  assert.equal(branch, BRANCH);
-  const log = execFileSync("git", ["log", "--oneline", "-8"], { encoding: "utf8" });
-  assert.match(log, /add Video associative object sandbox/);
+test("M5.3 checkpoint commit is preserved in project history", () => {
   const checkpoint = execFileSync("git", ["rev-parse", M53_CHECKPOINT], { encoding: "utf8" }).trim();
   assert.equal(checkpoint, M53_CHECKPOINT);
+  const subject = execFileSync("git", ["show", "-s", "--format=%s", M53_CHECKPOINT], { encoding: "utf8" });
+  assert.match(subject, /add Video associative object sandbox/);
+  execFileSync("git", ["merge-base", "--is-ancestor", M53_CHECKPOINT, "HEAD"]);
 });
 
 test("original M5.3, camera-only, baseline and Event A-R2 hashes are unchanged", () => {

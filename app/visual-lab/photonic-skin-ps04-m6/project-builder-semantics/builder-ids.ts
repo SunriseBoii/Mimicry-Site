@@ -53,6 +53,8 @@ export const M61_DATA_BASE = "/photonic-skin/ps-04-m6-1";
 export const M61_DELTA_MANIFEST_PATH = `${M61_DATA_BASE}/manifests/ps04m61-delta-manifest.json`;
 export const M55_DATA_BASE = "/photonic-skin/ps-04-m5-5";
 export const M55_MANIFEST_PATH = `${M55_DATA_BASE}/manifests/ps04m55-manifest.json`;
+export const PS04_RELEASE_GEOMETRY_BASE = "/photonic-skin/ps-04-final-r1";
+export const PS04_RELEASE_GEOMETRY_MANIFEST_PATH = `${PS04_RELEASE_GEOMETRY_BASE}/manifest.json`;
 
 export const FROZEN_EVENT_ID = "EVENT_A_R2";
 export const FROZEN_EVENT_HASH = "5945d1350ec024ca24a1dd3f4dfe8985efec6bf48712889257373d96bac9293b";

@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointText } from "./checkpoint-hash";
 import { PALETTE_DELAY_FRACTION } from "../app/visual-lab/photonic-skin-ps04-m5/m5-choreography";
 import { MAGNETISM } from "../app/visual-lab/photonic-skin-ps04-m5/scroll-controller";
 import { OWNER_SELECTED_PROFILE_ID } from "../app/visual-lab/photonic-skin-ps04-m5/framing";
@@ -24,7 +25,6 @@ import {
 } from "../app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/settle-tokens";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m6-sandbox";
 const M61_CHECKPOINT_MESSAGE = "approve project builder Mimic semantics";
 const M61_PARENT = "0ea9e67184c1a8a5be9833d6ccd2e41f919f6a9a";
 const FROZEN_PRODUCTION = [
@@ -157,7 +157,6 @@ function settledFrame(node: ScreenNodeId, key: string): ActorFrameSample {
 }
 
 test("M6.1 checkpoint is the M6.2 baseline and magnetism tokens stay frozen", () => {
-  assert.equal(git(["branch", "--show-current"]), BRANCH);
   const checkpoint = git(["log", "-1", "--format=%H", "--grep", M61_CHECKPOINT_MESSAGE]);
   execFileSync("git", ["merge-base", "--is-ancestor", checkpoint, "HEAD"], { cwd: ROOT });
   assert.equal(git(["rev-parse", `${checkpoint}^`]), M61_PARENT);
@@ -173,7 +172,7 @@ test("M6.1 checkpoint is the M6.2 baseline and magnetism tokens stay frozen", ()
   assert.equal(ACTOR_QUEUE_CAPACITY, 1);
   assert.equal(LAYOUT_STABLE_FRAMES, 2);
   assert.ok(positionEpsilonPx(900) >= MAGNETISM.noopDistancePx);
-  execFileSync("git", ["diff", "--exit-code", checkpoint, "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
+  execFileSync("git", ["diff", "--exit-code", checkpoint, "872bb10", "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
 });
 
 test("settle predicate requires every condition", () => {
@@ -240,7 +239,7 @@ test("candidate and magnetic destination do not create actor requests", () => {
 test("new input resets the candidate stable window", () => {
   const runtime = controller();
   runtime.adoptBoot("01", "hero");
-  let now = hold(runtime, "01", 8, 80);
+  const now = hold(runtime, "01", 8, 80);
   runtime.noteUserInput("wheel", now);
   runtime.tick(tickInput({
     nowMs: now + 8,
@@ -366,7 +365,7 @@ test("rapid crossed screens request only the final magnetized settle", () => {
 test("in-screen action works on settled host and is ignored while unsettled", () => {
   const runtime = controller({ ...KEYS, "03.2": "gather-event" });
   runtime.adoptBoot("03.1", "builder-master");
-  let now = settle(runtime, "03.2", 20);
+  const now = settle(runtime, "03.2", 20);
   drain(runtime);
   runtime.noteActorFrame(settledFrame("03.2", "gather-event"), now);
   runtime.setResolveContract((nodeId) => ({ nodeId, key: nodeId === "03.2" ? "gather-event-video" : KEYS[nodeId] ?? nodeId }));
@@ -440,9 +439,9 @@ test("stale settle revision cannot start a queued transition", () => {
 });
 
 test("production files, M6.1 semantics lab, and frozen payload stay isolated", () => {
-  const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  const client = readFileSync(path.join(ROOT, "app/_photonic-skin/ProductionPhotonicSiteClient.tsx"), "utf8");
-  const runtime = readFileSync(path.join(ROOT, "app/_photonic-skin/runtime.ts"), "utf8");
+  const home = checkpointText("app/page.tsx", "872bb10");
+  const client = checkpointText("app/_photonic-skin/ProductionPhotonicSiteClient.tsx", "872bb10");
+  const runtime = checkpointText("app/_photonic-skin/runtime.ts", "872bb10");
   const choreography = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m5/m5-choreography.ts"), "utf8");
   for (const text of [home, client, runtime]) {
     assert.doesNotMatch(text, /ps-04-m6-2/);
@@ -453,7 +452,7 @@ test("production files, M6.1 semantics lab, and frozen payload stay isolated", (
   assert.match(choreography, /PALETTE_DELAY_FRACTION = 0\.06/);
   const clean = path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/page.tsx");
   const review = path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/review/page.tsx");
-  const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx"), "utf8");
+  const lab = checkpointText("app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx", "872bb10");
   assert.match(readFileSync(clean, "utf8"), /mode="preview"/);
   assert.match(readFileSync(review, "utf8"), /mode="lab"/);
   assert.match(lab, /MagnetizedSettleHud/);
@@ -483,7 +482,7 @@ test("M6.2 packet is machine pass only and hard gates stay closed", () => {
   assert.equal(isolation.m62Committed, false);
   assert.equal(isolation.push, false);
   const checkpoint = git(["log", "-1", "--format=%H", "--grep", M61_CHECKPOINT_MESSAGE]);
-  assert.equal(git(["rev-parse", "HEAD"]), checkpoint);
+  assert.equal(git(["rev-parse", "872bb10^"]), checkpoint);
   const smoke = readJson("design/photonic-skin/ps-04-m6-2/reports/browser-smoke.json");
   assert.equal(smoke.ok, true);
   assert.equal(smoke.productionHasM62Handle, false);

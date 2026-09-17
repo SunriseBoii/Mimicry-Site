@@ -225,6 +225,7 @@ export const MAGNETISM = Object.freeze({
   directionConfidencePx: 28,
   unlockSettleMs: 48,
 });
+const LATE_USER_SCROLL_GRACE_MS = 3000;
 
 export const MAGNETISM_VARIANTS = Object.freeze({
   a: { inputIdleMs: 160, activationRadiusFactor: 0.25, snapDurationMs: 340 },
@@ -347,10 +348,11 @@ export function planMagneticSnap(args: {
   if (layout.segments[rawIndex - 1]) neighborIds.push(layout.segments[rawIndex - 1].id);
   if (layout.segments[rawIndex + 1]) neighborIds.push(layout.segments[rawIndex + 1].id);
   const unique = [...new Set(neighborIds)].filter((id) => isMagneticEligible(id, args.unlock));
-  let candidates = unique.map((id) => {
+  const nearby = unique.map((id) => {
     const targetY = restoreScrollY(layout, id, 0);
     return { nodeId: id, targetY, distance: Math.abs(args.scrollY - targetY), rawId: raw.id };
   });
+  let candidates = nearby;
   if (args.fastGesture) {
     const dir = args.lastConfidentDirection;
     candidates = candidates.filter((item) => (
@@ -358,6 +360,16 @@ export function planMagneticSnap(args: {
         ? item.targetY >= args.scrollY - tokens.noopDistancePx
         : item.targetY <= args.scrollY + tokens.noopDistancePx
     ));
+    // A previous route can leave the confident direction opposite to the
+    // current wheel gesture. Only fall back when that filter cannot reach an
+    // anchor in range, and keep the current gesture's direction authoritative.
+    if (args.direction !== dir && !candidates.some((item) => item.distance <= vh * tokens.activationRadiusFactor)) {
+      candidates = nearby.filter((item) => (
+        args.direction === 1
+          ? item.targetY >= args.scrollY - tokens.noopDistancePx
+          : item.targetY <= args.scrollY + tokens.noopDistancePx
+      ));
+    }
   }
   if (candidates.length === 0) return null;
   candidates.sort((left, right) => left.distance - right.distance);
@@ -408,10 +420,24 @@ export class ScrollCompositionController {
   private lastConfidentDirection: 1 | -1 = 1;
   private fastGesture = false;
   private lastInput: UserInputKind | null = null;
+  private lastInputAt = Number.NEGATIVE_INFINITY;
+  private gestureStartNodeId: ScreenNodeId | null = null;
   private candidate: MagneticPlan | null = null;
   private guards: MagnetismGuards = { ...EMPTY_GUARDS };
   private supportsScrollEnd = false;
-  private onScroll = () => this.queue();
+  private onScroll = () => {
+    // A browser may deliver the scroll event after the input-idle timer has
+    // already fired (notably wheel and touch momentum under a busy GPU). Keep
+    // the magnetism timer tied to the last actual scroll pixel, within a
+    // bounded window after that user gesture.
+    const recentUserScroll = (this.lastInput === "wheel" || this.lastInput === "touch" || this.lastInput === "scrollbar")
+      && this.now() - this.lastInputAt <= LATE_USER_SCROLL_GRACE_MS;
+    if (recentUserScroll && (this.mode === "idle" || this.mode === "user")) {
+      this.mode = "user";
+      this.armIdle();
+    }
+    this.queue();
+  };
   private onResize = () => this.resize();
   private onScrollEnd = () => this.onInputIdle();
   private onWheel = () => this.noteUserInput("wheel");
@@ -599,8 +625,12 @@ export class ScrollCompositionController {
 
   noteUserInput(kind: UserInputKind) {
     if (this.guards.unmounted) return;
-    if (this.mode === "idle" || this.mode === "magnetic") this.fastGesture = false;
+    if (this.mode === "idle" || this.mode === "magnetic") {
+      this.fastGesture = false;
+      this.gestureStartNodeId = this.snapshot.activeNodeId;
+    }
     this.lastInput = kind;
+    this.lastInputAt = this.now();
     this.cancelMagnetism("user");
     this.mode = "user";
     this.progressRevision += 1;
@@ -632,6 +662,8 @@ export class ScrollCompositionController {
     }
     this.cancelMagnetism(origin);
     this.clearIdle();
+    this.lastInputAt = Number.NEGATIVE_INFINITY;
+    this.gestureStartNodeId = null;
     this.mode = origin;
     this.fastGesture = false;
     this.pendingTarget = id;
@@ -709,6 +741,9 @@ export class ScrollCompositionController {
   private onInputIdle() {
     if (this.mode !== "user") return;
     if (this.guards.pointerHeld) return;
+    // Native scroll and scrollend may arrive before the queued RAF samples
+    // scrollY. Plan against the actual final pixel, not the previous frame.
+    if (this.attached && Math.abs(this.attached.scrollY - this.lastY) > 0.4) this.sync(false);
     if (magnetismGuardsBlock(this.liveGuards())) {
       this.mode = "idle";
       this.candidate = null;
@@ -724,7 +759,10 @@ export class ScrollCompositionController {
       velocityPxPerMs: this.velocity,
       fullyStopped,
       lastConfidentDirection: this.lastConfidentDirection,
-      fastGesture: this.fastGesture,
+      // Once the gesture has entered a new node, a small overshoot should
+      // settle back to that node's anchor instead of being treated as a
+      // reverse jump to the node where the gesture began.
+      fastGesture: this.fastGesture && this.snapshot.activeNodeId === this.gestureStartNodeId,
       tokens,
     });
     this.candidate = plan;
@@ -767,8 +805,14 @@ export class ScrollCompositionController {
     if (token !== this.magnetToken) return;
     this.mode = "idle";
     this.pendingTarget = null;
+    // A completed snap is no longer a candidate for the next direct route.
+    // Keeping it here makes the actor settle machine prefer the old node over
+    // the newly observed node after a rapid reverse navigation.
+    this.candidate = null;
     this.skipHysteresis = false;
     this.fastGesture = false;
+    this.lastInputAt = Number.NEGATIVE_INFINITY;
+    this.gestureStartNodeId = null;
     this.clearIdle();
     this.sync(true);
   }
@@ -780,6 +824,7 @@ export class ScrollCompositionController {
       this.magnetRaf = 0;
     }
     if (this.mode === "magnetic") this.pendingTarget = null;
+    this.candidate = null;
     if (next === "user" || next === "idle" || next === "programmatic" || next === "restore") {
       this.mode = next;
     }
@@ -824,6 +869,13 @@ export class ScrollCompositionController {
     this.lastY = scrollY;
     this.lastScrollAt = now;
     const programmatic = this.mode === "programmatic" || this.mode === "restore" || this.mode === "magnetic";
+    const layout = this.layout();
+    const rawNode = layout.segments[rawIndexAt(scrollY, layout)];
+    const rawAnchor = rawNode ? restoreScrollY(layout, rawNode.id, 0) : Number.POSITIVE_INFINITY;
+    // A touch gesture may land exactly on the next anchor without entering a
+    // magnetic animation. At that position the previous-node hysteresis must
+    // yield, otherwise the visible section and actor endpoint can disagree.
+    const atAnchor = scrollY >= rawAnchor && scrollY - rawAnchor <= MAGNETISM.noopDistancePx;
     const next = mapScrollToProgress({
       scrollY,
       viewportHeight: this.viewport.height,
@@ -831,7 +883,7 @@ export class ScrollCompositionController {
       unlock: this.unlock,
       previousActive: this.snapshot.activeNodeId,
       direction: this.direction,
-      ignoreHysteresis: this.skipHysteresis || this.pendingTarget !== null || programmatic,
+      ignoreHysteresis: this.skipHysteresis || this.pendingTarget !== null || programmatic || atAnchor,
     });
     if (this.pendingTarget && next.activeNodeId === this.pendingTarget) {
       const targetY = restoreScrollY(this.layout(), this.pendingTarget, 0);

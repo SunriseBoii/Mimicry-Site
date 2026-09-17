@@ -15,6 +15,9 @@ import {
 import { topologyNeighbors, type ScreenNodeId } from "../../photonic-skin-ps04-m5/topology";
 import { decodedStateBytes, programCpuBytes } from "../../photonic-skin-ps04-m5/texture-pack";
 import { OWNER_SELECTED_PROFILE_ID } from "../../photonic-skin-ps04-m5/framing";
+import { competenceOrder } from "../../../_brand/color-system";
+import { canonicalizeCompetencySet } from "./builder-ids";
+import { resolveBuilderState } from "./builder-resolver";
 import { loadBuilderState } from "./delta-runtime";
 
 type PromotionNamespaceId = "candidate" | "frozen";
@@ -96,6 +99,30 @@ export function reachableFrozenPairs(current: ScreenNodeId, direction: 1 | -1 = 
   return pairs;
 }
 
+/** The seven exact endpoints reachable by one competency toggle on 03.2. */
+export function builderToggleNeighborPairs(draft: readonly string[]): Array<readonly [string, string]> {
+  const selected = canonicalizeCompetencySet(draft);
+  const source = resolveBuilderState({
+    screen: "03.2",
+    draftCompetencies: selected,
+    confirmedCompetencies: null,
+  });
+  // The release's Event and Video paths are the most demanding first-choice
+  // checks; prepare them first, then follow the visible control order.
+  const order = ["event", "video", ...competenceOrder.filter((id) => id !== "event" && id !== "video")] as const;
+  return order.map((id) => {
+    const next = selected.includes(id)
+      ? selected.filter((item) => item !== id)
+      : [...selected, id];
+    const target = resolveBuilderState({
+      screen: "03.2",
+      draftCompetencies: next,
+      confirmedCompetencies: null,
+    });
+    return [source, target] as const;
+  });
+}
+
 type IdleHandle = number;
 
 function scheduleIdle(work: () => void, timeout: number): IdleHandle {
@@ -142,12 +169,15 @@ export class FramingSandboxProgramCache {
   private readonly programs = new Map<string, CacheEntry>();
   private readonly inflight = new Map<string, Promise<TransitionProgram>>();
   private readonly states = new Map<string, DecodedState>();
+  private readonly stateLastUsed = new Map<string, number>();
   private readonly pins = new Set<string>();
   private idleHandle: IdleHandle | null = null;
   private cancelled = false;
+  private prewarmGeneration = 0;
   private clock = 0;
   variant = `${OWNER_SELECTED_PROFILE_ID}|candidate`;
   namespace: PromotionNamespaceId = "candidate";
+  releaseGeometry = false;
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;
   budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
@@ -177,7 +207,10 @@ export class FramingSandboxProgramCache {
   }
 
   peekState(stateId: string) {
-    return this.states.get(`${this.variant}:${stateId}`) ?? this.states.get(stateId) ?? null;
+    const key = this.states.has(`${this.variant}:${stateId}`) ? `${this.variant}:${stateId}` : stateId;
+    const state = this.states.get(key) ?? null;
+    if (state) this.stateLastUsed.set(key, ++this.clock);
+    return state;
   }
 
   lookup(sourceId: string, targetId: string, reducedMotion: boolean, viewport = "desktop") {
@@ -217,21 +250,32 @@ export class FramingSandboxProgramCache {
   }
 
   rememberState(state: DecodedState) {
-    this.states.set(`${this.variant}:${state.entry.stateId}`, state);
+    const key = `${this.variant}:${state.entry.stateId}`;
+    this.states.set(key, state);
+    this.stateLastUsed.set(key, ++this.clock);
+    this.evictIfNeeded();
+    this.stats.bytes = this.byteLength();
   }
 
   async loadState(entry: StateEntry, signal?: AbortSignal) {
     const cacheKey = `${this.variant}:full:${entry.stateId}`;
     const hit = this.states.get(cacheKey);
-    if (hit) return hit;
-    const loaded = await loadBuilderState(entry, signal);
+    if (hit) {
+      this.stateLastUsed.set(cacheKey, ++this.clock);
+      return hit;
+    }
+    const loaded = await loadBuilderState(entry, signal, { releaseGeometry: this.releaseGeometry });
     if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
     this.states.set(cacheKey, loaded);
+    this.stateLastUsed.set(cacheKey, ++this.clock);
+    this.evictIfNeeded();
+    this.stats.bytes = this.byteLength();
     return loaded;
   }
 
   clearVariantCaches() {
     this.states.clear();
+    this.stateLastUsed.clear();
     this.programs.clear();
     this.inflight.clear();
     this.stats.cached = 0;
@@ -307,14 +351,24 @@ export class FramingSandboxProgramCache {
   }
 
   evictIfNeeded() {
-    while (this.byteLength() > this.budgetBytes && this.programs.size > 0) {
+    while (this.byteLength() > this.budgetBytes) {
       let victim: CacheEntry | null = null;
       for (const entry of this.programs.values()) {
         if (this.pins.has(entry.key)) continue;
         if (!victim || entry.lastUsed < victim.lastUsed) victim = entry;
       }
-      if (!victim) break;
-      this.programs.delete(victim.key);
+      let stateKey: string | null = null;
+      let stateUsed = Number.POSITIVE_INFINITY;
+      for (const [key, used] of this.stateLastUsed) {
+        if (used < stateUsed) { stateKey = key; stateUsed = used; }
+      }
+      if (!victim && stateKey === null) break;
+      if (stateKey !== null && (!victim || stateUsed < victim.lastUsed)) {
+        this.states.delete(stateKey);
+        this.stateLastUsed.delete(stateKey);
+      } else if (victim) {
+        this.programs.delete(victim.key);
+      }
       this.stats.evictions += 1;
       this.stats.cached = this.programs.size;
       this.stats.bytes = this.byteLength();
@@ -329,14 +383,59 @@ export class FramingSandboxProgramCache {
     hidden: () => boolean;
     direction?: 1 | -1;
   }) {
+    this.startPairPrewarm({
+      pairs: reachableFrozenPairs(args.current, args.direction ?? 1),
+      manifest: args.manifest,
+      motion: args.motion,
+      reducedMotion: args.reducedMotion,
+      hidden: args.hidden,
+      initialDelayMs: 160,
+    });
+  }
+
+  startBuilderNeighborPrewarm(args: {
+    draftCompetencies: readonly string[];
+    manifest: M3Manifest;
+    motion: M41Manifest | null;
+    reducedMotion: boolean;
+    hidden: () => boolean;
+    onProgress?: () => void;
+  }) {
+    this.startPairPrewarm({
+      pairs: builderToggleNeighborPairs(args.draftCompetencies),
+      manifest: args.manifest,
+      motion: args.motion,
+      reducedMotion: args.reducedMotion,
+      hidden: args.hidden,
+      onProgress: args.onProgress,
+      initialDelayMs: 40,
+    });
+  }
+
+  private startPairPrewarm(args: {
+    pairs: readonly (readonly [string, string])[];
+    manifest: M3Manifest;
+    motion: M41Manifest | null;
+    reducedMotion: boolean;
+    hidden: () => boolean;
+    onProgress?: () => void;
+    initialDelayMs: number;
+  }) {
+    this.cancel();
     this.cancelled = false;
     this.manifest = args.manifest;
     this.motion = args.motion;
-    const queue = reachableFrozenPairs(args.current, args.direction ?? 1);
+    const generation = this.prewarmGeneration;
+    const queue = [...args.pairs];
+    const current = () => !this.cancelled && generation === this.prewarmGeneration;
+    const schedule = (work: () => void, delayMs: number) => {
+      if (current()) this.idleHandle = scheduleIdle(work, delayMs);
+    };
     const step = () => {
-      if (this.cancelled) return;
+      this.idleHandle = null;
+      if (!current()) return;
       if (args.hidden() || typeof document !== "undefined" && document.visibilityState === "hidden") {
-        this.idleHandle = scheduleIdle(step, 400);
+        schedule(step, 400);
         return;
       }
       const next = queue.shift();
@@ -345,30 +444,51 @@ export class FramingSandboxProgramCache {
       const sourceEntry = args.manifest.states.find((entry) => entry.stateId === sourceId);
       const targetEntry = args.manifest.states.find((entry) => entry.stateId === targetId);
       if (!sourceEntry || !targetEntry) {
-        this.idleHandle = scheduleIdle(step, 16);
+        schedule(step, 16);
         return;
       }
       void (async () => {
         try {
           const source = await this.loadState(sourceEntry);
           const target = await this.loadState(targetEntry);
-          if (this.cancelled) return;
-          await this.getFrozen({
-            source,
-            target,
-            manifest: args.manifest,
-            motion: args.motion,
-            reducedMotion: args.reducedMotion,
-          });
-          this.stats.prewarms += 1;
+          if (!current()) return;
+          // Compilation is synchronous on a cache miss. Run at most one pair
+          // per idle callback, never in the state-load microtask.
+          const compile = () => {
+            this.idleHandle = null;
+            if (!current()) return;
+            if (args.hidden() || typeof document !== "undefined" && document.visibilityState === "hidden") {
+              schedule(compile, 400);
+              return;
+            }
+            void (async () => {
+              try {
+                await this.getFrozen({
+                  source,
+                  target,
+                  manifest: args.manifest,
+                  motion: args.motion,
+                  reducedMotion: args.reducedMotion,
+                });
+                if (current()) {
+                  this.stats.prewarms += 1;
+                  args.onProgress?.();
+                }
+              } catch {
+                // A cold click can still compile on demand.
+              } finally {
+                if (current() && queue.length > 0) schedule(step, 120);
+              }
+            })();
+          };
+          schedule(compile, 40);
         } catch {
           // Prewarm is best-effort; user path still compiles if needed.
-        } finally {
-          if (!this.cancelled && queue.length > 0) this.idleHandle = scheduleIdle(step, 120);
+          if (current() && queue.length > 0) schedule(step, 120);
         }
       })();
     };
-    this.idleHandle = scheduleIdle(step, 160);
+    schedule(step, args.initialDelayMs);
   }
 
   pause() {
@@ -378,6 +498,7 @@ export class FramingSandboxProgramCache {
 
   cancel() {
     this.cancelled = true;
+    this.prewarmGeneration += 1;
     this.pause();
   }
 

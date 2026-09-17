@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import { FROZEN_PHASE_WINDOWS, samplePhaseAdapter } from "../app/visual-lab/photonic-skin-ps04-m3/phase-adapter";
 import {
@@ -41,18 +41,8 @@ const m4Scene = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-
 const m4Coordinator = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/transition-coordinator.ts"), "utf8");
 const m4Prewarm = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/transition-prewarm.ts"), "utf8");
 
-function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
-}
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function contract(partial: Partial<ScreenActorContract> = {}): ScreenActorContract {
   return {
@@ -127,7 +117,7 @@ test("R5 frozen M1–M3 and previous M4 hashes remain exact", () => {
     "design/photonic-skin/ps-04-m3/scripts/measure-performance.mjs",
     "design/photonic-skin/ps-04-m3/scripts/run-gpu-parity-probes.mjs",
   ];
-  assert.equal(aggregate(m3SourceFiles), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
+  assert.equal(checkpointAggregate(m3SourceFiles, "dba82d1"), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
   assert.equal(JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m4-r4/reports/checkpoint-hashes.json"), "utf8")).source, "37e99fe9e6b9a10a6bc735351948fd678facdb50bee6c0ae980dd65bee752069");
   assert.equal(SITE_FIT_PROFILES.single, 1.36);
 });

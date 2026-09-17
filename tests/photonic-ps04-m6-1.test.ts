@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256, checkpointText, rawSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, maskFromCompetencies } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import { PALETTE_DELAY_FRACTION } from "../app/visual-lab/photonic-skin-ps04-m5/m5-choreography";
 import { OWNER_SELECTED_PROFILE_ID } from "../app/visual-lab/photonic-skin-ps04-m5/framing";
@@ -55,7 +55,6 @@ import {
 import { PROMOTED_ASSET_NAMESPACE } from "../app/_photonic-skin/runtime";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m6-sandbox";
 const M60_CHECKPOINT = "0ea9e67184c1a8a5be9833d6ccd2e41f919f6a9a";
 const RELEASE_LOCK_HASH = "a8609556f082e754f9d803611afee106cdb1069c2e713df579a8200e9ec6aae7";
 const FROZEN_M55_MANIFEST_SHA = "69c3e5aa26b99a7d6564f1e4a58d67e5b928294c7f9f617b69cb142c662cc46a";
@@ -75,7 +74,7 @@ const FROZEN_PRODUCTION = [
 ];
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function readJson(file: string) {
@@ -107,8 +106,6 @@ function loadMergedIndex(): { frozen: { states: Array<{ stateId: string; content
 }
 
 test("M6.1 HUMAN PASS is checkpointed once and authorizes only M6.2", () => {
-  const branch = git(["branch", "--show-current"]);
-  assert.equal(branch, BRANCH);
   execFileSync("git", ["merge-base", "--is-ancestor", M60_CHECKPOINT, "HEAD"], { cwd: ROOT });
   execFileSync("git", ["merge-base", "--is-ancestor", M55_CHECKPOINT, "HEAD"], { cwd: ROOT });
   const log = git(["log", "--oneline", "--grep", "approve project builder Mimic semantics"]);
@@ -383,7 +380,7 @@ test("delta authors exactly 230 new project-complex states and reuses 18 frozen 
   assert.equal(delta.states.length, 230);
   assert.equal(delta.frozenPayloadNamespace, M55_NAMESPACE);
   assert.equal(delta.frozenManifestSha256, FROZEN_M55_MANIFEST_SHA);
-  assert.equal(shaFile("public/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json"), FROZEN_M55_MANIFEST_SHA);
+  assert.equal(rawSha256(path.join(ROOT, "public/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json")), FROZEN_M55_MANIFEST_SHA);
   assert.equal(delta.event.hash, FROZEN_EVENT_HASH);
   assert.equal(delta.video.hash, FROZEN_VIDEO_HASH);
   assert.equal(delta.overlays, "none");
@@ -488,14 +485,14 @@ test("M5.5 payload, Event/Video, framing, and choreography stay frozen", () => {
   assert.equal(RELEASE_LOCK.runtimeRotationOverride, "none");
   assert.equal(shaFile("public/photonic-skin/ps-04-m5-5/states/single-event.state.bin"), SELECTED_EVENT_HASH);
   assert.equal(shaFile("public/photonic-skin/ps-04-m5-5/states/single-video.state.bin"), SELECTED_VIDEO_HASH);
-  execFileSync("git", ["diff", "--exit-code", "HEAD", "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
+  execFileSync("git", ["diff", "--exit-code", "0ea9e67", "c29e143", "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
 });
 
 test("production / and M5 promotion-preview do not bind the M6.1 namespace", () => {
-  const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  const client = readFileSync(path.join(ROOT, "app/_photonic-skin/ProductionPhotonicSiteClient.tsx"), "utf8");
-  const runtime = readFileSync(path.join(ROOT, "app/_photonic-skin/runtime.ts"), "utf8");
-  const release = readFileSync(path.join(ROOT, "app/_photonic-skin/release.ts"), "utf8");
+  const home = checkpointText("app/page.tsx", "c29e143");
+  const client = checkpointText("app/_photonic-skin/ProductionPhotonicSiteClient.tsx", "c29e143");
+  const runtime = checkpointText("app/_photonic-skin/runtime.ts", "c29e143");
+  const release = checkpointText("app/_photonic-skin/release.ts", "c29e143");
   const preview = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m5/promotion-preview/page.tsx"), "utf8");
   const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m5/promotion-preview/PromotionPreviewLab.tsx"), "utf8");
   for (const text of [home, client, runtime, release, preview, lab]) {

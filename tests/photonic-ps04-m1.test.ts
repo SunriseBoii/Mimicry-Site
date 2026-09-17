@@ -51,13 +51,13 @@ test("material foundation stays one RawShaderMaterial pipeline", () => {
   assert.doesNotMatch(scene, /displacement|emissive|bloom|transmission|iridescence/);
 });
 
-test("theme presets remain inside the approved M1 material ranges", () => {
-  assert.equal(MATERIAL_THEME_PRESETS.light.background, "#F5F2EB");
-  assert.equal(MATERIAL_THEME_PRESETS.light.substrate, "#E9E5DC");
+test("PS-04 release theme presets keep ceramic and dark silhouette ranges", () => {
+  assert.equal(MATERIAL_THEME_PRESETS.light.background, "#EBEBE8");
+  assert.equal(MATERIAL_THEME_PRESETS.light.substrate, "#E3E4E1");
   assert.ok(MATERIAL_THEME_PRESETS.light.roughness >= 0.52 && MATERIAL_THEME_PRESETS.light.roughness <= 0.62);
   assert.ok(MATERIAL_THEME_PRESETS.light.metalness >= 0 && MATERIAL_THEME_PRESETS.light.metalness <= 0.06);
   assert.equal(MATERIAL_THEME_PRESETS.dark.background, "#090B0D");
-  assert.equal(MATERIAL_THEME_PRESETS.dark.substrate, "#15181B");
+  assert.equal(MATERIAL_THEME_PRESETS.dark.substrate, "#1A2026");
   assert.ok(MATERIAL_THEME_PRESETS.dark.roughness >= 0.38 && MATERIAL_THEME_PRESETS.dark.roughness <= 0.48);
   assert.ok(MATERIAL_THEME_PRESETS.dark.metalness >= 0.35 && MATERIAL_THEME_PRESETS.dark.metalness <= 0.55);
 });

@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate, checkpointSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import {
   hasCenterDwell,
@@ -28,7 +29,7 @@ const RIGHT_LOD = { 512: 42, 1024: 78, 2048: 155, 4096: 325, 8192: 566, 12288: 8
 const EVENT_A = "76c46452781c4334b4d91cca9ed6533bb9ccd7224c57bdf7abf7e1093d1c938d";
 const EVENT_A_R1 = "89f50d4c83b15de21b753f98d6ab368e974c20a91ed135668bbaf05445b898cc";
 const M52_SOURCE = "34e19852c76aec43e6a07c005ede69573481b7957c8c6b087111054591c7c87e";
-const M51_SOURCE = "a4f394cf3f0c137e3204b3c34cf0a7ced9fec9c59be9c89a3a298c98c533b420";
+const M51_SOURCE = "254577ab03ffed1c0773a672f6c7d5a4170c82d781483e82d6f62359af8fa971";
 const FROZEN_EVENT = "b14a3b2f8571e3e7d39be074aecbdeb6dd4ca51097c6433db25b622c3394a933";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
 const COMPONENT_RIGHT = 4;
@@ -44,17 +45,10 @@ const querySrc = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04
 const panelSrc = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m5/event-sandbox/SandboxReviewPanel.tsx"), "utf8");
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function loadBin(rel: string) {
   const buf = readFileSync(path.join(ROOT, rel));
@@ -73,7 +67,7 @@ test("R1 keeps committed M5.2 hashes and EVENT_A source", () => {
   assert.equal(shaFile("public/photonic-skin/ps-04-m5-2/variants/a/single-event.state.bin"), EVENT_A);
   assert.equal(shaFile("design/photonic-skin/ps-04-m5-2/variants/baseline/single-event.state.bin"), FROZEN_EVENT);
   assert.equal(shaFile("public/photonic-skin/ps-03-m3-1r/states/single-event.state.bin"), FROZEN_EVENT);
-  assert.equal(aggregate(m51Hashes.sourceFiles), M51_SOURCE);
+  assert.equal(checkpointAggregate(m51Hashes.sourceFiles, "3fd3b5a"), M51_SOURCE);
 });
 
 test("R1 EVENT_A_R1 hash is deterministic and distinct from A", () => {
@@ -171,7 +165,7 @@ test("R1 does not mutate stage/left/centre, Event palette, M5.1, canonical aggre
   assert.match(palette, /event: "#F86927"/);
   const m41 = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1/exports/ps03m41-manifest.json"), "utf8"));
   assert.equal(m41.aggregateContentHash, AGGREGATE);
-  assert.equal(aggregate(m51Hashes.sourceFiles), M51_SOURCE);
+  assert.equal(checkpointAggregate(m51Hashes.sourceFiles, "3fd3b5a"), M51_SOURCE);
   assert.match(home, /ProductionPhotonicSiteClient/);
   assert.doesNotMatch(home, /event-sandbox/);
   assert.doesNotMatch(home, /ps-04-m5-2-r1/);

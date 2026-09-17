@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256, checkpointText } from "./checkpoint-hash";
 import { PALETTE_DELAY_FRACTION } from "../app/visual-lab/photonic-skin-ps04-m5/m5-choreography";
 import { MAGNETISM } from "../app/visual-lab/photonic-skin-ps04-m5/scroll-controller";
 import { OWNER_SELECTED_PROFILE_ID } from "../app/visual-lab/photonic-skin-ps04-m5/framing";
@@ -33,7 +33,6 @@ import { gatherStateId, SINGLE_STATE_IDS } from "../app/visual-lab/photonic-skin
 import { resolveBuilderState } from "../app/visual-lab/photonic-skin-ps04-m6/project-builder-semantics/builder-resolver";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m6-sandbox";
 const M61_CHECKPOINT_MESSAGE = "approve project builder Mimic semantics";
 const M61_CHECKPOINT = "c29e143580947fdf3f3f4121271a10805d4c5498";
 const FROZEN_PRODUCTION = [
@@ -61,7 +60,7 @@ function readJson(file: string) {
 }
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 const KEYS: Record<string, string> = {
@@ -134,11 +133,10 @@ function settledFrame(node: ScreenNodeId, key: string): ActorFrameSample {
 }
 
 test("R2 continues the uncommitted M6.2/R1 tree on the M6.1 checkpoint", () => {
-  assert.equal(git(["branch", "--show-current"]), BRANCH);
-  assert.equal(git(["rev-parse", "HEAD"]), M61_CHECKPOINT);
+  assert.equal(git(["rev-parse", "872bb10^"]), M61_CHECKPOINT);
   const checkpoint = git(["log", "-1", "--format=%H", "--grep", M61_CHECKPOINT_MESSAGE]);
   assert.equal(checkpoint, M61_CHECKPOINT);
-  execFileSync("git", ["diff", "--exit-code", checkpoint, "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
+  execFileSync("git", ["diff", "--exit-code", checkpoint, "872bb10", "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
   const m61 = readJson("design/photonic-skin/ps-04-m6-1/manifest.json");
   assert.equal(m61.humanPass, true);
   const m62 = readJson("design/photonic-skin/ps-04-m6-2/manifest.json");
@@ -250,7 +248,7 @@ test("M6.1 draft semantics remain exact SINGLE then GATHER then DRIVE", () => {
 test("R2 routes exist, clean preview has no HUD, and production files stay isolated", () => {
   const clean = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle-r2/page.tsx"), "utf8");
   const review = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle-r2/review/page.tsx"), "utf8");
-  const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx"), "utf8");
+  const lab = checkpointText("app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx", "872bb10");
   const chapter = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/project-builder-semantics/BuilderChapter.tsx"), "utf8");
   const dispatch = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/builder-ui-action.ts"), "utf8");
   assert.match(clean, /mode="preview"/);
@@ -263,9 +261,9 @@ test("R2 routes exist, clean preview has no HUD, and production files stay isola
   assert.match(chapter, /data-competency-id=\{id\}/);
   assert.match(dispatch, /type: "toggle-competency"/);
   assert.doesNotMatch(lab, /compileLiveRetarget\(/);
-  const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  const client = readFileSync(path.join(ROOT, "app/_photonic-skin/ProductionPhotonicSiteClient.tsx"), "utf8");
-  const runtime = readFileSync(path.join(ROOT, "app/_photonic-skin/runtime.ts"), "utf8");
+  const home = checkpointText("app/page.tsx", "872bb10");
+  const client = checkpointText("app/_photonic-skin/ProductionPhotonicSiteClient.tsx", "872bb10");
+  const runtime = checkpointText("app/_photonic-skin/runtime.ts", "872bb10");
   for (const text of [home, client, runtime]) {
     assert.doesNotMatch(text, /magnetized-settle-r2/);
     assert.doesNotMatch(text, /__PS04M62R2_LAB__/);

@@ -7,7 +7,7 @@
  */
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { CameraPreset, DebugMode, DecodedState, LabFrame, M3Manifest } from "../photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../photonic-skin-m4-1/m41-evaluator";
@@ -60,6 +60,7 @@ import {
   type R6Instrumentation,
 } from "./r6-instrumentation";
 import type { GpuTextureBank, GpuTexturePool } from "./gpu-texture-pool";
+import styles from "./ps04m5.module.css";
 import {
   STATE_TEXTURE_SIZE,
   programTextures,
@@ -258,6 +259,7 @@ export interface SceneProps {
   onEnvironment?: (value: SceneEnvironment) => void;
   onRenderer?: (renderer: THREE.WebGLRenderer) => void;
   onContextState?: (state: "ready" | "lost" | "restored") => void;
+  onFirstActorFrame?: () => void;
   qaControls?: boolean;
 }
 
@@ -1708,6 +1710,21 @@ function M41Content(props: SceneProps) {
   const programBindSlot = props.programBindRef;
   const onGeometryAck = props.onGeometryAck;
 
+  useEffect(() => {
+    const resetFramebufferReadiness = () => {
+      actorFramebufferReadyRef.current = false;
+      window.__PS04M5_ACTOR_RESOURCE_READY__ = false;
+      window.__PS04M5_ACTOR_FRAMEBUFFER_READY__ = false;
+    };
+    const canvas = gl.domElement;
+    canvas.addEventListener("webglcontextlost", resetFramebufferReadiness);
+    canvas.addEventListener("webglcontextrestored", resetFramebufferReadiness);
+    return () => {
+      canvas.removeEventListener("webglcontextlost", resetFramebufferReadiness);
+      canvas.removeEventListener("webglcontextrestored", resetFramebufferReadiness);
+    };
+  }, [gl]);
+
   useFrame((_, rawDelta) => {
     const useFrameStarted = performance.now();
     if (hitchProbe.current && props.instrumentation) {
@@ -1716,6 +1733,7 @@ function M41Content(props: SceneProps) {
     }
     const delta = Math.min(rawDelta, 0.05);
     const context = gl.getContext();
+    if (context.isContextLost()) return;
     if (props.gpuTimer && context instanceof WebGL2RenderingContext && !props.gpuTimer.available) {
       props.gpuTimer.attach(context);
     }
@@ -2225,6 +2243,10 @@ function M41Content(props: SceneProps) {
       actorFramebufferReadyRef.current = true;
       window.__PS04M5_ACTOR_FRAMEBUFFER_READY__ = true;
     }
+    if (actorDraw && meshRef.current?.visible && actorFramebufferReadyRef.current) {
+      window.__PS04M5_ACTOR_RESOURCE_READY__ = true;
+      props.onFirstActorFrame?.();
+    }
   };
 
   useLayoutEffect(() => {
@@ -2346,6 +2368,25 @@ function M41Content(props: SceneProps) {
 export function PS04M5SceneView(props: SceneProps) {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const posterRef = useRef<HTMLDivElement | null>(null);
+  const firstActorFramePendingRef = useRef(false);
+  const contextEpochRef = useRef(0);
+  const [firstActorFrameVisible, setFirstActorFrameVisible] = useState(false);
+  const notifyFirstActorFrame = props.onFirstActorFrame;
+  const onFirstActorFrame = useCallback(() => {
+    if (firstActorFramePendingRef.current) return;
+    firstActorFramePendingRef.current = true;
+    const contextEpoch = contextEpochRef.current;
+    window.requestAnimationFrame(() => {
+      if (contextEpoch !== contextEpochRef.current || rendererRef.current?.getContext().isContextLost()) {
+        firstActorFramePendingRef.current = false;
+        return;
+      }
+      if (posterRef.current) posterRef.current.style.visibility = "hidden";
+      setFirstActorFrameVisible(true);
+      notifyFirstActorFrame?.();
+    });
+  }, [notifyFirstActorFrame]);
   const [canvasSize, setCanvasSize] = useState({ width: 1, height: 1 });
   useEffect(() => {
     const node = containerRef.current;
@@ -2437,13 +2478,24 @@ export function PS04M5SceneView(props: SceneProps) {
           }}
         />
       ) : null}
+      {props.qaControls === false ? (
+        <div
+          ref={posterRef}
+          className={styles.neutralPoster}
+          data-qa="ps04-scene-poster"
+          aria-label="Загрузка визуальной сцены"
+          role="status"
+          style={{ visibility: firstActorFrameVisible ? "hidden" : "visible" }}
+        >
+          <span /><span /><span />
+        </div>
+      ) : null}
       <Canvas
-      key={`${props.profile}:${props.dpr}`}
       style={{ width: canvasSize.width, height: canvasSize.height, pointerEvents: "none" }}
       camera={{ fov: props.presentationContract.fovDegrees, near: 0.01, far: 100, manual: true }}
       dpr={props.dpr}
       frameloop={props.sessionShouldAnimate || props.geometryPlayback ? "always" : "demand"}
-      gl={{ antialias: true, alpha: true, premultipliedAlpha: true, powerPreference: "high-performance", preserveDrawingBuffer: true }}
+      gl={{ antialias: true, alpha: true, premultipliedAlpha: true, powerPreference: "high-performance", preserveDrawingBuffer: props.qaControls !== false }}
       onCreated={({ gl }) => {
         rendererRef.current = gl;
         gl.outputColorSpace = THREE.SRGBColorSpace;
@@ -2478,12 +2530,24 @@ export function PS04M5SceneView(props: SceneProps) {
         canvas.addEventListener("webglcontextlost", (event) => {
           if (!canvas.isConnected) return;
           event.preventDefault();
+          contextEpochRef.current += 1;
+          firstActorFramePendingRef.current = false;
+          if (posterRef.current) posterRef.current.style.visibility = "visible";
+          setFirstActorFrameVisible(false);
+          window.__PS04M5_ACTOR_RESOURCE_READY__ = false;
+          window.__PS04M5_ACTOR_FRAMEBUFFER_READY__ = false;
           const button = document.getElementById(contextRestoreButtonId);
           if (button instanceof HTMLButtonElement) button.dataset.status = "lost";
           props.onContextState?.("lost");
         });
         canvas.addEventListener("webglcontextrestored", () => {
           if (!canvas.isConnected) return;
+          contextEpochRef.current += 1;
+          firstActorFramePendingRef.current = false;
+          if (posterRef.current) posterRef.current.style.visibility = "visible";
+          setFirstActorFrameVisible(false);
+          window.__PS04M5_ACTOR_RESOURCE_READY__ = false;
+          window.__PS04M5_ACTOR_FRAMEBUFFER_READY__ = false;
           const button = document.getElementById(contextRestoreButtonId);
           if (button instanceof HTMLButtonElement) button.dataset.status = "restored";
           props.onContextState?.("restored");
@@ -2493,6 +2557,7 @@ export function PS04M5SceneView(props: SceneProps) {
       <DemandRenderInvalidator signature={`${canvasSize.width}:${canvasSize.height}:${props.source.entry.contentHash}:${props.target.entry.contentHash}:${props.program.programId}:${props.material.theme}:${props.actorMask ? 1 : 0}`} />
       <M41Content
         {...props}
+        onFirstActorFrame={onFirstActorFrame}
       />
       </Canvas>
     </div>

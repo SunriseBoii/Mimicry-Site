@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate } from "./checkpoint-hash";
 import type { WebGLRenderer } from "three";
 import type { DecodedState, StateEntry } from "../app/visual-lab/photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../app/visual-lab/photonic-skin-m4-1/m41-evaluator";
@@ -20,18 +20,8 @@ const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/P
 const scene = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/PS04M4Scene.tsx"), "utf8");
 const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
 
-function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
-}
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function stubEntry(id: string): StateEntry {
   return {
@@ -334,5 +324,5 @@ test("frozen hashes remain the designated R5/R6 baselines", () => {
     "design/photonic-skin/ps-04-m3/scripts/measure-performance.mjs",
     "design/photonic-skin/ps-04-m3/scripts/run-gpu-parity-probes.mjs",
   ];
-  assert.equal(aggregate(m3), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
+  assert.equal(checkpointAggregate(m3, "dba82d1"), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
 });

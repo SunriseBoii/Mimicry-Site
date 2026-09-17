@@ -229,9 +229,7 @@ export function FooterScreen() {
     <footer id="screen-08" className={styles.screen} data-place="none" data-node="08" aria-labelledby="heading-08">
       <Copy id="heading-08" kicker="Футер" heading="Mimicry group" place="none">
         <div className={styles.footerGrid}>
-          <p className={styles.lede}>Футер использует доступную ширину. Mimic здесь отсутствует по указанию владельца, хотя SVG его показывал.</p>
-          <p className={styles.lede}>Прототип PS-04.M5.1. Не production homepage.</p>
-          <p className={styles.lede}>© Mimicry group · visual lab</p>
+          <p className={styles.lede}>© Mimicry group</p>
         </div>
       </Copy>
     </footer>

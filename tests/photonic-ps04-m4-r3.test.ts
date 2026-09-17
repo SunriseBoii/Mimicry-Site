@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import { PhotonicMotionSession } from "../app/visual-lab/photonic-skin-ps04-m3/session";
 import { FROZEN_PHASE_WINDOWS, samplePhaseAdapter } from "../app/visual-lab/photonic-skin-ps04-m3/phase-adapter";
@@ -34,18 +34,8 @@ const ROOT = process.cwd();
 const m4Lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/PS04M4Lab.tsx"), "utf8");
 const m4Scene = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m4/PS04M4Scene.tsx"), "utf8");
 
-function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
-}
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function contract(partial: Partial<ScreenActorContract> = {}): ScreenActorContract {
   return {
@@ -110,7 +100,7 @@ test("R3 frozen hashes remain exact and M3 sources are untouched", () => {
     "design/photonic-skin/ps-04-m3/scripts/measure-performance.mjs",
     "design/photonic-skin/ps-04-m3/scripts/run-gpu-parity-probes.mjs",
   ];
-  assert.equal(aggregate(m3SourceFiles), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
+  assert.equal(checkpointAggregate(m3SourceFiles, "dba82d1"), "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");
   assert.equal(JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m4-r2/reports/checkpoint-hashes.json"), "utf8")).source, "726bc3bbf3f6c8d754b82204d4d02a20cd519fb836e1c5521c0ccb5d224e4333");
   assert.equal(SITE_FIT_PROFILES.master, 1);
   assert.equal(SITE_FIT_PROFILES.brandWide, 1.16);

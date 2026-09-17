@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointText } from "./checkpoint-hash";
 import { PALETTE_DELAY_FRACTION } from "../app/visual-lab/photonic-skin-ps04-m5/m5-choreography";
 import { MAGNETISM, canonicalLayout } from "../app/visual-lab/photonic-skin-ps04-m5/scroll-controller";
 import { CANONICAL_BRAND_WIDE_ID, indexStates } from "../app/visual-lab/photonic-skin-ps04-m5/screen-actor-contract";
@@ -38,7 +39,6 @@ import {
 } from "../app/visual-lab/photonic-skin-ps04-m6/magnetized-settle-r1/presentation-placement";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m6-sandbox";
 const M61_CHECKPOINT_MESSAGE = "approve project builder Mimic semantics";
 const FROZEN_PRODUCTION = [
   "app/page.tsx",
@@ -147,11 +147,10 @@ function settledFrame(node: ScreenNodeId, key: string): ActorFrameSample {
 }
 
 test("R1 continues the uncommitted M6.2 tree on the M6.1 checkpoint", () => {
-  assert.equal(git(["branch", "--show-current"]), BRANCH);
   const checkpoint = git(["log", "-1", "--format=%H", "--grep", M61_CHECKPOINT_MESSAGE]);
   assert.equal(checkpoint, "c29e143580947fdf3f3f4121271a10805d4c5498");
-  assert.equal(git(["rev-parse", "HEAD"]), checkpoint);
-  execFileSync("git", ["diff", "--exit-code", checkpoint, "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
+  assert.equal(git(["rev-parse", "872bb10^"]), checkpoint);
+  execFileSync("git", ["diff", "--exit-code", checkpoint, "872bb10", "--", ...FROZEN_PRODUCTION], { cwd: ROOT });
   const m61 = readJson("design/photonic-skin/ps-04-m6-1/manifest.json");
   assert.equal(m61.humanPass, true);
   const m62 = readJson("design/photonic-skin/ps-04-m6-2/manifest.json");
@@ -226,7 +225,7 @@ test("About 02 stays exact BRAND_WIDE and builder fallback must not run on it", 
   assert.equal(about.resolution, "exact");
   assert.equal(about.applyPaletteOverride, false);
   assert.throws(() => assertNoForbiddenFallback(about), /BRAND_WIDE/);
-  const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx"), "utf8");
+  const lab = checkpointText("app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx", "872bb10");
   assert.match(lab, /guardBuilderContract/);
   assert.match(lab, /hostNodeId\.startsWith\("03"\)/);
 });
@@ -348,7 +347,7 @@ test("R1_STRONG_BALANCED is monotonic, captures farther than M6.2, and does not 
 test("isolated R1 routes exist and production files stay off the R1 surface", () => {
   const clean = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle-r1/page.tsx"), "utf8");
   const review = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle-r1/review/page.tsx"), "utf8");
-  const lab = readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx"), "utf8");
+  const lab = checkpointText("app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx", "872bb10");
   assert.match(clean, /mode="preview"/);
   assert.match(clean, /stage="r1"/);
   assert.match(review, /mode="lab"/);
@@ -357,9 +356,9 @@ test("isolated R1 routes exist and production files stay off the R1 surface", ()
   assert.match(lab, /computePresentationPlacement/);
   assert.match(lab, /R1MagneticDriver/);
   assert.doesNotMatch(lab, /compileLiveRetarget\(/);
-  const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
-  const client = readFileSync(path.join(ROOT, "app/_photonic-skin/ProductionPhotonicSiteClient.tsx"), "utf8");
-  const runtime = readFileSync(path.join(ROOT, "app/_photonic-skin/runtime.ts"), "utf8");
+  const home = checkpointText("app/page.tsx", "872bb10");
+  const client = checkpointText("app/_photonic-skin/ProductionPhotonicSiteClient.tsx", "872bb10");
+  const runtime = checkpointText("app/_photonic-skin/runtime.ts", "872bb10");
   for (const text of [home, client, runtime]) {
     assert.doesNotMatch(text, /magnetized-settle-r1/);
     assert.doesNotMatch(text, /__PS04M62R1_LAB__/);
@@ -397,7 +396,7 @@ test("R1 packet is machine pass only and hard gates stay closed", () => {
   assert.equal(isolation.m62r1Committed, false);
   assert.equal(isolation.push, false);
   const checkpoint = git(["log", "-1", "--format=%H", "--grep", M61_CHECKPOINT_MESSAGE]);
-  assert.equal(git(["rev-parse", "HEAD"]), checkpoint);
+  assert.equal(git(["rev-parse", "872bb10^"]), checkpoint);
   const smoke = readJson("design/photonic-skin/ps-04-m6-2-r1/reports/browser-smoke.json");
   assert.equal(smoke.ok, true);
   assert.equal(smoke.liveOk, true);

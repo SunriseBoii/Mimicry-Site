@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate } from "./checkpoint-hash";
 import * as THREE from "three";
 import { competenceOrder } from "../app/_brand/color-system";
 import { decodeState, type M3Manifest } from "../app/visual-lab/photonic-skin-m4-1/m41-data";
@@ -211,8 +212,7 @@ test("frozen hashes, inventory, M1 source snapshot, and old routes remain exact"
   const patchInventory = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-03-m4-1r/reports/presentation-patch-inventory.json"), "utf8")) as { hash: string };
   assert.equal(patchInventory.hash, "228ddce450536d94d625d73f99ceff133371ccfe515a6f21cc3377fa3fda3ca0");
   const m1Manifest = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m1/manifest.json"), "utf8")) as { sourceFiles: string[]; checkpointAggregates: { source: string } };
-  const records = m1Manifest.sourceFiles.slice().sort((left, right) => left.localeCompare(right)).map((file) => `${file}\t${createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex")}\n`).join("");
-  assert.equal(createHash("sha256").update(records).digest("hex"), m1Manifest.checkpointAggregates.source);
+  assert.equal(checkpointAggregate(m1Manifest.sourceFiles, "ded950b"), m1Manifest.checkpointAggregates.source);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-m4-1r/page.tsx"), "utf8").length > 0);
   assert.ok(readFileSync(path.join(ROOT, "app/visual-lab/photonic-skin-ps04-m1/page.tsx"), "utf8").length > 0);
 });

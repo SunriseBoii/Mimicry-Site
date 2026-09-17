@@ -70,6 +70,7 @@ import styles from "../ps04m5.module.css";
 import { GpuTexturePool } from "../gpu-texture-pool";
 import { ActorResourcePipeline } from "../resource-lifecycle";
 import { DisjointGpuTimer, R6Instrumentation, r6GpuTimerEnabled, r6StagingEnabled } from "../r6-instrumentation";
+import { adaptiveDprCap, initialAdaptiveDpr, nextAdaptiveDpr } from "../adaptive-dpr";
 import { FramingSandboxProgramCache, frozenProgramKey, reachableFrozenPairs, defaultGeometryForNode } from "./sandbox-prewarm";
 import {
   SCREEN_NODE,
@@ -168,11 +169,55 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" | "produ
     mode?: FramingPlayMode;
     namespace?: PromotionNamespaceId;
   }, history?: "push" | "replace" | "none") => void>(() => undefined);
-  const [dpr, setDpr] = useState(() => parseLabDpr(query));
+  const adaptiveDprRef = useRef(initialAdaptiveDpr(
+    typeof window === "undefined" ? 1440 : window.innerWidth,
+    typeof window === "undefined" ? 900 : window.innerHeight,
+    typeof window === "undefined" ? 1 : window.devicePixelRatio,
+  ));
+  const manualDprRef = useRef(false);
+  const [dpr, setDpr] = useState(() => production
+    ? adaptiveDprCap(
+      typeof window === "undefined" ? 1440 : window.innerWidth,
+      typeof window === "undefined" ? 900 : window.innerHeight,
+      typeof window === "undefined" ? 1 : window.devicePixelRatio,
+    )
+    : parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(!production && query.get("reduced") === "1");
   const [hud] = useState(mode === "lab" && query.get("hud") !== "0");
   const [namespace, setNamespace] = useState<PromotionNamespaceId>(production ? "candidate" : sandbox.namespace);
   const [stats, setStats] = useState<SceneStats>(EMPTY_STATS);
+  const handleStats = useCallback((nextStats: SceneStats) => {
+    setStats(nextStats);
+    if (!production || manualDprRef.current || document.visibilityState === "hidden") return;
+    const next = nextAdaptiveDpr(
+      adaptiveDprRef.current,
+      nextStats.p95Ms,
+      performance.now(),
+      window.innerWidth,
+      window.innerHeight,
+      window.devicePixelRatio,
+    );
+    adaptiveDprRef.current = next;
+    setDpr((current) => current === next.dpr ? current : next.dpr);
+  }, [production]);
+  useEffect(() => {
+    if (!production) return;
+    const onResize = () => {
+      if (manualDprRef.current) return;
+      const next = nextAdaptiveDpr(
+        adaptiveDprRef.current,
+        0,
+        performance.now(),
+        window.innerWidth,
+        window.innerHeight,
+        window.devicePixelRatio,
+      );
+      adaptiveDprRef.current = next;
+      setDpr((current) => current === next.dpr ? current : next.dpr);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [production]);
   const [environment, setEnvironment] = useState<SceneEnvironment | null>(null);
   const [contextState, setContextState] = useState<"ready" | "lost" | "restored">("ready");
   const [loading, setLoading] = useState(true);
@@ -1367,7 +1412,10 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" | "produ
       evaluateMagnetism: () => controller.evaluateMagnetism(),
       setTheme: (value: MaterialTheme) => setTheme(value),
       setReduced: (value: boolean) => setManualReduced(value),
-      setDpr: (value: number) => setDpr(value),
+      setDpr: (value: number) => {
+        manualDprRef.current = true;
+        setDpr(Math.max(0.75, Math.min(2, value)));
+      },
       selectTask: (id: TaskId) => setFlow((current) => selectTask(current, id)),
       confirmCompetencies: () => setFlow((current) => {
         const result = confirmCompetencies(current);
@@ -1600,6 +1648,11 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" | "produ
         data-merch-zoom={merchZoom}
         data-video-zoom={videoZoom}
       >
+        {!sceneReady && production ? (
+          <div className={styles.neutralPoster} aria-label="Загрузка визуальной сцены" role="status">
+            <span /><span /><span />
+          </div>
+        ) : null}
         {sceneReady && source && target && program && manifest ? (
           <PS04M5Scene
             source={source}
@@ -1634,7 +1687,7 @@ export function PromotionPreviewLab({ mode }: { mode: "lab" | "preview" | "produ
             actorMask={actorMask || diagnostic === "mask"}
             diagnosticId="motion"
             qaControls={!production}
-            onStats={setStats}
+            onStats={handleStats}
             onEnvironment={setEnvironment}
             onRenderer={(renderer) => pipelineRef.current.attachRenderer(renderer)}
             onContextState={(state) => {

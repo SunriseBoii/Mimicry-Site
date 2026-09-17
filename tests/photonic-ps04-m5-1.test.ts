@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointAggregate } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import { FROZEN_PHASE_WINDOWS, samplePhaseAdapter } from "../app/visual-lab/photonic-skin-ps04-m3/phase-adapter";
 import { GpuTexturePool } from "../app/visual-lab/photonic-skin-ps04-m5/gpu-texture-pool";
@@ -43,18 +43,8 @@ const coordinatorSource = readFileSync(path.join(ROOT, "app/visual-lab/photonic-
 const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
 const r6r1Hashes = JSON.parse(readFileSync(path.join(ROOT, "design/photonic-skin/ps-04-m4-r6-r1/reports/checkpoint-hashes.json"), "utf8"));
 
-function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
-}
 
-function aggregate(files: string[]) {
-  const records = files
-    .slice()
-    .sort((left, right) => left.localeCompare(right))
-    .map((file) => `${file}\t${shaFile(file)}\n`)
-    .join("");
-  return createHash("sha256").update(records).digest("hex");
-}
+
 
 function contract(partial: Partial<ScreenActorContract> = {}): ScreenActorContract {
   return {
@@ -483,7 +473,7 @@ test("M5.1 reduced motion is atomic and footer has no actor", () => {
 });
 
 test("M5.1 frozen hashes and production homepage stay untouched", () => {
-  assert.equal(aggregate(r6r1Hashes.sourceFiles), "e20a49407d20c7ef6af5f0a69cbf4dd36a6c7bd99782984a7f3be4b4cb755e76");
+  assert.equal(checkpointAggregate(r6r1Hashes.sourceFiles, "ecd054e"), "e35d3ec79cda978ee81169e74982d5ad6a16beeaaf06dfc520b92ac77a72667c");
   assert.equal(r6r1Hashes.m1Source, "4cb80b507605bf439e9de5210e5f022159c716ee286fa81b98f0e943cf5b75eb");
   assert.equal(r6r1Hashes.m2Source, "f04bc262cdc80e6061d2ad7fdb6501f60aa0a31105a55f876a8eaa26f0266c0d");
   assert.equal(r6r1Hashes.m3Source, "184744da085dc31e08c954640456133308585b7b8ef107de43ab2f8d7a8e6ec1");

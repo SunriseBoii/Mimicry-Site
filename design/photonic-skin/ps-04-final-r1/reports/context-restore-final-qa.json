@@ -1,0 +1,163 @@
+{
+  "capturedAt": "2026-09-16T15:03:32.507Z",
+  "browserMode": "headless Chromium",
+  "baseUrl": "http://localhost:3000/visual-lab/photonic-skin-ps04-m6/final-r1",
+  "viewports": {
+    "desktop": {
+      "recovered": true,
+      "errors": [],
+      "events": [
+        {
+          "event": "lost",
+          "t": 2265.699999988079,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "lost-microtask",
+          "t": 2266,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "lost-next-frame",
+          "t": 2267.2999999821186,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "restored",
+          "t": 2350.5,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": false
+        },
+        {
+          "event": "restored-next-frame",
+          "t": 2352.199999988079,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": false
+        }
+      ],
+      "posters": [
+        {
+          "event": "poster-mutation",
+          "t": 2269.7999999821186,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "poster-mutation",
+          "t": 2952.9000000059605,
+          "framebufferReady": true,
+          "resourceReady": true,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": false
+        }
+      ],
+      "final": {
+        "contextState": "restored",
+        "framebufferReady": true,
+        "resourceReady": true,
+        "posterCount": 0,
+        "scenePosterVisible": false
+      }
+    },
+    "mobile": {
+      "recovered": true,
+      "errors": [],
+      "events": [
+        {
+          "event": "lost",
+          "t": 2156.9000000059605,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "lost-microtask",
+          "t": 2157.0999999940395,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "lost-next-frame",
+          "t": 2160,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "restored",
+          "t": 2242.199999988079,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": false
+        },
+        {
+          "event": "restored-next-frame",
+          "t": 2243.5,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": false
+        }
+      ],
+      "posters": [
+        {
+          "event": "poster-mutation",
+          "t": 2158.4000000059605,
+          "framebufferReady": false,
+          "resourceReady": false,
+          "posterCount": 1,
+          "scenePosterVisible": true,
+          "contextLost": true
+        },
+        {
+          "event": "poster-mutation",
+          "t": 2821.5,
+          "framebufferReady": true,
+          "resourceReady": true,
+          "posterCount": 0,
+          "scenePosterVisible": true,
+          "contextLost": false
+        }
+      ],
+      "final": {
+        "contextState": "restored",
+        "framebufferReady": true,
+        "resourceReady": true,
+        "posterCount": 0,
+        "scenePosterVisible": false
+      }
+    }
+  }
+}

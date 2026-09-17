@@ -127,7 +127,7 @@ export const COMPOSITION_GUIDE = Object.freeze({
   desktopWidthFraction: 0.36,
   desktopMin: 0.32,
   desktopMax: 0.38,
-  mobileWidthFraction: 0.68,
+  mobileWidthFraction: 0.52,
   mobileMin: 0.52,
   mobileMax: 0.72,
   graphReserve: 92,
@@ -174,7 +174,9 @@ export function placementCenter(
   const graph = graphReserve(width);
   const header = COMPOSITION_GUIDE.headerReserve;
   const rest = height - header;
-  const idleY = width < 720 ? header + rest * 0.58 : header + rest * 0.52;
+  // Keep the actor in the lower visual band on narrow screens, below the
+  // headline, actions, and competence cards instead of painting through them.
+  const idleY = width < 720 ? header + rest * 0.82 : header + rest * 0.52;
   const half = size / 2;
   const maxRightCenter = width - graph - 10 - half;
   const minLeftCenter = half + 12;

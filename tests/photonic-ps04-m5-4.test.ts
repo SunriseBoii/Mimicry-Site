@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import {
   framingProgressFromGeometryM5,
@@ -65,7 +65,6 @@ import { SITE_FIT_PROFILES } from "../app/visual-lab/photonic-skin-ps04-m5/site-
 import { PHOTONIC_FOV_DEGREES } from "../app/visual-lab/photonic-skin-m4-1r/photonic-presentation";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m5-sandbox";
 const M54_BASELINE = "af13e9df27be788f8295900d1d7a021bca699998";
 const FROZEN_VIDEO = "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
@@ -78,7 +77,7 @@ const FLOW = {
 };
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function contract(nodeId: (typeof SCREEN_NODE_IDS)[number]) {
@@ -104,8 +103,6 @@ function displayed(nodeId: (typeof SCREEN_NODE_IDS)[number], geometryId: string,
 }
 
 test("M5.3.R1 human selection is recorded and checkpointed once", () => {
-  const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
-  assert.equal(branch, BRANCH);
   const baseline = execFileSync("git", ["rev-parse", M54_BASELINE], { encoding: "utf8" }).trim();
   assert.equal(baseline, M54_BASELINE);
   const log = execFileSync("git", ["log", "--oneline", "--grep", "approve Video combo 40 and connected clapper hinge"], { encoding: "utf8" }).trim();

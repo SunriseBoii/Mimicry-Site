@@ -1,0 +1,567 @@
+{
+  "results": [
+    {
+      "id": "01",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 25,
+      "active": "01",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "02",
+      "target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+      "passed": true,
+      "ms": 136,
+      "active": "02",
+      "gpu": "brand-wide-gather-content-design-digital-event-games-merch-video"
+    },
+    {
+      "id": "03.1",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 301,
+      "active": "03.1",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "03.2",
+      "target": "complex-gather-content-event",
+      "passed": true,
+      "ms": 182,
+      "active": "03.2",
+      "gpu": "complex-gather-content-event"
+    },
+    {
+      "id": "03.3",
+      "target": "complex-drive-content-event",
+      "passed": true,
+      "ms": 193,
+      "active": "03.3",
+      "gpu": "complex-drive-content-event"
+    },
+    {
+      "id": "04",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 398,
+      "active": "04",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "05.1",
+      "target": "single-content",
+      "passed": true,
+      "ms": 170,
+      "active": "05.1",
+      "gpu": "single-content"
+    },
+    {
+      "id": "05.2",
+      "target": "single-design",
+      "passed": true,
+      "ms": 163,
+      "active": "05.2",
+      "gpu": "single-design"
+    },
+    {
+      "id": "05.3",
+      "target": "single-event",
+      "passed": true,
+      "ms": 207,
+      "active": "05.3",
+      "gpu": "single-event"
+    },
+    {
+      "id": "05.4",
+      "target": "single-games",
+      "passed": true,
+      "ms": 194,
+      "active": "05.4",
+      "gpu": "single-games"
+    },
+    {
+      "id": "05.5",
+      "target": "single-video",
+      "passed": true,
+      "ms": 309,
+      "active": "05.5",
+      "gpu": "single-video"
+    },
+    {
+      "id": "05.6",
+      "target": "single-digital",
+      "passed": true,
+      "ms": 208,
+      "active": "05.6",
+      "gpu": "single-digital"
+    },
+    {
+      "id": "05.7",
+      "target": "single-merch",
+      "passed": true,
+      "ms": 148,
+      "active": "05.7",
+      "gpu": "single-merch"
+    },
+    {
+      "id": "06.1",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 269,
+      "active": "06.1",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "06.2",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 17,
+      "active": "06.2",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "06.3",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 24,
+      "active": "06.3",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "07",
+      "target": "master-neutral",
+      "passed": true,
+      "ms": 20,
+      "active": "07",
+      "gpu": "master-neutral"
+    },
+    {
+      "id": "08",
+      "target": null,
+      "passed": true,
+      "ms": 15,
+      "active": "08",
+      "gpu": "master-neutral"
+    }
+  ],
+  "diagnostics": {
+    "04": {
+      "hash": "#screen-04",
+      "active": "04",
+      "contract": {
+        "nodeId": "04",
+        "hostNodeId": "04",
+        "family": "MASTER",
+        "requestedFamily": "MASTER",
+        "resolvedGeometryId": "master-neutral",
+        "paletteMask": 127,
+        "slot": "right",
+        "fitProfile": "master",
+        "resolution": "exact",
+        "applyPaletteOverride": false,
+        "reason": "04 MASTER sphere, all seven"
+      },
+      "session": {
+        "status": "settled",
+        "sourceStateId": "complex-drive-content-event",
+        "targetStateId": "master-neutral",
+        "geometryProgress": 1,
+        "revision": 7,
+        "requestRevision": 5,
+        "reducedMotion": true
+      },
+      "transaction": {
+        "revision": 5,
+        "sourceNodeId": "03.3",
+        "targetNodeId": "04",
+        "sourceGeometryId": "complex-drive-content-event",
+        "targetGeometryId": "master-neutral",
+        "sourcePaletteMask": 127,
+        "targetPaletteMask": 127,
+        "sourceSlot": "right",
+        "targetSlot": "right",
+        "sourceFit": 1.14,
+        "targetFit": 1,
+        "sourceFitProfile": "complex",
+        "targetFitProfile": "master",
+        "programId": "complex-drive-content-event-to-master-neutral-qa-desktop-5312a900a65e",
+        "startedAtSeconds": 0.9029000000119225,
+        "elapsedSeconds": 0,
+        "durationSeconds": 0,
+        "geometryProgress": 1,
+        "semanticPhase": "settle",
+        "paletteProgress": 1,
+        "siteProgress": 1,
+        "paletteOwnershipMode": 0,
+        "continuityEnabled": 0,
+        "kind": "geometry",
+        "status": "settled",
+        "programReady": true,
+        "visualLifecycle": "settled",
+        "resourceState": "gpu-ready",
+        "slotProgress": 1,
+        "positionProgress": 1,
+        "visualPublished": true,
+        "fitProgress": 1,
+        "sourceZoom": 1,
+        "targetZoom": 1,
+        "framingProgress": 1,
+        "sourcePaletteLutHash": "1d7d8cb6",
+        "targetPaletteLutHash": "1d7d8cb6",
+        "settledPaletteLutHash": "1d7d8cb6",
+        "shaderBaseLutHash": "1d7d8cb6",
+        "paletteCommitted": true
+      },
+      "settle": {
+        "scrollPhase": "Settled",
+        "observedNodeId": "04",
+        "snapCandidateNodeId": "04",
+        "magneticDestinationNodeId": "04",
+        "magnetizedSettledNodeId": "04",
+        "magneticSettleRevision": 4,
+        "distanceToAnchorPx": 2,
+        "scrollVelocityVhPerSecond": 0,
+        "gestureActive": false,
+        "inputQuietForMs": 1331.2999999821186,
+        "candidateStableForMs": 402.19999998211824,
+        "layoutRevision": 1,
+        "layoutRevisionStable": true,
+        "actorStatus": "settled",
+        "actorVisualStarted": false,
+        "actorCommittedNodeId": "04",
+        "actorEndpointKey": "master-neutral|127|right|master",
+        "queuedActorNodeId": null,
+        "queuedSettleRevision": null,
+        "actorRequestSource": {
+          "kind": "route-settle",
+          "nodeId": "04",
+          "magneticSettleRevision": 3
+        },
+        "interactionRevision": 0,
+        "lastAppliedInteractionRevision": 0,
+        "actorRequestCount": 5,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 3,
+        "compileLiveRetargetCount": 0,
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "lastSettleAtMs": 6720.3,
+        "lastRequestAtMs": 6506,
+        "lastHint": "scrollend"
+      },
+      "geometry": {
+        "revision": 5,
+        "navigationToken": 3,
+        "status": "settled",
+        "boundProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-5312a900a65e",
+        "boundSourceGeometryId": "complex-drive-content-event",
+        "boundTargetGeometryId": "master-neutral",
+        "settledGeometryId": "master-neutral",
+        "semanticTargetGeometryId": "master-neutral",
+        "shaderProgress": 1,
+        "programReady": true,
+        "bindFrameToken": 66,
+        "reverse": false,
+        "pendingProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-5312a900a65e"
+      },
+      "programBind": {
+        "revision": 5,
+        "programId": "complex-drive-content-event-to-master-neutral-qa-desktop-5312a900a65e",
+        "sourceId": "complex-drive-content-event",
+        "targetId": "master-neutral",
+        "bindCommitted": true,
+        "bindFrameToken": 66,
+        "gpuReady": null,
+        "bankId": null,
+        "bankGeneration": null
+      },
+      "resource": {
+        "state": "absent",
+        "visual": "settled",
+        "revision": null,
+        "pendingRevision": null,
+        "cacheBytes": 18896320,
+        "cacheBudget": 100663296,
+        "cacheEntries": 7,
+        "gpuTextures": 48,
+        "gpuBudget": 48,
+        "gpuReady": false,
+        "pinnedKeys": []
+      },
+      "renderAck": {
+        "drawnRevision": 5,
+        "drawnProgramId": "complex-drive-content-event-to-master-neutral-qa-desktop-5312a900a65e",
+        "drawnProgress": 1,
+        "drawnSourceId": "complex-drive-content-event",
+        "drawnTargetId": "master-neutral",
+        "frameToken": 72,
+        "atMs": 6901.9000000059605
+      },
+      "navigation": {
+        "mode": "idle",
+        "fastGesture": true,
+        "pendingTarget": null,
+        "rawObservedNodeId": "04",
+        "committedNodeId": "04",
+        "magneticCandidateId": null
+      },
+      "canvas": {
+        "identity": "false",
+        "qa": "m4-canvas",
+        "loadStatus": "ready",
+        "bufferHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+        "gpuSource": "complex-drive-content-event",
+        "gpuTarget": "master-neutral",
+        "gpuProgress": "1",
+        "frameP95Ms": "50",
+        "firstVisibleMs": "203.89999999403972",
+        "overlayQuaternion": "0,0,0,1",
+        "assetNamespace": "ps-04-m5-5",
+        "hoverPreview": "false",
+        "framingProfile": "OWNER_SELECTED_124_111_111",
+        "screen": "about",
+        "resolvedState": "master-neutral",
+        "builderPhase": "",
+        "aboutZoom": "124",
+        "merchZoom": "111",
+        "videoZoom": "111"
+      },
+      "error": ""
+    },
+    "06.1": {
+      "hash": "#screen-06.1",
+      "active": "06.1",
+      "contract": {
+        "nodeId": "06.1",
+        "hostNodeId": "06.1",
+        "family": "MASTER",
+        "requestedFamily": "MASTER",
+        "resolvedGeometryId": "master-neutral",
+        "paletteMask": 127,
+        "slot": "right",
+        "fitProfile": "master",
+        "resolution": "exact",
+        "applyPaletteOverride": false,
+        "reason": "06.1 MASTER sphere, all seven"
+      },
+      "session": {
+        "status": "settled",
+        "sourceStateId": "single-merch",
+        "targetStateId": "master-neutral",
+        "geometryProgress": 1,
+        "revision": 15,
+        "requestRevision": 13,
+        "reducedMotion": true
+      },
+      "transaction": {
+        "revision": 13,
+        "sourceNodeId": "05.7",
+        "targetNodeId": "06.1",
+        "sourceGeometryId": "single-merch",
+        "targetGeometryId": "master-neutral",
+        "sourcePaletteMask": 127,
+        "targetPaletteMask": 127,
+        "sourceSlot": "left",
+        "targetSlot": "right",
+        "sourceFit": 1.36,
+        "targetFit": 1,
+        "sourceFitProfile": "single",
+        "targetFitProfile": "master",
+        "programId": "single-merch-to-master-neutral-qa-desktop-833163f9ad64",
+        "startedAtSeconds": 1.9848000000119217,
+        "elapsedSeconds": 0,
+        "durationSeconds": 0,
+        "geometryProgress": 1,
+        "semanticPhase": "settle",
+        "paletteProgress": 1,
+        "siteProgress": 1,
+        "paletteOwnershipMode": 0,
+        "continuityEnabled": 0,
+        "kind": "geometry",
+        "status": "settled",
+        "programReady": true,
+        "visualLifecycle": "settled",
+        "resourceState": "gpu-ready",
+        "slotProgress": 1,
+        "positionProgress": 1,
+        "visualPublished": true,
+        "fitProgress": 1,
+        "sourceZoom": 1,
+        "targetZoom": 1,
+        "framingProgress": 1,
+        "sourcePaletteLutHash": "1d7d8cb6",
+        "targetPaletteLutHash": "1d7d8cb6",
+        "settledPaletteLutHash": "1d7d8cb6",
+        "shaderBaseLutHash": "1d7d8cb6",
+        "paletteCommitted": true
+      },
+      "settle": {
+        "scrollPhase": "Settled",
+        "observedNodeId": "06.1",
+        "snapCandidateNodeId": "06.1",
+        "magneticDestinationNodeId": "06.1",
+        "magnetizedSettledNodeId": "06.1",
+        "magneticSettleRevision": 12,
+        "distanceToAnchorPx": 0,
+        "scrollVelocityVhPerSecond": 0,
+        "gestureActive": false,
+        "inputQuietForMs": 3118.4000000059605,
+        "candidateStableForMs": 274.3000000059601,
+        "layoutRevision": 1,
+        "layoutRevisionStable": true,
+        "actorStatus": "settled",
+        "actorVisualStarted": false,
+        "actorCommittedNodeId": "06.1",
+        "actorEndpointKey": "master-neutral|127|right|master",
+        "queuedActorNodeId": null,
+        "queuedSettleRevision": null,
+        "actorRequestSource": {
+          "kind": "route-settle",
+          "nodeId": "06.1",
+          "magneticSettleRevision": 11
+        },
+        "interactionRevision": 0,
+        "lastAppliedInteractionRevision": 0,
+        "actorRequestCount": 13,
+        "cancelledBeforeVisualStartCount": 0,
+        "ignoredCandidateCount": 3,
+        "compileLiveRetargetCount": 0,
+        "requestsToCrossedNodes": 0,
+        "maxActorQueueDepth": 0,
+        "staleQueuedTransitionStarts": 0,
+        "runningMorphInterruptedByScroll": 0,
+        "lastSettleAtMs": 8574.8,
+        "lastRequestAtMs": 8420.59999999404,
+        "lastHint": "scrollend"
+      },
+      "geometry": {
+        "revision": 13,
+        "navigationToken": 11,
+        "status": "settled",
+        "boundProgramId": "single-merch-to-master-neutral-qa-desktop-833163f9ad64",
+        "boundSourceGeometryId": "single-merch",
+        "boundTargetGeometryId": "master-neutral",
+        "settledGeometryId": "master-neutral",
+        "semanticTargetGeometryId": "master-neutral",
+        "shaderProgress": 1,
+        "programReady": true,
+        "bindFrameToken": 139,
+        "reverse": false,
+        "pendingProgramId": "single-merch-to-master-neutral-qa-desktop-833163f9ad64"
+      },
+      "programBind": {
+        "revision": 13,
+        "programId": "single-merch-to-master-neutral-qa-desktop-833163f9ad64",
+        "sourceId": "single-merch",
+        "targetId": "master-neutral",
+        "bindCommitted": true,
+        "bindFrameToken": 139,
+        "gpuReady": null,
+        "bankId": null,
+        "bankGeneration": null
+      },
+      "resource": {
+        "state": "absent",
+        "visual": "settled",
+        "revision": null,
+        "pendingRevision": null,
+        "cacheBytes": 44415488,
+        "cacheBudget": 100663296,
+        "cacheEntries": 16,
+        "gpuTextures": 48,
+        "gpuBudget": 48,
+        "gpuReady": false,
+        "pinnedKeys": [
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-digital|single-merch|1|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-merch|single-digital|1|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|single-merch|master-neutral|1|desktop",
+          "OWNER_SELECTED_124_111_111|candidate|release-r1|master-neutral|single-merch|1|desktop"
+        ]
+      },
+      "renderAck": {
+        "drawnRevision": 13,
+        "drawnProgramId": "single-merch-to-master-neutral-qa-desktop-833163f9ad64",
+        "drawnProgress": 1,
+        "drawnSourceId": "single-merch",
+        "drawnTargetId": "master-neutral",
+        "frameToken": 143,
+        "atMs": 8689.299999982119
+      },
+      "navigation": {
+        "mode": "idle",
+        "fastGesture": true,
+        "pendingTarget": null,
+        "rawObservedNodeId": "06.1",
+        "committedNodeId": "06.1",
+        "magneticCandidateId": null
+      },
+      "canvas": {
+        "identity": "false",
+        "qa": "m4-canvas",
+        "loadStatus": "ready",
+        "bufferHash": "622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f",
+        "gpuSource": "single-merch",
+        "gpuTarget": "master-neutral",
+        "gpuProgress": "1",
+        "frameP95Ms": "50",
+        "firstVisibleMs": "146.8999999940388",
+        "overlayQuaternion": "0,0,0,1",
+        "assetNamespace": "ps-04-m5-5",
+        "hoverPreview": "false",
+        "framingProfile": "OWNER_SELECTED_124_111_111",
+        "screen": "about",
+        "resolvedState": "master-neutral",
+        "builderPhase": "",
+        "aboutZoom": "124",
+        "merchZoom": "111",
+        "videoZoom": "111"
+      },
+      "error": ""
+    }
+  },
+  "errors": [],
+  "edge": {
+    "lockedBoot": {
+      "hash": "#screen-03.1",
+      "active": "03.1"
+    },
+    "deepEvent": {
+      "hash": "#screen-05.3",
+      "active": "05.3",
+      "semantic": "single-event",
+      "gpu": "single-event"
+    },
+    "lockedHash": {
+      "hash": "#screen-05.3",
+      "active": "05.3"
+    },
+    "reduced": true,
+    "ArrowDown": {
+      "hash": "#screen-05.2",
+      "active": "05.2"
+    },
+    "ArrowUp": {
+      "hash": "#screen-05.1",
+      "active": "05.1"
+    },
+    "End": {
+      "hash": "#screen-08",
+      "active": "08"
+    },
+    "Home": {
+      "hash": "#screen-01",
+      "active": "01"
+    },
+    "back": {
+      "hash": "#screen-02",
+      "active": "02"
+    },
+    "forward": {
+      "hash": "#screen-08",
+      "active": "08"
+    }
+  }
+}

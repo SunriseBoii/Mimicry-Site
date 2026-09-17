@@ -18,7 +18,7 @@ import {
 export type ScrollPhase = "Settled" | "Traversing" | "Snapping" | "Verifying";
 export type ActorMachineStatus = "settled" | "preparing" | "morphing";
 export type SettleHint = "scrollend" | "scrollsnapchanging" | "scrollsnapchange";
-export type ActorRequestOrigin = "settle" | "queued" | "in-screen" | "boot";
+export type ActorRequestOrigin = "settle" | "queued" | "in-screen" | "boot" | "direct" | "magnetic-target";
 export type ActorRequestSource =
   | { kind: "route-settle"; nodeId: ScreenNodeId; magneticSettleRevision: number }
   | { kind: "in-screen-action"; hostNodeId: ScreenNodeId; interactionRevision: number };
@@ -167,6 +167,7 @@ function sameNode(left: string | null | undefined, right: string | null | undefi
 export class MagnetizedSettleController {
   private nowFn: () => number;
   private resolveContract: (nodeId: ScreenNodeId) => SemanticContractRef | null;
+  private earlyTransitions: boolean;
 
   private phase: ScrollPhase = "Settled";
   private observedNodeId: ScreenNodeId | null = null;
@@ -222,13 +223,26 @@ export class MagnetizedSettleController {
   constructor(args: {
     now?: () => number;
     resolveContract?: (nodeId: ScreenNodeId) => SemanticContractRef | null;
+    earlyTransitions?: boolean;
   } = {}) {
     this.nowFn = args.now ?? (() => (typeof performance !== "undefined" ? performance.now() : Date.now()));
     this.resolveContract = args.resolveContract ?? ((nodeId) => ({ nodeId, key: nodeId }));
+    this.earlyTransitions = args.earlyTransitions ?? false;
   }
 
   setResolveContract(resolve: (nodeId: ScreenNodeId) => SemanticContractRef | null) {
     this.resolveContract = resolve;
+  }
+
+  /** A graph/keyboard/history destination is authoritative before scroll pixels catch up. */
+  requestDestination(nodeId: ScreenNodeId, nowMs = this.nowFn()): ActorRequestIntent | null {
+    if (!this.earlyTransitions) return null;
+    const contract = this.resolveContract(nodeId);
+    if (!contract) return null;
+    this.lastDestination = nodeId;
+    this.magneticDestinationNodeId = nodeId;
+    this.invalidateQueue();
+    return this.beginActorTransition(contract, this.magneticSettleRevision, "direct", nowMs);
   }
 
   needsClock() {
@@ -278,6 +292,9 @@ export class MagnetizedSettleController {
   }
 
   adoptBoot(nodeId: ScreenNodeId, key: string) {
+    this.pendingBegin = null;
+    this.pendingCancel = false;
+    this.queued = null;
     this.actorCommittedNodeId = nodeId;
     this.actorEndpointKey = key;
     this.actorStatus = "settled";
@@ -330,8 +347,14 @@ export class MagnetizedSettleController {
   }
 
   noteActorFrame(frame: ActorFrameSample, nowMs = this.nowFn()) {
-    this.actorEndpointKey = frame.endpointKey || this.actorEndpointKey;
+    // A stale coordinator frame may arrive between intent publication and the
+    // first GPU bind. It must not replace the latest requested semantic key.
+    if (frame.endpointKey && (this.actorStatus === "settled" || frame.endpointKey === this.actorEndpointKey)) {
+      this.actorEndpointKey = frame.endpointKey;
+    }
     if (frame.status === "settled") {
+      if (this.earlyTransitions && this.actorStatus !== "settled"
+        && frame.endpointKey !== this.actorEndpointKey) return;
       const wasRunning = this.actorStatus !== "settled";
       this.actorVisualStarted = false;
       this.actorStatus = "settled";
@@ -406,6 +429,17 @@ export class MagnetizedSettleController {
     });
 
     this.phase = this.resolvePhase(input, predicate.settled);
+
+    // The magnetic target is locked after gesture end. Start the actor while
+    // the final scroll pixels settle, without morphing transient crossed nodes.
+    if (this.earlyTransitions && input.mode === "magnetic" && !this.gestureActive
+      && candidate && destination === candidate && candidateStable >= 24
+      && inputQuiet >= 30 && layoutStable) {
+      const contract = this.resolveContract(candidate);
+      if (contract && contract.key !== this.actorEndpointKey) {
+        this.beginActorTransition(contract, this.magneticSettleRevision, "magnetic-target", now);
+      }
+    }
 
     if (predicate.settled && candidate) {
       this.commitSettle(candidate, now);
@@ -524,7 +558,7 @@ export class MagnetizedSettleController {
     this.lastIgnoredCandidate = null;
     if (this.phase === "Settled") this.phase = "Traversing";
     this.magneticDestinationNodeId = null;
-    if (this.actorStatus === "preparing" && !this.actorVisualStarted) {
+    if (!this.earlyTransitions && this.actorStatus === "preparing" && !this.actorVisualStarted) {
       this.cancelPreparing(nowMs);
     }
   }
@@ -562,6 +596,10 @@ export class MagnetizedSettleController {
 
   private onMagneticSettle(commit: MagneticSettleCommit, contract: SemanticContractRef, nowMs: number) {
     if (contract.key === this.actorEndpointKey) return;
+    if (this.earlyTransitions) {
+      this.beginActorTransition(contract, commit.revision, "settle", nowMs);
+      return;
+    }
     if (this.actorStatus === "settled") {
       this.beginActorTransition(contract, commit.revision, commit.revision === 1 && !this.actorRequestCount ? "boot" : "settle", nowMs);
       return;
@@ -614,7 +652,7 @@ export class MagnetizedSettleController {
     origin: ActorRequestOrigin,
     nowMs: number,
   ): ActorRequestIntent | null {
-    const keepVisibleMorph = origin === "in-screen" && this.actorStatus === "morphing";
+    const keepVisibleMorph = (origin === "in-screen" || this.earlyTransitions) && this.actorStatus === "morphing";
     if (this.actorStatus === "morphing" && !keepVisibleMorph) {
       if (origin !== "queued") {
         this.queued = {
@@ -633,7 +671,8 @@ export class MagnetizedSettleController {
       this.staleQueuedTransitionStarts += 1;
       return null;
     }
-    if (origin !== "in-screen" && this.magnetizedSettledNodeId !== contract.nodeId) {
+    if (origin !== "in-screen" && origin !== "direct" && origin !== "magnetic-target"
+      && this.magnetizedSettledNodeId !== contract.nodeId) {
       this.requestsToCrossedNodes += 1;
       return null;
     }

@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { checkpointSha256, rawSha256 } from "./checkpoint-hash";
 import { ALL_COMPETENCE_MASK, COMPETENCE_BIT } from "../app/visual-lab/photonic-skin-ps04-m2/photonic-palette";
 import { FROZEN_PHASE_WINDOWS, samplePhaseAdapter } from "../app/visual-lab/photonic-skin-ps04-m3/phase-adapter";
 import {
@@ -40,14 +40,13 @@ import {
 } from "../app/visual-lab/photonic-skin-ps04-m5/transition-coordinator";
 
 const ROOT = process.cwd();
-const BRANCH = "ps04-m5-sandbox";
 const STAGE = path.join(ROOT, "design/photonic-skin/ps-04-m5-6");
 const PUBLIC = path.join(ROOT, "public/photonic-skin/ps-04-m5-5");
 const FROZEN_VIDEO = "3e78623ebbe98b0432ae527c207a2f31f70b418e8753df6fe18aa50a2230d97b";
 const AGGREGATE = "a07014e6fd7c634f659c1278aa2398769343e0efd91b0b9f0890fbda06968361";
 
 function shaFile(file: string) {
-  return createHash("sha256").update(readFileSync(path.join(ROOT, file))).digest("hex");
+  return checkpointSha256(path.join(ROOT, file));
 }
 
 function readJson(file: string) {
@@ -111,8 +110,6 @@ function gamesContract(): ScreenActorContract {
 }
 
 test("M5.5 human PASS is recorded and checkpointed once", () => {
-  const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
-  assert.equal(branch, BRANCH);
   execFileSync("git", ["merge-base", "--is-ancestor", M55_CHECKPOINT, "HEAD"]);
   const log = execFileSync("git", ["log", "--oneline", "--grep", "approve integrated M5 promotion candidate"], { encoding: "utf8" }).trim();
   assert.equal(log.split(/\r?\n/).filter(Boolean).length, 1);
@@ -146,8 +143,8 @@ test("release-lock binds M5.5 payload and is hash-stable", () => {
   assert.equal(lock.ps04Closed, false);
   const digest = shaFile("design/photonic-skin/ps-04-m5-6/release-lock.json");
   assert.equal(digest, shaFile("design/photonic-skin/ps-04-m5-6/release-lock.json"));
-  assert.equal(lock.hashes.promotedManifest, shaFile("public/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json"));
-  assert.equal(lock.hashes.stateHashMap, shaFile("design/photonic-skin/ps-04-m5-5/reports/state-hash-map.json"));
+  assert.equal(lock.hashes.promotedManifest, rawSha256(path.join(ROOT, "public/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json")));
+  assert.equal(lock.hashes.stateHashMap, rawSha256(path.join(ROOT, "design/photonic-skin/ps-04-m5-5/reports/state-hash-map.json")));
   assert.equal(lock.hashes.m51ChoreographyConstants, shaFile("app/visual-lab/photonic-skin-ps04-m5/m5-choreography.ts"));
   assert.equal(PALETTE_DELAY_FRACTION, 0.06);
 });
