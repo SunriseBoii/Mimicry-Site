@@ -1,3 +1,4 @@
+import { prepareGeometry } from "../final-r2/geometry-worker-client";
 /**
  * M6.1 builder program cache. Loads M5.5 frozen buffers plus M6.1 delta states.
  * No Event/Video sandbox overlays.
@@ -177,7 +178,7 @@ export class FramingSandboxProgramCache {
   private clock = 0;
   variant = `${OWNER_SELECTED_PROFILE_ID}|candidate`;
   namespace: PromotionNamespaceId = "candidate";
-  releaseGeometry = false;
+  releaseGeometry: boolean | "r2" = false;
   manifest: M3Manifest | null = null;
   motion: M41Manifest | null = null;
   budgetBytes = CPU_CACHE_BUDGET_DESKTOP;
@@ -311,7 +312,9 @@ export class FramingSandboxProgramCache {
     this.stats.misses += 1;
     this.stats.compiles += 1;
     this.stats.lastStatus = "compiling";
-    const work = Promise.resolve(compileTransition(args.source, args.target, {
+    const work = (this.releaseGeometry === "r2" && typeof Worker !== "undefined"
+      ? prepareGeometry({source:args.source,target:args.target,identitySpace:args.manifest.identitySpace,reducedMotion:args.reducedMotion,viewport}).then(result => result.program)
+      : Promise.resolve(compileTransition(args.source, args.target, {
       schemaVersion: "1.0.0",
       sourceStateId: args.source.entry.stateId,
       targetStateId: args.target.entry.stateId,
@@ -322,7 +325,7 @@ export class FramingSandboxProgramCache {
       directionIntent: "auto",
       deterministicSeed: M3_SEED,
       reducedMotion: args.reducedMotion,
-    })).then((program) => {
+    }))).then((program) => {
       const frozen = freezeProgram(program);
       const bytes = programCpuBytes(frozen);
       this.programs.set(key, {

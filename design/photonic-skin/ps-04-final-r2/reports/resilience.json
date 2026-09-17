@@ -1,0 +1,1008 @@
+[
+  {
+    "reduced": false,
+    "errors": [],
+    "states": [
+      {
+        "label": "anchor-load",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-video-to-single-video-qa-desktop-af23bd6e286a",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-video",
+          "drawnTargetId": "single-video",
+          "frameToken": 2,
+          "atMs": 4800.900000035763
+        },
+        "stats": {
+          "fps": null,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "textureMiB": 3.06,
+          "programs": 0,
+          "geometries": 0,
+          "textures": 0,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 0,
+          "lastActorTriangles": 0,
+          "newFrame": false,
+          "materialUuid": "88e4692c-0097-40e1-a45b-4c6e6ebe0010",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "graph",
+        "ack": {
+          "drawnRevision": 1,
+          "drawnProgramId": "single-video-to-single-games-qa-desktop-e86b3f23e22a",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-video",
+          "drawnTargetId": "single-games",
+          "frameToken": 148,
+          "atMs": 5867.700000047684
+        },
+        "stats": {
+          "fps": 117,
+          "medianMs": 6.6,
+          "p95Ms": 13.5,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 6.13,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 32,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "88e4692c-0097-40e1-a45b-4c6e6ebe0010",
+          "compileCount": 2
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "keyboard",
+        "ack": {
+          "drawnRevision": 2,
+          "drawnProgramId": "single-games-to-single-event-qa-desktop-c0532daf7dec",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-games",
+          "drawnTargetId": "single-event",
+          "frameToken": 282,
+          "atMs": 6746
+        },
+        "stats": {
+          "fps": 153,
+          "medianMs": 6.1,
+          "p95Ms": 12.8,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 6.13,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 32,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "88e4692c-0097-40e1-a45b-4c6e6ebe0010",
+          "compileCount": 3
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "reload",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 2,
+          "atMs": 688.6999999880791
+        },
+        "stats": {
+          "fps": null,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "textureMiB": 3.06,
+          "programs": 0,
+          "geometries": 0,
+          "textures": 0,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 0,
+          "lastActorTriangles": 0,
+          "newFrame": false,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1920",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 25,
+          "atMs": 939.1000000238419
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1280",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 49,
+          "atMs": 1172.800000011921
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-390",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 87,
+          "atMs": 1408.8999999761581
+        },
+        "stats": {
+          "fps": 112,
+          "medianMs": 6.5,
+          "p95Ms": 20.9,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1440",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 121,
+          "atMs": 1620.699999988079
+        },
+        "stats": {
+          "fps": 112,
+          "medianMs": 6.5,
+          "p95Ms": 20.9,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "context-restored",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 125,
+          "atMs": 1912.800000011921
+        },
+        "stats": {
+          "fps": 112,
+          "medianMs": 6.5,
+          "p95Ms": 20.9,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "after-repeated-routes",
+        "ack": {
+          "drawnRevision": 8,
+          "drawnProgramId": "single-event-to-single-video-qa-desktop-f2290a4017f6",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-video",
+          "frameToken": 768,
+          "atMs": 6360.5
+        },
+        "stats": {
+          "fps": 148,
+          "medianMs": 6.1,
+          "p95Ms": 13.5,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 6.13,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 32,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "de9bb98e-b609-4f12-957f-11b37ef10465",
+          "compileCount": 8
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      }
+    ]
+  },
+  {
+    "reduced": true,
+    "errors": [],
+    "states": [
+      {
+        "label": "anchor-load",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-video-to-single-video-qa-desktop-aa638793e7c0",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-video",
+          "drawnTargetId": "single-video",
+          "frameToken": 2,
+          "atMs": 728.5999999642372
+        },
+        "stats": {
+          "fps": null,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "textureMiB": 3.06,
+          "programs": 0,
+          "geometries": 0,
+          "textures": 0,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 0,
+          "lastActorTriangles": 0,
+          "newFrame": false,
+          "materialUuid": "5a3d94fb-5843-449f-a219-173622ddfef9",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "graph",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-video-to-single-video-qa-desktop-aa638793e7c0",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-video",
+          "drawnTargetId": "single-video",
+          "frameToken": 11,
+          "atMs": 816.8999999761581
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "5a3d94fb-5843-449f-a219-173622ddfef9",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "keyboard",
+        "ack": {
+          "drawnRevision": 2,
+          "drawnProgramId": "single-games-to-single-event-qa-desktop-bd6df27ea23e",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-games",
+          "drawnTargetId": "single-event",
+          "frameToken": 36,
+          "atMs": 1079.5
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "5a3d94fb-5843-449f-a219-173622ddfef9",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "reload",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 2,
+          "atMs": 653.2999999523163
+        },
+        "stats": {
+          "fps": null,
+          "medianMs": 0,
+          "p95Ms": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "textureMiB": 3.06,
+          "programs": 0,
+          "geometries": 0,
+          "textures": 0,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 0,
+          "lastActorTriangles": 0,
+          "newFrame": false,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1920",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 23,
+          "atMs": 888.6999999880791
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1280",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 44,
+          "atMs": 1129.199999988079
+        },
+        "stats": {
+          "fps": 40,
+          "medianMs": 50,
+          "p95Ms": 50,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            1440,
+            900
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-390",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 77,
+          "atMs": 1365.7999999523163
+        },
+        "stats": {
+          "fps": 100,
+          "medianMs": 6.2,
+          "p95Ms": 36.7,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "resize-1440",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 109,
+          "atMs": 1602.5999999642372
+        },
+        "stats": {
+          "fps": 100,
+          "medianMs": 6.2,
+          "p95Ms": 36.7,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "context-restored",
+        "ack": {
+          "drawnRevision": 0,
+          "drawnProgramId": "single-event-to-single-event-qa-desktop-457d78394beb",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-event",
+          "drawnTargetId": "single-event",
+          "frameToken": 113,
+          "atMs": 1880.699999988079
+        },
+        "stats": {
+          "fps": 100,
+          "medianMs": 6.2,
+          "p95Ms": 36.7,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      },
+      {
+        "label": "after-repeated-routes",
+        "ack": {
+          "drawnRevision": 7,
+          "drawnProgramId": "single-games-to-single-video-qa-desktop-4c84ebf1d179",
+          "drawnProgress": 1,
+          "drawnSourceId": "single-games",
+          "drawnTargetId": "single-video",
+          "frameToken": 142,
+          "atMs": 2203.399999976158
+        },
+        "stats": {
+          "fps": 100,
+          "medianMs": 6.2,
+          "p95Ms": 36.7,
+          "drawCalls": 1,
+          "triangles": 262144,
+          "textureMiB": 3.06,
+          "programs": 1,
+          "geometries": 1,
+          "textures": 16,
+          "dpr": 1,
+          "drawingBuffer": [
+            390,
+            844
+          ],
+          "lastActorDrawCalls": 1,
+          "lastActorTriangles": 262144,
+          "newFrame": true,
+          "materialUuid": "fb82a0cb-3ab9-4269-ad66-4a0fecb9ef0a",
+          "compileCount": 1
+        },
+        "environment": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+          "platform": "Win32",
+          "hardwareConcurrency": 20,
+          "deviceMemoryGiB": 32,
+          "devicePixelRatio": 1,
+          "webgl2": true,
+          "gpuVendor": "Google Inc. (Intel)",
+          "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "maxVertexTextureUnits": 16,
+          "maxCombinedTextureUnits": 32,
+          "outputColorSpace": "srgb",
+          "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+          "antialias": true,
+          "alpha": true
+        }
+      }
+    ]
+  },
+  {
+    "touchEmulation": true,
+    "changedNode": false,
+    "node": "05.3",
+    "ack": {
+      "drawnRevision": 0,
+      "drawnProgramId": "single-event-to-single-event-qa-desktop-b3ee5eb75807",
+      "drawnProgress": 1,
+      "drawnSourceId": "single-event",
+      "drawnTargetId": "single-event",
+      "frameToken": 530,
+      "atMs": 3957.300000011921
+    }
+  }
+]

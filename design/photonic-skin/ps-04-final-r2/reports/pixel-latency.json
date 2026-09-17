@@ -1,0 +1,86 @@
+{
+  "method": "CDP compositor JPEG90, fixed builder actor crop; >0.5% pixels with RGB sum delta >36; includes input dispatch and preparation; not a presentation-timestamp hardware benchmark",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+    "platform": "Win32",
+    "hardwareConcurrency": 20,
+    "deviceMemoryGiB": 32,
+    "devicePixelRatio": 1,
+    "webgl2": true,
+    "gpuVendor": "Google Inc. (Intel)",
+    "gpuRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "maxVertexTextureUnits": 16,
+    "maxCombinedTextureUnits": 32,
+    "outputColorSpace": "srgb",
+    "toneMapping": "shader-owned ACES / renderer NoToneMapping",
+    "antialias": true,
+    "alpha": true
+  },
+  "rect": {
+    "left": 819,
+    "top": 243,
+    "width": 518,
+    "height": 518
+  },
+  "frameCount": 915,
+  "requests": [
+    {
+      "id": "video",
+      "at": 4225.199999988079,
+      "end": 5571.799999952316,
+      "firstChangedPixelMs": 152.5
+    },
+    {
+      "id": "event",
+      "at": 5734.5,
+      "end": 7074.899999976158,
+      "firstChangedPixelMs": 78.1
+    },
+    {
+      "id": "event",
+      "at": 7240.399999976158,
+      "end": 8571,
+      "firstChangedPixelMs": 76.7
+    },
+    {
+      "id": "merch",
+      "at": 8736.099999964237,
+      "end": 10249.899999976158,
+      "firstChangedPixelMs": 312.9
+    },
+    {
+      "id": "merch",
+      "at": 10413.5,
+      "end": 11831.099999964237,
+      "firstChangedPixelMs": 217.1
+    },
+    {
+      "id": "games",
+      "at": 11994.799999952316,
+      "end": 13221.799999952316,
+      "firstChangedPixelMs": 61.9
+    }
+  ],
+  "longTasks": [],
+  "stats": {
+    "fps": 164,
+    "medianMs": 6.1,
+    "p95Ms": 6.5,
+    "drawCalls": 1,
+    "triangles": 262144,
+    "textureMiB": 6.13,
+    "programs": 1,
+    "geometries": 1,
+    "textures": 32,
+    "dpr": 1,
+    "drawingBuffer": [
+      1440,
+      900
+    ],
+    "lastActorDrawCalls": 1,
+    "lastActorTriangles": 262144,
+    "newFrame": true,
+    "materialUuid": "0d71add9-a8d1-43ca-86d8-ce79e2d13404",
+    "compileCount": 7
+  }
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS‑04 R2 — сравнение</title>
+<style>
+body{margin:0;background:#f2f2f0;color:#171b1d;font:16px/1.5 Arial,sans-serif;padding:32px}h1{margin:0;font-size:30px}p{max-width:950px;color:#5a6266}label{display:inline-flex;gap:8px;align-items:center;margin:8px 20px 20px 0}select{padding:8px;background:white;border:1px solid #bdc2c2;font:inherit}main{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:0}figcaption{font-weight:bold;margin:8px 0}img,video{width:100%;height:auto;background:#e5e5e2}section{margin-top:32px}a{color:inherit}@media(max-width:700px){body{padding:16px}main{grid-template-columns:1fr}}
+</style>
+<h1>PS‑04: R1 → R2</h1>
+<p>Одинаковые размеры окна, камера и фаза цветной волны. Проверьте чешуйки, силуэты, отсутствие облаков точек и расположение Video. Видео ниже содержит обычные и быстрые переходы. Визуальная приёмка остаётся за владельцем.</p>
+<label>Тема <select id="theme"><option value="light">Светлая</option><option value="dark">Тёмная</option></select></label>
+<label>Размер <select id="size"><option value="desktop">1440 × 900</option><option value="mobile">390 × 844</option></select></label>
+<label>Сцена <select id="scene"><option value="hero">Hero</option><option value="event">Event</option><option value="games">Games</option><option value="video">Video</option><option value="event-video-gather">Event + Video · 03.2</option><option value="event-video-drive">Event + Video · 03.3</option><option value="merch-video-gather">Merch + Video · 03.2</option><option value="merch-video-drive">Merch + Video · 03.3</option><option value="all-seven-gather">7 компетенций · 03.2</option><option value="all-seven-drive">7 компетенций · 03.3</option></select></label>
+<main><figure><figcaption>R1 — до</figcaption><img id="before" alt="Сцена R1"></figure><figure><figcaption>R2 — после</figcaption><img id="after" alt="Сцена R2"></figure></main>
+<section><h2>Переходы</h2><main><figure><figcaption>R1</figcaption><video id="videoBefore" controls preload="metadata"></video></figure><figure><figcaption>R2</figcaption><video id="videoAfter" controls preload="metadata"></video></figure></main></section>
+<p><a href="reports/implementation-report.md">Отчёт и границы проверки</a> · <a href="http://localhost:3002/">Открыть локальную R2</a></p>
+<script>
+const theme=document.querySelector('#theme'),size=document.querySelector('#size'),scene=document.querySelector('#scene');
+function update(){for(const [id,revision]of [['before','r1'],['after','r2']])document.getElementById(id).src=`renders/${revision}-${size.value}/${theme.value}-${scene.value}.png`;}
+function videos(){document.querySelector('#videoBefore').src=`renders/r1-${size.value}/transitions.webm`;document.querySelector('#videoAfter').src=`renders/r2-${size.value}/transitions.webm`;}
+theme.onchange=scene.onchange=update;size.onchange=()=>{update();videos();};update();videos();
+</script></html>

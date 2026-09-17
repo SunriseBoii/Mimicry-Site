@@ -9,6 +9,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import { createR2ScaleGeometry } from "../photonic-skin-ps04-m6/final-r2/scale-geometry";
 import type { CameraPreset, DebugMode, DecodedState, LabFrame, M3Manifest } from "../photonic-skin-m4-1/m41-data";
 import type { TransitionProgram } from "../photonic-skin-m4-1/m41-evaluator";
 import {
@@ -46,7 +47,7 @@ import {
 import type { OverlayUniforms, PhotonicMotionSession } from "../photonic-skin-ps04-m3/session";
 import { CONTINUITY_FLOOR } from "./continuity-overlay";
 import { PALETTE_GEOMETRY_GATE_EPSILON } from "./m5-choreography";
-import { hashLut, type PaletteMaterialSnapshot } from "./palette-authority";
+import { shaderDisplayedLut, hashLut, type PaletteMaterialSnapshot } from "./palette-authority";
 import {
   canAtomicBind,
   hashTextureIdentities,
@@ -222,7 +223,18 @@ export interface TransitionUniforms {
   identity: boolean;
 }
 
+export interface RenderedGeometryFrame {
+  source: DecodedState;
+  target: DecodedState;
+  program: TransitionProgram;
+  progress: number;
+  paletteLut: ReturnType<typeof shaderDisplayedLut>;
+  ack: GeometryRenderAck;
+}
+
 export interface SceneProps {
+  releaseRevision?: "r2";
+  onRenderedFrame?: (frame: RenderedGeometryFrame) => void;
   source: DecodedState;
   target: DecodedState;
   program: TransitionProgram;
@@ -264,10 +276,16 @@ export interface SceneProps {
 }
 
 const LIGHT_MATERIAL = MATERIAL_THEME_PRESETS.light;
+const R2_LIGHT_MATERIAL = { ...LIGHT_MATERIAL, albedo: "#FCFCFA", roughness: 0.32,
+  metalness: 0.045, specular: 0.68, clearcoat: 0.26, clearcoatRoughness: 0.24,
+  ambientStrength: 0.25, keyStrength: 1.8, fillStrength: 0.28, rimStrength: 0.10, exposure: 1.12 };
 const DARK_MATERIAL = MATERIAL_THEME_PRESETS.dark;
+const R2_DARK_MATERIAL = { ...DARK_MATERIAL, albedo: "#49535D", roughness: 0.36,
+  metalness: 0.25, specular: 0.60, clearcoat: 0.16, clearcoatRoughness: 0.30 };
 
 const vertexShader = `
 precision highp float;
+uniform float uReleaseR2;
 precision highp int;
 precision highp sampler2D;
 in vec3 position;
@@ -536,7 +554,9 @@ void main() {
   if (t <= 0.0) geometricScale = a.w;
   if (t >= 1.0) geometricScale = b.w;
   float finiteActivationScale = uEvaluator == 0 ? activation : mix(uMinimumGeometricScale, 1.0, clamp(activation, 0.0, 1.0));
-  float radius = max(geometricScale, 0.0) * finiteActivationScale * lodVisible * selected;
+  // Numerical scale floors do not grant visibility to reserve particles.
+  float presence = uReleaseR2 > 0.5 ? clamp(activation, 0.0, 1.0) : 1.0;
+  float radius = max(geometricScale, 0.0) * finiteActivationScale * presence * lodVisible * selected;
   vec3 local;
   if (uEvaluator == 0) {
     vec3 up = abs(normal.z) < 0.9 ? vec3(0.0, 0.0, 1.0) : vec3(0.0, 1.0, 0.0);
@@ -690,6 +710,7 @@ vec2 m2BandEnvelope(float scalar, float phase) {
 
 const fragmentShader = `
 precision highp float;
+uniform float uReleaseR2;
 precision highp int;
 in vec3 vColor;
 in float vShade;
@@ -863,7 +884,7 @@ void main() {
       theme
     ) : 0.0;
     float layerStrength = saturate((undertone + activeStrength) * field.a);
-    vec3 lightAccent = field.rgb * 0.88;
+    vec3 lightAccent = field.rgb * mix(0.88, 1.0, uReleaseR2);
     vec3 darkAccent = mix(field.rgb, vec3(0.72), 0.16);
     baseColor = mix(baseColor, mix(lightAccent, darkAccent, theme), layerStrength);
   }
@@ -885,6 +906,9 @@ void main() {
   vec3 n = normalize(vSurfaceNormalView);
   vec3 v = normalize(-vViewPosition);
   vec3 f0 = mix(vec3(0.04 * specularLevel), baseColor, metalness);
+  // Restrained angle-dependent pearl reflection; semantic pigment stays intact.
+  f0 *= mix(vec3(1.0), mix(vec3(0.95, 0.98, 1.06), vec3(1.04, 0.98, 1.02),
+    pow(1.0 - max(dot(n, v), 0.0), 2.0)), uReleaseR2 * 0.6);
   vec3 keyDirection = normalize(vec3(-0.46, 0.38, 0.80));
   vec3 fillDirection = normalize(vec3(0.58, -0.16, 0.80));
   vec3 color = studioLight(
@@ -932,6 +956,7 @@ export async function runPS04M5FieldGpuParity(): Promise<FieldGpuParityMetrics> 
   if (!gl) throw new Error("WebGL2 is unavailable for color-field parity readback");
   const vertex = shader(gl, gl.VERTEX_SHADER, `#version 300 es
 precision highp float;
+uniform float uReleaseR2;
 precision highp int;
 in float aCoordinate;
 uniform int uMask;
@@ -952,6 +977,7 @@ void main() {
 }`);
   const fragment = shader(gl, gl.FRAGMENT_SHADER, `#version 300 es
 precision highp float;
+uniform float uReleaseR2;
 out vec4 outColor;
 void main() { outColor = vec4(0.0); }`);
   const linked = gl.createProgram();
@@ -1215,7 +1241,7 @@ export async function runPS04M5GpuGoldenParity(
   gl.enable(gl.RASTERIZER_DISCARD);
   for (const sample of fixture.samples) {
     const values = readAt(sample.t);
-    // Keep a stable Float32 separation even for the mandated endpoint±epsilon
+    // Keep a stable Float32 separation even for the mandated endpointВ±epsilon
     // samples. C2 endpoint closure makes the clipped one-sided chord converge
     // quadratically there, while interior samples remain centered.
     const velocityBeforeT = sample.t > 0 && sample.t < 1 ? Math.max(0, sample.t - 1e-3) : sample.t;
@@ -1489,6 +1515,17 @@ function M41Content(props: SceneProps) {
     sourceFrame: ReturnType<typeof resolvePresentationFrame>;
     targetFrame: ReturnType<typeof resolvePresentationFrame>;
   } | null>(null);
+  const ownedR2Textures = useRef(new Set<THREE.Texture>());
+  useEffect(() => {
+    if (props.releaseRevision !== "r2" || staging) return;
+    for (const texture of [...Object.values(stateTextures), ...Object.values(compiledTextures)]) {
+      ownedR2Textures.current.add(texture);
+    }
+  }, [props.releaseRevision, staging, stateTextures, compiledTextures]);
+  useEffect(() => {
+    const owned = ownedR2Textures.current;
+    return () => { for (const texture of owned) texture.dispose(); owned.clear(); };
+  }, []);
   const textureCount = Object.keys(stateTextures).length + Object.keys(compiledTextures).length;
   const paletteTokens = useMemo(
     () => PHOTONIC_COLOR_TOKENS.map((token) => new THREE.Color().fromArray([...token.linear])),
@@ -1505,7 +1542,12 @@ function M41Content(props: SceneProps) {
     }),
     [initialColorSnapshot],
   );
+  const lightMaterial = props.releaseRevision === "r2" ? R2_LIGHT_MATERIAL : LIGHT_MATERIAL;
+  const darkMaterial = props.releaseRevision === "r2" ? R2_DARK_MATERIAL : DARK_MATERIAL;
+  const boundPairRef = useRef({ source: props.source, target: props.target, program: props.program });
+  const pendingAckRef = useRef<GeometryRenderAck | null>(null);
   const uniformsRef = useRef({
+    uReleaseR2: { value: props.releaseRevision === "r2" ? 1 : 0 },
     uSource: { value: stateTextures.source },
     uTarget: { value: stateTextures.target },
     uSourceNormal: { value: stateTextures.sourceNormal },
@@ -1563,28 +1605,28 @@ function M41Content(props: SceneProps) {
     uContinuityFloor: { value: CONTINUITY_FLOOR },
     uPaletteOwnershipMode: { value: 0 },
     uThemeMix: { value: props.material.themeMix },
-    uLightAlbedo: { value: new THREE.Color(LIGHT_MATERIAL.albedo) },
-    uDarkAlbedo: { value: new THREE.Color(DARK_MATERIAL.albedo) },
-    uLightRoughness: { value: LIGHT_MATERIAL.roughness },
-    uDarkRoughness: { value: DARK_MATERIAL.roughness },
-    uLightMetalness: { value: LIGHT_MATERIAL.metalness },
-    uDarkMetalness: { value: DARK_MATERIAL.metalness },
-    uLightSpecular: { value: LIGHT_MATERIAL.specular },
-    uDarkSpecular: { value: DARK_MATERIAL.specular },
-    uLightClearcoat: { value: LIGHT_MATERIAL.clearcoat },
-    uDarkClearcoat: { value: DARK_MATERIAL.clearcoat },
-    uLightClearcoatRoughness: { value: LIGHT_MATERIAL.clearcoatRoughness },
-    uDarkClearcoatRoughness: { value: DARK_MATERIAL.clearcoatRoughness },
-    uLightExposure: { value: LIGHT_MATERIAL.exposure },
-    uDarkExposure: { value: DARK_MATERIAL.exposure },
-    uLightAmbient: { value: LIGHT_MATERIAL.ambientStrength },
-    uDarkAmbient: { value: DARK_MATERIAL.ambientStrength },
-    uLightKey: { value: LIGHT_MATERIAL.keyStrength },
-    uDarkKey: { value: DARK_MATERIAL.keyStrength },
-    uLightFill: { value: LIGHT_MATERIAL.fillStrength },
-    uDarkFill: { value: DARK_MATERIAL.fillStrength },
-    uLightRim: { value: LIGHT_MATERIAL.rimStrength },
-    uDarkRim: { value: DARK_MATERIAL.rimStrength },
+    uLightAlbedo: { value: new THREE.Color(lightMaterial.albedo) },
+    uDarkAlbedo: { value: new THREE.Color(darkMaterial.albedo) },
+    uLightRoughness: { value: lightMaterial.roughness },
+    uDarkRoughness: { value: darkMaterial.roughness },
+    uLightMetalness: { value: lightMaterial.metalness },
+    uDarkMetalness: { value: darkMaterial.metalness },
+    uLightSpecular: { value: lightMaterial.specular },
+    uDarkSpecular: { value: darkMaterial.specular },
+    uLightClearcoat: { value: lightMaterial.clearcoat },
+    uDarkClearcoat: { value: darkMaterial.clearcoat },
+    uLightClearcoatRoughness: { value: lightMaterial.clearcoatRoughness },
+    uDarkClearcoatRoughness: { value: darkMaterial.clearcoatRoughness },
+    uLightExposure: { value: lightMaterial.exposure },
+    uDarkExposure: { value: darkMaterial.exposure },
+    uLightAmbient: { value: lightMaterial.ambientStrength },
+    uDarkAmbient: { value: darkMaterial.ambientStrength },
+    uLightKey: { value: lightMaterial.keyStrength },
+    uDarkKey: { value: darkMaterial.keyStrength },
+    uLightFill: { value: lightMaterial.fillStrength },
+    uDarkFill: { value: darkMaterial.fillStrength },
+    uLightRim: { value: lightMaterial.rimStrength },
+    uDarkRim: { value: darkMaterial.rimStrength },
     uStableVariation: { value: props.material.stableVariation ? 1 : 0 },
     uGlobalColorPhase: { value: initialColorSnapshot.phase },
     uPaletteMask: { value: initialColorSnapshot.palette.mask },
@@ -1607,10 +1649,11 @@ function M41Content(props: SceneProps) {
     toneMapped: false,
   }), []);
   const geometry = useMemo(() => {
+    if (props.releaseRevision === "r2") return createR2ScaleGeometry();
     const value = new THREE.OctahedronGeometry(0.035, 0);
     value.setAttribute("aSurfaceNormal", value.getAttribute("normal"));
     return value;
-  }, []);
+  }, [props.releaseRevision]);
 
   useEffect(() => {
     if (props.reproduceR4Geometry) progressRef.current = props.reducedMotion ? 1 : props.progress;
@@ -1698,6 +1741,10 @@ function M41Content(props: SceneProps) {
     uniforms.uActorSourcePosition.value.set(...(actor?.sourcePose.position ?? [0, 0, 0]));
     uniforms.uActorSourceOrientation.value.set(...(actor?.sourcePose.orientation ?? [0, 0, 0, 1]));
     uniforms.uCompiled.value = program.compiled ? 1 : 0;
+    boundPairRef.current = { source: _source, target: _target, program };
+    if (props.releaseRevision === "r2" && !staging) {
+      for (const texture of [...Object.values(state), ...Object.values(compiled)]) ownedR2Textures.current.add(texture);
+    }
     uniforms.uSourceFrameTranslate.value.set(...srcFrame.translate);
     uniforms.uTargetFrameTranslate.value.set(...dstFrame.translate);
     uniforms.uSourceFrameScale.value = srcFrame.scale;
@@ -1954,7 +2001,8 @@ function M41Content(props: SceneProps) {
         bindFrameToken: frameToken,
       };
       }
-    } else if (props.reducedMotion || geo?.status === "settled") {
+    } else if ((props.reducedMotion || geo?.status === "settled")
+      && (props.releaseRevision !== "r2" || (locallyBound && geo?.revision === displayed?.revision))) {
       uniformsRef.current.uProgress.value = 1;
       progressRef.current = 1;
       if (displayedGeometryRef.current) displayedGeometryRef.current.progress = 1;
@@ -1964,7 +2012,7 @@ function M41Content(props: SceneProps) {
       progressRef.current = next;
       displayed.progress = next;
     } else {
-      const hold = locallyBound ? (displayed?.progress ?? 1) : 1;
+      const hold = props.releaseRevision === "r2" || locallyBound ? (displayed?.progress ?? 1) : 1;
       uniformsRef.current.uProgress.value = hold;
       progressRef.current = hold;
     }
@@ -1976,7 +2024,9 @@ function M41Content(props: SceneProps) {
     uniformsRef.current.uIdleAnchor.value.set(...overlay.anchor);
     uniformsRef.current.uIdleQuat.value.set(...overlay.quaternion);
     const color = sessionSnap?.palette ?? props.material.colorController.snapshot();
-    uniformsRef.current.uGlobalColorPhase.value = color.phase;
+    const awaitingProgram = props.releaseRevision === "r2" && displayedGeometryRef.current
+      && geo?.revision !== displayedGeometryRef.current.revision;
+    if (!awaitingProgram) uniformsRef.current.uGlobalColorPhase.value = color.phase;
     uniformsRef.current.uReducedMotion.value = color.reducedMotion ? 1 : 0;
     const palette = props.paletteSnapshotRef?.current;
     const liveTransition = props.transitionRef?.current;
@@ -1985,13 +2035,14 @@ function M41Content(props: SceneProps) {
     const shaderProgress = palette ? palette.shaderProgress : color.paletteProgress;
     const shaderLut = palette?.shaderSourceLut ?? color.sourceLut;
     const shaderLutHash = palette?.shaderBaseLutHash ?? hashLut(color.sourceLut);
+    if (!awaitingProgram) {
     uniformsRef.current.uPaletteMask.value = shaderMask;
     const geometryNow = uniformsRef.current.uProgress.value;
     const gatedPalette = identityBypass
       ? 1
       : (geometryNow <= PALETTE_GEOMETRY_GATE_EPSILON ? 0 : shaderProgress);
     uniformsRef.current.uPaletteProgress.value = gatedPalette;
-    uniformsRef.current.uContinuityEnabled.value = identityBypass ? 0 : (liveTransition?.continuityEnabled ?? 0);
+    uniformsRef.current.uContinuityEnabled.value = identityBypass || props.releaseRevision === "r2" ? 0 : (liveTransition?.continuityEnabled ?? 0);
     uniformsRef.current.uContinuityFloor.value = liveTransition?.continuityFloor ?? CONTINUITY_FLOOR;
     uniformsRef.current.uPaletteOwnershipMode.value = 0;
     if (lastSourceLutHash.current !== shaderLutHash) {
@@ -1999,6 +2050,7 @@ function M41Content(props: SceneProps) {
         sourceLutUniforms[index].set(sample.color[0], sample.color[1], sample.color[2], sample.presence);
       });
       lastSourceLutHash.current = shaderLutHash;
+    }
     }
     window.__PS04M5_MATERIAL_UNIFORMS__ = {
       mask: uniformsRef.current.uPaletteMask.value,
@@ -2025,7 +2077,7 @@ function M41Content(props: SceneProps) {
     };
     if (onGeometryAck) {
       const drawn = displayedGeometryRef.current;
-      onGeometryAck({
+      const ack: GeometryRenderAck = {
         drawnRevision: drawn?.revision ?? 0,
         drawnProgramId: drawn?.programId ?? null,
         drawnProgress: uniformsRef.current.uProgress.value,
@@ -2033,7 +2085,9 @@ function M41Content(props: SceneProps) {
         drawnTargetId: drawn?.targetId ?? null,
         frameToken,
         atMs: nowMs,
-      });
+      };
+      if (props.releaseRevision === "r2") pendingAckRef.current = ack;
+      else onGeometryAck(ack);
     }
 
     const actorHidden = !props.compositionRef?.current?.actorDraw;
@@ -2130,7 +2184,12 @@ function M41Content(props: SceneProps) {
         p95Ms: Number(quantile(0.95).toFixed(2)),
         drawCalls: actorCalls,
         triangles: actorTriangles,
-        textureMiB: Number((textureCount * STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 16 / 1048576).toFixed(2)),
+        textureMiB: Number(((props.releaseRevision === "r2"
+          ? [...ownedR2Textures.current].reduce((bytes, texture) => {
+            const image = texture.image as {width?: number; height?: number};
+            return bytes + (image?.width ?? 0) * (image?.height ?? 0) * 16;
+          }, 0)
+          : textureCount * STATE_TEXTURE_SIZE * STATE_TEXTURE_SIZE * 16) / 1048576).toFixed(2)),
         programs: gl.info.programs?.length ?? 0,
         geometries: gl.info.memory.geometries,
         textures: gl.info.memory.textures,
@@ -2359,7 +2418,31 @@ function M41Content(props: SceneProps) {
         args={[geometry, material, props.source.recordCount]}
         frustumCulled={false}
         onBeforeRender={applySiteComposition}
-        onAfterRender={restoreSiteComposition}
+        onAfterRender={() => {
+          restoreSiteComposition();
+          if (props.releaseRevision !== "r2" || probingMaskRef.current || gl.getRenderTarget()) return;
+          // Release superseded endpoint/program textures only after a complete
+          // replacement draw. Pending React props and bound samplers stay alive.
+          const keep = new Set<unknown>([
+            ...Object.values(stateTextures), ...Object.values(compiledTextures),
+            ...Object.values(uniformsRef.current).map(uniform => uniform.value),
+          ]);
+          for (const texture of ownedR2Textures.current) {
+            if (!keep.has(texture)) { texture.dispose(); ownedR2Textures.current.delete(texture); }
+          }
+          const ack = pendingAckRef.current;
+          if (!ack) return;
+          const uniforms = uniformsRef.current;
+          props.onRenderedFrame?.({
+            ...boundPairRef.current, progress: ack.drawnProgress, ack,
+            paletteLut: shaderDisplayedLut({
+              sourceLut: sourceLutUniforms.map((v) => ({ color: [v.x, v.y, v.z] as [number, number, number], presence: v.w })),
+              targetMask: uniforms.uPaletteMask.value,
+              progress: uniforms.uPaletteProgress.value, ownershipEnabled: false,
+            }),
+          });
+          onGeometryAck?.(ack);
+        }}
       />
     </>
   );
@@ -2483,7 +2566,7 @@ export function PS04M5SceneView(props: SceneProps) {
           ref={posterRef}
           className={styles.neutralPoster}
           data-qa="ps04-scene-poster"
-          aria-label="Загрузка визуальной сцены"
+          aria-label="Р—Р°РіСЂСѓР·РєР° РІРёР·СѓР°Р»СЊРЅРѕР№ СЃС†РµРЅС‹"
           role="status"
           style={{ visibility: firstActorFrameVisible ? "hidden" : "visible" }}
         >

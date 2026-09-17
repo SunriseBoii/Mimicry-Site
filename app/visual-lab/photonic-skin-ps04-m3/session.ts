@@ -56,6 +56,7 @@ export interface SessionOptions {
 }
 
 export interface JointSnapshot {
+  renderedPair?: { source: DecodedState; target: DecodedState };
   capturedAtRevision: number;
   geometryProgress: number;
   m4Snapshot: RuntimeTransitionSnapshot | null;
@@ -219,17 +220,30 @@ export class PhotonicMotionSession {
     return revision === this.requestRevision;
   }
 
-  captureJoint(): JointSnapshot {
+  captureJoint(rendered?: { source: DecodedState; target: DecodedState; program: TransitionProgram; progress: number }, deferGeometry = false): JointSnapshot {
     const displayed = this.displayedTransform();
-    const progress = this.geometryProgress;
-    const source = this.source;
-    const target = this.target;
-    const program = this.program;
-    const m4Snapshot = source && target && program && progress < 1 && this.status === "transitioning"
+    const progress = rendered?.progress ?? this.geometryProgress;
+    const source = rendered?.source ?? this.source;
+    const target = rendered?.target ?? this.target;
+    const program = rendered?.program ?? this.program;
+    const m4Snapshot = !deferGeometry && source && target && program && progress < 1 && (rendered || this.status === "transitioning")
       ? createRetargetSnapshot(source, target, program, progress)
       : null;
+    if (rendered && m4Snapshot) {
+      // R2 snapshots bake the visible radius. Thresholding fractional activation
+      // to status would otherwise pop emerging/disappearing flakes on retarget.
+      const floor = program?.compiled?.header.activationPolicy.minimumGeometricScale ?? 0.18;
+      for (let id = 0; id < m4Snapshot.recordCount; id++) {
+        const presence = m4Snapshot.activation[id];
+        m4Snapshot.scale[id] *= presence * (floor + (1 - floor) * presence);
+        m4Snapshot.status[id] = presence > 0 ? 0 : 1;
+        m4Snapshot.activation[id] = presence > 0 ? 1 : 0;
+        m4Snapshot.scaleVelocity[id] = 0;
+      }
+    }
     return {
       capturedAtRevision: this.requestRevision,
+      renderedPair: rendered ? { source: rendered.source, target: rendered.target } : undefined,
       geometryProgress: progress,
       m4Snapshot,
       overlay: displayed,

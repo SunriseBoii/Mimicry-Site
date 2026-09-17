@@ -81,7 +81,9 @@ export function compileLiveRetarget(
       }),
     };
   }
-  const liveSource = runtimeDecoded(captured.m4Snapshot, source, target, captured.geometryProgress);
+  const liveSource = runtimeDecoded(captured.m4Snapshot,
+    captured.renderedPair?.source ?? source, captured.renderedPair?.target ?? target,
+    captured.geometryProgress);
   return {
     liveSource,
     program: compileTransition(liveSource, target, {
@@ -102,4 +104,3 @@ export function compileLiveRetarget(
 export async function loadEntry(entry: StateEntry) {
   return loadState(entry);
 }
-

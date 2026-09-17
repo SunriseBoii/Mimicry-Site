@@ -1,5 +1,7 @@
 "use client";
 
+import { prepareGeometry } from "../final-r2/geometry-worker-client";
+import type { TransitionProgram } from "../../photonic-skin-m4-1/m41-evaluator";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { CompetenceId } from "../../../_brand/color-system";
 import type { DebugMode, M3Manifest, M41Manifest } from "../../photonic-skin-m4-1/m41-data";
@@ -120,18 +122,22 @@ declare global {
   }
 }
 
-export type MagnetizedSettleStage = "m62" | "r1" | "r2" | "final";
+export type MagnetizedSettleStage = "m62" | "r1" | "r2" | "final" | "final-r2";
+
+function finalRuntime(stage: MagnetizedSettleStage) {
+  return stage === "final" || stage === "final-r2";
+}
 
 function r1Runtime(stage: MagnetizedSettleStage) {
-  return stage === "r1" || stage === "r2" || stage === "final";
+  return stage === "r1" || stage === "r2" || finalRuntime(stage);
 }
 
 function stageRuntime(stage: MagnetizedSettleStage) {
-  if (stage === "final") {
+  if (finalRuntime(stage)) {
     return {
-      sessionId: "ps04-final-r1",
-      runId: "ps04-final-r1",
-      label: "PS-04 final R1",
+      sessionId: stage === "final-r2" ? "ps04-final-r2" : "ps04-final-r1",
+      runId: stage === "final-r2" ? "ps04-final-r2" : "ps04-final-r1",
+      label: stage === "final-r2" ? "PS-04 final R2" : "PS-04 final R1",
       hudQa: "ps04-final-hud",
       hudTitle: "PS-04 final",
     };
@@ -198,14 +204,19 @@ function parseLabDpr(query: URLSearchParams) {
   return 1;
 }
 
-function releasePlaybackProgram<T extends { durationMs: number; selfTransition: boolean }>(
-  program: T,
+function releasePlaybackProgram(
+  program: TransitionProgram,
   stage: MagnetizedSettleStage,
   route: boolean,
-): T {
-  if (stage !== "final" || !route || program.selfTransition || program.durationMs <= 0) return program;
+): TransitionProgram {
+  if (!finalRuntime(stage) || !route || program.selfTransition || program.durationMs <= 0) return program;
   // Geometry is normalized in the shader; playback time is a runtime choice.
-  return { ...program, durationMs: window.innerWidth <= 430 ? PS04_ROUTE_DURATION_MS.mobile : PS04_ROUTE_DURATION_MS.desktop };
+  const durationMs = window.innerWidth <= 430 ? PS04_ROUTE_DURATION_MS.mobile : PS04_ROUTE_DURATION_MS.desktop;
+  return { ...program, durationMs,
+    compiled: stage === "final-r2" && program.compiled
+      ? { ...program.compiled, header: { ...program.compiled.header, durationSeconds: durationMs / 1000 } }
+      : program.compiled,
+  };
 }
 
 function commitBuilderConfirm(current: BuilderFlowState, manifest: M3Manifest | null) {
@@ -221,7 +232,7 @@ function bootstrapReducedMotion() {
 }
 
 export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "preview"; stage?: MagnetizedSettleStage }) {
-  const production = stage === "final" && mode === "preview";
+  const production = finalRuntime(stage) && mode === "preview";
   const query = production ? new URLSearchParams() : labQuery();
   const sandbox = production
     ? {
@@ -279,7 +290,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     typeof window === "undefined" ? 900 : window.innerHeight,
     typeof window === "undefined" ? 1 : window.devicePixelRatio || 1,
   ));
-  const [dpr, setDpr] = useState(() => stage === "final" && !manualDpr
+  const [dpr, setDpr] = useState(() => finalRuntime(stage) && !manualDpr
     ? initialAdaptiveDpr(window.innerWidth, window.innerHeight, window.devicePixelRatio || 1).dpr
     : parseLabDpr(query));
   const [manualReduced, setManualReduced] = useState(!production && query.get("reduced") === "1");
@@ -320,7 +331,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     interceptGeometryLinkedProgress(session.palette);
   }, [session]);
   useLayoutEffect(() => {
-    if (stage === "final") session.setIdleChannel("breathing");
+    if (finalRuntime(stage)) session.setIdleChannel("breathing");
   }, [session, stage]);
   const controller = useMemo(() => new ScrollCompositionController(), []);
   useEffect(() => {
@@ -380,8 +391,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   const paletteSnapshotRef = useRef<PaletteMaterialSnapshot | null>(null);
   const geometrySnapshotRef = useRef<GeometryMaterialSnapshot | null>(null);
   const programBindRef = useRef<GeometryProgramBind | null>(null);
+  const geometryPrepareAbortRef = useRef<AbortController | null>(null);
+  useEffect(() => () => geometryPrepareAbortRef.current?.abort(), []);
+  const renderedFrameRef = useRef<import("../../photonic-skin-ps04-m5/PS04M5Scene").RenderedGeometryFrame | null>(null);
   const geometryAckRef = useRef<GeometryRenderAck>({ ...EMPTY_GEOMETRY_ACK });
-  const settleRef = useRef(new MagnetizedSettleController({ earlyTransitions: stage === "final" }));
+  const settleRef = useRef(new MagnetizedSettleController({ earlyTransitions: finalRuntime(stage), latestPreparedWins: stage === "final-r2" }));
   const settleTelemetryRef = useRef<MagnetizedSettleTelemetry | null>(null);
   const [settleHud, setSettleHud] = useState<MagnetizedSettleTelemetry | null>(null);
   const [r1HudExtras, setR1HudExtras] = useState<Array<[string, string | number | boolean | null]>>([]);
@@ -398,9 +412,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   const programCacheRef = useRef(programCache);
   const builderPrewarmSourceRef = useRef<string | null>(null);
   useEffect(() => {
-    programCacheRef.current.releaseGeometry = stage === "final";
+    programCacheRef.current.releaseGeometry = stage === "final-r2" ? "r2" : finalRuntime(stage);
     programCacheRef.current.namespace = namespace;
-    programCacheRef.current.variant = `${OWNER_SELECTED_PROFILE_ID}|${namespace}|${stage === "final" ? "release-r1" : "baseline"}`;
+    programCacheRef.current.variant = `${OWNER_SELECTED_PROFILE_ID}|${namespace}|${stage === "final-r2" ? "release-r2" : finalRuntime(stage) ? "release-r1" : "baseline"}`;
   }, [namespace, stage]);
   const selectionRef = useRef<FramingSelection>({ aboutZoom, merchZoom, videoZoom });
   const gpuPool = useMemo(() => new GpuTexturePool(), []);
@@ -471,7 +485,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       const ack = geometryAckRef.current;
       const packet = programBindRef.current;
       const drawnCurrentPacket = Boolean(packet && ack.drawnRevision === packet.revision && ack.drawnProgramId === packet.program.programId);
-      if (packet && (packet.bindCommitted || drawnCurrentPacket)) {
+      if (packet && (packet.bindCommitted || drawnCurrentPacket)
+        && (stageRef.current !== "final-r2" || coordinator.isCurrent(packet.revision))) {
         packet.bindCommitted = true;
         packet.bindFrameToken = packet.bindFrameToken ?? ack.frameToken;
         coordinator.markDisplayedBind({
@@ -551,7 +566,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         reducedMotion: reducedRef.current,
       }) : settle.snapshot(now);
       settleTelemetryRef.current = telemetry;
-      if (stageRef.current === "final" && session.getSource() && telemetry.scrollPhase === "Settled"
+      if (finalRuntime(stageRef.current) && session.getSource() && telemetry.scrollPhase === "Settled"
         && telemetry.magnetizedSettledNodeId) {
         const nextHash = `#screen-${telemetry.magnetizedSettledNodeId}`;
         if (window.location.hash !== nextHash) {
@@ -940,7 +955,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     const onResizeLayout = () => {
       layoutRevisionRef.current += 1;
       settleRef.current.noteLayoutRevision(layoutRevisionRef.current);
-      if (stageRef.current === "final" && !manualDpr) {
+      if (finalRuntime(stageRef.current) && !manualDpr) {
         const next = nextAdaptiveDpr(adaptiveDprRef.current, 0, performance.now(), window.innerWidth, window.innerHeight, window.devicePixelRatio || 1);
         adaptiveDprRef.current = next;
         if (next.dpr !== dprRef.current) setDpr(next.dpr);
@@ -1009,8 +1024,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   useEffect(() => {
     const controllerAbort = new AbortController();
     const tasks = [
-      loadBuilderRuntime(controllerAbort.signal, { releaseGeometry: stage === "final" }),
-      stage === "final" ? loadPS04MotionManifest(controllerAbort.signal) : Promise.resolve(null),
+      loadBuilderRuntime(controllerAbort.signal, { releaseGeometry: stage === "final-r2" ? "r2" : finalRuntime(stage) }),
+      finalRuntime(stage) ? loadPS04MotionManifest(controllerAbort.signal) : Promise.resolve(null),
     ] as const;
     Promise.all(tasks).then((results) => {
       const promoted = results[0];
@@ -1166,12 +1181,13 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   }, [controller, identity, manifest, motionManifest, production, reducedMotion, session, startClock]);
 
   const requestActor = useCallback(async (next: ScreenActorContract) => {
-    if (stageRef.current === "final" && !firstGpuFrameRef.current) {
+    if (finalRuntime(stageRef.current) && !firstGpuFrameRef.current) {
       firstGpuTargetRef.current = next.resolvedGeometryId;
     }
     const coordinator = coordinatorRef.current;
     const live = coordinator.displayedPlacement();
-    const displayedLut = coordinator.displayedLut();
+    const rendered = stageRef.current === "final-r2" ? renderedFrameRef.current : null;
+    const displayedLut = rendered?.paletteLut ?? coordinator.displayedLut();
     const displayed: DisplayedPlacement = {
       slot: r1Runtime(stageRef.current) && compositionRef.current.slot !== "exit" && compositionRef.current.slot !== "none"
         ? compositionRef.current.slot
@@ -1203,7 +1219,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       nowMs: performance.now(),
       navigationToken: settleRef.current.snapshot().magneticSettleRevision,
       targetZoom: identity ? 1 : targetProfile.effectiveZoom,
-      durationSeconds: stageRef.current === "final"
+      durationSeconds: finalRuntime(stageRef.current)
         && settleRef.current.snapshot().actorRequestSource?.kind === "route-settle"
         ? (window.innerWidth <= 430 ? PS04_ROUTE_DURATION_MS.mobile : PS04_ROUTE_DURATION_MS.desktop) / 1000
         : undefined,
@@ -1250,22 +1266,26 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       startClock();
       return;
     }
+    if (rendered) session.playGeometry(false);
+    geometryPrepareAbortRef.current?.abort();
+    const prepareAbort = new AbortController();
+    geometryPrepareAbortRef.current = prepareAbort;
     const revision = session.beginRequest(request.stateId);
     if (!coordinator.isCurrent(transaction.revision)) return;
-    const captured = session.captureJoint();
+    const captured = session.captureJoint(stageRef.current === "final-r2" ? renderedFrameRef.current ?? undefined : undefined, stageRef.current === "final-r2");
     try {
       const entry = manifest.states.find((item) => item.stateId === request.stateId);
       if (!entry) return;
       const cache = programCacheRef.current;
       const nextState = await cache.loadState(entry);
       if (!session.isCurrent(revision) || !coordinator.isCurrent(transaction.revision)) return;
-      const currentTarget = session.getTarget();
-      const currentSource = session.getSource();
+      const currentTarget = rendered?.target ?? session.getTarget();
+      const currentSource = rendered?.source ?? session.getSource();
       const geo = coordinator.geometrySnapshot();
       const sourceChoice = selectProgramSourceMode({
-        shaderProgress: geo.shaderProgress,
-        boundTargetGeometryId: geo.boundTargetGeometryId,
-        boundSourceGeometryId: geo.boundSourceGeometryId,
+        shaderProgress: rendered?.progress ?? geo.shaderProgress,
+        boundTargetGeometryId: rendered?.target.entry.stateId ?? geo.boundTargetGeometryId,
+        boundSourceGeometryId: rendered?.source.entry.stateId ?? geo.boundSourceGeometryId,
         settledGeometryId: geo.settledGeometryId,
         sessionSourceId: currentSource?.entry.stateId ?? null,
         sessionTargetId: currentTarget?.entry.stateId ?? null,
@@ -1311,7 +1331,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         // Retarget from the actual rendered pose. A frozen settled source here
         // replays the previous shape for one frame before the new morph.
         pipelineRef.current.cancelPending("live-retarget");
-        const { liveSource, program: compiled } = compileLiveRetarget(
+        const { liveSource, program: compiled } = rendered
+          ? await prepareGeometry({source:currentSource,target:nextState,identitySpace:manifest.identitySpace,reducedMotion,viewport:window.innerWidth <= 430 ? "mobile" : "desktop",captured,rendered}, prepareAbort.signal)
+          : compileLiveRetarget(
           captured,
           currentSource,
           nextState,
@@ -1544,7 +1566,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       r6Ref.current.mark("r6:idle-handoff", { revision: packet.revision });
       const sessionRevision = session.beginRequest(packet.target.entry.stateId);
       if (!session.isCurrent(sessionRevision) || !coordinator.isCurrent(packet.revision)) return;
-      const captured = session.captureJoint();
+      const captured = session.captureJoint(stageRef.current === "final-r2" ? renderedFrameRef.current ?? undefined : undefined);
       programBindRef.current = {
         revision: packet.revision,
         navigationToken: packet.navigationToken,
@@ -1579,7 +1601,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
 
   const navigate = useCallback((id: ScreenNodeId) => {
     const moved = controller.scrollToNode(id);
-    if (moved && stage === "final") {
+    if (moved && finalRuntime(stage)) {
       const nextHash = `#screen-${id}`;
       if (window.location.hash !== nextHash) window.history.pushState({ node: id }, "", nextHash);
       if (session.getSource()) settleRef.current.requestDestination(id);
@@ -1590,7 +1612,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     return moved;
   }, [controller, session, stage, startClock]);
   useEffect(() => {
-    if (stage !== "final") return;
+    if (!finalRuntime(stage)) return;
     const priorRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
     const restore = () => {
@@ -1627,24 +1649,27 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       const target = event.target;
       if (target instanceof HTMLElement && (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) || target.isContentEditable)) return;
       const unlock = flow.unlock;
+      const anchor = stageRef.current === "final-r2"
+        ? controller.getPendingTarget() ?? controller.getProgress().activeNodeId
+        : activeNode;
       if (event.key === "ArrowDown" || event.key === "PageDown") {
         event.preventDefault();
-        const next = nextUnlocked(activeNode, unlock);
+        const next = nextUnlocked(anchor, unlock);
         if (next) navigate(next);
       }
       if (event.key === "ArrowUp" || event.key === "PageUp") {
         event.preventDefault();
-        const previous = previousUnlocked(activeNode, unlock);
+        const previous = previousUnlocked(anchor, unlock);
         if (previous) navigate(previous);
       }
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        const next = nextUnlocked(activeNode, unlock);
+        const next = nextUnlocked(anchor, unlock);
         if (next) navigate(next);
       }
       if (event.key === "ArrowLeft") {
         event.preventDefault();
-        const previous = previousUnlocked(activeNode, unlock);
+        const previous = previousUnlocked(anchor, unlock);
         if (previous) navigate(previous);
       }
       if (event.key === "Home") {
@@ -1658,7 +1683,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [activeNode, flow.overlay, flow.unlock, navigate]);
+  }, [activeNode, controller, flow.overlay, flow.unlock, navigate]);
 
   const source = session.getSource();
   const target = session.getTarget();
@@ -1999,7 +2024,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         // The QA navigation handle is an explicit destination too. Letting it
         // bypass the release policy leaves the previous geometry on screen
         // until a long smooth scroll has fully settled.
-        if (moved && stageRef.current === "final") {
+        if (moved && finalRuntime(stageRef.current)) {
           if (session.getSource()) settleRef.current.requestDestination(id);
           else bootTargetOverrideRef.current = id;
           if (!firstGpuFrameRef.current) firstGpuTargetRef.current = defaultGeometryForNode(id) ?? "master-neutral";
@@ -2019,6 +2044,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       presentation: () => r1HudExtrasRef.current,
       placementTelemetry: () => ({ ...placementTelemetryRef.current }),
       setTheme: (value: MaterialTheme) => setTheme(value),
+      setReviewPhase: (phase: number | null) => {
+        if (phase === null) session.setColorWavePaused(false);
+        else { session.seekColorPhase(phase); session.seekIdlePhases(0, 0); }
+        startClock();
+      },
       setReduced: (value: boolean) => setManualReduced(value),
       setDpr: (value: number) => setDpr(value),
       selectTask: (id: BuilderTaskId) => dispatchProjectBuilderAction({ type: "select-task", taskId: id, source: "qa-handle" }),
@@ -2134,7 +2164,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
   }, [aboutZoom, activeNode, actorRequest, bufferHash, contextState, contract, controller, diagnostic, diagnostics, dispatchProjectBuilderAction, environment, flow, hoverPreview, identity, loading, loadStatus, manifest, merchZoom, mode, namespace, navigate, playMode, production, reducedMotion, requestActor, runtimeMeta.runId, runtimeMeta.label, screen, session, sessionId, startClock, stats, target, theme, videoZoom, viewportId, stage, magnetismProfileId]);
 
   const sceneReady = Boolean(source && target && program && manifest);
-  const paper = MATERIAL_THEME_PRESETS[theme].background;
+  const paper = stage === "final-r2" && theme === "light" ? "#F2F2F0" : MATERIAL_THEME_PRESETS[theme].background;
+  const sceneBackground = stage === "final-r2" && theme === "light"
+    ? "radial-gradient(ellipse at 73% 48%, #F6F6F4 0%, #F2F2F0 65%)" : paper;
   const applySandbox = useCallback((patch: {
     screen?: FramingScreenQuery;
     aboutZoom?: AboutZoomPercent;
@@ -2243,6 +2275,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
     <main
       className={styles.lab}
       data-theme={theme}
+      data-release={stage}
       data-mode={mode}
       data-actor-mask={actorMask ? "true" : "false"}
       data-ui={hideUi ? "off" : "on"}
@@ -2252,7 +2285,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
       data-screen={screen}
       data-error={error ?? ""}
       style={{
-        background: actorMask ? "#140028" : paper,
+        background: actorMask ? "#140028" : sceneBackground,
         colorScheme: theme,
         ...(frame ? { ["--frame-w" as string]: `${frame.width}px`, ["--frame-h" as string]: `${frame.height}px` } : {}),
       }}
@@ -2284,13 +2317,13 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
         data-merch-zoom={merchZoom}
         data-video-zoom={videoZoom}
       >
-        {stage === "final" && !firstGpuFrame ? (
+        {finalRuntime(stage) && !firstGpuFrame ? (
           <div
             aria-hidden="true"
             data-qa="ps04-neutral-poster"
             style={{
               position: "absolute", inset: 0, display: "grid", placeItems: "center",
-              background: paper, pointerEvents: "none", zIndex: 2,
+              background: sceneBackground, pointerEvents: "none", zIndex: 2,
             }}
           >
             <div style={{
@@ -2326,6 +2359,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
             geometrySnapshotRef={geometrySnapshotRef}
             programBindRef={programBindRef}
             geometryAckRef={geometryAckRef}
+            releaseRevision={stage === "final-r2" ? "r2" : undefined}
+            onRenderedFrame={(frame) => { renderedFrameRef.current = frame; }}
             onGeometryAck={(ack) => {
               geometryAckRef.current = ack;
               const pending = programBindRef.current;
@@ -2353,7 +2388,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62" }: { mode: "lab" | "pr
             qaControls={!production}
             onStats={(nextStats) => {
               setStats(nextStats);
-              if (stage !== "final" || manualDpr) return;
+              if (!finalRuntime(stage) || manualDpr) return;
               const next = nextAdaptiveDpr(adaptiveDprRef.current, nextStats.p95Ms, performance.now(), window.innerWidth, window.innerHeight, window.devicePixelRatio || 1);
               adaptiveDprRef.current = next;
               if (next.dpr !== dprRef.current) setDpr(next.dpr);

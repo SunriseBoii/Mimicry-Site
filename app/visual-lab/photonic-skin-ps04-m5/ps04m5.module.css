@@ -588,3 +588,9 @@
   top: calc(var(--header-h) + 8px);
   right: var(--safe-right);
 }
+
+/* R2 shares the page/poster surface; the WebGL canvas stays transparent. */
+.lab[data-release="final-r2"][data-theme="light"] {
+  --paper: #f2f2f0;
+  background: radial-gradient(ellipse at 73% 48%, #f6f6f4 0%, #f2f2f0 65%);
+}

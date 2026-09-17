@@ -1,3 +1,5 @@
+import { loadR2Manifest, loadR2Payload, reviseR2Entry } from "../final-r2/release-geometry";
+import { loadEventManifest } from "../final-r2/event-geometry";
 import {
   decodeState,
   LruCache,
@@ -56,7 +58,7 @@ export interface ReleaseGeometryManifest {
 }
 
 export interface BuilderLoadOptions {
-  releaseGeometry?: boolean;
+  releaseGeometry?: boolean | "r2";
 }
 
 const stateCache = new LruCache<string, DecodedState>(12);
@@ -167,15 +169,17 @@ export async function loadBuilderRuntime(signal?: AbortSignal, options: BuilderL
     return { ...entry, contentHash: revised.resultHash };
   });
   if (Object.keys(release.states).length !== 203) throw new Error("PS-04 Event release state coverage mismatch");
-  return { m3: { ...merged, states }, m4, delta };
+  return { m3: { ...merged, states: options.releaseGeometry === "r2" ? await Promise.all(states.map(reviseR2Entry)) : states }, m4, delta };
 }
 
 export async function loadBuilderState(entry: StateEntry, signal?: AbortSignal, options: BuilderLoadOptions = {}): Promise<DecodedState> {
   const namespace = namespaceForStateId(entry.stateId);
   const release = options.releaseGeometry ? await loadReleaseGeometryManifest(signal) : null;
   const revised = release?.states[entry.stateId];
-  const expectedSourceHash = revised?.sourceHash ?? entry.contentHash;
-  if (revised && (revised.resultHash !== entry.contentHash || revised.sourceNamespace !== namespace)) {
+  const r2 = options.releaseGeometry === "r2" ? (await loadR2Manifest()).states[entry.stateId] : null;
+  const event = options.releaseGeometry === "r2" ? (await loadEventManifest()).states[entry.stateId] : null;
+  const expectedSourceHash = revised?.sourceHash ?? r2?.sourceHash ?? entry.contentHash;
+  if (revised && (revised.resultHash !== (r2?.sourceHash ?? event?.sourceHash ?? entry.contentHash) || revised.sourceNamespace !== namespace)) {
     throw new Error(`PS-04 release state/manifest mismatch: ${entry.stateId}`);
   }
   const cacheKey = `${namespace}:${entry.stateId}:${entry.contentHash}:${options.releaseGeometry ? "r1" : "frozen"}`;
@@ -196,6 +200,7 @@ export async function loadBuilderState(entry: StateEntry, signal?: AbortSignal, 
     payload = applyReleasePatch(payload, patch, revised);
     if (await sha256Hex(payload) !== revised.resultHash) throw new Error(`${entry.stateId} release result SHA-256 mismatch`);
   }
+  if (options.releaseGeometry === "r2") payload = await loadR2Payload(payload, entry, signal);
   const decoded = decodeState(entry, payload);
   stateCache.set(cacheKey, decoded);
   return decoded;

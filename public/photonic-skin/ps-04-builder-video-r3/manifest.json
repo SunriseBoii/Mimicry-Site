@@ -1,0 +1,3283 @@
+{
+  "stage": "PS-04.builder-video-r3",
+  "identitySize": 16384,
+  "patchRecordStride": 16,
+  "states": {
+    "complex-gather-content-video": {
+      "sourceHash": "f170230c51e47d9ff66c357a4e406f92d2c1ff2668560e4d0817cbae1972f200",
+      "resultHash": "3cff9dbce76da9ef93cefb184d2774267da9164cb47f94f5b62b7fa19c4c82f3",
+      "patchHash": "9100cd4a1aba9b2bbc728f38c18b443a489156134f18339cd5ee0ae61cff7dfa",
+      "patchPath": "patches/complex-gather-content-video.bin",
+      "recordCount": 8677,
+      "componentIndices": [
+        1,
+        2
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.45418884715809693,
+          0.002848240308078318,
+          0.01404048838590038
+        ],
+        "translate": [
+          -0.45418884715809693,
+          -0.002848240308078318,
+          -0.01404048838590038
+        ],
+        "scale": 0.5791707269847395,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-video": {
+      "sourceHash": "3fbfbaaf6b91e82d00af39d4656fcf205f49bdf8603c4a46307534091c47c0fa",
+      "resultHash": "19848858ed3a24f0f6e410870d66070772a62f03729fbd30d2039368ed961b41",
+      "patchHash": "804d117ccd1bf05d28237bfe030a2b0a344c116db1df58b8328def64e6523784",
+      "patchPath": "patches/complex-drive-content-video.bin",
+      "recordCount": 9128,
+      "componentIndices": [
+        1,
+        2
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.30974356421457405,
+          -0.0033536429173440826,
+          -0.166959906904886
+        ],
+        "translate": [
+          -0.30974356421457405,
+          0.0033536429173440826,
+          0.166959906904886
+        ],
+        "scale": 0.5944674588739873,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-video": {
+      "sourceHash": "8f339eede4968ccd0313787edd0007ba9abfabfbb1a6174282132180e4dc4cb6",
+      "resultHash": "72eec4b0be55188178b184504ca5c5ba55fd8bbc1a8804e1996d9e37a3f18bbf",
+      "patchHash": "d4e9b3b4008a4db110450d7c4352814e0fbfa7f5bb39c12f223aae932eb1f99c",
+      "patchPath": "patches/complex-gather-design-video.bin",
+      "recordCount": 8240,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.30600552234697126,
+          -0.006714927266677806,
+          -0.04072311496523254
+        ],
+        "translate": [
+          -0.30600552234697126,
+          0.006714927266677806,
+          0.04072311496523254
+        ],
+        "scale": 0.7041875906288624,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-video": {
+      "sourceHash": "d808044579c5d44dd47cda17531a4d80f469ff1d214193b132ced0ef42603ef2",
+      "resultHash": "faf1e7d658e1c4bc652ee3bbbd1df1afa453871fc8331096e299910bfd4e7bbe",
+      "patchHash": "ab8e8787a8158136da674b9ac92789bcf9bb570432f3a93dde06605293c953dc",
+      "patchPath": "patches/complex-drive-design-video.bin",
+      "recordCount": 8691,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.22077175839687815,
+          -0.044041779428525864,
+          -0.3089491612663635
+        ],
+        "translate": [
+          -0.22077175839687815,
+          0.044041779428525864,
+          0.3089491612663635
+        ],
+        "scale": 0.7461502745747567,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-video": {
+      "sourceHash": "9b0e7d9e63a1f3a69da3b1878483280f02477bd95b05f1f20abb91a591e8b327",
+      "resultHash": "e6f23f91021bfe75d075a02c80262de11c93ac55214ff5db9e72e505735b5f87",
+      "patchHash": "b50a1259fb3e5e1174a40b266f107eee0ed79fca08f09429e8358e9bae209e8c",
+      "patchPath": "patches/complex-gather-digital-video.bin",
+      "recordCount": 9387,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.19274833510228273,
+          -0.1620888135591958,
+          -0.051514367541650063
+        ],
+        "translate": [
+          0.19274833510228273,
+          0.1620888135591958,
+          0.051514367541650063
+        ],
+        "scale": 0.6019879169762135,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-video": {
+      "sourceHash": "f7917b4e97f22bdcb7d2c90517fb336cafd0c710acbe3b232e85d49dd8383b26",
+      "resultHash": "a37334cb3500525c9e6fd49ad71ffd60f0e6bb59656b742c809fb08538d91b35",
+      "patchHash": "91f7d1b18d9e1449a450564f5d5159b9b1964cde47bd389d72353d232b6517f1",
+      "patchPath": "patches/complex-drive-digital-video.bin",
+      "recordCount": 9830,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.4025020029477211,
+          -0.25514691031897696,
+          -0.30371935435715436
+        ],
+        "translate": [
+          0.4025020029477211,
+          0.25514691031897696,
+          0.30371935435715436
+        ],
+        "scale": 0.6507722631096841,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-event-video": {
+      "sourceHash": "430b244f483c7c0d52f2b198a1b71a1df47761113637564e9a5fd4afa31b8d50",
+      "resultHash": "98cb8425dee326f2cfe1282fa0edaf1a1a8f0a2fc3305cd47ce48f4ed004ac01",
+      "patchHash": "e4c8a9d190a3b2c887016695b2b0296947007450b24b1d09e1a7b54cb9da8199",
+      "patchPath": "patches/complex-gather-event-video.bin",
+      "recordCount": 8344,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.5665284959431958,
+          -0.03130438962229176,
+          -0.26775899978793927
+        ],
+        "translate": [
+          -0.5665284959431958,
+          0.03130438962229176,
+          0.26775899978793927
+        ],
+        "scale": 0.621459299325943,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-event-video": {
+      "sourceHash": "2e761cdc3a30ec017b8592dcce0e633e4b95d2098c88f0fd90c293cf276230e6",
+      "resultHash": "5450b689d62eb6cda02d2f956f20266ef6632fdf068ddd0d60d8d9f44239d3b6",
+      "patchHash": "06ffe0a62a08cd01ab024fa02dab859290e6bc27cde2f2b27db7c993d670b18b",
+      "patchPath": "patches/complex-drive-event-video.bin",
+      "recordCount": 8817,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.41638691484023127,
+          0.04608381683148289,
+          -0.3017677480967656
+        ],
+        "translate": [
+          -0.41638691484023127,
+          -0.04608381683148289,
+          0.3017677480967656
+        ],
+        "scale": 0.6732664145529272,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-games-video": {
+      "sourceHash": "c2a60c0d52d2bca0045ec1121872b0e0ad18baa7c381df57038e59d6a8822321",
+      "resultHash": "119188703be61e991ef53c987348dc7031cd24021ebe3a8acd9c7b87986d5262",
+      "patchHash": "0b196b752ab171045f6a4dd245de3161bef2b45371a6fa59c0a8aaa6095d1605",
+      "patchPath": "patches/complex-gather-games-video.bin",
+      "recordCount": 9032,
+      "componentIndices": [
+        2,
+        3
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.614693071006038,
+          0.1869236306973745,
+          -0.012203536503279272
+        ],
+        "translate": [
+          -0.614693071006038,
+          -0.1869236306973745,
+          0.012203536503279272
+        ],
+        "scale": 0.4762872576713562,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-games-video": {
+      "sourceHash": "605b5c4e432f24c7c26cd6f2f686875c58d70a070fcabb2272b17ec649c3df72",
+      "resultHash": "efd46da8d5f1bfa75e95e4589a68cfc25de7184aaa81f8a7a10a8f42b630ad52",
+      "patchHash": "cb506f8671b8c403bc4aaf5e298af27389ff2b68f197dc593efe1ddd681a3b95",
+      "patchPath": "patches/complex-drive-games-video.bin",
+      "recordCount": 9457,
+      "componentIndices": [
+        2,
+        3
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.5250338336560718,
+          0.1050185063490455,
+          -0.31302642593413393
+        ],
+        "translate": [
+          -0.5250338336560718,
+          -0.1050185063490455,
+          0.31302642593413393
+        ],
+        "scale": 0.4847271032631398,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-merch-video": {
+      "sourceHash": "5c18690185cf4445df3c6811e6f75d68658cbb69abde1f48dbe21be810eaadd2",
+      "resultHash": "23ca975423a078b6c0486a99db19bca1efc23f78d0ce490bea5de2a25c956709",
+      "patchHash": "058d8afe4fe1a1794d2ad89d5abade4282c02e0532811817868644a422707a7c",
+      "patchPath": "patches/complex-gather-merch-video.bin",
+      "recordCount": 8453,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          1.0582937639013692,
+          -0.09542453471934609,
+          -0.24490776647600132
+        ],
+        "translate": [
+          -1.0582937639013692,
+          0.09542453471934609,
+          0.24490776647600132
+        ],
+        "scale": 0.5969224780797959,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-merch-video": {
+      "sourceHash": "6370f448f575e142084e5e91d01ca1dd1c47498d877f1f1ec9855bd472ac94d3",
+      "resultHash": "59466b0dda945b2d3c03862a71d7c859a46cacd8eff941b354790a9ff1689060",
+      "patchHash": "0368b4dced0676bad38ae73035441a2e788bd1bd2ba7a1627a08f882d7349fad",
+      "patchPath": "patches/complex-drive-merch-video.bin",
+      "recordCount": 8938,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.8564102046106603,
+          -0.01942395198405178,
+          -0.2870340101012303
+        ],
+        "translate": [
+          -0.8564102046106603,
+          0.01942395198405178,
+          0.2870340101012303
+        ],
+        "scale": 0.6543994344770911,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-video": {
+      "sourceHash": "45d6546963425170d357f93fbd40483cae44ff39a962dad6687b1664f881b53c",
+      "resultHash": "b3f3a4475d7f6bf20f34cc6613b0f61102dcab89bdee400b7870fecf2e69ab3e",
+      "patchHash": "8961b8ed837e69d9cdc81d8337b55dc83115367f8a07aaa2950d4041dce961a5",
+      "patchPath": "patches/complex-gather-content-design-video.bin",
+      "recordCount": 5650,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.01994132015988548,
+          0.009071206833777878,
+          -0.1305194271126311
+        ],
+        "translate": [
+          -0.01994132015988548,
+          -0.009071206833777878,
+          0.1305194271126311
+        ],
+        "scale": 0.6831762045621872,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-video": {
+      "sourceHash": "4c2ef32bf62f5fba1f582c055dcfa8895e7a005d12e1cfe709976075403fd31d",
+      "resultHash": "a9d9115f06db995b74d67a6dcae2d6aa862f4e80a1ce7371ef26fbf8c01fcb8c",
+      "patchHash": "3433c468c7c7d4f9b807b871c232012d4a35cdb901f90f24d7a920dd3fc21920",
+      "patchPath": "patches/complex-drive-content-design-video.bin",
+      "recordCount": 5977,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.02888014915452697,
+          -0.03376102148141413,
+          -0.10583793292805788
+        ],
+        "translate": [
+          -0.02888014915452697,
+          0.03376102148141413,
+          0.10583793292805788
+        ],
+        "scale": 0.4723894782364369,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-video": {
+      "sourceHash": "2c7818c7dda25197bb9409b860c1a10f00f970879281ee438532660e92804e15",
+      "resultHash": "98cc33b9471f85d1718e8ddb53dfaaf421da480fed0ad53d95c4993ec2be68d3",
+      "patchHash": "d08140057ab53208a774b7a6caa9974acd79e9e663407f719edb6982eb850350",
+      "patchPath": "patches/complex-gather-content-digital-video.bin",
+      "recordCount": 6114,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.04897621043778333,
+          0.22799026782013598,
+          -0.014052412949240534
+        ],
+        "translate": [
+          -0.04897621043778333,
+          -0.22799026782013598,
+          0.014052412949240534
+        ],
+        "scale": 0.6747285470366479,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-video": {
+      "sourceHash": "5fd5a545fdd935e7a3217ea2c7a7bd71f570119772397e70c0e90077ebe96048",
+      "resultHash": "5369969f9a10a0aa8c5e3c2de4ddb06165e80b918a5cc314a7fa43943c863c87",
+      "patchHash": "dd9434e1660677fbf9ee373570988d497261154971dbef59dae40ed5a9255911",
+      "patchPath": "patches/complex-drive-content-digital-video.bin",
+      "recordCount": 6468,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.13194256704909435,
+          0.01651355651336406,
+          -0.021549182399510647
+        ],
+        "translate": [
+          0.13194256704909435,
+          -0.01651355651336406,
+          0.021549182399510647
+        ],
+        "scale": 0.4483371309936047,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-event-video": {
+      "sourceHash": "561ce61e7ee8d384df96580a4513fc73063e1769d2db3ec6000afde6dd32b276",
+      "resultHash": "b9aca8becb57fa599679679cc9a2a1c6d7226c5e99536b61dab07f2ce785e3c4",
+      "patchHash": "226ad27eebfd6711e1cee13e2020f63a6d8562333e249cc0249f10a130232f43",
+      "patchPath": "patches/complex-gather-content-event-video.bin",
+      "recordCount": 5648,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.07343184635391964,
+          0.15058768429251934,
+          -0.053802822346369794
+        ],
+        "translate": [
+          -0.07343184635391964,
+          -0.15058768429251934,
+          0.053802822346369794
+        ],
+        "scale": 0.6654059194028379,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-event-video": {
+      "sourceHash": "59d30d37acc64740215f8b24362872cf334e82cef4567bb62ba0dc14c94b931a",
+      "resultHash": "9fe763addb7b40ad8f9775e3e9994516a34529d86fd870753d55f00b27c29b08",
+      "patchHash": "5b10a5dcfdd76c624a63475a5805b67422248f3944a6fdd0dad2a61ca7813bd1",
+      "patchPath": "patches/complex-drive-content-event-video.bin",
+      "recordCount": 5977,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.16030441589707922,
+          -0.0015755336189355873,
+          -0.18363842401536612
+        ],
+        "translate": [
+          -0.16030441589707922,
+          0.0015755336189355873,
+          0.18363842401536612
+        ],
+        "scale": 0.44876701533794405,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-games-video": {
+      "sourceHash": "60b55cae7f80db0a471a8a8292fe49763a2e904fd4d42adab232952b59d7083d",
+      "resultHash": "97a1b6b63bcb2ad0bff5308a981f2ac4e768aac7038a295c2b1ea1380d60ee57",
+      "patchHash": "460936bc54733f3af286d5edbed7ddde835aa55af857a64dc53d6c1b09815d54",
+      "patchPath": "patches/complex-gather-content-games-video.bin",
+      "recordCount": 6005,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.03921047087071372,
+          0.012396319973726033,
+          -0.1472684974770999
+        ],
+        "translate": [
+          -0.03921047087071372,
+          -0.012396319973726033,
+          0.1472684974770999
+        ],
+        "scale": 0.6415041781961919,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-games-video": {
+      "sourceHash": "2f297dc0e56d95692223758e50b7b4d62cbc61cbf2c3875c840437c1a5738ae7",
+      "resultHash": "8a38c077911c12d119f4577283ee1aff00a5dc21a31f57c0180e535c9d29235a",
+      "patchHash": "f457240ed568e1996ef58ede60a1b4876e12be7e053af3def9cf52b0e3db59e3",
+      "patchPath": "patches/complex-drive-content-games-video.bin",
+      "recordCount": 6353,
+      "componentIndices": [
+        3,
+        4
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.38645533183455427,
+          0.07822642404416846,
+          -0.15630168509480252
+        ],
+        "translate": [
+          -0.38645533183455427,
+          -0.07822642404416846,
+          0.15630168509480252
+        ],
+        "scale": 0.40896843820810314,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-merch-video": {
+      "sourceHash": "9b2d15d7be794226e057df0a76a98518719b4af1eaa45e9feca2f90d429c79db",
+      "resultHash": "37053a84b12018e8b47c412003d1a65258a8c125cfc0acd562ab9c24f18f2d9c",
+      "patchHash": "ef9a5c649f949949f4ce6500339ee1ba36b0376d8b8d55aa9167044f6fed6496",
+      "patchPath": "patches/complex-gather-content-merch-video.bin",
+      "recordCount": 5705,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.23109904873020515,
+          0.10218250741044899,
+          -0.019124133425066248
+        ],
+        "translate": [
+          -0.23109904873020515,
+          -0.10218250741044899,
+          0.019124133425066248
+        ],
+        "scale": 0.6549698933959008,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-merch-video": {
+      "sourceHash": "d5df67d5fa28de498db6adce76fc71ceda39b7da36cba920870f1d17aa170f8d",
+      "resultHash": "9836057d4637d64fbbee51c1ad49fea3de0f0354de7b4bd5326603b58ddab165",
+      "patchHash": "4db679e00398347dab3db3cb55b24ed8719d7fb17ce1b327464b61a6e35e14fa",
+      "patchPath": "patches/complex-drive-content-merch-video.bin",
+      "recordCount": 6036,
+      "componentIndices": [
+        4,
+        5
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.45197172379084805,
+          -0.003635204946489168,
+          -0.13054492533118922
+        ],
+        "translate": [
+          -0.45197172379084805,
+          0.003635204946489168,
+          0.13054492533118922
+        ],
+        "scale": 0.4251241810619831,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-video": {
+      "sourceHash": "0e867a5461e1a198f1a5a8f1bab114f396eb55a8ac0d41e1ccc52331efa872d9",
+      "resultHash": "b26d9e8e46573adf647cb610b5cb08361331f1b45b159ffae913227c50f652eb",
+      "patchHash": "4ad65060d2a3da51633c604dfcfe400350d7002ce3470e35746da1123abb7fde",
+      "patchPath": "patches/complex-gather-design-digital-video.bin",
+      "recordCount": 6031,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.019200246967968626,
+          0.18144146834967678,
+          -0.10206006283988245
+        ],
+        "translate": [
+          0.019200246967968626,
+          -0.18144146834967678,
+          0.10206006283988245
+        ],
+        "scale": 0.7424291655421258,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-video": {
+      "sourceHash": "ac78c261d8921d53b540980a005f35b2c66f4aa809053f4f98bb2593a69cd5da",
+      "resultHash": "d217ffe312d450f81d7d79aa47576a6873f9d888e3b8d50b7499003467c62166",
+      "patchHash": "f960930af1e67d5b13bc60870c90d20277ce8efe4e2475a76a3dca05d906e666",
+      "patchPath": "patches/complex-drive-design-digital-video.bin",
+      "recordCount": 6384,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.14749067272873617,
+          -0.023275552864644222,
+          -0.12356633086660707
+        ],
+        "translate": [
+          0.14749067272873617,
+          0.023275552864644222,
+          0.12356633086660707
+        ],
+        "scale": 0.5043818615376949,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-event-video": {
+      "sourceHash": "d4ba972616ce93223d9642a07d281e182609235e406f7046565da2c235a5bdcf",
+      "resultHash": "d0c813c4cd6937e7ea04c4af3cb3c7fad2c1b52ff0749eaffb66a504fae3d14a",
+      "patchHash": "15d7df13882094df28674bedff7ab80d8601a9094ca2e3650b979b5a6ebdb08d",
+      "patchPath": "patches/complex-gather-design-event-video.bin",
+      "recordCount": 5577,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.007782911090300937,
+          0.10137698510221327,
+          -0.1368318580898631
+        ],
+        "translate": [
+          -0.007782911090300937,
+          -0.10137698510221327,
+          0.1368318580898631
+        ],
+        "scale": 0.7662387594580652,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-event-video": {
+      "sourceHash": "5ca859442a338d943328dcdd48886a0b60c8d5e65099692cda514de8d5a601d3",
+      "resultHash": "fe9272dc1cd7321833cb058dc084b1fc6a13520f1053ec3615a18dc935468169",
+      "patchHash": "1b17454cee05ced0825077436d11ecc7dbc8664aaad3d9044b2c52b1d6876fec",
+      "patchPath": "patches/complex-drive-design-event-video.bin",
+      "recordCount": 5903,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.28074700196597224,
+          0.008113898774531503,
+          -0.2986416502864015
+        ],
+        "translate": [
+          -0.28074700196597224,
+          -0.008113898774531503,
+          0.2986416502864015
+        ],
+        "scale": 0.5035728536546229,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-games-video": {
+      "sourceHash": "351d758d0a8d903efbe2de4d31cb0fe520bb960e96f4ca196ca77f22e286fd53",
+      "resultHash": "fdc0c030dd50e9fa35ecaced7cfda784c75e1c743e3a0440aa8649316d10c78c",
+      "patchHash": "708f9ee55d25105d3167c9c258ff4b3f2d0e929b6563d171d9d114f4b6cfe6d4",
+      "patchPath": "patches/complex-gather-design-games-video.bin",
+      "recordCount": 5926,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.011128532984659989,
+          -0.02210935817111892,
+          -0.23618247062614017
+        ],
+        "translate": [
+          0.011128532984659989,
+          0.02210935817111892,
+          0.23618247062614017
+        ],
+        "scale": 0.6280445247888564,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-games-video": {
+      "sourceHash": "99f2e43a6f3f1a374a5b3e20e63fef8113992b1f41f949ab377d6326a2365b63",
+      "resultHash": "9eadb9cfa0c1e15dbb3bfb15c65dc7579963d003b2a8ed8fd16d8de0908ea840",
+      "patchHash": "7ae252f14017ae51aea943397433192da46e7a8e9f3f9687599c2f8e3c4d1092",
+      "patchPath": "patches/complex-drive-design-games-video.bin",
+      "recordCount": 6273,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.29413028781089956,
+          -0.013784396279465927,
+          -0.27828748312333046
+        ],
+        "translate": [
+          -0.29413028781089956,
+          0.013784396279465927,
+          0.27828748312333046
+        ],
+        "scale": 0.4166655331850052,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-merch-video": {
+      "sourceHash": "4c8f8a0cdadf654e23c04a4e154bc495bb1aa11f66b8665f488c077e1717ef06",
+      "resultHash": "36ed917b2c496cb85a87de6a6105c8f3cbd41513baf30e9ca342a9a579f5e585",
+      "patchHash": "fae88f859f2b9a607a983643db391c112ffdb01ec7525d7898bab749daf70e88",
+      "patchPath": "patches/complex-gather-design-merch-video.bin",
+      "recordCount": 5633,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.15849569407922548,
+          0.04941335367219901,
+          -0.10127925298911578
+        ],
+        "translate": [
+          -0.15849569407922548,
+          -0.04941335367219901,
+          0.10127925298911578
+        ],
+        "scale": 0.714296742528677,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-merch-video": {
+      "sourceHash": "7ed34119f18e3b7fdcb794fbd03baa93bf12fa00588cd6f93a9677df366724fd",
+      "resultHash": "254f21ca0305c5cf7af2ec2a3dc02b88ee9c65f4c8dde41f28b75ebf1ca5c59b",
+      "patchHash": "7d75b79b96df244a4890364e22dbdfd9be89574e080c0afc01f8ad20334b13a0",
+      "patchPath": "patches/complex-drive-design-merch-video.bin",
+      "recordCount": 5962,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.577926223807026,
+          0.00749621441261894,
+          -0.24690311548466815
+        ],
+        "translate": [
+          -0.577926223807026,
+          -0.00749621441261894,
+          0.24690311548466815
+        ],
+        "scale": 0.4751144014298917,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-event-video": {
+      "sourceHash": "e8dd357e0f1c6e3f790f9550b1cba0b233db78db0c6713e6b9b242e1dbddc7a9",
+      "resultHash": "9c351f92a299098222b819ee5c7110134a19449b19feba9efcb9eb5904e10b25",
+      "patchHash": "f8e3cc7984809d143b32d8acc0f4b3bf883092157c9826a05cc3cd23a73554a0",
+      "patchPath": "patches/complex-gather-digital-event-video.bin",
+      "recordCount": 6031,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.25851086933430845,
+          0.13242841671361916,
+          0.0020199017690174514
+        ],
+        "translate": [
+          0.25851086933430845,
+          -0.13242841671361916,
+          -0.0020199017690174514
+        ],
+        "scale": 0.7079706922173502,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-event-video": {
+      "sourceHash": "084d4e14981dd5d784f64bfa7254139c90e49a750120a2a8cc0db4871f8eb390",
+      "resultHash": "18b9758cd07abb58fc1c4b3fc3479c166d62b993629ecd2ceef54996a93dce5c",
+      "patchHash": "3f3218981b18b12c9fcf6fb1a5dbdb85bef7b160387acb46f1804e11e39ad46b",
+      "patchPath": "patches/complex-drive-digital-event-video.bin",
+      "recordCount": 6353,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.11267757560900726,
+          -0.22910310493955288,
+          -0.3499326915649259
+        ],
+        "translate": [
+          0.11267757560900726,
+          0.22910310493955288,
+          0.3499326915649259
+        ],
+        "scale": 0.45177494511008265,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-games-video": {
+      "sourceHash": "af82aea04fb35eebb70ad8310b5c65d0b715977e20c085050014c1dde6ae42c4",
+      "resultHash": "22355a9d3c3e0763cb25ea350f6e0737fdd1be403730f25c0142ad450eed63a8",
+      "patchHash": "479f6e258469e0cb128008a02769f1e2d9533c6ec21058e13a0a053374b1c9c6",
+      "patchPath": "patches/complex-gather-digital-games-video.bin",
+      "recordCount": 6440,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.3060294780438413,
+          -0.03378200841684542,
+          -0.12911506261174743
+        ],
+        "translate": [
+          0.3060294780438413,
+          0.03378200841684542,
+          0.12911506261174743
+        ],
+        "scale": 0.6101214945316317,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-games-video": {
+      "sourceHash": "673c7c43df240781bd7b09e2b6289717733b9ce5f5b6f2ffc737189a2f167032",
+      "resultHash": "f0804869875e2145b746dae9c0e25c5d8526ea953ba2bcf7c74eb136f26fa5ea",
+      "patchHash": "6343b85f0981d3fec105d1952c3cfbe92514fa1339ae2d1bcf05a262c8959e50",
+      "patchPath": "patches/complex-drive-digital-games-video.bin",
+      "recordCount": 6781,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.03397592217747203,
+          -0.2311483518615205,
+          -0.31933033648362397
+        ],
+        "translate": [
+          0.03397592217747203,
+          0.2311483518615205,
+          0.31933033648362397
+        ],
+        "scale": 0.378375805914402,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-merch-video": {
+      "sourceHash": "eceb802838fa41bd22de31dc8dfc8964160c1ed3e635b4e786b90f078c267527",
+      "resultHash": "b7902aa862ab15e351673553d751983031d8e9402fe05fd7cea5942feb8d05da",
+      "patchHash": "b9e7ed2fc025d83962402fd063497be9601701ece0094863361a2781d401630c",
+      "patchPath": "patches/complex-gather-digital-merch-video.bin",
+      "recordCount": 6095,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.08984662970828072,
+          0.078261674150931,
+          0.054870170264621265
+        ],
+        "translate": [
+          0.08984662970828072,
+          -0.078261674150931,
+          -0.054870170264621265
+        ],
+        "scale": 0.659307984262705,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-merch-video": {
+      "sourceHash": "3ee02bc63efb4051f60fc8c83bff22d2e2f01affdbba105480be5c3b73c9f0b5",
+      "resultHash": "1a687b2e9798c6bbf838cc8772fe87b6388dda5229cd6459119836ecc0cefefc",
+      "patchHash": "ba51f55463280a5997afa1f5ab50473d144f1fce04c7527cb74825c951266f33",
+      "patchPath": "patches/complex-drive-digital-merch-video.bin",
+      "recordCount": 6420,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.1892311071810635,
+          -0.2229827442794141,
+          -0.24480340737131012
+        ],
+        "translate": [
+          -0.1892311071810635,
+          0.2229827442794141,
+          0.24480340737131012
+        ],
+        "scale": 0.42303599417209625,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-event-games-video": {
+      "sourceHash": "ceb4af6630a02c7744263bc41d31c0c295e2b0381ca05247f9968b00b87b3fb1",
+      "resultHash": "607ad3e481692c55590c04fec5ee078a1ecddc164e0a764d7ef951654c71d304",
+      "patchHash": "45bc2118e3c3eb576d09bbdfb9bc38fa2cd69b4cfe29125ce4fb8e8333b4aca3",
+      "patchPath": "patches/complex-gather-event-games-video.bin",
+      "recordCount": 5925,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.13822020919973665,
+          -0.028785554373564892,
+          -0.15315735353995485
+        ],
+        "translate": [
+          0.13822020919973665,
+          0.028785554373564892,
+          0.15315735353995485
+        ],
+        "scale": 0.6186181157827375,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-event-games-video": {
+      "sourceHash": "28e913ff5a3b2954ec85629ba51cd1882c9bfdb908ca32af7132cff363719fda",
+      "resultHash": "0591fba8f5eaf98b1df2e0b3bfcbada103f2b520c37c8da4add29576cc9da15b",
+      "patchHash": "8f3774db95bb6f4d2290640da6f34fe1517142fd4f609f049fb84fac44816370",
+      "patchPath": "patches/complex-drive-event-games-video.bin",
+      "recordCount": 6271,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.12201339059856764,
+          -0.13951125235647543,
+          -0.28861826389502676
+        ],
+        "translate": [
+          -0.12201339059856764,
+          0.13951125235647543,
+          0.28861826389502676
+        ],
+        "scale": 0.40385571867227554,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-event-merch-video": {
+      "sourceHash": "89f90a27ee155cb20d4105e8b3818be7014034e64fe31853009a62f307f8a972",
+      "resultHash": "82d74e3df9ab166c095b29168e26c97c1897be44a51fd7584bc6743b8f77607a",
+      "patchHash": "527242e30104ce53dbbd6a67212d83f0b1a6786cc9fe8b0aed04ca72f5b9dfbe",
+      "patchPath": "patches/complex-gather-event-merch-video.bin",
+      "recordCount": 5631,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.05491582472869194,
+          0.06628995912794089,
+          -0.006673229690932203
+        ],
+        "translate": [
+          -0.05491582472869194,
+          -0.06628995912794089,
+          0.006673229690932203
+        ],
+        "scale": 0.715790813416243,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-event-merch-video": {
+      "sourceHash": "9aaa4e3be6a4fca3b38325858067927737735df77d969007c8e11079aa76362e",
+      "resultHash": "029ee62d9798e96e99dcd0cfee0573de28396903669a19cb40d25aeedba35f94",
+      "patchHash": "627425560262bd01abb33928b4e5ffc0c7b6c7cfee3b3f770e87b0750b4a605a",
+      "patchPath": "patches/complex-drive-event-merch-video.bin",
+      "recordCount": 5959,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.4478014104773189,
+          -0.062198667900304816,
+          -0.22708302175595518
+        ],
+        "translate": [
+          -0.4478014104773189,
+          0.062198667900304816,
+          0.22708302175595518
+        ],
+        "scale": 0.46213019639253616,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-games-merch-video": {
+      "sourceHash": "3e5e9ff61038ce6809a2bf3c03f284ba11c15ebc3459cfc271cedff9a5f856bc",
+      "resultHash": "657a1ee20d7c2bdf72c067e81ae4d0a6492c39217e01a22b859ee49806cab6be",
+      "patchHash": "cd30671c72c5991f7517855d54a9b7689e60830f11705b9df0da5955ed8abed8",
+      "patchPath": "patches/complex-gather-games-merch-video.bin",
+      "recordCount": 5987,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.24184272924659345,
+          0.11007956073590863,
+          -0.16904627942767547
+        ],
+        "translate": [
+          -0.24184272924659345,
+          -0.11007956073590863,
+          0.16904627942767547
+        ],
+        "scale": 0.5847331322729588,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-games-merch-video": {
+      "sourceHash": "0ee79bcc6e833acff770c3bbf178d7caf9c30f0d4a325ef9818be6053dd39d7f",
+      "resultHash": "6a3654fb4cb241af502e1198d801669b350be760d6354b6a41b1c1aa33aa5396",
+      "patchHash": "cf4ab8da4e23194f2a015b34c4398dfa752aba60deedc5a3fc346003ae8bd5e0",
+      "patchPath": "patches/complex-drive-games-merch-video.bin",
+      "recordCount": 6314,
+      "componentIndices": [
+        5,
+        6
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.45998620658113376,
+          0.003030404938474618,
+          -0.19847741549939535
+        ],
+        "translate": [
+          -0.45998620658113376,
+          -0.003030404938474618,
+          0.19847741549939535
+        ],
+        "scale": 0.37239975035190587,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-video": {
+      "sourceHash": "7bb93ba59a8b2ed656dd1a2804849075a44e6fcb4ed3f1f0840145f99f70913b",
+      "resultHash": "680dd5efd336f9d2e40957b97ba26f6b65c6cbc2eac46136c5dfc3d19f6372b9",
+      "patchHash": "f663b64d057e251b007eb4de200fa7fc4d00990e17c8dcf3befaea735b383245",
+      "patchPath": "patches/complex-gather-content-design-digital-video.bin",
+      "recordCount": 4487,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.05495016673350328,
+          -0.181324983190414,
+          -0.21968318853942037
+        ],
+        "translate": [
+          0.05495016673350328,
+          0.181324983190414,
+          0.21968318853942037
+        ],
+        "scale": 0.6766766354441645,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-video": {
+      "sourceHash": "37905befa5e6985311bd93f53341ce061a0fd9d6b8a89727b1f27329343eb25f",
+      "resultHash": "1d5d47a3ba7358aa25bec18da066a35c91694a35439a42d2665ecacc95e08ddf",
+      "patchHash": "a1a675ac0b11e6d0a140576f183b637974a28cec63dfe537783afc61f6e4ed5e",
+      "patchPath": "patches/complex-drive-content-design-digital-video.bin",
+      "recordCount": 4754,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.12852919382168126,
+          0.13258408764886553,
+          -0.03838141262416361
+        ],
+        "translate": [
+          -0.12852919382168126,
+          -0.13258408764886553,
+          0.03838141262416361
+        ],
+        "scale": 0.3607523985207081,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-event-video": {
+      "sourceHash": "26c4b21cbfa145d6cbfefb225b0ad464ec4b0d4bb20282f11ce91d0b877a80a3",
+      "resultHash": "f8b4fb2804a9261993986e2217c8b22e03d58fa4df44248a825936ae49b70589",
+      "patchHash": "35706fbdc5ffb40e0600100eb98273485b5f440e98baef5d3ae35fcbf45a3439",
+      "patchPath": "patches/complex-gather-content-design-event-video.bin",
+      "recordCount": 4227,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.0028098554287989685,
+          -0.13068986749094336,
+          -0.19128029133935343
+        ],
+        "translate": [
+          0.0028098554287989685,
+          0.13068986749094336,
+          0.19128029133935343
+        ],
+        "scale": 0.7045687124133109,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-event-video": {
+      "sourceHash": "b1f5573f39610fcc8ed8c75b6de4ac8dc6c2214c6b2bd0c23ee516ff662b018f",
+      "resultHash": "46a4851ac496e4aec59420d62b688308e01f7e7f80f18e8a87802cadee3f164e",
+      "patchHash": "36434134c615b4ca124934bb197fb22dc59678f040f34667142bbb577869594c",
+      "patchPath": "patches/complex-drive-content-design-event-video.bin",
+      "recordCount": 4474,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.18349371761281663,
+          0.037710828151830356,
+          -0.17874606904817258
+        ],
+        "translate": [
+          -0.18349371761281663,
+          -0.037710828151830356,
+          0.17874606904817258
+        ],
+        "scale": 0.3698653779923916,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-games-video": {
+      "sourceHash": "44d9f3e32c6e389444308dfbf043b51f19bd8b07d8979d83f4aa41348b78d087",
+      "resultHash": "c2e9d8e73b0cf951e1a63ef05a421d606876ffe7382b655a224d23cff7abcaac",
+      "patchHash": "61c86c7f0a97431244dd6ca04f5bb8e96891bd39e013c33231a239aba1c257ad",
+      "patchPath": "patches/complex-gather-content-design-games-video.bin",
+      "recordCount": 4431,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.17877683350296225,
+          -0.0217956828767627,
+          -0.10729974833338929
+        ],
+        "translate": [
+          -0.17877683350296225,
+          0.0217956828767627,
+          0.10729974833338929
+        ],
+        "scale": 0.6559518836438656,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-games-video": {
+      "sourceHash": "4661c0ac53d4a7c1722789ccc4c2b3ea85a3be4a28c40a478c9ab55b1385dc35",
+      "resultHash": "51b3d91e62d98d92e962f1e6e6cc055d80a6025258e01c46203a320af5e260a6",
+      "patchHash": "f5ceba5e26480fc2dab8b7b468d58f3e4d687aabb5feaf0455dd440a51daaff8",
+      "patchPath": "patches/complex-drive-content-design-games-video.bin",
+      "recordCount": 4693,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2689617031638436,
+          0.00428746605575725,
+          -0.1926549385819989
+        ],
+        "translate": [
+          -0.2689617031638436,
+          -0.00428746605575725,
+          0.1926549385819989
+        ],
+        "scale": 0.3361021533608436,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-merch-video": {
+      "sourceHash": "729754c2911ce5715a9e70fa6c5b4e49d2aeb69cc47fbdd3bf6a279e92d1d533",
+      "resultHash": "46c77a7bd6331edc72365f56251336289f695fe6e41dfa80568ed64b3358ae22",
+      "patchHash": "3ecf90d5de44b933637e2fe4947d68b25698194a1cca5fe6236cb4d62cd09441",
+      "patchPath": "patches/complex-gather-content-design-merch-video.bin",
+      "recordCount": 4264,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2027252612779431,
+          -0.16082645093888148,
+          -0.19368242180280504
+        ],
+        "translate": [
+          -0.2027252612779431,
+          0.16082645093888148,
+          0.19368242180280504
+        ],
+        "scale": 0.6683119252324106,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-merch-video": {
+      "sourceHash": "7fee644ec9ef23b8d5ffb8a009f65f2ad6bf5abf657a3e4de8278e8142607b2f",
+      "resultHash": "92e374477bcbb5cc8c5ed8b95a3581baaabf5009dd4b93006bbcd18f3bdb0175",
+      "patchHash": "f15bc0d1709d6288e5b59ba3b5b4038d40a65c0ff4661a17dbb0c2480cb9da4b",
+      "patchPath": "patches/complex-drive-content-design-merch-video.bin",
+      "recordCount": 4512,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.443716220127659,
+          0.047907842402548084,
+          -0.1650605526493439
+        ],
+        "translate": [
+          -0.443716220127659,
+          -0.047907842402548084,
+          0.1650605526493439
+        ],
+        "scale": 0.35111044049263007,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-event-video": {
+      "sourceHash": "3cb285b455f83a90dc3e204d4676907061d83a566673a26939fd9f1c73e75dd1",
+      "resultHash": "15a62e130a79b5c704973def896e1a73e704794f4ecb5f433721c5627a89ad71",
+      "patchHash": "a5b37acef45e0b73c0e23807b04668d10471d9cd1aa3ff04a091b2760a7e2491",
+      "patchPath": "patches/complex-gather-content-digital-event-video.bin",
+      "recordCount": 4483,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.0016376376515476743,
+          0.017468009834774145,
+          -0.08870648012816673
+        ],
+        "translate": [
+          -0.0016376376515476743,
+          -0.017468009834774145,
+          0.08870648012816673
+        ],
+        "scale": 0.6936892904341223,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-event-video": {
+      "sourceHash": "4ccdb4658f5f3800463e215e0a5574d48bb311e94f56b88a68db6a766fe4a4a3",
+      "resultHash": "877e60f9bcec7346cf9540a8fb5d4a1590c23e859e1b2dc6974d1e832e3e52ba",
+      "patchHash": "52e5c5c930fd7679ff8f3550ae5356d58b46cf691783a14128559f91ba97bd56",
+      "patchPath": "patches/complex-drive-content-digital-event-video.bin",
+      "recordCount": 4738,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.045886997596213064,
+          -0.012419669926562182,
+          -0.17412167513622379
+        ],
+        "translate": [
+          -0.045886997596213064,
+          0.012419669926562182,
+          0.17412167513622379
+        ],
+        "scale": 0.34877594634890546,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-games-video": {
+      "sourceHash": "50e22828abc6d776f4a970836f36a7dc8b7d79d0d2c94af0f823522cd2761713",
+      "resultHash": "7ef76d33a3dc2b0f0a5f5359857ce9d330dfb9e29f4885f0edad61e118fae87d",
+      "patchHash": "0db962372587e85665b527e4e0daaa4ab6d580f9a51cd1413dec2c82361c465d",
+      "patchPath": "patches/complex-gather-content-digital-games-video.bin",
+      "recordCount": 4710,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.19742381497399908,
+          0.1354707988836643,
+          -0.001897153235404403
+        ],
+        "translate": [
+          -0.19742381497399908,
+          -0.1354707988836643,
+          0.001897153235404403
+        ],
+        "scale": 0.6458971403539182,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-games-video": {
+      "sourceHash": "3eceaf58a9f1de7ece856a0c3a9fdca025d618ff75f85291bf533726b3cc3b29",
+      "resultHash": "484546620d898e83d6e9ab2c892d34b3ec0e945fc506ae9e24c94b57b6a7d0b2",
+      "patchHash": "b118a49cbadb342ed5d76ed07d13ee0b9bafda23a1672fba5fbfbe32874d3350",
+      "patchPath": "patches/complex-drive-content-digital-games-video.bin",
+      "recordCount": 4983,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.1330199911373251,
+          -0.05082370520949553,
+          -0.18974311061003357
+        ],
+        "translate": [
+          -0.1330199911373251,
+          0.05082370520949553,
+          0.18974311061003357
+        ],
+        "scale": 0.3223731391131878,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-merch-video": {
+      "sourceHash": "d656092f35fcdc93b85e79988f9fa6ab42c0e9655f85e643b2135e8305811cb5",
+      "resultHash": "f32284d96f1a6fd6fa378c2bcbd2f978f5239ffea706bd39d93630a1aaf372cb",
+      "patchHash": "809b54dcf41664dc275165726a3ff8464af3243bad5bb5d613d6076b937227d1",
+      "patchPath": "patches/complex-gather-content-digital-merch-video.bin",
+      "recordCount": 4522,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2183573701679442,
+          -0.006706165698008415,
+          -0.07150630921432821
+        ],
+        "translate": [
+          -0.2183573701679442,
+          0.006706165698008415,
+          0.07150630921432821
+        ],
+        "scale": 0.6562344409525396,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-merch-video": {
+      "sourceHash": "36d46287c7bcf65b2ae7ea8a6191f61f24ccb6a7a28c61fbfda5e2fb6f304fbf",
+      "resultHash": "4c545ff74218a1b3d8cee4961442890945256aba801e9d9d2b2723b66968bce4",
+      "patchHash": "7e7f4176b549bbfa2f419f75d78abffbe39803c1bf674e60527f6ca1673a33ca",
+      "patchPath": "patches/complex-drive-content-digital-merch-video.bin",
+      "recordCount": 4780,
+      "componentIndices": [
+        7,
+        8
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.30615532567969095,
+          -0.011192225335994621,
+          -0.1577922856272287
+        ],
+        "translate": [
+          -0.30615532567969095,
+          0.011192225335994621,
+          0.1577922856272287
+        ],
+        "scale": 0.3376296646893025,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-event-games-video": {
+      "sourceHash": "66c6139d24e1e9a5ada5063186a97b5eab2377631fb2cd7adc28517c5dcedd0f",
+      "resultHash": "21a4460a94922e7a60de71f52b4d738872b3fa7d02d02a482c7ac626edccfc2c",
+      "patchHash": "902017c7d6fa124ecc325f51e87a381db8e99e7150eccc21e5e41ca9393903c8",
+      "patchPath": "patches/complex-gather-content-event-games-video.bin",
+      "recordCount": 4426,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2108022493216577,
+          0.08678105339369291,
+          -0.0335046633017555
+        ],
+        "translate": [
+          -0.2108022493216577,
+          -0.08678105339369291,
+          0.0335046633017555
+        ],
+        "scale": 0.6430831544101239,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-event-games-video": {
+      "sourceHash": "5b793d51fa36550ae47a02b5adf154e97493f1fff67acc0f4c4cc90f133a29dc",
+      "resultHash": "c40560315232a59c3109a5b25f9cd22a32bc0aa045cd92fe77b7e947ee52b466",
+      "patchHash": "9cb299299b01340dff709b9c67858ade0a429bd24f71f8dc67a88dab5ee9a502",
+      "patchPath": "patches/complex-drive-content-event-games-video.bin",
+      "recordCount": 4688,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.20332186321048162,
+          -0.025585135737856035,
+          -0.18314564241092346
+        ],
+        "translate": [
+          -0.20332186321048162,
+          0.025585135737856035,
+          0.18314564241092346
+        ],
+        "scale": 0.3273203328251839,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-event-merch-video": {
+      "sourceHash": "a9bf38e421dac6ed9e58c5213eed5ac898fb8dd6c20a083779d437944028adc1",
+      "resultHash": "51ee215ff0cc7e1965c1bc97ce1fa0e6238eccd24c49176d0e8493f0b773aeaa",
+      "patchHash": "feb3f9dd9f64f013153fee4f7317f3eaa99de19dd07df96794ab8b13f804f65b",
+      "patchPath": "patches/complex-gather-content-event-merch-video.bin",
+      "recordCount": 4259,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2297254746258457,
+          -0.057749575588259106,
+          -0.12131467857034295
+        ],
+        "translate": [
+          -0.2297254746258457,
+          0.057749575588259106,
+          0.12131467857034295
+        ],
+        "scale": 0.6551141560077668,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-event-merch-video": {
+      "sourceHash": "ff406519230301c903693c1d9d963e1e6271803bdc55af38a668a789ed57d78b",
+      "resultHash": "f899e0eeb98adabca5c79f46d6ddab1036a7a24b3366da52d06a11bfee5cb786",
+      "patchHash": "75867d269024b33bb202efd46779fdf561b2ce4b6546e0d83367040acafd809f",
+      "patchPath": "patches/complex-drive-content-event-merch-video.bin",
+      "recordCount": 4506,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3667561401858581,
+          0.01682254408423489,
+          -0.15412186629452276
+        ],
+        "translate": [
+          -0.3667561401858581,
+          -0.01682254408423489,
+          0.15412186629452276
+        ],
+        "scale": 0.3454018145799637,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-games-merch-video": {
+      "sourceHash": "6c44377373c0186e38ad1fc7d5d301c54e14fc882bbeca6e8370c5e345d620f9",
+      "resultHash": "3e7f74771a0661c7502313e26e6ee6ccf830b6cc97d4bc79d53e196d60d9ef04",
+      "patchHash": "235418af2113725f742cb16ff0e34e8e89e96c8ba18393fe83325479ab3cb641",
+      "patchPath": "patches/complex-gather-content-games-merch-video.bin",
+      "recordCount": 4465,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.22122294080388727,
+          -0.16989847320261325,
+          -0.20979378984156938
+        ],
+        "translate": [
+          -0.22122294080388727,
+          0.16989847320261325,
+          0.20979378984156938
+        ],
+        "scale": 0.647549206763506,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-games-merch-video": {
+      "sourceHash": "ebdfaf2202b6254a685c68ca541cf49ff4c8d658ed22d51c8aa06aaa532e1878",
+      "resultHash": "7cb33335dbec99ad59276397cbd8fd067a26becc2a655298866b7507d96d00c3",
+      "patchHash": "9bacb870c2f2f9d528b96f3e3ffc46fae330863ef7ea0ccabf82171d7429eb65",
+      "patchPath": "patches/complex-drive-content-games-merch-video.bin",
+      "recordCount": 4721,
+      "componentIndices": [
+        6,
+        7
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.4782168671377969,
+          0.08204885734283474,
+          -0.1568328571944579
+        ],
+        "translate": [
+          -0.4782168671377969,
+          -0.08204885734283474,
+          0.1568328571944579
+        ],
+        "scale": 0.32850457504391667,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-event-video": {
+      "sourceHash": "78c1ac98a54152fd82fbeef06121406d7223890af1058d4214384c9988f5f2cb",
+      "resultHash": "b837a72c6185754545ce53621db12bc8908839ffd7c1604a867691598a56f822",
+      "patchHash": "ac4f06bbd22a4380c63ac0e2e02f4ce37a1a5d6cf279c30a397702f5a8b28ffc",
+      "patchPath": "patches/complex-gather-design-digital-event-video.bin",
+      "recordCount": 4434,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.06161730867307735,
+          0.03449755631884979,
+          -0.1373017613477714
+        ],
+        "translate": [
+          -0.06161730867307735,
+          -0.03449755631884979,
+          0.1373017613477714
+        ],
+        "scale": 0.6743906155228615,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-event-video": {
+      "sourceHash": "f98f72eca983f746060fef865f9a2c3fa90c25ba26570e112f9838648baa5c80",
+      "resultHash": "892bba0e52004839dd89c99022663c473e834a2130509cd044ef1f24b7a86224",
+      "patchHash": "dafd542db095997cb833227ed7a14dd7380778b4fea8d2f4d7c79ddcf38c18cb",
+      "patchPath": "patches/complex-drive-design-digital-event-video.bin",
+      "recordCount": 4688,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.0013506443576112304,
+          -0.06112447989899383,
+          -0.23406823159052337
+        ],
+        "translate": [
+          0.0013506443576112304,
+          0.06112447989899383,
+          0.23406823159052337
+        ],
+        "scale": 0.382855785638094,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-games-video": {
+      "sourceHash": "d67cdcf8b7076f81110e7180d5c47c72913ba9e55189b945ef680902eb3b346c",
+      "resultHash": "c7a31f639d1510682f9a7f919b82c11d098f84a417148cf3e525e20f18c7a443",
+      "patchHash": "4d0c577c1384ac588ab05a8fdba9bf73bd7a24a50c73097d8a0955f309e7bb34",
+      "patchPath": "patches/complex-gather-design-digital-games-video.bin",
+      "recordCount": 4658,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.17159796469894406,
+          0.11993742836641452,
+          -0.053155014121443855
+        ],
+        "translate": [
+          -0.17159796469894406,
+          -0.11993742836641452,
+          0.053155014121443855
+        ],
+        "scale": 0.6460145674645901,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-games-video": {
+      "sourceHash": "316c303901ea141ead05df8c2ef8746f8e0be0e9baf8cb3dcd5e67ee9f683413",
+      "resultHash": "77c55512fecada124d46c397261cef78dfd37e0e8ca788628e7e071cd0a46725",
+      "patchHash": "52fdbf5d6c4a12e28253138c65db4d4cde17ee539b1bf838899206e015a74867",
+      "patchPath": "patches/complex-drive-design-digital-games-video.bin",
+      "recordCount": 4929,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.01706411979296618,
+          -0.16153797342394682,
+          -0.28057727938339205
+        ],
+        "translate": [
+          -0.01706411979296618,
+          0.16153797342394682,
+          0.28057727938339205
+        ],
+        "scale": 0.3232280999422074,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-merch-video": {
+      "sourceHash": "f8faffceefd75a69a796674191889a596044f3753689a16c4d1874a07aae6485",
+      "resultHash": "b9aadcb2b3db1d0ecde03c59602f8452b0bc81f33bc4bfcecec98e0236313e67",
+      "patchHash": "2c6773c67c517e4666cdd630c9cdff3ffb7710033c1cad3177f6fe07d673f687",
+      "patchPath": "patches/complex-gather-design-digital-merch-video.bin",
+      "recordCount": 4472,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2913158886984082,
+          0.006352343657920478,
+          -0.13919415306099836
+        ],
+        "translate": [
+          -0.2913158886984082,
+          -0.006352343657920478,
+          0.13919415306099836
+        ],
+        "scale": 0.6209774270653726,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-merch-video": {
+      "sourceHash": "9afb74e45f8aabf2ac2e63468c630a357690cabb17e5772c78dcc5b5052f41f2",
+      "resultHash": "54a67b90add21f420e6a74c9bfb19729e2b3ed7f7714219a0d39db2271b39ff7",
+      "patchHash": "2f313e1bebd3ef6de2c54fb5d2de08979b09097b324b3fed13f787ba8558471b",
+      "patchPath": "patches/complex-drive-design-digital-merch-video.bin",
+      "recordCount": 4729,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2815516301382921,
+          -0.0673727900986627,
+          -0.24872205001316472
+        ],
+        "translate": [
+          -0.2815516301382921,
+          0.0673727900986627,
+          0.24872205001316472
+        ],
+        "scale": 0.3587041832506657,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-event-games-video": {
+      "sourceHash": "c7298bae661da224fe9b403e512e4d56494b7b9c48b55ffe04af5b7461018a43",
+      "resultHash": "d53606bfcc98b6b11235ebd07b335d89b526a10996f475c4f3602abdc5b33ab2",
+      "patchHash": "d50d0d01dad12b9ea5cb4b9994f3810cde5c1439ed4aaa01a0f57a47c84e1fee",
+      "patchPath": "patches/complex-gather-design-event-games-video.bin",
+      "recordCount": 4379,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.16784788693342328,
+          0.06107820901905914,
+          -0.08486691019606951
+        ],
+        "translate": [
+          -0.16784788693342328,
+          -0.06107820901905914,
+          0.08486691019606951
+        ],
+        "scale": 0.6934446528553964,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-event-games-video": {
+      "sourceHash": "57bd6e0ec9526c2ba959e730b0979e11a49e0ae12a03881d1ebdc13665d772d8",
+      "resultHash": "62f44fdd4e892354c18f499164b1a26b12b3af5e8c0f34e8890aa655fabf991a",
+      "patchHash": "f15b7ed876de78e2ad781c044d628fe33173daf3085b33ddd5542b04a56a556a",
+      "patchPath": "patches/complex-drive-design-event-games-video.bin",
+      "recordCount": 4638,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.10159385353927775,
+          -0.1250238552211158,
+          -0.268803611887396
+        ],
+        "translate": [
+          -0.10159385353927775,
+          0.1250238552211158,
+          0.268803611887396
+        ],
+        "scale": 0.32291408702731134,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-event-merch-video": {
+      "sourceHash": "66526fc02ecff41a34f4a62ab777102377ed273a88f59e8f7d4f189a580f5977",
+      "resultHash": "3b4ccb68957f1f60f34eca3aecdff9d735f2b420a38b9bcad0335a4de1e1ba3f",
+      "patchHash": "9cbd7ad1e88cbe58d83620f94cea4fc6e224e652ef7340827598d1ac4297d374",
+      "patchPath": "patches/complex-gather-design-event-merch-video.bin",
+      "recordCount": 4214,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3354951247362168,
+          -0.021531118535692728,
+          -0.16983569149124378
+        ],
+        "translate": [
+          -0.3354951247362168,
+          0.021531118535692728,
+          0.16983569149124378
+        ],
+        "scale": 0.6532695002853874,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-event-merch-video": {
+      "sourceHash": "3cff7b9f90c991a4f34967c6ef5618e019a2ca8317c98f21cc1789f1ec057dd8",
+      "resultHash": "0a288fd5a90faff0686f22a1a4f8ee78cdadd858b24f8c941d3450cea8a0af74",
+      "patchHash": "8b0679970dfcecc8fbf63c0bf2cd00621a7a19f08fa9fc7bbcde8ed3491ded90",
+      "patchPath": "patches/complex-drive-design-event-merch-video.bin",
+      "recordCount": 4461,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.4207534046601813,
+          0.0013323750507070464,
+          -0.23862732857691113
+        ],
+        "translate": [
+          -0.4207534046601813,
+          -0.0013323750507070464,
+          0.23862732857691113
+        ],
+        "scale": 0.3769509963691235,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-games-merch-video": {
+      "sourceHash": "9c24b1bb569814666d962dc7a391e7338168927b832f5e1f60245f110451af3a",
+      "resultHash": "88d86543d7d97ae9df3287d1c85c025106a4f664f6eb2a7bebdf7f5f86986136",
+      "patchHash": "3d0602031f6d03c7bb91f2ff9d4b544dde2b380b6bad363056583aaf8a6400d4",
+      "patchPath": "patches/complex-gather-design-games-merch-video.bin",
+      "recordCount": 4417,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.1734494282575756,
+          -0.19599584928959146,
+          -0.2605668532287382
+        ],
+        "translate": [
+          -0.1734494282575756,
+          0.19599584928959146,
+          0.2605668532287382
+        ],
+        "scale": 0.6432229712605476,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-games-merch-video": {
+      "sourceHash": "ebee062256369bbbf8991d38c7a9cdd4c9ea127b47dafaa713b4f5a7ef0507fc",
+      "resultHash": "70cf1d6ba7ac239f780e615baad62e5853d352e119751e55e7249008a9620909",
+      "patchHash": "e5c35036a03b70c3c9a5a5bcd9c782a4919138d334653fab880e51d7a8891cae",
+      "patchPath": "patches/complex-drive-design-games-merch-video.bin",
+      "recordCount": 4671,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.35324085324031085,
+          -0.024071569799577475,
+          -0.24342064812819353
+        ],
+        "translate": [
+          -0.35324085324031085,
+          0.024071569799577475,
+          0.24342064812819353
+        ],
+        "scale": 0.3390332713723183,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-event-games-video": {
+      "sourceHash": "8181d5876b0619c9e7df2a16efe29f7b532855a72e75a4794c33cbc2110480d8",
+      "resultHash": "496c7b83263a9c8fd78163c1fba013acefc08c3342a9cd0d7a162df1f9c10fa5",
+      "patchHash": "bc02cc2899e1edcc2ade1ecfb8d539c2b03f6fb1ea557052cd370825cf272823",
+      "patchPath": "patches/complex-gather-digital-event-games-video.bin",
+      "recordCount": 4654,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.026792404503309886,
+          0.07087889831031369,
+          0.037096348911092036
+        ],
+        "translate": [
+          0.026792404503309886,
+          -0.07087889831031369,
+          -0.037096348911092036
+        ],
+        "scale": 0.6335775464773177,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-event-games-video": {
+      "sourceHash": "3c711164f9a3f5ff7b019210ed51c1fdcea3a314dbe42ddd0fc1af383a0e2b0d",
+      "resultHash": "7b0a828810de0503ae0d6ed254c184241c7e357f17612d1f72c3de86aec100e7",
+      "patchHash": "0e836ce695287ad8369040e5e91286c109baeb0f5cb23d1c8abb53570f26fb94",
+      "patchPath": "patches/complex-drive-digital-event-games-video.bin",
+      "recordCount": 4911,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.2629213369734913,
+          -0.3986531684507266,
+          -0.30643222404905357
+        ],
+        "translate": [
+          0.2629213369734913,
+          0.3986531684507266,
+          0.30643222404905357
+        ],
+        "scale": 0.3159805566072464,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-event-merch-video": {
+      "sourceHash": "5358a9c7fe9dd11dbd3c41b98cbee06bc77ce003be0e521171632ce378bdd069",
+      "resultHash": "bdbec9d988c914ab0621f2612622f0c33eeecd83f95c9a497958964e4bab6667",
+      "patchHash": "28dd5f8b388972c394a576038465a177ce5057d41eeb50785e479ea82fee4a58",
+      "patchPath": "patches/complex-gather-digital-event-merch-video.bin",
+      "recordCount": 4468,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.09620324420412629,
+          -0.04348870786648518,
+          -0.04713350403868688
+        ],
+        "translate": [
+          -0.09620324420412629,
+          0.04348870786648518,
+          0.04713350403868688
+        ],
+        "scale": 0.6267774760723114,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-event-merch-video": {
+      "sourceHash": "21011cb36a15276035d024184c36f733d0ca559e9118baf00a260008235c577b",
+      "resultHash": "3f9cf9ecd366ab76e5cc92b49092398a42d1e4379e60f5eaf9b1ac9baa2a654d",
+      "patchHash": "ef232ee84c41bdad930bbc375b29dcc0aec18d9e270330cf4ce8b95155c9a526",
+      "patchPath": "patches/complex-drive-digital-event-merch-video.bin",
+      "recordCount": 4713,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.046416748840567124,
+          -0.26928553217386497,
+          -0.27642359057517707
+        ],
+        "translate": [
+          -0.046416748840567124,
+          0.26928553217386497,
+          0.27642359057517707
+        ],
+        "scale": 0.3618589773774147,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-games-merch-video": {
+      "sourceHash": "965b6dae80bbbbaee918c13c46c5ca1c488189df35f2ef8461640e72e57d30c5",
+      "resultHash": "f51a360ea4ad80b77e27e42f687df09e22720bbd196f5ccf9260afffc0ef5585",
+      "patchHash": "f5b0af1afc25b9a8649e2e42df492c67224d8521b38feff996605ae6b9982566",
+      "patchPath": "patches/complex-gather-digital-games-merch-video.bin",
+      "recordCount": 4695,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.05624817086352252,
+          -0.23504023356987958,
+          -0.15759124305453553
+        ],
+        "translate": [
+          0.05624817086352252,
+          0.23504023356987958,
+          0.15759124305453553
+        ],
+        "scale": 0.6275737434625623,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-games-merch-video": {
+      "sourceHash": "e0bac51cf86a112e4785a97db7510b139dbe8e1f9321f445a6b3162f07f4e4bf",
+      "resultHash": "84d3e2b81438a6e23a3fe042e21b6ace9c0f5a233bdcb5a6f15aab5a78c1ca5d",
+      "patchHash": "e8c74c0fdc70ae63c9b8d9354f51c9570f369ae45179de84c0033b25f0fadcc7",
+      "patchPath": "patches/complex-drive-digital-games-merch-video.bin",
+      "recordCount": 4948,
+      "componentIndices": [
+        8,
+        9
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.03413200150123785,
+          -0.2834719991722432,
+          -0.279988687309761
+        ],
+        "translate": [
+          -0.03413200150123785,
+          0.2834719991722432,
+          0.279988687309761
+        ],
+        "scale": 0.30841851755976674,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-event-games-merch-video": {
+      "sourceHash": "597cdf1ca64399785a089ca05d01307bd2484f6f1e6264cd7e4f163e10fadbc5",
+      "resultHash": "65ccf4e51110ce4312a2c8fccfc1eb29b974cc197ed21696e6e2aa7fb6648df6",
+      "patchHash": "b18d84b795bd1a4d394c68cf08460112da202e48a68d9abd8c60ae9c58224cc8",
+      "patchPath": "patches/complex-gather-event-games-merch-video.bin",
+      "recordCount": 4412,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.06389581861140847,
+          -0.21049988904755068,
+          -0.18173724133703217
+        ],
+        "translate": [
+          -0.06389581861140847,
+          0.21049988904755068,
+          0.18173724133703217
+        ],
+        "scale": 0.6320202827453614,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-event-games-merch-video": {
+      "sourceHash": "02248816b11ced04a3bdd80be5f40135514d5d903ba4bfe3a9ff22c57fffd6da",
+      "resultHash": "673bf254d9ce3e97a9c8701d4783e7238d31e2b3f2f7415912a2edfa148e6c3e",
+      "patchHash": "4eca5e4ff00d11a17209a1a30bf2ef60fe85dcd0a1f7595f440c9f533b34da32",
+      "patchPath": "patches/complex-drive-event-games-merch-video.bin",
+      "recordCount": 4665,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.15280422701097718,
+          -0.1691139787709517,
+          -0.22771521379523518
+        ],
+        "translate": [
+          -0.15280422701097718,
+          0.1691139787709517,
+          0.22771521379523518
+        ],
+        "scale": 0.32827046513557445,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-event-video": {
+      "sourceHash": "9443b69e7d9c7eb416f1852086153a9786d1c006de1d970ba72c76eab3bd1254",
+      "resultHash": "a27a8f0ff7e2d12f37a2c9723e68bc5da03aa2dc81cd8d3e5e2088d792f0e478",
+      "patchHash": "c4a28aa622752963822517ce21c0313e8c8371c017ac90b20bbcebbcfccba077",
+      "patchPath": "patches/complex-gather-content-design-digital-event-video.bin",
+      "recordCount": 3536,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2134067075339705,
+          0.11157471436486599,
+          -0.1262350458346191
+        ],
+        "translate": [
+          -0.2134067075339705,
+          -0.11157471436486599,
+          0.1262350458346191
+        ],
+        "scale": 0.5059691525995731,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-event-video": {
+      "sourceHash": "a1a5f6e415bf72cd50d25211cc3085826ada43c8f7518973ca7bf05a628bc765",
+      "resultHash": "f8c7cdced1e8e20d1621c6730f8d8238768faf805c1067e023affc0b0ed38885",
+      "patchHash": "03e22db9c1ad783256a936c7f925f81d04faee8a07c4abec97457a9bc9520a3d",
+      "patchPath": "patches/complex-drive-content-design-digital-event-video.bin",
+      "recordCount": 3741,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.16238616381679094,
+          0.09116182376833448,
+          -0.15059404906191443
+        ],
+        "translate": [
+          -0.16238616381679094,
+          -0.09116182376833448,
+          0.15059404906191443
+        ],
+        "scale": 0.3015455044806004,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-games-video": {
+      "sourceHash": "94f3a33200e042c0dd490b49dc3c74a56e337781c57986b81984f3f6141e3ca8",
+      "resultHash": "b3efe8509c90dcf8de18699a0820310a9427b73a1d0678c8479276004eaa803f",
+      "patchHash": "ff1571c967a98d4459af52858a6cf6347e1bd06693ac900528a43924ab05feac",
+      "patchPath": "patches/complex-gather-content-design-digital-games-video.bin",
+      "recordCount": 3681,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3565476378758743,
+          0.22875545585744206,
+          -0.05659578557333589
+        ],
+        "translate": [
+          -0.3565476378758743,
+          -0.22875545585744206,
+          0.05659578557333589
+        ],
+        "scale": 0.4750098623335361,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-games-video": {
+      "sourceHash": "fda2f51a8ea9e87b117982ec9bcee9de89f1b515806a90828b067e8bb3ac7897",
+      "resultHash": "dd99a6b404a84ca5e030a08a6a706cefb5dbb4e4ea20708d837afee726ba1937",
+      "patchHash": "c0acbc0d5300b31fef4282fb79a4411437993ee34e0737b68762221d70eca02b",
+      "patchPath": "patches/complex-drive-content-design-digital-games-video.bin",
+      "recordCount": 3898,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.16586485811649254,
+          -0.0003802643300709896,
+          -0.16993104738710896
+        ],
+        "translate": [
+          -0.16586485811649254,
+          0.0003802643300709896,
+          0.16993104738710896
+        ],
+        "scale": 0.2689862832427026,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-merch-video": {
+      "sourceHash": "574d40e9df14d5ff0663383e12bd30aa7d23c1cacd9dea75ad8771ec4c6c8cc6",
+      "resultHash": "587ada6b5fe3c3e13cd17be80e5f70ef7dda73c576242724ce46a6622093e68d",
+      "patchHash": "a8083d49f68156acd455cd9b93947c8c9136d328101f0f81fbe408cff81d92bc",
+      "patchPath": "patches/complex-gather-content-design-digital-merch-video.bin",
+      "recordCount": 3562,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.37972707227163816,
+          0.09563512791262685,
+          -0.13077917071859702
+        ],
+        "translate": [
+          -0.37972707227163816,
+          -0.09563512791262685,
+          0.13077917071859702
+        ],
+        "scale": 0.489687855541706,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-merch-video": {
+      "sourceHash": "4be27d2ad1bc6be2692d4f12548db6953e8dd8c615f172df86577f4be9c921c2",
+      "resultHash": "013f11d58fe62f5dc79670f86428edff1cebd87b23f584b1dbd64939f6da6497",
+      "patchHash": "e5873ecdd9b7f8259907f5d9ae57f538ad86a9e6f553b72119d566b880860a6b",
+      "patchPath": "patches/complex-drive-content-design-digital-merch-video.bin",
+      "recordCount": 3770,
+      "componentIndices": [
+        10,
+        11
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3743482813388255,
+          0.09929070832277809,
+          -0.15107842765220525
+        ],
+        "translate": [
+          -0.3743482813388255,
+          -0.09929070832277809,
+          0.15107842765220525
+        ],
+        "scale": 0.28665755465626713,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-event-games-video": {
+      "sourceHash": "f3bbd6155f055c817fad8d4ec85e83a74eb67578b7d1b97d54a3b875b8d54f93",
+      "resultHash": "4760a7cc21d05e2faa9df23018faaf7795e6c9b77cdcd6d8b5ea06266f8faf79",
+      "patchHash": "42c5da903caa95d3fcb06013cf1a59c44f1ecb6a98e290a2b6d5a199dd5d831d",
+      "patchPath": "patches/complex-gather-content-design-event-games-video.bin",
+      "recordCount": 3502,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3282662487300332,
+          0.18123806563375933,
+          -0.08062929130028351
+        ],
+        "translate": [
+          -0.3282662487300332,
+          -0.18123806563375933,
+          0.08062929130028351
+        ],
+        "scale": 0.46896013319492347,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-event-games-video": {
+      "sourceHash": "4e91468fc781f6472bd9667891073f3eef7cafc6f55723d7bbc3944920834cb8",
+      "resultHash": "f9de273c9aa9380ecfe24db543b0b502537c713cf6ec3cd741bf245684c2f962",
+      "patchHash": "cb329903df8269cba8a9e33274fee4f72d559a6b1fa9514cd76e0de395b6a368",
+      "patchPath": "patches/complex-drive-content-design-event-games-video.bin",
+      "recordCount": 3709,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.19934407440073254,
+          -0.0003756808260781952,
+          -0.17113475423295177
+        ],
+        "translate": [
+          -0.19934407440073254,
+          0.0003756808260781952,
+          0.17113475423295177
+        ],
+        "scale": 0.2725185044109821,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-event-merch-video": {
+      "sourceHash": "58eb6ef30ed79c234b583fa814b60dcd43fa8d6a784c6ea67f71dca7939204fa",
+      "resultHash": "63e296c89832beb2c5e229e16b0f7773278a3eeb2b5e7301663f9c9022070595",
+      "patchHash": "85b0b313bae91e01d2ba7857eb2be3fe32d0aa9b17c18dd181d6929e8715b9b5",
+      "patchPath": "patches/complex-gather-content-design-event-merch-video.bin",
+      "recordCount": 3395,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.34410830042244633,
+          0.050044428509637306,
+          -0.15152111963834614
+        ],
+        "translate": [
+          -0.34410830042244633,
+          -0.050044428509637306,
+          0.15152111963834614
+        ],
+        "scale": 0.48449077382683753,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-event-merch-video": {
+      "sourceHash": "560d4b1cda8ff569e7eddfd023e7bf60e76288c58adb766d1a37c10c1211710f",
+      "resultHash": "5270d1782421318c491545616b88535b2d1298a024bc2d6c9c4518b4afda4eb1",
+      "patchHash": "f5587125190d09ea92cc0c8ff664137511eda9a4fb52b5b1950a5ca7872e9002",
+      "patchPath": "patches/complex-drive-content-design-event-merch-video.bin",
+      "recordCount": 3592,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.39253128487527533,
+          0.0922322706207197,
+          -0.15304017558115302
+        ],
+        "translate": [
+          -0.39253128487527533,
+          -0.0922322706207197,
+          0.15304017558115302
+        ],
+        "scale": 0.2905720911920071,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-games-merch-video": {
+      "sourceHash": "3ccce5af925b40d7919b31ae39f14eb4d95a04fb39178d495858c3f165e89b93",
+      "resultHash": "f98a432663fc3fd0b07a4c1bb883e36bca929bdd80bfae8c9ed156fdfc441b05",
+      "patchHash": "b64658d11c27151477417feaf9d5cd5ae1a91484ae45b502331c6dff46e5804c",
+      "patchPath": "patches/complex-gather-content-design-games-merch-video.bin",
+      "recordCount": 3529,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2725380626718943,
+          -0.0891811896401542,
+          -0.19830821353261996
+        ],
+        "translate": [
+          -0.2725380626718943,
+          0.0891811896401542,
+          0.19830821353261996
+        ],
+        "scale": 0.47825169414281843,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-games-merch-video": {
+      "sourceHash": "670e1b5a8b45477422ce436c0cef8375da084377c10094aef767cc20503e0e3c",
+      "resultHash": "58dc0f31474f1ce2d63d4911dc34b3b3e1e6e622a846499d5c05357756c5a92e",
+      "patchHash": "b8e4855b2ecf7227999bce6420df667dededd3d326aa325fcbc18e5fc99eed37",
+      "patchPath": "patches/complex-drive-content-design-games-merch-video.bin",
+      "recordCount": 3735,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.42580755395882264,
+          0.09103092758596976,
+          -0.1648221445548559
+        ],
+        "translate": [
+          -0.42580755395882264,
+          -0.09103092758596976,
+          0.1648221445548559
+        ],
+        "scale": 0.2791788384318351,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-event-games-video": {
+      "sourceHash": "55f53197fc12e1686986b5e5a9b95917f3e68e80d220af9e22c09f3162672f34",
+      "resultHash": "1b58825305201956966541834516962beda026b293f038bc46e89153aad69dc1",
+      "patchHash": "95de34ba6b43828e11d7fa1248dd6321c2451d6b17eb4a7c40df3ed10db84200",
+      "patchPath": "patches/complex-gather-content-digital-event-games-video.bin",
+      "recordCount": 3675,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2857045785235641,
+          0.26231928764718937,
+          0.010742094224724497
+        ],
+        "translate": [
+          -0.2857045785235641,
+          -0.26231928764718937,
+          -0.010742094224724497
+        ],
+        "scale": 0.45274884179234504,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-event-games-video": {
+      "sourceHash": "a26d39c1b1c80e5b7815d723b1a06c6d32cbec94757a53a5b9c7fb4ee8de4c05",
+      "resultHash": "0b25af675e418120508d96d072b1c0bb675d980851943ecd468fe11223c8ef26",
+      "patchHash": "e4120183160e17fe911b62f824c3fd668a6d9fd01bd4b301b50c3c2dd6b307bd",
+      "patchPath": "patches/complex-drive-content-digital-event-games-video.bin",
+      "recordCount": 3887,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.011337755542426553,
+          -0.11364884631593775,
+          -0.16670900642649888
+        ],
+        "translate": [
+          -0.011337755542426553,
+          0.11364884631593775,
+          0.16670900642649888
+        ],
+        "scale": 0.2683730565011502,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-event-merch-video": {
+      "sourceHash": "15744251e8497196e5371bbbe2bac7a975bacd2283f8219fc68cffcb20f4cde4",
+      "resultHash": "bf19a8fb173dcdf093e36c5777846678dbbddc67281890c41434a40d08a39c7e",
+      "patchHash": "9768a94b753867bace2540fd1f69ca5b8fc672ca2c9d7a0ee9147a5112dd0c2d",
+      "patchPath": "patches/complex-gather-content-digital-event-merch-video.bin",
+      "recordCount": 3557,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2831294697401505,
+          0.13274634103997904,
+          -0.02955768629362865
+        ],
+        "translate": [
+          -0.2831294697401505,
+          -0.13274634103997904,
+          0.02955768629362865
+        ],
+        "scale": 0.46830490306019784,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-event-merch-video": {
+      "sourceHash": "dccb3889d80dfa58d9aa484077070a613f3f545fe4331cc2bc578d70aab4ca39",
+      "resultHash": "a54e907ee03426e3f84b77a4be6dcacc0a5da5c2837aeab0a3de09b20680de54",
+      "patchHash": "ff181efed7c632ea5102c5f008cbc3e051dc7176dfd456beef630881c4f5c792",
+      "patchPath": "patches/complex-drive-content-digital-event-merch-video.bin",
+      "recordCount": 3759,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.22857432876426387,
+          -0.008845556613157335,
+          -0.14698042577029025
+        ],
+        "translate": [
+          -0.22857432876426387,
+          0.008845556613157335,
+          0.14698042577029025
+        ],
+        "scale": 0.2852116495370865,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-games-merch-video": {
+      "sourceHash": "3374827e393312367931afacfb2bbb58d509e05fa96819682f996b8fef31c9b4",
+      "resultHash": "c61585cd604545115bc7539d113e45299ee588218be57ad2ab8261494f6879b8",
+      "patchHash": "0bf46274c0c42b35883333eabe33b143a4ab43f216bac8416607797ff27eadb7",
+      "patchPath": "patches/complex-gather-content-digital-games-merch-video.bin",
+      "recordCount": 3703,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2179664001394528,
+          -0.033539790974505435,
+          -0.11527981134193999
+        ],
+        "translate": [
+          -0.2179664001394528,
+          0.033539790974505435,
+          0.11527981134193999
+        ],
+        "scale": 0.46203029081225405,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-games-merch-video": {
+      "sourceHash": "a7891e799aa047c09d17c3b77c10545a94f732b215eaac9e2b7aaef554e36555",
+      "resultHash": "e75c0e9aa08045f54aeb82eb833dacb259d3f416bbfc24cb73e1427dbad67d4d",
+      "patchHash": "887703824ab2634a02883ab8a3d03e06da9fec54502da38c55d2e69d303cb3ab",
+      "patchPath": "patches/complex-drive-content-digital-games-merch-video.bin",
+      "recordCount": 3913,
+      "componentIndices": [
+        9,
+        10
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2568046696133024,
+          -0.013745881839519747,
+          -0.16000767966281648
+        ],
+        "translate": [
+          -0.2568046696133024,
+          0.013745881839519747,
+          0.16000767966281648
+        ],
+        "scale": 0.27116581946611407,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-event-games-merch-video": {
+      "sourceHash": "7741bee239f1a6d51396baff25fbf189440a54fc07df93e30bc8d6c35b20309c",
+      "resultHash": "2a0e7434c056b2e48e79d26c9e0666bd7b3d363252f224edb0f78796041a8bb3",
+      "patchHash": "6fa4de5620a6d3af39a733eb9512938eecba09d8c66d7d68a893bd75360c9db0",
+      "patchPath": "patches/complex-gather-content-event-games-merch-video.bin",
+      "recordCount": 3523,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2470287208190537,
+          -0.04279250236295934,
+          -0.13026651307630033
+        ],
+        "translate": [
+          -0.2470287208190537,
+          0.04279250236295934,
+          0.13026651307630033
+        ],
+        "scale": 0.4713945932686329,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-event-games-merch-video": {
+      "sourceHash": "37b7116eafd636e5983a322d7f6b357f4c8527337c1913e428d69f6c26aa02ef",
+      "resultHash": "1870c954e5119ff1fc8eb303e991f44e69ced2a29e5ca1e20d663eaf90b4801d",
+      "patchHash": "28d39744ae4b326c9cd52889ecc980b825cf83f2008e5984aa91518b14f5820f",
+      "patchPath": "patches/complex-drive-content-event-games-merch-video.bin",
+      "recordCount": 3728,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3100040485394402,
+          0.017263081843511108,
+          -0.15628918396282843
+        ],
+        "translate": [
+          -0.3100040485394402,
+          -0.017263081843511108,
+          0.15628918396282843
+        ],
+        "scale": 0.2754528678953648,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-event-games-video": {
+      "sourceHash": "08c5bb6427f371e64cc01bb28e4db2ad9fba4cc3d0b7a3693af6817e670c24ed",
+      "resultHash": "7c548ab0bf34b0c039141b01abb2406ddb7b3ab793a5a924f044cf71f62a94ec",
+      "patchHash": "21c8acdfe68eb7296897e53ba6bd7e13e818acf880286a9d31a278628211e071",
+      "patchPath": "patches/complex-gather-design-digital-event-games-video.bin",
+      "recordCount": 3640,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.22163671795374285,
+          0.20441742756518982,
+          -0.04894857811461861
+        ],
+        "translate": [
+          -0.22163671795374285,
+          -0.20441742756518982,
+          0.04894857811461861
+        ],
+        "scale": 0.48998712301254277,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-event-games-video": {
+      "sourceHash": "5ba63a4b797a6b36c715f26f4a32519257223fcb9177ad578e5ea44eb4570a01",
+      "resultHash": "29ffdbf6f55c7b44021193ebd231781797d48d3cc18e0dd8a3d1c7c2b497d7a1",
+      "patchHash": "49ac707f61628d80b4f39049b8dfb2173474c90a8d2ae3de970bc893c72e6976",
+      "patchPath": "patches/complex-drive-design-digital-event-games-video.bin",
+      "recordCount": 3850,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.10907888451370695,
+          -0.2271048670927387,
+          -0.23455879736130747
+        ],
+        "translate": [
+          0.10907888451370695,
+          0.2271048670927387,
+          0.23455879736130747
+        ],
+        "scale": 0.2651205092668533,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-event-merch-video": {
+      "sourceHash": "bab6f9671f6bf4c984851fce592c94f3954eb7c73fb055d0bb6c63ac013c017e",
+      "resultHash": "b9d934389a7586d2fc139903d352491e8151e198385f14b0158dbcd82057f8b6",
+      "patchHash": "18552f996cf59a07140d3c701a7ae9948a9968149e21344dc0e398e4d4568786",
+      "patchPath": "patches/complex-gather-design-digital-event-merch-video.bin",
+      "recordCount": 3523,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2902287991629535,
+          0.09307671204147194,
+          -0.10137634451530175
+        ],
+        "translate": [
+          -0.2902287991629535,
+          -0.09307671204147194,
+          0.10137634451530175
+        ],
+        "scale": 0.5447705648839474,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-event-merch-video": {
+      "sourceHash": "d165c923c0d83a8432f433f15f1f4b2b873070355289c253905de819738a0608",
+      "resultHash": "a2d854af6eb92e4072d71b506bbeae9f5f207296d8422d77da3d3fe93be60926",
+      "patchHash": "dd35d438978ba5a18da86f53fa4077ac6a113fe6e9fd7b6863fc8b4465775622",
+      "patchPath": "patches/complex-drive-design-digital-event-merch-video.bin",
+      "recordCount": 3724,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.17290411338636957,
+          -0.07485549172114858,
+          -0.21228684595792235
+        ],
+        "translate": [
+          -0.17290411338636957,
+          0.07485549172114858,
+          0.21228684595792235
+        ],
+        "scale": 0.3029156304895878,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-games-merch-video": {
+      "sourceHash": "399a6c6e1dff73fd7906b9df6b5e07bb50f862d266a04ae1771ec23d58811eb1",
+      "resultHash": "517c0f51e7ee9932a313bee4e2ed8e1cc2102189965d5249b3cad069d4b33d02",
+      "patchHash": "97745262e2418ac630351a79837b8ef3f34151624970bfbc3880b90a7b525c3c",
+      "patchPath": "patches/complex-gather-design-digital-games-merch-video.bin",
+      "recordCount": 3668,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.15537631420791165,
+          -0.08304695986156885,
+          -0.159192294843697
+        ],
+        "translate": [
+          -0.15537631420791165,
+          0.08304695986156885,
+          0.159192294843697
+        ],
+        "scale": 0.491612246632576,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-games-merch-video": {
+      "sourceHash": "c1a41ac1410f3390ea56948ef345adb172a6e9753f83fabf72e2a046e159b169",
+      "resultHash": "7c1c263ac83320046b08303270f007875000b7185be7836d2934b3cc100cac69",
+      "patchHash": "ae40471413c88a05d9e8369fa9ddf0035f2af0b274245e8162395c00087bbe0d",
+      "patchPath": "patches/complex-drive-design-digital-games-merch-video.bin",
+      "recordCount": 3877,
+      "componentIndices": [
+        11,
+        12
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.11876099951340002,
+          -0.13453066023286353,
+          -0.22844740078936665
+        ],
+        "translate": [
+          -0.11876099951340002,
+          0.13453066023286353,
+          0.22844740078936665
+        ],
+        "scale": 0.27370976060628893,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-event-games-merch-video": {
+      "sourceHash": "9ab04d56a9b7aa412d09f20549dbdd4b2912b196a5c99a5a400ecb4ef783e334",
+      "resultHash": "3046095a985e79dd47c85cf9e87b52c332a078f84d1400b7088ad9d709d0ffc3",
+      "patchHash": "79c48ba466158488bbf75e6c6bdabd64cd11616499d4ce0e07d00f63705b6772",
+      "patchPath": "patches/complex-gather-design-event-games-merch-video.bin",
+      "recordCount": 3490,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.1852015577425732,
+          -0.08828777322727599,
+          -0.17185482028485155
+        ],
+        "translate": [
+          -0.1852015577425732,
+          0.08828777322727599,
+          0.17185482028485155
+        ],
+        "scale": 0.5060348868370055,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-event-games-merch-video": {
+      "sourceHash": "7bc358154264b2c0327667c239789e4c111f8ce6ecca39a9c48eecc45db3eb66",
+      "resultHash": "e2dbbfe5c17a2b89046581292366834f2e9545363b6d7684fef3add43434675a",
+      "patchHash": "78fd92419e7948691a3d6e553f70a0a7b1fe85ce337e5c52553fa868a436a6f3",
+      "patchPath": "patches/complex-drive-design-event-games-merch-video.bin",
+      "recordCount": 3694,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.20252314614117495,
+          -0.08452575130763007,
+          -0.22184575262814343
+        ],
+        "translate": [
+          -0.20252314614117495,
+          0.08452575130763007,
+          0.22184575262814343
+        ],
+        "scale": 0.27211474478244785,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-digital-event-games-merch-video": {
+      "sourceHash": "56057a29369d1ffaaf00c813110181b7bfc57bdcd92948ed20bba95deac17165",
+      "resultHash": "71e8dcea6ab88a46af43c14ee67f016d4b3911ada6ef27d88ae041bbe2879d1b",
+      "patchHash": "0d6bc841a83966ee0b8426c5874666a25ae4feabc08505dd9fbe89ad0cb5b585",
+      "patchPath": "patches/complex-gather-digital-event-games-merch-video.bin",
+      "recordCount": 3662,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.08288843842309013,
+          -0.18631361549550807,
+          -0.08192754621489051
+        ],
+        "translate": [
+          0.08288843842309013,
+          0.18631361549550807,
+          0.08192754621489051
+        ],
+        "scale": 0.4607965148985386,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-digital-event-games-merch-video": {
+      "sourceHash": "0674157dd5d2ff2f48f5403eedf542101a2a77fdd7172d42dc08c23f589cbfe3",
+      "resultHash": "cdfd008b395ebb5238d3e60647967eb14a253ea364c3d814de47ee069ae4f3cc",
+      "patchHash": "a33102a07d1e860804907c81e2792a55ffac02506de38a4f5e0f9d088f068df0",
+      "patchPath": "patches/complex-drive-digital-event-games-merch-video.bin",
+      "recordCount": 3865,
+      "componentIndices": [
+        13,
+        14
+      ],
+      "presentationFrame": {
+        "anchor": [
+          -0.16215994254554333,
+          -0.37564437179202925,
+          -0.24930154729000442
+        ],
+        "translate": [
+          0.16215994254554333,
+          0.37564437179202925,
+          0.24930154729000442
+        ],
+        "scale": 0.26912927180528645,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-event-games-video": {
+      "sourceHash": "e2b6482e30ce4debb0219c22fb0cd708df9311625f5addb743be3a1a0e45e1ca",
+      "resultHash": "9b3178a742d9d0f87175634e5b0846afefc9aefd820c282305ae02e2babf7c00",
+      "patchHash": "d09f37f77a5562c389186eb9b0e91045d2609d2f9ff6b852faed96e034de03ae",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games-video.bin",
+      "recordCount": 3012,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.1770895543438442,
+          0.1134297941705294,
+          -0.14058101671196255
+        ],
+        "translate": [
+          -0.1770895543438442,
+          -0.1134297941705294,
+          0.14058101671196255
+        ],
+        "scale": 0.4585521832108498,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-event-games-video": {
+      "sourceHash": "cb65273988df9871823b5318b7c454841fb92422324c1f25933d17d5042af657",
+      "resultHash": "067bf19667c39f5ff569ce7946df5295f4fe3f887ab0f9ff12ed00b198b69a36",
+      "patchHash": "7784e268b9bf410766e70ca8ed991f6d6668697efc60820b769de02aad8d7ebd",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games-video.bin",
+      "recordCount": 3188,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.11131171594577438,
+          -0.023057890011841664,
+          -0.15846656070826892
+        ],
+        "translate": [
+          -0.11131171594577438,
+          0.023057890011841664,
+          0.15846656070826892
+        ],
+        "scale": 0.22990692704916002,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-event-merch-video": {
+      "sourceHash": "8ec73e741d76875d82dfb393c0f8879b2557ac21ddcf9de5f4f399d962a2312b",
+      "resultHash": "fae895528a33830f7ff9f78ac6f1c2ace692fd0d78d28341dc04bde3ff44b544",
+      "patchHash": "fff6726d038f5c0b1380fb810811d981e0de76f28f1549338dc65d58830af67b",
+      "patchPath": "patches/complex-gather-content-design-digital-event-merch-video.bin",
+      "recordCount": 2931,
+      "componentIndices": [
+        15,
+        16
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.21893531183724602,
+          0.08424098693027382,
+          -0.14728312914667185
+        ],
+        "translate": [
+          -0.21893531183724602,
+          -0.08424098693027382,
+          0.14728312914667185
+        ],
+        "scale": 0.4724812835454942,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-event-merch-video": {
+      "sourceHash": "a71481a80d677e355ed128218e52c527c31a199116f05537a26ac1d27fc1eb58",
+      "resultHash": "c4a8d6f415e4d937bd5d7b6fb3947e4858cd85f061a1dc16865eefdcb725934a",
+      "patchHash": "92f1b18473a89291870bf833073be85e8bdd2300313acedf56daa8aa79723f6c",
+      "patchPath": "patches/complex-drive-content-design-digital-event-merch-video.bin",
+      "recordCount": 3100,
+      "componentIndices": [
+        15,
+        16
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3120277967316456,
+          0.1316508682245967,
+          -0.0977168771879855
+        ],
+        "translate": [
+          -0.3120277967316456,
+          -0.1316508682245967,
+          0.0977168771879855
+        ],
+        "scale": 0.2479931227862835,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-games-merch-video": {
+      "sourceHash": "2f14800c6651487d4c8176f2c587ecaf981ce2892c9aaec174c5e35263ed32ce",
+      "resultHash": "dbebfba3e857528a1c948c5355123b88feaa927501963b2a96f69ca3c021cbaa",
+      "patchHash": "bd82ebefcbf7dc03da98eb08edc41446239a406a6a69dbd52b1e80b0430a6a72",
+      "patchPath": "patches/complex-gather-content-design-digital-games-merch-video.bin",
+      "recordCount": 3033,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3172605481847377,
+          0.19092864914403396,
+          -0.11170822886072074
+        ],
+        "translate": [
+          -0.3172605481847377,
+          -0.19092864914403396,
+          0.11170822886072074
+        ],
+        "scale": 0.47766405567526826,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-games-merch-video": {
+      "sourceHash": "4fcd55c82d20fe472e7a2d24fa1dfad904d73aaa3ab0e452cf710d677e8efb5a",
+      "resultHash": "980e99326163a12ef06c9d7a881459690144571f00dcc8ce91709a259d1e8243",
+      "patchHash": "e05848432132c46f13f53b2ec17e5f88618afcb7caa633c75b2f3ada6182ebbe",
+      "patchPath": "patches/complex-drive-content-design-digital-games-merch-video.bin",
+      "recordCount": 3209,
+      "componentIndices": [
+        12,
+        13
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.3149552399592608,
+          0.06131654775344941,
+          -0.1605514650521369
+        ],
+        "translate": [
+          -0.3149552399592608,
+          -0.06131654775344941,
+          0.1605514650521369
+        ],
+        "scale": 0.23398578241467477,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-event-games-merch-video": {
+      "sourceHash": "d9d2de8dc33c41f871be075f2047ac5eadad5aaba38acb81f4dbac41bd8156c4",
+      "resultHash": "ff67cec2123d950abc7eda35820e4e17062c0088b8da12655f7d5327a7169637",
+      "patchHash": "c3e590ccac27867c42d0bd189e89bbe927ab56d36a3ba8b45b6ebf00a8656ec7",
+      "patchPath": "patches/complex-gather-content-design-event-games-merch-video.bin",
+      "recordCount": 2910,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2919619066665602,
+          0.14981526358910102,
+          -0.13090262900820449
+        ],
+        "translate": [
+          -0.2919619066665602,
+          -0.14981526358910102,
+          0.13090262900820449
+        ],
+        "scale": 0.47815479263663296,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-event-games-merch-video": {
+      "sourceHash": "891c0042a4c384a71368fa6c9ec6f5f920e38c28e154f7d8204269a26d0cf9ff",
+      "resultHash": "c06c73a4cc1ce95bb259cd28be1b2c086c3f713e6f808305265ba5e3281ee047",
+      "patchHash": "c739a3448afded261575e948ad56a62969140979d8ba13bb22c02b7edf6a900d",
+      "patchPath": "patches/complex-drive-content-design-event-games-merch-video.bin",
+      "recordCount": 3079,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.33440184320352806,
+          0.06652431488146249,
+          -0.15942662637708319
+        ],
+        "translate": [
+          -0.33440184320352806,
+          -0.06652431488146249,
+          0.15942662637708319
+        ],
+        "scale": 0.23703076690435407,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-digital-event-games-merch-video": {
+      "sourceHash": "0a30d9945cfab627005905c15819b78e677caf0d8dcb75138a2d9e9e91f8dbe5",
+      "resultHash": "ea2b621ff45ab9641904fc3355ca2254d000ae46271f4753c2379ffec28c1419",
+      "patchHash": "44be8c6ae7330e8eb12a72c9dec442575cb9164f6af367d7bf37f2137c2845a9",
+      "patchPath": "patches/complex-gather-content-digital-event-games-merch-video.bin",
+      "recordCount": 3027,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.2769719199424827,
+          0.19817166695538457,
+          -0.0909631072509356
+        ],
+        "translate": [
+          -0.2769719199424827,
+          -0.19817166695538457,
+          0.0909631072509356
+        ],
+        "scale": 0.4617002382874489,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-digital-event-games-merch-video": {
+      "sourceHash": "e285aa30526217c8b7bddd1b2496014e462e23fa9b76d75e4f964d65bfad40ff",
+      "resultHash": "512792f47ccab4fb618e46ee116e0b08c628c1404ddc1deb29dd48737a948f60",
+      "patchHash": "b415177e7b35228c0dde610aaec29132a522f70d44403241e55143f0721268d2",
+      "patchPath": "patches/complex-drive-content-digital-event-games-merch-video.bin",
+      "recordCount": 3200,
+      "componentIndices": [
+        14,
+        15
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.11910516013896455,
+          -0.06305791055170928,
+          -0.1259404517605346
+        ],
+        "translate": [
+          -0.11910516013896455,
+          0.06305791055170928,
+          0.1259404517605346
+        ],
+        "scale": 0.23418261632323267,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-design-digital-event-games-merch-video": {
+      "sourceHash": "b26a5dd59e9bdc020e040c9392b90fc86a975e0baa5681652bdf15cfdfd8deef",
+      "resultHash": "40d61e54f54f4c81907ab24f2689dfe979a27d8eea0375f743ba0df8add84674",
+      "patchHash": "ae9a50c537cafd0b2a8b755fde45de157dc436be45a420ee7aab7b49f5cd57b6",
+      "patchPath": "patches/complex-gather-design-digital-event-games-merch-video.bin",
+      "recordCount": 3001,
+      "componentIndices": [
+        16,
+        17
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.19791765929929994,
+          0.1671413210363344,
+          -0.09039659374904829
+        ],
+        "translate": [
+          -0.19791765929929994,
+          -0.1671413210363344,
+          0.09039659374904829
+        ],
+        "scale": 0.47887136489152904,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-design-digital-event-games-merch-video": {
+      "sourceHash": "5838371b42fcf35080912a0013dbc6086bc844ed4832e5fc5cbea6ca00dccb82",
+      "resultHash": "2aeac2c94a571b736a6a6b1e77b0323517cdcfcb303aa7eb3963a67f4ce9b6d7",
+      "patchHash": "afa8a15d365c602d6600cec440e1a8960e16c7fa9ce9918e56b5d30a36e63adb",
+      "patchPath": "patches/complex-drive-design-digital-event-games-merch-video.bin",
+      "recordCount": 3173,
+      "componentIndices": [
+        16,
+        17
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.005601663190265782,
+          -0.1902643771235848,
+          -0.20905748243008704
+        ],
+        "translate": [
+          -0.005601663190265782,
+          0.1902643771235848,
+          0.20905748243008704
+        ],
+        "scale": 0.23183511346578603,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-gather-content-design-digital-event-games-merch-video": {
+      "sourceHash": "4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b",
+      "resultHash": "3739e6976c82c911c99fbf454dd940084c7bcb77b14572bb8342d92e9334d28a",
+      "patchHash": "e51b6320422193dcf7d4e043d412794061562b9a20a6bef72c2cfd85bd03003d",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 2561,
+      "componentIndices": [
+        17,
+        18
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.34735174478348707,
+          0.19915362409149678,
+          -0.07892306012035988
+        ],
+        "translate": [
+          -0.34735174478348707,
+          -0.19915362409149678,
+          0.07892306012035988
+        ],
+        "scale": 0.3838641487061978,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    },
+    "complex-drive-content-design-digital-event-games-merch-video": {
+      "sourceHash": "d09c1abf6f581dd040bd5b5461f3fe5ed80edb351de8fda20d979ab165e1d3a0",
+      "resultHash": "41c431185f0176b828068df6aedbafef0f17f26859c27263adeb14bdd2a789da",
+      "patchHash": "6ad94f2e2c6015793cb0e302a11d1e7c61c356b4afce9be6da24e429df311db1",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 2709,
+      "componentIndices": [
+        17,
+        18
+      ],
+      "presentationFrame": {
+        "anchor": [
+          0.23469878298346103,
+          0.02570761000134425,
+          -0.161267386463939
+        ],
+        "translate": [
+          -0.23469878298346103,
+          -0.02570761000134425,
+          0.161267386463939
+        ],
+        "scale": 0.20604275688529017,
+        "targetNdcHalfSpan": 0.8,
+        "cameraRig": "production-promoted-event-yaw-v1"
+      }
+    }
+  }
+}

@@ -168,6 +168,7 @@ export class MagnetizedSettleController {
   private nowFn: () => number;
   private resolveContract: (nodeId: ScreenNodeId) => SemanticContractRef | null;
   private earlyTransitions: boolean;
+  private latestPreparedWins: boolean;
 
   private phase: ScrollPhase = "Settled";
   private observedNodeId: ScreenNodeId | null = null;
@@ -224,10 +225,12 @@ export class MagnetizedSettleController {
     now?: () => number;
     resolveContract?: (nodeId: ScreenNodeId) => SemanticContractRef | null;
     earlyTransitions?: boolean;
+    latestPreparedWins?: boolean;
   } = {}) {
     this.nowFn = args.now ?? (() => (typeof performance !== "undefined" ? performance.now() : Date.now()));
     this.resolveContract = args.resolveContract ?? ((nodeId) => ({ nodeId, key: nodeId }));
     this.earlyTransitions = args.earlyTransitions ?? false;
+    this.latestPreparedWins = args.latestPreparedWins ?? false;
   }
 
   setResolveContract(resolve: (nodeId: ScreenNodeId) => SemanticContractRef | null) {
@@ -335,7 +338,9 @@ export class MagnetizedSettleController {
     const contract = this.resolveContract(hostNodeId);
     if (!contract) return null;
     if (contract.key === this.actorEndpointKey) return null;
-    if (this.actorStatus === "preparing" && !this.actorVisualStarted) this.cancelPreparing(nowMs);
+    // Early transitions replace the pending request atomically. Publishing a
+    // cancellation here would let the next tick cancel the NEW builder request.
+    if (!this.latestPreparedWins && this.actorStatus === "preparing" && !this.actorVisualStarted) this.cancelPreparing(nowMs);
     this.interactionRevision += 1;
     const intent = this.beginActorTransition(contract, this.magneticSettleRevision, "in-screen", nowMs);
     if (!intent) {
@@ -584,6 +589,14 @@ export class MagnetizedSettleController {
     this.lastDestination = nodeId;
     this.lastSettleAt = nowMs;
     if (this.magnetizedSettledNodeId === nodeId && this.publishedSettleRevision > 0) {
+      // A reversed magnetic gesture can return to the same screen after an
+      // early morph was accepted for its neighbour. Reconcile the actor too.
+      if (this.latestPreparedWins) {
+        const contract = this.resolveContract(nodeId);
+        if (contract && contract.key !== this.actorEndpointKey) {
+          this.onMagneticSettle({ nodeId, revision: this.magneticSettleRevision, atMs: nowMs }, contract, nowMs);
+        }
+      }
       return;
     }
     this.magnetizedSettledNodeId = nodeId;

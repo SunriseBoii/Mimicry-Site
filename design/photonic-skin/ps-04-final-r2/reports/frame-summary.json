@@ -1,0 +1,34 @@
+{
+  "r1-desktop": {
+    "frameCount": 1002,
+    "programSwaps": 12,
+    "nonzeroProgressAtSwap": 0,
+    "p95FrameIntervalMs": 8,
+    "maxFrameIntervalMs": 468.39999997615814,
+    "lastTarget": "single-event"
+  },
+  "r1-mobile": {
+    "frameCount": 798,
+    "programSwaps": 11,
+    "nonzeroProgressAtSwap": 1,
+    "p95FrameIntervalMs": 6.800000011920929,
+    "maxFrameIntervalMs": 406.69999998807907,
+    "lastTarget": "single-event"
+  },
+  "r2-desktop": {
+    "frameCount": 1306,
+    "programSwaps": 9,
+    "nonzeroProgressAtSwap": 0,
+    "p95FrameIntervalMs": 13.100000023841858,
+    "maxFrameIntervalMs": 34.5,
+    "lastTarget": "single-digital"
+  },
+  "r2-mobile": {
+    "frameCount": 1207,
+    "programSwaps": 9,
+    "nonzeroProgressAtSwap": 0,
+    "p95FrameIntervalMs": 11.799999952316284,
+    "maxFrameIntervalMs": 37,
+    "lastTarget": "single-digital"
+  }
+}

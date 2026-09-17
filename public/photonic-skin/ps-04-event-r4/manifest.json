@@ -1,0 +1,1631 @@
+{
+  "stage": "PS-04.event-r4",
+  "identitySize": 16384,
+  "patchRecordStride": 28,
+  "states": {
+    "brand-wide-drive-content-design-digital-event-games-merch-video": {
+      "sourceHash": "4ed009aacf3859cfce0e9f0b2088a6b32041356198ac56acebdb9926292feef6",
+      "resultHash": "d09c1abf6f581dd040bd5b5461f3fe5ed80edb351de8fda20d979ab165e1d3a0",
+      "patchHash": "85e653c01961b0aa9a73438db0e1e89dcadfd72715c242817e2acbf606cc01f5",
+      "patchPath": "patches/brand-wide-drive-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 191,
+      "componentIndex": 9
+    },
+    "brand-wide-gather-content-design-digital-event-games-merch-video": {
+      "sourceHash": "d9d4dd3f142cfd79299298c2325bb08e3a7ba11a8845b7f6f8dd376509ddaab4",
+      "resultHash": "4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b",
+      "patchHash": "cd46adffde4aac90a8379f53b1a55c2b2a2ccf60947e4310fbb8ca7f26215015",
+      "patchPath": "patches/brand-wide-gather-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 191,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event": {
+      "sourceHash": "01bdd223b92b50cf9bcad48ea2f09783feaf737a388f0e34c8d805fe688adecd",
+      "resultHash": "dddb91bb7d8f0620cb296d8fc10e733d5287daa669d5e11dc5f0585effb75226",
+      "patchHash": "c1fbd16f813cfee1e4fe3ed428e6a462947c832c88836c26418cf8ccc55a816e",
+      "patchPath": "patches/complex-drive-content-design-digital-event.bin",
+      "recordCount": 332,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-games": {
+      "sourceHash": "a46c611440825281a4763e7c21a88ca743f6a0f00930e7d446c20669f61ffff7",
+      "resultHash": "b3b42a55ed1d312b42cd2668aa5590b08d951a6f0d56b7cadd1da301e02ee630",
+      "patchHash": "dad3086b3dcc1409487a42154293d18ac6243bed74b4ec9f3345e96260a975b7",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games.bin",
+      "recordCount": 270,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-games-merch": {
+      "sourceHash": "cbf3862318d6467741b9c6bb1e6e1f6f4747ed17f6061fb099428789a26caffa",
+      "resultHash": "2418d6772a85b94099f3656c52bcaf0da96ce5c309c5ddf9c1f7c7815056b61b",
+      "patchHash": "236344ec33b95f56e45ea085bfb6e9bc845e6f0a9ee199afed3e4259a3c94e94",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games-merch.bin",
+      "recordCount": 224,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-focus-content": {
+      "sourceHash": "81cce9d5918f5d79508fe347d01dfaa1bdebb169335cb04b9e3a4488148eb6f5",
+      "resultHash": "ede47e248e6b18c68769bef16435f453b30b48c7ba1b635dd60f899996559b54",
+      "patchHash": "569cb6b82bae2c8180319c7746b3e6bfe0fb83811c9a7d3312293151c5e2007f",
+      "patchPath": "patches/complex-focus-content-design-digital-event-focus-content.bin",
+      "recordCount": 255,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-focus-design": {
+      "sourceHash": "9b540f051af2cb677814af91cab5169e4b5e60a9780886b2831ef2578856b3c0",
+      "resultHash": "b9f6475c178e40d2022719e068ae0661a138e29b0cc662ba18bbe64352b63658",
+      "patchHash": "b2e3fe4b93817bb33c661e66f1e53b78c5f76d7fd9547153bf24a3497002a687",
+      "patchPath": "patches/complex-focus-content-design-digital-event-focus-design.bin",
+      "recordCount": 254,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-focus-digital": {
+      "sourceHash": "a98095aa600564ed808cca503b784d0891a6e370ee4f49b01feaefe6dbdbb71f",
+      "resultHash": "d7a74b44997c4b91f0bbbaaaabbf11e5883e20dfd289c1807a6a7e4d4fc568e0",
+      "patchHash": "6a8f3e52e5d41ca164a55e60715237d7f0674231411f5ce30e3fda1c968c2178",
+      "patchPath": "patches/complex-focus-content-design-digital-event-focus-digital.bin",
+      "recordCount": 265,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-focus-event": {
+      "sourceHash": "3f8685d4270c23fdaf6f154aeaa10a8ace3df4188a18ffd1a4f406b75ebd3d0f",
+      "resultHash": "b8daad4d8e63c6a4ccac16389712b47335ee6525c75cf2908a39041ae7df807a",
+      "patchHash": "f3e70a8b04e88362fab29cdfee7198dcc707fb4ad5f7a1307641370ea6257e5d",
+      "patchPath": "patches/complex-focus-content-design-digital-event-focus-event.bin",
+      "recordCount": 483,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-focus-content": {
+      "sourceHash": "759a5850a5ee048ffa521e87647bc28ee12241ef6d6a5f3e23559d8abbda49e1",
+      "resultHash": "4d8a751f3d1297e7446c7cacf1a89286f021c3a84bc4fbb7d9d632e9ca88086d",
+      "patchHash": "4df9c2f66cb1b7efef3be0901190c646c1b2f666ba54d85a18b7d348459e97a0",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-focus-content.bin",
+      "recordCount": 221,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-focus-design": {
+      "sourceHash": "d90e48fd97a61395d527b9961721e053b4fb6a518e49ac05cd59734b4407e27a",
+      "resultHash": "43154145f2b6892edb64b2b210417ad06549e7c37dadd30cd36381dc9c0ea843",
+      "patchHash": "d245a86a09942534425b521c745b1863ad369f025a9fc873c0ab9f26d65f242b",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-focus-design.bin",
+      "recordCount": 218,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-focus-digital": {
+      "sourceHash": "5867b16443552d85a157601b94b7684b46da844f2aeb49861ba2d0c3eeef40c8",
+      "resultHash": "5628ffe13685d434515f5db561d013facf98a4a0d2b7a003e14e1a261de0b989",
+      "patchHash": "f91148f71d4c792b739a73b71185e19e7675cac51df969d57f73942b778774f1",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-focus-digital.bin",
+      "recordCount": 224,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-focus-event": {
+      "sourceHash": "eafb1984f4d6fb33e95b3b7db0b3d524809dde3a1bdf2d863a61518cd71b67ab",
+      "resultHash": "c23509947aee6c2b843275450837e8d19f8c22fb7962719b51642f0caa16ba71",
+      "patchHash": "6adc3123c692528e5527a5f6aab93475ae969105e946c98aa5221a2a8c46cf5a",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-focus-event.bin",
+      "recordCount": 415,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-focus-games": {
+      "sourceHash": "4c03e3742eccc48bde70f30df6151d667d203e791f5d9fc5322ddfce059c1444",
+      "resultHash": "6d7c5dcf9873d16eba84d1ec1b7c6aef68f0f1766af0e552f8768b6178adda9e",
+      "patchHash": "d0bed874df618b9a4d0a0924f69f789b8b9a96c74b05273968e340b57a0f78ca",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-focus-games.bin",
+      "recordCount": 227,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-content": {
+      "sourceHash": "ebd12874f1c75fc34537b2008c9a4a27f7e250064333b23a94be5e779ad5b7e1",
+      "resultHash": "89a07575d736d2cc4dcb92dd51ccfc6967b14249dd15ca177a35a8f5f1334395",
+      "patchHash": "0a6bc51d93d548ac991720ff466efa1c139ccc2d20fc885d98e7623a39367ef7",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-content.bin",
+      "recordCount": 187,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-design": {
+      "sourceHash": "2e54d7eea081f4c70a7c316e1a7e9bad93f2a637f83e5628c7254c8f57be13fc",
+      "resultHash": "8a03aba8413dba141403c55e616af74c6c0aabd395b1b8d62e7c850e955bab16",
+      "patchHash": "bfcb77cfd07faee80b7f297b3046456370852d51aa8280296cac4dac032a280b",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-design.bin",
+      "recordCount": 183,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-digital": {
+      "sourceHash": "5e89b7fe947eb4d7422e6eb552ee4264bf69963fc9d0d30e4f2cdccca0188164",
+      "resultHash": "06b087f831955ace393ff8a3be3f27ea6a357dccfcbd3b3c0bbfee31332d45e0",
+      "patchHash": "f2c054e2cc60e36726b4ffe2e4879c942050bd5c0fa9e71d3eb2c073ecbeae5a",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-digital.bin",
+      "recordCount": 189,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-event": {
+      "sourceHash": "dd637a40b2622b929ae1619ff9f2269b0cd36c744309f767447ad48d83d0d6c9",
+      "resultHash": "4e77b2c4eba405a7d225ad57bc1481a5bc69609fd0916a7bdf7bef5e9d518db7",
+      "patchHash": "11aa1b09c76324d0056551cb6398f0a9e3708d542128509f556fa65c6cff71ac",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-event.bin",
+      "recordCount": 391,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-games": {
+      "sourceHash": "275f620cdd1adfe9149d12f27ffbd1867b672767e96972c11f9e04c9fb5001c5",
+      "resultHash": "ccd59d5762b75b3d80cdafb3ede46399d61f75c24b14838f458f826b39c939f8",
+      "patchHash": "de3667980dac1c1d95c677a703997b003c1dceea4aa439124f2d3b7dd003d8b1",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-games.bin",
+      "recordCount": 196,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-merch-focus-merch": {
+      "sourceHash": "a048828ceba488be6d8681005761c00f93a7c54ff9c7586884338d00471781d4",
+      "resultHash": "2b4cdc82a5290cd1c1b63052918160cfcbd049d309831883be017b3164615626",
+      "patchHash": "b14e938250fa21a1fe8fb0f5d154c8aeeec2302f1f8e9aa0c2f1100ee09498ce",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-merch-focus-merch.bin",
+      "recordCount": 195,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-games-video-focus-content": {
+      "sourceHash": "c2c8145d2ac477781c5f602d7463778c6d79fce0061f3465c966f1b07bbb2c0d",
+      "resultHash": "703dc27e065f0ac904c2365450b6405b1f583635ae6ca189c4f8d97e648cf599",
+      "patchHash": "db859034f131d56553fef3aea70833212f837ea2cbc083f78bb8de8fb9c15a75",
+      "patchPath": "patches/complex-focus-content-design-digital-event-games-video-focus-content.bin",
+      "recordCount": 191,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-merch-focus-content": {
+      "sourceHash": "55bc0edc421530a31118d91857b2cf62a09546bd1d72c7e056f7ac5b1022702a",
+      "resultHash": "8f6e333db8c9e599f5a8bbf09774984a94b9f960752c604eb7ceb117bf2ed408",
+      "patchHash": "c4ab121b1343820e3c350642bd5eb461cce97caa7d1bd522d2a780af49184569",
+      "patchPath": "patches/complex-focus-content-design-digital-event-merch-focus-content.bin",
+      "recordCount": 216,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-merch-video-focus-content": {
+      "sourceHash": "0f01755f16da3419c54e89db8fdf64c199bbed9e173222ccf901dfffed22d6d6",
+      "resultHash": "746ba323816141e96a899fd838f6de6310eb45159c0278a22157095ace51fd76",
+      "patchHash": "8cbb8ab40a609079bcf257f7ac01ccb37d6122893bd64e32568a73930142c767",
+      "patchPath": "patches/complex-focus-content-design-digital-event-merch-video-focus-content.bin",
+      "recordCount": 187,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-digital-event-video-focus-content": {
+      "sourceHash": "6f13d0d88dca98da6a14556824863bb7756915a7696b59650f7209ac313fdf40",
+      "resultHash": "a07673bc1962054406554049cefddd17607f1c91de93f3426437961412f8806b",
+      "patchHash": "76e4f03c5129cc308bb623d4aeac5d301ebf26eeb95bd32e66fd8ca5d310723c",
+      "patchPath": "patches/complex-focus-content-design-digital-event-video-focus-content.bin",
+      "recordCount": 214,
+      "componentIndex": 9
+    },
+    "complex-focus-content-design-event-focus-content": {
+      "sourceHash": "a361f2339c5ed4a887305c2d2dcdf1c1ce3829b314c5848349d1f96cdb9f7cff",
+      "resultHash": "048152be154b7bbad1fdcaa230e86984c8a30f40ef2c86b6cc8d70ce2e9d4aab",
+      "patchHash": "bcade5642dee57ec4dbaced3c55f649cbf5cf6fba1842a8b1227053b502e6f41",
+      "patchPath": "patches/complex-focus-content-design-event-focus-content.bin",
+      "recordCount": 300,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-games-focus-content": {
+      "sourceHash": "50d8abed9340d34194a4caba61f41982f092345a5a9495c51c21bda306d7a5b8",
+      "resultHash": "8456199d2e8fc308ced3d871df86764fa44fb0139f33cae34e641e838c43445f",
+      "patchHash": "c1789769ae8eb2695442d8a08d41df8a301413b69130ae28d864a4598bb9c8d8",
+      "patchPath": "patches/complex-focus-content-design-event-games-focus-content.bin",
+      "recordCount": 253,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-games-merch-focus-content": {
+      "sourceHash": "5ae12f4c7e2b68ed5001a35b1298917c4865290f815bfe4451a5c4f0adfb957a",
+      "resultHash": "68616c463eee68c1da7dbe00b9b06faa6b9688f0b272a742d07af57cff8ed742",
+      "patchHash": "922564c7b18598f113c8729f8ba82c2e5ed83c1f26f8438d2d9dd4cc7f732a85",
+      "patchPath": "patches/complex-focus-content-design-event-games-merch-focus-content.bin",
+      "recordCount": 215,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-games-merch-video-focus-content": {
+      "sourceHash": "9d9388ab03c50df850c138f3e14117fa024cc540c36129d37cf01166de1b1a88",
+      "resultHash": "2f7ad1949753be160e80184d760851150d1a14b70d745993ce74226d20e1658a",
+      "patchHash": "19cf8be1981fb5d5dc4abcd82fa27c22b3127e6277c8a371ea5ae9f0a4c924ca",
+      "patchPath": "patches/complex-focus-content-design-event-games-merch-video-focus-content.bin",
+      "recordCount": 186,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-games-video-focus-content": {
+      "sourceHash": "e9ece5d942d22d0bd938b29b4ff4f18f27cb2bb9d5b2c0b5836884a4d6eed213",
+      "resultHash": "7a53900d58d69b450fa785fe1fd00a94078c0b271490ccffba0e45e7c7549f95",
+      "patchHash": "60d35c06e5fe9fef41cfaaa8132a24b64b77e09f80523ae829df75a2b0669f67",
+      "patchPath": "patches/complex-focus-content-design-event-games-video-focus-content.bin",
+      "recordCount": 213,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-merch-focus-content": {
+      "sourceHash": "b939dfce2118e7fbcffc86971102786655a986b6569ebebabf6b5feaff1f5436",
+      "resultHash": "477d46619b90bde496e19b1a2e10f4faf380302dfc9d7609f0146b86bb411586",
+      "patchHash": "e70778650e6fa0d99d376e7797cf3558642e5a629d9f1852bcb91525302734c7",
+      "patchPath": "patches/complex-focus-content-design-event-merch-focus-content.bin",
+      "recordCount": 238,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-merch-video-focus-content": {
+      "sourceHash": "2761b30254040d3132cf632d89b6bd6d63863499ffe028f9d6a85d484699550a",
+      "resultHash": "45d91381c30e044081bcefead3612b65bc80d9b9ca1faa0c9ddd232e62a8c5c2",
+      "patchHash": "a4cf9a66e8a3cd2859198dd5315a0389cd080c9b6146448c33820e51548e552c",
+      "patchPath": "patches/complex-focus-content-design-event-merch-video-focus-content.bin",
+      "recordCount": 208,
+      "componentIndex": 6
+    },
+    "complex-focus-content-design-event-video-focus-content": {
+      "sourceHash": "84dbe77f524c721c35278c3066cfd1eb14c40e08e369b22aa29a87339aab644f",
+      "resultHash": "76d69f6a18a9a9ddbb26bfea23c68e0119c0dcc6dfcdbd59a098196ea29554f0",
+      "patchHash": "4e454dc8348d1fb616bfa7d7356efbc416342bc272370e3cf7bcc3836609aa80",
+      "patchPath": "patches/complex-focus-content-design-event-video-focus-content.bin",
+      "recordCount": 243,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-focus-content": {
+      "sourceHash": "9fc6da7860053c8b952d0507279cbd8224552bfa2fae3c476149c7f1664bb72e",
+      "resultHash": "bc77cf8770a4a2bedb208eeaf684a6f7a2852af6c09a6e6378b9e5974297b756",
+      "patchHash": "ffcbcd230e930b27d4fa39cba284a9d52f718d74ab684fe69b3ad616732c68a1",
+      "patchPath": "patches/complex-focus-content-digital-event-focus-content.bin",
+      "recordCount": 323,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-games-focus-content": {
+      "sourceHash": "c8463805618f0ee73fa33b8a1837e0e4f41011aaaccbd60751d8fd37e146353f",
+      "resultHash": "91bcaf603615ea57153eb846ffc84927562e65d6f45a1ddf55becc9e8ae76d9d",
+      "patchHash": "ac9fef57a5b7c5f5d60c6324f874d4a1ec8d83eca3dfb63a5a6e71e65d20e653",
+      "patchPath": "patches/complex-focus-content-digital-event-games-focus-content.bin",
+      "recordCount": 264,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-games-merch-focus-content": {
+      "sourceHash": "6462c181b88ddf64adceb37aea992fcd4b508c40f17aec2475d575fee64da267",
+      "resultHash": "0610758c256c7ff92122ccdb327a02cab7d4457eb4003ba596a20788c82e314a",
+      "patchHash": "bc29a606fd09f6c4f7401cd29f43c8f3383ad06f94040028913770e4bbd8df7b",
+      "patchPath": "patches/complex-focus-content-digital-event-games-merch-focus-content.bin",
+      "recordCount": 222,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-games-merch-video-focus-content": {
+      "sourceHash": "be215d0d33d557c373dea3d55c0b2db96a4a7d20ce330579d67183963d1aee0f",
+      "resultHash": "ed97d1ead36d88c6ff2b4358d2f537c15d97f3d4e2922e58bcf637e9e4998f4b",
+      "patchHash": "8e94da02dc1553a388e9d940f88eebe3b85e976f1afd934ce7268403ecaeed4f",
+      "patchPath": "patches/complex-focus-content-digital-event-games-merch-video-focus-content.bin",
+      "recordCount": 192,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-games-video-focus-content": {
+      "sourceHash": "879cf48c82e62652a884a87abce66538287b7ccf999ab375443dc2d191772033",
+      "resultHash": "8dcd25354a7f232c886304e91142807b7bbd0ce9f4c567c350a274391ba4834b",
+      "patchHash": "ed1469c5a599a44c18eb20af319d04ca72d252fc14ba74ff9342ab312fce62a9",
+      "patchPath": "patches/complex-focus-content-digital-event-games-video-focus-content.bin",
+      "recordCount": 220,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-merch-focus-content": {
+      "sourceHash": "f942b99159ac70d0d2192c264bd50022a9f873b127fd29ee30cfdf50e6fb80bf",
+      "resultHash": "2a4e54b9eadb8846dcee057e551bb6757ff7f05a8d40c07a85abd0d349d507b7",
+      "patchHash": "feb3b9f772d57c0ee47075cd8c9c37d8cdf91a3aaecc81675d1008adcac96474",
+      "patchPath": "patches/complex-focus-content-digital-event-merch-focus-content.bin",
+      "recordCount": 247,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-merch-video-focus-content": {
+      "sourceHash": "dd2cad3a767d8a7c4dd5a2155bc09584a25d498b85530a369de4ae8a3372c745",
+      "resultHash": "62977e20e4f365587a38a2d9cddd80042f6594b7d909d75787d715bd3e3b5336",
+      "patchHash": "b94cc2cf78eb1ea7736f1fedef7fe4d4f37cbd190595dc81e54de37a0f1e383c",
+      "patchPath": "patches/complex-focus-content-digital-event-merch-video-focus-content.bin",
+      "recordCount": 215,
+      "componentIndex": 6
+    },
+    "complex-focus-content-digital-event-video-focus-content": {
+      "sourceHash": "dfc9018d592e2dbbadaf15c0f7f37827b7c37b2643616819a39529541d542b3e",
+      "resultHash": "a01befa0ae82bca1c63bd8b19ac592eed1d08b7c46230ae2d73207d63d454baa",
+      "patchHash": "d25f4cb925fb22954260fda1fbe22feae62bc6296f87867725438051daaa7acf",
+      "patchPath": "patches/complex-focus-content-digital-event-video-focus-content.bin",
+      "recordCount": 254,
+      "componentIndex": 6
+    },
+    "complex-focus-content-event-focus-content": {
+      "sourceHash": "801b0c718a4373aa077ba364e5e06e27e40a1545669656f41c18fe7b2ee08662",
+      "resultHash": "190813ae136c8af63199071ccf79c0bd2377ca88c1871795daecf5b3a47e9293",
+      "patchHash": "65406dbaeee23da29e689a419a72f7e7bbc5bcac00e894503dd2975c0ea988a8",
+      "patchPath": "patches/complex-focus-content-event-focus-content.bin",
+      "recordCount": 475,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-games-focus-content": {
+      "sourceHash": "ab0ae3a77da452406df38247621860f50886c4d45d6e070ef169d3b85e14c84c",
+      "resultHash": "37fee6cc6975ab417ea3c74c07d17a0697bfeb2aed3964e3816fe9e05629dfa6",
+      "patchHash": "36c92f46bc696588e53e7b4963a7a65c34d79c6879b7d595425df1c9e5fb9dbb",
+      "patchPath": "patches/complex-focus-content-event-games-focus-content.bin",
+      "recordCount": 313,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-games-merch-focus-content": {
+      "sourceHash": "fac89de3cfc64e74ffb4e77fe1faeedbe680ea79d0a3184f4670ff3857ffa670",
+      "resultHash": "0d1dc4cef03da672d14a47f90c8458e93408f37461a274eb5b83f0e6f242cf78",
+      "patchHash": "939cee78b67fa4dafd0f8ff1828ab394e743a6af0c2f4c90ce740e3e1c045c12",
+      "patchPath": "patches/complex-focus-content-event-games-merch-focus-content.bin",
+      "recordCount": 245,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-games-merch-video-focus-content": {
+      "sourceHash": "86a499b201c90190707391c19b02b030905b8eaa04e7e32fb7642d9ea56359bf",
+      "resultHash": "88ddb58eead1c5d98728cf5596ed88e901487c0a80c76a47165e26a6b5c606d7",
+      "patchHash": "f5e9af46741b9765cdbd318696462a0446772e537c38eb11b936915b93e2d192",
+      "patchPath": "patches/complex-focus-content-event-games-merch-video-focus-content.bin",
+      "recordCount": 214,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-games-video-focus-content": {
+      "sourceHash": "3ba788518fd5699d029409cfc440b57449161fcc38ad1e75bf1f608cccb9d7bf",
+      "resultHash": "74f36660d24efa8386e8a5e8a9df9327b04d9339250a1b515a594c0fda0a1ce2",
+      "patchHash": "0f1f7f7d40f797cc3b48fd30b5fe22cf341d3f407bd83b2d2e82eb0154635adf",
+      "patchPath": "patches/complex-focus-content-event-games-video-focus-content.bin",
+      "recordCount": 252,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-merch-focus-content": {
+      "sourceHash": "f9b0b419495015e0098afe2e5be23dca87e83f0a5f8a451fb95e0ebdc8e36868",
+      "resultHash": "5e8a0846c387b2fee622d86721789d2292f0c84354e11dd022591754b62d36c3",
+      "patchHash": "c6a639121692f65a82ce2aa34553be7aecc13fe91c5f25aba10f2cc6c706dc85",
+      "patchPath": "patches/complex-focus-content-event-merch-focus-content.bin",
+      "recordCount": 294,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-merch-video-focus-content": {
+      "sourceHash": "4eb9c6174c7862f4364fce17df892fdaf39fdbb2eeb400cdd43a02737f9f4cb8",
+      "resultHash": "014e131dd22c404213b1832d4d854797c94ea63f624fd8be1e2b1a711a4a352a",
+      "patchHash": "fd0b8f487974565beade76be2ab38a65834abce006dd50756c66b20705be1333",
+      "patchPath": "patches/complex-focus-content-event-merch-video-focus-content.bin",
+      "recordCount": 245,
+      "componentIndex": 3
+    },
+    "complex-focus-content-event-video-focus-content": {
+      "sourceHash": "903c1abce0bcd36b4108d171daf0141a74ab5f0ce64ec7dd88d2979fde906cde",
+      "resultHash": "0af1c347311eb476a896a51ea32b1fe475b175e29e29f5f78d78eb5439c031b3",
+      "patchHash": "04095de2cf302a16295668d1866f3cfdc261a04f2042a83227e04405212366a0",
+      "patchPath": "patches/complex-focus-content-event-video-focus-content.bin",
+      "recordCount": 298,
+      "componentIndex": 3
+    },
+    "complex-focus-design-digital-event-focus-design": {
+      "sourceHash": "f78e58cd2bada78cd779871b680b71da7fd643e0559de5eed2f24fbc1275926c",
+      "resultHash": "e1d0adc29eb4c38bc24724e5eba0631efc64cdc9be710bf2c5f6d5da32484be2",
+      "patchHash": "048cfc9dd177c191b537c6ecf45f78675505681a137ed14637dd0f0fa41d6d9e",
+      "patchPath": "patches/complex-focus-design-digital-event-focus-design.bin",
+      "recordCount": 311,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-games-focus-design": {
+      "sourceHash": "b7440f758d260dd627998ec58eda75b7328e7b17a62a78c8422ffcf9e0185fb2",
+      "resultHash": "9c92b405ec4bd41097f439f9d68379d1eaa43861a9d5f5203ae2ba0564f99860",
+      "patchHash": "d01c05131f9952b29ada640e1c6e487592ee7f497844e025e64a07d12b05f725",
+      "patchPath": "patches/complex-focus-design-digital-event-games-focus-design.bin",
+      "recordCount": 260,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-games-merch-focus-design": {
+      "sourceHash": "380eed5c93a41b59a14b4f5f7123e6c584e12790f67f55e2c8ab792d989b2248",
+      "resultHash": "1bb1cbdcec9024cef7c5a7612c70b9b1e383de7e30f3abd79a503d069a0f4eaa",
+      "patchHash": "b2cd4bbe674c1a22422faa9a3194ba0a782f350c0c288ef678ea34bb4a0c7c19",
+      "patchPath": "patches/complex-focus-design-digital-event-games-merch-focus-design.bin",
+      "recordCount": 213,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-games-merch-video-focus-design": {
+      "sourceHash": "4d65259ac0904260359d4e1da637ad484f63a383228fe38b5fd83fe33d348819",
+      "resultHash": "3e1ccb15d06a98e815837e1dfc4aa9f816485fdd09a55bf639a720a2d337aa37",
+      "patchHash": "34acd08553ac92712aae0407a5cc47c9df386c4fc1ca694dbccc046384dc492a",
+      "patchPath": "patches/complex-focus-design-digital-event-games-merch-video-focus-design.bin",
+      "recordCount": 183,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-games-video-focus-design": {
+      "sourceHash": "5bd41ba2cd06ebaaa558fddf4c8b9fd85667dba03424a062be36e6df29ad259a",
+      "resultHash": "24d7dadf3491056899fee15e7b5feb00e3997c3d7f5bc1438a17a54b2b3f649a",
+      "patchHash": "f4ac5ceabb0d53c35991f1e7057cad51b429fff78dcf8b7c39f62c994392b490",
+      "patchPath": "patches/complex-focus-design-digital-event-games-video-focus-design.bin",
+      "recordCount": 218,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-merch-focus-design": {
+      "sourceHash": "9badc58303bdd0c0f16271daaf6a3ea96bd544c9af845ce44430d9bb7a17bbbc",
+      "resultHash": "01a6f68a2be5558ad63ce40dafd200d4e4305e054312daffafaf3ce915fdec8e",
+      "patchHash": "f534883b8b9a51d4f66c1286d6fcc4f32cf0f839f9affb1e8bc4e62b7e07e08d",
+      "patchPath": "patches/complex-focus-design-digital-event-merch-focus-design.bin",
+      "recordCount": 237,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-merch-video-focus-design": {
+      "sourceHash": "6d848aaf8d2be1d8e0577c199ed014caca9200f4e009b0544dd39d804787a888",
+      "resultHash": "a493f32643cbfdaaa826f605e9de6f59df1afd34439f12c710d537ea1f183ede",
+      "patchHash": "b556361cc8c1c697bdded0cd68fc7266df845f945adb6d8bab658bc1c406ce49",
+      "patchPath": "patches/complex-focus-design-digital-event-merch-video-focus-design.bin",
+      "recordCount": 205,
+      "componentIndex": 8
+    },
+    "complex-focus-design-digital-event-video-focus-design": {
+      "sourceHash": "b8c5b6b99d70da21863f8bea8868b17ad6a484e672dd19928616d25491140180",
+      "resultHash": "7b97e44473a2e65b3fdb8946fbb35b8234bdba2cf178e0c086631ab03d7f827f",
+      "patchHash": "1271f8341e7787d0f2dc40f38018ecd8852217ccd1c783eae57405ad716cb391",
+      "patchPath": "patches/complex-focus-design-digital-event-video-focus-design.bin",
+      "recordCount": 238,
+      "componentIndex": 8
+    },
+    "complex-focus-design-event-focus-design": {
+      "sourceHash": "9cf842cfdab1ff7486ad8e0626b706dcb81f684bed1e3294340d0eeea2ebe272",
+      "resultHash": "007d5b0aef56bfdfb6ac7cfd5717e844e0234b20c434a251574088e6128b1b36",
+      "patchHash": "e61a4ef1c545ed9fe9fafb588fda86a5ab30b7cc368cdfb9c4d8b8d7c898c60e",
+      "patchPath": "patches/complex-focus-design-event-focus-design.bin",
+      "recordCount": 385,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-games-focus-design": {
+      "sourceHash": "29ea6ea75f22891da268ebb156b18317b8528d43e43b2d4d8e9955f8d3a5a279",
+      "resultHash": "e36e6c8907ccff62676db8ea112f86af741389d3df31a9dbc95b8fcdbacd8b7d",
+      "patchHash": "34f1b5368bbe650d8c58b451e3073d334f8459835d480cc5eebba1adde9d8b49",
+      "patchPath": "patches/complex-focus-design-event-games-focus-design.bin",
+      "recordCount": 308,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-games-merch-focus-design": {
+      "sourceHash": "a064bdcc5f61b8c78ebc93f2195f9f1542e2baf630a3017cc6d1849f70ccc504",
+      "resultHash": "8192ad5b698e14903d665a3e1391d086c7d9c21d0c862cb0f9313672455a9ffc",
+      "patchHash": "4eb77c10e780f1243c980263aad902b9f9d80180c22aad127dc88625c92929d4",
+      "patchPath": "patches/complex-focus-design-event-games-merch-focus-design.bin",
+      "recordCount": 235,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-games-merch-video-focus-design": {
+      "sourceHash": "4d758a8876ee47e7dc0f2b1f31a96427eb365ef9715669fb22446d1469b2742e",
+      "resultHash": "1808dfc5d8311bca95b3534b1d71fe4214d1c0c3589bd11feeb56e99af8a66fb",
+      "patchHash": "b0fd8c488ad140d02a6f7101def31d17c1cce023e6c27e78502741e8a2cc08f6",
+      "patchPath": "patches/complex-focus-design-event-games-merch-video-focus-design.bin",
+      "recordCount": 203,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-games-video-focus-design": {
+      "sourceHash": "1ba1de5935122824ca54cc36e3f5c23a2abd557fb2a9c53e559cbbd986a6627b",
+      "resultHash": "2725da4b19ee626bcee864505cef12a2f96d216d51a9c05c28c4307cc78d0cd5",
+      "patchHash": "f3dcb0c022ee7a1ffd5d744d002d7b6673f7fd9b25697764bbb97ae62382b24b",
+      "patchPath": "patches/complex-focus-design-event-games-video-focus-design.bin",
+      "recordCount": 237,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-merch-focus-design": {
+      "sourceHash": "c831ec09e59814ea7b4c5a4605dd360abdef80534ed39ca05a41a581d4fb92c9",
+      "resultHash": "b0a375599d94b75c0a1d37593e43aec182ff0a0a7934b63b8dcac17887044135",
+      "patchHash": "d287d57b0e103fe756d46226e24a3c07d22c162a4a58fd02b0b1f5d3d7382903",
+      "patchPath": "patches/complex-focus-design-event-merch-focus-design.bin",
+      "recordCount": 280,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-merch-video-focus-design": {
+      "sourceHash": "c96bbc92bdb7371e2d8d8078c1c9634ba3f47741f104129bce6dc1824cb18e91",
+      "resultHash": "4e67507817bdf044bafb0064532e989e9c5fee3cab28e551f8c143c592455f8b",
+      "patchHash": "8f6881bb811f34ab99719cfc688af45d6834e235676f723bea703ca566aa508c",
+      "patchPath": "patches/complex-focus-design-event-merch-video-focus-design.bin",
+      "recordCount": 231,
+      "componentIndex": 5
+    },
+    "complex-focus-design-event-video-focus-design": {
+      "sourceHash": "83f1e3394f06196a51eacaffff96ea2c5d9fd1dc953ccfab493a1bae04938e9f",
+      "resultHash": "a3807528bddbbdab5dfd357841ccdb95a2d56f9d543eab2e3a7b84e4c17135cb",
+      "patchHash": "42d62c3ab01b7edc34d6d35bb947bcd93b31adc76d6488f0959fcd61610c6227",
+      "patchPath": "patches/complex-focus-design-event-video-focus-design.bin",
+      "recordCount": 282,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-focus-digital": {
+      "sourceHash": "025968dbe75e09638e4ccd649175f1b8ab9ea3138b2933085e3f001db9b72143",
+      "resultHash": "2534631f3f18203512db6ef2a982dedb307404f680de707ce4d08f91618e0eee",
+      "patchHash": "e1aedba2224e371154d400fd1b47047458e4dac50ead686c3b1449eafb1d8da0",
+      "patchPath": "patches/complex-focus-digital-event-focus-digital.bin",
+      "recordCount": 450,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-games-focus-digital": {
+      "sourceHash": "52331178342cdcf35dc67151f046786195439a305fe7aaefa08761f7b864eb98",
+      "resultHash": "e278e43b3ad35e238377d72c9c5019cc4a687b9ef3ace13eadd7485fd98b84d6",
+      "patchHash": "05b5cf1292bfaa7d46f0aa9a1302d67d64dbc86accd2e9964166ed493816635b",
+      "patchPath": "patches/complex-focus-digital-event-games-focus-digital.bin",
+      "recordCount": 336,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-games-merch-focus-digital": {
+      "sourceHash": "610c749c5602464c540eee85df4c0c9165878612c8f5cbec303f36da08853ab9",
+      "resultHash": "350b015ac7a5b704a18e00e9a983554b35da93ab5b2fd95f26d3ed93005beb3c",
+      "patchHash": "899057319ac7ececcdf986f1138492e401e6c0f12a131a80d3ee3dcefdc7f654",
+      "patchPath": "patches/complex-focus-digital-event-games-merch-focus-digital.bin",
+      "recordCount": 257,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-games-merch-video-focus-digital": {
+      "sourceHash": "e1eb468925b1aff8059cc8ff406c62d3489ad1d1badf05f144c8ce28326fd0fb",
+      "resultHash": "e2db6882d74a048afe9b0eb0962f12f6085b276babf70ba3a5abfdd7faba0c84",
+      "patchHash": "d5c6fec38eb6cd433891dc54c6a4215e660361ddc76d9d96d1ecd15bb78ffa6e",
+      "patchPath": "patches/complex-focus-digital-event-games-merch-video-focus-digital.bin",
+      "recordCount": 218,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-games-video-focus-digital": {
+      "sourceHash": "f600988132f06788a31a1858a9a3fc39493828fd0bf09f4f9c8b40f5d8a04df9",
+      "resultHash": "e147c1aa3f82400988127ea14ee26a5faca7434283f8c6b154152e6aba723728",
+      "patchHash": "e8e9b5c2976a058e4c321fbd98f7187da041618b0ae0abfc3976ae5edeb669da",
+      "patchPath": "patches/complex-focus-digital-event-games-video-focus-digital.bin",
+      "recordCount": 257,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-merch-focus-digital": {
+      "sourceHash": "505181f122151b393f574f6fbc9573b6b95d9268762dfd28cc70f20205defe26",
+      "resultHash": "a3d635395bcd84429cf208436be442d636897e76b37dfdd1227339caf9e9fefc",
+      "patchHash": "1f28e25f1449287d238b1c10f7abcf814caefac24415653293bf7521a61149c6",
+      "patchPath": "patches/complex-focus-digital-event-merch-focus-digital.bin",
+      "recordCount": 313,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-merch-video-focus-digital": {
+      "sourceHash": "cc7556e511a8c10da964107bf5c19defd2d16f3f10f6d962d4d89e61980a0956",
+      "resultHash": "9018cf67e984c8920ce5e86c7b9611804475bc4f7bf3c91353408086bab8b7a5",
+      "patchHash": "772eed4bc6df7b9c345c34f8d336446f1693560321f3835209036fb4e8c6c669",
+      "patchPath": "patches/complex-focus-digital-event-merch-video-focus-digital.bin",
+      "recordCount": 249,
+      "componentIndex": 5
+    },
+    "complex-focus-digital-event-video-focus-digital": {
+      "sourceHash": "f6591030dd74ec59d947de62c5150473e82445231abac7776e5383b19ceb7220",
+      "resultHash": "d099bb048f428df578484d663e1b10b045cd4bc1acde36d38b5736d91217fa31",
+      "patchHash": "53271ea4171037becdee01c338dc19a82aaaff8b9c8208f5e4627f4aa46dc6d1",
+      "patchPath": "patches/complex-focus-digital-event-video-focus-digital.bin",
+      "recordCount": 316,
+      "componentIndex": 5
+    },
+    "complex-focus-event-games-focus-event": {
+      "sourceHash": "d7f20f7555cfa55ee47247f71eb781dce57cc43b68e87e83715a7012df67544e",
+      "resultHash": "327b5c6c543034b64052e708e4cf0766377bff479abe0d092c1a76c1a032ac73",
+      "patchHash": "21d6288c0d9c7791dc94be433f91f0716ff3a7056c55b6053fd2b5d9b6158af8",
+      "patchPath": "patches/complex-focus-event-games-focus-event.bin",
+      "recordCount": 796,
+      "componentIndex": 2
+    },
+    "complex-focus-event-games-merch-focus-event": {
+      "sourceHash": "aa3678192e7d053b6cfa9002e4202efb1e7447add3321bf2bff985c15b5fcee4",
+      "resultHash": "faf41e44d35c094707e8f59d2c16b05d5a96eaa4d3ae7a7fce7129f30720c824",
+      "patchHash": "ce20ec8d3ce852fc6232d7941908da99034f5eb2b7d00040b72697c9bd611275",
+      "patchPath": "patches/complex-focus-event-games-merch-focus-event.bin",
+      "recordCount": 626,
+      "componentIndex": 2
+    },
+    "complex-focus-event-games-merch-video-focus-event": {
+      "sourceHash": "8acf81851b417863d12b2277258177453f307cd7b7b62d473a97290d30880978",
+      "resultHash": "10ff01642a34ab2c675d521dd3c21f862f8044b84f667eac043f8f14565a8e70",
+      "patchHash": "7f10bd48f8cd86399b1ed54f81842376be7f146864786413bb2d6a6e471cbf2b",
+      "patchPath": "patches/complex-focus-event-games-merch-video-focus-event.bin",
+      "recordCount": 475,
+      "componentIndex": 2
+    },
+    "complex-focus-event-games-video-focus-event": {
+      "sourceHash": "b65f8574ceb50880857da07427eef5ec0d6c565ada443bfadb3b49fc16e4e0d0",
+      "resultHash": "3ea833027e9d2d78bd3a6cf440b0b8a73689a94ff3af88a3d3ad00b355bccc53",
+      "patchHash": "e03f0999976c52e53deed902fca4505b784fb4d52838d5ca7bcde56a2c03b84e",
+      "patchPath": "patches/complex-focus-event-games-video-focus-event.bin",
+      "recordCount": 589,
+      "componentIndex": 2
+    },
+    "complex-focus-event-merch-focus-event": {
+      "sourceHash": "c1d3bdb59e40ecc7fd5f553bb72f068d9a1d499256ee905e4946c1398a76cc4b",
+      "resultHash": "e4c22a39e7de8b0709041a33fd1a5d4681132f038f4044096e3cf82d64d953b2",
+      "patchHash": "4c0f5ff0d3332ebaba8005ac6e1fc02a73d5849ff088997e4b107ca1d3b26b72",
+      "patchPath": "patches/complex-focus-event-merch-focus-event.bin",
+      "recordCount": 758,
+      "componentIndex": 2
+    },
+    "complex-focus-event-merch-video-focus-event": {
+      "sourceHash": "42d0c9b28d3f54fe64a8f247abab631c4ae3f51d689a7fadc3084b79550abfcd",
+      "resultHash": "2d45cd65f87990388e2cab4eb42bc96089ab604178b2abaf3d840611585f2378",
+      "patchHash": "c8f56b894436e987523e06d5905f7016de7b5a3add01d7901fc4af0566610d00",
+      "patchPath": "patches/complex-focus-event-merch-video-focus-event.bin",
+      "recordCount": 568,
+      "componentIndex": 2
+    },
+    "complex-focus-event-video-focus-event": {
+      "sourceHash": "5bc7f984833f140a4ea102217eedda1a8a5913d32d7aa579d5d91e90af86ee4f",
+      "resultHash": "ed82c6e10101475a200846ae1e03b9b9d85a83c8f841abf67d4a19a63ee5c98a",
+      "patchHash": "e433a26a97078c006484a7747eee3fbbf76f7e9d7f4da412a68b1bf53f8bda77",
+      "patchPath": "patches/complex-focus-event-video-focus-event.bin",
+      "recordCount": 743,
+      "componentIndex": 2
+    },
+    "complex-gather-content-design-digital-event": {
+      "sourceHash": "b77d0aa76e56dcd8b8af00767adbd32b2e846afb71eda966fe7b93fe2d1164dc",
+      "resultHash": "aced348d4256a565ac7c0fa799a09029c9b0d76cd42012add6f23ce742ea797f",
+      "patchHash": "027d5b6512643bdc6ea4c9f22627c6ca19d497016bdc46a823e6b86393bf0d77",
+      "patchPath": "patches/complex-gather-content-design-digital-event.bin",
+      "recordCount": 315,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-digital-event-games": {
+      "sourceHash": "eae631df0f1add6108566e3fb9a5cd75fd9f0ce8ec948fb5c7b069caf6108142",
+      "resultHash": "17973a21cf3d1f51e6893e4f14089346175f56a1518233449b7895315b67c883",
+      "patchHash": "9c8a232d1c7550a5520c07d443166d2aafb6336584dd0f50449925134e2a63e0",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games.bin",
+      "recordCount": 263,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-digital-event-games-merch": {
+      "sourceHash": "ec62763b67681547800f1fdff3b9b3c1f08e0dcab28a1c18594a38f791baca7e",
+      "resultHash": "635d8d193d90b89f65edc0737fe105cc2867244e7f8d7c36752092e1ad6144a0",
+      "patchHash": "dbe0c9258c9f12a201bcf08abebde4b12f066ed1ce255ff4bf43e53145b8c1b9",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games-merch.bin",
+      "recordCount": 221,
+      "componentIndex": 9
+    },
+    "single-event": {
+      "sourceHash": "3b1d75b029d369449b712b626a1146697de33c9586b7589c1eb515c8066e2f72",
+      "resultHash": "e6e3254a7cebdcc6c3d16e50a1aa873f9783373011c0719561d7156adbb92024",
+      "patchHash": "786ae6bd1095d6872d5abe9c1a8b5a05b5c913a429a66fbaaba47262ec055e96",
+      "patchPath": "patches/single-event.bin",
+      "recordCount": 1316,
+      "componentIndex": 2
+    },
+    "complex-gather-content-event": {
+      "sourceHash": "b3227818ae705104a8727c8e09b8cac96d0f36b6a2cb32f03982479a865420a0",
+      "resultHash": "9843e85d2fb29ffa2a077b62782b3a306c33df1abe61fd1feab008dafc6acc6f",
+      "patchHash": "0470d330f632413396027043ce4c5fd715b04204e1ba0aaca2f1fccced9c85d3",
+      "patchPath": "patches/complex-gather-content-event.bin",
+      "recordCount": 577,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event": {
+      "sourceHash": "5f90915a6189489c1a59a6cd1c75d7b3d8e4170cb15f7e12d867153c91f04654",
+      "resultHash": "f791b875d6955378decce61045debfb7ffe6be134feb8c794e6988f34ed23062",
+      "patchHash": "bac27cca34c5adf767a1dba58c7c7495d2233125e0b3665fe30c01592ca3e8a5",
+      "patchPath": "patches/complex-drive-content-event.bin",
+      "recordCount": 609,
+      "componentIndex": 3
+    },
+    "complex-gather-design-event": {
+      "sourceHash": "8e46d5f9883b6cd6365875db5da12015397805c29e9055e5be2c4dc14adfd428",
+      "resultHash": "68c78860647d39eed925d8c192aa8402955d723d219fd5de496410298f67effe",
+      "patchHash": "6cbd08c6d278a12b6cbc49e4fd587d210fbc1bf1b3bed276206715e8ec78405e",
+      "patchPath": "patches/complex-gather-design-event.bin",
+      "recordCount": 567,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event": {
+      "sourceHash": "bfdfc32320ddca6bf412ea028a741790ac7eec7536e81ccaae09f416590a718a",
+      "resultHash": "863d1548ec7497eb15c3f93d1414377635ab67ce86c64beadcb2805a198b5790",
+      "patchHash": "1f7eca00d6cb8076f3a335dbd0cf2ccdb80b989a0bfe43e3b65bac02b396eccf",
+      "patchPath": "patches/complex-drive-design-event.bin",
+      "recordCount": 600,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event": {
+      "sourceHash": "284124be31168442d4476660a4e0a58e2752776676ca7244707140dee6d869c4",
+      "resultHash": "f567da18bba7f8ed6298d37051ee519d83f206909a3d405902b7d5842550a2ff",
+      "patchHash": "0548ad88dbff0f89a7e3c4546a24fdfa2740f8731cac1fb26df2642db2a3d8d9",
+      "patchPath": "patches/complex-gather-digital-event.bin",
+      "recordCount": 638,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event": {
+      "sourceHash": "9c88042ee232dca879edc16c491796b4534dab3d16d37a64c1d064ca7f37ef20",
+      "resultHash": "0e7c26c7ae8dcebc3dd429bef109b7e714e4763e915560bae5748dd37d260d2b",
+      "patchHash": "4c34b61646fa6589362cbca129302da26fd79f190ffd3c9e0a1dcb1f969d411b",
+      "patchPath": "patches/complex-drive-digital-event.bin",
+      "recordCount": 669,
+      "componentIndex": 5
+    },
+    "complex-gather-event-games": {
+      "sourceHash": "575a4e38579abd4d056876f32d21a76187385c29367f1883fc4834e88fe224ce",
+      "resultHash": "06ca6f3e0fe0fc944b5e915f89156010b9a8134c701a6d5aae2702d64d99ac31",
+      "patchHash": "34c804985ea0da4887a4974fd95fbb2aa371e2fc725bc1b715df602eb83c49e3",
+      "patchPath": "patches/complex-gather-event-games.bin",
+      "recordCount": 620,
+      "componentIndex": 2
+    },
+    "complex-drive-event-games": {
+      "sourceHash": "073845630d94f6c7b89efd3fe2d9bba7ec8b32a0229cc7b7f7fd9fda13123dc5",
+      "resultHash": "13093094b2743b82e1291f917e4ddbc3addf3faa9b351963c67409dccf04a995",
+      "patchHash": "e5050907906f8a3cbbde71ab83d626de6106ca7e0ab4d47ecf354e9a92c1cbc2",
+      "patchPath": "patches/complex-drive-event-games.bin",
+      "recordCount": 588,
+      "componentIndex": 2
+    },
+    "complex-gather-event-merch": {
+      "sourceHash": "adda46cb93b97c0666fc4fd8e86deaf26af4c64d00f0c9c76d12cf27514e72f4",
+      "resultHash": "ce74114422487c5d6a5012279a6005e0ee2e1f7523d92f5d34e78c723f3011cf",
+      "patchHash": "f6b269ce7e02089c42e19317b1849df98c927df0a944f70289c3e5c1a14696e3",
+      "patchPath": "patches/complex-gather-event-merch.bin",
+      "recordCount": 575,
+      "componentIndex": 2
+    },
+    "complex-drive-event-merch": {
+      "sourceHash": "5cf6c3e4d2e094de3cec8237e24d0e5b3f8e45f07412d13ba2332933999119f5",
+      "resultHash": "949317b28ffb9e10a103729e689d991c02757d070b4bb87bacb2274aeeb4dfa8",
+      "patchHash": "6f07d40baf21cc95ef847017e86c181594789ac0c71489fab56064e88cd425d4",
+      "patchPath": "patches/complex-drive-event-merch.bin",
+      "recordCount": 543,
+      "componentIndex": 2
+    },
+    "complex-gather-event-video": {
+      "sourceHash": "43033c0f40137fb68834d2168971f4132dba6281f253821848355e0b8d533cd0",
+      "resultHash": "430b244f483c7c0d52f2b198a1b71a1df47761113637564e9a5fd4afa31b8d50",
+      "patchHash": "05ead6d0ce61b85f42fe595222a990d1aa4049fb8d9e5626fdb6637cb975aa28",
+      "patchPath": "patches/complex-gather-event-video.bin",
+      "recordCount": 558,
+      "componentIndex": 2
+    },
+    "complex-drive-event-video": {
+      "sourceHash": "7a377a6568b9d16eb7615db95d6d6e4ede82c96287ec652af148b52a0573e989",
+      "resultHash": "2e761cdc3a30ec017b8592dcce0e633e4b95d2098c88f0fd90c293cf276230e6",
+      "patchHash": "d70d32cad36531df73c11ad0ac3173d763f4d0923089143d45d458e460ce91b5",
+      "patchPath": "patches/complex-drive-event-video.bin",
+      "recordCount": 531,
+      "componentIndex": 2
+    },
+    "complex-gather-content-design-event": {
+      "sourceHash": "18def4a9723e54b18c7710fff785fd67cbf568487fc9320a45cd853064b4f0ce",
+      "resultHash": "e8808186fb0fa6525187a8cca902ac55e273aeb2c3ac8a01cbb81d8149d20469",
+      "patchHash": "7b96e37a71928d6801ab0f8bb1bba7a1336d6ef5e47534cae248dd3ecad71001",
+      "patchPath": "patches/complex-gather-content-design-event.bin",
+      "recordCount": 391,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event": {
+      "sourceHash": "b37946be5e2de076c2599039b13780bfdf351cfa4734d3393ad8d347326904f1",
+      "resultHash": "a80c89d95b708f1360d671fa5a7cc6dd0db5c668f1c775ee9b0a4ac7ffc3856d",
+      "patchHash": "6d7e946a5b7889028c290caf170c0b0eead7421551118e8141b7f6b78c00ca10",
+      "patchPath": "patches/complex-drive-content-design-event.bin",
+      "recordCount": 412,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event": {
+      "sourceHash": "47bc2c2cf93646dcbb49a67a4b4cc41b6fa5f9c2cac8d3c43b46b85d58ec015d",
+      "resultHash": "dcc498c4fe985ef473de4ec7b95f0de903934ff3e7f7398c4092501fc1b1c411",
+      "patchHash": "761e8613ad1504246a3195c3427d7df874a2ddade422af2f24c88f19bac21868",
+      "patchPath": "patches/complex-gather-content-digital-event.bin",
+      "recordCount": 421,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event": {
+      "sourceHash": "63cf1e9d1116f5fb6bcd08801280b9401559433d71d2a10902e6bfccde95bcd8",
+      "resultHash": "5ae2c3b9a6f252441f871001c91aa1ea1daeef12ad64a52261d8358cc4b0941f",
+      "patchHash": "527d4b9407bdf1356a45013e36e8aa068113c7e0cb7918186571db7e6fe6afd7",
+      "patchPath": "patches/complex-drive-content-digital-event.bin",
+      "recordCount": 444,
+      "componentIndex": 6
+    },
+    "complex-gather-content-event-games": {
+      "sourceHash": "2e5cf3f49efcd9f5c0d3883e67c666ebf2cef073e6d0e002cab9720d67c0694e",
+      "resultHash": "a5000f4b7562f37e1976fcc64360c5bad4598bf497c8cfab4bf5710a86d7b28b",
+      "patchHash": "ca8a7a801935db948f30e6296d13a29d2e7ec80bd9ff88d8cec51f7633b32b17",
+      "patchPath": "patches/complex-gather-content-event-games.bin",
+      "recordCount": 414,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-games": {
+      "sourceHash": "50d99f2f28dab16d224a474d466c3347688267aaf3b37544029f9f67aec68ea3",
+      "resultHash": "79f454eecb28c9623eefa6d3f03f2572c97e0c26a454b694f495b3824b19537f",
+      "patchHash": "e20eb4705310ef0b171f2a7eb809b3d2db593f8b2d5452cabd4e8f88ba68d799",
+      "patchPath": "patches/complex-drive-content-event-games.bin",
+      "recordCount": 415,
+      "componentIndex": 3
+    },
+    "complex-gather-content-event-merch": {
+      "sourceHash": "0166628c33176f07cae544b3ba826962fd6ed052f157932fa121b45f78fb2825",
+      "resultHash": "174cc7df4bf5ff9af0150087584d74cc5e143b42a09465f3ba2e5c8d51f113b6",
+      "patchHash": "04d4fae97984725af1ce92a2a60b3a3d591e178846e25db0ae86bd5d1c45ee5e",
+      "patchPath": "patches/complex-gather-content-event-merch.bin",
+      "recordCount": 394,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-merch": {
+      "sourceHash": "63873b97377a824ea5d212016ee3af236a61aca3eac43bc8e6cceb04d1bb7411",
+      "resultHash": "ee4bbe49d4de2654ab53f076544d6646bd3109b4f1ef323096ea43171b3c3b2e",
+      "patchHash": "ab162b77b14749e31cab8bfd18785694fa3aa49f5cde580f2f98ce75a7e9723b",
+      "patchPath": "patches/complex-drive-content-event-merch.bin",
+      "recordCount": 394,
+      "componentIndex": 3
+    },
+    "complex-gather-content-event-video": {
+      "sourceHash": "2a779d3c698ab6e213b9483dc925291a6e5b3b021e146ea38561b084d159416d",
+      "resultHash": "561ce61e7ee8d384df96580a4513fc73063e1769d2db3ec6000afde6dd32b276",
+      "patchHash": "2391880b150fb02ba12c357d4b60100f724bfd9850075d3179b316f6ede849c8",
+      "patchPath": "patches/complex-gather-content-event-video.bin",
+      "recordCount": 387,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-video": {
+      "sourceHash": "720b1e69210e9cd8e8e7a968bd9d843b0c60a538a60d77393667d5c796fe95d3",
+      "resultHash": "59d30d37acc64740215f8b24362872cf334e82cef4567bb62ba0dc14c94b931a",
+      "patchHash": "7131d910d81e43aa93b1a8feca0a10c9e00196eeaf1081d6474cddb6ba607019",
+      "patchPath": "patches/complex-drive-content-event-video.bin",
+      "recordCount": 386,
+      "componentIndex": 3
+    },
+    "complex-gather-design-digital-event": {
+      "sourceHash": "d32d59c1f0a316b1c01997e80c6fdace468e690ec56c7822a6a30e378132ce8f",
+      "resultHash": "19f0ff4bcca43f376a91dc2f0cedb3a47d019e2019f1a628b6899dce096d4639",
+      "patchHash": "636a2498adb530f3e77003ac0601a891c1b23703213ea411106a40c5827ebf17",
+      "patchPath": "patches/complex-gather-design-digital-event.bin",
+      "recordCount": 416,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event": {
+      "sourceHash": "2cc4e99273e4034f9b6f8bb6bebffe022b82daa2cc7f175c885c49c628ebf7a0",
+      "resultHash": "5216ff3031b54addc714cf920427528e4878bd1df9e1638c16eb7974c3c2bf99",
+      "patchHash": "986cca37f0be4f98c24c26d58ccae277156991bdc285d32eed22f107dd435012",
+      "patchPath": "patches/complex-drive-design-digital-event.bin",
+      "recordCount": 439,
+      "componentIndex": 8
+    },
+    "complex-gather-design-event-games": {
+      "sourceHash": "f2f3204ac54049846a775a93130c00d65f1a6b6743b76fd48733c4f97a7f1e9c",
+      "resultHash": "f882338697897627346b7861bde2c1d803410f8bdd875321d957c69df855281c",
+      "patchHash": "06793181593c54a7c629da991520a8e3f81bdf26a65de19fdb8b37d206cb1d44",
+      "patchPath": "patches/complex-gather-design-event-games.bin",
+      "recordCount": 409,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-games": {
+      "sourceHash": "95a31284d5acd18d2e4b6834043472122064bb88d9a01c5070b09eb53a2dd8d2",
+      "resultHash": "3c891bcf4dbbfdeb77c275c2f7e2abaee80d1a8457b0e062d8050ba97e74ed38",
+      "patchHash": "d64ab80efbf041d542030204374fa1ab9a85f0e83db69f19369f25c050eee142",
+      "patchPath": "patches/complex-drive-design-event-games.bin",
+      "recordCount": 410,
+      "componentIndex": 5
+    },
+    "complex-gather-design-event-merch": {
+      "sourceHash": "1bd086f56417dea03acb96bdda9695da974db133f66fb363b1f04d0960efb502",
+      "resultHash": "89c318e054e56b35904e86daafcf929e7947886742f0e1adcc8006d2174c119c",
+      "patchHash": "d326b7462e1d15f14be1d9cccf8892a755db28b55f10be5ac74ea6b180476982",
+      "patchPath": "patches/complex-gather-design-event-merch.bin",
+      "recordCount": 390,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-merch": {
+      "sourceHash": "1143f25fa22bf79c2d8c3449c00d405be9dcbc146b297402e1de9bd45b30bac6",
+      "resultHash": "c50a4cd4fb16a4dcd9622b66d6622c717237d7ee4a83b4daa62abcfe31166840",
+      "patchHash": "da3211f9e3140277f9ede44d01da73d0ebf71c0dd881c484f6ded66228133d82",
+      "patchPath": "patches/complex-drive-design-event-merch.bin",
+      "recordCount": 390,
+      "componentIndex": 5
+    },
+    "complex-gather-design-event-video": {
+      "sourceHash": "4698c8f4073526cd864d7f535e7f9ca6af5eaba53f9eccab7a24d3c2ad4e81c9",
+      "resultHash": "d4ba972616ce93223d9642a07d281e182609235e406f7046565da2c235a5bdcf",
+      "patchHash": "7331e42fd1cab278f4188afde9a4211b36e1caa0a966d7bbcd4be582d48c7772",
+      "patchPath": "patches/complex-gather-design-event-video.bin",
+      "recordCount": 382,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-video": {
+      "sourceHash": "850d846c55a53e25e541cd3cb47e09355f442f838766f9f4a2627db1abac710c",
+      "resultHash": "5ca859442a338d943328dcdd48886a0b60c8d5e65099692cda514de8d5a601d3",
+      "patchHash": "8d21f4ab7d7be32225e185077c96808a29126cdf33e78848b2efe35f55bcd74f",
+      "patchPath": "patches/complex-drive-design-event-video.bin",
+      "recordCount": 382,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-games": {
+      "sourceHash": "10017d838ee366b078a5466c8b4a228e84b1ec6678eff460c8a9b1be45ef136d",
+      "resultHash": "4ff4015c46234794f76e04277788fd9e4a503f9abf180b1e2bfce387ad38d694",
+      "patchHash": "d3acc005d2c97c6c1985d6e97f6907514ae916f0adde2b9d600764c2d6515652",
+      "patchPath": "patches/complex-gather-digital-event-games.bin",
+      "recordCount": 442,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-games": {
+      "sourceHash": "fe63ac9d24967fb7ea07537b8ce066df776f2e2be7c058da4ba81be92b99bdd3",
+      "resultHash": "0451facee2158c8076cb104df78f7b0191f15daafdfed8dabf61580157e0e587",
+      "patchHash": "b5d639400f2f39cc4d11812e0aeb6739d69ef07eeec9c0c6a20835e855d75924",
+      "patchPath": "patches/complex-drive-digital-event-games.bin",
+      "recordCount": 442,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-merch": {
+      "sourceHash": "fed20640da85aee0e6d7eb1fbe9cffd934a5db776793a2fc3e0c7ab5d1786e79",
+      "resultHash": "de7b5dcb3823de20dd95d10047aab022991e791d53c1a9a3766931519fbb4e58",
+      "patchHash": "a101c97f4fc4a516f41bc6ae803510de2b8a51a46555c2e4a605374d93b50452",
+      "patchPath": "patches/complex-gather-digital-event-merch.bin",
+      "recordCount": 420,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-merch": {
+      "sourceHash": "aa4f3c738f43be3b04770c5d18bd5c62d038b429e15f311cd3d9a70a02914894",
+      "resultHash": "037750791842e776a3f6e5b6abd18f1c39580a84fc8a1da9b126641ce595d4c0",
+      "patchHash": "0212b255b5a98b2ea3cee15028f875189710c9b0a699a0cf922524239ea43735",
+      "patchPath": "patches/complex-drive-digital-event-merch.bin",
+      "recordCount": 418,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-video": {
+      "sourceHash": "0116727d0278e5eb4b01271ea46fc47c53a7eb8f8cc4d36c239ad20edd99483e",
+      "resultHash": "e8dd357e0f1c6e3f790f9550b1cba0b233db78db0c6713e6b9b242e1dbddc7a9",
+      "patchHash": "c086fa7f746dfee59996bf1d6e0b78eca84559e56b752c4e908ecb8d6a22fc21",
+      "patchPath": "patches/complex-gather-digital-event-video.bin",
+      "recordCount": 411,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-video": {
+      "sourceHash": "d6b4e73232f9ea1f21fa598ee4ad30af65581ab2a03bc449bb7682f959d29fd0",
+      "resultHash": "084d4e14981dd5d784f64bfa7254139c90e49a750120a2a8cc0db4871f8eb390",
+      "patchHash": "1ad984ac19aa398066a4166679b783c450d4cfee716bb965732a001f14c9042a",
+      "patchPath": "patches/complex-drive-digital-event-video.bin",
+      "recordCount": 409,
+      "componentIndex": 5
+    },
+    "complex-gather-event-games-merch": {
+      "sourceHash": "da09d734c2a7306015e59c7ac615afe1aed09e2b1ed1a3e3c4083df548f9f388",
+      "resultHash": "2f67cd6be69ff31ce1786d6db7bc515279402e78b9e64feaae99f2d303d8a5c6",
+      "patchHash": "bc14b68a4937a816a830ddffc3fefc9d8dbae36b2ed5e20f1ff884bbcfe15d18",
+      "patchPath": "patches/complex-gather-event-games-merch.bin",
+      "recordCount": 413,
+      "componentIndex": 2
+    },
+    "complex-drive-event-games-merch": {
+      "sourceHash": "5ee673b4320cfc0ced5b3ea39c6e3ff2a4d95e01361de8c883c432cc7e03e998",
+      "resultHash": "721a3190ae16d40b673e0ca317d969b3c4e588266bcf1a817b73dcb265d82ae5",
+      "patchHash": "63ee8f9c6969a9408bb8dd778bd2493598f47585033d129b61b5eee3ef7882ff",
+      "patchPath": "patches/complex-drive-event-games-merch.bin",
+      "recordCount": 390,
+      "componentIndex": 2
+    },
+    "complex-gather-event-games-video": {
+      "sourceHash": "261a5229b6c169d97194b27d2cbeaad8495901bdcdbb0280e5a201c012120b8b",
+      "resultHash": "ceb4af6630a02c7744263bc41d31c0c295e2b0381ca05247f9968b00b87b3fb1",
+      "patchHash": "692cbe16098770bb19487c27bd6f83a26d7bdb8e37609650534cbf2fbf87ceb6",
+      "patchPath": "patches/complex-gather-event-games-video.bin",
+      "recordCount": 404,
+      "componentIndex": 2
+    },
+    "complex-drive-event-games-video": {
+      "sourceHash": "0710a27a976312bf0e8c421f5df2ef300b191a8e735b5fbe76720aa6dc29de2a",
+      "resultHash": "28e913ff5a3b2954ec85629ba51cd1882c9bfdb908ca32af7132cff363719fda",
+      "patchHash": "6c15089f8f48293d176099faadde7d30ded05bb121c50a54e44bc53582a40839",
+      "patchPath": "patches/complex-drive-event-games-video.bin",
+      "recordCount": 382,
+      "componentIndex": 2
+    },
+    "complex-gather-event-merch-video": {
+      "sourceHash": "d378232e559a360ea156bae66879e85f3073adcc3a4f21834c08efa2628d7ec2",
+      "resultHash": "89f90a27ee155cb20d4105e8b3818be7014034e64fe31853009a62f307f8a972",
+      "patchHash": "b88f45cb202201df246d5b1f3733dace03e8f71e0d01578e301f2342e52eaaa6",
+      "patchPath": "patches/complex-gather-event-merch-video.bin",
+      "recordCount": 386,
+      "componentIndex": 2
+    },
+    "complex-drive-event-merch-video": {
+      "sourceHash": "11cfb1cc010d383b54ba416ffe036d673333a98c1d21f966bac087de07989c80",
+      "resultHash": "9aaa4e3be6a4fca3b38325858067927737735df77d969007c8e11079aa76362e",
+      "patchHash": "23b3bbf42cd70e745b4b7aa61851492d7057f1462a79b646f0bd2245517f32fb",
+      "patchPath": "patches/complex-drive-event-merch-video.bin",
+      "recordCount": 364,
+      "componentIndex": 2
+    },
+    "complex-gather-content-design-event-games": {
+      "sourceHash": "f1cb3ad854277199b193c30cd598e0cd767167fe592e1dc86e8fd14dca128b13",
+      "resultHash": "814c050969f51f917c0b02fc7f9a50b3eb69fbb17a0afdebe25b5ef39be1d843",
+      "patchHash": "596d117d7d6e338fd01f55768e4832bf43e6bddb2e5909a0a0552db8cb3bf4cb",
+      "patchPath": "patches/complex-gather-content-design-event-games.bin",
+      "recordCount": 312,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-games": {
+      "sourceHash": "56c584e3277938e272240079cf81b36eee6bfd02f3bc576ca68aed2f1a12cec1",
+      "resultHash": "37b684dc3252aa820d2c7276ff8ed718659d6e3eb37348d9229ff6512df92ccf",
+      "patchHash": "472d138feeab5916724396263f25cc667df92e8c660c2c70b0f56c76ced5454b",
+      "patchPath": "patches/complex-drive-content-design-event-games.bin",
+      "recordCount": 318,
+      "componentIndex": 6
+    },
+    "complex-gather-content-design-event-merch": {
+      "sourceHash": "2cdf65140837e1d205d79e3e702ea07c9e8cb496e8f5dae3b88f92c866dcdcd4",
+      "resultHash": "def99d0b91d7e73f37275679bf62905219077924f377aabb6866c0eadf2208ec",
+      "patchHash": "b7ee5bb8f9394bdcd37ec6746ee90f39a50798a6c715fb799121550b6b2ca20c",
+      "patchPath": "patches/complex-gather-content-design-event-merch.bin",
+      "recordCount": 300,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-merch": {
+      "sourceHash": "be711ab4447d1a6d1849e2c2b8dd6798f0d75555d0a19533484b1c80d1cf0fe4",
+      "resultHash": "c94a5a7c024a11d1f9bd4c32cf67c82989aec0ad5dde3f1d2dd8d68d6f8b05ba",
+      "patchHash": "3f24d2635025a0f7c1469bd41c104d5e0c1b4b90df165ae57fef666c4246ca04",
+      "patchPath": "patches/complex-drive-content-design-event-merch.bin",
+      "recordCount": 306,
+      "componentIndex": 6
+    },
+    "complex-gather-content-design-event-video": {
+      "sourceHash": "6966824fd1cd9f08a7f6e380776718e2122f91cdc54760562640b63be66394b9",
+      "resultHash": "26c4b21cbfa145d6cbfefb225b0ad464ec4b0d4bb20282f11ce91d0b877a80a3",
+      "patchHash": "e25c7fa2cc10561121f26058ab0321401ef9313f32e436b672e9cf4a1280426f",
+      "patchPath": "patches/complex-gather-content-design-event-video.bin",
+      "recordCount": 297,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-video": {
+      "sourceHash": "8f5a56d823252225d5c5e6fb45bfbddeca0105c88b729ed2b5ee7f4f001b91d4",
+      "resultHash": "b1f5573f39610fcc8ed8c75b6de4ac8dc6c2214c6b2bd0c23ee516ff662b018f",
+      "patchHash": "de07e11e5beb79fc29934bcf216a71a20f7894b6e3b7d38db13e27c07508f4c8",
+      "patchPath": "patches/complex-drive-content-design-event-video.bin",
+      "recordCount": 302,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-games": {
+      "sourceHash": "8318482b622c697d1519ff27dc9e6ce898c2a597788785800faa990102ce2e34",
+      "resultHash": "99e4803a770f986cabbd3f5b4b1b0483b25b6cdef72cdd41785ec612fb417be3",
+      "patchHash": "e4f93c8f356dd0e30bcadb714f4ef6f788921f88c28c9894f2fd41016a7ab655",
+      "patchPath": "patches/complex-gather-content-digital-event-games.bin",
+      "recordCount": 330,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-games": {
+      "sourceHash": "a7b675a2a21872009e5adf025bf4adf62af0b8d6c1470abe409d3933c3d52362",
+      "resultHash": "b8de20742c860e68506a43898d01a30a5e5cbc338f8e6a0990d13d46fbd2a3d4",
+      "patchHash": "f20c657b567e725f59f61c1d05597612018533b399a128c85bd042abf4efb69f",
+      "patchPath": "patches/complex-drive-content-digital-event-games.bin",
+      "recordCount": 336,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-merch": {
+      "sourceHash": "8c7b2fac1f68b5b1b830610d4a8f3796a664d2fdbceb8d6a0a5e9a46f5365916",
+      "resultHash": "094974da5c60bc2904bfe3a629ac86e0604a1288b8839f08e33012eba4858e38",
+      "patchHash": "448a53b801f3526f4f53fb8e3488b6df8866912bca9339948a35d33687b1e32d",
+      "patchPath": "patches/complex-gather-content-digital-event-merch.bin",
+      "recordCount": 317,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-merch": {
+      "sourceHash": "7fe6e41250380ad05c9ca7d237f0d8bbf09a2cd4818521bd7ae8c60b98830f85",
+      "resultHash": "5b087adcab34ea5db42bb48861d577305d444180358b6330db634327c36f7443",
+      "patchHash": "bf9a8c662b91b3e5ab7d124082ffa395d144627c85d780a9b1e16fa791e57152",
+      "patchPath": "patches/complex-drive-content-digital-event-merch.bin",
+      "recordCount": 323,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-video": {
+      "sourceHash": "435b6103209f2529119d1e4ba74e973e7b4d4a8d0a1b3c692c6360d51187fd2e",
+      "resultHash": "3cb285b455f83a90dc3e204d4676907061d83a566673a26939fd9f1c73e75dd1",
+      "patchHash": "015bce97c48555ee290fdca0efdfb9bcb0838ad0588a7ac25ab2dde89413a6a8",
+      "patchPath": "patches/complex-gather-content-digital-event-video.bin",
+      "recordCount": 313,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-video": {
+      "sourceHash": "158c6181649c0d2ac602f8dbd2b718908808d89bdbb33973fbb6ee16453e8982",
+      "resultHash": "4ccdb4658f5f3800463e215e0a5574d48bb311e94f56b88a68db6a766fe4a4a3",
+      "patchHash": "3c7683e3f84bcd7cd222c9cc5d2b783c269e687ea8af5f01e622683004746bf3",
+      "patchPath": "patches/complex-drive-content-digital-event-video.bin",
+      "recordCount": 318,
+      "componentIndex": 6
+    },
+    "complex-gather-content-event-games-merch": {
+      "sourceHash": "f4a7ec354920af14da12e1f0776873fe7188666dab91014c1c447acdfd8d2ccc",
+      "resultHash": "339be1a6121ead40e45562f43740af4a234dd1ba5b820564af53fe563eccee59",
+      "patchHash": "428e8d00f9a0bb8a52a2384bedca7f2ac090465af150ea7578627ca75ca0bf9e",
+      "patchPath": "patches/complex-gather-content-event-games-merch.bin",
+      "recordCount": 314,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-games-merch": {
+      "sourceHash": "0fac3afe3f4b7bc61da00985ff64a00c8d311810d669c200a0c4c4bc4a200241",
+      "resultHash": "fa4e39bb136b6e68e11357d11b2f3a90516bbc4fe7bb6ecf8eb2b794f5aeb94c",
+      "patchHash": "736feb531ae3d0f00747d59e97671d0a4ab5dacda3dbdfabc5606e4cf5d34173",
+      "patchPath": "patches/complex-drive-content-event-games-merch.bin",
+      "recordCount": 308,
+      "componentIndex": 3
+    },
+    "complex-gather-content-event-games-video": {
+      "sourceHash": "e9728a13dc37880f93d16a7e946696fd2632e166c2683717cb2dd0b2d969e2af",
+      "resultHash": "66c6139d24e1e9a5ada5063186a97b5eab2377631fb2cd7adc28517c5dcedd0f",
+      "patchHash": "29e841988d0bc1938b49ff897d06f1752488e7836e90b36417bd57496c242d02",
+      "patchPath": "patches/complex-gather-content-event-games-video.bin",
+      "recordCount": 309,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-games-video": {
+      "sourceHash": "47b397ad04776abbb36119fc3ca8832fd4fa959a2824c633c985872853cd1c5b",
+      "resultHash": "5b793d51fa36550ae47a02b5adf154e97493f1fff67acc0f4c4cc90f133a29dc",
+      "patchHash": "930b7f22445250c6d1f968548f076a6788aa7cb624e1e12b4b3d5bca6a14637d",
+      "patchPath": "patches/complex-drive-content-event-games-video.bin",
+      "recordCount": 303,
+      "componentIndex": 3
+    },
+    "complex-gather-content-event-merch-video": {
+      "sourceHash": "efececda0da7cf8a0bdd4c293e97019af519510d9b45d6157c602a5323930448",
+      "resultHash": "a9bf38e421dac6ed9e58c5213eed5ac898fb8dd6c20a083779d437944028adc1",
+      "patchHash": "e26fb355f9fc17c41844be2afdc45f60405953b5a29e27fea87391083a6902ce",
+      "patchPath": "patches/complex-gather-content-event-merch-video.bin",
+      "recordCount": 298,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-merch-video": {
+      "sourceHash": "8a01ecfa24ed2eb2e9b37ca927fb1314d6638885603df55457f0d9ecb0e05810",
+      "resultHash": "ff406519230301c903693c1d9d963e1e6271803bdc55af38a668a789ed57d78b",
+      "patchHash": "cbff24deb0653b2cf0f5bc8006edeab3a0d0b194c9f0496a06a848eca6fd380e",
+      "patchPath": "patches/complex-drive-content-event-merch-video.bin",
+      "recordCount": 293,
+      "componentIndex": 3
+    },
+    "complex-gather-design-digital-event-games": {
+      "sourceHash": "6e234a2d7a77c7da274a30307ed4acde3cc52c26132f0c8114a49c11ee64a01a",
+      "resultHash": "7c884b19e5723f42b662a22d55dac990943d3f427c17daf2e898be1ae27ae298",
+      "patchHash": "c599a11bb284d9c6234f050e9b4e34cd914274031fed17c02d2589cd91153da7",
+      "patchPath": "patches/complex-gather-design-digital-event-games.bin",
+      "recordCount": 326,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-games": {
+      "sourceHash": "cc4c8f5bd7250cffd280f4ddf3a23fc7c4038ca72651f820ca5a8e4b6f2c372a",
+      "resultHash": "c760b7eef71fe419f49d3e6d2a56c00722bcbd19fffd400864fc362f9a1ec4f2",
+      "patchHash": "52b4ee3912b2009f3541ae7f40f3a6a25f28067d8d0436c85f44b2522c2d1842",
+      "patchPath": "patches/complex-drive-design-digital-event-games.bin",
+      "recordCount": 333,
+      "componentIndex": 8
+    },
+    "complex-gather-design-digital-event-merch": {
+      "sourceHash": "d52a7785ef3958d1652def9f9a5889c864028b0291085ca54e12229e92c07d51",
+      "resultHash": "6eb64fc37f59c5a92539a066de95d68cd9b404b72d865cce9cdbd61823bc7e50",
+      "patchHash": "d713791a249667f47fb93c3dd8a33fba78b8c76fdf76b0756425940b418c9e34",
+      "patchPath": "patches/complex-gather-design-digital-event-merch.bin",
+      "recordCount": 314,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-merch": {
+      "sourceHash": "b1622bf15f59cc15b545facc13a0a66b264ee313a994760c74864d73a6ac6eb6",
+      "resultHash": "550537404a25f39bdf79fa0f6093d857521ceed77467b72348d906aced5e68d7",
+      "patchHash": "b155a7ce2802e3985ecd6880c3e85d07ba39236ae6d0a8fba8b73993a82e1090",
+      "patchPath": "patches/complex-drive-design-digital-event-merch.bin",
+      "recordCount": 319,
+      "componentIndex": 8
+    },
+    "complex-gather-design-digital-event-video": {
+      "sourceHash": "26a8b4689165b82f44f91d221ad5d54fd4696a08985564989215826f9b00e0ab",
+      "resultHash": "78c1ac98a54152fd82fbeef06121406d7223890af1058d4214384c9988f5f2cb",
+      "patchHash": "baed5e41a5020dbf0adcc83f84e048b0e9abd7c36ca44947085ea69cab7d6aaf",
+      "patchPath": "patches/complex-gather-design-digital-event-video.bin",
+      "recordCount": 310,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-video": {
+      "sourceHash": "22401c9405b4812bdfdad56ccd9022efe85bdfca2ffb2dfc5c0150e437070d8e",
+      "resultHash": "f98f72eca983f746060fef865f9a2c3fa90c25ba26570e112f9838648baa5c80",
+      "patchHash": "f7f1a28fc96f70ec6572938cc351d917f3a5fde05d8befd6e86a65c51dbc765b",
+      "patchPath": "patches/complex-drive-design-digital-event-video.bin",
+      "recordCount": 315,
+      "componentIndex": 8
+    },
+    "complex-gather-design-event-games-merch": {
+      "sourceHash": "4d08e48286a52b1e4d7efd878fdc5700724cc7a5386ae0fdaea1ca0862c6606f",
+      "resultHash": "af2bdef9e5b9acbb0b0a2faf1b9cde5a4f4d212fe1d8d37210cb8006761a9f9d",
+      "patchHash": "a15858fc6bda538bc752bbec11a372a91b7083d64ad7d882470f175a0536cf5b",
+      "patchPath": "patches/complex-gather-design-event-games-merch.bin",
+      "recordCount": 311,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-games-merch": {
+      "sourceHash": "4702e97dd81af9334c3a7cd1270007e6b59767da6ee3bf61f3119afc4bd25f06",
+      "resultHash": "118014953bc591d1fc29b41867bc65931cd790e7d36fc766dd1b8eb16f5f4e88",
+      "patchHash": "b881f65fcd9566711cf6bd4e011c619fb33be0bf520563585f4be3440924a5cc",
+      "patchPath": "patches/complex-drive-design-event-games-merch.bin",
+      "recordCount": 305,
+      "componentIndex": 5
+    },
+    "complex-gather-design-event-games-video": {
+      "sourceHash": "2765b7d257dffaa80f2031f148e702570a42a0f19c464ccc3f9e614db32e090d",
+      "resultHash": "c7298bae661da224fe9b403e512e4d56494b7b9c48b55ffe04af5b7461018a43",
+      "patchHash": "7f6f585d287630a3e163f917501b7de0d3452289cabecf6ac1d045e5861ca1ab",
+      "patchPath": "patches/complex-gather-design-event-games-video.bin",
+      "recordCount": 306,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-games-video": {
+      "sourceHash": "c4af5fda4b2695fd22e2b48823c0cf71e898c7e2f1380f0bee7c0eebb5c55ec2",
+      "resultHash": "57bd6e0ec9526c2ba959e730b0979e11a49e0ae12a03881d1ebdc13665d772d8",
+      "patchHash": "70b10a348bdf0c7dd1e0e9c84b6c67fb4ae000045cab0b1e428c136ca5f1d6ec",
+      "patchPath": "patches/complex-drive-design-event-games-video.bin",
+      "recordCount": 301,
+      "componentIndex": 5
+    },
+    "complex-gather-design-event-merch-video": {
+      "sourceHash": "c9d2221f66d8fb7a2407d486a38829ecbdb12254c3773cb283e8dc2a0530613c",
+      "resultHash": "66526fc02ecff41a34f4a62ab777102377ed273a88f59e8f7d4f189a580f5977",
+      "patchHash": "f3033f85bf3fb3154a26f2a80d09d087f5c42dc8a0710693d6bbb088ae6b7f42",
+      "patchPath": "patches/complex-gather-design-event-merch-video.bin",
+      "recordCount": 296,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-merch-video": {
+      "sourceHash": "df698cef36c7ec61bbc9d80bb107d740b7fdcb46cf774dcc24d7e9f43dba76d8",
+      "resultHash": "3cff7b9f90c991a4f34967c6ef5618e019a2ca8317c98f21cc1789f1ec057dd8",
+      "patchHash": "5b7a1358783cec3784a20c1ca10df263cc7353843cbf6ea5472b4b4130e65390",
+      "patchPath": "patches/complex-drive-design-event-merch-video.bin",
+      "recordCount": 290,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-games-merch": {
+      "sourceHash": "474db0e6ce5460d89b6b1bd1b3b8c8e381a65276c68a19a8e5f5d3112756e79f",
+      "resultHash": "40364cb3fdb9211a17b596f010b26e90d7ee906f89c47d285a90ac0124a79c71",
+      "patchHash": "4f90562009fa8293bc9074c1f6704974567bbd0ec46ea9a627da8b6295216048",
+      "patchPath": "patches/complex-gather-digital-event-games-merch.bin",
+      "recordCount": 329,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-games-merch": {
+      "sourceHash": "55bb95b66cee588d16e8703fd202c9169e1014eaa15a4e0e24510abba3f20675",
+      "resultHash": "0b00e63400c4cd336c9f25f083eaad8a0a8e9f01e579a2aa98b6d072cfce6e23",
+      "patchHash": "7fb03be4ee38063c89bf9cb980485652f9e0b5047f6fb7c35fe89a104e8b1537",
+      "patchPath": "patches/complex-drive-digital-event-games-merch.bin",
+      "recordCount": 322,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-games-video": {
+      "sourceHash": "2c1ece7273cd32448f086b15bd69b3aa2be9408a3b1d72191c5ff4753dbfc56d",
+      "resultHash": "8181d5876b0619c9e7df2a16efe29f7b532855a72e75a4794c33cbc2110480d8",
+      "patchHash": "b99c73cf20634a0a592893f37100f744749375e19d03b41b60a3a28e34f3d2dc",
+      "patchPath": "patches/complex-gather-digital-event-games-video.bin",
+      "recordCount": 323,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-games-video": {
+      "sourceHash": "d9281a58727c5e24e5c505e39a665345c8aaeccf2f288f150a412c957ed12804",
+      "resultHash": "3c711164f9a3f5ff7b019210ed51c1fdcea3a314dbe42ddd0fc1af383a0e2b0d",
+      "patchHash": "78799b92bae42a29c3671592316532acabe4711f4a030f9111e4b75b3a6cae9c",
+      "patchPath": "patches/complex-drive-digital-event-games-video.bin",
+      "recordCount": 317,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-merch-video": {
+      "sourceHash": "f34ec819cbbd581c93f7b338a3d119a0c386f740073e2dc4d4a0b5889fe55bea",
+      "resultHash": "5358a9c7fe9dd11dbd3c41b98cbee06bc77ce003be0e521171632ce378bdd069",
+      "patchHash": "38b521214c068a90c9de37524cc68e1f77217b66680343a827e63fcd033c260e",
+      "patchPath": "patches/complex-gather-digital-event-merch-video.bin",
+      "recordCount": 312,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-merch-video": {
+      "sourceHash": "2568d1206a3fca0a25a306335e2bb95ccb3a62bf72456fde8818d6418d4852e5",
+      "resultHash": "21011cb36a15276035d024184c36f733d0ca559e9118baf00a260008235c577b",
+      "patchHash": "b5e52e07daeadf83e51125c1b6e1217404c3e9a75174f0fab9a080cdcf1d7d4f",
+      "patchPath": "patches/complex-drive-digital-event-merch-video.bin",
+      "recordCount": 305,
+      "componentIndex": 5
+    },
+    "complex-gather-event-games-merch-video": {
+      "sourceHash": "6566a50a043e278256382d179571ef33c46ca63b38a4dd538d3fb24ed48be6d7",
+      "resultHash": "597cdf1ca64399785a089ca05d01307bd2484f6f1e6264cd7e4f163e10fadbc5",
+      "patchHash": "365f2336bd6c26aa5fd98cb8e245c350c02a60bad82af9c66631d9ae5ec5f576",
+      "patchPath": "patches/complex-gather-event-games-merch-video.bin",
+      "recordCount": 308,
+      "componentIndex": 2
+    },
+    "complex-drive-event-games-merch-video": {
+      "sourceHash": "a07d8417cde61aac8fe19fceb047f31b64149f2eba1b49c8cc994027512de257",
+      "resultHash": "02248816b11ced04a3bdd80be5f40135514d5d903ba4bfe3a9ff22c57fffd6da",
+      "patchHash": "be273fbd15833bed41ac6b984633cffc0a2e9607a19bc6ac461d4e839f0a325b",
+      "patchPath": "patches/complex-drive-event-games-merch-video.bin",
+      "recordCount": 291,
+      "componentIndex": 2
+    },
+    "complex-gather-content-design-digital-event-merch": {
+      "sourceHash": "ad8d663208a5a292b57e4f6594815965bf60f96268000adc7215542c727e4920",
+      "resultHash": "521ddb6339156e19dc6a3c4d5506505eaa6ac38f176146761ecb2e49927ae8f7",
+      "patchHash": "c94ca23209a39087e8ec0e89854c783c3b5234bd56f9222509f7da4df1b34d0d",
+      "patchPath": "patches/complex-gather-content-design-digital-event-merch.bin",
+      "recordCount": 255,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-merch": {
+      "sourceHash": "dc7386f6c8110bc1fad6e44a148a61fad49720930905107d4a7891ee084183b6",
+      "resultHash": "179caf2caf84e757ddba9658fcb63b77f1a7e27a98ab824114a35f0aa1c99630",
+      "patchHash": "d830614915a46ff3d78447011e417cfee57d7e002307c1547e0f407ed0bb153b",
+      "patchPath": "patches/complex-drive-content-design-digital-event-merch.bin",
+      "recordCount": 262,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-digital-event-video": {
+      "sourceHash": "7c91d9d3659843927397e58869fc9a29ca0250f388e84e4624249614a0c84446",
+      "resultHash": "9443b69e7d9c7eb416f1852086153a9786d1c006de1d970ba72c76eab3bd1254",
+      "patchHash": "37fa5e55c14b3c512bcc8fde6b6c8511f8069eea74b4355cc4d9511a3987da7a",
+      "patchPath": "patches/complex-gather-content-design-digital-event-video.bin",
+      "recordCount": 253,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-video": {
+      "sourceHash": "7686e0f50f3266c9735f758ceae65026e0f7b71370ced4301e17b99b3d449a2d",
+      "resultHash": "a1a5f6e415bf72cd50d25211cc3085826ada43c8f7518973ca7bf05a628bc765",
+      "patchHash": "6e9a38f2f89cb2c5b761d2df5174ef4db833b74709a21068dd7798b046c2e612",
+      "patchPath": "patches/complex-drive-content-design-digital-event-video.bin",
+      "recordCount": 259,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-event-games-merch": {
+      "sourceHash": "0ef5675b914734216600f717ba926092eb03cf00e4a7d7e93bdeafe292b3bb33",
+      "resultHash": "fb2932afb13bdbd16b6d37689c240c55d81adae912f7d15e41675787d3879335",
+      "patchHash": "97b918332cf7327bbd417f7d206dd2038168abb0516645b17ba738e50dbac51d",
+      "patchPath": "patches/complex-gather-content-design-event-games-merch.bin",
+      "recordCount": 253,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-games-merch": {
+      "sourceHash": "dbf8c1184c84ae21c8ee7aa306e218b15bd9744813177ae4cff75682a7466f81",
+      "resultHash": "f0a37bd5dcb8897407d377b335a63da7f5b75f26ba4e26c7f11f10354e9e9136",
+      "patchHash": "d16568282396a16b9f7fe11150fb5fbc86f7412abbe7a55f25a3f1a32536d2ba",
+      "patchPath": "patches/complex-drive-content-design-event-games-merch.bin",
+      "recordCount": 253,
+      "componentIndex": 6
+    },
+    "complex-gather-content-design-event-games-video": {
+      "sourceHash": "114aab380bf3ad0ce988910ef727b17be85db586b98fd6e7726efe8d9cc00b67",
+      "resultHash": "f3bbd6155f055c817fad8d4ec85e83a74eb67578b7d1b97d54a3b875b8d54f93",
+      "patchHash": "76ab49ae58ed9a023950831ed3484e5e827877c9a6d5b9664b1a2a937f5de5bc",
+      "patchPath": "patches/complex-gather-content-design-event-games-video.bin",
+      "recordCount": 250,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-games-video": {
+      "sourceHash": "ffb45651f3fe14028a941b4f2ba188c89569db11fa2266c567a510e610e56c0a",
+      "resultHash": "4e91468fc781f6472bd9667891073f3eef7cafc6f55723d7bbc3944920834cb8",
+      "patchHash": "bd606f1f61fa43587bdd61b9b24c9a89b50e3ede5dfd972d492c9fa286e4c341",
+      "patchPath": "patches/complex-drive-content-design-event-games-video.bin",
+      "recordCount": 250,
+      "componentIndex": 6
+    },
+    "complex-gather-content-design-event-merch-video": {
+      "sourceHash": "4842fa1b736a4c86d9d89918cf643f99790fce02d9268ab61e2657e05f004043",
+      "resultHash": "58eb6ef30ed79c234b583fa814b60dcd43fa8d6a784c6ea67f71dca7939204fa",
+      "patchHash": "e987b0d8b0e988ee228c50a8505bf10297ba228917b7904a149626925d2b8f60",
+      "patchPath": "patches/complex-gather-content-design-event-merch-video.bin",
+      "recordCount": 243,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-merch-video": {
+      "sourceHash": "262aa9248527519c5b1c4b5a2ac66459833f2ed0d9179b362d97ff1f6f3fdae8",
+      "resultHash": "560d4b1cda8ff569e7eddfd023e7bf60e76288c58adb766d1a37c10c1211710f",
+      "patchHash": "2d0b85f030e9cda866dd8bd66c5ce505e6d98bee57324d911212ab281f2a1abe",
+      "patchPath": "patches/complex-drive-content-design-event-merch-video.bin",
+      "recordCount": 243,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-games-merch": {
+      "sourceHash": "dcb16d653b3ed571aa8093ebc9f1abd8267004ef31c4979fb3aca8c322de4439",
+      "resultHash": "ba769a5e06f04d060652e1b9f084c9d643d15667263833c26b5c348730fc668b",
+      "patchHash": "991b892f58637535b174a444920790e2104990ea2003eab9843d2555610aa27f",
+      "patchPath": "patches/complex-gather-content-digital-event-games-merch.bin",
+      "recordCount": 264,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-games-merch": {
+      "sourceHash": "bd889920d4474347862e40c80f2cadf71ecffa3375bf52a6897fe42433616afa",
+      "resultHash": "395a9769f18c12130ab4a80f694d7e7cd468e674728651d46690f98b86d4817e",
+      "patchHash": "01c4e08e6f80abb7b15bf5b068256fed1376658ba216dba91bfb9d53f5790fe7",
+      "patchPath": "patches/complex-drive-content-digital-event-games-merch.bin",
+      "recordCount": 264,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-games-video": {
+      "sourceHash": "9dad1152b25a638c4f77fa9cda6e1426ea967f7e928c1ced0bed0d48a7d791a4",
+      "resultHash": "55f53197fc12e1686986b5e5a9b95917f3e68e80d220af9e22c09f3162672f34",
+      "patchHash": "775c4cae1360b43b0a2a2ede0a4cc037dc4040c40399a036f31cfe0d4b1e0e78",
+      "patchPath": "patches/complex-gather-content-digital-event-games-video.bin",
+      "recordCount": 261,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-games-video": {
+      "sourceHash": "af7ffce74704db2b6af0706fa97b41dbc8763ca1ceba822ec073576337e519a7",
+      "resultHash": "a26d39c1b1c80e5b7815d723b1a06c6d32cbec94757a53a5b9c7fb4ee8de4c05",
+      "patchHash": "6b9fe3def40325a6e9cb6701ca847afcdf20ed9844199135fcfc2d01a9956fe2",
+      "patchPath": "patches/complex-drive-content-digital-event-games-video.bin",
+      "recordCount": 261,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-merch-video": {
+      "sourceHash": "16fe27b8349cc3fe73c422abcdfb27bf9b7549474fe9c52d641fc6cb51126b3f",
+      "resultHash": "15744251e8497196e5371bbbe2bac7a975bacd2283f8219fc68cffcb20f4cde4",
+      "patchHash": "8b8fc25057b82650c6f76b5659ffc64aa030e107cc9b34f99dcc8c304bf95d3c",
+      "patchPath": "patches/complex-gather-content-digital-event-merch-video.bin",
+      "recordCount": 254,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-merch-video": {
+      "sourceHash": "f3b548fce4ea51676f317d351f7c2d9a211867739902d7a54aa45aed1d161b47",
+      "resultHash": "dccb3889d80dfa58d9aa484077070a613f3f545fe4331cc2bc578d70aab4ca39",
+      "patchHash": "59d39d94a86303e71dec06e5ac3c9091a19303cc90165a7e416921d6af5b117f",
+      "patchPath": "patches/complex-drive-content-digital-event-merch-video.bin",
+      "recordCount": 253,
+      "componentIndex": 6
+    },
+    "complex-gather-content-event-games-merch-video": {
+      "sourceHash": "75dfb525d1ff8a21ac27a9f665a30e1d753f96af3df4d82b9629ddb54847797e",
+      "resultHash": "7741bee239f1a6d51396baff25fbf189440a54fc07df93e30bc8d6c35b20309c",
+      "patchHash": "c7d27a381167fedcd576870b540defe957af891e677407613842086d71241b9c",
+      "patchPath": "patches/complex-gather-content-event-games-merch-video.bin",
+      "recordCount": 252,
+      "componentIndex": 3
+    },
+    "complex-drive-content-event-games-merch-video": {
+      "sourceHash": "716ced6ec6de283bcb05356766b110b194d7cb8fa637bf5e96bd473ec92b3403",
+      "resultHash": "37b7116eafd636e5983a322d7f6b357f4c8527337c1913e428d69f6c26aa02ef",
+      "patchHash": "729d43ea9436e04b3fe628314fd19a535f2c2e1e82a6c27bdcc5a5e631de0030",
+      "patchPath": "patches/complex-drive-content-event-games-merch-video.bin",
+      "recordCount": 245,
+      "componentIndex": 3
+    },
+    "complex-gather-design-digital-event-games-merch": {
+      "sourceHash": "cd3e3fb046e3713a527c9bca20b2f7ec11fe7fc9ee12a41e3a3a4d57cce60346",
+      "resultHash": "cf9ea1c3f5327d7022420623eec64348a594692cfe15b5505a4a7f9d663efe9a",
+      "patchHash": "e717b4585b015fa52652dc57f71763e9fc391d211a574a2b4f328c015a4b72bf",
+      "patchPath": "patches/complex-gather-design-digital-event-games-merch.bin",
+      "recordCount": 262,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-games-merch": {
+      "sourceHash": "dd0a9bef9be10fedfd1305388162ff543cf53d553cbaccf1650a5475befe758d",
+      "resultHash": "9f46e5e6d0ae275f9a7c3b1fe7ad96feeb96ee7fe2c34e5c1f9074ed377302de",
+      "patchHash": "fd428e40f95342be87d8ef39b67dd94ee22ca6b882405f48f1a0bbd4feea9c39",
+      "patchPath": "patches/complex-drive-design-digital-event-games-merch.bin",
+      "recordCount": 262,
+      "componentIndex": 8
+    },
+    "complex-gather-design-digital-event-games-video": {
+      "sourceHash": "81835499ae048dfc6522ec62e490ab2694f183d060b5a502b3dd4e780146a460",
+      "resultHash": "08c5bb6427f371e64cc01bb28e4db2ad9fba4cc3d0b7a3693af6817e670c24ed",
+      "patchHash": "7a6e2b55da104650357ea3a9a249168b0a66fd2447039d1a8069621d24f39478",
+      "patchPath": "patches/complex-gather-design-digital-event-games-video.bin",
+      "recordCount": 259,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-games-video": {
+      "sourceHash": "2bfbd8c490e192ac497068303a226286a1618e4a0b288c0e63d88f681abe0802",
+      "resultHash": "5ba63a4b797a6b36c715f26f4a32519257223fcb9177ad578e5ea44eb4570a01",
+      "patchHash": "2ebe468d7a8ac7d99ee5d2db7a08c227afdced56effd488dac67aa209b536da3",
+      "patchPath": "patches/complex-drive-design-digital-event-games-video.bin",
+      "recordCount": 259,
+      "componentIndex": 8
+    },
+    "complex-gather-design-digital-event-merch-video": {
+      "sourceHash": "f36ab41abda23cc3d4913817a3ab387e31bcce5f7cceef96ccbc60d59fa4830b",
+      "resultHash": "bab6f9671f6bf4c984851fce592c94f3954eb7c73fb055d0bb6c63ac013c017e",
+      "patchHash": "cbbcc3f1698639a6bc583bf3aa65c2cd00333e17f10bf8cb336bb5a80537c1c1",
+      "patchPath": "patches/complex-gather-design-digital-event-merch-video.bin",
+      "recordCount": 252,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-merch-video": {
+      "sourceHash": "bce262d8d6b490212a12bb32328dedc30da1454ca6d1074c9597f18af8cbbc0b",
+      "resultHash": "d165c923c0d83a8432f433f15f1f4b2b873070355289c253905de819738a0608",
+      "patchHash": "5e26883362f87659ffc28b8a7af004a3fc50927401241ff1764b448ff13a44f0",
+      "patchPath": "patches/complex-drive-design-digital-event-merch-video.bin",
+      "recordCount": 251,
+      "componentIndex": 8
+    },
+    "complex-gather-design-event-games-merch-video": {
+      "sourceHash": "710d2c90b93b2e49d887d967f9174205eff498f861bde7e0d735efd4fda52408",
+      "resultHash": "9ab04d56a9b7aa412d09f20549dbdd4b2912b196a5c99a5a400ecb4ef783e334",
+      "patchHash": "00d75716da4465ccc16954d7aed6d89825b8d9585dd3cd8eb4ad08e930dacffb",
+      "patchPath": "patches/complex-gather-design-event-games-merch-video.bin",
+      "recordCount": 250,
+      "componentIndex": 5
+    },
+    "complex-drive-design-event-games-merch-video": {
+      "sourceHash": "b18a5c0d8295277dfa38e807cb254b3086aef7447b68ede74f9b93897e02348f",
+      "resultHash": "7bc358154264b2c0327667c239789e4c111f8ce6ecca39a9c48eecc45db3eb66",
+      "patchHash": "7bec65a2fc1a776331d1f852dc823947466e7279118bcc0064c306dba1038b75",
+      "patchPath": "patches/complex-drive-design-event-games-merch-video.bin",
+      "recordCount": 243,
+      "componentIndex": 5
+    },
+    "complex-gather-digital-event-games-merch-video": {
+      "sourceHash": "64bab831e83782f2a62ac18e620a54e81575b1e6fcd80118405d9f58045a9ed8",
+      "resultHash": "56057a29369d1ffaaf00c813110181b7bfc57bdcd92948ed20bba95deac17165",
+      "patchHash": "45c587dd64009f5818cdcf06a5807ac5717cbfe62f9a414ea44c6cf39a129dde",
+      "patchPath": "patches/complex-gather-digital-event-games-merch-video.bin",
+      "recordCount": 261,
+      "componentIndex": 5
+    },
+    "complex-drive-digital-event-games-merch-video": {
+      "sourceHash": "2648380111811ae7370b0ec07b01f09cd633ced403ad142bb13fed99a9b5a681",
+      "resultHash": "0674157dd5d2ff2f48f5403eedf542101a2a77fdd7172d42dc08c23f589cbfe3",
+      "patchHash": "fafb9e7447c0411b1937c2a26f8ef2cb5a5eccf0b2848d552b77215ccabe897d",
+      "patchPath": "patches/complex-drive-digital-event-games-merch-video.bin",
+      "recordCount": 253,
+      "componentIndex": 5
+    },
+    "complex-gather-content-design-digital-event-games-video": {
+      "sourceHash": "f5d944ab30c1a7c5da443aea96bc1b012e81708c129499b654af444055e2327f",
+      "resultHash": "e2b6482e30ce4debb0219c22fb0cd708df9311625f5addb743be3a1a0e45e1ca",
+      "patchHash": "656c8d0728f68f7c3fab146cac40ad1396b0ff1c47118bd9bd1c5a991562f548",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games-video.bin",
+      "recordCount": 219,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-games-video": {
+      "sourceHash": "603c398b96cc979027d9b9b1342e31680f59d00fe185d6abeca2ee6f9f0b6ba2",
+      "resultHash": "cb65273988df9871823b5318b7c454841fb92422324c1f25933d17d5042af657",
+      "patchHash": "e859bfba48b11b4d0566bb2357adc71d813ae9217ef81099b09d78e684552bd7",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games-video.bin",
+      "recordCount": 221,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-digital-event-merch-video": {
+      "sourceHash": "606496c1df1156cb2e327feb67159b833893866a0eb25bf87ce7a173e539d5af",
+      "resultHash": "8ec73e741d76875d82dfb393c0f8879b2557ac21ddcf9de5f4f399d962a2312b",
+      "patchHash": "35ce7ec16569051a1872551d4b487ee44d3a32f1af8f5411f9737bfeb7b25e4b",
+      "patchPath": "patches/complex-gather-content-design-digital-event-merch-video.bin",
+      "recordCount": 214,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-merch-video": {
+      "sourceHash": "c47f7f3f4a9f5dfc59c2ab3ba90857c00aa017d67ce87dfe7b5301e7a1c2b8ae",
+      "resultHash": "a71481a80d677e355ed128218e52c527c31a199116f05537a26ac1d27fc1eb58",
+      "patchHash": "34fbda05652fceb512ad3b80579496ba4505feaeb29ec2473d7769c1e92f165a",
+      "patchPath": "patches/complex-drive-content-design-digital-event-merch-video.bin",
+      "recordCount": 216,
+      "componentIndex": 9
+    },
+    "complex-gather-content-design-event-games-merch-video": {
+      "sourceHash": "e45c0b18b5971a8b9934f8f0bf696e5fb25198ef182385a6e415c884596fe857",
+      "resultHash": "d9d2de8dc33c41f871be075f2047ac5eadad5aaba38acb81f4dbac41bd8156c4",
+      "patchHash": "67ecd656949d871b93278e6b731f0dc4aac0bf7e82bba29f81a0747a0deaac8b",
+      "patchPath": "patches/complex-gather-content-design-event-games-merch-video.bin",
+      "recordCount": 213,
+      "componentIndex": 6
+    },
+    "complex-drive-content-design-event-games-merch-video": {
+      "sourceHash": "2234b2ee886be48f2e1033435adf6fb5b41b03267d5844f90177be6fe5270ac4",
+      "resultHash": "891c0042a4c384a71368fa6c9ec6f5f920e38c28e154f7d8204269a26d0cf9ff",
+      "patchHash": "0075d401ea7150468b16141022a914a909c68a6e3f40b8b00e9bde660f7c11fa",
+      "patchPath": "patches/complex-drive-content-design-event-games-merch-video.bin",
+      "recordCount": 211,
+      "componentIndex": 6
+    },
+    "complex-gather-content-digital-event-games-merch-video": {
+      "sourceHash": "5c95b98e1884a178b29590c534c34bb64f478da5a2f1f937165f40f2290700c9",
+      "resultHash": "0a30d9945cfab627005905c15819b78e677caf0d8dcb75138a2d9e9e91f8dbe5",
+      "patchHash": "f5db304f03c26d9ee6644bbb59c553de782fcc9104064e37f2c633a12b42a74e",
+      "patchPath": "patches/complex-gather-content-digital-event-games-merch-video.bin",
+      "recordCount": 220,
+      "componentIndex": 6
+    },
+    "complex-drive-content-digital-event-games-merch-video": {
+      "sourceHash": "bbc961b1b79fd62a269ee02e247f35034e14167fcfa6684f37df9a975760aef1",
+      "resultHash": "e285aa30526217c8b7bddd1b2496014e462e23fa9b76d75e4f964d65bfad40ff",
+      "patchHash": "b967b24d7d3985d8eb7dc48ad31116c7f794f4e90ec928a453cf30eb7fe256f2",
+      "patchPath": "patches/complex-drive-content-digital-event-games-merch-video.bin",
+      "recordCount": 218,
+      "componentIndex": 6
+    },
+    "complex-gather-design-digital-event-games-merch-video": {
+      "sourceHash": "eca2df596f872e422459f4db634d06c5f4c42ee7e270e4de6607bf21ddb351e4",
+      "resultHash": "b26a5dd59e9bdc020e040c9392b90fc86a975e0baa5681652bdf15cfdfd8deef",
+      "patchHash": "9d4fcaf1c4e8219aa448d0daffa1ba41481a58e4c2e4cbe91b5b6f294c461ff3",
+      "patchPath": "patches/complex-gather-design-digital-event-games-merch-video.bin",
+      "recordCount": 219,
+      "componentIndex": 8
+    },
+    "complex-drive-design-digital-event-games-merch-video": {
+      "sourceHash": "2fdd2e91235072975e9dbb7dc819f7674ad3a7ea53dfbb70c96647a00ab00d71",
+      "resultHash": "5838371b42fcf35080912a0013dbc6086bc844ed4832e5fc5cbea6ca00dccb82",
+      "patchHash": "5082889f759a8ec73a4938d98728a2ba2c88046713ec059c4da8d7457167a4be",
+      "patchPath": "patches/complex-drive-design-digital-event-games-merch-video.bin",
+      "recordCount": 216,
+      "componentIndex": 8
+    },
+    "complex-gather-content-design-digital-event-games-merch-video": {
+      "sourceHash": "d9d4dd3f142cfd79299298c2325bb08e3a7ba11a8845b7f6f8dd376509ddaab4",
+      "resultHash": "4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b",
+      "patchHash": "cd46adffde4aac90a8379f53b1a55c2b2a2ccf60947e4310fbb8ca7f26215015",
+      "patchPath": "patches/complex-gather-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 191,
+      "componentIndex": 9
+    },
+    "complex-drive-content-design-digital-event-games-merch-video": {
+      "sourceHash": "4ed009aacf3859cfce0e9f0b2088a6b32041356198ac56acebdb9926292feef6",
+      "resultHash": "d09c1abf6f581dd040bd5b5461f3fe5ed80edb351de8fda20d979ab165e1d3a0",
+      "patchHash": "85e653c01961b0aa9a73438db0e1e89dcadfd72715c242817e2acbf606cc01f5",
+      "patchPath": "patches/complex-drive-content-design-digital-event-games-merch-video.bin",
+      "recordCount": 191,
+      "componentIndex": 9
+    }
+  }
+}
