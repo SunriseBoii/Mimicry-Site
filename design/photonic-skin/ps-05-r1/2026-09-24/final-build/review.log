@@ -1,0 +1,580 @@
+[
+  {
+    "label": "wheel horizontal builder forward",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 1490.3999999999999,
+    "intermediate": 0,
+    "outgoing": 33,
+    "incoming": 40,
+    "finalOpacity": 1
+  },
+  {
+    "label": "wheel horizontal builder reverse",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 1490.3999999999999,
+    "intermediate": 0,
+    "outgoing": 33,
+    "incoming": 23,
+    "finalOpacity": 1
+  },
+  {
+    "label": "wheel 04 to 05.1",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 18,
+    "outgoing": 40,
+    "incoming": 36,
+    "finalOpacity": 1
+  },
+  {
+    "label": "keyboard 04 to 05.1",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 61,
+    "outgoing": 29,
+    "incoming": 47,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.7334452961511074
+  },
+  {
+    "label": "graph 04 to 05.1",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 60,
+    "outgoing": 29,
+    "incoming": 48,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.7129901433619292
+  },
+  {
+    "label": "wheel 05.1 to 04",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 15,
+    "outgoing": 37,
+    "incoming": 28,
+    "finalOpacity": 1
+  },
+  {
+    "label": "keyboard 05.1 to 04",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 64,
+    "outgoing": 31,
+    "incoming": 50,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.6676558967164885
+  },
+  {
+    "label": "graph 05.1 to 04",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 64,
+    "outgoing": 32,
+    "incoming": 50,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.5282911827147109
+  },
+  {
+    "label": "wheel 05.7 to 06.1",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 17,
+    "outgoing": 40,
+    "incoming": 37,
+    "finalOpacity": 1
+  },
+  {
+    "label": "keyboard 05.7 to 06.1",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 64,
+    "outgoing": 31,
+    "incoming": 50,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.5437112786032227
+  },
+  {
+    "label": "graph 05.7 to 06.1",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 64,
+    "outgoing": 32,
+    "incoming": 50,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.5939737854234913
+  },
+  {
+    "label": "wheel 06.1 to 05.7",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 18,
+    "outgoing": 41,
+    "incoming": 27,
+    "finalOpacity": 1
+  },
+  {
+    "label": "keyboard 06.1 to 05.7",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 63,
+    "outgoing": 32,
+    "incoming": 49,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.6514631447543731
+  },
+  {
+    "label": "graph 06.1 to 05.7",
+    "input": "keyboard (graph node outside viewport)",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 64,
+    "outgoing": 32,
+    "incoming": 50,
+    "finalOpacity": 1,
+    "maxTimeAdjustedSpeedRatio": 0.5216828759785573
+  },
+  {
+    "label": "dark wheel 04 to 05.1",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 17,
+    "outgoing": 41,
+    "incoming": 38,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark keyboard 04 to 05.1",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 61,
+    "outgoing": 30,
+    "incoming": 49,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark graph 04 to 05.1",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 386.4,
+    "intermediate": 60,
+    "outgoing": 29,
+    "incoming": 49,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark wheel 05.1 to 04",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 17,
+    "outgoing": 41,
+    "incoming": 33,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark keyboard 05.1 to 04",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 61,
+    "outgoing": 28,
+    "incoming": 47,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark graph 05.1 to 04",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 1490.3998953445428,
+    "intermediate": 64,
+    "outgoing": 31,
+    "incoming": 50,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark wheel 05.7 to 06.1",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 16,
+    "outgoing": 37,
+    "incoming": 39,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark keyboard 05.7 to 06.1",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 46,
+    "outgoing": 18,
+    "incoming": 41,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark graph 05.7 to 06.1",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4001046554573,
+    "end": 1490.3999999999999,
+    "intermediate": 54,
+    "outgoing": 26,
+    "incoming": 44,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark wheel 06.1 to 05.7",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 14,
+    "outgoing": 33,
+    "incoming": 29,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark keyboard 06.1 to 05.7",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 56,
+    "outgoing": 27,
+    "incoming": 45,
+    "finalOpacity": 1
+  },
+  {
+    "label": "dark graph 06.1 to 05.7",
+    "input": "keyboard (graph node outside viewport)",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3999999999999,
+    "end": 386.4001046554573,
+    "intermediate": 59,
+    "outgoing": 28,
+    "incoming": 48,
+    "finalOpacity": 1
+  },
+  {
+    "label": "interrupt keyboard reversal",
+    "input": "keyboard",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 1490.3998953445428,
+    "intermediate": 71,
+    "outgoing": 42,
+    "incoming": 49,
+    "finalOpacity": 1
+  },
+  {
+    "label": "interrupt graph with graph",
+    "input": "graph",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 1490.3998953445428,
+    "intermediate": 82,
+    "outgoing": 56,
+    "incoming": 43,
+    "finalOpacity": 1
+  },
+  {
+    "label": "wheel during keyboard transition",
+    "input": "keyboard+wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 1490.3998953445428,
+    "end": 1490.3998953445428,
+    "intermediate": 47,
+    "outgoing": 22,
+    "incoming": 27,
+    "finalOpacity": 1
+  },
+  {
+    "label": "direct far competence",
+    "input": "link",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "false",
+    "start": 386.4,
+    "end": 386.4001046554573,
+    "intermediate": 0,
+    "outgoing": 23,
+    "incoming": 40,
+    "finalOpacity": 1
+  },
+  {
+    "label": "standard wheel boundary",
+    "input": "wheel",
+    "viewport": [
+      1440,
+      900
+    ],
+    "reading": "true",
+    "start": 1148.225168363949,
+    "end": 302.4,
+    "intermediate": 7,
+    "outgoing": 9,
+    "incoming": 10,
+    "finalOpacity": 1
+  },
+  {
+    "label": "standard dark direct",
+    "input": "CTA",
+    "viewport": [
+      1440,
+      900
+    ],
+    "reading": "true",
+    "start": 1148.225168363949,
+    "end": 302.4,
+    "intermediate": 64,
+    "outgoing": 32,
+    "incoming": 50,
+    "finalOpacity": 1
+  },
+  {
+    "label": "short wheel boundary",
+    "input": "wheel",
+    "viewport": [
+      1280,
+      720
+    ],
+    "reading": "true",
+    "start": 1014.8968156304142,
+    "end": 268.8,
+    "intermediate": 7,
+    "outgoing": 16,
+    "incoming": 8,
+    "finalOpacity": 1
+  },
+  {
+    "label": "short dark direct",
+    "input": "CTA",
+    "viewport": [
+      1280,
+      720
+    ],
+    "reading": "true",
+    "start": 1014.8968156304142,
+    "end": 268.8,
+    "intermediate": 62,
+    "outgoing": 30,
+    "incoming": 50,
+    "finalOpacity": 1
+  },
+  {
+    "label": "mobile wheel boundary",
+    "input": "wheel",
+    "viewport": [
+      390,
+      844
+    ],
+    "reading": "true",
+    "start": 195,
+    "end": 195,
+    "intermediate": 0,
+    "outgoing": 9,
+    "incoming": 8,
+    "finalOpacity": 1
+  },
+  {
+    "label": "mobile dark direct",
+    "input": "CTA",
+    "viewport": [
+      390,
+      844
+    ],
+    "reading": "true",
+    "start": 195,
+    "end": 195,
+    "intermediate": 0,
+    "outgoing": 33,
+    "incoming": 50,
+    "finalOpacity": 1
+  },
+  {
+    "label": "reduced wheel boundary",
+    "input": "wheel",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "true",
+    "start": 1490.3998878205098,
+    "end": 386.4,
+    "intermediate": 7,
+    "outgoing": 0,
+    "incoming": 0,
+    "finalOpacity": 1
+  },
+  {
+    "label": "reduced dark direct",
+    "input": "CTA",
+    "viewport": [
+      1840,
+      944
+    ],
+    "reading": "true",
+    "start": 1490.3998878205098,
+    "end": 386.4,
+    "intermediate": 0,
+    "outgoing": 0,
+    "incoming": 0,
+    "finalOpacity": 1
+  }
+]

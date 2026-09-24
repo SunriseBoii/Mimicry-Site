@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   GRAPH_EDGES,
   SCREEN_NODES,
@@ -25,15 +25,18 @@ export function ProgressGraph({
   unlock,
   reducedMotion,
   onNavigate,
+  activeNode,
 }: {
   progressRef: { current: ScrollProgress };
   unlock: UnlockFlags;
   reducedMotion: boolean;
   onNavigate: (id: ScreenNodeId) => void;
+  activeNode?: ScreenNodeId;
 }) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const hitsRef = useRef<HTMLDivElement | null>(null);
   const cameraRef = useRef({ x: 0, y: 0 });
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     let frame = 0;
@@ -107,6 +110,7 @@ export function ProgressGraph({
 
   return (
     <div className={styles.graph} data-qa="m4-graph" role="navigation" aria-label="Прогресс маршрута, ортогональный граф экранов">
+      {activeNode ? <><span className={styles.graphLabel}>{graphLabel(activeNode)}</span><button type="button" className={styles.graphMobileToggle} aria-expanded={expanded} aria-controls="graph-mobile-links" onClick={() => setExpanded(!expanded)}>{graphLabel(activeNode)} · маршрут {expanded ? '−' : '+'}</button>{expanded ? <div id="graph-mobile-links" className={styles.graphMobileLinks}>{graphNodeViews(activeNode, unlock).filter(node => node.opacity > 0).map(node => node.locked ? <span key={node.id}>{graphLabel(node.id)}: {node.id === '03.2' ? 'выберите задачу' : 'подтвердите состав'}</span> : <button key={node.id} type="button" aria-current={node.active ? 'step' : undefined} onClick={() => { setExpanded(false); onNavigate(node.id); }}>{graphLabel(node.id)}</button>)}</div> : null}</> : null}
       <svg
         ref={svgRef}
         width={GRAPH_VIEW.width}
@@ -145,11 +149,12 @@ export function ProgressGraph({
             type="button"
             data-hit={node.id}
             aria-label={`${node.title}, экран ${node.index + 1} из 18`}
+            title={isNodeUnlocked(node.id, unlock) ? node.title : node.id === '03.2' ? 'Сначала выберите задачу' : 'Сначала подтвердите компетенции'}
             onClick={() => {
               if (!isNodeUnlocked(node.id, unlock)) return;
               onNavigate(node.id);
             }}
-          />
+          >{activeNode ? <span className={styles.graphTooltip}>{node.title}</span> : null}</button>
         ))}
       </div>
     </div>
@@ -157,5 +162,7 @@ export function ProgressGraph({
 }
 
 export function graphLabel(id: ScreenNodeId) {
+  if (id === '01') return 'Главная';
+  if (id === '03.3') return 'Ваш запрос';
   return SCREEN_NODE_BY_ID[id].title;
 }

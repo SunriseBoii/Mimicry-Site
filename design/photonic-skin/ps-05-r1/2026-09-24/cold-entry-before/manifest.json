@@ -1,0 +1,16 @@
+{
+  "build": "3ppUGTwzPlUt-FQXlpIwA",
+  "events": [
+    {
+      "at": "before 3D ready",
+      "node": "03.2",
+      "ready": true
+    },
+    {
+      "at": "after boot",
+      "node": "03.2",
+      "inert": false,
+      "task": true
+    }
+  ]
+}

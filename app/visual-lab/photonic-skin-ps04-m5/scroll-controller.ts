@@ -120,6 +120,7 @@ function rawIndexAt(scrollY: number, layout: CanonicalLayout) {
 }
 
 export function mapScrollToProgress(args: {
+  layout?: CanonicalLayout;
   scrollY: number;
   viewportHeight: number;
   viewportWidth: number;
@@ -128,7 +129,7 @@ export function mapScrollToProgress(args: {
   direction?: 1 | -1;
   ignoreHysteresis?: boolean;
 }): ScrollProgress {
-  const layout = canonicalLayout(args.viewportHeight, args.unlock);
+  const layout = args.layout ?? canonicalLayout(args.viewportHeight, args.unlock);
   const direction = args.direction ?? 1;
   const raw = rawIndexAt(args.scrollY, layout);
   const probed = rawIndexAt(args.scrollY - direction * args.viewportHeight * HYSTERESIS, layout);
@@ -388,6 +389,15 @@ function editingElement(node: Element | null) {
 export type DiscreteListener = (progress: ScrollProgress) => void;
 
 export class ScrollCompositionController {
+  private layoutAdapter: (() => CanonicalLayout | null) | null = null;
+  private prepareLayout: (() => void) | null = null;
+  private cssAnchorAlignment = false;
+  setCssAnchorAlignment(enabled: boolean) { this.cssAnchorAlignment = enabled; }
+  setLayoutAdapter(adapter: (() => CanonicalLayout | null) | null, prepareLayout: (() => void) | null = null) {
+    this.layoutAdapter = adapter;
+    this.prepareLayout = prepareLayout;
+  }
+  refreshLayout() { this.sync(true); }
   constructor(private readonly timeSource?: { now: () => number }) {}
 
   private unlock: UnlockFlags = { competencies: false, brief: false };
@@ -591,6 +601,11 @@ export class ScrollCompositionController {
   setUnlock(unlock: UnlockFlags) {
     if (this.unlock.competencies === unlock.competencies && this.unlock.brief === unlock.brief) return;
     const host = this.attached;
+    if (this.layoutAdapter?.()) {
+      this.unlock = unlock;
+      this.sync(true);
+      return;
+    }
     this.guards.layoutSettling = true;
     if (host) {
       const nextY = compensateUnlock({
@@ -620,7 +635,7 @@ export class ScrollCompositionController {
   }
 
   layout() {
-    return canonicalLayout(this.viewport.height, this.unlock);
+    return this.layoutAdapter?.() ?? canonicalLayout(this.viewport.height, this.unlock);
   }
 
   noteUserInput(kind: UserInputKind) {
@@ -699,6 +714,7 @@ export class ScrollCompositionController {
   private liveGuards(): MagnetismGuards {
     const next = { ...this.guards };
     if (typeof document !== "undefined") {
+      next.dialogOpen = next.dialogOpen || !!document.querySelector('dialog[open]');
       next.documentHidden = document.hidden || next.documentHidden;
       next.focusEditing = editingElement(document.activeElement) || next.focusEditing;
       const selection = document.getSelection();
@@ -740,6 +756,7 @@ export class ScrollCompositionController {
 
   private onInputIdle() {
     if (this.mode !== "user") return;
+    if (this.layoutAdapter?.()) { this.mode = "idle"; this.candidate = null; this.sync(false); return; }
     if (this.guards.pointerHeld) return;
     // Native scroll and scrollend may arrive before the queued RAF samples
     // scrollY. Plan against the actual final pixel, not the previous frame.
@@ -843,7 +860,10 @@ export class ScrollCompositionController {
     if (!this.attached) return;
     const previous = this.snapshot;
     this.viewport = { width: this.attached.innerWidth, height: this.attached.innerHeight };
-    const nextLayout = canonicalLayout(this.viewport.height, this.unlock);
+    // Apply the presentation mode before measuring it. Sticky panels share a
+    // top coordinate until their reading-flow CSS has been enabled.
+    this.prepareLayout?.();
+    const nextLayout = this.layout();
     const y = restoreScrollY(nextLayout, previous.activeNodeId, previous.edgeProgress);
     this.cancelMagnetism("restore");
     this.clearIdle();
@@ -872,11 +892,13 @@ export class ScrollCompositionController {
     const layout = this.layout();
     const rawNode = layout.segments[rawIndexAt(scrollY, layout)];
     const rawAnchor = rawNode ? restoreScrollY(layout, rawNode.id, 0) : Number.POSITIVE_INFINITY;
-    // A touch gesture may land exactly on the next anchor without entering a
-    // magnetic animation. At that position the previous-node hysteresis must
-    // yield, otherwise the visible section and actor endpoint can disagree.
-    const atAnchor = scrollY >= rawAnchor && scrollY - rawAnchor <= MAGNETISM.noopDistancePx;
+    // Native input can stop at the CSS start, two pixels before restoreScrollY.
+    // Magnetism deliberately does nothing there. Yield hysteresis across that
+    // whole no-op interval so the visible section is also the interactive one.
+    const atAnchor = scrollY >= rawAnchor - (this.cssAnchorAlignment ? MAGNETISM.noopDistancePx : 0)
+      && scrollY - rawAnchor <= MAGNETISM.noopDistancePx;
     const next = mapScrollToProgress({
+      layout,
       scrollY,
       viewportHeight: this.viewport.height,
       viewportWidth: this.viewport.width,

@@ -1,0 +1,30 @@
+[
+  {
+    label: 'PS04-reference',
+    path: '/visual-lab/photonic-skin-ps04-m6/final-r2',
+    domObservedMs: 546.8999999761581,
+    frames: {
+      p50: 6.100000000000364,
+      p95: 42.399999999999636,
+      max: 48.5,
+      samples: 358
+    },
+    longTasks: [ 59, 56, 267, 4985, 71 ],
+    lcp: 1460,
+    cls: 0
+  },
+  {
+    label: 'PS05',
+    path: '/',
+    domObservedMs: 450.59999990463257,
+    frames: {
+      p50: 6.100000000000364,
+      p95: 48.5,
+      max: 78.80000000000018,
+      samples: 255
+    },
+    longTasks: [ 54, 67, 100, 97 ],
+    lcp: 84,
+    cls: 0
+  }
+]

@@ -1,0 +1,6 @@
+import {writeFileSync} from 'node:fs';
+import {generateBrief,TASKS} from '../app/_ps05/catalog';
+import type {BuilderTaskId} from '../app/visual-lab/photonic-skin-ps04-m6/project-builder-semantics/builder-ids';
+import {competenceOrder,type CompetenceId} from '../app/_brand/color-system';
+const samples:[BuilderTaskId,CompetenceId[]][]=[['explain_changes',['content']],['explain_changes',['content','design']],['engage_and_unite',['event']],['engage_and_unite',['event','video','digital','merch']],['learn_and_practice',['games','digital']],['learn_and_practice',['video']],['company_and_culture',['merch']],['company_and_culture',['content','video']],['explain_changes',['design','merch']],['company_and_culture',[...competenceOrder]]];
+writeFileSync('design/photonic-skin/ps-05/2026-09-24/copy-review.md','# R11 — редакторская выборка\n\n10 реальных результатов генератора. Проверка: цель задачи сохранена; названы только выбранные компетенции; связи имеют необходимые предпосылки; объём и формат предлагаются к обсуждению, обещаний нет. Это экспертная проверка агента, окончательная редактура владельца впереди.\n\n'+samples.map(([task,ids],i)=>`## ${i+1}. ${TASKS[task].title} / ${ids.join(', ')}\n\n${generateBrief(task,ids).text}`).join('\n\n'));

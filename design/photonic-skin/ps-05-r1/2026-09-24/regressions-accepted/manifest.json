@@ -1,0 +1,61 @@
+{
+  "url": "http://127.0.0.1:3001/",
+  "build": "3ppUGTwzPlUt-FQXlpIwA",
+  "browser": "153.0.4234.48",
+  "results": [
+    {
+      "endpoint": "master-neutral",
+      "state": {
+        "node": "03.1",
+        "y": 1890,
+        "reading": "false",
+        "reduced": "false",
+        "gpu": "master-neutral",
+        "composition": {
+          "x": 0,
+          "y": 0,
+          "width": 1840,
+          "height": 944,
+          "canvasCssWidth": 1840,
+          "canvasCssHeight": 944,
+          "drawingBufferWidth": 1840,
+          "drawingBufferHeight": 944,
+          "rendererDpr": 1,
+          "cssLeft": 1232.0639999999999,
+          "cssTop": 267.10400000000004,
+          "cssWidth": 516.672,
+          "cssHeight": 516.672,
+          "cssCenterX": 1490.3999999999999,
+          "cssCenterY": 525.44,
+          "cssSize": 516.672,
+          "deviceX": 0,
+          "deviceY": 0,
+          "deviceWidth": 1840,
+          "deviceHeight": 944,
+          "envelopeDeviceX": 1232,
+          "envelopeDeviceY": 160,
+          "envelopeDeviceWidth": 517,
+          "envelopeDeviceHeight": 517,
+          "siteClipScale": [
+            0.2808,
+            0.5473220338983051
+          ],
+          "siteClipOffset": [
+            0.6199999999999999,
+            -0.11322033898305095
+          ],
+          "siteCompositionEnabled": 1,
+          "visible": true,
+          "actorDraw": true,
+          "identity": false,
+          "siteFitScale": 1,
+          "visualZoomMultiplier": 1,
+          "slot": "right"
+        }
+      }
+    }
+  ],
+  "errors": [
+    "page.waitForFunction: Timeout 30000ms exceeded.\n    at node (C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\scripts\\ps05-r1-regressions.mjs:8:33)\n    at C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\scripts\\ps05-r1-regressions.mjs:14:163"
+  ]
+}

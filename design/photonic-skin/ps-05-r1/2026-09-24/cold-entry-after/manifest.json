@@ -1,0 +1,46 @@
+{
+  "build": "W191Kvrm0Ls3y10cyjb_B",
+  "events": [
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-m5-5/manifests/ps04m55-manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-m6-1/manifests/ps04m61-delta-manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-03-m4-1/manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-final-r1/manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-release-motion-r1/manifest.json"
+    },
+    {
+      "at": "before 3D ready",
+      "node": "03.2",
+      "ready": false
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-final-r2/manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-event-r4/manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-builder-video-r3/manifest.json"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/ps-04-m5-5/states/master-neutral.state.bin"
+    },
+    {
+      "delayed": "http://127.0.0.1:3001/photonic-skin/contact-v1/622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f.bin.gz"
+    },
+    {
+      "at": "after boot",
+      "node": "03.2",
+      "inert": false,
+      "task": true
+    }
+  ]
+}

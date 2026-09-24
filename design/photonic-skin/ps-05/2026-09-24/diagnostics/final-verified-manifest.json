@@ -1,0 +1,823 @@
+{
+  "date": "2026-09-24T15:00:10.411Z",
+  "base": "http://127.0.0.1:3001",
+  "results": [
+    {
+      "screenshot": "light-01.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "01",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "50",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "selection-1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "single-content",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.9",
+        "data-resolved-state": "single-content"
+      }
+    },
+    {
+      "screenshot": "selection-2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-content",
+        "data-gpu-target": "complex-gather-event-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.5",
+        "data-resolved-state": "complex-gather-event-video"
+      }
+    },
+    {
+      "screenshot": "selection-4.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-event-video",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "complex-gather-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "selection-7.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-digital-event-merch-video",
+        "data-gpu-target": "complex-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "complex-gather-content-design-digital-event-games-merch-video"
+      }
+    },
+    {
+      "screenshot": "work-expanded.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.5",
+        "data-resolved-state": "complex-gather-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "generated-brief.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-digital-event-merch-video",
+        "data-gpu-target": "complex-drive-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "10.3",
+        "data-resolved-state": "complex-drive-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "contact-error.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-drive-digital-event-merch-video",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "complex-drive-content-design"
+      }
+    },
+    {
+      "screenshot": "contact-success.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "runtime-snapshot-0.401",
+        "data-gpu-target": "complex-drive-content-design",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.4",
+        "data-resolved-state": "complex-drive-content-design"
+      }
+    },
+    {
+      "screenshot": "light-01.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "01",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "runtime-snapshot-0.580",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.6",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-02.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "02",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.7",
+        "data-resolved-state": "brand-wide-gather-content-design-digital-event-games-merch-video"
+      }
+    },
+    {
+      "screenshot": "light-03.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "brand-wide-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.8",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-03.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.3",
+        "data-resolved-state": "complex-gather-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "light-03.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-digital-event-merch-video",
+        "data-gpu-target": "complex-drive-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.9",
+        "data-resolved-state": "complex-drive-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "light-04.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "04",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-drive-digital-event-merch-video",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.9",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-05.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "single-content",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.5",
+        "data-resolved-state": "single-content"
+      }
+    },
+    {
+      "screenshot": "light-05.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-content",
+        "data-gpu-target": "single-design",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.1",
+        "data-resolved-state": "single-design"
+      }
+    },
+    {
+      "screenshot": "light-05.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-design",
+        "data-gpu-target": "single-event",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.3",
+        "data-resolved-state": "single-event"
+      }
+    },
+    {
+      "screenshot": "light-05.4.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.4",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-event",
+        "data-gpu-target": "single-games",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.7",
+        "data-resolved-state": "single-games"
+      }
+    },
+    {
+      "screenshot": "light-05.5.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.5",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-games",
+        "data-gpu-target": "single-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "single-video"
+      }
+    },
+    {
+      "screenshot": "light-05.6.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.6",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-video",
+        "data-gpu-target": "single-digital",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "single-digital"
+      }
+    },
+    {
+      "screenshot": "light-05.7.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "05.7",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-digital",
+        "data-gpu-target": "single-merch",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.6",
+        "data-resolved-state": "single-merch"
+      }
+    },
+    {
+      "screenshot": "light-06.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "06.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.7",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-06.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "06.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-06.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "06.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.1",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-07.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "07",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.5",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "light-08.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "08",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.2",
+        "data-resolved-state": ""
+      }
+    },
+    {
+      "screenshot": "dark-01.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "01",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.1",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-02.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "02",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "brand-wide-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7",
+        "data-resolved-state": "brand-wide-gather-content-design-digital-event-games-merch-video"
+      }
+    },
+    {
+      "screenshot": "dark-03.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "03.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "brand-wide-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.8",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-03.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.4",
+        "data-resolved-state": "complex-gather-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "dark-03.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "03.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-digital-event-merch-video",
+        "data-gpu-target": "complex-drive-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.9",
+        "data-resolved-state": "complex-drive-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "dark-04.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "04",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-drive-digital-event-merch-video",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.6",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-05.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "single-content",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.9",
+        "data-resolved-state": "single-content"
+      }
+    },
+    {
+      "screenshot": "dark-05.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-content",
+        "data-gpu-target": "single-design",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.3",
+        "data-resolved-state": "single-design"
+      }
+    },
+    {
+      "screenshot": "dark-05.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-design",
+        "data-gpu-target": "single-event",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.4",
+        "data-resolved-state": "single-event"
+      }
+    },
+    {
+      "screenshot": "dark-05.4.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.4",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-event",
+        "data-gpu-target": "single-games",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.1",
+        "data-resolved-state": "single-games"
+      }
+    },
+    {
+      "screenshot": "dark-05.5.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.5",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-games",
+        "data-gpu-target": "single-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.9",
+        "data-resolved-state": "single-video"
+      }
+    },
+    {
+      "screenshot": "dark-05.6.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.6",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-video",
+        "data-gpu-target": "single-digital",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.7",
+        "data-resolved-state": "single-digital"
+      }
+    },
+    {
+      "screenshot": "dark-05.7.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "05.7",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-digital",
+        "data-gpu-target": "single-merch",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.4",
+        "data-resolved-state": "single-merch"
+      }
+    },
+    {
+      "screenshot": "dark-06.1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "06.1",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "8.4",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-06.2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "06.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.3",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-06.3.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "06.3",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.3",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-07.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "07",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "7.1",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "dark-08.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reading": "true",
+      "node": "08",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-merch",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "6.9",
+        "data-resolved-state": ""
+      }
+    },
+    {
+      "check": "persistent Canvas",
+      "pass": true
+    }
+  ],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /Открыть: От идеи/ })\u001b[22m\n\n    at C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\scripts\\ps05-browser-qa.mjs:57:172"
+  ]
+}

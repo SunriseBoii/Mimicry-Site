@@ -1,0 +1,21 @@
+PASS supplemental [
+  'Hero competency via keyboard + exact clean URL clipboard',
+  '4 task radios preserve MASTER',
+  'single confirmed endpoint + exact brief clipboard',
+  { axe: 'brief-light', violations: [] },
+  { axe: 'task-dark', violations: [ [Object] ] },
+  'mobile-task',
+  'mobile-gather-settled',
+  { axe: 'dialog-mobile', violations: [] },
+  'mobile-form-light',
+  'mobile-form-dark',
+  'reduced-competency',
+  'mobile-case-dark-reduced',
+  'broken-media',
+  'content-06.1',
+  'content-06.2',
+  'content-06.3',
+  'reflow-case-final',
+  'zoom-200-equivalent',
+  'zoom-task'
+]

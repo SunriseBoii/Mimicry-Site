@@ -18,6 +18,7 @@ import {
   type BuilderTaskId,
 } from "./builder-ids";
 import { resolveBuilderState } from "./builder-resolver";
+import { briefBasis, generateBrief } from "../../../_ps05/catalog";
 
 export { CONTACT_SIMULATED_DELAY_MS, SUCCESS_HOLD_MS, toggleCompetence, validateContact };
 export type { ContactDraft, OverlayKind, BuilderTaskId };
@@ -65,6 +66,10 @@ export interface BuilderFlowState {
   briefText: string;
   briefEdited: boolean;
   briefStale: boolean;
+  generatedText?: string;
+  textBasis?: string;
+  pendingBrief?: { text: string; basis: string } | null;
+  previousBrief?: { text: string; basis: string; edited: boolean } | null;
   unlock: { competencies: boolean; brief: boolean };
   overlay: OverlayKind;
   contact: ContactDraft;
@@ -84,13 +89,7 @@ export const INITIAL_BUILDER_FLOW: BuilderFlowState = {
 };
 
 export function composeBrief(taskId: BuilderTaskId, competencies: readonly CompetenceId[]) {
-  const task = BUILDER_TASK_OPTIONS.find((item) => item.id === taskId);
-  const names = competencies.map((id) => COMPETENCE_LABELS[id]).join(", ");
-  return [
-    task?.briefSeed ?? "",
-    names ? `В работу предлагаем взять: ${names}.` : "Компетенции ещё не выбраны.",
-    "Это черновик прототипа, не финальный бриф и не результат модели.",
-  ].join(" ");
+  return generateBrief(taskId, competencies).text;
 }
 
 export function selectTask(state: BuilderFlowState, taskId: BuilderTaskId): BuilderFlowState {
@@ -133,9 +132,9 @@ export function confirmCompetencies(state: BuilderFlowState): { state: BuilderFl
     draftCompetencies: state.draft.competencies,
     confirmedCompetencies: canonical,
   });
-  const briefText = state.briefEdited && !state.briefStale
-    ? state.briefText
-    : composeBrief(state.draft.taskId, canonical);
+  const generated = generateBrief(state.draft.taskId, canonical);
+  const basisChanged = state.textBasis !== generated.basis;
+  const briefText = state.briefEdited ? state.briefText : generated.text;
   const revision = (state.confirmed?.revision ?? 0) + 1;
   return {
     error: null,
@@ -151,6 +150,9 @@ export function confirmCompetencies(state: BuilderFlowState): { state: BuilderFl
       unlock: { competencies: true, brief: true },
       briefText,
       briefStale: false,
+      generatedText: generated.text,
+      textBasis: state.briefEdited ? state.textBasis : generated.basis,
+      pendingBrief: state.briefEdited && basisChanged ? generated : null,
     },
   };
 }
@@ -162,6 +164,16 @@ export function bindConfirmedHash(state: BuilderFlowState, stateHash: string): B
 
 export function editBrief(state: BuilderFlowState, briefText: string): BuilderFlowState {
   return { ...state, briefText, briefEdited: true };
+}
+
+export function resolveBriefUpdate(state: BuilderFlowState, action: 'replace' | 'keep' | 'undo'): BuilderFlowState {
+  if (action === 'undo' && state.previousBrief) {
+    return { ...state, briefText: state.previousBrief.text, textBasis: state.previousBrief.basis, briefEdited: state.previousBrief.edited, previousBrief: null };
+  }
+  if (!state.confirmed || !state.pendingBrief) return state;
+  const basis = briefBasis(state.confirmed.taskId, state.confirmed.competencies);
+  if (action === 'keep') return { ...state, textBasis: basis, pendingBrief: null };
+  return { ...state, previousBrief: { text: state.briefText, basis: state.textBasis ?? '', edited: state.briefEdited }, briefText: state.pendingBrief.text, textBasis: basis, pendingBrief: null, briefEdited: false };
 }
 
 export function openContact(state: BuilderFlowState): BuilderFlowState {

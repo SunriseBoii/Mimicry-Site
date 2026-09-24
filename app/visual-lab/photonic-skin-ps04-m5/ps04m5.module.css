@@ -162,6 +162,20 @@
   pointer-events: none;
 }
 
+.graphLabel { position:absolute;right:4px;top:178px;max-width:116px;text-align:right;font-size:12px;line-height:1.4;color:var(--muted); }
+.graph .graphMobileToggle,.graphMobileLinks {display:none;}
+.graphTooltip {display:none;position:absolute;right:30px;top:0;padding:8px 12px;background:var(--paper);border:1px solid var(--line);border-radius:6px;white-space:nowrap;font-size:13px;color:var(--ink);}
+.graph button:hover .graphTooltip,.graph button:focus-visible .graphTooltip {display:block;}
+@media(max-width:1100px) {
+  [data-ps05] .graph {top:78px;right:20px;height:24px;width:auto;}
+  [data-ps05] .graph svg,[data-ps05] .graphHits {display:none;}
+  [data-ps05] .graphLabel {display:none;}
+  [data-ps05] .graph .graphMobileToggle {position:static;display:block;width:auto;height:30px;margin:0;padding:2px 6px;background:var(--paper);border:0;border-radius:4px;font-size:12px;color:var(--muted);}
+  [data-ps05] .graphMobileLinks {display:flex;position:absolute;right:0;top:32px;width:min(280px,80vw);padding:12px;flex-direction:column;border:1px solid var(--line);border-radius:10px;background:var(--paper);pointer-events:auto;}
+  [data-ps05] .graph .graphMobileLinks button {position:static;display:block;width:100%;min-height:44px;height:auto;margin:0;border-radius:4px;font-size:15px;text-align:left;padding:10px;}
+  [data-ps05] .graphMobileLinks span {font-size:13px;color:var(--muted);padding:10px;}
+}
+
 .graph button {
   position: absolute;
   width: 22px;

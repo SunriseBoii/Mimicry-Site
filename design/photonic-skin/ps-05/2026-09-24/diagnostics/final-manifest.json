@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-24T14:38:41.803Z",
+  "base": "http://127.0.0.1:3000",
+  "results": [
+    {
+      "screenshot": "light-01.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "01",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "master-neutral",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "50",
+        "data-resolved-state": "master-neutral"
+      }
+    },
+    {
+      "screenshot": "selection-1.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "master-neutral",
+        "data-gpu-target": "single-content",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "13.2",
+        "data-resolved-state": "single-content"
+      }
+    },
+    {
+      "screenshot": "selection-2.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "false",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "single-content",
+        "data-gpu-target": "complex-gather-event-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "28.8",
+        "data-resolved-state": "complex-gather-event-video"
+      }
+    },
+    {
+      "screenshot": "selection-4.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-event-video",
+        "data-gpu-target": "complex-gather-digital-event-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "34.9",
+        "data-resolved-state": "complex-gather-digital-event-merch-video"
+      }
+    },
+    {
+      "screenshot": "selection-7.png",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reading": "true",
+      "node": "03.2",
+      "canvases": 1,
+      "overflow": false,
+      "gpu": {
+        "data-load-status": "ready",
+        "data-gpu-source": "complex-gather-digital-event-merch-video",
+        "data-gpu-target": "complex-gather-content-design-digital-event-games-merch-video",
+        "data-gpu-progress": "1",
+        "data-frame-p95-ms": "26.8",
+        "data-resolved-state": "complex-gather-content-design-digital-event-games-merch-video"
+      }
+    }
+  ],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Организация мероприятия +', exact: true })\u001b[22m\n\n    at C:\\Users\\MSI_NB\\Documents\\Mimicry-site\\scripts\\ps05-browser-qa.mjs:40:99"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "name": "hero immediately after theme toggle",
+      "errors": []
+    },
+    {
+      "name": "dark task",
+      "errors": []
+    },
+    {
+      "name": "light task immediately after theme toggle",
+      "errors": []
+    },
+    {
+      "name": "B normal, Escape before finish, resize, focus and cleanup",
+      "pass": true
+    },
+    {
+      "name": "clipboard denied fallback",
+      "pass": true
+    }
+  ],
+  "marks": [
+    {
+      "name": "A-open",
+      "seconds": 8.868
+    },
+    {
+      "name": "B-open",
+      "seconds": 11.442
+    }
+  ]
+}
