@@ -1,0 +1,227 @@
+{
+  "phase": "release-slow",
+  "build": "LQeb1ZI-FWmld4susWXh1",
+  "commit": "d0bd0a75a50f38a9679283ca759e0cce4e0b335f",
+  "dirty": " M app/_ps05/layout.ts\n M app/_ps05/motion.ts\n M app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx\n?? design/photonic-skin/ps-05-r2/\n?? scripts/ps05-r2-capture.mjs\n?? scripts/ps05-r2-qa.mjs\n?? tests/ps05-r2.test.ts\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3001/",
+  "cases": [
+    {
+      "from": "01",
+      "to": "02",
+      "capturedAt": "2026-09-25T10:13:19.549Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 170
+        },
+        {
+          "file": "02.png",
+          "ms": 322
+        },
+        {
+          "file": "03.png",
+          "ms": 479
+        },
+        {
+          "file": "04.png",
+          "ms": 705
+        },
+        {
+          "file": "05.png",
+          "ms": 880
+        },
+        {
+          "file": "06.png",
+          "ms": 1054
+        },
+        {
+          "file": "07.png",
+          "ms": 1195
+        },
+        {
+          "file": "08.png",
+          "ms": 1393
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "02",
+        "scrollY": 944
+      }
+    },
+    {
+      "from": "02",
+      "to": "03.1",
+      "capturedAt": "2026-09-25T10:13:28.887Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 184
+        },
+        {
+          "file": "02.png",
+          "ms": 357
+        },
+        {
+          "file": "03.png",
+          "ms": 518
+        },
+        {
+          "file": "04.png",
+          "ms": 651
+        },
+        {
+          "file": "05.png",
+          "ms": 810
+        },
+        {
+          "file": "06.png",
+          "ms": 958
+        },
+        {
+          "file": "07.png",
+          "ms": 1155
+        },
+        {
+          "file": "08.png",
+          "ms": 1355
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "03.1",
+        "scrollY": 1888
+      }
+    },
+    {
+      "from": "04",
+      "to": "05.1",
+      "capturedAt": "2026-09-25T10:13:32.953Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 8
+        },
+        {
+          "file": "01.png",
+          "ms": 192
+        },
+        {
+          "file": "02.png",
+          "ms": 369
+        },
+        {
+          "file": "03.png",
+          "ms": 543
+        },
+        {
+          "file": "04.png",
+          "ms": 751
+        },
+        {
+          "file": "05.png",
+          "ms": 920
+        },
+        {
+          "file": "06.png",
+          "ms": 1085
+        },
+        {
+          "file": "07.png",
+          "ms": 1256
+        },
+        {
+          "file": "08.png",
+          "ms": 1427
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.1",
+        "scrollY": 3776
+      }
+    },
+    {
+      "from": "05.1",
+      "to": "04",
+      "capturedAt": "2026-09-25T10:13:36.924Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 202
+        },
+        {
+          "file": "02.png",
+          "ms": 385
+        },
+        {
+          "file": "03.png",
+          "ms": 555
+        },
+        {
+          "file": "04.png",
+          "ms": 754
+        },
+        {
+          "file": "05.png",
+          "ms": 921
+        },
+        {
+          "file": "06.png",
+          "ms": 1121
+        },
+        {
+          "file": "07.png",
+          "ms": 1292
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "04",
+        "scrollY": 2832
+      }
+    }
+  ],
+  "errors": []
+}

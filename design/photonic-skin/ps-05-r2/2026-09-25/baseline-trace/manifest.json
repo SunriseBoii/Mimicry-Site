@@ -1,0 +1,65 @@
+{
+  "phase": "baseline-trace",
+  "build": "W191Kvrm0Ls3y10cyjb_B",
+  "commit": "d0bd0a75a50f38a9679283ca759e0cce4e0b335f",
+  "dirty": "?? design/photonic-skin/ps-05-r2/\n?? scripts/ps05-r2-capture.mjs\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3001/",
+  "cases": [
+    {
+      "from": "04",
+      "to": "05.1",
+      "input": "mouse.wheel",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 160
+        },
+        {
+          "file": "02.png",
+          "ms": 307
+        },
+        {
+          "file": "03.png",
+          "ms": 452
+        },
+        {
+          "file": "04.png",
+          "ms": 625
+        },
+        {
+          "file": "05.png",
+          "ms": 777
+        },
+        {
+          "file": "06.png",
+          "ms": 911
+        },
+        {
+          "file": "07.png",
+          "ms": 1081
+        },
+        {
+          "file": "08.png",
+          "ms": 1227
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.1",
+        "scrollY": 3776
+      }
+    }
+  ],
+  "errors": []
+}

@@ -9,7 +9,9 @@ export function readingLayout(): CanonicalLayout | null {
  if (!isReadingFlow()) return null;
  const sections=[...document.querySelectorAll<HTMLElement>('[data-ps05] [data-node]')];
  if(!sections.length) return null;
- const segments=sections.map(element=>({id:element.dataset.node as ScreenNodeId,start:element.getBoundingClientRect().top+window.scrollY,length:element.offsetHeight}));
+ // Native wheel positions are integral CSS pixels in Chromium. A measured
+ // start at e.g. 4619.14 must commit the section when wheel lands on 4619.
+ const segments=sections.map(element=>({id:element.dataset.node as ScreenNodeId,start:Math.round(element.getBoundingClientRect().top+window.scrollY),length:element.offsetHeight}));
  // CSS heights may be fractional while scrollHeight is rounded to whole pixels.
  // Keep the final anchor reachable at the browser's actual maximum scroll.
  const last=segments.at(-1);

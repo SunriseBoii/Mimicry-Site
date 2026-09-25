@@ -844,7 +844,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
           ? r1Placement.displayedPlacement.slot
           : (siteU >= 1 ? targetSample.slot : tx.sourceSlot),
       });
-      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId), liveReduced, now);
+      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId), liveReduced, now, progress);
       transitionRef.current = {
         paletteOwnershipMode: tx.paletteOwnershipMode,
         continuityEnabled: continuityLiftRef.current ? tx.continuityEnabled : 0,
@@ -988,6 +988,13 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       onMagneticBegin: () => startClock(),
     });
     const detach = controller.attach(window);
+    const onPs05Wheel = (event: WheelEvent) => {
+      if (!ps05Ref.current || event.defaultPrevented || !event.deltaY) return;
+      if (event.target instanceof Element && event.target.closest('textarea, dialog, [role="dialog"]')) return;
+      ps05MotionRef.current.beginWheel(controller.getProgress(), event.deltaY, compositionRef.current, reducedRef.current, performance.now(), controller.layout());
+      startClock();
+    };
+    window.addEventListener("wheel", onPs05Wheel, { passive: true, capture: true });
     const onScrollEnd = () => settleRef.current.noteHint("scrollend");
     const onSnapChanging = (event: Event) => {
       const snap = (event as Event & { snapTargetElement?: Element }).snapTargetElement;
@@ -1055,6 +1062,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       window.removeEventListener("scrollsnapchanging", onSnapChanging);
       window.removeEventListener("scrollsnapchange", onSnapChange);
       window.removeEventListener("resize", onResizeLayout);
+      window.removeEventListener("wheel", onPs05Wheel, true);
       cancelAnimationFrame(clock.frame);
       clock.running = false;
       unsub();

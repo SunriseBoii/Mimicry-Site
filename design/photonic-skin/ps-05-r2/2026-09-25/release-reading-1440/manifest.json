@@ -1,0 +1,66 @@
+{
+  "phase": "release-reading-1440",
+  "build": "LQeb1ZI-FWmld4susWXh1",
+  "commit": "d0bd0a75a50f38a9679283ca759e0cce4e0b335f",
+  "dirty": " M app/_ps05/layout.ts\n M app/_ps05/motion.ts\n M app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx\n?? design/photonic-skin/ps-05-r2/\n?? scripts/ps05-r2-capture.mjs\n?? scripts/ps05-r2-qa.mjs\n?? tests/ps05-r2.test.ts\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3001/",
+  "cases": [
+    {
+      "from": "04",
+      "to": "05.1",
+      "capturedAt": "2026-09-25T10:14:48.774Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1440,
+        900
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 5
+        },
+        {
+          "file": "01.png",
+          "ms": 160
+        },
+        {
+          "file": "02.png",
+          "ms": 300
+        },
+        {
+          "file": "03.png",
+          "ms": 443
+        },
+        {
+          "file": "04.png",
+          "ms": 578
+        },
+        {
+          "file": "05.png",
+          "ms": 729
+        },
+        {
+          "file": "06.png",
+          "ms": 870
+        },
+        {
+          "file": "07.png",
+          "ms": 1023
+        },
+        {
+          "file": "08.png",
+          "ms": 1184
+        }
+      ],
+      "layout": "true",
+      "end": {
+        "active": "05.1",
+        "scrollY": 4619
+      }
+    }
+  ],
+  "errors": []
+}

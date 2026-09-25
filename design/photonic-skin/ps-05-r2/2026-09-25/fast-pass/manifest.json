@@ -1,0 +1,41 @@
+{
+  "phase": "fast-pass",
+  "build": "z1EmjlT02JV0XuPE4ZPy8",
+  "commit": "d0bd0a75a50f38a9679283ca759e0cce4e0b335f",
+  "dirty": " M app/_ps05/motion.ts\n M app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx\n?? design/photonic-skin/ps-05-r2/\n?? scripts/ps05-r2-capture.mjs\n?? tests/ps05-r2.test.ts\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3001/",
+  "cases": [
+    {
+      "from": "04",
+      "to": "05.1",
+      "input": "mouse.wheel one strong step",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 4
+        },
+        {
+          "file": "01.png",
+          "ms": 211
+        },
+        {
+          "file": "02.png",
+          "ms": 352
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.1",
+        "scrollY": 3776
+      }
+    }
+  ],
+  "errors": []
+}
