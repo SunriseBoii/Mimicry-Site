@@ -1,0 +1,32 @@
+PASS matrix-1840
+PASS matrix-1440
+PASS responsive-1280
+PASS responsive-390
+PASS responsive-360
+PASS responsive-320
+FAIL responsive-844 locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Тёмная тема', exact: true })
+    - locator resolved to <button type="button" aria-label="Тёмная тема">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - element is outside of the viewport
+     - retrying click action
+       - waiting 500ms
+
+PASS interactions
+PASS accessibility
+PASS system-reduced
+PASS failed-3d
+182 checks/captures, 1 errors

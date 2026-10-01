@@ -1,0 +1,254 @@
+
+> mimicry-website@0.1.0 lint
+> eslint .
+
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx
+  31:22   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:31:22
+  29 |  const d=useDisclosure();
+  30 |  const go=(id:ScreenNodeId)=>{d.close();navigate(id)};
+> 31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+     |                      ^^^^^^ Cannot access ref value during render
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+  33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react-hooks/refs
+  31:62   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:31:62
+  29 |  const d=useDisclosure();
+  30 |  const go=(id:ScreenNodeId)=>{d.close();navigate(id)};
+> 31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+     |                                                              ^^^^^^ Cannot access ref value during render
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+  33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/refs
+  31:94   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:31:94
+  29 |  const d=useDisclosure();
+  30 |  const go=(id:ScreenNodeId)=>{d.close();navigate(id)};
+> 31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+     |                                                                                              ^^^^^^^^ Cannot access ref value during render
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+  33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/refs
+  33:16   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:33:16
+  31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+> 33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                ^^^^^^^^^ Cannot access ref value during render
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/refs
+  33:81   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:33:81
+  31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+> 33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                 ^^^^^^ Cannot access ref value during render
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/refs
+  33:123  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:33:123
+  31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+> 33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                                                           ^^^^^^^^ Cannot access ref value during render
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/refs
+  33:134  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:33:134
+  31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+> 33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                                                                      ^^^^^^ Cannot access ref value during render
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/refs
+  33:189  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:33:189
+  31 |  return <header ref={d.root} className={s.header} data-open={d.open} data-qa="m4-header" {...d.events}>
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+> 33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                                                                                                                             ^^^^^^ Cannot access ref value during render
+  34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/refs
+  34:49   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:34:49
+  32 |   <a href="#screen-01" className={s.wordmark} onClick={e=>{e.preventDefault();go('01')}}>mimicry<span>group</span><i aria-hidden="true"/></a>
+  33 |   <button ref={d.trigger} type="button" className={s.menuToggle} aria-expanded={d.open} aria-controls="ps05-nav" onClick={d.toggle}>{d.open?'Закрыть меню':'Меню'}<span aria-hidden="true">{d.open?'−':'+'}</span></button>
+> 34 |   <nav id="ps05-nav" className={s.nav} hidden={!d.open} aria-label="Разделы сайта">
+     |                                                 ^^^^^^ Cannot access ref value during render
+  35 |    <div className={s.navLinks}>{HEADER_LINKS.map((item,index)=><a key={item.group} href={`#screen-${item.target}`} aria-current={SCREEN_NODE_BY_ID[active].headerGroup===item.group?'page':undefined} onClick={e=>{e.preventDefault();go(item.target)}}><span className={s.meta}>0{index+1}</span>{item.label}<span aria-hidden="true">↗</span></a>)}</div>
+  36 |    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>
+  37 |   </nav>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/refs
+  45:19   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:45:19
+  43 |  const d=useDisclosure();
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+> 45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+     |                   ^^^^^^ Cannot access ref value during render
+  46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/refs
+  45:58   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:45:58
+  43 |  const d=useDisclosure();
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+> 45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+     |                                                          ^^^^^^ Cannot access ref value during render
+  46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/refs
+  45:148  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:45:148
+  43 |  const d=useDisclosure();
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+> 45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+     |                                                                                                                                                    ^^^^^^^^ Cannot access ref value during render
+  46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/refs
+  46:30   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:46:30
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+  45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+> 46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                              ^^^^^^^^^ Cannot access ref value during render
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+  49 |    <svg viewBox="0:0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/refs
+  46:82   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:46:82
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+  45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+> 46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                  ^^^^^^ Cannot access ref value during render
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+  49 |    <svg viewBox="0:0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/refs
+  46:125  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:46:125
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+  45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+> 46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                                                             ^^^^^^^^ Cannot access ref value during render
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+  49 |    <svg viewBox="0:0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/refs
+  46:251  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:46:251
+  44 |  const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+  45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+> 46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+     |                                                                                                                                                                                                                                                           ^^^^^^ Cannot access ref value during render
+  47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+  49 |    <svg viewBox="0:0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-hooks/refs
+  47:57   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\_ps05\Navigation.tsx:47:57
+  45 |  return <nav ref={d.root} className={s.graph} data-open={d.open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...d.events}>
+  46 |   <button type="button" ref={d.trigger} className={s.graphToggle} aria-expanded={d.open} aria-controls="route-map" onClick={d.toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{d.open?'−':'+'}</span></button>
+> 47 |   <div id="route-map" className={s.graphPanel} hidden={!d.open}>
+     |                                                         ^^^^^^ Cannot access ref value during render
+  48 |    <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+  49 |    <svg viewBox="0:0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>
+  50 |    <div className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={node.competenceId?{'--accent':`var(--competence-${node.competenceId})`} as CSSProperties:undefined} onClick={()=>{d.close();navigate(node.id)}}><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}{!unlocked&&<small>{node.id==='03.2'?'Выберите задачу':'Подтвердите состав'}</small>}</span><span aria-hidden="true">{active===node.id?'●':unlocked?'↗':'⌁'}</span></button>})}</div>  react-hooks/refs
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m5\event-sandbox\EventSandboxLab.tsx
+  146:15  warning  'setHud' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  151:10  warning  'error' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  159:10  warning  'txUi' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m5\video-sandbox\VideoSandboxLab.tsx
+  156:15  warning  'setHud' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  161:10  warning  'error' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  169:10  warning  'txUi' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m4-r6-r1\scripts\isolation-r6-r1.mjs
+  32:11  warning  'inventory' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-2-r2\scripts\process-capture.mjs
+  8:7  warning  'AR2' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-2\scripts\capture-m5-2.mjs
+  1:10  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-4\scripts\capture-m5-4-continue.mjs
+  1:50  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-4\scripts\write-static-reports.mjs
+  15:3  warning  'UNAFFECTED_NODE_IDS' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-5\scripts\capture-m5-5.mjs
+  15:7   warning  'REVIEW' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  80:10  warning  'overlap' is defined but never used          @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-6\scripts\capture-m5-6.mjs
+   28:7  warning  'NODES' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  526:9  warning  'plateau' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m6-2-r2\scripts\capture-m6-2-r2.mjs
+  54:10  warning  'handleName' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 33 problems (17 errors, 16 warnings)
+
+npm notice
+npm notice New major version of npm available! 11.13.0 -> 12.1.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+npm notice To update run: npm install -g npm@12.1.0
+npm notice

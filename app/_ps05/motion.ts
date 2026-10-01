@@ -80,6 +80,9 @@ export class Ps05Motion {
     this.overlay.className=root.className;
     this.overlay.dataset.theme=root.dataset.theme;
     this.overlay.dataset.reading=root.dataset.reading;
+    // The exchange layer is outside the React root. Carry D1's inline tokens
+    // across that boundary so outgoing text keeps the exact current theme.
+    for(const name of root.style) if(name.startsWith('--')) this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
     this.overlay.appendChild(exit);
    }
   }else{const rect=exit.getBoundingClientRect();exit.style.left=`${rect.left}px`;exit.style.top=`${rect.top}px`;exit.style.transform='none';}
@@ -105,6 +108,13 @@ export class Ps05Motion {
  }
  update(target:CompositionViewport,reduced:boolean,now:number,progress?:ScrollProgress){
   const u=this.placement.progress(now),direct=this.direct,reading=isReadingFlow();
+  if(this.overlay){
+   const root=document.querySelector<HTMLElement>('[data-ps05]');
+   if(root&&root.dataset.theme!==this.overlay.dataset.theme){
+    this.overlay.dataset.theme=root.dataset.theme;
+    for(const name of root.style)if(name.startsWith('--'))this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
+   }
+  }
   for(const copy of this.copies){
    const section=copy.closest<HTMLElement>('[data-node]');if(!section)continue;
    const rect=section.getBoundingClientRect();

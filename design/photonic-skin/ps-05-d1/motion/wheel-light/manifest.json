@@ -1,0 +1,255 @@
+{
+  "phase": "wheel-light",
+  "build": "CaWCTazYYT1DiyK8rVmK7",
+  "commit": "f8b0a396e66364f235a006fd34e8f7a0540afd9a",
+  "dirty": " M app/_photonic-skin/ProductionPhotonicSiteClient.tsx\n M app/_ps05/Experience.tsx\n M app/_ps05/layout.ts\n M app/_ps05/motion.ts\n M app/_ps05/ps05.module.css\n M app/visual-lab/photonic-skin-ps04-m3/material-foundation.ts\n M app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx\n M app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx\n?? app/_ps05/Navigation.tsx\n?? app/_ps05/design-tokens.ts\n?? design/photonic-skin/ps-05-d1/\n?? docs/PS-05-D1-REPORT.md\n?? scripts/ps05-d1-baseline.mjs\n?? scripts/ps05-d1-evidence.mjs\n?? scripts/ps05-d1-motion.mjs\n?? scripts/ps05-d1-qa.mjs\n?? scripts/ps05-d1-supplement.mjs\n?? scripts/ps05-d1-visual.mjs\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3003/",
+  "cases": [
+    {
+      "from": "04",
+      "to": "05.1",
+      "capturedAt": "2026-09-25T12:34:36.659Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 145
+        },
+        {
+          "file": "02.png",
+          "ms": 290
+        },
+        {
+          "file": "03.png",
+          "ms": 445
+        },
+        {
+          "file": "04.png",
+          "ms": 573
+        },
+        {
+          "file": "05.png",
+          "ms": 694
+        },
+        {
+          "file": "06.png",
+          "ms": 807
+        },
+        {
+          "file": "07.png",
+          "ms": 929
+        },
+        {
+          "file": "08.png",
+          "ms": 1076
+        },
+        {
+          "file": "09.png",
+          "ms": 1212
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.1",
+        "scrollY": 3776
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 0,
+        "incomingInsideZero": 17,
+        "intermediateOpacity": 15
+      }
+    },
+    {
+      "from": "05.1",
+      "to": "04",
+      "capturedAt": "2026-09-25T12:34:45.602Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 149
+        },
+        {
+          "file": "02.png",
+          "ms": 282
+        },
+        {
+          "file": "03.png",
+          "ms": 428
+        },
+        {
+          "file": "04.png",
+          "ms": 563
+        },
+        {
+          "file": "05.png",
+          "ms": 702
+        },
+        {
+          "file": "06.png",
+          "ms": 865
+        },
+        {
+          "file": "07.png",
+          "ms": 1007
+        },
+        {
+          "file": "08.png",
+          "ms": 1139
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "04",
+        "scrollY": 2832
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 0,
+        "incomingInsideZero": 16,
+        "intermediateOpacity": 14
+      }
+    },
+    {
+      "from": "05.7",
+      "to": "06.1",
+      "capturedAt": "2026-09-25T12:34:49.132Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 3
+        },
+        {
+          "file": "01.png",
+          "ms": 128
+        },
+        {
+          "file": "02.png",
+          "ms": 245
+        },
+        {
+          "file": "03.png",
+          "ms": 366
+        },
+        {
+          "file": "04.png",
+          "ms": 488
+        },
+        {
+          "file": "05.png",
+          "ms": 628
+        },
+        {
+          "file": "06.png",
+          "ms": 761
+        },
+        {
+          "file": "07.png",
+          "ms": 943
+        },
+        {
+          "file": "08.png",
+          "ms": 1084
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "06.1",
+        "scrollY": 10384
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 0,
+        "incomingInsideZero": 16,
+        "intermediateOpacity": 14
+      }
+    },
+    {
+      "from": "06.1",
+      "to": "05.7",
+      "capturedAt": "2026-09-25T12:34:52.961Z",
+      "input": "mouse.wheel eight small steps",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 6
+        },
+        {
+          "file": "01.png",
+          "ms": 161
+        },
+        {
+          "file": "02.png",
+          "ms": 319
+        },
+        {
+          "file": "03.png",
+          "ms": 455
+        },
+        {
+          "file": "04.png",
+          "ms": 601
+        },
+        {
+          "file": "05.png",
+          "ms": 747
+        },
+        {
+          "file": "06.png",
+          "ms": 903
+        },
+        {
+          "file": "07.png",
+          "ms": 1044
+        },
+        {
+          "file": "08.png",
+          "ms": 1177
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.7",
+        "scrollY": 9440
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 0,
+        "incomingInsideZero": 15,
+        "intermediateOpacity": 12
+      }
+    }
+  ],
+  "errors": []
+}

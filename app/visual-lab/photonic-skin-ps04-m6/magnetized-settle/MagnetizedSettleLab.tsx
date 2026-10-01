@@ -118,6 +118,7 @@ import { useSystemMotion } from "../../../_ps05/primitives";
 import { isReadingFlow, readingLayout, ps05Composition } from "../../../_ps05/layout";
 import ps05Styles from "../../../_ps05/ps05.module.css";
 import { Ps05Motion } from "../../../_ps05/motion";
+import { THEMES, themeProperties } from "../../../_ps05/design-tokens";
 
 declare global {
   interface Window {
@@ -250,7 +251,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       videoZoom: RELEASE_FRAMING.videoZoomPercent,
       viewport: "current" as FramingViewportId,
       diagnostic: "final" as FramingDiagnosticId,
-      theme: (typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light") as FramingThemeId,
+      theme: (ps05 && typeof window !== 'undefined' && ['light','dark'].includes(new URLSearchParams(location.search).get('theme') ?? '')
+        ? new URLSearchParams(location.search).get('theme')
+        : typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light") as FramingThemeId,
       mode: "settled" as FramingPlayMode,
       namespace: "candidate" as PromotionNamespaceId,
     }
@@ -352,7 +355,10 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       if (!root) return false;
       const wasReading = root.dataset.reading === 'true';
       const copies = [...root.querySelectorAll<HTMLElement>('[data-ps05-copy]')];
-      const reading = innerWidth <= 1100 || innerHeight < 800 || copies.some(copy => copy.scrollHeight > innerHeight - 170);
+      const reading = innerWidth <= 1100 || innerHeight < 800 || copies.some(copy => {
+        const spacing = getComputedStyle(copy.parentElement!);
+        return copy.scrollHeight > innerHeight - parseFloat(spacing.paddingTop) - parseFloat(spacing.paddingBottom);
+      });
       root.dataset.reading = String(reading);
       return wasReading !== reading;
     };
@@ -1758,8 +1764,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const program = session.getProgram();
   const material = useMemo(() => ({
     ...defaultM2MaterialController(theme, session.palette),
+    editorial: ps05,
     reducedMotion,
-  }), [reducedMotion, session.palette, theme]);
+  }), [ps05, reducedMotion, session.palette, theme]);
   useEffect(() => { if (!loading && stateIndex) startClock(); }, [loading, startClock, stateIndex]);
 
   const snapshot = ui ?? session.snapshot();
@@ -2232,8 +2239,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   }, [aboutZoom, activeNode, actorRequest, bufferHash, contextState, contract, controller, diagnostic, diagnostics, dispatchProjectBuilderAction, environment, flow, hoverPreview, identity, loading, loadStatus, manifest, merchZoom, mode, namespace, navigate, playMode, production, reducedMotion, requestActor, runtimeMeta.runId, runtimeMeta.label, screen, session, sessionId, startClock, stats, target, theme, videoZoom, viewportId, stage, magnetismProfileId]);
 
   const sceneReady = Boolean(source && target && program && manifest);
-  const paper = stage === "final-r2" && theme === "light" ? "#F2F2F0" : MATERIAL_THEME_PRESETS[theme].background;
-  const sceneBackground = stage === "final-r2" && theme === "light"
+  const paper = ps05 ? THEMES[theme].paper : stage === "final-r2" && theme === "light" ? "#F2F2F0" : MATERIAL_THEME_PRESETS[theme].background;
+  const sceneBackground = !ps05 && stage === "final-r2" && theme === "light"
     ? "radial-gradient(ellipse at 73% 48%, #F6F6F4 0%, #F2F2F0 65%)" : paper;
   const applySandbox = useCallback((patch: {
     screen?: FramingScreenQuery;
@@ -2355,6 +2362,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       data-screen={screen}
       data-error={error ?? ""}
       style={{
+        ...(ps05 ? themeProperties(theme) : {}),
         background: actorMask ? "#140028" : sceneBackground,
         colorScheme: theme,
         ...(frame ? { ["--frame-w" as string]: `${frame.width}px`, ["--frame-h" as string]: `${frame.height}px` } : {}),

@@ -9,6 +9,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import { EDITORIAL_MATERIAL } from '../../_ps05/design-tokens';
 import { createR2ScaleGeometry } from "../photonic-skin-ps04-m6/final-r2/scale-geometry";
 import { contactStateTexture, createContactGeometry } from "../../_photonic-skin/contact-rendering";
 import { masterPaletteWeight } from "../../_photonic-skin/contact-surface";
@@ -775,6 +776,7 @@ flat in float vPaletteOwnership;
 flat in float vFieldScalar;
 uniform int uDebug;
 uniform float uThemeMix;
+uniform float uEditorial;
 uniform vec3 uLightAlbedo;
 uniform vec3 uDarkAlbedo;
 uniform float uLightRoughness;
@@ -934,6 +936,9 @@ void main() {
         ? mix(coolB, coolC, smoothstep(0.333333, 0.666667, coolPhase))
         : mix(coolC, coolA, smoothstep(0.666667, 1.0, coolPhase));
     field.rgb = mix(field.rgb, cool, master);
+    // D1: the neutral MASTER also carries its existing blue/violet pigment.
+    // Semantic masks, palette ownership, band geometry and their clocks stay intact.
+    field.a = mix(field.a, 1.0, master * uEditorial);
     float undertone = mix(
       ${FIELD_PARAMETERS.undertoneStrength.light.toFixed(3)},
       ${FIELD_PARAMETERS.undertoneStrength.dark.toFixed(3)},
@@ -944,7 +949,7 @@ void main() {
       ${FIELD_PARAMETERS.activeStrength.dark.toFixed(3)},
       theme
     ) : 0.0;
-    float layerStrength = saturate((undertone + activeStrength) * field.a);
+    float layerStrength = saturate((mix(undertone, 0.62, uEditorial) + activeStrength) * field.a);
     vec3 lightAccent = field.rgb * mix(0.88, 1.0, uReleaseR2);
     vec3 darkAccent = mix(mix(field.rgb, vec3(0.72), 0.16), field.rgb * 0.9, uRefinedScales);
     baseColor = mix(baseColor, mix(lightAccent, darkAccent, theme), layerStrength);
@@ -1613,8 +1618,8 @@ function M41Content(props: SceneProps) {
     }),
     [initialColorSnapshot],
   );
-  const lightMaterial = props.refinedScales ? REFINED_LIGHT_MATERIAL : props.releaseRevision === "r2" ? R2_LIGHT_MATERIAL : LIGHT_MATERIAL;
-  const darkMaterial = props.refinedScales ? REFINED_DARK_MATERIAL : props.releaseRevision === "r2" ? R2_DARK_MATERIAL : DARK_MATERIAL;
+  const lightMaterial = props.material.editorial ? EDITORIAL_MATERIAL.light : props.refinedScales ? REFINED_LIGHT_MATERIAL : props.releaseRevision === "r2" ? R2_LIGHT_MATERIAL : LIGHT_MATERIAL;
+  const darkMaterial = props.material.editorial ? EDITORIAL_MATERIAL.dark : props.refinedScales ? REFINED_DARK_MATERIAL : props.releaseRevision === "r2" ? R2_DARK_MATERIAL : DARK_MATERIAL;
   const boundPairRef = useRef({ source: props.source, target: props.target, program: props.program });
   const pendingAckRef = useRef<GeometryRenderAck | null>(null);
   const uniformsRef = useRef({
@@ -1680,6 +1685,7 @@ function M41Content(props: SceneProps) {
     uContinuityFloor: { value: CONTINUITY_FLOOR },
     uPaletteOwnershipMode: { value: 0 },
     uThemeMix: { value: props.material.themeMix },
+    uEditorial: { value: props.material.editorial ? 1 : 0 },
     uLightAlbedo: { value: new THREE.Color(lightMaterial.albedo) },
     uDarkAlbedo: { value: new THREE.Color(darkMaterial.albedo) },
     uLightRoughness: { value: lightMaterial.roughness },

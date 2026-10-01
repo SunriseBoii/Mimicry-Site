@@ -12,6 +12,7 @@ export type { MaterialTheme };
 export type FieldDiagnostic = "material" | "coordinate" | "coverage" | "semantic";
 
 export interface M2MaterialControllerState {
+  editorial?: boolean;
   theme: MaterialTheme;
   themeMix: number;
   stableVariation: boolean;

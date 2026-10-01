@@ -1,0 +1,396 @@
+{
+  "base": "http://127.0.0.1:3002",
+  "checks": [
+    {
+      "name": "selection-4",
+      "node": "03.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-01",
+      "node": "01",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-02",
+      "node": "02",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-03.1",
+      "node": "03.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-03.2",
+      "node": "03.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-03.3",
+      "node": "03.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-04",
+      "node": "04",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.1",
+      "node": "05.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.2",
+      "node": "05.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.3",
+      "node": "05.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.4",
+      "node": "05.4",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.5",
+      "node": "05.5",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.6",
+      "node": "05.6",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-05.7",
+      "node": "05.7",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-06.1",
+      "node": "06.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-06.2",
+      "node": "06.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-06.3",
+      "node": "06.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-07",
+      "node": "07",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "light-08",
+      "node": "08",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "dark-01",
+      "node": "01",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-02",
+      "node": "02",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-03.1",
+      "node": "03.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-03.2",
+      "node": "03.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-03.3",
+      "node": "03.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-04",
+      "node": "04",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.1",
+      "node": "05.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.2",
+      "node": "05.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.3",
+      "node": "05.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.4",
+      "node": "05.4",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.5",
+      "node": "05.5",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.6",
+      "node": "05.6",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-05.7",
+      "node": "05.7",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-06.1",
+      "node": "06.1",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-06.2",
+      "node": "06.2",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-06.3",
+      "node": "06.3",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-07",
+      "node": "07",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "dark-08",
+      "node": "08",
+      "reading": "true",
+      "width": 1840,
+      "height": 944,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(13, 13, 15)"
+    },
+    {
+      "name": "mobile-01",
+      "node": "01",
+      "reading": "true",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "mobile-03.1",
+      "node": "03.1",
+      "reading": "true",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "canvas": 1,
+      "bg": "rgb(255, 255, 255)"
+    }
+  ],
+  "errors": []
+}

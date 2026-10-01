@@ -1,0 +1,48 @@
+{
+  "material": [
+    {
+      "phase": "before",
+      "path": "design/photonic-skin/ps-05-d1/before/light-01.png",
+      "region": "Interior circular mask of the observed Hero sphere; no background pixels",
+      "pixels": 70679,
+      "neutralBrightFraction": 0.10955163485618076,
+      "chromaticFraction": 0.10769818475077463
+    },
+    {
+      "phase": "after",
+      "path": "design/photonic-skin/ps-05-d1/final/1840-light-01.png",
+      "region": "Interior circular mask of the observed Hero sphere; no background pixels",
+      "pixels": 101763,
+      "neutralBrightFraction": 0,
+      "chromaticFraction": 1
+    }
+  ],
+  "presets": {
+    "light": {
+      "albedo": "#5363AB",
+      "roughness": 0.38,
+      "metalness": 0.26,
+      "specular": 0.48,
+      "clearcoat": 0.13,
+      "clearcoatRoughness": 0.34,
+      "ambientStrength": 0.24,
+      "keyStrength": 1.5,
+      "fillStrength": 0.48,
+      "rimStrength": 0.045,
+      "exposure": 1.02
+    },
+    "dark": {
+      "albedo": "#283C80",
+      "roughness": 0.36,
+      "metalness": 0.4,
+      "specular": 0.5,
+      "clearcoat": 0.12,
+      "clearcoatRoughness": 0.34,
+      "ambientStrength": 0.28,
+      "keyStrength": 2.1,
+      "fillStrength": 0.62,
+      "rimStrength": 0.06,
+      "exposure": 1.08
+    }
+  }
+}

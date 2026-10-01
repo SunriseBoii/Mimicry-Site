@@ -1,0 +1,219 @@
+{
+  "phase": "graph-light",
+  "build": "CaWCTazYYT1DiyK8rVmK7",
+  "commit": "f8b0a396e66364f235a006fd34e8f7a0540afd9a",
+  "dirty": " M app/_photonic-skin/ProductionPhotonicSiteClient.tsx\n M app/_ps05/Experience.tsx\n M app/_ps05/layout.ts\n M app/_ps05/motion.ts\n M app/_ps05/ps05.module.css\n M app/visual-lab/photonic-skin-ps04-m3/material-foundation.ts\n M app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx\n M app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx\n?? app/_ps05/Navigation.tsx\n?? app/_ps05/design-tokens.ts\n?? design/photonic-skin/ps-05-d1/\n?? docs/PS-05-D1-REPORT.md\n?? scripts/ps05-d1-baseline.mjs\n?? scripts/ps05-d1-evidence.mjs\n?? scripts/ps05-d1-motion.mjs\n?? scripts/ps05-d1-qa.mjs\n?? scripts/ps05-d1-supplement.mjs\n?? scripts/ps05-d1-visual.mjs\n",
+  "browser": "153.0.4234.48",
+  "url": "http://127.0.0.1:3003/",
+  "cases": [
+    {
+      "from": "04",
+      "to": "05.1",
+      "capturedAt": "2026-09-25T12:35:15.788Z",
+      "input": "graph",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 4
+        },
+        {
+          "file": "01.png",
+          "ms": 163
+        },
+        {
+          "file": "02.png",
+          "ms": 297
+        },
+        {
+          "file": "03.png",
+          "ms": 472
+        },
+        {
+          "file": "04.png",
+          "ms": 601
+        },
+        {
+          "file": "05.png",
+          "ms": 723
+        },
+        {
+          "file": "06.png",
+          "ms": 866
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.1",
+        "scrollY": 3778
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 11,
+        "incomingInsideZero": 21,
+        "intermediateOpacity": 11
+      }
+    },
+    {
+      "from": "05.1",
+      "to": "04",
+      "capturedAt": "2026-09-25T12:35:23.600Z",
+      "input": "graph",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 5
+        },
+        {
+          "file": "01.png",
+          "ms": 157
+        },
+        {
+          "file": "02.png",
+          "ms": 302
+        },
+        {
+          "file": "03.png",
+          "ms": 477
+        },
+        {
+          "file": "04.png",
+          "ms": 618
+        },
+        {
+          "file": "05.png",
+          "ms": 761
+        },
+        {
+          "file": "06.png",
+          "ms": 906
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "04",
+        "scrollY": 2834
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 11,
+        "incomingInsideZero": 27,
+        "intermediateOpacity": 11
+      }
+    },
+    {
+      "from": "05.7",
+      "to": "06.1",
+      "capturedAt": "2026-09-25T12:35:26.726Z",
+      "input": "graph",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 2
+        },
+        {
+          "file": "01.png",
+          "ms": 117
+        },
+        {
+          "file": "02.png",
+          "ms": 229
+        },
+        {
+          "file": "03.png",
+          "ms": 376
+        },
+        {
+          "file": "04.png",
+          "ms": 493
+        },
+        {
+          "file": "05.png",
+          "ms": 621
+        },
+        {
+          "file": "06.png",
+          "ms": 774
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "06.1",
+        "scrollY": 10386
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 11,
+        "incomingInsideZero": 20,
+        "intermediateOpacity": 10
+      }
+    },
+    {
+      "from": "06.1",
+      "to": "05.7",
+      "capturedAt": "2026-09-25T12:35:29.718Z",
+      "input": "graph",
+      "viewport": [
+        1840,
+        944
+      ],
+      "theme": "light",
+      "motion": "normal",
+      "frames": [
+        {
+          "file": "00.png",
+          "ms": 5
+        },
+        {
+          "file": "01.png",
+          "ms": 115
+        },
+        {
+          "file": "02.png",
+          "ms": 251
+        },
+        {
+          "file": "03.png",
+          "ms": 386
+        },
+        {
+          "file": "04.png",
+          "ms": 578
+        },
+        {
+          "file": "05.png",
+          "ms": 729
+        },
+        {
+          "file": "06.png",
+          "ms": 853
+        }
+      ],
+      "layout": "false",
+      "end": {
+        "active": "05.7",
+        "scrollY": 9442
+      },
+      "copyExchange": {
+        "outgoingInsideZero": 11,
+        "incomingInsideZero": 23,
+        "intermediateOpacity": 10
+      }
+    }
+  ],
+  "errors": []
+}

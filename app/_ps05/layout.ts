@@ -34,5 +34,5 @@ export function ps05Composition(original:CompositionViewport,node:ScreenNodeId):
  // Map the established left/right presentation continuously into the reserved outer columns.
  const ratio=Math.max(0,Math.min(1,(original.cssCenterX/width-.245)/(.76-.245)));
  const x=width*(.21+ratio*.60);
- return viewportFromCenter({width,height,dpr:original.rendererDpr,centerX:x,centerY:original.cssCenterY,size:original.cssSize*.78,visible:original.visible,identity:false,siteFitScale:original.siteFitScale,visualZoomMultiplier:original.visualZoomMultiplier,slot:original.slot});
+ return viewportFromCenter({width,height,dpr:original.rendererDpr,centerX:x,centerY:original.cssCenterY,size:original.cssSize*.94,visible:original.visible,identity:false,siteFitScale:original.siteFitScale,visualZoomMultiplier:original.visualZoomMultiplier,slot:original.slot});
 }
