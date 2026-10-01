@@ -1,0 +1,798 @@
+diff --git a/app/_ps05/Experience.tsx b/app/_ps05/Experience.tsx
+index e50091a..b9523c9 100644
+--- a/app/_ps05/Experience.tsx
++++ b/app/_ps05/Experience.tsx
+@@ -23,7 +23,7 @@ function Screen({id,children,title,kicker,panel=false,hero=false}: {id:ScreenNod
+  const place=SCREEN_NODE_BY_ID[id].actorPlacement;
+  return <section id={`screen-${id}`} data-node={id} data-place={place} style={SCREEN_NODE_BY_ID[id].competenceId?{'--accent':CAPABILITIES[SCREEN_NODE_BY_ID[id].competenceId!].color} as CSSProperties:undefined} className={`${panel?old.panel:old.screen} ${s.screen} ${hero?s.hero:''}`} aria-labelledby={`heading-${id}`}>
+   <div className={`${old.copy} ${s.copy}`} data-place={place} data-ps05-copy>
+-   <div className={s.intro}><p className={s.eyebrow}>{kicker}</p>{hero?<h1 id={`heading-${id}`} tabIndex={-1}>{title}</h1>:<h2 id={`heading-${id}`} tabIndex={-1}>{title}</h2>}</div>{children}
++   <div className={s.intro}><p className={s.eyebrow}>{kicker}</p>{hero?<h1 data-color-flow id={`heading-${id}`} tabIndex={-1}>{title}</h1>:<h2 data-color-flow id={`heading-${id}`} tabIndex={-1}>{title}</h2>}</div>{children}
+   </div>{place!=='none'&&<div className={s.actorSlot} data-actor-slot aria-hidden="true"/>}
+  </section>;
+ }
+@@ -32,7 +32,7 @@ function Chapter({id,count,children}:{id:'03'|'05'|'06';count:number;children:Re
+ }
+ function Primary({children,onClick,disabled=false,qa}:{children:ReactNode;onClick:()=>void;disabled?:boolean;qa?:string}){return <button type="button" className={s.primary} onClick={onClick} disabled={disabled} data-qa={qa}>{children}<span aria-hidden="true">↗</span></button>}
+ function CapabilityNav({current,navigate}:{current:CompetenceId;navigate:Props['navigate']}){return <nav className={s.capabilityNav} aria-label="Выбрать компетенцию">{competenceOrder.map(id=><a key={id} href={`#screen-${capabilityNode(id)}`} aria-current={id===current?'page':undefined} onClick={e=>{e.preventDefault();navigate(capabilityNode(id))}}>{CAPABILITIES[id].name}</a>)}</nav>}
+-function Summary({task,ids,remove}:{task:BuilderTaskId|null;ids:readonly CompetenceId[];remove?:(id:CompetenceId)=>void}){return <aside className={s.summary} aria-label="Сводка выбора"><div><span className={s.meta}>Задача</span><strong>{task?TASKS[task].title:'Выберите задачу'}</strong></div><div><span className={s.meta}>Компетенции · <span aria-live="polite">{ids.length}</span></span><div className={s.tags}>{orderedCapabilities(ids).map(id=>remove?<button key={id} type="button" onClick={()=>remove(id)} aria-label={`Убрать ${CAPABILITIES[id].name}`}>{CAPABILITIES[id].name}<span aria-hidden="true">×</span></button>:<span key={id}>{CAPABILITIES[id].name}</span>)}</div></div></aside>}
++function Summary({task,ids,remove}:{task:BuilderTaskId|null;ids:readonly CompetenceId[];remove?:(id:CompetenceId)=>void}){return <aside className={s.summary} aria-label="Сводка выбора"><div><span className={s.meta}>Задача</span><strong>{task?TASKS[task].title:'Выберите задачу'}</strong></div><div><span className={s.meta}>Компетенции · <span aria-live="polite">{ids.length}</span></span><div className={s.tags}>{orderedCapabilities(ids).map(id=>remove?<button key={id} type="button" onClick={()=>remove(id)} aria-label={`Убрать ${CAPABILITIES[id].name}`}>{CAPABILITIES[id].name}<span aria-hidden="true">×</span></button>:<span key={id} style={{color:CAPABILITIES[id].color}}>{CAPABILITIES[id].name}</span>)}</div></div></aside>}
+ function WorkOptions({ids,standalone=false}:{ids:readonly CompetenceId[];standalone?:boolean}){
+  const [expanded,setExpanded]=useState<CompetenceId|null>(standalone?ids[0]:null);const selected=orderedCapabilities(ids);const current=expanded&&selected.includes(expanded)?expanded:null;
+  return <section className={s.workOptions} data-standalone={standalone} aria-label="Что можем сделать"><h3>Что можем сделать</h3><p className={s.meta}>Примеры возможных работ. Конкретный состав определим по задаче.</p>
+@@ -81,21 +81,21 @@ export function Experience(props:Props){
+   <Header active={active} navigate={go} theme={theme} onTheme={onTheme} reduced={reduced} manualReduced={manualReduced} onMotion={onMotion}/>
+   <RouteGraph active={active} unlock={flow.unlock} navigate={go}/>
+   <div id="m4-main" className={`${old.route} ${s.route}`} tabIndex={-1}>
+-   <Screen id="01" title="Помогаем компаниям говорить с людьми" kicker="Mimicry group / корпоративные коммуникации" hero><p className={s.lead}>Собираем спецпроекты от смысла до запуска. Соединяем нужные компетенции вокруг вашей задачи.</p><div className={s.entries}><button type="button" onClick={()=>go('03.1')}><span className={s.entryTitle}>Собрать проект<span aria-hidden="true">↗</span></span><span>Начнём с задачи и соберём нужные компетенции</span></button><button type="button" onClick={()=>go('05.1')}><span className={s.entryTitle}>Подключить компетенцию<span aria-hidden="true">↗</span></span><span>Усилим ваш проект конкретной экспертизой</span></button></div><p className={s.heroFoot}>Смысл <span>→</span> участие <span>→</span> запуск</p></Screen>
+-   <Screen id="02" title="Одна задача. Нужные люди. Общий результат." kicker="О нас / как мы работаем"><p className={s.lead}>Проект начинается с того, что людям важно понять, почувствовать или сделать. Под эту цель соединяем содержание, форму и опыт.</p><ol className={s.process}>{[['Понимаем задачу','Разбираемся в контексте, аудитории и ожидаемом действии.'],['Собираем команду','Соединяем дисциплины, необходимые конкретному проекту.'],['Доводим до запуска','Удерживаем общую идею в деталях и координируем работу.']].map(([title,text],i)=><li key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol><Primary onClick={()=>go('03.1')}>Начать с вашей задачи</Primary></Screen>
++   <Screen id="01" title="Помогаем компаниям говорить с людьми" kicker="Mimicry group / корпоративные коммуникации" hero><p data-color-flow className={s.lead}>Собираем спецпроекты от смысла до запуска. Соединяем нужные компетенции вокруг вашей задачи.</p><div className={s.entries}><button type="button" onClick={()=>go('03.1')}><span className={s.entryTitle}>Собрать проект<span aria-hidden="true">↗</span></span><span>Начнём с задачи и соберём нужные компетенции</span></button><button type="button" onClick={()=>go('05.1')}><span className={s.entryTitle}>Подключить компетенцию<span aria-hidden="true">↗</span></span><span>Усилим ваш проект конкретной экспертизой</span></button></div><p className={s.heroFoot}>Смысл <span>→</span> участие <span>→</span> запуск</p></Screen>
++   <Screen id="02" title="Одна задача. Нужные люди. Общий результат." kicker="О нас / как мы работаем"><p data-color-flow className={s.lead}>Проект начинается с того, что людям важно понять, почувствовать или сделать. Под эту цель соединяем содержание, форму и опыт.</p><ol className={s.process}>{[['Понимаем задачу','Разбираемся в контексте, аудитории и ожидаемом действии.'],['Собираем команду','Соединяем дисциплины, необходимые конкретному проекту.'],['Доводим до запуска','Удерживаем общую идею в деталях и координируем работу.']].map(([title,text],i)=><li key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol><Primary onClick={()=>go('03.1')}>Начать с вашей задачи</Primary></Screen>
+    <Chapter id="03" count={1+Number(flow.unlock.competencies)+Number(flow.unlock.brief)}>
+-    <Screen id="03.1" panel title="Что вы хотите изменить?" kicker="Собрать проект / шаг 1 из 3"><p className={s.lead}>Выберите ситуацию, с которой начнём разговор.</p><fieldset className={s.taskGrid}><legend className={s.srOnly}>Задача проекта</legend>{(Object.keys(TASKS) as BuilderTaskId[]).map(id=><label key={id} className={s.choice} data-selected={flow.draft.taskId===id}><input type="radio" name="project-task" checked={flow.draft.taskId===id} data-qa={`task-${id}`} onChange={()=>dispatch({type:'select-task',taskId:id,source:'user-ui'})}/><span className={s.check} aria-hidden="true">{flow.draft.taskId===id?'●':''}</span><strong>{TASKS[id].title}</strong><span>{TASKS[id].description}</span></label>)}</fieldset>{flow.draft.taskId&&<p className={s.taskExamples}>{TASKS[flow.draft.taskId].examples.join(' · ')}</p>}<div className={s.actionRow}><Primary disabled={!flow.draft.taskId} onClick={()=>go('03.2')}>Выбрать компетенции</Primary></div></Screen>
+-    {flow.unlock.competencies&&<Screen id="03.2" panel title="Из чего соберём проект?" kicker="Собрать проект / шаг 2 из 3"><p className={s.lead}>Можно выбрать несколько компетенций.</p><div className={s.builderComposition}><fieldset className={s.competenceGrid}><legend className={s.srOnly}>Компетенции проекта</legend>{competenceOrder.map(id=><label key={id} className={s.choice} data-selected={flow.draft.competencies.includes(id)} style={{'--accent':CAPABILITIES[id].color} as CSSProperties}><input type="checkbox" checked={flow.draft.competencies.includes(id)} data-qa={`competence-${id}`} onChange={()=>toggle(id)}/><span className={s.check} aria-hidden="true">{flow.draft.competencies.includes(id)?'✓':'+'}</span><strong>{CAPABILITIES[id].name}</strong></label>)}</fieldset><div className={s.builderDetail}><Composition flow={flow}/><WorkOptions ids={flow.draft.competencies}/></div></div><div className={s.actionRow}><Primary qa="confirm-competencies" disabled={!flow.draft.competencies.length} onClick={()=>{dispatch({type:'confirm-competencies',source:'user-ui'});requestAnimationFrame(()=>go('03.3'))}}>Сформировать запрос</Primary><button type="button" className={s.quiet} onClick={()=>go('03.1')}>Изменить задачу</button></div>{!flow.draft.competencies.length&&<p className={s.meta}>Выберите хотя бы одну компетенцию</p>}</Screen>}
+-    {flow.unlock.brief&&<Screen id="03.3" panel title="Ваш запрос" kicker="Собрать проект / шаг 3 из 3"><p className={s.lead}>Основа готова. Добавьте то, что важно именно вам.</p>{flow.briefStale&&<p className={s.notice}>Здесь сохранён ранее подтверждённый состав. Изменения выбора применятся после нового подтверждения.</p>}<BriefEditor flow={flow} setFlow={setFlow}/><Summary task={flow.confirmed?.taskId??null} ids={flow.confirmed?.competencies??[]}/>{flow.pendingBrief&&<div className={s.notice}><p>Состав изменился. Ваш текст сохранён.</p><details><summary>Посмотреть новый вариант</summary><p>{flow.pendingBrief.text}</p></details><div className={s.actionRow}><button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'replace'))}>Обновить по выбору</button><button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'keep'))}>Сохранить мой текст</button></div></div>}{flow.previousBrief&&<button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'undo'))}>Восстановить предыдущий текст</button>}<div className={s.actionRow}><Primary qa="send-brief" disabled={!flow.briefText.trim()||!!flow.pendingBrief} onClick={()=>showInquiry(projectInquiry(flow))}>Перейти к контактам</Primary><button type="button" className={s.quiet} onClick={()=>go('03.2')}>Изменить состав</button><CopyAction text={flow.briefText}/></div></Screen>}
++    <Screen id="03.1" panel title="Что вы хотите изменить?" kicker="Собрать проект / шаг 1 из 3"><p data-color-flow className={s.lead}>Выберите ситуацию, с которой начнём разговор.</p><fieldset className={s.taskGrid}><legend className={s.srOnly}>Задача проекта</legend>{(Object.keys(TASKS) as BuilderTaskId[]).map(id=><label key={id} className={s.choice} data-selected={flow.draft.taskId===id}><input type="radio" name="project-task" checked={flow.draft.taskId===id} data-qa={`task-${id}`} onChange={()=>dispatch({type:'select-task',taskId:id,source:'user-ui'})}/><span className={s.check} aria-hidden="true">{flow.draft.taskId===id?'●':''}</span><strong>{TASKS[id].title}</strong><span>{TASKS[id].description}</span></label>)}</fieldset>{flow.draft.taskId&&<p className={s.taskExamples}>{TASKS[flow.draft.taskId].examples.join(' · ')}</p>}<div className={s.actionRow}><Primary disabled={!flow.draft.taskId} onClick={()=>go('03.2')}>Выбрать компетенции</Primary></div></Screen>
++    {flow.unlock.competencies&&<Screen id="03.2" panel title="Из чего соберём проект?" kicker="Собрать проект / шаг 2 из 3"><p data-color-flow className={s.lead}>Можно выбрать несколько компетенций.</p><div className={s.builderComposition}><fieldset className={s.competenceGrid}><legend className={s.srOnly}>Компетенции проекта</legend>{competenceOrder.map(id=><label key={id} className={s.choice} data-selected={flow.draft.competencies.includes(id)} style={{'--accent':CAPABILITIES[id].color} as CSSProperties}><input type="checkbox" checked={flow.draft.competencies.includes(id)} data-qa={`competence-${id}`} onChange={()=>toggle(id)}/><span className={s.check} aria-hidden="true">{flow.draft.competencies.includes(id)?'✓':'+'}</span><strong>{CAPABILITIES[id].name}</strong></label>)}</fieldset><div className={s.builderDetail}><Composition flow={flow}/><WorkOptions ids={flow.draft.competencies}/></div></div><div className={s.actionRow}><Primary qa="confirm-competencies" disabled={!flow.draft.competencies.length} onClick={()=>{dispatch({type:'confirm-competencies',source:'user-ui'});requestAnimationFrame(()=>go('03.3'))}}>Сформировать запрос</Primary><button type="button" className={s.quiet} onClick={()=>go('03.1')}>Изменить задачу</button></div>{!flow.draft.competencies.length&&<p className={s.meta}>Выберите хотя бы одну компетенцию</p>}</Screen>}
++    {flow.unlock.brief&&<Screen id="03.3" panel title="Ваш запрос" kicker="Собрать проект / шаг 3 из 3"><p data-color-flow className={s.lead}>Основа готова. Добавьте то, что важно именно вам.</p>{flow.briefStale&&<p className={s.notice}>Здесь сохранён ранее подтверждённый состав. Изменения выбора применятся после нового подтверждения.</p>}<BriefEditor flow={flow} setFlow={setFlow}/><Summary task={flow.confirmed?.taskId??null} ids={flow.confirmed?.competencies??[]}/>{flow.pendingBrief&&<div className={s.notice}><p>Состав изменился. Ваш текст сохранён.</p><details><summary>Посмотреть новый вариант</summary><p>{flow.pendingBrief.text}</p></details><div className={s.actionRow}><button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'replace'))}>Обновить по выбору</button><button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'keep'))}>Сохранить мой текст</button></div></div>}{flow.previousBrief&&<button type="button" className={s.quiet} onClick={()=>setFlow(current=>resolveBriefUpdate(current,'undo'))}>Восстановить предыдущий текст</button>}<div className={s.actionRow}><Primary qa="send-brief" disabled={!flow.briefText.trim()||!!flow.pendingBrief} onClick={()=>showInquiry(projectInquiry(flow))}>Перейти к контактам</Primary><button type="button" className={s.quiet} onClick={()=>go('03.2')}>Изменить состав</button><CopyAction text={flow.briefText}/></div></Screen>}
+    </Chapter>
+    <Screen id="04" title="Идеи становятся опытом" kicker="Кейсы / работы в деталях">{cases.length?<>{review&&<div className={s.reviewNote}>Локальное сравнение переходов: <a href="?review=ps05&caseMotion=A#screen-04" aria-current={variant==='A'?'page':undefined}>A · обычное</a> / <a href="?review=ps05&caseMotion=B#screen-04" aria-current={variant==='B'?'page':undefined}>B · раскрытие</a></div>}{cases.map(item=><CaseCard key={item.id} item={item} onOpen={onCaseOpen}/>)}</>:<div className={s.caseEmpty}><p className={s.eyebrow}>От контекста до результата</p><h3>За каждой работой —<br/>своя задача</h3><p>Готовим подробные истории проектов и материалы для публикации.</p><div className={s.emptyRule}/><span>Задача → решение → результат</span></div>}<div className={s.actionRow}><button className={s.quiet} type="button" onClick={()=>go('05.1')}>Посмотреть, что мы можем сделать ↗</button></div></Screen>
+-   <Chapter id="05" count={7}>{competenceOrder.map(id=><Screen key={id} id={capabilityNode(id)} panel title={CAPABILITIES[id].name} kicker={`Компетенции / ${String(competenceOrder.indexOf(id)+1).padStart(2,'0')}`}><p className={s.lead}>{CAPABILITIES[id].result}</p><CapabilityNav current={id} navigate={go}/><WorkOptions ids={[id]} standalone/><div className={s.actionRow}><Primary onClick={()=>{setContext(id);setGeneralText(`Хотим обсудить ${CAPABILITIES[id].phrase}.`);go('07')}}>Обсудить: {CAPABILITIES[id].name}</Primary><CopyAction label="Скопировать ссылку" text={()=>new URL(`/#screen-${capabilityNode(id)}`,location.origin).toString()}/></div></Screen>)}</Chapter>
+-   <Chapter id="06" count={3}>{chapterNodes('06').map(node=><Screen key={node.id} id={node.id} panel title={node.id==='06.1'?'Люди вокруг задачи':node.id==='06.2'?'Сильнее вместе':'Доверие складывается из работы'} kicker={node.title}>{content===REVIEW_CONTENT&&<p className={s.reviewNote}>Локальная проверка наполнения. Все имена и тексты — макеты, не реальные материалы.</p>}<div className={s.studioNav}>{chapterNodes('06').map(item=><a key={item.id} aria-current={active===item.id?'page':undefined} href={`#screen-${item.id}`} onClick={e=>{e.preventDefault();go(item.id)}}>{item.title}</a>)}</div>{node.id==='06.1'?<>{content.team.length?<div className={s.people}>{content.team.map(person=><article key={person.id}>{person.portrait?<SafeMedia media={person.portrait}/>:<div className={s.portraitFallback} aria-hidden="true">{person.name.slice(0,1)}</div>}<h3>{person.name}</h3><p>{person.role}</p><p>{person.contribution}</p></article>)}</div>:<div className={s.emptyContent}><p className={s.lead}>Соединяем содержание, дизайн и производство вокруг общей цели.</p><p>Скоро здесь появятся люди команды и их роли в проектах.</p></div>}</>:<>{(node.id==='06.2'?content.partners:content.clients).length?<div className={s.organizations}>{(node.id==='06.2'?content.partners:content.clients).map(org=><article key={org.id}>{org.logo&&<SafeMedia media={org.logo}/>}<h3>{org.name}</h3><p>{org.context}</p></article>)}</div>:<div className={s.emptyContent}><p className={s.lead}>{node.id==='06.2'?'Подключаем партнёров под специфику проекта.':'Расскажем о сотрудничестве через подтверждённые истории.'}</p><p>{node.id==='06.2'?'Профили партнёров появятся после согласования материалов.':'Названия, логотипы и отзывы добавим после согласования публикации.'}</p></div>}</>}{content.testimonials.filter(x=>x.attributionApproved).map(item=><figure className={s.quote} key={item.id}><blockquote>{item.quote}</blockquote><figcaption>{item.author} · {item.role}, {item.company}</figcaption></figure>)}<Primary onClick={()=>go('03.1')}>Собрать проект с нами</Primary></Screen>)}</Chapter>
+-   <Screen id="07" title="Начнём с разговора" kicker="Контакты / следующий шаг"><p className={s.lead}>Расскажите, что хотите сделать. Вместе определим, какие компетенции нужны.</p>{context&&<p className={s.context}>Обсуждаем: <strong>{CAPABILITIES[context].name}</strong> <button type="button" className={s.quiet} onClick={()=>setContext(null)}>Убрать контекст</button></p>}<label className={s.field}>Несколько слов о задаче<textarea value={generalText} onChange={e=>setGeneralText(e.target.value)} rows={4}/></label><div className={s.actionRow}><Primary disabled={!generalText.trim()} onClick={()=>showInquiry({source:context?'competency':'general',task:null,competencies:context?[context]:[],brief:generalText})}>Оставить контакты</Primary>{siteContent.contact&&<a href={siteContent.contact.href}>{siteContent.contact.label}</a>}</div>{!siteContent.contact&&<p className={s.meta}>Сейчас можно подготовить и скопировать запрос. Канал отправки подключается.</p>}{siteContent.presentation&&<a className={s.quiet} href={siteContent.presentation.href}>{siteContent.presentation.label}</a>}</Screen>
+-   <Screen id="08" title="Соберём что-то значимое." kicker="Mimicry group"><div className={s.footerGrid}><div><p className={s.lead}>От первого вопроса<br/>до работающего проекта.</p><Primary onClick={()=>go('03.1')}>Собрать проект</Primary></div><nav aria-label="Навигация в футере">{HEADER_LINKS.map(item=><a href={`#screen-${item.target}`} key={item.group} onClick={e=>{e.preventDefault();go(item.target)}}>{item.label}</a>)}</nav><nav aria-label="Компетенции в футере">{competenceOrder.map(id=><a key={id} href={`#screen-${capabilityNode(id)}`} onClick={e=>{e.preventDefault();go(capabilityNode(id))}}>{CAPABILITIES[id].name}</a>)}</nav></div><div className={s.footerBottom}><span>© Mimicry group</span>{siteContent.presentation&&<a href={siteContent.presentation.href}>{siteContent.presentation.label}</a>}<a href="#screen-01" onClick={e=>{e.preventDefault();go('01')}}>Наверх ↑</a></div></Screen>
++   <Chapter id="05" count={7}>{competenceOrder.map(id=><Screen key={id} id={capabilityNode(id)} panel title={CAPABILITIES[id].name} kicker={`Компетенции / ${String(competenceOrder.indexOf(id)+1).padStart(2,'0')}`}><p data-color-flow className={s.lead}>{CAPABILITIES[id].result}</p><CapabilityNav current={id} navigate={go}/><WorkOptions ids={[id]} standalone/><div className={s.actionRow}><Primary onClick={()=>{setContext(id);setGeneralText(`Хотим обсудить ${CAPABILITIES[id].phrase}.`);go('07')}}>Обсудить: {CAPABILITIES[id].name}</Primary><CopyAction label="Скопировать ссылку" text={()=>new URL(`/#screen-${capabilityNode(id)}`,location.origin).toString()}/></div></Screen>)}</Chapter>
++   <Chapter id="06" count={3}>{chapterNodes('06').map(node=><Screen key={node.id} id={node.id} panel title={node.id==='06.1'?'Люди вокруг задачи':node.id==='06.2'?'Сильнее вместе':'Доверие складывается из работы'} kicker={node.title}>{content===REVIEW_CONTENT&&<p className={s.reviewNote}>Локальная проверка наполнения. Все имена и тексты — макеты, не реальные материалы.</p>}<div className={s.studioNav}>{chapterNodes('06').map(item=><a key={item.id} aria-current={active===item.id?'page':undefined} href={`#screen-${item.id}`} onClick={e=>{e.preventDefault();go(item.id)}}>{item.title}</a>)}</div>{node.id==='06.1'?<>{content.team.length?<div className={s.people}>{content.team.map(person=><article key={person.id}>{person.portrait?<SafeMedia media={person.portrait}/>:<div className={s.portraitFallback} aria-hidden="true">{person.name.slice(0,1)}</div>}<h3>{person.name}</h3><p>{person.role}</p><p>{person.contribution}</p></article>)}</div>:<div className={s.emptyContent}><p data-color-flow className={s.lead}>Соединяем содержание, дизайн и производство вокруг общей цели.</p><p>Скоро здесь появятся люди команды и их роли в проектах.</p></div>}</>:<>{(node.id==='06.2'?content.partners:content.clients).length?<div className={s.organizations}>{(node.id==='06.2'?content.partners:content.clients).map(org=><article key={org.id}>{org.logo&&<SafeMedia media={org.logo}/>}<h3>{org.name}</h3><p>{org.context}</p></article>)}</div>:<div className={s.emptyContent}><p data-color-flow className={s.lead}>{node.id==='06.2'?'Подключаем партнёров под специфику проекта.':'Расскажем о сотрудничестве через подтверждённые истории.'}</p><p>{node.id==='06.2'?'Профили партнёров появятся после согласования материалов.':'Названия, логотипы и отзывы добавим после согласования публикации.'}</p></div>}</>}{content.testimonials.filter(x=>x.attributionApproved).map(item=><figure className={s.quote} key={item.id}><blockquote>{item.quote}</blockquote><figcaption>{item.author} · {item.role}, {item.company}</figcaption></figure>)}<Primary onClick={()=>go('03.1')}>Собрать проект с нами</Primary></Screen>)}</Chapter>
++   <Screen id="07" title="Начнём с разговора" kicker="Контакты / следующий шаг"><p data-color-flow className={s.lead}>Расскажите, что хотите сделать. Вместе определим, какие компетенции нужны.</p>{context&&<p className={s.context}>Обсуждаем: <strong>{CAPABILITIES[context].name}</strong> <button type="button" className={s.quiet} onClick={()=>setContext(null)}>Убрать контекст</button></p>}<label className={s.field}>Несколько слов о задаче<textarea value={generalText} onChange={e=>setGeneralText(e.target.value)} rows={4}/></label><div className={s.actionRow}><Primary disabled={!generalText.trim()} onClick={()=>showInquiry({source:context?'competency':'general',task:null,competencies:context?[context]:[],brief:generalText})}>Оставить контакты</Primary>{siteContent.contact&&<a href={siteContent.contact.href}>{siteContent.contact.label}</a>}</div>{!siteContent.contact&&<p className={s.meta}>Сейчас можно подготовить и скопировать запрос. Канал отправки подключается.</p>}{siteContent.presentation&&<a className={s.quiet} href={siteContent.presentation.href}>{siteContent.presentation.label}</a>}</Screen>
++   <Screen id="08" title="Соберём что-то значимое." kicker="Mimicry group"><div className={s.footerGrid}><div><p data-color-flow className={s.lead}>От первого вопроса<br/>до работающего проекта.</p><Primary onClick={()=>go('03.1')}>Собрать проект</Primary></div><nav aria-label="Навигация в футере">{HEADER_LINKS.map(item=><a href={`#screen-${item.target}`} key={item.group} onClick={e=>{e.preventDefault();go(item.target)}}>{item.label}</a>)}</nav><nav aria-label="Компетенции в футере">{competenceOrder.map(id=><a key={id} href={`#screen-${capabilityNode(id)}`} onClick={e=>{e.preventDefault();go(capabilityNode(id))}}>{CAPABILITIES[id].name}</a>)}</nav></div><div className={s.footerBottom}><span>© Mimicry group</span>{siteContent.presentation&&<a href={siteContent.presentation.href}>{siteContent.presentation.label}</a>}<a href="#screen-01" onClick={e=>{e.preventDefault();go('01')}}>Наверх ↑</a></div></Screen>
+   </div>
+   {inquiry&&success===null&&<InquiryDialog inquiry={inquiry} contact={flow.contact} onContact={contact=>setFlow(current=>({...current,contact}))} onClose={closeInquiry} onSuccess={test=>{setSuccess(test);if(inquiry.source==='project')setFlow(current=>({...current,overlay:'success',successVisibleUntil:null}))}} transport={transport} available={testMode} testMode={testMode}/>}
+-  {success!==null&&<Modal title={success?'Тестовый запрос принят':'Запрос принят'} onClose={closeInquiry}><p className={s.lead}>{success?'Тестовый транспорт подтвердил получение. Настоящая заявка не отправлялась.':'Спасибо за ваш запрос.'}</p><CopyAction text={inquiry?.brief??''}/><div className={s.actionRow}><Primary onClick={closeInquiry}>Вернуться к запросу</Primary></div></Modal>}
++  {success!==null&&<Modal title={success?'Тестовый запрос принят':'Запрос принят'} onClose={closeInquiry}><p data-color-flow className={s.lead}>{success?'Тестовый транспорт подтвердил получение. Настоящая заявка не отправлялась.':'Спасибо за ваш запрос.'}</p><CopyAction text={inquiry?.brief??''}/><div className={s.actionRow}><Primary onClick={closeInquiry}>Вернуться к запросу</Primary></div></Modal>}
+   {openCase&&<CaseDetail item={openCase} variant={variant} reduced={reduced} origin={caseOrigin} onClose={closeCase}/>}
+  </>;
+ }
+diff --git a/app/_ps05/Navigation.tsx b/app/_ps05/Navigation.tsx
+index eee7333..bdd567b 100644
+--- a/app/_ps05/Navigation.tsx
++++ b/app/_ps05/Navigation.tsx
+@@ -40,14 +40,13 @@ export function Header({active,navigate,theme,onTheme,reduced,manualReduced,onMo
+ 
+ const label=(id:ScreenNodeId)=>id==='01'?'Главная':id==='03.3'?'Ваш запрос':SCREEN_NODE_BY_ID[id].title;
+ export function RouteGraph({active,unlock,navigate}:{active:ScreenNodeId;unlock:UnlockFlags;navigate:(id:ScreenNodeId)=>void}) {
+- const {open,root,trigger,close,events,toggle,reveal}=useDisclosure();
+- const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
+- return <nav ref={root} className={s.graph} data-open={open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...events}>
+-  <button type="button" ref={trigger} className={s.graphToggle} aria-expanded={open} aria-controls="route-map" onFocus={e=>{if(e.currentTarget.matches(':focus-visible'))reveal()}} onClick={toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{open?'−':'+'}</span></button>
+-  <div id="route-map" className={s.graphPanel} hidden={!open}>
+-   <p className={s.eyebrow}>Маршрут / 18 экранов</p>
+-   <svg viewBox="0 0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>
+-   <div className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={node.competenceId?{'--accent':`var(--competence-${node.competenceId})`} as CSSProperties:undefined} onClick={()=>{close();navigate(node.id)}}><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}{!unlocked&&<small>{node.id==='03.2'?'Выберите задачу':'Подтвердите состав'}</small>}</span><span aria-hidden="true">{active===node.id?'●':unlocked?'↗':'⌁'}</span></button>})}</div>
++ const links=useRef<HTMLDivElement>(null);
++ useEffect(()=>{const list=links.current,button=list?.querySelector<HTMLElement>('[aria-current]');if(list&&button&&innerWidth<=1100){const x=button.offsetLeft-list.offsetLeft;list.scrollTo({left:Math.max(0,x-list.clientWidth/2+button.offsetWidth/2),behavior:'auto'});}},[active]);
++ const point=(id:ScreenNodeId)=>{const n=SCREEN_NODE_BY_ID[id];return {x:10+(n.chapterIndex?14:0),y:16+n.index*29};};
++ return <nav className={s.graph} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов">
++  <div id="route-map" className={s.graphPanel}>
++   <svg viewBox="0 0 200 522" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=>{const a=point(edge.from),b=point(edge.to);return <path key={edge.from+'-'+edge.to} d={`M${a.x} ${a.y} V${b.y} H${b.x}`} fill="none" stroke="currentColor" strokeWidth="1"/>})}</svg>
++   <div ref={links} className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} aria-label={label(node.id)+(!unlocked?(node.id==='03.2'?' — сначала выберите задачу':' — сначала подтвердите состав'):'')} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={{'--indent':node.chapterIndex?'14px':'0px',...(node.competenceId?{'--accent':`var(--competence-${node.competenceId})`}:{})} as CSSProperties} onClick={()=>navigate(node.id)}><span className={s.currentDot} aria-hidden="true"/><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}</span>{!unlocked&&<span aria-hidden="true">⌁</span>}</button>})}</div>
+   </div>
+  </nav>;
+ }
+diff --git a/app/_ps05/design-tokens.ts b/app/_ps05/design-tokens.ts
+index fc5c65a..20d2c95 100644
+--- a/app/_ps05/design-tokens.ts
++++ b/app/_ps05/design-tokens.ts
+@@ -1,20 +1,21 @@
+ import type { CSSProperties } from 'react';
+ import { competenceOrder, type CompetenceId } from '../_brand/color-system';
+ 
+-/** Editorial palette. GPU pigments keep the established PS-04 semantic hues. */
++/** D2 semantic accents shared by UI, text reveal and editorial GPU pigments. */
+ export const THEMES = {
+  light: {paper:'#FFFFFF',ink:'#1F2329',muted:'#56606A',surface:'#F5F5F6',line:'#DADCE0',control:'#737982'},
+  dark: {paper:'#0D0D0F',ink:'#FFFFFF',muted:'#B8BBC2',surface:'#18181B',line:'#37373D',control:'#888B94'},
+ } as const;
+ export const ACCENTS: Record<CompetenceId,{light:string;dark:string}> = {
+- content:{light:'#354FB3',dark:'#9CADFF'},design:{light:'#6E43A9',dark:'#C3A1F3'},
+- event:{light:'#B44731',dark:'#FF9A81'},games:{light:'#346C49',dark:'#8DD2A2'},
+- video:{light:'#AA3977',dark:'#FFA0C6'},digital:{light:'#0B7181',dark:'#84D6E2'},
+- merch:{light:'#856010',dark:'#EEC978'},
++ content:{light:'#435F8C',dark:'#7F93B3'},design:{light:'#745794',dark:'#A58CBD'},
++ event:{light:'#AF4953',dark:'#C78085'},games:{light:'#456B54',dark:'#84A28D'},
++ video:{light:'#984C78',dark:'#BA86A8'},digital:{light:'#2F6C79',dark:'#78A3AD'},
++ merch:{light:'#935C45',dark:'#BF927E'},
+ };
+ export function themeProperties(theme:'light'|'dark'):CSSProperties {
+  return Object.fromEntries([
+   ...Object.entries(THEMES[theme]).map(([name,value])=>[`--${name}`,value]),
++  ['--accent',ACCENTS.design[theme]],
+   ...competenceOrder.map(id=>[`--competence-${id}`,ACCENTS[id][theme]]),
+  ]) as CSSProperties;
+ }
+diff --git a/app/_ps05/layout.ts b/app/_ps05/layout.ts
+index ffb5f4f..3f528ec 100644
+--- a/app/_ps05/layout.ts
++++ b/app/_ps05/layout.ts
+@@ -1,5 +1,6 @@
+ import type { CanonicalLayout } from '../visual-lab/photonic-skin-ps04-m5/scroll-controller';
+-import type { ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
++import { SCREEN_NODE_BY_ID, type ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
++import { smooth, type PageTransition } from './transition';
+ import { viewportFromCenter, type CompositionViewport } from '../visual-lab/photonic-skin-ps04-m5/composition';
+ 
+ export const isReadingFlow = () => typeof window !== 'undefined' && (window.innerWidth <= 1100 || window.innerHeight < 800 || document.querySelector('[data-ps05]')?.getAttribute('data-reading') === 'true');
+@@ -21,7 +22,7 @@ export function readingLayout(): CanonicalLayout | null {
+ }
+ 
+ /** Outer presentation slot only. Frozen camera, model scale, material and endpoint remain untouched. */
+-export function ps05Composition(original:CompositionViewport,node:ScreenNodeId):CompositionViewport {
++export function ps05Composition(original:CompositionViewport,node:ScreenNodeId,transition?:PageTransition):CompositionViewport {
+  const width=original.canvasCssWidth,height=original.canvasCssHeight;
+  if(node==='08') return {...original,visible:false,actorDraw:false};
+  const narrow=width<=1100;
+@@ -32,7 +33,14 @@ export function ps05Composition(original:CompositionViewport,node:ScreenNodeId):
+   return viewportFromCenter({width,height,dpr:original.rendererDpr,centerX:rect.left+rect.width/2,centerY:rect.top+rect.height/2,size:Math.min(280,rect.width*.72,rect.height),visible:rect.bottom>72&&rect.top<height,identity:false,siteFitScale:original.siteFitScale,visualZoomMultiplier:original.visualZoomMultiplier,slot:original.slot});
+  }
+  // Map the established left/right presentation continuously into the reserved outer columns.
+- const ratio=Math.max(0,Math.min(1,(original.cssCenterX/width-.245)/(.76-.245)));
+- const x=width*(.21+ratio*.60);
+- return viewportFromCenter({width,height,dpr:original.rendererDpr,centerX:x,centerY:original.cssCenterY,size:original.cssSize*.94,visible:original.visible,identity:false,siteFitScale:original.siteFitScale,visualZoomMultiplier:original.visualZoomMultiplier,slot:original.slot});
++ const side=(id:ScreenNodeId)=>SCREEN_NODE_BY_ID[id].actorPlacement==='left'?0:1;
++ const ratio=transition?side(transition.from)+(side(transition.to)-side(transition.from))*smooth((transition.progress-.12)/.46):Math.max(0,Math.min(1,(original.cssCenterX/width-.245)/(.76-.245)));
++ const leftLane=width-248-Math.min(width*.51,width-620);
++ const leftSize=Math.min(original.cssSize*.94,leftLane*.82);
++ const copyRight=Math.min(width*.6,1080)+Math.min(84,Math.max(24,width*.044));
++ const rightEdge=width-248;
++ const rightSize=Math.min(original.cssSize*.94,Math.max(190,(rightEdge-copyRight)*1.2));
++ const left=leftLane/2,right=(copyRight+rightEdge)/2;
++ const x=left+(right-left)*ratio;
++ return viewportFromCenter({width,height,dpr:original.rendererDpr,centerX:x,centerY:original.cssCenterY,size:leftSize+(rightSize-leftSize)*ratio,visible:original.visible,identity:false,siteFitScale:original.siteFitScale,visualZoomMultiplier:original.visualZoomMultiplier,slot:original.slot});
+ }
+diff --git a/app/_ps05/motion.ts b/app/_ps05/motion.ts
+index 9381303..025c69e 100644
+--- a/app/_ps05/motion.ts
++++ b/app/_ps05/motion.ts
+@@ -1,4 +1,4 @@
+-import { SCREEN_NODE_BY_ID, type ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
++import { textPhase, TRANSITION } from './transition';
+ import { viewportFromCenter, type CompositionViewport } from '../visual-lab/photonic-skin-ps04-m5/composition';
+ import { isReadingFlow } from './layout';
+ import type { ScrollProgress } from '../visual-lab/photonic-skin-ps04-m5/scroll-controller';
+@@ -39,127 +39,36 @@ export class PlacementTransition {
+  }
+ }
+ 
+-type Direct={from:ScreenNodeId;to:ScreenNodeId;axis:'X'|'Y';direction:number;incoming:number;exitOpacity:number;exit:HTMLElement|null};
++/** Real DOM blocks retain their section, inherited type and wrapping on every frame. */
+ export class Ps05Motion {
+- private placement=new PlacementTransition();
+- private direct:Direct|null=null;
+  private copies:HTMLElement[]=[];
+- private overlay:HTMLElement|null=null;
+- private lastVisible=new Map<ScreenNodeId,{rect:{left:number;top:number;width:number};opacity:number}>();
+  refresh(){this.copies=[...document.querySelectorAll<HTMLElement>('[data-ps05] [data-ps05-copy]')];}
+- cancel(){this.overlay?.remove();this.overlay=null;this.direct=null;this.placement.cancel();}
+- dispose(){this.cancel();for(const copy of this.copies){copy.style.removeProperty('opacity');copy.style.removeProperty('transform');copy.style.removeProperty('pointer-events');copy.inert=false;}this.copies=[];this.lastVisible.clear();}
+- begin(from:ScreenNodeId,to:ScreenNodeId,current:CompositionViewport,reduced:boolean,now:number){
+-  if(from===to)return;
+-  const source=document.querySelector<HTMLElement>(`[id="screen-${from}"] [data-ps05-copy]`);
+-  const destination=document.querySelector<HTMLElement>(`[id="screen-${to}"] [data-ps05-copy]`);
+-  const root=document.querySelector<HTMLElement>('[data-ps05]');
+-  if(!source||!destination||!root)return;
+-  const visible=(el:HTMLElement)=>{const r=el.getBoundingClientRect();return r.bottom>80&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;};
+-  const sourceOnscreen=visible(source);
+-  const incoming=sourceOnscreen&&visible(destination)?Number(getComputedStyle(destination).opacity):0;
+-  let exit=this.direct?.exit??null;
+-  // Keep the actually visible outgoing layer on rapid reversal, not a fresh
+-  // fully opaque copy of an incoming layer which has barely appeared yet.
+-  if(!exit||Number(getComputedStyle(exit).opacity)<=Number(getComputedStyle(source).opacity)){
+-   exit?.remove();exit=null;
+-   const cached=this.lastVisible.get(from);
+-   if((sourceOnscreen||cached)&&!reduced){
+-    const rect=sourceOnscreen?source.getBoundingClientRect():cached!.rect;
+-    const sourceOpacity=sourceOnscreen?Number(getComputedStyle(source).opacity):cached!.opacity;
+-    exit=source.cloneNode(true) as HTMLElement;
+-    exit.inert=true;exit.setAttribute('aria-hidden','true');exit.removeAttribute('data-ps05-copy');exit.dataset.motionSnapshot='true';
+-    for(const el of [exit,...exit.querySelectorAll<HTMLElement>('*')])for(const attr of ['id','name','data-qa','aria-live','aria-labelledby','aria-describedby','aria-controls','for','tabindex'])el.removeAttribute(attr);
+-    Object.assign(exit.style,{position:'fixed',left:`${rect.left}px`,top:`${rect.top}px`,width:`${rect.width}px`,maxWidth:`${rect.width}px`,margin:'0',transform:'none',opacity:String(sourceOpacity),zIndex:'4',pointerEvents:'none'});
+-    exit.style.setProperty('width',`${rect.width}px`,'important');
+-    if(!this.overlay){
+-     this.overlay=document.createElement('div');
+-     Object.assign(this.overlay.style,{position:'fixed',inset:'0',zIndex:'4',pointerEvents:'none',background:'transparent'});
+-     document.body.appendChild(this.overlay);
+-    }
+-    this.overlay.className=root.className;
+-    this.overlay.dataset.theme=root.dataset.theme;
+-    this.overlay.dataset.reading=root.dataset.reading;
+-    // The exchange layer is outside the React root. Carry D1's inline tokens
+-    // across that boundary so outgoing text keeps the exact current theme.
+-    for(const name of root.style) if(name.startsWith('--')) this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
+-    this.overlay.appendChild(exit);
+-   }
+-  }else{const rect=exit.getBoundingClientRect();exit.style.left=`${rect.left}px`;exit.style.top=`${rect.top}px`;exit.style.transform='none';}
+-  this.placement.begin(current,now);
+-  this.direct={from,to,axis:!isReadingFlow()&&!!SCREEN_NODE_BY_ID[from].chapterId&&SCREEN_NODE_BY_ID[from].chapterId===SCREEN_NODE_BY_ID[to].chapterId?'X':'Y',direction:SCREEN_NODE_BY_ID[to].index>SCREEN_NODE_BY_ID[from].index?1:-1,incoming,exit,exitOpacity:exit?Number(getComputedStyle(exit).opacity):0};
+-  if(!reduced){
+-   for(const copy of [source,destination]){copy.style.opacity='0';copy.style.pointerEvents='none';copy.inert=true;}
+-  }
+-  if(reduced)this.cancel();
+- }
+- beginWheel(progress:ScrollProgress,deltaY:number,current:CompositionViewport,reduced:boolean,now:number,layout:{segments:{id:ScreenNodeId;start:number}[]}){
+-  if(reduced||Math.abs(deltaY)<innerHeight*.58)return;
+-  const index=layout.segments.findIndex(segment=>segment.id===progress.activeNodeId);
+-  const direction=deltaY>0?1:-1;
+-  const next=layout.segments[index+direction];
+-  if(!next||index<0)return;
+-  if(this.direct?.from===progress.activeNodeId&&this.direct.to===next.id)return;
+-  if(isReadingFlow()){
+-   const boundary=direction>0?next.start:layout.segments[index].start;
+-   if(Math.abs(boundary-progress.scrollY)>Math.abs(deltaY)+innerHeight*.2)return;
+-  }
+-  this.begin(progress.activeNodeId,next.id,current,reduced,now);
+- }
+- update(target:CompositionViewport,reduced:boolean,now:number,progress?:ScrollProgress){
+-  const u=this.placement.progress(now),direct=this.direct,reading=isReadingFlow();
+-  if(this.overlay){
+-   const root=document.querySelector<HTMLElement>('[data-ps05]');
+-   if(root&&root.dataset.theme!==this.overlay.dataset.theme){
+-    this.overlay.dataset.theme=root.dataset.theme;
+-    for(const name of root.style)if(name.startsWith('--'))this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
+-   }
+-  }
++ dispose(){for(const copy of this.copies){copy.style.removeProperty('opacity');copy.style.removeProperty('transform');copy.style.removeProperty('pointer-events');copy.inert=false;}this.copies=[];}
++ update(target:CompositionViewport,reduced:boolean,_now:number,progress?:ScrollProgress){
++  const t=progress?.transition;if(!t)return target;
++  const reading=isReadingFlow(),travel=innerWidth<=600?TRANSITION.mobileTravel:TRANSITION.travel;
+   for(const copy of this.copies){
+    const section=copy.closest<HTMLElement>('[data-node]');if(!section)continue;
+-   const rect=section.getBoundingClientRect();
+-   const horizontal=!reading&&Math.abs(rect.left)>2&&Math.abs(rect.top)<innerHeight*.5&&rect.bottom>innerHeight*.5;
+-   const axis=horizontal?'X':'Y',extent=horizontal?innerWidth:innerHeight,offset=horizontal?rect.left:rect.top;
+-   const distance=Math.abs(offset)/extent,direction=progress?.direction??1;
+-   const outgoing=offset*direction<0;
+-   const longReading=reading&&copy.scrollHeight>innerHeight-170;
+-   let opacity=1,shift=0;
+-   if(!reduced){
+-    if(longReading){
+-     if(direction>0){
+-      if(rect.top>0)opacity=ease(clamp((innerHeight*.55-rect.top)/(innerHeight*.39)));
+-      else if(rect.bottom<innerHeight)opacity=ease(clamp((rect.bottom-innerHeight*.18)/(innerHeight*.34)));
+-     }else{
+-      if(rect.top>0)opacity=1-ease(clamp((rect.top-innerHeight*.02)/(innerHeight*.32)));
+-      else if(rect.bottom<innerHeight)opacity=ease(clamp((rect.bottom-innerHeight*.18)/(innerHeight*.42)));
+-     }
+-     shift=direction*(outgoing?-28*(1-opacity):28*(1-opacity));
+-    }else{
+-     opacity=exchangeOpacity(distance,outgoing);
+-     shift=-offset+direction*(outgoing?-28*(1-opacity):28*(1-opacity));
+-    }
+-    opacity=Math.min(opacity,scrollCopyOpacity(rect,innerWidth,innerHeight,reading));
+-   }
+-   if(direct&&section.dataset.node===direct.from&&!reduced){opacity=0;shift=0;}
+-   if(direct&&section.dataset.node===direct.to&&!reduced){
+-    const enter=ease(clamp((u-.18)/.82));
+-    opacity=direct.incoming+(1-direct.incoming)*enter;
+-    const destinationOffset=direct.axis==='X'?rect.left:rect.top;
+-    shift=-destinationOffset+direct.direction*28*(1-enter)*(1-direct.incoming);
+-   }
+-   copy.style.transform=reduced?'none':`translate${direct&&section.dataset.node===direct.to?direct.axis:axis}(${shift}px)`;
++   const id=section.dataset.node,rect=section.getBoundingClientRect();
++   const incoming=id===t.to&&t.from!==t.to,outgoing=id===t.from;
++   const visible=incoming||outgoing;
++   const sample=textPhase(t.progress,incoming);
++   const opacity=!visible?0:reduced?(id===progress.activeNodeId?1:0):t.from===t.to?1:sample.opacity;
++   const long=reading&&copy.scrollHeight>innerHeight-190;
++   const hold=outgoing&&long?Math.max(0,progress.scrollY-t.start):-rect.top;
++   const local=reduced?0:incoming?travel*(1-sample.phase):-travel*sample.phase;
++   const y=long&&outgoing?hold+local:-rect.top+local;
++   copy.style.transform=reduced?'none':`translate(${-rect.left}px, ${y}px)`;
++   if(long&&outgoing&&t.progress===0)copy.style.transform='none';
+    copy.style.opacity=String(opacity);
+-   copy.style.pointerEvents=!reduced&&opacity<.98?'none':'';
+-   copy.inert=!reduced&&opacity<.02;
+-   const rendered=copy.getBoundingClientRect();
+-   if(opacity>.01&&rendered.bottom>80&&rendered.top<innerHeight&&rendered.right>0&&rendered.left<innerWidth){
+-    this.lastVisible.set(section.dataset.node as ScreenNodeId,{rect:{left:rendered.left,top:rendered.top,width:rendered.width},opacity});
+-   }
++   copy.style.setProperty('--sweep',`${150-sample.phase*200}%`);
++   copy.dataset.shimmer=String(!reduced&&visible&&sample.phase>0&&sample.phase<1);
++   copy.style.pointerEvents=opacity<.9?'none':'';
++   copy.inert=id!==progress.activeNodeId||opacity<.9;
++   section.inert=copy.inert;
++   section.setAttribute('aria-hidden',String(copy.inert));
+   }
+-  if(direct?.exit){const exit=ease(clamp(u/.55));direct.exit.style.opacity=String(direct.exitOpacity*(1-exit));direct.exit.style.transform=`translate${direct.axis}(${-direct.direction*28*exit}px)`;}
+-  const result=this.placement.sample(target,now,reduced);
+-  if(u>=1||reduced){this.overlay?.remove();this.overlay=null;this.direct=null;}
+-  return result;
++  return target;
+  }
+- needsClock(){return this.direct!==null;}
++ needsClock(){return false;}
+ }
+diff --git a/app/_ps05/ps05.module.css b/app/_ps05/ps05.module.css
+index af91e12..2aa8e3a 100644
+--- a/app/_ps05/ps05.module.css
++++ b/app/_ps05/ps05.module.css
+@@ -232,6 +232,14 @@
+ .caseDialog {width:min(1080px,calc(100vw - 40px));}
+ .mediaFallback {background:var(--surface);}
+ .actorSlot {display:none;}
++.site .copy {opacity:0;}
++.site .copy h1:focus,.site .copy h2:focus {outline:none;}
++.site .track {overflow:visible;}
++.site .route {overflow-x:clip;}
++.competenceGrid .choice strong {color:var(--accent);}
++@supports ((background-clip:text) or (-webkit-background-clip:text)) {
++ .site [data-shimmer="true"] [data-color-flow] {background-image:linear-gradient(105deg,var(--ink) 39%,var(--accent) 47%,var(--accent) 53%,var(--ink) 61%);background-size:300% 100%;background-position:var(--sweep) 50%;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}
++}
+ @keyframes reveal {from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+ @keyframes selection {from{transform:translateY(5px)}to{transform:none}}
+ .site[data-reading="true"] .chapter {height:auto;}
+@@ -267,3 +275,36 @@
+ .site[data-reduced="true"] *, .site[data-reduced="true"] *:before,.site[data-reduced="true"] *:after {animation:none!important;transition:none!important;}
+ @media(prefers-reduced-motion:reduce) {.site *,.site *:before,.site *:after {animation:none!important;transition:none!important;}}
+ @media(forced-colors:active) {.choice,.primary,.entries button {border:1px solid ButtonText;}.choice[data-selected="true"] .check {forced-color-adjust:none;background:Highlight;color:HighlightText;}}
++
++/* D2: open labelled graph, with reserved rows for active typography. */
++.graph {top:104px;bottom:auto;right:22px;width:204px;}
++.graphPanel {position:relative;inset:auto;width:100%;max-width:none;max-height:calc(100dvh - 120px);padding:0;overflow:visible;background:none;box-shadow:none;animation:none;}
++.routeDiagram {position:absolute;inset:0;width:200px;height:522px;margin:0;color:var(--line);}
++.graphLinks {display:flex;flex-direction:column;gap:0;position:relative;}
++.site .graphLinks button {box-sizing:border-box;position:relative;display:flex;align-items:center;gap:7px;height:29px;min-height:29px;padding:0 0 0 calc(6px + var(--indent));border:0;background:transparent;color:var(--muted);font-size:12.5px;line-height:1;white-space:nowrap;text-align:left;transition:color 170ms,font-size 170ms;}
++.graphLinks .currentDot {width:8px;height:8px;flex:none;border:1px solid var(--control);background:var(--paper);transition:transform 170ms,background 170ms;}
++.site .graphLinks button[aria-current] {color:var(--ink);font-size:15.5px;font-weight:600;text-decoration:none;}
++.graphLinks button[aria-current] .currentDot {background:var(--accent);border-color:var(--accent);transform:scale(1.5);}
++.site .graphLinks button:disabled {color:var(--muted);cursor:not-allowed;}
++.graphLinks button:disabled .currentDot {border-style:dashed;border-radius:0;}
++.graphLinks .nodeNumber {font-size:9px;min-width:23px;}
++.graphLinks button>span:nth-child(2) {flex:none;}
++.site .graphLinks button:hover:not(:disabled) {color:var(--ink);text-decoration:underline;}
++@media(min-width:1101px) {
++ .site .screen {padding-right:248px;}
++ .site[data-reading="true"] .screen {padding-bottom:max(88px,40svh);}
++ .site .screen[data-place="left"] .copy {width:min(51vw,calc(100vw - 620px))!important;}
++}
++@media(max-width:1100px) {
++ .graph {top:76px;left:0;right:0;width:100%;height:62px;background:var(--paper);border-bottom:1px solid var(--line);}
++ .graphPanel {height:62px;max-height:none;}
++ .routeDiagram {display:none;}
++ .graphLinks {flex-direction:row;gap:20px;padding:6px 22px 10px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;}
++ .site .graphLinks button {height:44px;min-height:44px;padding:0;flex:none;font-size:12.5px;gap:7px;}
++ .graphLinks button>span:nth-child(3) {min-width:104px;}
++ .site .graphLinks button[aria-current] {font-size:15.5px;}
++ .site .screen {padding-top:172px;}
++}
++@media(max-width:600px) {.graph {top:72px;}.site .screen {padding-top:164px;}}
++@media(prefers-reduced-motion:reduce) {.graphLinks button,.currentDot {transition:none!important;}}
++.site[data-reduced="true"] .graphLinks button,.site[data-reduced="true"] .currentDot {transition:none!important;}
+diff --git a/app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx b/app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx
+index 1a00628..8ea8bf8 100644
+--- a/app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx
++++ b/app/visual-lab/photonic-skin-ps04-m5/PS04M5Scene.tsx
+@@ -10,6 +10,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
+ import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+ import * as THREE from "three";
+ import { EDITORIAL_MATERIAL } from '../../_ps05/design-tokens';
++import { EDITORIAL_PIGMENTS, editorialLut } from '../../_ps05/pigments';
+ import { createR2ScaleGeometry } from "../photonic-skin-ps04-m6/final-r2/scale-geometry";
+ import { contactStateTexture, createContactGeometry } from "../../_photonic-skin/contact-rendering";
+ import { masterPaletteWeight } from "../../_photonic-skin/contact-surface";
+@@ -1604,8 +1605,8 @@ function M41Content(props: SceneProps) {
+   }, []);
+   const textureCount = Object.keys(stateTextures).length + Object.keys(compiledTextures).length;
+   const paletteTokens = useMemo(
+-    () => PHOTONIC_COLOR_TOKENS.map((token) => new THREE.Color().fromArray([...token.linear])),
+-    [],
++    () => PHOTONIC_COLOR_TOKENS.map((token,index) => new THREE.Color().fromArray([...(props.material.editorial?EDITORIAL_PIGMENTS[index]:token.linear)])),
++    [props.material.editorial],
+   );
+   const initialColorSnapshot = useMemo(
+     () => props.material.colorController.snapshot(),
+@@ -2523,6 +2524,7 @@ function M41Content(props: SceneProps) {
+           props.onRenderedFrame?.({
+             ...boundPairRef.current, progress: ack.drawnProgress, ack,
+             paletteLut: shaderDisplayedLut({
++              makeLut: props.material.editorial ? editorialLut : undefined,
+               sourceLut: sourceLutUniforms.map((v) => ({ color: [v.x, v.y, v.z] as [number, number, number], presence: v.w })),
+               targetMask: uniforms.uPaletteMask.value,
+               progress: uniforms.uPaletteProgress.value, ownershipEnabled: false,
+diff --git a/app/visual-lab/photonic-skin-ps04-m5/palette-authority.ts b/app/visual-lab/photonic-skin-ps04-m5/palette-authority.ts
+index 9f0c2b8..519fa44 100644
+--- a/app/visual-lab/photonic-skin-ps04-m5/palette-authority.ts
++++ b/app/visual-lab/photonic-skin-ps04-m5/palette-authority.ts
+@@ -161,13 +161,14 @@ export function lutHasAllSevenStripes(lut: readonly LutSample[], epsilon = 0.04)
+  * If progress is 0, the source LUT is what the user sees.
+  */
+ export function shaderDisplayedLut(args: {
++  makeLut?: typeof lutForMask;
+   sourceLut: readonly LutSample[];
+   targetMask: CompetenceMask;
+   progress: number;
+   ownershipEnabled: boolean;
+   ownershipWeight?: number;
+ }) {
+-  const targetLut = lutForMask(args.targetMask);
++  const targetLut = (args.makeLut ?? lutForMask)(args.targetMask);
+   if (args.ownershipEnabled) {
+     return mixLuts(args.sourceLut, targetLut, args.ownershipWeight ?? args.progress);
+   }
+diff --git a/app/visual-lab/photonic-skin-ps04-m5/scroll-controller.ts b/app/visual-lab/photonic-skin-ps04-m5/scroll-controller.ts
+index 1694aba..691fecb 100644
+--- a/app/visual-lab/photonic-skin-ps04-m5/scroll-controller.ts
++++ b/app/visual-lab/photonic-skin-ps04-m5/scroll-controller.ts
+@@ -9,6 +9,7 @@ import {
+   type ScreenNodeId,
+ } from "./topology";
+ import { isNodeUnlocked, type UnlockFlags } from "./graph-model";
++import { displayedNode, pageTransition, smooth, TRANSITION, unit, type PageTransition } from '../../_ps05/transition';
+ 
+ export const HYSTERESIS = 0.12;
+ export const VIEWPORT_CSS = "100svh";
+@@ -36,6 +37,7 @@ export interface CanonicalLayout {
+ }
+ 
+ export interface ScrollProgress {
++  transition?: PageTransition;
+   scrollY: number;
+   viewportHeight: number;
+   viewportWidth: number;
+@@ -389,6 +391,22 @@ function editingElement(node: Element | null) {
+ export type DiscreteListener = (progress: ScrollProgress) => void;
+ 
+ export class ScrollCompositionController {
++  private continuous = false;
++  private navigation: {from:number;to:number;start:number;duration:number;id:ScreenNodeId} | null = null;
++  private bridge: PageTransition | null = null;
++  setContinuous(enabled:boolean) { this.continuous=enabled;this.navigation=null;this.bridge=null;this.cancelMagnetism('idle');this.pendingTarget=null;this.clearIdle(); }
++  navigationRunning() { return this.navigation!==null; }
++  /** Driven by the existing runtime frame; no additional scroll clock. */
++  tickNavigation(now:number) {
++    const n=this.navigation,host=this.attached;if(!n||!host)return;
++    const u=unit((now-n.start)/n.duration);
++    host.scrollTo({top:n.from+(n.to-n.from)*smooth(u),behavior:'auto'});
++    this.sync(false);
++    if(u>=1){
++      this.navigation=null;this.pendingTarget=null;this.mode='idle';this.sync(true);
++      if(typeof document!=='undefined' && !document.activeElement?.closest('nav, header'))document.getElementById(`heading-${n.id}`)?.focus({preventScroll:true});
++    }
++  }
+   private layoutAdapter: (() => CanonicalLayout | null) | null = null;
+   private prepareLayout: (() => void) | null = null;
+   private cssAnchorAlignment = false;
+@@ -464,6 +482,7 @@ export class ScrollCompositionController {
+     if (editingElement(event.target instanceof Element ? event.target : null)) return;
+     const keys = [" ", "Spacebar", "PageDown", "PageUp", "ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "Home", "End"];
+     if (!keys.includes(event.key)) return;
++    if(this.continuous && event.key.startsWith('Arrow')) return;
+     this.noteUserInput("keyboard");
+   };
+ 
+@@ -484,6 +503,7 @@ export class ScrollCompositionController {
+   }
+ 
+   committedActorNodeId(): ScreenNodeId {
++    if(this.continuous)return this.snapshot.activeNodeId;
+     if (this.pendingTarget && (this.mode === "programmatic" || this.mode === "restore" || this.mode === "magnetic")) {
+       return this.pendingTarget;
+     }
+@@ -572,6 +592,7 @@ export class ScrollCompositionController {
+   }
+ 
+   detach() {
++    this.navigation=null;this.bridge=null;
+     const host = this.attached;
+     if (!host) {
+       this.guards.unmounted = true;
+@@ -640,6 +661,7 @@ export class ScrollCompositionController {
+ 
+   noteUserInput(kind: UserInputKind) {
+     if (this.guards.unmounted) return;
++    if(this.continuous){this.navigation=null;this.pendingTarget=null;}
+     if (this.mode === "idle" || this.mode === "magnetic") {
+       this.fastGesture = false;
+       this.gestureStartNodeId = this.snapshot.activeNodeId;
+@@ -660,6 +682,22 @@ export class ScrollCompositionController {
+     if (!isNodeUnlocked(id, this.unlock)) return false;
+     const layout = this.layout();
+     const top = restoreScrollY(layout, id, 0);
++    if(this.continuous && origin==='programmatic' && behavior!=='auto' && !this.reducedMotion && this.attached){
++      const from=this.attached.scrollY;
++      if(Math.abs(top-from)<1)return true;
++      this.cancelMagnetism(origin);this.clearIdle();this.pendingTarget=id;this.mode=origin;
++      const current=this.snapshot.activeNodeId;
++      const a=layout.segments.findIndex(s=>s.id===current),b=layout.segments.findIndex(s=>s.id===id);
++      if(this.bridge && (id===this.bridge.from || id===this.bridge.to)){
++        // Reversal keeps the currently displayed bridge and its exact phase.
++      }else if(Math.abs(a-b)>1){
++        const low=top>from?current:id,high=top>from?id:current;
++        this.bridge={from:low,to:high,progress:top>from?0:1,start:Math.min(from,top),end:Math.max(from,top),fromStart:layout.byId[low]!.start,toStart:layout.byId[high]!.start,direct:true};
++      }else this.bridge=null;
++      this.navigation={from,to:top,start:this.now(),duration:TRANSITION.duration,id};
++      this.sync(true);return true;
++    }
++    this.navigation=null;this.bridge=null;
+     if (
+       this.pendingTarget === id
+       && (this.mode === "programmatic" || this.mode === "restore")
+@@ -756,6 +794,7 @@ export class ScrollCompositionController {
+ 
+   private onInputIdle() {
+     if (this.mode !== "user") return;
++    if(this.continuous){this.mode='idle';this.candidate=null;this.sync(false);return;}
+     if (this.layoutAdapter?.()) { this.mode = "idle"; this.candidate = null; this.sync(false); return; }
+     if (this.guards.pointerHeld) return;
+     // Native scroll and scrollend may arrive before the queued RAF samples
+@@ -859,6 +898,7 @@ export class ScrollCompositionController {
+   private resize() {
+     if (!this.attached) return;
+     const previous = this.snapshot;
++    this.navigation=null;this.bridge=null;
+     this.viewport = { width: this.attached.innerWidth, height: this.attached.innerHeight };
+     // Apply the presentation mode before measuring it. Sticky panels share a
+     // top coordinate until their reading-flow CSS has been enabled.
+@@ -897,7 +937,7 @@ export class ScrollCompositionController {
+     // whole no-op interval so the visible section is also the interactive one.
+     const atAnchor = scrollY >= rawAnchor - (this.cssAnchorAlignment ? MAGNETISM.noopDistancePx : 0)
+       && scrollY - rawAnchor <= MAGNETISM.noopDistancePx;
+-    const next = mapScrollToProgress({
++    let next = mapScrollToProgress({
+       layout,
+       scrollY,
+       viewportHeight: this.viewport.height,
+@@ -907,6 +947,14 @@ export class ScrollCompositionController {
+       direction: this.direction,
+       ignoreHysteresis: this.skipHysteresis || this.pendingTarget !== null || programmatic || atAnchor,
+     });
++    if(this.continuous){
++      if(this.bridge && (scrollY<this.bridge.start-2||scrollY>this.bridge.end+2))this.bridge=null;
++      const transition=this.bridge?{...this.bridge,progress:unit((scrollY-this.bridge.start)/Math.max(1,this.bridge.end-this.bridge.start))}:pageTransition(layout,scrollY);
++      const active=displayedNode(transition,this.snapshot.activeNodeId);
++      const index=layout.segments.findIndex(s=>s.id===active);
++      next={...next,transition,activeNodeId:active,previousNodeId:layout.segments[index-1]?.id??null,nextNodeId:layout.segments[index+1]?.id??null};
++      if(this.bridge && !this.navigation && (transition.progress===0||transition.progress===1))this.bridge=null;
++    }
+     if (this.pendingTarget && next.activeNodeId === this.pendingTarget) {
+       const targetY = restoreScrollY(this.layout(), this.pendingTarget, 0);
+       if (this.mode === "programmatic" || this.mode === "restore") {
+@@ -951,6 +999,7 @@ export class ScrollCompositionController {
+       root.style.setProperty(`--m4-ch-${id}-count`, String(Math.max(1, count)));
+     }
+     root.dataset.m4Node = progress.activeNodeId;
++    if(progress.transition){root.dataset.pageProgress=String(progress.transition.progress);root.dataset.pageFrom=progress.transition.from;root.dataset.pageTo=progress.transition.to;}
+     root.dataset.m4ScrollMode = this.mode;
+   }
+ }
+diff --git a/app/visual-lab/photonic-skin-ps04-m5/transition-coordinator.ts b/app/visual-lab/photonic-skin-ps04-m5/transition-coordinator.ts
+index 327c47a..1002a37 100644
+--- a/app/visual-lab/photonic-skin-ps04-m5/transition-coordinator.ts
++++ b/app/visual-lab/photonic-skin-ps04-m5/transition-coordinator.ts
+@@ -267,6 +267,9 @@ function emptyTransaction(): ActorTransitionTransaction {
+ }
+ 
+ export class ActorTransitionCoordinator {
++  constructor(private readonly makeLut:typeof lutForMask=lutForMask) {
++    this.sourceLut=makeLut(127);this.targetLut=makeLut(127);this.settledLut=makeLut(127);
++  }
+   private revision = 0;
+   private committedRevision = 0;
+   private lastTickToken = -1;
+@@ -445,7 +448,7 @@ export class ActorTransitionCoordinator {
+     const sameSite = args.next.slot === args.displayed.slot && Math.abs(targetFit - sourceFit) < 1e-6;
+     const sameZoom = Math.abs(sourceZoom - targetZoom) < 1e-8;
+     const sourceLut = cloneLut(args.displayedLut ?? this.displayedLut());
+-    const targetLut = lutForMask(nextKey.paletteMask);
++    const targetLut = this.makeLut(nextKey.paletteMask);
+     this.sourceLut = sourceLut;
+     this.targetLut = targetLut;
+     if (!running) this.settledLut = cloneLut(targetLut);
+@@ -782,7 +785,7 @@ export class ActorTransitionCoordinator {
+   adoptSettled(contract: ScreenActorContract, identity = false, zoom = 1) {
+     const key = semanticActorKey(contract);
+     const fit = siteFitScaleFor(contract.fitProfile, identity);
+-    const lut = lutForMask(key.paletteMask);
++    const lut = this.makeLut(key.paletteMask);
+     const lutHash = hashLut(lut);
+     const settledZoom = identity ? 1 : zoom;
+     this.lastSemantic = key;
+diff --git a/app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx b/app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx
+index 14d4ec1..366d39e 100644
+--- a/app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx
++++ b/app/visual-lab/photonic-skin-ps04-m6/magnetized-settle/MagnetizedSettleLab.tsx
+@@ -93,6 +93,8 @@ import {
+   placementDeltaPx,
+   settledSlotSample,
+ } from "../magnetized-settle-r1/presentation-placement";
++import { loadBuilder, saveBuilder } from '../../../_ps05/persistence';
++import { editorialLut } from '../../../_ps05/pigments';
+ import { R1MagneticDriver } from "../magnetized-settle-r1/r1-magnetic-driver";
+ import type { TransitionUniforms } from "../../photonic-skin-ps04-m5/PS04M5Scene";
+ import styles from "../../photonic-skin-ps04-m5/ps04m5.module.css";
+@@ -321,7 +323,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   const [promotedManifest, setPromotedManifest] = useState<M3Manifest | null>(null);
+   const [motionManifest, setMotionManifest] = useState<M41Manifest | null>(null);
+   const manifest = promotedManifest;
+-  const [flow, setFlow] = useState<BuilderFlowState>(INITIAL_BUILDER_FLOW);
++  const [flow, setFlow] = useState<BuilderFlowState>(()=>ps05?loadBuilder():INITIAL_BUILDER_FLOW);
++  useEffect(()=>{if(ps05)saveBuilder(flow)},[flow,ps05]);
+   const [hoverPreview, setHoverPreview] = useState<BuilderHoverPreview>(IDLE_HOVER_PREVIEW);
+   const staticMode = query.get("static") === "1";
+   const [activeNode, setActiveNode] = useState<ScreenNodeId>(
+@@ -344,7 +347,12 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   useLayoutEffect(() => {
+     if (finalRuntime(stage)) session.setIdleChannel("breathing");
+   }, [session, stage]);
++  const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
++    width: 1440, height: 900, dpr, centerX: 1100, centerY: 480, size: 460, visible: true, identity,
++  }));
++  const reducedRef = useRef(reducedMotion);
+   const controller = useMemo(() => new ScrollCompositionController(), []);
++  useLayoutEffect(()=>{controller.setContinuous(ps05);return()=>controller.setContinuous(false)},[controller,ps05]);
+   const ps05Ref = useRef(ps05);
+   const ps05MotionRef = useRef(new Ps05Motion());
+   useLayoutEffect(() => {
+@@ -375,16 +383,21 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+     const unsubscribeAccessibility = controller.subscribeDiscrete(syncAccessibility);
+     const update = () => {
+       const previous = controller.getProgress().activeNodeId;
+-      if (prepareLayout()) controller.scrollToNode(previous, 'auto', 'restore');
++      const pending = controller.getPendingTarget();
++      if (prepareLayout()) {
++        controller.scrollToNode(previous, 'auto', 'restore');
++        if(pending)controller.scrollToNode(pending);
++      }
+       controller.refreshLayout();
+       ps05MotionRef.current.refresh();
+       syncAccessibility();
++      ps05MotionRef.current.update(compositionRef.current, reducedRef.current, performance.now(), controller.getProgress());
+     };
+     update();
+     const observer = new ResizeObserver(update);
+     document.querySelectorAll('[data-ps05-copy]').forEach(element => observer.observe(element));
+     return () => { observer.disconnect(); unsubscribeAccessibility(); controller.setLayoutAdapter(null); controller.setCssAnchorAlignment(false); };
+-  }, [controller, ps05, flow.unlock]);
++  }, [controller, ps05, flow.unlock.competencies, flow.unlock.brief]);
+   useEffect(() => {
+     if (production) {
+       controller.setMagnetismVariant(SELECTED_MAGNETISM_VARIANT);
+@@ -407,9 +420,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   const stageRef = useRef(stage);
+   const progressRef = useRef<ScrollProgress>(controller.getProgress());
+   const canvasHostRef = useRef<HTMLDivElement | null>(null);
+-  const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
+-    width: 1440, height: 900, dpr, centerX: 1100, centerY: 480, size: 460, visible: true, identity,
+-  }));
+   const visualRef = useRef({ x: 1100, y: 480, size: 460, visible: true, exitHold: 0, siteFit: 1, zoom: 1 });
+   const clockRef = useRef({ running: false, frame: 0, previous: 0, token: 0, lastUi: 0 });
+   const sendButtonRef = useRef<HTMLElement | null>(null);
+@@ -424,8 +434,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   const lastBuilderActionRef = useRef<BuilderActionTrace | null>(null);
+   const dprRef = useRef(dpr);
+   const identityRef = useRef(identity);
+-  const reducedRef = useRef(reducedMotion);
+-  const coordinatorRef = useRef(new ActorTransitionCoordinator());
++  const coordinatorRef = useRef(new ActorTransitionCoordinator(ps05?editorialLut:undefined));
+   const traceRef = useRef(new GeometryIdTrace());
+   const m5TraceRef = useRef(new M5TransitionTrace());
+   const placementFromRef = useRef({ x: 1100, y: 480, size: 460 });
+@@ -455,8 +464,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   const placementTelemetryRef = useRef(createPlacementChannelTelemetry());
+   const r1HudExtrasRef = useRef<Array<[string, string | number | boolean | null]>>([]);
+   const magneticDriver = useMemo(
+-    () => (r1Runtime(stage) ? new R1MagneticDriver(controller) : null),
+-    [controller, stage],
++    () => (r1Runtime(stage) && !ps05 ? new R1MagneticDriver(controller) : null),
++    [controller, stage, ps05],
+   );
+   const magneticDriverRef = useRef(magneticDriver);
+   const programCache = useMemo(() => new FramingSandboxProgramCache(), []);
+@@ -558,6 +567,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       }
+       geometrySnapshotRef.current = coordinator.geometrySnapshot();
+       split.sync = performance.now() - clockStarted;
++      if(ps05Ref.current) controller.tickNavigation(now);
+       const progress = controller.getProgress();
+       progressRef.current = progress;
+       const host = canvasHostRef.current;
+@@ -571,7 +581,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       if (r1Runtime(stageRef.current)) {
+         magneticDriverRef.current?.step(dt, window.scrollY, progress.viewportHeight, window);
+       }
+-      const destinationId = controller.getPendingTarget() ?? magnetism.candidateId ?? progress.activeNodeId;
++      const destinationId = ps05Ref.current ? progress.activeNodeId : controller.getPendingTarget() ?? magnetism.candidateId ?? progress.activeNodeId;
+       const anchorY = restoreScrollY(layout, destinationId, 0);
+       const restoreDistance = Math.abs(progress.scrollY - anchorY);
+       const magneticDistance = magnetism.candidateId ? magnetism.distancePx : restoreDistance;
+@@ -609,12 +619,12 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+         viewportHeight: progress.viewportHeight,
+         observedNodeId: progress.activeNodeId,
+         magneticCandidateId: magnetism.candidateId,
+-        pendingTarget: controller.getPendingTarget(),
++        pendingTarget: ps05Ref.current ? null : controller.getPendingTarget(),
+         mode: controller.getMode(),
+         gestureActive: controller.getMode() === "user",
+         snapAnimationPending: controller.getMode() === "magnetic",
+         layoutRevision: layoutRevisionRef.current,
+-        distanceToAnchorPx: ps05Ref.current && isReadingFlow() ? 0 : Math.min(restoreDistance, magneticDistance),
++        distanceToAnchorPx: ps05Ref.current ? 0 : Math.min(restoreDistance, magneticDistance),
+         reducedMotion: reducedRef.current,
+       }) : settle.snapshot(now);
+       settleTelemetryRef.current = telemetry;
+@@ -850,7 +860,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+           ? r1Placement.displayedPlacement.slot
+           : (siteU >= 1 ? targetSample.slot : tx.sourceSlot),
+       });
+-      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId), liveReduced, now, progress);
++      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId, progress.transition), liveReduced, now, progress);
+       transitionRef.current = {
+         paletteOwnershipMode: tx.paletteOwnershipMode,
+         continuityEnabled: continuityLiftRef.current ? tx.continuityEnabled : 0,
+@@ -961,7 +971,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       if (tx.status === "settled" && pipelineRef.current.visual === "morphing") {
+         pipelineRef.current.markSettled();
+       }
+-      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || ps05MotionRef.current.needsClock() || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || preparing || geometryLogRef.current.recording || m5TraceRef.current.recordingNow || settleRef.current.needsClock() || Boolean(magneticDriverRef.current?.needsClock())) {
++      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || controller.navigationRunning() || ps05MotionRef.current.needsClock() || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || preparing || geometryLogRef.current.recording || m5TraceRef.current.recordingNow || settleRef.current.needsClock() || Boolean(magneticDriverRef.current?.needsClock())) {
+         clock.frame = requestAnimationFrame(loop);
+       } else {
+         clock.running = false;
+@@ -994,13 +1004,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       onMagneticBegin: () => startClock(),
+     });
+     const detach = controller.attach(window);
+-    const onPs05Wheel = (event: WheelEvent) => {
+-      if (!ps05Ref.current || event.defaultPrevented || !event.deltaY) return;
+-      if (event.target instanceof Element && event.target.closest('textarea, dialog, [role="dialog"]')) return;
+-      ps05MotionRef.current.beginWheel(controller.getProgress(), event.deltaY, compositionRef.current, reducedRef.current, performance.now(), controller.layout());
+-      startClock();
+-    };
+-    window.addEventListener("wheel", onPs05Wheel, { passive: true, capture: true });
+     const onScrollEnd = () => settleRef.current.noteHint("scrollend");
+     const onSnapChanging = (event: Event) => {
+       const snap = (event as Event & { snapTargetElement?: Element }).snapTargetElement;
+@@ -1059,7 +1062,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       }
+       startClock();
+     });
+-    const unsubFrame = controller.subscribeFrame(() => { if (ps05Ref.current) startClock(); });
++    const unsubFrame = controller.subscribeFrame(progress => { if (ps05Ref.current) { ps05MotionRef.current.update(compositionRef.current, reducedRef.current, performance.now(), progress); startClock(); } });
+     const ps05Motion = ps05MotionRef.current;
+     startClock();
+     return () => {
+@@ -1068,7 +1071,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+       window.removeEventListener("scrollsnapchanging", onSnapChanging);
+       window.removeEventListener("scrollsnapchange", onSnapChange);
+       window.removeEventListener("resize", onResizeLayout);
+-      window.removeEventListener("wheel", onPs05Wheel, true);
+       cancelAnimationFrame(clock.frame);
+       clock.running = false;
+       unsub();
+@@ -1671,13 +1673,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+   }, [aboutZoom, dpr, flow, identity, manifest, merchZoom, reducedMotion, requestActor, startClock, stateIndex, continuityLift, reproduceR4Geometry, r6Staging, session, videoZoom, stage, magnetismProfileId, magneticDriver]);
+ 
+   const navigate = useCallback((id: ScreenNodeId) => {
+-    if (ps05 && controller.layout().byId[id]) ps05MotionRef.current.begin(controller.getProgress().activeNodeId, id, compositionRef.current, reducedRef.current, performance.now());
+-    const moved = controller.scrollToNode(id, ps05 ? 'auto' : undefined);
+-    if (moved && ps05) requestAnimationFrame(() => document.getElementById(`heading-${id}`)?.focus({ preventScroll: true }));
++    const moved = controller.scrollToNode(id);
+     if (moved && finalRuntime(stage)) {
+       const nextHash = `#screen-${id}`;
+       if (window.location.hash !== nextHash) window.history.pushState({ node: id }, "", nextHash);
+-      if (session.getSource()) settleRef.current.requestDestination(id);
++      if (session.getSource() && !ps05) settleRef.current.requestDestination(id);
+       else bootTargetOverrideRef.current = id;
+       if (!firstGpuFrameRef.current) firstGpuTargetRef.current = defaultGeometryForNode(id) ?? "master-neutral";
+       startClock();
+@@ -1720,7 +1720,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
+     const onKey = (event: KeyboardEvent) => {
+       if (flow.overlay || document.querySelector('dialog[open]')) return;
+       const target = event.target;
+-      if (ps05 && (isReadingFlow() || (target instanceof HTMLElement && target.closest('button, a, summary, [role="radio"], [role="checkbox"]')))) return;
++      if (ps05 && (target instanceof HTMLElement && target.closest('button, a, summary, [role="radio"], [role="checkbox"], [role="listbox"], [contenteditable]'))) return;
++      if(ps05 && isReadingFlow() && (event.key==='ArrowDown'||event.key==='ArrowUp')){
++        const segment=controller.layout().byId[controller.getProgress().activeNodeId]!;
++        if(segment.length>innerHeight+8 && (event.key==='ArrowDown' && scrollY<segment.start+segment.length-innerHeight-8 || event.key==='ArrowUp' && scrollY>segment.start+8))return;
++      }
+       if (target instanceof HTMLElement && (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) || target.isContentEditable)) return;
+       const unlock = flow.unlock;
+       const anchor = stageRef.current === "final-r2"

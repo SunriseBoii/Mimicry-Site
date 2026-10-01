@@ -1,0 +1,14 @@
+import {chromium} from 'playwright-core';
+import {mkdirSync,writeFileSync} from 'node:fs';
+const out='design/photonic-skin/ps-05-motion-01/probe';mkdirSync(out,{recursive:true});
+const b=await chromium.launch({channel:'msedge',headless:true,ignoreDefaultArgs:['--hide-scrollbars'],args:['--disable-features=OverlayScrollbar']});
+const c=await b.newContext({viewport:{width:1440,height:900},recordVideo:{dir:out}}),p=await c.newPage();
+p.on('pageerror',e=>console.log('ERROR',e.message));await p.goto('http://127.0.0.1:3006/?theme=light#screen-01');await p.waitForTimeout(5000);
+const state=()=>p.evaluate(()=>({data:{...document.documentElement.dataset},y:scrollY,height:document.documentElement.scrollHeight,width:document.documentElement.clientWidth,canvas:document.querySelectorAll('canvas').length,copy:[...document.querySelectorAll('[data-ps05-copy]')].filter(e=>+getComputedStyle(e).opacity>0).map(e=>({id:e.closest('[data-node]').dataset.node,rect:e.getBoundingClientRect().toJSON(),transform:e.style.transform,opacity:e.style.opacity})),actor:{...document.querySelector('[data-qa="m4-canvas"]')?.dataset}}));
+console.log('INITIAL',await state());await p.screenshot({path:`${out}/initial.png`});
+await p.keyboard.press('ArrowDown');await p.waitForTimeout(300);console.log('MID',await state());await p.screenshot({path:`${out}/mid.png`});await p.waitForTimeout(1000);console.log('AFTER',await state());await p.screenshot({path:`${out}/after.png`});
+await p.evaluate(()=>{window.events=[];for(const name of ['pointerdown','pointerup','mousedown','mouseup','scroll','scrollend'])addEventListener(name,e=>window.events.push({name,t:performance.now(),y:scrollY,x:e.clientX,buttons:e.buttons}))});
+const st=await state(),vh=900,track=vh-34,thumb=Math.max(20,vh/st.height*track),range=st.height-vh;
+const y=17+(track-thumb)*st.y/range+thumb/2;
+await p.mouse.move(1433,y);await p.mouse.down();await p.mouse.move(1433,450,{steps:12});await p.waitForTimeout(1400);console.log('HELD',await state());await p.screenshot({path:`${out}/held.png`});await p.mouse.move(1433,790,{steps:10});await p.mouse.up();await p.waitForTimeout(1300);console.log('RELEASED',await state());
+writeFileSync(`${out}/events.json`,JSON.stringify(await p.evaluate(()=>window.events),null,2));await p.screenshot({path:`${out}/released.png`});const v=p.video();await c.close();await v.saveAs(`${out}/probe.webm`);await b.close();

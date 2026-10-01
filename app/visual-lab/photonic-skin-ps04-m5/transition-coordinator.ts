@@ -267,6 +267,9 @@ function emptyTransaction(): ActorTransitionTransaction {
 }
 
 export class ActorTransitionCoordinator {
+  constructor(private readonly makeLut:typeof lutForMask=lutForMask) {
+    this.sourceLut=makeLut(127);this.targetLut=makeLut(127);this.settledLut=makeLut(127);
+  }
   private revision = 0;
   private committedRevision = 0;
   private lastTickToken = -1;
@@ -445,7 +448,7 @@ export class ActorTransitionCoordinator {
     const sameSite = args.next.slot === args.displayed.slot && Math.abs(targetFit - sourceFit) < 1e-6;
     const sameZoom = Math.abs(sourceZoom - targetZoom) < 1e-8;
     const sourceLut = cloneLut(args.displayedLut ?? this.displayedLut());
-    const targetLut = lutForMask(nextKey.paletteMask);
+    const targetLut = this.makeLut(nextKey.paletteMask);
     this.sourceLut = sourceLut;
     this.targetLut = targetLut;
     if (!running) this.settledLut = cloneLut(targetLut);
@@ -516,6 +519,7 @@ export class ActorTransitionCoordinator {
     sessionStatus?: string;
     geometryPlaying?: boolean;
     sessionTargetId?: string | null;
+    sceneProgress?: number;
   }) {
     const tx = this.current;
     if (tx.status !== "running") {
@@ -529,6 +533,7 @@ export class ActorTransitionCoordinator {
       return this.snapshot();
     }
     tx.elapsedSeconds = Math.max(0, args.sessionTime - tx.startedAtSeconds);
+    if(args.sceneProgress!==undefined)tx.elapsedSeconds=clamp01(args.sceneProgress)*tx.durationSeconds;
     const reduced = Boolean(args.reducedMotion || args.identity);
     if (tx.kind === "palette-only") {
       tx.geometryProgress = 1;
@@ -567,7 +572,7 @@ export class ActorTransitionCoordinator {
       return this.snapshot();
     }
     if (tx.kind === "site-only") {
-      const duration = reduced ? 0.001 : 0.38;
+      const duration = reduced ? 0.001 : args.sceneProgress!==undefined?tx.durationSeconds:0.38;
       tx.geometryProgress = 1;
       tx.siteProgress = siteOnlyPositionProgress(tx.elapsedSeconds, duration, reduced);
       tx.slotProgress = tx.siteProgress;
@@ -782,7 +787,7 @@ export class ActorTransitionCoordinator {
   adoptSettled(contract: ScreenActorContract, identity = false, zoom = 1) {
     const key = semanticActorKey(contract);
     const fit = siteFitScaleFor(contract.fitProfile, identity);
-    const lut = lutForMask(key.paletteMask);
+    const lut = this.makeLut(key.paletteMask);
     const lutHash = hashLut(lut);
     const settledZoom = identity ? 1 : zoom;
     this.lastSemantic = key;

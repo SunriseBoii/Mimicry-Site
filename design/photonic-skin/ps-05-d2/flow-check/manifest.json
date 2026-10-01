@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-01T11:43:15.523Z",
+  "base": "http://127.0.0.1:3004",
+  "build": "YGBjvyXszffHOCzQqAmUL",
+  "browser": "154.0.4258.37",
+  "checks": [],
+  "errors": [
+    {
+      "name": "interactions",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'false' !== 'true'\n\n    at run.video (file:///C:/Users/MSI_NB/Documents/Mimicry-site/scripts/ps05-d2-qa.mjs:52:119)\n    at async run (file:///C:/Users/MSI_NB/Documents/Mimicry-site/scripts/ps05-d2-qa.mjs:31:6)\n    at async file:///C:/Users/MSI_NB/Documents/Mimicry-site/scripts/ps05-d2-qa.mjs:49:1"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
-import { SCREEN_NODE_BY_ID, type ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
+import { textPhase, TRANSITION } from './transition';
 import { viewportFromCenter, type CompositionViewport } from '../visual-lab/photonic-skin-ps04-m5/composition';
 import { isReadingFlow } from './layout';
 import type { ScrollProgress } from '../visual-lab/photonic-skin-ps04-m5/scroll-controller';
+import { MOTION } from './scene-navigation';
 
 const DURATION = 420;
 const clamp = (value:number) => Math.max(0,Math.min(1,value));
@@ -39,127 +40,75 @@ export class PlacementTransition {
  }
 }
 
-type Direct={from:ScreenNodeId;to:ScreenNodeId;axis:'X'|'Y';direction:number;incoming:number;exitOpacity:number;exit:HTMLElement|null};
+/** Real DOM blocks retain their section, inherited type and wrapping on every frame. */
 export class Ps05Motion {
- private placement=new PlacementTransition();
- private direct:Direct|null=null;
+ private waveUntil=0;
+ private arrival=-1;
  private copies:HTMLElement[]=[];
- private overlay:HTMLElement|null=null;
- private lastVisible=new Map<ScreenNodeId,{rect:{left:number;top:number;width:number};opacity:number}>();
  refresh(){this.copies=[...document.querySelectorAll<HTMLElement>('[data-ps05] [data-ps05-copy]')];}
- cancel(){this.overlay?.remove();this.overlay=null;this.direct=null;this.placement.cancel();}
- dispose(){this.cancel();for(const copy of this.copies){copy.style.removeProperty('opacity');copy.style.removeProperty('transform');copy.style.removeProperty('pointer-events');copy.inert=false;}this.copies=[];this.lastVisible.clear();}
- begin(from:ScreenNodeId,to:ScreenNodeId,current:CompositionViewport,reduced:boolean,now:number){
-  if(from===to)return;
-  const source=document.querySelector<HTMLElement>(`[id="screen-${from}"] [data-ps05-copy]`);
-  const destination=document.querySelector<HTMLElement>(`[id="screen-${to}"] [data-ps05-copy]`);
-  const root=document.querySelector<HTMLElement>('[data-ps05]');
-  if(!source||!destination||!root)return;
-  const visible=(el:HTMLElement)=>{const r=el.getBoundingClientRect();return r.bottom>80&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;};
-  const sourceOnscreen=visible(source);
-  const incoming=sourceOnscreen&&visible(destination)?Number(getComputedStyle(destination).opacity):0;
-  let exit=this.direct?.exit??null;
-  // Keep the actually visible outgoing layer on rapid reversal, not a fresh
-  // fully opaque copy of an incoming layer which has barely appeared yet.
-  if(!exit||Number(getComputedStyle(exit).opacity)<=Number(getComputedStyle(source).opacity)){
-   exit?.remove();exit=null;
-   const cached=this.lastVisible.get(from);
-   if((sourceOnscreen||cached)&&!reduced){
-    const rect=sourceOnscreen?source.getBoundingClientRect():cached!.rect;
-    const sourceOpacity=sourceOnscreen?Number(getComputedStyle(source).opacity):cached!.opacity;
-    exit=source.cloneNode(true) as HTMLElement;
-    exit.inert=true;exit.setAttribute('aria-hidden','true');exit.removeAttribute('data-ps05-copy');exit.dataset.motionSnapshot='true';
-    for(const el of [exit,...exit.querySelectorAll<HTMLElement>('*')])for(const attr of ['id','name','data-qa','aria-live','aria-labelledby','aria-describedby','aria-controls','for','tabindex'])el.removeAttribute(attr);
-    Object.assign(exit.style,{position:'fixed',left:`${rect.left}px`,top:`${rect.top}px`,width:`${rect.width}px`,maxWidth:`${rect.width}px`,margin:'0',transform:'none',opacity:String(sourceOpacity),zIndex:'4',pointerEvents:'none'});
-    exit.style.setProperty('width',`${rect.width}px`,'important');
-    if(!this.overlay){
-     this.overlay=document.createElement('div');
-     Object.assign(this.overlay.style,{position:'fixed',inset:'0',zIndex:'4',pointerEvents:'none',background:'transparent'});
-     document.body.appendChild(this.overlay);
-    }
-    this.overlay.className=root.className;
-    this.overlay.dataset.theme=root.dataset.theme;
-    this.overlay.dataset.reading=root.dataset.reading;
-    // The exchange layer is outside the React root. Carry D1's inline tokens
-    // across that boundary so outgoing text keeps the exact current theme.
-    for(const name of root.style) if(name.startsWith('--')) this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
-    this.overlay.appendChild(exit);
-   }
-  }else{const rect=exit.getBoundingClientRect();exit.style.left=`${rect.left}px`;exit.style.top=`${rect.top}px`;exit.style.transform='none';}
-  this.placement.begin(current,now);
-  this.direct={from,to,axis:!isReadingFlow()&&!!SCREEN_NODE_BY_ID[from].chapterId&&SCREEN_NODE_BY_ID[from].chapterId===SCREEN_NODE_BY_ID[to].chapterId?'X':'Y',direction:SCREEN_NODE_BY_ID[to].index>SCREEN_NODE_BY_ID[from].index?1:-1,incoming,exit,exitOpacity:exit?Number(getComputedStyle(exit).opacity):0};
-  if(!reduced){
-   for(const copy of [source,destination]){copy.style.opacity='0';copy.style.pointerEvents='none';copy.inert=true;}
-  }
-  if(reduced)this.cancel();
- }
- beginWheel(progress:ScrollProgress,deltaY:number,current:CompositionViewport,reduced:boolean,now:number,layout:{segments:{id:ScreenNodeId;start:number}[]}){
-  if(reduced||Math.abs(deltaY)<innerHeight*.58)return;
-  const index=layout.segments.findIndex(segment=>segment.id===progress.activeNodeId);
-  const direction=deltaY>0?1:-1;
-  const next=layout.segments[index+direction];
-  if(!next||index<0)return;
-  if(this.direct?.from===progress.activeNodeId&&this.direct.to===next.id)return;
-  if(isReadingFlow()){
-   const boundary=direction>0?next.start:layout.segments[index].start;
-   if(Math.abs(boundary-progress.scrollY)>Math.abs(deltaY)+innerHeight*.2)return;
-  }
-  this.begin(progress.activeNodeId,next.id,current,reduced,now);
- }
- update(target:CompositionViewport,reduced:boolean,now:number,progress?:ScrollProgress){
-  const u=this.placement.progress(now),direct=this.direct,reading=isReadingFlow();
-  if(this.overlay){
-   const root=document.querySelector<HTMLElement>('[data-ps05]');
-   if(root&&root.dataset.theme!==this.overlay.dataset.theme){
-    this.overlay.dataset.theme=root.dataset.theme;
-    for(const name of root.style)if(name.startsWith('--'))this.overlay.style.setProperty(name,root.style.getPropertyValue(name));
-   }
-  }
+ dispose(){for(const copy of this.copies){copy.style.removeProperty('opacity');copy.style.removeProperty('transform');copy.style.removeProperty('pointer-events');copy.inert=false;}this.copies=[];}
+ update(target:CompositionViewport,reduced:boolean,_now:number,progress?:ScrollProgress){
+  if(progress?.scene)return this.updateScene(target,reduced,_now,progress);
+  const t=progress?.transition;if(!t)return target;
+  const reading=isReadingFlow(),travel=innerWidth<=600?TRANSITION.mobileTravel:TRANSITION.travel;
   for(const copy of this.copies){
    const section=copy.closest<HTMLElement>('[data-node]');if(!section)continue;
-   const rect=section.getBoundingClientRect();
-   const horizontal=!reading&&Math.abs(rect.left)>2&&Math.abs(rect.top)<innerHeight*.5&&rect.bottom>innerHeight*.5;
-   const axis=horizontal?'X':'Y',extent=horizontal?innerWidth:innerHeight,offset=horizontal?rect.left:rect.top;
-   const distance=Math.abs(offset)/extent,direction=progress?.direction??1;
-   const outgoing=offset*direction<0;
-   const longReading=reading&&copy.scrollHeight>innerHeight-170;
-   let opacity=1,shift=0;
-   if(!reduced){
-    if(longReading){
-     if(direction>0){
-      if(rect.top>0)opacity=ease(clamp((innerHeight*.55-rect.top)/(innerHeight*.39)));
-      else if(rect.bottom<innerHeight)opacity=ease(clamp((rect.bottom-innerHeight*.18)/(innerHeight*.34)));
-     }else{
-      if(rect.top>0)opacity=1-ease(clamp((rect.top-innerHeight*.02)/(innerHeight*.32)));
-      else if(rect.bottom<innerHeight)opacity=ease(clamp((rect.bottom-innerHeight*.18)/(innerHeight*.42)));
-     }
-     shift=direction*(outgoing?-28*(1-opacity):28*(1-opacity));
-    }else{
-     opacity=exchangeOpacity(distance,outgoing);
-     shift=-offset+direction*(outgoing?-28*(1-opacity):28*(1-opacity));
-    }
-    opacity=Math.min(opacity,scrollCopyOpacity(rect,innerWidth,innerHeight,reading));
-   }
-   if(direct&&section.dataset.node===direct.from&&!reduced){opacity=0;shift=0;}
-   if(direct&&section.dataset.node===direct.to&&!reduced){
-    const enter=ease(clamp((u-.18)/.82));
-    opacity=direct.incoming+(1-direct.incoming)*enter;
-    const destinationOffset=direct.axis==='X'?rect.left:rect.top;
-    shift=-destinationOffset+direct.direction*28*(1-enter)*(1-direct.incoming);
-   }
-   copy.style.transform=reduced?'none':`translate${direct&&section.dataset.node===direct.to?direct.axis:axis}(${shift}px)`;
+   const id=section.dataset.node,rect=section.getBoundingClientRect();
+   const incoming=id===t.to&&t.from!==t.to,outgoing=id===t.from;
+   const visible=incoming||outgoing;
+   const sample=textPhase(t.progress,incoming);
+   const opacity=!visible?0:reduced?(id===progress.activeNodeId?1:0):t.from===t.to?1:sample.opacity;
+   const long=reading&&copy.scrollHeight>innerHeight-190;
+   const hold=outgoing&&long?Math.max(0,progress.scrollY-t.start):-rect.top;
+   const local=reduced?0:incoming?travel*(1-sample.phase):-travel*sample.phase;
+   const y=long&&outgoing?hold+local:-rect.top+local;
+   copy.style.transform=reduced?'none':`translate(${-rect.left}px, ${y}px)`;
+   if(long&&outgoing&&t.progress===0)copy.style.transform='none';
    copy.style.opacity=String(opacity);
-   copy.style.pointerEvents=!reduced&&opacity<.98?'none':'';
-   copy.inert=!reduced&&opacity<.02;
-   const rendered=copy.getBoundingClientRect();
-   if(opacity>.01&&rendered.bottom>80&&rendered.top<innerHeight&&rendered.right>0&&rendered.left<innerWidth){
-    this.lastVisible.set(section.dataset.node as ScreenNodeId,{rect:{left:rendered.left,top:rendered.top,width:rendered.width},opacity});
-   }
+   copy.style.setProperty('--sweep',`${150-sample.phase*200}%`);
+   copy.dataset.shimmer=String(!reduced&&visible&&sample.phase>0&&sample.phase<1);
+   copy.style.pointerEvents=opacity<.9?'none':'';
+   copy.inert=id!==progress.activeNodeId||opacity<.9;
+   section.inert=copy.inert;
+   section.setAttribute('aria-hidden',String(copy.inert));
   }
-  if(direct?.exit){const exit=ease(clamp(u/.55));direct.exit.style.opacity=String(direct.exitOpacity*(1-exit));direct.exit.style.transform=`translate${direct.axis}(${-direct.direction*28*exit}px)`;}
-  const result=this.placement.sample(target,now,reduced);
-  if(u>=1||reduced){this.overlay?.remove();this.overlay=null;this.direct=null;}
-  return result;
+  return target;
  }
- needsClock(){return this.direct!==null;}
+ private updateScene(target:CompositionViewport,reduced:boolean,now:number,progress:ScrollProgress){
+  const scene=progress.scene!,t=scene.transition,running=!!scene.target;
+  if(this.arrival!==scene.arrival){this.arrival=scene.arrival;this.waveUntil=reduced?0:scene.arrivedAt+MOTION.waveDelay+MOTION.waveDuration;}
+  const wave=now-scene.arrivedAt-MOTION.waveDelay;
+  for(const copy of this.copies){
+   const section=copy.closest<HTMLElement>('[data-node]');if(!section)continue;
+   const id=section.dataset.node,incoming=running&&id===t.to,outgoing=id===t.from,visible=incoming||outgoing;
+   section.style.visibility=visible?'visible':'hidden';
+   const reading=incoming?(t.toReading??0):outgoing?(t.fromReading??0):0;
+   section.style.top=`${-reading}px`;
+   const phase=incoming?clamp((t.progress-MOTION.exitFraction)/(1-MOTION.exitFraction)):clamp(t.progress/MOTION.exitFraction);
+   const eased=incoming?1-Math.pow(1-phase,3):ease(phase);
+   const opacity=!visible?0:!running?1:incoming?eased:1-eased;
+   // Keep the visible edge of long/scrolled content inside the viewport until opacity reaches zero.
+   const rect=copy.getBoundingClientRect(),matrix=new DOMMatrixReadOnly(getComputedStyle(copy).transform);
+   const naturalTop=rect.top-matrix.m42,naturalBottom=rect.bottom-matrix.m42;
+   const desired=innerWidth<=600?MOTION.mobileTravel:MOTION.desktopTravel;
+   const space=(t.sign??1)>0?naturalTop-8:innerHeight-naturalBottom-8;
+   // A long section already extends outside the reading viewport. Move its visible
+   // reading fragment as a block too; do not turn a boundary exit into a static fade.
+   const travel=t.axis==='x'||space<=0?desired:Math.min(desired,space);
+   const move=!running||reduced?0:(incoming?1-eased:-eased)*travel*(t.sign??1);
+   copy.style.transform=t.axis==='x'?`translate3d(${move}px,0,0)`:`translate3d(0,${move}px,0)`;
+   copy.style.opacity=String(opacity);copy.style.pointerEvents=!running&&id===scene.displayed?'':'none';
+   section.inert=running||id!==scene.displayed;copy.inert=section.inert;section.setAttribute('aria-hidden',String(section.inert));
+   copy.dataset.shimmer='false';
+   const fields=[...copy.querySelectorAll<HTMLElement>('[data-color-flow]')];
+   const flowing=!running&&id===scene.displayed&&!reduced&&wave>=0&&wave<MOTION.waveDuration;
+   if(flowing&&fields.length){
+    const first=fields[0].getBoundingClientRect().top,last=fields.at(-1)!.getBoundingClientRect().bottom;
+    const y=-MOTION.waveBand+(last-first+MOTION.waveBand)*clamp(wave/MOTION.waveDuration);
+    for(const field of fields){const offset=field.getBoundingClientRect().top-first;field.style.setProperty('--band-start',`${y-offset}px`);field.style.setProperty('--band-end',`${y+MOTION.waveBand-offset}px`);field.dataset.wave='true';}
+   }else if(!running||!outgoing){for(const field of fields)field.dataset.wave='false';}
+  }
+  return target;
+ }
+ needsClock(){return this.waveUntil>performance.now();}
 }

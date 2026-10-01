@@ -10,6 +10,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { EDITORIAL_MATERIAL } from '../../_ps05/design-tokens';
+import { EDITORIAL_PIGMENTS, editorialLut } from '../../_ps05/pigments';
 import { createR2ScaleGeometry } from "../photonic-skin-ps04-m6/final-r2/scale-geometry";
 import { contactStateTexture, createContactGeometry } from "../../_photonic-skin/contact-rendering";
 import { masterPaletteWeight } from "../../_photonic-skin/contact-surface";
@@ -1604,8 +1605,8 @@ function M41Content(props: SceneProps) {
   }, []);
   const textureCount = Object.keys(stateTextures).length + Object.keys(compiledTextures).length;
   const paletteTokens = useMemo(
-    () => PHOTONIC_COLOR_TOKENS.map((token) => new THREE.Color().fromArray([...token.linear])),
-    [],
+    () => PHOTONIC_COLOR_TOKENS.map((token,index) => new THREE.Color().fromArray([...(props.material.editorial?EDITORIAL_PIGMENTS[index]:token.linear)])),
+    [props.material.editorial],
   );
   const initialColorSnapshot = useMemo(
     () => props.material.colorController.snapshot(),
@@ -2523,6 +2524,7 @@ function M41Content(props: SceneProps) {
           props.onRenderedFrame?.({
             ...boundPairRef.current, progress: ack.drawnProgress, ack,
             paletteLut: shaderDisplayedLut({
+              makeLut: props.material.editorial ? editorialLut : undefined,
               sourceLut: sourceLutUniforms.map((v) => ({ color: [v.x, v.y, v.z] as [number, number, number], presence: v.w })),
               targetMask: uniforms.uPaletteMask.value,
               progress: uniforms.uPaletteProgress.value, ownershipEnabled: false,

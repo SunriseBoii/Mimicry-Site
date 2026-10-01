@@ -93,6 +93,8 @@ import {
   placementDeltaPx,
   settledSlotSample,
 } from "../magnetized-settle-r1/presentation-placement";
+import { loadBuilder, saveBuilder } from '../../../_ps05/persistence';
+import { editorialLut } from '../../../_ps05/pigments';
 import { R1MagneticDriver } from "../magnetized-settle-r1/r1-magnetic-driver";
 import type { TransitionUniforms } from "../../photonic-skin-ps04-m5/PS04M5Scene";
 import styles from "../../photonic-skin-ps04-m5/ps04m5.module.css";
@@ -115,7 +117,7 @@ import { createLoadGate, type SandboxLoadStatus } from "../../photonic-skin-ps04
 import { BuilderReviewPanel } from "./SettleReviewPanel";
 import { Experience } from "../../../_ps05/Experience";
 import { useSystemMotion } from "../../../_ps05/primitives";
-import { isReadingFlow, readingLayout, ps05Composition } from "../../../_ps05/layout";
+import { sceneLayout, ps05Composition } from "../../../_ps05/layout";
 import ps05Styles from "../../../_ps05/ps05.module.css";
 import { Ps05Motion } from "../../../_ps05/motion";
 import { THEMES, themeProperties } from "../../../_ps05/design-tokens";
@@ -321,7 +323,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const [promotedManifest, setPromotedManifest] = useState<M3Manifest | null>(null);
   const [motionManifest, setMotionManifest] = useState<M41Manifest | null>(null);
   const manifest = promotedManifest;
-  const [flow, setFlow] = useState<BuilderFlowState>(INITIAL_BUILDER_FLOW);
+  const [flow, setFlow] = useState<BuilderFlowState>(()=>ps05?loadBuilder():INITIAL_BUILDER_FLOW);
+  useEffect(()=>{if(ps05)saveBuilder(flow)},[flow,ps05]);
   const [hoverPreview, setHoverPreview] = useState<BuilderHoverPreview>(IDLE_HOVER_PREVIEW);
   const staticMode = query.get("static") === "1";
   const [activeNode, setActiveNode] = useState<ScreenNodeId>(
@@ -344,46 +347,37 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   useLayoutEffect(() => {
     if (finalRuntime(stage)) session.setIdleChannel("breathing");
   }, [session, stage]);
+  const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
+    width: 1440, height: 900, dpr, centerX: 1100, centerY: 480, size: 460, visible: true, identity,
+  }));
+  const reducedRef = useRef(reducedMotion);
   const controller = useMemo(() => new ScrollCompositionController(), []);
+  useLayoutEffect(()=>{controller.setScenes(ps05);return()=>controller.setScenes(false)},[controller,ps05]);
   const ps05Ref = useRef(ps05);
   const ps05MotionRef = useRef(new Ps05Motion());
   useLayoutEffect(() => {
     if (!ps05) return;
-    controller.setCssAnchorAlignment(true);
     const prepareLayout = () => {
-      const root = document.querySelector<HTMLElement>('[data-ps05]');
-      if (!root) return false;
-      const wasReading = root.dataset.reading === 'true';
-      const copies = [...root.querySelectorAll<HTMLElement>('[data-ps05-copy]')];
-      const reading = innerWidth <= 1100 || innerHeight < 800 || copies.some(copy => {
-        const spacing = getComputedStyle(copy.parentElement!);
-        return copy.scrollHeight > innerHeight - parseFloat(spacing.paddingTop) - parseFloat(spacing.paddingBottom);
-      });
-      root.dataset.reading = String(reading);
-      return wasReading !== reading;
+      const root=document.querySelector<HTMLElement>('[data-ps05]');
+      if(root)root.dataset.reading='true';
     };
-    controller.setLayoutAdapter(readingLayout, prepareLayout);
-    const syncAccessibility = () => {
-      const root = document.querySelector<HTMLElement>('[data-ps05]');
-      if (!root) return;
-      const current = controller.getProgress().activeNodeId;
-      for (const element of root.querySelectorAll<HTMLElement>('[data-node]')) {
-        const hidden = !isReadingFlow() && element.dataset.node !== current;
-        element.inert = hidden; element.setAttribute('aria-hidden', String(hidden));
-      }
-    };
-    const unsubscribeAccessibility = controller.subscribeDiscrete(syncAccessibility);
+    prepareLayout();
+    controller.setLayoutAdapter(sceneLayout,prepareLayout);
     const update = () => {
-      const previous = controller.getProgress().activeNodeId;
-      if (prepareLayout()) controller.scrollToNode(previous, 'auto', 'restore');
       controller.refreshLayout();
       ps05MotionRef.current.refresh();
-      syncAccessibility();
+      ps05MotionRef.current.update(compositionRef.current,reducedRef.current,performance.now(),controller.getProgress());
     };
     update();
-    const observer = new ResizeObserver(update);
-    document.querySelectorAll('[data-ps05-copy]').forEach(element => observer.observe(element));
-    return () => { observer.disconnect(); unsubscribeAccessibility(); controller.setLayoutAdapter(null); controller.setCssAnchorAlignment(false); };
+    if(!controller.getProgress().scene?.arrival){
+      controller.setUnlock(flow.unlock);
+      const requested=nodeFromHash()??'01';
+      controller.scrollToNode(isNodeUnlocked(requested,flow.unlock)?requested:'03.1','auto','restore');
+      update();
+    }
+    const observer=new ResizeObserver(update);
+    document.querySelectorAll('[data-ps05-copy]').forEach(element=>observer.observe(element));
+    return()=>{observer.disconnect();controller.setLayoutAdapter(null);};
   }, [controller, ps05, flow.unlock]);
   useEffect(() => {
     if (production) {
@@ -407,9 +401,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const stageRef = useRef(stage);
   const progressRef = useRef<ScrollProgress>(controller.getProgress());
   const canvasHostRef = useRef<HTMLDivElement | null>(null);
-  const compositionRef = useRef<CompositionViewport>(viewportFromCenter({
-    width: 1440, height: 900, dpr, centerX: 1100, centerY: 480, size: 460, visible: true, identity,
-  }));
   const visualRef = useRef({ x: 1100, y: 480, size: 460, visible: true, exitHold: 0, siteFit: 1, zoom: 1 });
   const clockRef = useRef({ running: false, frame: 0, previous: 0, token: 0, lastUi: 0 });
   const sendButtonRef = useRef<HTMLElement | null>(null);
@@ -424,8 +415,9 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const lastBuilderActionRef = useRef<BuilderActionTrace | null>(null);
   const dprRef = useRef(dpr);
   const identityRef = useRef(identity);
-  const reducedRef = useRef(reducedMotion);
-  const coordinatorRef = useRef(new ActorTransitionCoordinator());
+  const coordinatorRef = useRef(new ActorTransitionCoordinator(ps05?editorialLut:undefined));
+  const sceneActorRevisionRef = useRef(-1);
+
   const traceRef = useRef(new GeometryIdTrace());
   const m5TraceRef = useRef(new M5TransitionTrace());
   const placementFromRef = useRef({ x: 1100, y: 480, size: 460 });
@@ -455,8 +447,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const placementTelemetryRef = useRef(createPlacementChannelTelemetry());
   const r1HudExtrasRef = useRef<Array<[string, string | number | boolean | null]>>([]);
   const magneticDriver = useMemo(
-    () => (r1Runtime(stage) ? new R1MagneticDriver(controller) : null),
-    [controller, stage],
+    () => (r1Runtime(stage) && !ps05 ? new R1MagneticDriver(controller) : null),
+    [controller, stage, ps05],
   );
   const magneticDriverRef = useRef(magneticDriver);
   const programCache = useMemo(() => new FramingSandboxProgramCache(), []);
@@ -490,6 +482,21 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   const manifestsRef = useRef<{ m3: M3Manifest | null; m4: M41Manifest | null }>({ m3: null, m4: null });
   const lookaheadPinsRef = useRef<Set<string>>(new Set());
 
+  useLayoutEffect(()=>{
+    if(!ps05)return;
+    controller.setSceneReady(id=>{
+      if(!session.getSource()||contextState!=='ready')return true;
+      const tx=coordinatorRef.current.snapshot();
+      if(tx.targetNodeId!==id){
+        const index=stateIndexRef.current;if(!index)return true;
+        const next=resolveBuilderActorContract({nodeId:id,overlay:flowRef.current.overlay,index,flow:builderView(flowRef.current)});
+        return semanticActorKey(next).serialized===requestKeyRef.current&&tx.status==='settled';
+      }
+      return tx.kind!=='geometry'||(tx.programReady&&programBindRef.current?.revision===tx.revision&&!!programBindRef.current.bindCommitted);
+    });
+    return()=>controller.setSceneReady(null);
+  },[controller,ps05,session,contextState]);
+
   const startClock = useCallback(() => {
     const clock = clockRef.current;
     if (clock.running) return;
@@ -505,6 +512,13 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       clock.previous = now;
       const offscreen = session.snapshot().offscreen;
       const coordinator = coordinatorRef.current;
+      if(ps05Ref.current)controller.tickNavigation(now);
+      const sceneProgress=controller.getProgress().scene;
+      const sceneTx=coordinator.snapshot();
+      const sceneDrivesActor=ps05Ref.current&&sceneActorRevisionRef.current===sceneTx.revision;
+      if(sceneDrivesActor&&session.getTarget()?.entry.stateId===sceneTx.targetGeometryId&&sceneTx.programReady){
+        session.seekGeometryProgress(sceneProgress?.target?sceneProgress.transition.progress:1);
+      }
       if (!hidden && !offscreen) {
         const token = ++clock.token;
         const gated = coordinator.noteSessionTick(token);
@@ -527,6 +541,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
         sessionStatus: sessionSnap.status,
         geometryPlaying: sessionSnap.status === "transitioning" && sessionSnap.geometryProgress < 1,
         sessionTargetId: session.getTarget()?.entry.stateId ?? null,
+        sceneProgress:sceneDrivesActor?(sceneProgress?.target?sceneProgress.transition.progress:1):undefined,
       });
       const tx = coordinator.snapshot();
       if (tx.status === "settled" && tx.paletteCommitted && tx.revision !== lastSettledRevisionRef.current) {
@@ -558,9 +573,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       }
       geometrySnapshotRef.current = coordinator.geometrySnapshot();
       split.sync = performance.now() - clockStarted;
+
       const progress = controller.getProgress();
       progressRef.current = progress;
       const host = canvasHostRef.current;
+      if(ps05Ref.current&&host&&progress.transition){const t=progress.transition;const u=t.progress*t.progress*(3-2*t.progress);host.style.opacity=String(t.to==='08'?(t.from==='08'?0:1-u):t.from==='08'?u:1);}
       const size = { width: host?.clientWidth || window.innerWidth, height: host?.clientHeight || window.innerHeight };
       const index = stateIndexRef.current;
       const flowNow = flowRef.current;
@@ -571,7 +588,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       if (r1Runtime(stageRef.current)) {
         magneticDriverRef.current?.step(dt, window.scrollY, progress.viewportHeight, window);
       }
-      const destinationId = controller.getPendingTarget() ?? magnetism.candidateId ?? progress.activeNodeId;
+      const destinationId = ps05Ref.current ? (progress.scene?.target??progress.activeNodeId) : controller.getPendingTarget() ?? magnetism.candidateId ?? progress.activeNodeId;
       const anchorY = restoreScrollY(layout, destinationId, 0);
       const restoreDistance = Math.abs(progress.scrollY - anchorY);
       const magneticDistance = magnetism.candidateId ? magnetism.distancePx : restoreDistance;
@@ -609,16 +626,16 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
         viewportHeight: progress.viewportHeight,
         observedNodeId: progress.activeNodeId,
         magneticCandidateId: magnetism.candidateId,
-        pendingTarget: controller.getPendingTarget(),
+        pendingTarget: ps05Ref.current ? null : controller.getPendingTarget(),
         mode: controller.getMode(),
         gestureActive: controller.getMode() === "user",
         snapAnimationPending: controller.getMode() === "magnetic",
         layoutRevision: layoutRevisionRef.current,
-        distanceToAnchorPx: ps05Ref.current && isReadingFlow() ? 0 : Math.min(restoreDistance, magneticDistance),
+        distanceToAnchorPx: ps05Ref.current ? 0 : Math.min(restoreDistance, magneticDistance),
         reducedMotion: reducedRef.current,
       }) : settle.snapshot(now);
       settleTelemetryRef.current = telemetry;
-      if (finalRuntime(stageRef.current) && session.getSource() && telemetry.scrollPhase === "Settled"
+      if (!ps05Ref.current && finalRuntime(stageRef.current) && session.getSource() && telemetry.scrollPhase === "Settled"
         && telemetry.magnetizedSettledNodeId) {
         const nextHash = `#screen-${telemetry.magnetizedSettledNodeId}`;
         if (window.location.hash !== nextHash) {
@@ -656,7 +673,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
         builderPrewarmSourceRef.current = null;
         canvasHostRef.current?.removeAttribute("data-builder-prewarm");
       }
-      if (settle.consumeCancel()) {
+      if (settle.consumeCancel() && !ps05Ref.current) {
         pipelineRef.current.cancelPending("scroll-before-visual");
         const sourceId = session.getSource()?.entry.stateId;
         if (sourceId) session.beginRequest(sourceId);
@@ -713,7 +730,8 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
         });
         reportPrewarm();
       }
-      const intent = settle.consumeBegin();
+      const settledIntent = settle.consumeBegin();
+      const intent = ps05Ref.current ? {nodeId:destinationId} : settledIntent;
       if (index && intent) {
         try {
           const actorContract = resolveBuilderActorContract({
@@ -728,6 +746,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
             requestKeyRef.current = semantic;
             actorRequestLogRef.current.push(intent.nodeId);
             requestActorRef.current(actorContract);
+            if(ps05Ref.current&&progress.scene?.target)sceneActorRevisionRef.current=coordinator.snapshot().revision;
             setContract(actorContract);
           }
         } catch (reason) {
@@ -762,7 +781,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       const siteU = liveReduced || liveIdentity ? 1 : tx.positionProgress;
       const fitU = liveReduced || liveIdentity ? 1 : tx.fitProgress;
       const mixedFit = tx.sourceFit + (tx.targetFit - tx.sourceFit) * fitU;
-      const r1Placement = r1Runtime(stageRef.current)
+      const r1Placement = !ps05Ref.current && r1Runtime(stageRef.current)
         ? computePresentationPlacement({
           scrollY: window.scrollY,
           layout,
@@ -850,7 +869,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
           ? r1Placement.displayedPlacement.slot
           : (siteU >= 1 ? targetSample.slot : tx.sourceSlot),
       });
-      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId), liveReduced, now, progress);
+      if (ps05Ref.current) compositionRef.current = ps05MotionRef.current.update(ps05Composition(compositionRef.current, progress.activeNodeId, progress.transition), liveReduced, now, progress);
       transitionRef.current = {
         paletteOwnershipMode: tx.paletteOwnershipMode,
         continuityEnabled: continuityLiftRef.current ? tx.continuityEnabled : 0,
@@ -961,7 +980,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       if (tx.status === "settled" && pipelineRef.current.visual === "morphing") {
         pipelineRef.current.markSettled();
       }
-      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || ps05MotionRef.current.needsClock() || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || preparing || geometryLogRef.current.recording || m5TraceRef.current.recordingNow || settleRef.current.needsClock() || Boolean(magneticDriverRef.current?.needsClock())) {
+      if ((session.shouldAnimate() && document.visibilityState !== "hidden") || controller.navigationRunning() || ps05MotionRef.current.needsClock() || siteMoving || (!target.visible && visualRef.current.visible) || tx.status === "running" || geoStatus === "waiting" || preparing || geometryLogRef.current.recording || m5TraceRef.current.recordingNow || settleRef.current.needsClock() || Boolean(magneticDriverRef.current?.needsClock())) {
         clock.frame = requestAnimationFrame(loop);
       } else {
         clock.running = false;
@@ -994,13 +1013,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       onMagneticBegin: () => startClock(),
     });
     const detach = controller.attach(window);
-    const onPs05Wheel = (event: WheelEvent) => {
-      if (!ps05Ref.current || event.defaultPrevented || !event.deltaY) return;
-      if (event.target instanceof Element && event.target.closest('textarea, dialog, [role="dialog"]')) return;
-      ps05MotionRef.current.beginWheel(controller.getProgress(), event.deltaY, compositionRef.current, reducedRef.current, performance.now(), controller.layout());
-      startClock();
-    };
-    window.addEventListener("wheel", onPs05Wheel, { passive: true, capture: true });
     const onScrollEnd = () => settleRef.current.noteHint("scrollend");
     const onSnapChanging = (event: Event) => {
       const snap = (event as Event & { snapTargetElement?: Element }).snapTargetElement;
@@ -1028,6 +1040,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
     window.addEventListener("resize", onResizeLayout);
     const unsub = controller.subscribeDiscrete((progress) => {
       progressRef.current = progress;
+      if(ps05Ref.current&&!session.getSource()&&progress.scene?.target)bootTargetOverrideRef.current=progress.scene.target;
       setActiveNode(progress.activeNodeId);
       coordinatorRef.current.noteCommittedNode(settleRef.current.snapshot().actorCommittedNodeId ?? progress.activeNodeId, performance.now());
       r6Ref.current.mark("r6:semantic-node-commit", { nodeId: progress.activeNodeId, scrollY: window.scrollY });
@@ -1059,7 +1072,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       }
       startClock();
     });
-    const unsubFrame = controller.subscribeFrame(() => { if (ps05Ref.current) startClock(); });
+    const unsubFrame = controller.subscribeFrame(progress => { if (ps05Ref.current) { ps05MotionRef.current.update(compositionRef.current, reducedRef.current, performance.now(), progress); startClock(); } });
     const ps05Motion = ps05MotionRef.current;
     startClock();
     return () => {
@@ -1068,7 +1081,6 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
       window.removeEventListener("scrollsnapchanging", onSnapChanging);
       window.removeEventListener("scrollsnapchange", onSnapChange);
       window.removeEventListener("resize", onResizeLayout);
-      window.removeEventListener("wheel", onPs05Wheel, true);
       cancelAnimationFrame(clock.frame);
       clock.running = false;
       unsub();
@@ -1194,7 +1206,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
           requestKeyRef.current = semanticActorKey(bootContract).serialized;
           contractRef.current = bootContract;
           setContract(bootContract);
-          setActiveNode(bootNode);
+          if(!ps05Ref.current)setActiveNode(bootNode);
           if (r6StagingRef.current) {
             pipelineRef.current.hydrateResident({
               revision: coordinatorRef.current.snapshot().revision,
@@ -1225,7 +1237,7 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
             || pipelineRef.current.state === "gpu-staging"
             || pipelineRef.current.state === "cpu-preparing",
         });
-        if (production || bootPlayModeRef.current === "settled") {
+        if (!ps05Ref.current && (production || bootPlayModeRef.current === "settled")) {
           const moved = controller.scrollToNode(bootNode, "auto", "restore");
           if (production && moved) {
             const bootHash = `#screen-${bootNode}`;
@@ -1671,13 +1683,11 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
   }, [aboutZoom, dpr, flow, identity, manifest, merchZoom, reducedMotion, requestActor, startClock, stateIndex, continuityLift, reproduceR4Geometry, r6Staging, session, videoZoom, stage, magnetismProfileId, magneticDriver]);
 
   const navigate = useCallback((id: ScreenNodeId) => {
-    if (ps05 && controller.layout().byId[id]) ps05MotionRef.current.begin(controller.getProgress().activeNodeId, id, compositionRef.current, reducedRef.current, performance.now());
-    const moved = controller.scrollToNode(id, ps05 ? 'auto' : undefined);
-    if (moved && ps05) requestAnimationFrame(() => document.getElementById(`heading-${id}`)?.focus({ preventScroll: true }));
+    const moved = controller.scrollToNode(id);
     if (moved && finalRuntime(stage)) {
       const nextHash = `#screen-${id}`;
-      if (window.location.hash !== nextHash) window.history.pushState({ node: id }, "", nextHash);
-      if (session.getSource()) settleRef.current.requestDestination(id);
+      if (!ps05 && window.location.hash !== nextHash) window.history.pushState({ node: id }, "", nextHash);
+      if (session.getSource()) {if(!ps05)settleRef.current.requestDestination(id);}
       else bootTargetOverrideRef.current = id;
       if (!firstGpuFrameRef.current) firstGpuTargetRef.current = defaultGeometryForNode(id) ?? "master-neutral";
       startClock();
@@ -1718,9 +1728,10 @@ export function MagnetizedSettleLab({ mode, stage = "m62", refinedScales = false
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
+      if(ps05)return;
       if (flow.overlay || document.querySelector('dialog[open]')) return;
       const target = event.target;
-      if (ps05 && (isReadingFlow() || (target instanceof HTMLElement && target.closest('button, a, summary, [role="radio"], [role="checkbox"]')))) return;
+      if (ps05 && (target instanceof HTMLElement && target.closest('button, a, summary, [role="radio"], [role="checkbox"], [role="listbox"], [contenteditable]'))) return;
       if (target instanceof HTMLElement && (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) || target.isContentEditable)) return;
       const unlock = flow.unlock;
       const anchor = stageRef.current === "final-r2"

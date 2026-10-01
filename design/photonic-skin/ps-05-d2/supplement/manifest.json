@@ -1,0 +1,79 @@
+{
+  "base": "http://127.0.0.1:3005",
+  "build": "ytlFC5soD5XC9pMgrONtm",
+  "browser": "154.0.4258.37",
+  "checks": [
+    {
+      "name": "390-light-all7-materials-03.2",
+      "pass": true
+    },
+    {
+      "name": "390-light-all7-materials-03.3",
+      "pass": true
+    },
+    {
+      "name": "light-touch-interrupt-stable",
+      "y": 10352,
+      "p": "0.32576278963064925"
+    },
+    {
+      "name": "390-light-touch-stop",
+      "pass": true
+    },
+    {
+      "name": "mobile-gpu-light",
+      "pass": true
+    },
+    {
+      "name": "390-dark-all7-materials-03.2",
+      "pass": true
+    },
+    {
+      "name": "390-dark-all7-materials-03.3",
+      "pass": true
+    },
+    {
+      "name": "dark-touch-interrupt-stable",
+      "y": 10207,
+      "p": "0.3091305345262675"
+    },
+    {
+      "name": "390-dark-touch-stop",
+      "pass": true
+    },
+    {
+      "name": "mobile-gpu-dark",
+      "pass": true
+    },
+    {
+      "name": "context-loss-editable",
+      "pass": true
+    },
+    {
+      "name": "context-loss-contact",
+      "pass": true
+    },
+    {
+      "name": "fields-and-context-loss",
+      "pass": true
+    },
+    {
+      "name": "merch-team-forward-reverse-wheel",
+      "y": 9402,
+      "p": "0.30833333333333335"
+    },
+    {
+      "name": "merch-team",
+      "pass": true
+    },
+    {
+      "name": "1280-task-clear-slot",
+      "pass": true
+    },
+    {
+      "name": "boundary-and-first-frames",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

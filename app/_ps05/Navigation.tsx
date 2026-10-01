@@ -39,15 +39,14 @@ export function Header({active,navigate,theme,onTheme,reduced,manualReduced,onMo
 }
 
 const label=(id:ScreenNodeId)=>id==='01'?'Главная':id==='03.3'?'Ваш запрос':SCREEN_NODE_BY_ID[id].title;
-export function RouteGraph({active,unlock,navigate}:{active:ScreenNodeId;unlock:UnlockFlags;navigate:(id:ScreenNodeId)=>void}) {
- const {open,root,trigger,close,events,toggle,reveal}=useDisclosure();
- const point=(p:{x:number;y:number})=>({x:20+p.x*40,y:20+p.y*24});
- return <nav ref={root} className={s.graph} data-open={open} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов" {...events}>
-  <button type="button" ref={trigger} className={s.graphToggle} aria-expanded={open} aria-controls="route-map" onFocus={e=>{if(e.currentTarget.matches(':focus-visible'))reveal()}} onClick={toggle}><span aria-hidden="true" className={s.currentDot}/><span>{active} / {label(active)}</span><span aria-hidden="true">{open?'−':'+'}</span></button>
-  <div id="route-map" className={s.graphPanel} hidden={!open}>
-   <p className={s.eyebrow}>Маршрут / 18 экранов</p>
-   <svg viewBox="0 0 280 232" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=><path key={`${edge.from}-${edge.to}`} d={edge.path.map((p,i)=>{const q=point(p);return `${i?'L':'M'}${q.x} ${q.y}`}).join(' ')} fill="none" stroke="currentColor" strokeWidth="1.2"/>)}{SCREEN_NODES.map(node=>{const p=point(node.graph);return <circle key={node.id} cx={p.x} cy={p.y} r={active===node.id?5:3.5} fill={active===node.id?'currentColor':'var(--surface)'} stroke="currentColor" strokeWidth="1.3" strokeDasharray={isNodeUnlocked(node.id,unlock)?undefined:'2 2'}/>})}</svg>
-   <div className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={node.competenceId?{'--accent':`var(--competence-${node.competenceId})`} as CSSProperties:undefined} onClick={()=>{close();navigate(node.id)}}><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}{!unlocked&&<small>{node.id==='03.2'?'Выберите задачу':'Подтвердите состав'}</small>}</span><span aria-hidden="true">{active===node.id?'●':unlocked?'↗':'⌁'}</span></button>})}</div>
+export function RouteGraph({active,preview,target,unlock,navigate}:{active:ScreenNodeId;preview:ScreenNodeId|null;target:ScreenNodeId|null;unlock:UnlockFlags;navigate:(id:ScreenNodeId)=>void}) {
+ const links=useRef<HTMLDivElement>(null);
+ useEffect(()=>{const list=links.current,button=list?.querySelector<HTMLElement>('[aria-current]');if(list&&button&&innerWidth<=1100){const x=button.offsetLeft-list.offsetLeft;list.scrollTo({left:Math.max(0,x-list.clientWidth/2+button.offsetWidth/2),behavior:'auto'});}},[active]);
+ const point=(id:ScreenNodeId)=>{const n=SCREEN_NODE_BY_ID[id];return {x:10+(n.chapterIndex?14:0),y:16+n.index*29};};
+ return <nav className={s.graph} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов">
+  <div id="route-map" className={s.graphPanel}>
+   <svg viewBox="0 0 200 522" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=>{const a=point(edge.from),b=point(edge.to);return <path key={edge.from+'-'+edge.to} d={`M${a.x} ${a.y} V${b.y} H${b.x}`} fill="none" stroke="currentColor" strokeWidth="1"/>})}</svg>
+   <div ref={links} className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-preview={preview===node.id} data-target={target===node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} aria-label={label(node.id)+(!unlocked?(node.id==='03.2'?' — сначала выберите задачу':' — сначала подтвердите состав'):'')} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={{'--indent':node.chapterIndex?'14px':'0px',...(node.competenceId?{'--accent':`var(--competence-${node.competenceId})`}:{})} as CSSProperties} onClick={()=>navigate(node.id)}><span className={s.currentDot} aria-hidden="true"/><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}</span>{!unlocked&&<span aria-hidden="true">⌁</span>}</button>})}</div>
   </div>
  </nav>;
 }

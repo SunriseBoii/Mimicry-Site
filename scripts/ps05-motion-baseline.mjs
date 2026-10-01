@@ -1,0 +1,10 @@
+import {chromium} from 'playwright-core';
+import {mkdirSync,writeFileSync} from 'node:fs';
+const out='design/photonic-skin/ps-05-motion-01/baseline';mkdirSync(out,{recursive:true});
+const b=await chromium.launch({channel:'msedge',headless:true});
+const c=await b.newContext({viewport:{width:1440,height:900},recordVideo:{dir:out}}),p=await c.newPage();
+await p.goto('http://127.0.0.1:3005/?theme=light#screen-04');
+await p.waitForFunction(()=>document.documentElement.dataset.m4Node==='04');await p.waitForTimeout(2000);
+await p.evaluate(()=>{window.trace=[];const start=performance.now();function frame(){window.trace.push({t:performance.now()-start,y:scrollY,active:document.documentElement.dataset.m4Node,p:document.documentElement.dataset.pageProgress,copies:[...document.querySelectorAll('[data-ps05-copy]')].map(e=>({id:e.closest('[data-node]').dataset.node,opacity:getComputedStyle(e).opacity,transform:getComputedStyle(e).transform,font:getComputedStyle(e.querySelector('h1,h2')).fontSize,rect:e.getBoundingClientRect().toJSON()}))});if(performance.now()-start<6500)requestAnimationFrame(frame)}frame()});
+await p.mouse.wheel(0,120);await p.waitForTimeout(1400);await p.keyboard.press('ArrowDown');await p.waitForTimeout(120);await p.mouse.wheel(0,-30);await p.waitForTimeout(1700);await p.keyboard.press('ArrowUp');await p.waitForTimeout(2200);
+await p.screenshot({path:`${out}/current.png`});writeFileSync(`${out}/current.json`,JSON.stringify(await p.evaluate(()=>window.trace)));const v=p.video();await c.close();await v.saveAs(`${out}/current.webm`);console.log(b.version());await b.close();

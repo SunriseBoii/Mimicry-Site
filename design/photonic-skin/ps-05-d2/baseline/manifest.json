@@ -1,0 +1,153 @@
+{
+  "browser": "154.0.4258.37",
+  "scenarios": [
+    {
+      "name": "keys",
+      "width": 1440,
+      "height": 900,
+      "start": {
+        "t": 0.5,
+        "y": 2702,
+        "active": "04",
+        "mode": "idle",
+        "elements": [
+          {
+            "node": "04",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 2)",
+            "rect": {
+              "x": 63.359375,
+              "y": 136,
+              "w": 864,
+              "h": 581.1875
+            },
+            "text": "Идеи становятся опытом",
+            "font": "52.56px"
+          }
+        ]
+      },
+      "end": {
+        "t": 6247.399999976158,
+        "y": 3602,
+        "active": "05.1",
+        "mode": "idle",
+        "elements": [
+          {
+            "node": "05.1",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 3.2, 0)",
+            "rect": {
+              "x": 642.25,
+              "y": 136,
+              "w": 734.390625,
+              "h": 578.484375
+            },
+            "text": "Контент",
+            "font": "96.48px"
+          }
+        ]
+      }
+    },
+    {
+      "name": "slow",
+      "width": 1840,
+      "height": 944,
+      "start": {
+        "t": 0.800000011920929,
+        "y": 2834,
+        "active": "04",
+        "mode": "idle",
+        "elements": [
+          {
+            "node": "04",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 2)",
+            "rect": {
+              "x": 80.953125,
+              "y": 136,
+              "w": 1080,
+              "h": 625.4375
+            },
+            "text": "Идеи становятся опытом",
+            "font": "67.16px"
+          }
+        ]
+      },
+      "end": {
+        "t": 8090.0999999940395,
+        "y": 2838,
+        "active": "04",
+        "mode": "magnetic",
+        "elements": [
+          {
+            "node": "04",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 6)",
+            "rect": {
+              "x": 80.953125,
+              "y": 136,
+              "w": 1080,
+              "h": 625.4375
+            },
+            "text": "Идеи становятся опытом",
+            "font": "67.16px"
+          }
+        ]
+      }
+    },
+    {
+      "name": "graph-interrupt",
+      "width": 1440,
+      "height": 900,
+      "start": {
+        "t": 0.4000000059604645,
+        "y": 2702,
+        "active": "04",
+        "mode": "idle",
+        "elements": [
+          {
+            "node": "04",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 2)",
+            "rect": {
+              "x": 63.359375,
+              "y": 136,
+              "w": 864,
+              "h": 581.1875
+            },
+            "text": "Идеи становятся опытом",
+            "font": "52.56px"
+          }
+        ]
+      },
+      "end": {
+        "t": 4572.5999999940395,
+        "y": 9002,
+        "active": "05.7",
+        "mode": "idle",
+        "elements": [
+          {
+            "node": "05.7",
+            "snapshot": false,
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 2)",
+            "rect": {
+              "x": 642.25,
+              "y": 136,
+              "w": 734.390625,
+              "h": 578.484375
+            },
+            "text": "Мерч",
+            "font": "96.48px"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

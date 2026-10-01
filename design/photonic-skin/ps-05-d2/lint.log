@@ -1,0 +1,57 @@
+
+> mimicry-website@0.1.0 lint
+> eslint .
+
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m5\event-sandbox\EventSandboxLab.tsx
+  146:15  warning  'setHud' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  151:10  warning  'error' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  159:10  warning  'txUi' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m5\video-sandbox\VideoSandboxLab.tsx
+  156:15  warning  'setHud' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  161:10  warning  'error' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  169:10  warning  'txUi' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m6\magnetized-settle\MagnetizedSettleLab.tsx
+  1618:5  error  Error: This value cannot be modified
+
+This modifies a variable that React considers immutable.
+
+C:\Users\MSI_NB\Documents\Mimicry-site\app\visual-lab\photonic-skin-ps04-m6\magnetized-settle\MagnetizedSettleLab.tsx:1618:5
+  1616 |     dprRef.current = dpr;
+  1617 |     identityRef.current = identity;
+> 1618 |     reducedRef.current = reducedMotion;
+       |     ^^^^^^^^^^ `reducedRef` cannot be modified
+  1619 |     continuityLiftRef.current = continuityLift;
+  1620 |     reproduceR4GeometryRef.current = reproduceR4Geometry;
+  1621 |     r6StagingRef.current = r6Staging;  react-hooks/immutability
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m4-r6-r1\scripts\isolation-r6-r1.mjs
+  32:11  warning  'inventory' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-2-r2\scripts\process-capture.mjs
+  8:7  warning  'AR2' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-2\scripts\capture-m5-2.mjs
+  1:10  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-4\scripts\capture-m5-4-continue.mjs
+  1:50  warning  'existsSync' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-4\scripts\write-static-reports.mjs
+  15:3  warning  'UNAFFECTED_NODE_IDS' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-5\scripts\capture-m5-5.mjs
+  15:7   warning  'REVIEW' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  80:10  warning  'overlap' is defined but never used          @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m5-6\scripts\capture-m5-6.mjs
+   28:7  warning  'NODES' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  526:9  warning  'plateau' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\MSI_NB\Documents\Mimicry-site\design\photonic-skin\ps-04-m6-2-r2\scripts\capture-m6-2-r2.mjs
+  54:10  warning  'handleName' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 17 problems (1 error, 16 warnings)
+

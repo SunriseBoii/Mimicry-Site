@@ -1,0 +1,14 @@
+{
+  "build": "kDHBtUKzZzXe1B9VkxUkg",
+  "browser": "154.0.4258.37",
+  "checks": [
+    "physical native release near boundary: hysteresis stable",
+    "resize during transition reaches final scene",
+    "long section native thumb reads before release",
+    "emulated pinch scale, landscape and reduced viewport height",
+    "synthetic background event finalizes transition",
+    "WebGL context loss leaves DOM navigation working",
+    "axe contact: zero violations"
+  ],
+  "errors": []
+}

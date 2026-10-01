@@ -9,6 +9,8 @@ import {
   type ScreenNodeId,
 } from "./topology";
 import { isNodeUnlocked, type UnlockFlags } from "./graph-model";
+import { displayedNode, pageTransition, smooth, TRANSITION, unit, type PageTransition } from '../../_ps05/transition';
+import { SceneNavigation, type SceneSnapshot } from '../../_ps05/scene-navigation';
 
 export const HYSTERESIS = 0.12;
 export const VIEWPORT_CSS = "100svh";
@@ -36,6 +38,8 @@ export interface CanonicalLayout {
 }
 
 export interface ScrollProgress {
+  scene?: SceneSnapshot;
+  transition?: PageTransition;
   scrollY: number;
   viewportHeight: number;
   viewportWidth: number;
@@ -389,6 +393,31 @@ function editingElement(node: Element | null) {
 export type DiscreteListener = (progress: ScrollProgress) => void;
 
 export class ScrollCompositionController {
+  private scenes:SceneNavigation|null=null;
+  private detachScenes:(()=>void)|null=null;
+  private sceneReady:((id:ScreenNodeId)=>boolean)|null=null;
+  setSceneReady(ready:((id:ScreenNodeId)=>boolean)|null){this.sceneReady=ready;}
+  setScenes(enabled:boolean) {
+    this.setContinuous(false);
+    this.scenes=enabled?new SceneNavigation({host:()=>this.attached,layout:()=>this.layout(),now:()=>this.now(),notify:()=>this.sync(false),blocked:()=>this.guards.dialogOpen,reduced:()=>this.reducedMotion,ready:id=>this.sceneReady?.(id)??true}):null;
+  }
+  private continuous = false;
+  private navigation: {from:number;to:number;start:number;duration:number;id:ScreenNodeId} | null = null;
+  private bridge: PageTransition | null = null;
+  setContinuous(enabled:boolean) { this.continuous=enabled;this.navigation=null;this.bridge=null;this.cancelMagnetism('idle');this.pendingTarget=null;this.clearIdle(); }
+  navigationRunning() { return this.scenes?.busy()??(this.navigation!==null); }
+  /** Driven by the existing runtime frame; no additional scroll clock. */
+  tickNavigation(now:number) {
+    if(this.scenes){this.scenes.tick(now);return;}
+    const n=this.navigation,host=this.attached;if(!n||!host)return;
+    const u=unit((now-n.start)/n.duration);
+    host.scrollTo({top:n.from+(n.to-n.from)*smooth(u),behavior:'auto'});
+    this.sync(false);
+    if(u>=1){
+      this.navigation=null;this.pendingTarget=null;this.mode='idle';this.sync(true);
+      if(typeof document!=='undefined' && !document.activeElement?.closest('nav, header'))document.getElementById(`heading-${n.id}`)?.focus({preventScroll:true});
+    }
+  }
   private layoutAdapter: (() => CanonicalLayout | null) | null = null;
   private prepareLayout: (() => void) | null = null;
   private cssAnchorAlignment = false;
@@ -436,6 +465,7 @@ export class ScrollCompositionController {
   private guards: MagnetismGuards = { ...EMPTY_GUARDS };
   private supportsScrollEnd = false;
   private onScroll = () => {
+    if(this.scenes){this.scenes.nativeScroll();this.sync(false);return;}
     // A browser may deliver the scroll event after the input-idle timer has
     // already fired (notably wheel and touch momentum under a busy GPU). Keep
     // the magnetism timer tied to the last actual scroll pixel, within a
@@ -448,7 +478,7 @@ export class ScrollCompositionController {
     }
     this.queue();
   };
-  private onResize = () => this.resize();
+  private onResize = () => {if(this.scenes){this.viewport={width:this.attached!.innerWidth,height:this.attached!.innerHeight};this.prepareLayout?.();this.scenes.resize();}else this.resize();};
   private onScrollEnd = () => this.onInputIdle();
   private onWheel = () => this.noteUserInput("wheel");
   private onTouch = () => this.noteUserInput("touch");
@@ -464,6 +494,7 @@ export class ScrollCompositionController {
     if (editingElement(event.target instanceof Element ? event.target : null)) return;
     const keys = [" ", "Spacebar", "PageDown", "PageUp", "ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "Home", "End"];
     if (!keys.includes(event.key)) return;
+    if(this.continuous && event.key.startsWith('Arrow')) return;
     this.noteUserInput("keyboard");
   };
 
@@ -480,10 +511,13 @@ export class ScrollCompositionController {
   }
 
   getPendingTarget() {
+    if(this.scenes)return this.scenes.snapshot().target;
     return this.pendingTarget;
   }
 
   committedActorNodeId(): ScreenNodeId {
+    if(this.scenes)return this.scenes.snapshot().target??this.scenes.displayed;
+    if(this.continuous)return this.snapshot.activeNodeId;
     if (this.pendingTarget && (this.mode === "programmatic" || this.mode === "restore" || this.mode === "magnetic")) {
       return this.pendingTarget;
     }
@@ -559,6 +593,7 @@ export class ScrollCompositionController {
     this.supportsScrollEnd = typeof target === "object" && target !== null && "onscrollend" in target;
     target.addEventListener("scroll", this.onScroll, { passive: true });
     target.addEventListener("resize", this.onResize);
+    if(this.scenes){this.detachScenes=this.scenes.attach(target);this.sync(true);return()=>this.detach();}
     target.addEventListener("wheel", this.onWheel, { passive: true, capture: true });
     target.addEventListener("touchstart", this.onTouch, { passive: true, capture: true });
     target.addEventListener("touchmove", this.onTouch, { passive: true, capture: true });
@@ -572,6 +607,8 @@ export class ScrollCompositionController {
   }
 
   detach() {
+    this.detachScenes?.();this.detachScenes=null;
+    this.navigation=null;this.bridge=null;
     const host = this.attached;
     if (!host) {
       this.guards.unmounted = true;
@@ -639,7 +676,9 @@ export class ScrollCompositionController {
   }
 
   noteUserInput(kind: UserInputKind) {
+    if(this.scenes)return;
     if (this.guards.unmounted) return;
+    if(this.continuous){this.navigation=null;this.pendingTarget=null;}
     if (this.mode === "idle" || this.mode === "magnetic") {
       this.fastGesture = false;
       this.gestureStartNodeId = this.snapshot.activeNodeId;
@@ -658,8 +697,25 @@ export class ScrollCompositionController {
 
   scrollToNode(id: ScreenNodeId, behavior?: ScrollBehavior, origin: ScrollOrigin = "programmatic") {
     if (!isNodeUnlocked(id, this.unlock)) return false;
+    if(this.scenes)return this.scenes.request(id,origin==='restore'?'restore':'command');
     const layout = this.layout();
     const top = restoreScrollY(layout, id, 0);
+    if(this.continuous && origin==='programmatic' && behavior!=='auto' && !this.reducedMotion && this.attached){
+      const from=this.attached.scrollY;
+      if(Math.abs(top-from)<1)return true;
+      this.cancelMagnetism(origin);this.clearIdle();this.pendingTarget=id;this.mode=origin;
+      const current=this.snapshot.activeNodeId;
+      const a=layout.segments.findIndex(s=>s.id===current),b=layout.segments.findIndex(s=>s.id===id);
+      if(this.bridge && (id===this.bridge.from || id===this.bridge.to)){
+        // Reversal keeps the currently displayed bridge and its exact phase.
+      }else if(Math.abs(a-b)>1){
+        const low=top>from?current:id,high=top>from?id:current;
+        this.bridge={from:low,to:high,progress:top>from?0:1,start:Math.min(from,top),end:Math.max(from,top),fromStart:layout.byId[low]!.start,toStart:layout.byId[high]!.start,direct:true};
+      }else this.bridge=null;
+      this.navigation={from,to:top,start:this.now(),duration:TRANSITION.duration,id};
+      this.sync(true);return true;
+    }
+    this.navigation=null;this.bridge=null;
     if (
       this.pendingTarget === id
       && (this.mode === "programmatic" || this.mode === "restore")
@@ -756,6 +812,7 @@ export class ScrollCompositionController {
 
   private onInputIdle() {
     if (this.mode !== "user") return;
+    if(this.continuous){this.mode='idle';this.candidate=null;this.sync(false);return;}
     if (this.layoutAdapter?.()) { this.mode = "idle"; this.candidate = null; this.sync(false); return; }
     if (this.guards.pointerHeld) return;
     // Native scroll and scrollend may arrive before the queued RAF samples
@@ -859,6 +916,7 @@ export class ScrollCompositionController {
   private resize() {
     if (!this.attached) return;
     const previous = this.snapshot;
+    this.navigation=null;this.bridge=null;
     this.viewport = { width: this.attached.innerWidth, height: this.attached.innerHeight };
     // Apply the presentation mode before measuring it. Sticky panels share a
     // top coordinate until their reading-flow CSS has been enabled.
@@ -876,6 +934,13 @@ export class ScrollCompositionController {
   }
 
   private applyScroll(scrollY: number, forceDiscrete: boolean) {
+    if(this.scenes){
+      const scene=this.scenes.snapshot(),layout=this.layout(),i=layout.segments.findIndex(s=>s.id===scene.displayed);
+      const changed=scene.displayed!==this.snapshot.activeNodeId||scene.target!==this.snapshot.scene?.target||scene.preview!==this.snapshot.scene?.preview||forceDiscrete;
+      this.mode=scene.target?'programmatic':'idle';this.lastY=scrollY;
+      const next:ScrollProgress={...this.snapshot,scene,transition:scene.transition,scrollY,viewportWidth:this.viewport.width,viewportHeight:this.viewport.height,documentHeight:layout.documentHeight,activeNodeId:scene.displayed,nextNodeId:layout.segments[i+1]?.id??null,previousNodeId:layout.segments[i-1]?.id??null,direction:(scene.transition.sign??1) as 1|-1,edgeProgress:0,revision:++this.progressRevision};
+      this.snapshot=next;this.writeCss(next);for(const listener of this.frame)listener(next);if(changed)for(const listener of this.discrete)listener(next);return;
+    }
     const now = this.now();
     const dt = Math.max(1, now - (this.lastScrollAt || now));
     const dy = scrollY - this.lastY;
@@ -897,7 +962,7 @@ export class ScrollCompositionController {
     // whole no-op interval so the visible section is also the interactive one.
     const atAnchor = scrollY >= rawAnchor - (this.cssAnchorAlignment ? MAGNETISM.noopDistancePx : 0)
       && scrollY - rawAnchor <= MAGNETISM.noopDistancePx;
-    const next = mapScrollToProgress({
+    let next = mapScrollToProgress({
       layout,
       scrollY,
       viewportHeight: this.viewport.height,
@@ -907,6 +972,14 @@ export class ScrollCompositionController {
       direction: this.direction,
       ignoreHysteresis: this.skipHysteresis || this.pendingTarget !== null || programmatic || atAnchor,
     });
+    if(this.continuous){
+      if(this.bridge && (scrollY<this.bridge.start-2||scrollY>this.bridge.end+2))this.bridge=null;
+      const transition=this.bridge?{...this.bridge,progress:unit((scrollY-this.bridge.start)/Math.max(1,this.bridge.end-this.bridge.start))}:pageTransition(layout,scrollY);
+      const active=displayedNode(transition,this.snapshot.activeNodeId);
+      const index=layout.segments.findIndex(s=>s.id===active);
+      next={...next,transition,activeNodeId:active,previousNodeId:layout.segments[index-1]?.id??null,nextNodeId:layout.segments[index+1]?.id??null};
+      if(this.bridge && !this.navigation && (transition.progress===0||transition.progress===1))this.bridge=null;
+    }
     if (this.pendingTarget && next.activeNodeId === this.pendingTarget) {
       const targetY = restoreScrollY(this.layout(), this.pendingTarget, 0);
       if (this.mode === "programmatic" || this.mode === "restore") {
@@ -951,6 +1024,8 @@ export class ScrollCompositionController {
       root.style.setProperty(`--m4-ch-${id}-count`, String(Math.max(1, count)));
     }
     root.dataset.m4Node = progress.activeNodeId;
+    if(progress.scene){root.dataset.sceneTarget=progress.scene.target??'';root.dataset.scenePreview=progress.scene.preview??'';root.dataset.sceneSelecting=String(progress.scene.selecting);root.dataset.sceneArrival=String(progress.scene.arrival);root.dataset.sceneReading=String(progress.scene.reading);}
+    if(progress.transition){root.dataset.pageProgress=String(progress.transition.progress);root.dataset.pageFrom=progress.transition.from;root.dataset.pageTo=progress.transition.to;}
     root.dataset.m4ScrollMode = this.mode;
   }
 }

@@ -1,0 +1,61 @@
+{
+  "base": "http://127.0.0.1:3005",
+  "browser": "154.0.4258.37",
+  "scenarios": [
+    {
+      "name": "keys",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reduced": false,
+      "frames": 315,
+      "pass": true
+    },
+    {
+      "name": "keys-dark",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reduced": false,
+      "frames": 307,
+      "pass": true
+    },
+    {
+      "name": "slow",
+      "width": 1840,
+      "height": 944,
+      "theme": "light",
+      "reduced": false,
+      "frames": 1213,
+      "pass": true
+    },
+    {
+      "name": "slow-small",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reduced": false,
+      "frames": 1303,
+      "pass": true
+    },
+    {
+      "name": "graph-interrupt",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reduced": false,
+      "frames": 491,
+      "pass": true
+    },
+    {
+      "name": "reduced",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reduced": true,
+      "frames": 376,
+      "pass": true
+    }
+  ],
+  "errors": []
+}

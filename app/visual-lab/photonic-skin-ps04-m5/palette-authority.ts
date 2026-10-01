@@ -161,13 +161,14 @@ export function lutHasAllSevenStripes(lut: readonly LutSample[], epsilon = 0.04)
  * If progress is 0, the source LUT is what the user sees.
  */
 export function shaderDisplayedLut(args: {
+  makeLut?: typeof lutForMask;
   sourceLut: readonly LutSample[];
   targetMask: CompetenceMask;
   progress: number;
   ownershipEnabled: boolean;
   ownershipWeight?: number;
 }) {
-  const targetLut = lutForMask(args.targetMask);
+  const targetLut = (args.makeLut ?? lutForMask)(args.targetMask);
   if (args.ownershipEnabled) {
     return mixLuts(args.sourceLut, targetLut, args.ownershipWeight ?? args.progress);
   }

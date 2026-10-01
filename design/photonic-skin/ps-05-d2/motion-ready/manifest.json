@@ -1,0 +1,25 @@
+{
+  "base": "http://127.0.0.1:3005",
+  "browser": "154.0.4258.37",
+  "scenarios": [
+    {
+      "name": "keys",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "reduced": false,
+      "frames": 472,
+      "pass": true
+    },
+    {
+      "name": "keys-dark",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "reduced": false,
+      "frames": 463,
+      "pass": true
+    }
+  ],
+  "errors": []
+}

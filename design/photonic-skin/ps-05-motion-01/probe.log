@@ -1,0 +1,260 @@
+INITIAL {
+  data: {
+    theme: 'light',
+    themePreference: 'system',
+    m4Node: '01',
+    sceneTarget: '',
+    scenePreview: '',
+    sceneSelecting: 'false',
+    sceneArrival: '1',
+    sceneReading: '0',
+    pageProgress: '1',
+    pageFrom: '01',
+    pageTo: '01',
+    m4ScrollMode: 'idle',
+    ps03M41rCameraDiagnostics: '{"motion":{"preset":"canonical","position":[2.8,-7.8,4.6],"up":[0,0,1],"quaternion":[0.4997763039342373,0.08698601965612429,0.14777041992066833,0.849011767531338],"fov":33,"aspect":1,"near":0.01,"far":100,"matrixWorld":[0.9411946707617074,0.33786475360676677,2.7755575615628914e-17,0,-0.1639705480160119,0.4567750980446045,0.8743398476505979,0,0.2954086171950472,-0.822924005043346,0.48531415682043444,0,2.8,-7.8,4.6,1],"matrixWorldInverse":[0.9411946707617075,-0.16397054801601188,0.29540861719504724,0,0.33786475360676677,0.4567750980446044,-0.8229240050433458,0,5.551115123125783e-17,0.8743398476505979,0.4853141568204345,0,-6.223413063564398e-16,-2.657888477387354e-15,-9.478396488858229,1],"projectionMatrix":[3.3759434225912455,0,0,0,0,3.3759434225912455,0,0,0,0,-1.0002000200020003,-1,0,0,-0.020002000200020003,0],"viewProjectionMatrix":[3.177419958135919,-0.5535552930733373,-0.2954677048272495,-0.29540861719504724,1.140612292664176,1.5420468878471536,0.8230886063044807,0.8229240050433458,1.8740250587963278e-16,2.9517218577854676,-0.48541122935905245,-0.4853141568204345,-2.100989039800866e-15,-8.972881123216898e-15,9.46029035754287,9.478396488858229]}}'
+  },
+  y: 0,
+  height: 15300,
+  width: 1425,
+  canvas: 1,
+  copy: [
+    {
+      id: '01',
+      rect: [Object],
+      transform: 'translate3d(0px, 0px, 0px)',
+      opacity: '1'
+    }
+  ],
+  actor: {
+    identity: 'false',
+    qa: 'm4-canvas',
+    loadStatus: 'ready',
+    bufferHash: '622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f',
+    gpuSource: 'master-neutral',
+    gpuTarget: 'master-neutral',
+    gpuProgress: '1',
+    frameP95Ms: '50',
+    firstVisibleMs: '4123.700000017881',
+    overlayQuaternion: '0,0,0,1',
+    actorRotationRadians: '0',
+    actorTranslationAmplitude: '0',
+    assetNamespace: 'ps-04-m5-5',
+    hoverPreview: 'false',
+    framingProfile: 'OWNER_SELECTED_124_111_111',
+    screen: 'about',
+    resolvedState: 'master-neutral',
+    builderPhase: '',
+    aboutZoom: '124',
+    merchZoom: '111',
+    videoZoom: '111'
+  }
+}
+MID {
+  data: {
+    theme: 'light',
+    themePreference: 'system',
+    m4Node: '01',
+    sceneTarget: '02',
+    scenePreview: '',
+    sceneSelecting: 'false',
+    sceneArrival: '1',
+    sceneReading: '0',
+    pageProgress: '0.5030000000198682',
+    pageFrom: '01',
+    pageTo: '02',
+    m4ScrollMode: 'programmatic',
+    ps03M41rCameraDiagnostics: '{"motion":{"preset":"canonical","position":[2.8,-7.8,4.6],"up":[0,0,1],"quaternion":[0.4997763039342373,0.08698601965612429,0.14777041992066833,0.849011767531338],"fov":33,"aspect":1,"near":0.01,"far":100,"matrixWorld":[0.9411946707617074,0.33786475360676677,2.7755575615628914e-17,0,-0.1639705480160119,0.4567750980446045,0.8743398476505979,0,0.2954086171950472,-0.822924005043346,0.48531415682043444,0,2.8,-7.8,4.6,1],"matrixWorldInverse":[0.9411946707617075,-0.16397054801601188,0.29540861719504724,0,0.33786475360676677,0.4567750980446044,-0.8229240050433458,0,5.551115123125783e-17,0.8743398476505979,0.4853141568204345,0,-6.223413063564398e-16,-2.657888477387354e-15,-9.478396488858229,1],"projectionMatrix":[3.3759434225912455,0,0,0,0,3.3759434225912455,0,0,0,0,-1.0002000200020003,-1,0,0,-0.020002000200020003,0],"viewProjectionMatrix":[3.177419958135919,-0.5535552930733373,-0.2954677048272495,-0.29540861719504724,1.140612292664176,1.5420468878471536,0.8230886063044807,0.8229240050433458,1.8740250587963278e-16,2.9517218577854676,-0.48541122935905245,-0.4853141568204345,-2.100989039800866e-15,-8.972881123216898e-15,9.46029035754287,9.478396488858229]}}'
+  },
+  y: 900,
+  height: 15300,
+  width: 1425,
+  canvas: 1,
+  copy: [
+    {
+      id: '02',
+      rect: [Object],
+      transform: 'translate3d(0px, 34.101px, 0px)',
+      opacity: '0.431651'
+    }
+  ],
+  actor: {
+    identity: 'false',
+    qa: 'm4-canvas',
+    loadStatus: 'ready',
+    bufferHash: '4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b',
+    gpuSource: 'master-neutral',
+    gpuTarget: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    gpuProgress: '0.1439830508474573',
+    frameP95Ms: '39.1',
+    firstVisibleMs: '36.60000001192111',
+    overlayQuaternion: '0,0,0,1',
+    actorRotationRadians: '0',
+    actorTranslationAmplitude: '0',
+    assetNamespace: 'ps-04-m5-5',
+    hoverPreview: 'false',
+    framingProfile: 'OWNER_SELECTED_124_111_111',
+    screen: 'about',
+    resolvedState: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    builderPhase: '',
+    aboutZoom: '124',
+    merchZoom: '111',
+    videoZoom: '111'
+  }
+}
+AFTER {
+  data: {
+    theme: 'light',
+    themePreference: 'system',
+    m4Node: '02',
+    sceneTarget: '',
+    scenePreview: '',
+    sceneSelecting: 'false',
+    sceneArrival: '2',
+    sceneReading: '0',
+    pageProgress: '1',
+    pageFrom: '02',
+    pageTo: '02',
+    m4ScrollMode: 'idle',
+    ps03M41rCameraDiagnostics: '{"motion":{"preset":"canonical","position":[2.8,-7.8,4.6],"up":[0,0,1],"quaternion":[0.4997763039342373,0.08698601965612429,0.14777041992066833,0.849011767531338],"fov":33,"aspect":1,"near":0.01,"far":100,"matrixWorld":[0.9411946707617074,0.33786475360676677,2.7755575615628914e-17,0,-0.1639705480160119,0.4567750980446045,0.8743398476505979,0,0.2954086171950472,-0.822924005043346,0.48531415682043444,0,2.8,-7.8,4.6,1],"matrixWorldInverse":[0.9411946707617075,-0.16397054801601188,0.29540861719504724,0,0.33786475360676677,0.4567750980446044,-0.8229240050433458,0,5.551115123125783e-17,0.8743398476505979,0.4853141568204345,0,-6.223413063564398e-16,-2.657888477387354e-15,-9.478396488858229,1],"projectionMatrix":[3.3759434225912455,0,0,0,0,3.3759434225912455,0,0,0,0,-1.0002000200020003,-1,0,0,-0.020002000200020003,0],"viewProjectionMatrix":[3.177419958135919,-0.5535552930733373,-0.2954677048272495,-0.29540861719504724,1.140612292664176,1.5420468878471536,0.8230886063044807,0.8229240050433458,1.8740250587963278e-16,2.9517218577854676,-0.48541122935905245,-0.4853141568204345,-2.100989039800866e-15,-8.972881123216898e-15,9.46029035754287,9.478396488858229]}}'
+  },
+  y: 900,
+  height: 15300,
+  width: 1425,
+  canvas: 1,
+  copy: [
+    {
+      id: '02',
+      rect: [Object],
+      transform: 'translate3d(0px, 0px, 0px)',
+      opacity: '1'
+    }
+  ],
+  actor: {
+    identity: 'false',
+    qa: 'm4-canvas',
+    loadStatus: 'ready',
+    bufferHash: '4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b',
+    gpuSource: 'master-neutral',
+    gpuTarget: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    gpuProgress: '1',
+    frameP95Ms: '26.7',
+    firstVisibleMs: '36.60000001192111',
+    overlayQuaternion: '0,0,0,1',
+    actorRotationRadians: '0',
+    actorTranslationAmplitude: '0',
+    assetNamespace: 'ps-04-m5-5',
+    hoverPreview: 'false',
+    framingProfile: 'OWNER_SELECTED_124_111_111',
+    screen: 'about',
+    resolvedState: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    builderPhase: '',
+    aboutZoom: '124',
+    merchZoom: '111',
+    videoZoom: '111'
+  }
+}
+HELD {
+  data: {
+    theme: 'light',
+    themePreference: 'system',
+    m4Node: '02',
+    sceneTarget: '',
+    scenePreview: '05.4',
+    sceneSelecting: 'true',
+    sceneArrival: '2',
+    sceneReading: '0',
+    pageProgress: '1',
+    pageFrom: '02',
+    pageTo: '02',
+    m4ScrollMode: 'idle',
+    ps03M41rCameraDiagnostics: '{"motion":{"preset":"canonical","position":[2.8,-7.8,4.6],"up":[0,0,1],"quaternion":[0.4997763039342373,0.08698601965612429,0.14777041992066833,0.849011767531338],"fov":33,"aspect":1,"near":0.01,"far":100,"matrixWorld":[0.9411946707617074,0.33786475360676677,2.7755575615628914e-17,0,-0.1639705480160119,0.4567750980446045,0.8743398476505979,0,0.2954086171950472,-0.822924005043346,0.48531415682043444,0,2.8,-7.8,4.6,1],"matrixWorldInverse":[0.9411946707617075,-0.16397054801601188,0.29540861719504724,0,0.33786475360676677,0.4567750980446044,-0.8229240050433458,0,5.551115123125783e-17,0.8743398476505979,0.4853141568204345,0,-6.223413063564398e-16,-2.657888477387354e-15,-9.478396488858229,1],"projectionMatrix":[3.3759434225912455,0,0,0,0,3.3759434225912455,0,0,0,0,-1.0002000200020003,-1,0,0,-0.020002000200020003,0],"viewProjectionMatrix":[3.177419958135919,-0.5535552930733373,-0.2954677048272495,-0.29540861719504724,1.140612292664176,1.5420468878471536,0.8230886063044807,0.8229240050433458,1.8740250587963278e-16,2.9517218577854676,-0.48541122935905245,-0.4853141568204345,-2.100989039800866e-15,-8.972881123216898e-15,9.46029035754287,9.478396488858229]}}'
+  },
+  y: 7216,
+  height: 15300,
+  width: 1425,
+  canvas: 1,
+  copy: [
+    {
+      id: '02',
+      rect: [Object],
+      transform: 'translate3d(0px, 0px, 0px)',
+      opacity: '1'
+    }
+  ],
+  actor: {
+    identity: 'false',
+    qa: 'm4-canvas',
+    loadStatus: 'ready',
+    bufferHash: '4362368aed5353bb23babcc20189fa580878f36e16d2dbc42526a0fb7fcab13b',
+    gpuSource: 'master-neutral',
+    gpuTarget: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    gpuProgress: '1',
+    frameP95Ms: '23.2',
+    firstVisibleMs: '36.60000001192111',
+    overlayQuaternion: '0,0,0,1',
+    actorRotationRadians: '0',
+    actorTranslationAmplitude: '0',
+    assetNamespace: 'ps-04-m5-5',
+    hoverPreview: 'false',
+    framingProfile: 'OWNER_SELECTED_124_111_111',
+    screen: 'about',
+    resolvedState: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    builderPhase: '',
+    aboutZoom: '124',
+    merchZoom: '111',
+    videoZoom: '111'
+  }
+}
+RELEASED {
+  data: {
+    theme: 'light',
+    themePreference: 'system',
+    m4Node: '07',
+    sceneTarget: '',
+    scenePreview: '',
+    sceneSelecting: 'false',
+    sceneArrival: '3',
+    sceneReading: '0',
+    pageProgress: '1',
+    pageFrom: '07',
+    pageTo: '07',
+    m4ScrollMode: 'idle',
+    ps03M41rCameraDiagnostics: '{"motion":{"preset":"canonical","position":[2.8,-7.8,4.6],"up":[0,0,1],"quaternion":[0.4997763039342373,0.08698601965612429,0.14777041992066833,0.849011767531338],"fov":33,"aspect":1,"near":0.01,"far":100,"matrixWorld":[0.9411946707617074,0.33786475360676677,2.7755575615628914e-17,0,-0.1639705480160119,0.4567750980446045,0.8743398476505979,0,0.2954086171950472,-0.822924005043346,0.48531415682043444,0,2.8,-7.8,4.6,1],"matrixWorldInverse":[0.9411946707617075,-0.16397054801601188,0.29540861719504724,0,0.33786475360676677,0.4567750980446044,-0.8229240050433458,0,5.551115123125783e-17,0.8743398476505979,0.4853141568204345,0,-6.223413063564398e-16,-2.657888477387354e-15,-9.478396488858229,1],"projectionMatrix":[3.3759434225912455,0,0,0,0,3.3759434225912455,0,0,0,0,-1.0002000200020003,-1,0,0,-0.020002000200020003,0],"viewProjectionMatrix":[3.177419958135919,-0.5535552930733373,-0.2954677048272495,-0.29540861719504724,1.140612292664176,1.5420468878471536,0.8230886063044807,0.8229240050433458,1.8740250587963278e-16,2.9517218577854676,-0.48541122935905245,-0.4853141568204345,-2.100989039800866e-15,-8.972881123216898e-15,9.46029035754287,9.478396488858229]}}'
+  },
+  y: 13238,
+  height: 15300,
+  width: 1425,
+  canvas: 1,
+  copy: [
+    {
+      id: '07',
+      rect: [Object],
+      transform: 'translate3d(0px, 0px, 0px)',
+      opacity: '1'
+    }
+  ],
+  actor: {
+    identity: 'false',
+    qa: 'm4-canvas',
+    loadStatus: 'ready',
+    bufferHash: '622e48e428e28afcc8e152fddece2128a80f0da08ce3f10c5b1b4a508cb89b4f',
+    gpuSource: 'brand-wide-gather-content-design-digital-event-games-merch-video',
+    gpuTarget: 'master-neutral',
+    gpuProgress: '1',
+    frameP95Ms: '24.5',
+    firstVisibleMs: '47.500000023841494',
+    overlayQuaternion: '0,0,0,1',
+    actorRotationRadians: '0',
+    actorTranslationAmplitude: '0',
+    assetNamespace: 'ps-04-m5-5',
+    hoverPreview: 'false',
+    framingProfile: 'OWNER_SELECTED_124_111_111',
+    screen: 'about',
+    resolvedState: 'master-neutral',
+    builderPhase: '',
+    aboutZoom: '124',
+    merchZoom: '111',
+    videoZoom: '111'
+  }
+}

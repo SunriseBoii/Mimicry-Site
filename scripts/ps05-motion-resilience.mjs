@@ -1,0 +1,25 @@
+import {chromium} from 'playwright-core';
+import assert from 'node:assert/strict';
+import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+const out='design/photonic-skin/ps-05-motion-01/resilience';mkdirSync(out,{recursive:true});
+const b=await chromium.launch({channel:'msedge',headless:true,ignoreDefaultArgs:['--hide-scrollbars']});
+const c=await b.newContext({viewport:{width:1440,height:900},recordVideo:{dir:out}}),p=await c.newPage();
+const report={build:readFileSync('.next/BUILD_ID','utf8').trim(),browser:b.version(),checks:[],errors:[]};p.on('pageerror',e=>report.errors.push(e.message));
+const state=()=>p.evaluate(()=>({active:document.documentElement.dataset.m4Node,preview:document.documentElement.dataset.scenePreview,target:document.documentElement.dataset.sceneTarget,reading:+document.documentElement.dataset.sceneReading,arrival:+document.documentElement.dataset.sceneArrival,y:scrollY}));
+const done=id=>p.waitForFunction(id=>document.documentElement.dataset.m4Node===id&&!document.documentElement.dataset.sceneTarget,id);
+async function dragBegin(){const g=await p.evaluate(()=>{const track=innerHeight-34,thumb=Math.max(20,innerHeight/document.documentElement.scrollHeight*track),max=document.documentElement.scrollHeight-innerHeight;return{x:innerWidth-7,y:17+(track-thumb)*scrollY/max+thumb/2,track,thumb,max}});await p.mouse.move(g.x,g.y);await p.mouse.down();return g;}
+async function move(g,y){await p.mouse.move(g.x,17+(g.track-g.thumb)*y/g.max+g.thumb/2,{steps:10});}
+try{
+ await p.goto('http://127.0.0.1:3006/?theme=light#screen-04');await done('04');await p.waitForTimeout(1400);
+ // At a native range boundary, preview retains its last unambiguous candidate.
+ let g=await dragBegin();await move(g,900*4+100);await p.waitForTimeout(60);assert.equal((await state()).preview,'05.1');await move(g,900*4-10);await p.waitForTimeout(1000);assert.equal((await state()).preview,'05.1');assert.equal((await state()).active,'04');await p.mouse.up();await done('05.1');report.checks.push('physical native release near boundary: hysteresis stable');
+ await p.locator('[data-hit="01"]').click();await p.waitForTimeout(100);await p.setViewportSize({width:1280,height:720});await done('01');report.checks.push('resize during transition reaches final scene');
+ // Native scrollbar within a long current section reads immediately while still held.
+ await p.setViewportSize({width:390,height:500});await done('01');const maxRead=await p.locator('[id="screen-01"]').evaluate(e=>Math.max(0,e.offsetHeight-innerHeight));g=await dragBegin();await move(g,Math.min(maxRead*.7,400));await p.waitForTimeout(1000);assert.equal((await state()).active,'01');assert.ok((await state()).reading>30);await p.screenshot({path:`out/local-reading-held.png`.replace('out',out)});await p.mouse.up();report.checks.push('long section native thumb reads before release');
+ // Pinch/visual viewport emulation, followed by landscape and keyboard-height layout.
+ const cdp=await c.newCDPSession(p);await cdp.send('Emulation.setPageScaleFactor',{pageScaleFactor:1.5});assert.equal(await p.evaluate(()=>visualViewport.scale),1.5);await cdp.send('Emulation.setPageScaleFactor',{pageScaleFactor:1});await p.setViewportSize({width:844,height:390});await done('01');await p.setViewportSize({width:390,height:420});await done('01');report.checks.push('emulated pinch scale, landscape and reduced viewport height');
+ await p.setViewportSize({width:1440,height:900});await p.locator('[data-hit="05.7"]').click();await p.waitForTimeout(250);await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});await done('05.7');await p.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});report.checks.push('synthetic background event finalizes transition');
+ await p.waitForTimeout(800);const lost=await p.evaluate(()=>{const canvas=document.querySelector('canvas'),gl=canvas.getContext('webgl2')??canvas.getContext('webgl');const ext=gl?.getExtension('WEBGL_lose_context');ext?.loseContext();return !!ext});assert.ok(lost);await p.locator('[data-hit="07"]').click();await done('07');await p.screenshot({path:`${out}/context-lost-contact.png`});report.checks.push('WebGL context loss leaves DOM navigation working');
+ await p.addScriptTag({content:readFileSync('node_modules/axe-core/axe.min.js','utf8')});const violations=await p.evaluate(async()=> (await window.axe.run(document.querySelector('[data-ps05]'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations);writeFileSync(`${out}/axe.json`,JSON.stringify(violations,null,2));assert.equal(violations.length,0);report.checks.push('axe contact: zero violations');
+}catch(e){report.errors.push(e.stack);report.state=await state();await p.screenshot({path:`${out}/failure.png`});process.exitCode=1;}
+writeFileSync(`${out}/manifest.json`,JSON.stringify(report,null,2));console.log(report);const v=p.video();await c.close();await v.saveAs(`${out}/resilience.webm`);await b.close();

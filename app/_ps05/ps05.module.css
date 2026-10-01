@@ -232,6 +232,14 @@
 .caseDialog {width:min(1080px,calc(100vw - 40px));}
 .mediaFallback {background:var(--surface);}
 .actorSlot {display:none;}
+.site .copy {opacity:0;}
+.site .copy h1:focus,.site .copy h2:focus {outline:none;}
+.site .track {overflow:visible;}
+.site .route {overflow-x:clip;}
+.competenceGrid .choice strong {color:var(--accent);}
+@supports ((background-clip:text) or (-webkit-background-clip:text)) {
+ .site [data-wave="true"] {background-image:linear-gradient(to bottom,var(--ink) 0px,var(--ink) var(--band-start),var(--accent) var(--band-start),var(--accent) var(--band-end),var(--ink) var(--band-end));background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}
+}
 @keyframes reveal {from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 @keyframes selection {from{transform:translateY(5px)}to{transform:none}}
 .site[data-reading="true"] .chapter {height:auto;}
@@ -267,3 +275,43 @@
 .site[data-reduced="true"] *, .site[data-reduced="true"] *:before,.site[data-reduced="true"] *:after {animation:none!important;transition:none!important;}
 @media(prefers-reduced-motion:reduce) {.site *,.site *:before,.site *:after {animation:none!important;transition:none!important;}}
 @media(forced-colors:active) {.choice,.primary,.entries button {border:1px solid ButtonText;}.choice[data-selected="true"] .check {forced-color-adjust:none;background:Highlight;color:HighlightText;}}
+
+/* D2: open labelled graph, with reserved rows for active typography. */
+.graph {top:104px;bottom:auto;right:22px;width:204px;}
+.graphPanel {position:relative;inset:auto;width:100%;max-width:none;max-height:calc(100dvh - 120px);padding:0;overflow:visible;background:none;box-shadow:none;animation:none;}
+.routeDiagram {position:absolute;inset:0;width:200px;height:522px;margin:0;color:var(--line);}
+.graphLinks {display:flex;flex-direction:column;gap:0;position:relative;}
+.site .graphLinks button {box-sizing:border-box;position:relative;display:flex;align-items:center;gap:7px;height:29px;min-height:29px;padding:0 0 0 calc(6px + var(--indent));border:0;background:transparent;color:var(--muted);font-size:12.5px;line-height:1;white-space:nowrap;text-align:left;transition:color 170ms,font-size 170ms;}
+.graphLinks .currentDot {width:8px;height:8px;flex:none;border:1px solid var(--control);background:var(--paper);transition:transform 170ms,background 170ms;}
+.site .graphLinks button[aria-current] {color:var(--ink);font-size:15.5px;font-weight:600;text-decoration:none;}
+.graphLinks button[aria-current] .currentDot {background:var(--accent);border-color:var(--accent);transform:scale(1.5);}
+.site .graphLinks button:disabled {color:var(--muted);cursor:not-allowed;}
+.graphLinks button:disabled .currentDot {border-style:dashed;border-radius:0;}
+.graphLinks .nodeNumber {font-size:9px;min-width:23px;}
+.graphLinks button>span:nth-child(2) {flex:none;}
+.site .graphLinks button:hover:not(:disabled) {color:var(--ink);text-decoration:underline;}
+@media(min-width:1101px) {
+ .site .screen {padding-right:248px;}
+ .site .screen[data-place="left"] .copy {width:min(51vw,calc(100vw - 620px))!important;}
+}
+@media(max-width:1100px) {
+ .graph {top:76px;left:0;right:0;width:100%;height:62px;background:var(--paper);border-bottom:1px solid var(--line);}
+ .graphPanel {height:62px;max-height:none;}
+ .routeDiagram {display:none;}
+ .graphLinks {flex-direction:row;gap:20px;padding:6px 22px 10px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;}
+ .site .graphLinks button {height:44px;min-height:44px;padding:0;flex:none;font-size:12.5px;gap:7px;}
+ .graphLinks button>span:nth-child(3) {min-width:104px;}
+ .site .graphLinks button[aria-current] {font-size:15.5px;}
+ .site .screen {padding-top:172px;}
+}
+@media(max-width:600px) {.graph {top:72px;}.site .screen {padding-top:164px;}}
+@media(prefers-reduced-motion:reduce) {.graphLinks button,.currentDot {transition:none!important;}}
+.site[data-reduced="true"] .graphLinks button,.site[data-reduced="true"] .currentDot {transition:none!important;}
+
+/* MOTION-01: native document range and fixed, measurable DOM scenes. */
+.site .route {height:var(--scene-document-height,100vh);overflow:visible;overflow-anchor:none;}
+.site .chapter,.site .track,.site .panels {display:contents!important;transform:none!important;}
+.site .screen,.site[data-reading="true"] .screen {position:fixed;top:0;left:0;right:0;width:auto;height:auto;min-height:100svh;overflow:visible;visibility:hidden;scroll-snap-align:none;}
+.site .copy {transition:none;will-change:transform,opacity;}
+.site .graphLinks button[data-preview="true"] .currentDot,.site .graphLinks button[data-target="true"] .currentDot {outline:1px solid var(--accent);outline-offset:3px;}
+@media(forced-colors:active) {.site [data-wave="true"] {background:none;color:CanvasText;-webkit-text-fill-color:CanvasText;}}
