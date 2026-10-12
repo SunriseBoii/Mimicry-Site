@@ -1,0 +1,52 @@
+{
+  "browser": "154.0.4258.48",
+  "base": "http://127.0.0.1:3007",
+  "build": "8zLGzSBEbef3BW-1n-_ny",
+  "checks": [
+    {
+      "name": "native-slow-compact",
+      "pass": true
+    },
+    {
+      "name": "native-fast-compact",
+      "pass": true
+    },
+    {
+      "name": "native-slow-full",
+      "pass": true
+    },
+    {
+      "name": "native-fast-full",
+      "pass": true
+    },
+    {
+      "name": "map-interactions",
+      "pass": true
+    },
+    {
+      "name": "layout-1440",
+      "pass": true
+    },
+    {
+      "name": "layout-1280",
+      "pass": true
+    },
+    {
+      "name": "layout-390",
+      "pass": true
+    },
+    {
+      "name": "layout-320",
+      "pass": true
+    },
+    {
+      "name": "reduced",
+      "pass": true
+    },
+    {
+      "name": "inputs",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

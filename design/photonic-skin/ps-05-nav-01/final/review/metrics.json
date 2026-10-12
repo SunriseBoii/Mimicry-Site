@@ -1,0 +1,60 @@
+{
+  "native-slow-compact": {
+    "frames": 645,
+    "previewFrames": 515,
+    "centers": [
+      "04",
+      "05.1",
+      "05.2",
+      "05.3",
+      "05.4",
+      "05.5",
+      "05.6"
+    ],
+    "rafSamplesBeforeReactCommit": 10,
+    "longestConsecutiveUncommittedSamples": 1,
+    "confirmedPreparationFrames": 41
+  },
+  "native-fast-compact": {
+    "frames": 521,
+    "previewFrames": 44,
+    "centers": [
+      "01",
+      "07",
+      "05.2",
+      "06.3"
+    ],
+    "rafSamplesBeforeReactCommit": 4,
+    "longestConsecutiveUncommittedSamples": 1,
+    "confirmedPreparationFrames": 2
+  },
+  "native-slow-full": {
+    "frames": 617,
+    "previewFrames": 486,
+    "centers": [
+      "04",
+      "05.1",
+      "05.2",
+      "05.3",
+      "05.4",
+      "05.5",
+      "05.6"
+    ],
+    "rafSamplesBeforeReactCommit": 10,
+    "longestConsecutiveUncommittedSamples": 1,
+    "confirmedPreparationFrames": 43
+  },
+  "native-fast-full": {
+    "frames": 510,
+    "previewFrames": 23,
+    "centers": [
+      "01",
+      "07",
+      "05.2",
+      "06.3"
+    ],
+    "rafSamplesBeforeReactCommit": 4,
+    "longestConsecutiveUncommittedSamples": 1,
+    "confirmedPreparationFrames": 2
+  }
+}

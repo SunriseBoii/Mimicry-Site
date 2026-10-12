@@ -1,72 +1,79 @@
-# Mimicry group website — color grammar v0.2 prototype
+# Mimicry group website
 
-Локальная версия кликабельного low-fidelity-прототипа сайта Mimicry group с
-интегрированной цветовой грамматикой v0.2, light/dark-темами и внутренним color lab.
-Проект отвязан от ChatGPT Sites и работает как обычное приложение Next.js.
+Сайт Mimicry group на Next.js: светлая и тёмная темы, интерактивный Мимик,
+переходы между экранами, навигационный граф и конструктор проектного брифа.
+Последняя итерация навигации описана в [PS-05.NAV-01](docs/PS-05-NAV-01-REPORT.md).
 
 ## Требования
 
-- Node.js 20.9 или новее
-- npm
+- Node.js 20.9 или новее и npm.
+- Git и [Git LFS](https://git-lfs.com/): видео, архивы браузерных трассировок и
+  Blender-файлы хранятся через LFS. Исходники и остальные материалы доступны в обычном Git.
 
-## Запуск на Windows
+## Клонирование и запуск
 
-Откройте PowerShell в папке проекта и выполните:
-
-```powershell
-npm install
+```sh
+git lfs install
+git clone https://github.com/SunriseBoii/Mimicry-Site.git
+cd Mimicry-Site
+git lfs pull
+npm ci
 npm run dev
 ```
 
-Затем откройте <http://localhost:3000>.
+Откройте [http://localhost:3000](http://localhost:3000).
+Для просмотра сайта не нужны `.env`, API-ключи или подключённая база данных.
+Ручной бриф сохраняется локально в браузере; отправка контактной формы во внешний
+сервис пока не подключена.
 
-Если PowerShell блокирует системный `npm.ps1` своей Execution Policy, используйте Windows-исполняемый файл npm без изменения политики:
+На Windows, если PowerShell блокирует `npm.ps1`, используйте `npm.cmd`:
 
 ```powershell
-npm.cmd install
+npm.cmd ci
 npm.cmd run dev
 ```
 
-Для остальных команд ниже при той же ошибке также замените `npm` на `npm.cmd`.
+Если порт 3000 занят, можно явно выбрать другой:
 
-## Технические проверки
-
-```powershell
-npm run typecheck
-npm run lint
-npm run build
+```sh
+npm run dev -- --port 3007
 ```
 
-Автоматические тесты пока не настроены: скрипта `test` и файлов тестов в прототипе нет.
+Тогда адрес сайта — [http://localhost:3007](http://localhost:3007).
 
-## Проверка production-сборки
+## Запуск production-версии
 
-```powershell
+Для просмотра той же сборки, которая используется при визуальных проверках:
+
+```sh
+npm ci
 npm run build
 npm run start
 ```
 
-## Где находится сайт
+Откройте [http://localhost:3000](http://localhost:3000). На Windows команды
+также можно выполнять через `npm.cmd`.
 
-- `app/page.tsx` — главная страница;
-- `app/_design-system/theme/tokens.module.css` — primitive, semantic и component color tokens;
-- `app/globals.css` — общие стили внутренних страниц и semantic aliases;
-- `app/_brand/` — ProjectRail, мотивы компетенций и компоненты color lab;
-- `app/components.tsx` — общие компоненты и данные решений;
-- `app/solutions/[slug]/page.tsx` — шаблон четырёх страниц решений;
-- `app/cases/` — реестр и шаблон кейса;
-- `app/products/welcome-pack/` — продуктовый лендинг;
-- `app/capabilities/[slug]/` — семь страниц компетенций;
-- `/_brand/color-lab` — внутренняя noindex-страница проверки цветовой системы;
-- `app/about/`, `app/procurement/`, `app/contact/` — служебные страницы;
-- `docs/` — архитектурная и контентная спецификация.
-- `artifacts/color-grammar-v0.2/` — контрольные desktop/mobile-скриншоты.
+## Проверки
 
-## Важно
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run build
+```
 
-Это структурный прототип v0.1, а не финальный дизайн. Заглушки кейсов,
-логотипов, отзывов, метрик, фотографий и закупочных документов намеренные:
-их нельзя заменять вымышленными доказательствами.
+## Структура проекта
 
-Форма контакта пока не отправляет данные. До её подключения потребуются
-рабочий канал обращения и политика обработки персональных данных.
+- `app/page.tsx` — главная страница.
+- `app/_ps05/` — основной сайт, переходы, навигационный граф и конструктор.
+- `app/_design-system/` и `app/_brand/` — тема и цветовая система.
+- `app/visual-lab/` — лаборатории и предыдущие этапы разработки.
+- `public/` — готовые ресурсы сайта; для запуска не требуется Blender или Python.
+- `tests/` — автоматические тесты.
+- `docs/` — спецификации и отчёты этапов.
+- `design/` и `artifacts/` — материалы разработки, изображения и записи проверок.
+
+Заглушки кейсов, логотипов, отзывов, метрик и документов остаются демонстрационными
+материалами. До подключения формы понадобятся рабочий канал обращения и политика
+обработки персональных данных.

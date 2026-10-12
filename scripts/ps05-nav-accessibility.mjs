@@ -1,0 +1,20 @@
+import {chromium} from 'playwright-core';
+import {writeFileSync,readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const out='design/photonic-skin/ps-05-nav-01/final',b=await chromium.launch({channel:'msedge',headless:true,ignoreDefaultArgs:['--hide-scrollbars']});
+const p=await b.newPage({viewport:{width:1440,height:900}}),checks=[];
+await p.goto('http://127.0.0.1:3007/?theme=light#screen-04');await p.waitForTimeout(2200);
+const state=()=>p.evaluate(()=>({height:document.documentElement.scrollHeight,y:scrollY,hash:location.hash,arrival:document.documentElement.dataset.sceneArrival,brief:JSON.stringify(localStorage)}));
+const initial=await state();const toggle=p.getByRole('button',{name:'Показать всю карту',exact:true});
+await toggle.focus();await p.keyboard.press('Enter');await p.waitForTimeout(240);assert.equal(await p.getByRole('button',{name:'Свернуть карту',exact:true}).getAttribute('aria-expanded'),'true');assert.deepEqual(await state(),initial);
+await p.keyboard.press('Tab');assert.equal(await p.evaluate(()=>document.activeElement.id),'route-map');
+const geometry=()=>p.locator('[data-hit]').evaluateAll(nodes=>nodes.map(n=>({id:n.dataset.hit,point:n.getBoundingClientRect().toJSON(),label:n.lastElementChild.getBoundingClientRect().toJSON()})));
+const positions=await geometry();
+const blocked=await p.locator('[data-hit="03.2"]').boundingBox();await p.mouse.click(blocked.x+blocked.width/2,blocked.y+blocked.height/2);assert.deepEqual(await state(),initial);assert.equal(await p.getByRole('button',{name:'Свернуть карту',exact:true}).count(),1);checks.push('keyboard disclosure; blocked node; document/URL/arrival/brief unchanged');
+// Real thumb movement changes label weight, but no coordinates or text boxes in the full map.
+const g=await p.evaluate(()=>{const track=innerHeight-34,thumb=Math.max(20,innerHeight/document.documentElement.scrollHeight*track),max=document.documentElement.scrollHeight-innerHeight;return {x:innerWidth-7,y:17+(track-thumb)*scrollY/max+thumb/2,track,thumb,max};});
+await p.mouse.move(g.x,g.y);await p.mouse.down();await p.mouse.move(g.x,17+(g.track-g.thumb)*.66+g.thumb/2,{steps:20});await p.waitForTimeout(300);assert.equal(await p.locator('[data-qa="m4-graph"]').getAttribute('data-expanded'),'true');assert.deepEqual(await geometry(),positions);checks.push('full-map preview changes weight without moving any node or label');await p.mouse.up();await p.waitForTimeout(2200);
+await p.keyboard.press('Escape');assert.equal(await toggle.evaluate(e=>e===document.activeElement),true);assert.equal(await toggle.evaluate(e=>getComputedStyle(e).outlineStyle),'solid');checks.push('Escape restores visible keyboard focus');
+const compactIds=await p.locator('[data-hit]:not(:disabled)').evaluateAll(nodes=>nodes.map(n=>n.dataset.hit));
+const visited=[];for(let i=0;i<compactIds.length;i++){await p.keyboard.press('Tab');visited.push(await p.evaluate(()=>document.activeElement.dataset.hit));}assert.deepEqual(visited,compactIds);checks.push('Tab visits only visible, available compact nodes');
+writeFileSync(`${out}/accessibility.json`,JSON.stringify({browser:b.version(),build:readFileSync('.next/BUILD_ID','utf8').trim(),checks},null,2));await b.close();console.log(checks);

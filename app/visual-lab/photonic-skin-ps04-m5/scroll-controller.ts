@@ -936,7 +936,7 @@ export class ScrollCompositionController {
   private applyScroll(scrollY: number, forceDiscrete: boolean) {
     if(this.scenes){
       const scene=this.scenes.snapshot(),layout=this.layout(),i=layout.segments.findIndex(s=>s.id===scene.displayed);
-      const changed=scene.displayed!==this.snapshot.activeNodeId||scene.target!==this.snapshot.scene?.target||scene.preview!==this.snapshot.scene?.preview||forceDiscrete;
+      const changed=scene.displayed!==this.snapshot.activeNodeId||scene.target!==this.snapshot.scene?.target||scene.preview!==this.snapshot.scene?.preview||scene.confirmed!==this.snapshot.scene?.confirmed||scene.selecting!==this.snapshot.scene?.selecting||forceDiscrete;
       this.mode=scene.target?'programmatic':'idle';this.lastY=scrollY;
       const next:ScrollProgress={...this.snapshot,scene,transition:scene.transition,scrollY,viewportWidth:this.viewport.width,viewportHeight:this.viewport.height,documentHeight:layout.documentHeight,activeNodeId:scene.displayed,nextNodeId:layout.segments[i+1]?.id??null,previousNodeId:layout.segments[i-1]?.id??null,direction:(scene.transition.sign??1) as 1|-1,edgeProgress:0,revision:++this.progressRevision};
       this.snapshot=next;this.writeCss(next);for(const listener of this.frame)listener(next);if(changed)for(const listener of this.discrete)listener(next);return;

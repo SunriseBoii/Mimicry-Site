@@ -58,8 +58,8 @@ function Composition({flow}:{flow:BuilderFlowState}) {
 
 export function Experience(props:Props){
  const {active,flow,setFlow,dispatch,navigate,theme,onTheme,reduced,manualReduced,onMotion,controller}=props;
- const [sceneChoice,setSceneChoice]=useState({preview:null as ScreenNodeId|null,target:null as ScreenNodeId|null});
- useEffect(()=>controller.subscribeDiscrete(p=>setSceneChoice({preview:p.scene?.preview??null,target:p.scene?.target??null})),[controller]);
+ const [sceneChoice,setSceneChoice]=useState(()=>controller.getProgress().scene);
+ useEffect(()=>controller.subscribeDiscrete(p=>setSceneChoice(p.scene)),[controller]);
  const review=isLocalReview();const params=typeof window!=='undefined'?new URLSearchParams(location.search):new URLSearchParams();
  const variant=params.get('caseMotion')==='B'?'B':'A';const testMode=review&&['success','retry'].includes(params.get('transport')??'');
  const transportMode=params.get('transport');
@@ -81,7 +81,7 @@ export function Experience(props:Props){
  const closeCase=()=>{if(ownedCase.current){history.back();ownedCase.current=false}else{const url=new URL(location.href);url.searchParams.delete('case');history.replaceState({},'',url);setCaseId(null)}};
  return <>
   <Header active={active} navigate={go} theme={theme} onTheme={onTheme} reduced={reduced} manualReduced={manualReduced} onMotion={onMotion}/>
-  <RouteGraph active={active} preview={sceneChoice.preview} target={sceneChoice.target} unlock={flow.unlock} navigate={go}/>
+  <RouteGraph scene={{displayed:sceneChoice?.displayed??active,preview:sceneChoice?.preview??null,confirmed:sceneChoice?.confirmed??null,selecting:sceneChoice?.selecting??false}} unlock={flow.unlock} navigate={go}/>
   <div id="m4-main" className={`${old.route} ${s.route}`} tabIndex={-1}>
    <Screen id="01" title="Помогаем компаниям говорить с людьми" kicker="Mimicry group / корпоративные коммуникации" hero><p data-color-flow className={s.lead}>Собираем спецпроекты от смысла до запуска. Соединяем нужные компетенции вокруг вашей задачи.</p><div className={s.entries}><button type="button" onClick={()=>go('03.1')}><span className={s.entryTitle}>Собрать проект<span aria-hidden="true">↗</span></span><span>Начнём с задачи и соберём нужные компетенции</span></button><button type="button" onClick={()=>go('05.1')}><span className={s.entryTitle}>Подключить компетенцию<span aria-hidden="true">↗</span></span><span>Усилим ваш проект конкретной экспертизой</span></button></div><p className={s.heroFoot}>Смысл <span>→</span> участие <span>→</span> запуск</p></Screen>
    <Screen id="02" title="Одна задача. Нужные люди. Общий результат." kicker="О нас / как мы работаем"><p data-color-flow className={s.lead}>Проект начинается с того, что людям важно понять, почувствовать или сделать. Под эту цель соединяем содержание, форму и опыт.</p><ol className={s.process}>{[['Понимаем задачу','Разбираемся в контексте, аудитории и ожидаемом действии.'],['Собираем команду','Соединяем дисциплины, необходимые конкретному проекту.'],['Доводим до запуска','Удерживаем общую идею в деталях и координируем работу.']].map(([title,text],i)=><li key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol><Primary onClick={()=>go('03.1')}>Начать с вашей задачи</Primary></Screen>

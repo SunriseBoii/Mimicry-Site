@@ -315,3 +315,48 @@
 .site .copy {transition:none;will-change:transform,opacity;}
 .site .graphLinks button[data-preview="true"] .currentDot,.site .graphLinks button[data-target="true"] .currentDot {outline:1px solid var(--accent);outline-offset:3px;}
 @media(forced-colors:active) {.site [data-wave="true"] {background:none;color:CanvasText;-webkit-text-fill-color:CanvasText;}}
+
+/* NAV-01: one orthogonal scheme, translated without scaling its labels. */
+.routeGraph {position:fixed;z-index:32;top:96px;right:max(24px,env(safe-area-inset-right));color:var(--ink);width:44px;height:44px;}
+.site .mapToggle {position:absolute;top:0;right:0;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;color:var(--muted);background:transparent;transition:color 150ms,background 150ms;}
+.site .mapToggle:hover,.site .mapToggle[aria-expanded="true"] {color:var(--ink);background:color-mix(in srgb,var(--ink) 5%,transparent);}
+.site .mapToggle:active {background:color-mix(in srgb,var(--ink) 10%,transparent);}
+.mapViewport {position:absolute;right:48px;top:0;width:var(--map-width);height:var(--map-height);max-width:calc(100vw - 100px);max-height:calc(100dvh - 120px);overflow:clip;overscroll-behavior:contain;isolation:isolate;transition:width var(--map-duration) ease,height var(--map-duration) ease,background-color var(--map-duration) ease;}
+.routeGraph[data-expanded="true"] .mapViewport {width:calc(var(--map-width) + 48px);height:calc(var(--map-height) + 32px);overflow:auto;background:var(--paper);padding:16px 24px;scrollbar-width:thin;}
+.mapSpace {position:relative;flex:none;}
+.mapPlane {position:absolute;left:0;top:0;transition:transform 160ms ease;}
+.mapEdges {position:absolute;left:0;top:0;overflow:visible;pointer-events:none;}
+.mapEdges path {transition:opacity 160ms ease;}
+.site .mapNode {position:absolute;display:block;width:28px;height:44px;min-height:0;transform:translate(-50%,-50%);border:0;padding:0;background:transparent;color:var(--muted);font-size:12px;line-height:14px;font-weight:400;text-align:center;}
+.mapDot {position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border:1px solid currentColor;border-radius:50%;background:var(--paper);opacity:var(--ring-opacity);}
+.mapLabel {position:absolute;display:grid;width:max-content;max-width:68px;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.mapLabel>span {grid-area:1/1;}
+.mapLabelReserve {visibility:hidden;font-weight:700;pointer-events:none;}
+.mapNode[data-placement="below"] .mapLabel {top:46px;}
+.mapNode[data-placement="side"] .mapLabel {top:0;left:30px;transform:none;}
+.mapNode[data-placement="root"] .mapLabel {top:-34px;left:30px;transform:none;}
+/* Place this label after the return elbow, including the narrow mobile columns. */
+.mapNode[data-hit="07"] .mapLabel {top:32px;}
+.mapNode[data-hit="06.2"] .mapLabel {margin-left:-6px;}
+.site .mapNode[data-selected="true"] {font-weight:700;color:var(--ink);}
+.mapNode[data-displayed="true"] .mapDot:after {content:"";position:absolute;inset:1px;background:currentColor;border-radius:50%;}
+.mapNode[data-selected="true"] .mapDot {opacity:1;border-color:var(--ink);}
+.mapNode[data-preview="true"] .mapDot {outline:1px solid var(--ink);outline-offset:3px;}
+.mapNode[data-preview="true"] .mapDot:after {display:none;}
+.site .mapNode:disabled {color:var(--muted);cursor:not-allowed;}
+.mapNode:disabled .mapDot {border-style:dashed;}
+.site .mapNode:hover:not(:disabled) {color:var(--ink);}
+.mapNode:hover:not(:disabled) .mapLabel>span:last-child {text-decoration:underline;text-underline-offset:3px;}
+.site .mapNode:focus-visible {outline-offset:1px;border-radius:14px;}
+.routeGraph[data-expanded="true"] .mapNode {animation:mapReveal var(--map-duration) ease both;}
+@keyframes mapReveal {from{opacity:0}to{opacity:1}}
+.routeGraph[data-selecting="true"] .mapPlane,.routeGraph[data-selecting="true"] .mapViewport,.routeGraph[data-selecting="true"] .mapEdges path {transition:none;}
+@media(max-width:1100px) {.routeGraph {top:80px;}}
+@media(max-width:600px) {
+ .routeGraph {top:max(76px,calc(env(safe-area-inset-top) + 72px));right:max(8px,env(safe-area-inset-right));}
+ .mapViewport {right:44px;max-width:calc(100vw - 76px - env(safe-area-inset-right));max-height:calc(100dvh - 100px - env(safe-area-inset-bottom));}
+ .routeGraph[data-expanded="true"] .mapViewport {width:calc(100vw - 76px - env(safe-area-inset-right));padding:16px 8px;}
+ /* A fixed reserve covers the largest local neighborhood; disclosure/preview never remeasures the document. */
+ .site .screen {padding-top:420px;}
+}
+@media(forced-colors:active) {.mapDot {background:Canvas;}.mapNode[data-preview="true"] .mapDot {outline-color:Highlight;}}

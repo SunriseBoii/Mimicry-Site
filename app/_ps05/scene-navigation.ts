@@ -5,7 +5,7 @@ import { unit, type PageTransition } from './transition';
 export const MOTION = { duration:600, reducedDuration:120, prepareLimit:1500, exitFraction:.4, desktopTravel:60, mobileTravel:32, waveDelay:200, waveDuration:800, waveBand:54 } as const;
 export const INPUT = { wheelThreshold:48, gestureGap:180, directionRatio:1.2, swipeThreshold:44, boundaryHysteresis:24 } as const;
 export type SceneSource = 'command'|'keyboard'|'wheel'|'touch'|'scrollbar'|'restore';
-export type SceneSnapshot = { displayed:ScreenNodeId; preview:ScreenNodeId|null; target:ScreenNodeId|null; reading:number; arrival:number; arrivedAt:number; selecting:boolean; transition:PageTransition; source:SceneSource };
+export type SceneSnapshot = { displayed:ScreenNodeId; preview:ScreenNodeId|null; target:ScreenNodeId|null; confirmed:ScreenNodeId|null; reading:number; arrival:number; arrivedAt:number; selecting:boolean; transition:PageTransition; source:SceneSource };
 
 /** A gesture is consumed by either reading or a transition. Its tail cannot cross a scene boundary. */
 export class WheelIntent {
@@ -47,7 +47,10 @@ export class SceneNavigation {
  snapshot():SceneSnapshot {
   const r=this.running,layout=this.env.layout();
   const from=r?.from??this.displayed,to=r?.to??this.displayed;
-  return {displayed:this.displayed,preview:this.preview,target:r?.to??null,reading:this.reading,arrival:this.arrival,arrivedAt:this.arrivedAt,selecting:this.selecting,source:this.source,
+  // Expose the existing final scrollbar choice, including while another transition finishes.
+  // It is presentation state; target continues to describe the running visual transaction.
+  const confirmed=this.queued??(r?.source==='scrollbar'?r.to:null);
+  return {displayed:this.displayed,preview:this.preview,target:r?.to??null,confirmed:confirmed===this.displayed?null:confirmed,reading:this.reading,arrival:this.arrival,arrivedAt:this.arrivedAt,selecting:this.selecting,source:this.source,
    transition:{from,to,progress:r?.progress??1,start:0,end:1,fromStart:layout.byId[from]?.start??0,toStart:layout.byId[to]?.start??0,direct:true,fromReading:r?.fromReading??this.reading,toReading:r?.toReading??this.reading,...sceneDirection(from,to)}};
  }
  busy(){return this.running!==null;}
@@ -129,7 +132,7 @@ export class SceneNavigation {
   else if(id)this.request(id,'scrollbar');
   this.env.notify();
  }
- private blockedTarget(target:EventTarget|null){return typeof Element!=='undefined'&&target instanceof Element&&!!target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"]),[role="listbox"],dialog[open]');}
+ private blockedTarget(target:EventTarget|null){return typeof Element!=='undefined'&&target instanceof Element&&!!target.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"]),[role="listbox"],dialog[open],[data-scene-input="local"]');}
  private nested(target:EventTarget|null,delta:number,horizontal=false){
   if(typeof Element==='undefined'||!(target instanceof Element))return false;
   for(let e:Element|null=target;e&&e!==document.body;e=e.parentElement){

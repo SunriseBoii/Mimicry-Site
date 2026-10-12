@@ -1,7 +1,7 @@
 'use client';
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { GRAPH_EDGES, HEADER_LINKS, SCREEN_NODES, SCREEN_NODE_BY_ID, type ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
-import { isNodeUnlocked, type UnlockFlags } from '../visual-lab/photonic-skin-ps04-m5/graph-model';
+import { useEffect, useRef, useState } from 'react';
+import { HEADER_LINKS, SCREEN_NODE_BY_ID, type ScreenNodeId } from '../visual-lab/photonic-skin-ps04-m5/topology';
+export { RouteGraph } from './RouteGraph';
 import s from './ps05.module.css';
 
 /** Delayed pointer intent; click pins the disclosure, Escape returns focus. */
@@ -36,17 +36,4 @@ export function Header({active,navigate,theme,onTheme,reduced,manualReduced,onMo
    <div className={s.navSettings}><button type="button" onClick={()=>onTheme(theme==='light'?'dark':'light')} aria-label={theme==='light'?'Тёмная тема':'Светлая тема'}><span aria-hidden="true">{theme==='light'?'◐':'◑'}</span>{theme==='light'?'Тёмная тема':'Светлая тема'}</button><button type="button" onClick={onMotion} aria-pressed={reduced}>{manualReduced?'Движение: минимум':'Меньше движения'}<span aria-hidden="true">{reduced?'✓':'↔'}</span></button></div>
   </nav>
  </header>;
-}
-
-const label=(id:ScreenNodeId)=>id==='01'?'Главная':id==='03.3'?'Ваш запрос':SCREEN_NODE_BY_ID[id].title;
-export function RouteGraph({active,preview,target,unlock,navigate}:{active:ScreenNodeId;preview:ScreenNodeId|null;target:ScreenNodeId|null;unlock:UnlockFlags;navigate:(id:ScreenNodeId)=>void}) {
- const links=useRef<HTMLDivElement>(null);
- useEffect(()=>{const list=links.current,button=list?.querySelector<HTMLElement>('[aria-current]');if(list&&button&&innerWidth<=1100){const x=button.offsetLeft-list.offsetLeft;list.scrollTo({left:Math.max(0,x-list.clientWidth/2+button.offsetWidth/2),behavior:'auto'});}},[active]);
- const point=(id:ScreenNodeId)=>{const n=SCREEN_NODE_BY_ID[id];return {x:10+(n.chapterIndex?14:0),y:16+n.index*29};};
- return <nav className={s.graph} data-qa="m4-graph" aria-label="Прогресс маршрута, ортогональный граф экранов">
-  <div id="route-map" className={s.graphPanel}>
-   <svg viewBox="0 0 200 522" className={s.routeDiagram} aria-hidden="true">{GRAPH_EDGES.map(edge=>{const a=point(edge.from),b=point(edge.to);return <path key={edge.from+'-'+edge.to} d={`M${a.x} ${a.y} V${b.y} H${b.x}`} fill="none" stroke="currentColor" strokeWidth="1"/>})}</svg>
-   <div ref={links} className={s.graphLinks}>{SCREEN_NODES.map(node=>{const unlocked=isNodeUnlocked(node.id,unlock);return <button type="button" key={node.id} data-hit={node.id} data-preview={preview===node.id} data-target={target===node.id} data-locked={!unlocked} aria-current={active===node.id?'step':undefined} aria-label={label(node.id)+(!unlocked?(node.id==='03.2'?' — сначала выберите задачу':' — сначала подтвердите состав'):'')} disabled={!unlocked} title={unlocked?label(node.id):node.id==='03.2'?'Сначала выберите задачу':'Сначала подтвердите состав'} style={{'--indent':node.chapterIndex?'14px':'0px',...(node.competenceId?{'--accent':`var(--competence-${node.competenceId})`}:{})} as CSSProperties} onClick={()=>navigate(node.id)}><span className={s.currentDot} aria-hidden="true"/><span className={s.nodeNumber}>{node.id}</span><span>{label(node.id)}</span>{!unlocked&&<span aria-hidden="true">⌁</span>}</button>})}</div>
-  </div>
- </nav>;
 }
